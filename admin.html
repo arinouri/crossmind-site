@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crossmind admin</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#D08355;--orange-d:#9A4F26;--navy:#0A2238;--navy-2:#0F2C47;--cream:#FAF3EA;--sand:#F1E6D8;--line:rgba(10,34,56,.14);--soft:#42505F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--navy);font:16px/1.5 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em;margin:0;line-height:1.15}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--orange-d);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{background:var(--navy);color:var(--cream)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding-top:16px;padding-bottom:16px}
+.bar h1{font-size:22px;margin-right:auto}
+.bar h1 span{font-weight:500;color:var(--orange)}
+.search{flex:1 1 220px;max-width:340px;min-height:44px;border-radius:999px;border:1.5px solid rgba(250,243,234,.25);background:var(--navy-2);color:var(--cream);padding:0 18px}
+.search::placeholder{color:rgba(250,243,234,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--navy);background:var(--navy);color:var(--cream);font-weight:600;font-size:15px;cursor:pointer;text-decoration:none}
+.btn.o{background:var(--orange);border-color:var(--orange);color:var(--navy)}
+.btn.g{background:transparent;color:var(--navy)}
+.btn.sm{min-height:44px;padding:0 14px;font-size:14px}
+.btn.danger{background:transparent;border-color:#A3261B;color:#A3261B}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:24px 0 20px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.stat small{display:block;font-size:13px;font-weight:600;color:var(--soft);text-transform:uppercase;letter-spacing:.06em}
+.stat b{display:block;font:700 30px/1.2 "Space Grotesk",sans-serif;margin-top:4px}
+.stat.hot{border-color:var(--orange);background:#FFF7F0}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;-webkit-overflow-scrolling:touch}
+.chip{flex:none;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-weight:500;font-size:14px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.chip i{font-style:normal;opacity:.7;margin-left:6px}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding-bottom:60px}
+.lead{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;text-align:left;cursor:pointer;width:100%}
+.lead:hover{border-color:var(--orange)}
+.lead .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.lead h3{font-size:18px}
+.lead p{margin:0;font-size:14px;color:var(--soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lead .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;font-weight:500;margin-top:auto;padding-top:6px}
+.tag{flex:none;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;white-space:nowrap;border:1.5px solid transparent}
+.s-new{background:var(--orange);color:var(--navy)}
+.s-contacted{background:var(--sand);color:var(--navy)}
+.s-prototype{background:#fff;border-color:var(--navy);color:var(--navy)}
+.s-quoted{background:#fff;border-color:var(--orange-d);color:var(--orange-d)}
+.s-building{background:var(--navy-2);color:var(--cream)}
+.s-done{background:var(--navy);color:var(--cream)}
+.s-lost{background:#E4E1DC;color:#42505F}
+.due{color:var(--orange-d);font-weight:600}
+.empty{grid-column:1/-1;background:#fff;border:1.5px dashed var(--line);border-radius:16px;padding:40px 24px;text-align:center;color:var(--soft)}
+.empty h2{color:var(--navy);font-size:22px;margin-bottom:8px}
+.banner{background:var(--sand);border-radius:12px;padding:12px 16px;margin-top:16px;font-size:14px;display:none}
+.banner.show{display:block}
+dialog{border:0;padding:0;border-radius:20px;width:min(720px,calc(100vw - 24px));max-height:calc(100vh - 24px);color:var(--navy);background:var(--cream)}
+dialog::backdrop{background:rgba(10,34,56,.55)}
+.dh{position:sticky;top:0;background:var(--navy);color:var(--cream);padding:16px 20px;display:flex;align-items:center;gap:12px;z-index:1}
+.dh h2{font-size:20px;margin-right:auto;overflow-wrap:anywhere}
+.x{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(250,243,234,.3);background:none;color:var(--cream);font-size:20px;cursor:pointer;flex:none}
+.db{padding:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+label{font-size:13px;font-weight:600}
+input,select,textarea{width:100%;min-height:44px;border-radius:10px;border:1.5px solid var(--line);background:#fff;padding:10px 12px}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange-d)}
+.sec{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.sec h3{font-size:16px;margin-bottom:10px}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.contact{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;margin-top:10px;overflow-wrap:anywhere}
+.fit{font-size:14px;font-weight:600;margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--sand)}
+.note{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.note small{display:block;color:var(--soft);font-size:12px;margin-bottom:2px}
+.addnote{display:flex;gap:8px;align-items:flex-start}
+.addnote textarea{min-height:44px}
+.draft{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:10px;font-size:14px;white-space:pre-wrap;display:none}
+.draft.show{display:block}
+.foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.saved{font-size:13px;color:var(--soft);align-self:center}
+.err{color:#A3261B;font-size:14px;font-weight:500;min-height:1em}
+.login{position:fixed;inset:0;z-index:20;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:20px}
+.login.hide{display:none}
+.login form{background:var(--cream);border-radius:20px;padding:32px 28px;width:min(400px,100%);display:flex;flex-direction:column;gap:14px}
+.login h2{font-size:24px}
+.login p{margin:0;font-size:14px;color:var(--soft)}
+body.locked header,body.locked main{display:none}
+</style>
+</head>
+<body class="locked">
+<div class="login" id="login">
+  <form id="loginForm" novalidate>
+    <h2>Crossmind admin</h2>
+    <p>Sign in to see requests from the website.</p>
+    <div class="f"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+    <p class="err" id="loginErr" role="alert"></p>
+    <button class="btn" type="submit" id="loginBtn">Sign in</button>
+  </form>
+</div>
+<header>
+  <div class="wrap bar">
+    <h1>Crossmind <span>CRM</span></h1>
+    <input class="search" id="q" type="search" placeholder="Search leads" aria-label="Search leads">
+    <button class="btn o" id="addBtn" type="button">+ Add lead</button>
+    <button class="btn" id="outBtn" type="button" style="border-color:rgba(250,243,234,.35)">Sign out</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="banner" id="banner" role="status"></div>
+  <div class="stats" id="stats"></div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by stage"></div>
+  <div class="list" id="list"><div class="empty">Loading your leads…</div></div>
+</main>
+
+<dialog id="leadDlg" aria-labelledby="ldTitle">
+  <div class="dh"><h2 id="ldTitle"></h2><span class="tag" id="ldTag"></span><button class="x" type="button" data-close aria-label="Close">×</button></div>
+  <div class="db" id="ldBody"></div>
+</dialog>
+
+<dialog id="addDlg" aria-labelledby="adTitle">
+  <div class="dh"><h2 id="adTitle">Add a lead</h2><button class="x" type="button" data-close aria-label="Close">×</button></div>
+  <div class="db">
+    <div class="f"><label for="paste">Paste a request from the website (optional)</label>
+      <textarea id="paste" placeholder="Paste the request text a client emailed you, then press Fill in."></textarea></div>
+    <div class="acts" style="margin-top:8px"><button class="btn g sm" type="button" id="parseBtn">Fill in from pasted text</button></div>
+    <form id="addForm" class="sec" novalidate>
+      <div class="grid">
+        <div class="f"><label for="aName">Name</label><input id="aName" required></div>
+        <div class="f"><label for="aEmail">Email</label><input id="aEmail" type="email"></div>
+        <div class="f"><label for="aPhone">Phone</label><input id="aPhone" type="tel"></div>
+        <div class="f"><label for="aBudget">Their budget (CAD)</label><input id="aBudget" type="number" min="0" inputmode="numeric"></div>
+        <div class="f full"><label for="aIdea">What they need</label><textarea id="aIdea"></textarea></div>
+      </div>
+      <p class="err" id="aErr" role="alert"></p>
+      <div class="acts"><button class="btn" type="submit">Save lead</button><button class="btn g" type="button" data-close>Cancel</button></div>
+    </form>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var STAGES = [['new','New'],['contacted','Contacted'],['prototype','Prototype'],['quoted','Quoted'],['building','Building'],['done','Done'],['lost','Lost']];
+  var ACTIVE = ['contacted','prototype','quoted','building'];
+  var leads = [], db = null, filter = 'all', query = '', openId = null, ready = false;
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function money(n){ n = Number(n); return n > 0 ? '$' + n.toLocaleString() : '—'; }
+  function stageName(s){ for (var i=0;i<STAGES.length;i++) if (STAGES[i][0]===s) return STAGES[i][1]; return 'New'; }
+  function today(){ var d = new Date(); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
+  function isDue(l){ return l.followUp && l.followUp <= today() && l.stage !== 'done' && l.stage !== 'lost'; }
+  function banner(msg){ var b = $('banner'); b.textContent = msg || ''; b.classList.toggle('show', !!msg); }
+
+  /* ---------- Render ---------- */
+  function render(){
+    var counts = {all: leads.length}; STAGES.forEach(function(s){ counts[s[0]] = 0; });
+    var pipeline = 0, paid = 0, due = 0;
+    leads.forEach(function(l){ counts[l.stage] = (counts[l.stage]||0) + 1; if (ACTIVE.indexOf(l.stage) >= 0) pipeline += Number(l.quote) || Number(l.budget) || 0; paid += Number(l.paid) || 0; if (isDue(l)) due++; });
+    $('stats').innerHTML =
+      '<div class="stat'+(counts['new']?' hot':'')+'"><small>New leads</small><b>'+counts['new']+'</b></div>'+
+      '<div class="stat'+(due?' hot':'')+'"><small>Follow-ups due</small><b>'+due+'</b></div>'+
+      '<div class="stat"><small>Value in progress</small><b>'+money(pipeline).replace('—','$0')+'</b></div>'+
+      '<div class="stat"><small>Paid so far</small><b>'+money(paid).replace('—','$0')+'</b></div>';
+    $('chips').innerHTML = [['all','All']].concat(STAGES).map(function(s){
+      return '<button class="chip" type="button" data-f="'+s[0]+'" aria-pressed="'+(filter===s[0])+'">'+s[1]+'<i>'+(counts[s[0]]||0)+'</i></button>'; }).join('');
+    var q = query.toLowerCase();
+    var shown = leads.filter(function(l){
+      if (filter !== 'all' && l.stage !== filter) return false;
+      if (!q) return true;
+      return [l.name,l.email,l.phone,l.idea].join(' ').toLowerCase().indexOf(q) >= 0; });
+    var list = $('list');
+    if (!ready) return;
+    if (!leads.length){ list.innerHTML = '<div class="empty"><h2>No leads yet</h2>Requests sent from the website form show up here by themselves.</div>'; return; }
+    if (!shown.length){ list.innerHTML = '<div class="empty">No leads match this view.</div>'; return; }
+    list.innerHTML = shown.map(function(l){
+      return '<button class="lead" type="button" data-id="'+esc(l.id)+'"><div class="top"><h3>'+esc(l.name||'Unnamed')+'</h3><span class="tag s-'+esc(l.stage)+'">'+stageName(l.stage)+'</span></div>'+
+        '<p>'+esc(l.idea||'No details yet')+'</p><div class="meta"><span>Budget '+money(l.budget)+'</span>'+(Number(l.quote)>0?'<span>Quote '+money(l.quote)+'</span>':'')+
+        (l.followUp?'<span class="'+(isDue(l)?'due':'')+'">'+(isDue(l)?'Follow up now':'Follow up '+esc(l.followUp))+'</span>':'')+'</div></button>'; }).join('');
+  }
+
+  /* ---------- Lead detail ---------- */
+  function find(id){ for (var i=0;i<leads.length;i++) if (leads[i].id===id) return leads[i]; return null; }
+  function fitText(l){
+    var b = Number(l.budget)||0, q = Number(l.quote)||0;
+    if (!q) return 'Add your quote to compare it with their budget.';
+    if (!b) return 'No budget given. Your quote is '+money(q)+'.';
+    if (q <= b) return 'Budget fits: your quote is '+money(q)+' and they have '+money(b)+'.';
+    return 'Budget is '+money(q-b)+' short: quote '+money(q)+', budget '+money(b)+'. Offer a smaller version or ask if they can go higher.';
+  }
+  function openLead(id){
+    var l = find(id); if (!l) return; openId = id;
+    $('ldTitle').textContent = l.name || 'Unnamed';
+    var tag = $('ldTag'); tag.className = 'tag s-'+l.stage; tag.textContent = stageName(l.stage);
+    var notes = (l.notes||[]).slice().reverse().map(function(n){ return '<div class="note"><small>'+esc(new Date(n.t).toLocaleString())+'</small>'+esc(n.text)+'</div>'; }).join('');
+    $('ldBody').innerHTML =
+      '<div class="grid">'+
+        '<div class="f"><label for="eStage">Stage</label><select id="eStage" data-k="stage">'+STAGES.map(function(s){ return '<option value="'+s[0]+'"'+(l.stage===s[0]?' selected':'')+'>'+s[1]+'</option>'; }).join('')+'</select></div>'+
+        '<div class="f"><label for="eFollow">Follow up on</label><input id="eFollow" type="date" data-k="followUp" value="'+esc(l.followUp||'')+'"></div>'+
+        '<div class="f"><label for="eName">Name</label><input id="eName" data-k="name" value="'+esc(l.name)+'"></div>'+
+        '<div class="f"><label for="eEmail">Email</label><input id="eEmail" type="email" data-k="email" value="'+esc(l.email)+'"></div>'+
+        '<div class="f"><label for="ePhone">Phone</label><input id="ePhone" type="tel" data-k="phone" value="'+esc(l.phone)+'"></div>'+
+        '<div class="f"><label for="eBudget">Their budget (CAD)</label><input id="eBudget" type="number" min="0" data-k="budget" data-num value="'+esc(l.budget||'')+'"></div>'+
+        '<div class="f"><label for="eQuote">Your quote (CAD)</label><input id="eQuote" type="number" min="0" data-k="quote" data-num value="'+esc(l.quote||'')+'"></div>'+
+        '<div class="f"><label for="ePaid">Paid so far (CAD)</label><input id="ePaid" type="number" min="0" data-k="paid" data-num value="'+esc(l.paid||'')+'"></div>'+
+        '<div class="f full"><label for="eIdea">What they need</label><textarea id="eIdea" data-k="idea">'+esc(l.idea)+'</textarea></div>'+
+      '</div>'+
+      '<div class="fit" id="fit">'+esc(fitText(l))+'</div>'+
+      '<div class="contact">'+(l.email?'<a href="mailto:'+encodeURIComponent(l.email).replace(/%40/,'@')+'">'+esc(l.email)+'</a>':'')+(l.phone?'<a href="tel:'+esc(String(l.phone).replace(/[^\d+]/g,''))+'">'+esc(l.phone)+'</a>':'')+'</div>'+
+      '<div class="sec"><h3>Draft a reply</h3><div class="acts">'+
+        '<button class="btn g sm" type="button" data-draft="questions">Follow-up questions</button>'+
+        '<button class="btn g sm" type="button" data-draft="fits">Budget works</button>'+
+        '<button class="btn g sm" type="button" data-draft="low">Budget too low</button>'+
+        '<button class="btn g sm" type="button" data-draft="proto">Prototype ready</button></div>'+
+        '<div class="draft" id="draft"></div><div class="acts" id="draftActs" style="margin-top:8px;display:none"><button class="btn sm" type="button" id="copyDraft">Copy reply</button></div></div>'+
+      '<div class="sec"><h3>Notes</h3><div class="addnote"><textarea id="noteText" aria-label="New note" placeholder="Call summary, what you promised, next step…"></textarea><button class="btn sm" type="button" id="noteBtn">Add</button></div><div id="notes">'+notes+'</div></div>'+
+      '<div class="foot"><span class="saved" id="saved">Changes save automatically.</span><span id="delWrap"><button class="btn danger sm" type="button" id="delBtn">Delete lead</button></span></div>';
+    if (!$('leadDlg').open) $('leadDlg').showModal();
+  }
+  function drafts(l, kind){
+    var first = (l.name||'there').split(' ')[0], b = money(l.budget), q = money(l.quote), sign = '\n\nCrossmind Solutions';
+    if (kind === 'questions') return 'Hi '+first+',\n\nThanks for reaching out to Crossmind Solutions. To build your free prototype, I have a few quick questions:\n\n1. Who will use this, and what is the one thing it must do well?\n2. Do you already have anything we should work with (a logo, content, accounts, an existing site)?\n3. When would you like it ready?\n\nOnce I have your answers I will put together a prototype for you to look at. There is no payment until you are happy with it.'+sign;
+    if (kind === 'fits') return 'Hi '+first+',\n\nGood news: your budget of '+b+' works for what you described.\n\nNext I will build your free prototype so you can see it before paying anything. If you like it, we collect payment and build the full version.\n\nI will send the prototype over shortly.'+sign;
+    if (kind === 'low') return 'Hi '+first+',\n\nThanks for the details. I want to be upfront: the full version of what you described would be about '+q+', which is more than your budget of '+b+'.\n\nHere are two ways we can make it work:\n\n1. A smaller version for '+b+' that covers the most important part, which we can add to later.\n2. The full version at '+q+'.\n\nWhich would you prefer? Either way, the prototype is free.'+sign;
+    return 'Hi '+first+',\n\nYour free prototype is ready. Have a look and tell me what you think: what you like, and anything you would change.\n\nIf you are happy with it, the full build is '+q+', and I can start as soon as payment is in.'+sign;
+  }
+
+  /* ---------- Writes (one at a time per lead) ---------- */
+  var chain = {};
+  function save(id, patch){
+    if (!db) return Promise.resolve();
+    patch.updated = Date.now();
+    var l = find(id); if (l) for (var k in patch) l[k] = patch[k];
+    var s = $('saved'); if (s) s.textContent = 'Saving…';
+    chain[id] = (chain[id] || Promise.resolve()).then(function(){ return db.doc('leads/'+id).update(patch); })
+      .then(function(){ var s2 = $('saved'); if (s2) s2.textContent = 'Saved.'; }, function(e){ var s3 = $('saved'); if (s3) s3.textContent = 'Could not save. Check your connection and try again.'; banner('A change could not be saved ('+((e&&e.code)||'error')+').'); });
+    render(); return chain[id];
+  }
+
+  /* ---------- Events ---------- */
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-close],[data-f],[data-id],[data-draft],#noteBtn,#delBtn,#delYes,#delNo,#copyDraft'); if (!t) return;
+    if (t.hasAttribute('data-close')) { t.closest('dialog').close(); return; }
+    if (t.dataset.f) { filter = t.dataset.f; render(); return; }
+    if (t.dataset.id) { openLead(t.dataset.id); return; }
+    var l = find(openId);
+    if (t.dataset.draft && l) { var d = $('draft'); d.textContent = drafts(l, t.dataset.draft); d.classList.add('show'); $('draftActs').style.display = 'flex'; $('copyDraft').textContent = 'Copy reply'; return; }
+    if (t.id === 'copyDraft') { try { navigator.clipboard.writeText($('draft').textContent).then(function(){ t.textContent = 'Copied'; }, function(){ t.textContent = 'Select the text above to copy'; }); } catch(x){ t.textContent = 'Select the text above to copy'; } return; }
+    if (t.id === 'noteBtn' && l) { var v = $('noteText').value.trim(); if (!v) return; var notes = (l.notes||[]).concat([{t: Date.now(), text: v}]); save(openId, {notes: notes}).then(function(){ if (openId === l.id) openLead(openId); }); openLead(openId); return; }
+    if (t.id === 'delBtn') { $('delWrap').innerHTML = 'Delete for good? <button class="btn danger sm" type="button" id="delYes">Yes, delete</button> <button class="btn g sm" type="button" id="delNo">Keep</button>'; return; }
+    if (t.id === 'delNo') { openLead(openId); return; }
+    if (t.id === 'delYes' && db) { var id = openId; $('leadDlg').close(); db.doc('leads/'+id).delete().catch(function(){ banner('Could not delete that lead. Try again.'); }); return; }
+  });
+  $('ldBody').addEventListener('change', function(e){
+    var k = e.target.dataset.k; if (!k || !openId) return;
+    var v = e.target.hasAttribute('data-num') ? (Number(e.target.value) || 0) : e.target.value.trim ? e.target.value.trim() : e.target.value;
+    var p = {}; p[k] = v; save(openId, p);
+    var l = find(openId); if (!l) return;
+    $('fit').textContent = fitText(l);
+    if (k === 'stage') { var tag = $('ldTag'); tag.className = 'tag s-'+l.stage; tag.textContent = stageName(l.stage); }
+    if (k === 'name') $('ldTitle').textContent = l.name || 'Unnamed';
+  });
+  $('leadDlg').addEventListener('close', function(){ openId = null; });
+  $('q').addEventListener('input', function(){ query = this.value.trim(); render(); });
+  $('addBtn').addEventListener('click', function(){ $('addForm').reset(); $('paste').value = ''; $('aErr').textContent = ''; $('addDlg').showModal(); });
+  function grab(text, label){ var m = text.match(new RegExp('^\\s*' + label + '\\s*:\\s*(.+)$', 'im')); return m ? m[1].trim() : ''; }
+  $('parseBtn').addEventListener('click', function(){
+    var t = $('paste').value; if (!t.trim()) return;
+    $('aName').value = grab(t,'Name') || $('aName').value; $('aEmail').value = grab(t,'Email') || $('aEmail').value; $('aPhone').value = grab(t,'Phone') || $('aPhone').value;
+    var b = grab(t,'Budget').replace(/[^\d.]/g,''); if (b) $('aBudget').value = b;
+    var i = t.search(/^\s*Idea\s*:/im); $('aIdea').value = i >= 0 ? t.slice(i).replace(/^\s*Idea\s*:\s*/i,'').trim() : ($('aIdea').value || t.trim());
+  });
+  $('addForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = $('aName').value.trim();
+    if (!name) { $('aErr').textContent = 'Add a name so you can find this lead later.'; return; }
+    if (!db) { $('aErr').textContent = 'Your data is not connected, so this lead cannot be saved right now.'; return; }
+    var now = Date.now(), ref = db.collection('leads').doc();
+    var data = {name: name, email: $('aEmail').value.trim(), phone: $('aPhone').value.trim(), budget: Number($('aBudget').value) || 0, idea: $('aIdea').value.trim(), quote: 0, paid: 0, stage: 'new', followUp: '', notes: [], created: now, updated: now};
+    ref.set(data).then(function(){ $('addDlg').close(); }, function(er){ $('aErr').textContent = 'Could not save this lead ('+((er&&er.code)||'error')+'). Try again.'; });
+  });
+
+  /* ---------- Data: talks to the Crossmind API, signed in with the admin password ---------- */
+  var API = 'https://api.crossmind.ca', token = '', poll = null;
+  try { token = sessionStorage.getItem('cm_admin') || ''; } catch (e) {}
+  function lock(msg){
+    token = ''; try { sessionStorage.removeItem('cm_admin'); } catch (e) {}
+    clearInterval(poll); db = null; leads = []; ready = false;
+    document.querySelectorAll('dialog[open]').forEach(function(d){ d.close(); });
+    document.body.classList.add('locked'); $('login').classList.remove('hide'); $('loginErr').textContent = msg || ''; $('pw').value = ''; $('pw').focus();
+  }
+  function call(method, path, body){
+    return fetch(API + path, {method: method, headers: {'content-type': 'application/json', authorization: 'Bearer ' + token}, body: body ? JSON.stringify(body) : undefined})
+      .then(function(r){ if (r.status === 401) { lock('You were signed out. Sign in again.'); throw {code: 'signed_out'}; } if (!r.ok) throw {code: 'error ' + r.status}; return r.json(); });
+  }
+  function load(){
+    return call('GET', '/leads').then(function(list){
+      leads = list.map(function(l){ l.stage = l.stage || 'new'; return l; }); ready = true; banner(''); render();
+      if (openId && !find(openId)) $('leadDlg').close();
+    });
+  }
+  function start(){
+    document.body.classList.remove('locked'); $('login').classList.add('hide');
+    db = {
+      doc: function(path){ var id = path.split('/')[1]; return {
+        update: function(p){ return call('PATCH', '/leads/' + id, p); },
+        'delete': function(){ return call('DELETE', '/leads/' + id).then(function(){ leads = leads.filter(function(l){ return l.id !== id; }); render(); }); } }; },
+      collection: function(){ return { doc: function(){ return { set: function(d){ return call('POST', '/leads', d).then(function(l){ leads.unshift(l); render(); }); } }; } }; }
+    };
+    render();
+    load().catch(function(e){ if (e && e.code !== 'signed_out') { ready = true; render(); banner('Your leads could not be loaded (' + ((e && e.code) || 'network error') + '). Check your connection.'); } });
+    clearInterval(poll); poll = setInterval(function(){ if (token && !document.hidden) load().catch(function(){}); }, 20000);
+  }
+  $('loginForm').addEventListener('submit', function(e){
+    e.preventDefault(); var pw = $('pw').value, btn = $('loginBtn'); if (!pw) return;
+    btn.disabled = true; $('loginErr').textContent = '';
+    fetch(API + '/login', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({password: pw})})
+      .then(function(r){ return r.json().then(function(j){ return {s: r.status, j: j}; }); })
+      .then(function(x){
+        btn.disabled = false;
+        if (x.s === 200 && x.j.token) { token = x.j.token; try { sessionStorage.setItem('cm_admin', token); } catch (e) {} $('pw').value = ''; start(); return; }
+        $('loginErr').textContent = x.s === 429 ? 'Too many wrong tries. Wait 15 minutes and try again.' : x.s === 503 ? 'The admin password has not been set up yet.' : 'That password is not right.';
+      }, function(){ btn.disabled = false; $('loginErr').textContent = 'Could not reach the server. Check your connection.'; });
+  });
+  $('outBtn').addEventListener('click', function(){ var t = token; if (t) fetch(API + '/logout', {method: 'POST', headers: {authorization: 'Bearer ' + t}}).catch(function(){}); lock(''); });
+  if (token) start(); else $('pw').focus();
+})();
+</script>
+</body>
+</html>
