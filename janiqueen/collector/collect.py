@@ -133,7 +133,7 @@ COLS = {
     "kind": r"(appl\.?(ication)?\s*type|permit\s*type|type\s*of\s*work|work\s*type)",
     "issued": r"issue|[ée]mis",
 }
-HEADER_HINT = re.compile(r"ward|contractor|desc|postal|issue")
+HEADER_HINT = re.compile(r"^(ward|contractor|description|postal code|pc|issued? date|permit ?(#|number|no\.?)|street address|st #|road|d\.u\.|blg type|building type)$")
 
 
 def to_date(v):
@@ -180,6 +180,8 @@ def kind_from(pid, desc):
 
 
 def nice_name(n):
+    n = re.sub(r"\s*\([^)]*\)", "", n).strip()            # "Claridge Homes (Bridlewood Phase 3) Inc."
+    n = re.sub(r"(?i)\s+ottawa division$", "", n)
     if OWNER.match(n) or not n.isupper():
         return n
     t = title_case(n)
@@ -329,6 +331,7 @@ def search_links(name):
 
 
 def search_site(name):
+    name = re.sub(r"(?i)\b(inc|ltd|limited|corp|corporation|incorporated|group of companies)\b\.?", "", name).strip(" ,.")
     toks = tokens(name)
     for a in search_links(name):
         href = a.get("href", "")
@@ -344,8 +347,7 @@ def search_site(name):
         host = urlparse(href).netloc.lower()
         if not host or BLOCK.search(host):
             continue
-        hay = (host + " " + a.get_text(" ")).lower()
-        if not toks or any(t in hay for t in toks):
+        if not toks or toks[0] in host.replace("-", ""):
             return f"{urlparse(href).scheme}://{host}"
     return None
 
@@ -361,8 +363,9 @@ def scrape_contacts(site):
         soup = BeautifulSoup(home.text, "html.parser")
         links = [urljoin(home.url, a["href"]) for a in soup.find_all("a", href=True)
                  if re.search(r"contact|about|team|careers|trade", a["href"] + a.get_text(" "), re.I)]
+        links += [urljoin(home.url, x) for x in ("/contact", "/contact-us", "/contact-us/")]
         host = urlparse(home.url).netloc
-        for u in list(dict.fromkeys(links))[:3]:
+        for u in list(dict.fromkeys(links))[:5]:
             if urlparse(u).netloc == host:
                 try:
                     pages.append(S.get(u, timeout=25))
