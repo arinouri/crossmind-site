@@ -7,8 +7,7 @@
 <title>Jani Queen · Site Leads</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <style>
 /* VOICE: a working sales desk for a post-construction cleaning crew — direct, practical.
    IDEA: a site superintendent's permit board: the city map pinned up beside a job list.
@@ -50,7 +49,8 @@ header{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:12px
 .dot{width:11px;height:11px;border-radius:50%;flex:none;display:inline-block}
 .d-now{background:var(--vis);box-shadow:0 0 0 2px #121212 inset}.d-win{background:var(--win)}.d-early{background:var(--early)}.d-done{background:var(--done)}
 main{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);height:calc(100vh - 250px);min-height:560px}
-#map{border-inline-end:1px solid var(--line);background:var(--plane);z-index:0}
+.mapwrap{position:relative;border-inline-end:1px solid var(--line);background:var(--plane);min-height:0}
+#map{position:absolute;inset:0}
 .list{display:flex;flex-direction:column;min-height:0}
 .listhead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line)}
 .listhead select{min-height:40px;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 8px}
@@ -104,13 +104,14 @@ textarea#body{min-height:320px;line-height:1.5;resize:vertical;font-size:15.5px}
 .tpls{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:10px;z-index:1200;font-weight:600;display:none;max-width:90vw}
 .hide{display:none!important}
-.leaflet-container{font:inherit}
-.mc{background:#121212;color:#ffe600;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;border:3px solid #ffe600}
-.legend{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;display:grid;gap:3px}
+.maplibregl-map{font:inherit}.maplibregl-popup-content{font:14px/1.4 "Hanken Grotesk",sans-serif;color:#121212;border-radius:8px;padding:8px 10px}
+.mapbtns{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.mapbtns button{min-height:40px;border-radius:9px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:14px;padding:6px 10px}
+.legend{position:absolute;left:10px;bottom:28px;z-index:2;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;display:grid;gap:3px}
 .legend div{display:flex;align-items:center;gap:7px}
-@media(max-width:900px){main{grid-template-columns:minmax(0,1fr);height:auto}#map{height:420px;border:0;border-bottom:1px solid var(--line)}.rows{overflow:visible}}
+@media(max-width:900px){main{grid-template-columns:minmax(0,1fr);height:auto}.mapwrap{height:420px;border:0;border-bottom:1px solid var(--line)}.rows{overflow:visible}}
 @media(max-width:600px){.figs{grid-template-columns:repeat(2,minmax(0,1fr))}.fig1:nth-child(2){border-inline-end:0}.fig1:nth-child(-n+2){border-bottom:1px solid var(--line)}
-.kv{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}.sheet .in{padding:16px}.box{padding:16px}#map{height:360px}
+.kv{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}.sheet .in{padding:16px}.box{padding:16px}.mapwrap{height:380px}
 table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;color:var(--mute);font-size:13px}.stack td:empty{display:none}.legend .ld{display:none}}
 @media(prefers-reduced-motion:reduce){.sheet{transition:none}}
 </style>
@@ -150,7 +151,9 @@ table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-bl
 
 <div id="view-sites">
 <main>
-  <div id="map" aria-label="Map of construction sites"></div>
+  <div class="mapwrap"><div id="map" aria-label="Map of construction sites"></div>
+    <div class="mapbtns"><button id="b3d" aria-pressed="false">3D</button><button id="bAll">Fit all</button></div>
+    <div class="legend"><div><i class="dot d-now"></i>Contact now<span class="ld">&nbsp;— cleaning within ~4 months</span></div><div><i class="dot d-win"></i>In window</div><div><i class="dot d-early"></i>Early</div><div><i class="dot d-done"></i>Likely done</div><div><i class="dot" style="background:#121212;box-shadow:0 0 0 2px #ffe600 inset"></i>Group — click to zoom in</div></div></div>
   <section class="list" aria-label="Sites">
     <div class="listhead"><b id="count">0 sites</b>
       <select id="sort" aria-label="Sort"><option value="soon">Soonest cleaning first</option><option value="value">Biggest job first</option><option value="new">Newest permit first</option></select></div>
@@ -223,8 +226,7 @@ table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-bl
 </div></div>
 <div class="toast" id="toast"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script>
 {
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -322,25 +324,44 @@ function render(){
 }
 function chips(){$('#stChips').innerHTML=Object.keys(STL).map(k=>`<button class="chip" data-st="${k}" aria-pressed="${F.st.has(k)}"><i class="dot d-${k}"></i>${STL[k]}</button>`).join('')}
 
-/* ---------- map ---------- */
-let map=null,cluster=null;
-if(window.L){
-  map=L.map('map',{zoomControl:true,preferCanvas:true}).setView([45.36,-75.72],10);
-  const dark=matchMedia('(prefers-color-scheme: dark)').matches;
-  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_all':'light_all'}/{z}/{x}/{y}{r}.png`,{maxZoom:19,subdomains:'abcd',attribution:'&copy; OpenStreetMap contributors &copy; CARTO'}).addTo(map);
-  cluster=L.markerClusterGroup({chunkedLoading:true,disableClusteringAtZoom:15,maxClusterRadius:45,showCoverageOnHover:false,
-    iconCreateFunction:c=>{const n=c.getChildCount(),s=n<10?34:n<100?42:50;return L.divIcon({html:`<div class="mc" style="width:${s}px;height:${s}px">${n}</div>`,className:'',iconSize:[s,s]})}});
-  map.addLayer(cluster);
-  const lg=L.control({position:'bottomleft'});lg.onAdd=()=>{const d=L.DomUtil.create('div','legend');d.innerHTML='<div><i class="dot d-now"></i>Contact now<span class="ld">&nbsp;— cleaning within ~4 months</span></div><div><i class="dot d-win"></i>In window</div><div><i class="dot d-early"></i>Early</div><div><i class="dot d-done"></i>Likely done</div>';return d};lg.addTo(map);
-}else{$('#map').innerHTML='<p class="empty">Map could not load — check your connection.</p>'}
+/* ---------- map (MapLibre + OpenFreeMap, no key needed) ---------- */
+let map=null,mapReady=false,pending=null;
 const COL={now:'#ffe600',win:'#0b6b5e',early:'#8a8a84',done:'#c4c4be'};
-let markers={};
+const dark=matchMedia('(prefers-color-scheme: dark)').matches;
+if(window.maplibregl){
+  map=new maplibregl.Map({container:'map',style:`https://tiles.openfreemap.org/styles/${dark?'dark':'positron'}`,center:[-75.72,45.36],zoom:9.6,maxPitch:70,attributionControl:{compact:true}});
+  map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-left');
+  map.on('load',()=>{
+    const src=Object.keys(map.getStyle().sources).find(k=>map.getStyle().sources[k].type==='vector');
+    if(src)map.addLayer({id:'b3d',type:'fill-extrusion',source:src,'source-layer':'building',minzoom:13,
+      paint:{'fill-extrusion-color':dark?'#3a3a36':'#d8d8d4','fill-extrusion-height':['coalesce',['get','render_height'],5],'fill-extrusion-base':['coalesce',['get','render_min_height'],0],'fill-extrusion-opacity':.75}});
+    map.addSource('sites',{type:'geojson',data:{type:'FeatureCollection',features:[]},cluster:true,clusterRadius:42,clusterMaxZoom:14});
+    map.addLayer({id:'clusters',type:'circle',source:'sites',filter:['has','point_count'],paint:{'circle-color':'#121212','circle-stroke-color':'#ffe600','circle-stroke-width':3,'circle-radius':['step',['get','point_count'],15,10,19,100,25,500,31]}});
+    map.addLayer({id:'cluster-n',type:'symbol',source:'sites',filter:['has','point_count'],layout:{'text-field':['get','point_count_abbreviated'],'text-font':['Noto Sans Bold'],'text-size':13},paint:{'text-color':'#ffe600'}});
+    map.addLayer({id:'pts',type:'circle',source:'sites',filter:['!',['has','point_count']],paint:{
+      'circle-color':['match',['get','st'],'now',COL.now,'win',COL.win,'early',COL.early,COL.done],
+      'circle-radius':['interpolate',['linear'],['zoom'],10,['*',.6,['get','r']],15,['get','r'],18,['*',1.6,['get','r']]],
+      'circle-stroke-color':'#121212','circle-stroke-width':['case',['==',['get','id'],''],3,1]}});
+    map.on('click','clusters',e=>{const f=e.features[0];map.getSource('sites').getClusterExpansionZoom(f.properties.cluster_id).then(z=>map.easeTo({center:f.geometry.coordinates,zoom:z+.3}))});
+    map.on('click','pts',e=>openLead(e.features[0].properties.id));
+    const pop=new maplibregl.Popup({closeButton:false,offset:10});
+    map.on('mousemove','pts',e=>{map.getCanvas().style.cursor='pointer';const p=e.features[0].properties;pop.setLngLat(e.features[0].geometry.coordinates).setHTML(`<b>${esc(p.a)}</b><br>${esc(p.b)}`).addTo(map)});
+    map.on('mouseleave','pts',()=>{map.getCanvas().style.cursor='';pop.remove()});
+    ['clusters'].forEach(l=>{map.on('mouseenter',l,()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave',l,()=>map.getCanvas().style.cursor='')});
+    mapReady=true;if(pending)drawMarkers(pending);
+  });
+  map.on('error',e=>console.warn('map',e&&e.error));
+}else{$('#map').innerHTML='<p class="empty">Map could not load — check your connection.</p>'}
+let lastR=[];
 function drawMarkers(r){
-  if(!cluster)return;cluster.clearLayers();markers={};
-  cluster.addLayers(r.map(p=>{const m=L.circleMarker([p.lat,p.lng],{radius:5+Math.min(9,Math.sqrt(p.est/1500)),color:p.id===selId?'#000':'#121212',weight:p.id===selId?3:1,fillColor:COL[p.st],fillOpacity:.95});
-    m.bindTooltip(`<b>${esc(p.addr)}</b><br>${esc(p.owner?'Homeowner-built':p.builder||p.cat)}`);m.on('click',()=>openLead(p.id));markers[p.id]=m;return m}));
+  lastR=r;if(!map)return;if(!mapReady){pending=r;return}
+  map.getSource('sites').setData({type:'FeatureCollection',features:r.map(p=>({type:'Feature',geometry:{type:'Point',coordinates:[p.lng,p.lat]},
+    properties:{id:p.id,st:p.st,r:5+Math.min(9,Math.sqrt(p.est/1500)),a:p.addr,b:p.owner?'Homeowner-built':p.builder||p.cat}}))});
+  map.setPaintProperty('pts','circle-stroke-width',['case',['==',['get','id'],selId||''],4,1]);
 }
-function focus(p){if(map)map.setView([p.lat,p.lng],Math.max(map.getZoom(),15),{animate:!matchMedia('(prefers-reduced-motion: reduce)').matches})}
+function focus(p){if(map)map.easeTo({center:[p.lng,p.lat],zoom:Math.max(map.getZoom(),15.5),duration:matchMedia('(prefers-reduced-motion: reduce)').matches?0:900})}
+$('#b3d').onclick=e=>{if(!map)return;const on=e.target.getAttribute('aria-pressed')!=='true';e.target.setAttribute('aria-pressed',on);map.easeTo({pitch:on?60:0,bearing:on?-20:0,zoom:on?Math.max(map.getZoom(),14):map.getZoom()})};
+$('#bAll').onclick=()=>{if(!map||!lastR.length)return;const b=new maplibregl.LngLatBounds();lastR.forEach(p=>b.extend([p.lng,p.lat]));map.fitBounds(b,{padding:40,maxZoom:15})};
 
 /* ---------- sheets ---------- */
 function openSheet(html){$('#sheetIn').innerHTML=html;$('#sheet').classList.add('open');$('#scrim').style.display='block';$('#sheet').scrollTop=0}
@@ -529,7 +550,7 @@ $('#q').addEventListener('input',e=>{F.q=e.target.value;render()});
 $('#fType').onchange=e=>{F.type=e.target.value;render()};$('#fSize').onchange=e=>{F.size=e.target.value;render()};
 $('#fArea').onchange=e=>{F.area=e.target.value;render()};$('#fMail').onchange=e=>{F.mail=e.target.checked;render()};$('#sort').onchange=e=>{F.sort=e.target.value;render()};
 function tab(n){$$('[data-tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===n));['sites','builders','follow'].forEach(v=>$('#view-'+v).classList.toggle('hide',v!==n));
-  if(n==='builders')renderBuilders();if(n==='follow')renderFollow();if(n==='sites'){render();map&&setTimeout(()=>map.invalidateSize(),50)}
+  if(n==='builders')renderBuilders();if(n==='follow')renderFollow();if(n==='sites'){render();map&&setTimeout(()=>map.resize(),50)}
   try{history.replaceState(null,'','#'+n)}catch(e){}}
 $('#openSettings').onclick=()=>{const s=settings;$('#sName').value=s.name;$('#sTitle').value=s.title;$('#sPhone').value=s.phone;$('#sEmail').value=s.email;$('#sWeb').value=s.web;$('#sRate').value=s.rate;$('#mSettings').classList.add('open')};
 $('#sSave').onclick=()=>{settings={name:$('#sName').value.trim(),title:$('#sTitle').value.trim(),phone:$('#sPhone').value.trim(),email:$('#sEmail').value.trim(),web:$('#sWeb').value.trim(),rate:Math.max(0,parseFloat($('#sRate').value)||0.45)};LS.set('jq.settings',settings);sites.forEach(p=>p.est=p.sqft*settings.rate);render();$('#mSettings').classList.remove('open');toast('Saved')};
