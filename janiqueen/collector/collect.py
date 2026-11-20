@@ -532,7 +532,7 @@ def norm_addr(addr):
 
 def learn_builders():
     cache = load("history.json", {})
-    if cache.get("built") == TODAY.strftime("%Y-%m") and cache.get("street"):
+    if cache.get("built") == TODAY.strftime("%Y-%m") and cache.get("v") == 2 and cache.get("street"):
         return cache
     years = set(range(2023 - HIST_YEARS + 1, 2024))
     by_addr, by_street, counts = {}, {}, {}
@@ -562,7 +562,7 @@ def learn_builders():
                 by_street.setdefault(st, {})
                 by_street[st][k] = by_street[st].get(k, 0) + 1
         log(f"history {title}: {len(rows)} rows, {named} with a contractor")
-    hist = {"built": TODAY.strftime("%Y-%m"), "addr": by_addr, "street": by_street, "builders": counts}
+    hist = {"v": 2, "built": TODAY.strftime("%Y-%m"), "addr": by_addr, "street": by_street, "builders": counts}
     if by_street:
         save("history.json", hist, compact=True)
     return hist if by_street else cache
