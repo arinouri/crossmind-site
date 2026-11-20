@@ -10,270 +10,266 @@
 <meta name="description" content="A GoHighLevel CRM and automation plan for Biagio's Kitchen + Catering, prepared by Crossmind Solutions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: one long scroll in "chapters"; each chapter pairs a short pitch with a working mockup of the GoHighLevel piece it describes. */
+/* Layout: a proposal in five short chapters (findings, system, pipelines, automations, plan). Each chapter: a plain-language claim on the left, the working mockup that proves it underneath. Palette borrows Biagio's black, white and gold so it reads as theirs. */
 :root{
-  --bg:#FAF3EA; --surface:#FFFFFF; --panel:#F2E9DC; --ink:#0A2238; --muted:#4E5B69; --line:rgba(10,34,56,.13);
-  --orange:#D08355; --orange-ink:#9A4F26; --gold:#DFAA25; --gold-ink:#8A6408; --navy:#0A2238; --on-navy:#FAF3EA;
-  --good:#24804F; --good-bg:rgba(36,128,79,.12); --warn:#A86A00; --warn-bg:rgba(223,170,37,.18); --info:#2B5C8A; --info-bg:rgba(43,92,138,.11);
-  --shadow:0 1px 2px rgba(10,34,56,.06),0 8px 28px rgba(10,34,56,.07);
-  --f-display:"Space Grotesk",Inter,system-ui,sans-serif; --f-body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#FBFAF7; --surface:#FFFFFF; --sunk:#F3F1EC; --ink:#151515; --muted:#5C5A55; --line:rgba(21,21,21,.12);
+  --gold:#DFAA25; --gold-ink:#8A6408; --gold-soft:rgba(223,170,37,.16);
+  --dark:#151515; --on-dark:#F6F3EC; --on-dark-muted:rgba(246,243,236,.66);
+  --good:#23794A; --good-soft:rgba(35,121,74,.11); --info:#2D5A86; --info-soft:rgba(45,90,134,.10); --risk:#A3401F; --risk-soft:rgba(163,64,31,.10);
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 10px 30px rgba(0,0,0,.06);
+  --f-display:"Barlow Condensed","Arial Narrow",Inter,sans-serif; --f-body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#071827; --surface:#0E2A43; --panel:#0B2237; --ink:#F4ECE1; --muted:#A8B5C2; --line:rgba(244,236,225,.13);
-  --orange:#E39A6B; --orange-ink:#F0B48C; --gold:#E8BE52; --gold-ink:#F0CB6E; --navy:#0E2A43; --on-navy:#F4ECE1;
-  --good:#5CC28A; --good-bg:rgba(92,194,138,.14); --warn:#F0CB6E; --warn-bg:rgba(232,190,82,.14); --info:#8FB8E0; --info-bg:rgba(143,184,224,.13);
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.25); color-scheme:dark}}
+  --bg:#0F0F0E; --surface:#191917; --sunk:#141412; --ink:#F2EFE8; --muted:#A8A49B; --line:rgba(242,239,232,.13);
+  --gold:#E3B23C; --gold-ink:#EBC25E; --gold-soft:rgba(227,178,60,.14);
+  --dark:#1E1E1B; --on-dark:#F6F3EC; --on-dark-muted:rgba(246,243,236,.66);
+  --good:#62C08C; --good-soft:rgba(98,192,140,.13); --info:#8DB6DE; --info-soft:rgba(141,182,222,.12); --risk:#EE8E6A; --risk-soft:rgba(238,142,106,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.3); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#071827; --surface:#0E2A43; --panel:#0B2237; --ink:#F4ECE1; --muted:#A8B5C2; --line:rgba(244,236,225,.13);
-  --orange:#E39A6B; --orange-ink:#F0B48C; --gold:#E8BE52; --gold-ink:#F0CB6E; --navy:#0E2A43; --on-navy:#F4ECE1;
-  --good:#5CC28A; --good-bg:rgba(92,194,138,.14); --warn:#F0CB6E; --warn-bg:rgba(232,190,82,.14); --info:#8FB8E0; --info-bg:rgba(143,184,224,.13);
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.25); color-scheme:dark}
+  --bg:#0F0F0E; --surface:#191917; --sunk:#141412; --ink:#F2EFE8; --muted:#A8A49B; --line:rgba(242,239,232,.13);
+  --gold:#E3B23C; --gold-ink:#EBC25E; --gold-soft:rgba(227,178,60,.14);
+  --dark:#1E1E1B; --on-dark:#F6F3EC; --on-dark-muted:rgba(246,243,236,.66);
+  --good:#62C08C; --good-soft:rgba(98,192,140,.13); --info:#8DB6DE; --info-soft:rgba(141,182,222,.12); --risk:#EE8E6A; --risk-soft:rgba(238,142,106,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.3); color-scheme:dark}
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
-img{max-width:100%}
 [hidden]{display:none!important}
 a{color:inherit}
-:focus-visible{outline:2.5px solid var(--orange);outline-offset:2px;border-radius:6px}
-.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--f-display);letter-spacing:-.02em;text-wrap:balance;margin:0}
-h2{font-size:clamp(28px,4vw,40px);line-height:1.08}
-h3{font-size:19px;line-height:1.25}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+h1{font:700 clamp(44px,7vw,84px)/.92 var(--f-display);text-transform:uppercase;letter-spacing:-.005em}
+h2{font:700 clamp(30px,4.2vw,46px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.002em}
+h3{font:600 18px/1.3 var(--f-body);letter-spacing:-.01em}
 p{margin:0}
-.eyebrow{font:600 12px/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink)}
-.lede{color:var(--muted);max-width:62ch;font-size:17px}
+.eyebrow{font:600 13px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
+.lede{color:var(--muted);font-size:17px;max-width:60ch}
 .mut{color:var(--muted)}
 .num{font-variant-numeric:tabular-nums}
 
 /* Top bar */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:16px;min-height:58px}
-.brand{display:flex;align-items:center;gap:10px;font:700 15px/1 var(--f-display);text-decoration:none;white-space:nowrap}
-.brand .x{color:var(--muted);font-weight:500}
-.brand .b{color:var(--gold-ink)}
-.nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
-.nav::-webkit-scrollbar{display:none}
-.nav a{font:500 14px/1 var(--f-body);text-decoration:none;padding:9px 11px;border-radius:999px;color:var(--muted);white-space:nowrap}
-.nav a:hover{color:var(--ink);background:var(--panel)}
-@media (max-width:760px){.nav{display:none}}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:56px}
+.brand{font:600 16px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--muted);margin:0 .5em}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{font:500 14px/1 var(--f-body);text-decoration:none;padding:9px 12px;border-radius:999px;color:var(--muted)}
+.nav a:hover{color:var(--ink);background:var(--sunk)}
+@media (max-width:780px){.nav{display:none}}
 
 /* Hero */
-.hero{padding-block:clamp(48px,8vw,96px) clamp(40px,6vw,72px)}
-.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center}
-.hero h1{font-size:clamp(40px,6.4vw,76px);line-height:.98;letter-spacing:-.035em}
-.hero h1 em{font-style:normal;color:var(--orange-ink)}
-.hero .lede{margin-top:22px}
-.for{display:inline-flex;gap:10px;align-items:center;margin-bottom:22px;font:500 13.5px/1 var(--f-body);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;background:var(--surface)}
-.for .dot{width:22px;height:22px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font:700 11px/1 var(--f-display);color:#1a1405}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--f-body);text-decoration:none;border-radius:999px;padding:14px 20px;border:1.5px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
-.btn.pri{background:var(--orange);color:#0A2238}
-.btn.pri:hover{transform:translateY(-1px)}
-.btn.sec{border-color:var(--line);color:var(--ink);background:transparent}
-.btn.sec:hover{background:var(--panel)}
-.ticker{background:var(--navy);color:var(--on-navy);border-radius:22px;padding:22px;box-shadow:var(--shadow);font-size:14px}
-.ticker .hd{display:flex;justify-content:space-between;align-items:center;font:600 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-bottom:14px}
-.ticker .live{display:inline-flex;gap:6px;align-items:center}
-.ticker .live i{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite}
-@keyframes pulse{50%{opacity:.3}}
-.feed{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-.feed li{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:start;padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.06)}
-.feed time{font:500 12px/1.5 var(--f-mono);opacity:.65}
-.feed b{font-weight:600}
-.feed .k{display:block;font-size:12.5px;opacity:.7;margin-top:2px}
+.hero{padding-block:clamp(48px,8vw,92px) clamp(44px,6vw,72px)}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,72px);align-items:end}
+.prep{font:500 14px/1.4 var(--f-body);color:var(--muted);margin-bottom:26px}
+.prep b{color:var(--ink);font-weight:600}
+.hero h1 .g{color:var(--gold-ink)}
+.hero .lede{margin-top:24px}
+.glance{background:var(--dark);color:var(--on-dark);border-radius:20px;padding:24px;display:grid;gap:16px}
+.glance h3{font:600 13px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.glance dl{margin:0;display:grid;gap:12px}
+.glance dl div{display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:baseline;border-top:1px solid rgba(246,243,236,.12);padding-top:12px}
+.glance dt{font:700 34px/1 var(--f-display);color:var(--on-dark)}
+.glance dd{margin:0;font-size:14.5px;color:var(--on-dark-muted)}
+@media (max-width:860px){.hero .grid{grid-template-columns:1fr}}
 
 /* Chapters */
 section.ch{padding-block:clamp(56px,8vw,96px);border-top:1px solid var(--line)}
-.ch-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 56px;align-items:end;margin-bottom:34px}
+.ch-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 56px;align-items:end;margin-bottom:36px}
 .ch-head .eyebrow{margin-bottom:14px}
-@media (max-width:860px){.hero .grid,.ch-head{grid-template-columns:1fr}}
+@media (max-width:860px){.ch-head{grid-template-columns:1fr}}
 
-/* Problem / sources */
-.sources{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.src{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:8px;align-content:start}
-.src .t{font:600 15px/1.3 var(--f-body)}
-.src .now{font-size:13.5px;color:var(--muted)}
-.src .then{font-size:13.5px;color:var(--good);font-weight:500}
-.src .tag{justify-self:start}
-@media (max-width:900px){.sources{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:480px){.sources{grid-template-columns:1fr}}
-.pill{display:inline-flex;align-items:center;gap:5px;font:600 11.5px/1 var(--f-body);letter-spacing:.02em;padding:5px 8px;border-radius:999px;background:var(--panel);color:var(--muted);white-space:nowrap}
-.pill.g{background:var(--good-bg);color:var(--good)}
-.pill.w{background:var(--warn-bg);color:var(--warn)}
-.pill.i{background:var(--info-bg);color:var(--info)}
-.pill.o{background:color-mix(in srgb,var(--orange) 18%,transparent);color:var(--orange-ink)}
+/* Findings */
+.finds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.find{background:var(--surface);padding:24px;display:grid;gap:10px;align-content:start}
+.find .k{font:600 12px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.find h3{font-size:19px}
+.find p{color:var(--muted);font-size:15px}
+.find .fix{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:500;color:var(--ink);padding-top:12px;border-top:1px dashed var(--line);margin-top:4px}
+.find .fix::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:var(--good);box-shadow:inset 0 0 0 4px var(--surface),0 0 0 1.5px var(--good)}
+@media (max-width:760px){.finds{grid-template-columns:1fr}}
 
-/* App frame (mockups) */
+/* System diagram */
+.sys{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1.05fr) 56px minmax(0,1fr);align-items:center}
+.sys .col{display:grid;gap:8px}
+.sys .lab{font:600 12px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.chip{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;font-weight:500}
+.chip small{font-size:12px;color:var(--muted);font-weight:400;text-align:right}
+.hub{background:var(--dark);color:var(--on-dark);border-radius:18px;padding:22px;display:grid;gap:12px}
+.hub .t{font:700 26px/1 var(--f-display);text-transform:uppercase}
+.hub .t span{color:var(--gold)}
+.hub ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14px;color:var(--on-dark-muted)}
+.hub li{display:flex;gap:10px}
+.hub li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px;flex:none}
+.arrow{display:grid;place-items:center;color:var(--muted)}
+.arrow svg{width:36px;height:16px}
+.person{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.person .av{width:38px;height:38px;border-radius:50%;background:var(--gold-soft);color:var(--gold-ink);display:grid;place-items:center;font:700 15px/1 var(--f-display)}
+.person b{display:block;font-size:14px;font-weight:600}
+.person span{font-size:12.5px;color:var(--muted);line-height:1.35;display:block}
+@media (max-width:960px){.sys{grid-template-columns:1fr;gap:12px}.arrow svg{transform:rotate(90deg)}}
+
+/* App frame */
 .app{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
-.app-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
-.app-bar .dots{display:flex;gap:6px}
-.app-bar .dots i{width:10px;height:10px;border-radius:50%;background:var(--line)}
-.app-bar .ttl{font:600 13px/1 var(--f-body);color:var(--muted)}
-.app-bar .ttl b{color:var(--ink)}
+.app-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--sunk);flex-wrap:wrap}
+.app-bar .ttl{font:500 13px/1 var(--f-body);color:var(--muted)}
+.app-bar .ttl b{color:var(--ink);font-weight:600}
 .seg{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
 .seg button{font:600 13px/1 var(--f-body);color:var(--muted);background:transparent;border:1px solid transparent;border-radius:999px;padding:8px 12px;cursor:pointer}
 .seg button:hover{color:var(--ink)}
-.seg button[aria-pressed="true"]{background:var(--surface);border-color:var(--line);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.06)}
-.mock-note{font-size:12.5px;color:var(--muted);margin-top:12px}
+.seg button[aria-pressed="true"]{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.sample{font:600 11px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);background:var(--gold-soft);padding:6px 9px;border-radius:999px}
+.mock-note{font-size:13px;color:var(--muted);margin-top:12px}
 
 /* Kanban */
-.kb-meta{display:flex;gap:18px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);font-size:13.5px}
-.kb-meta b{font-family:var(--f-display);font-size:17px}
+.split{display:grid;grid-template-columns:minmax(0,1fr) 330px}
+@media (max-width:980px){.split{grid-template-columns:1fr}}
 .kb-scroll{overflow-x:auto}
-.kb{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(212px,1fr);gap:12px;padding:16px;min-width:min-content}
-.col{background:var(--panel);border-radius:14px;padding:10px;display:grid;gap:8px;align-content:start;min-height:220px}
-.col-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:4px 4px 6px}
-.col-h b{font:600 13px/1.25 var(--f-body)}
-.col-h span{font:500 12px/1 var(--f-mono);color:var(--muted)}
-.card{all:unset;box-sizing:border-box;display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:11px 12px;cursor:pointer;transition:transform .12s,border-color .12s}
-.card:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--orange) 60%,var(--line))}
-.card:focus-visible{outline:2.5px solid var(--orange);outline-offset:2px}
-.card[aria-current="true"]{border-color:var(--orange);box-shadow:0 0 0 2px color-mix(in srgb,var(--orange) 35%,transparent)}
-.card .n{font:600 14px/1.3 var(--f-body)}
+.kb{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(196px,1fr);gap:10px;padding:14px;min-width:min-content}
+.col{background:var(--sunk);border-radius:12px;padding:8px;display:grid;gap:8px;align-content:start;min-height:200px}
+.col-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:6px 6px 4px}
+.col-h b{font:600 12.5px/1.25 var(--f-body)}
+.col-h span{font:500 11.5px/1 var(--f-mono);color:var(--muted)}
+.card{all:unset;box-sizing:border-box;display:grid;gap:5px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 11px;cursor:pointer;transition:border-color .12s}
+.card:hover{border-color:color-mix(in srgb,var(--gold) 70%,var(--line))}
+.card:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px}
+.card[aria-current="true"]{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold-soft)}
+.card .n{font:600 13.5px/1.3 var(--f-body)}
 .card .d{font-size:12.5px;color:var(--muted);line-height:1.4}
-.card .row{display:flex;justify-content:space-between;align-items:center;gap:6px}
-.card .v{font:600 13px/1 var(--f-body);font-variant-numeric:tabular-nums}
-
-/* Contact drawer */
-.split{display:grid;grid-template-columns:minmax(0,1fr) 340px;align-items:stretch}
+.card .row{display:flex;justify-content:space-between;gap:6px;font-size:12px;color:var(--muted)}
+.card .v{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
 .drawer{border-left:1px solid var(--line);padding:18px;display:grid;gap:14px;align-content:start}
-@media (max-width:980px){.split{grid-template-columns:1fr}.drawer{border-left:0;border-top:1px solid var(--line)}}
-.drawer h3{font-size:18px}
+@media (max-width:980px){.drawer{border-left:0;border-top:1px solid var(--line)}}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px;margin:0}
 .kv dt{color:var(--muted)}
 .kv dd{margin:0;font-weight:500}
-.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.tl li{position:relative;padding:0 0 12px 22px;font-size:13.5px;line-height:1.45}
-.tl li::before{content:"";position:absolute;left:5px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--c,var(--muted))}
-.tl li::after{content:"";position:absolute;left:8.5px;top:17px;bottom:0;width:1px;background:var(--line)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;font:600 11.5px/1 var(--f-body);padding:5px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);white-space:nowrap}
+.pill.g{background:var(--good-soft);color:var(--good)}
+.pill.i{background:var(--info-soft);color:var(--info)}
+.pill.r{background:var(--risk-soft);color:var(--risk)}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding:0 0 12px 20px;font-size:13.5px;line-height:1.45}
+.tl li::before{content:"";position:absolute;left:4px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--c,var(--muted))}
+.tl li::after{content:"";position:absolute;left:7.5px;top:17px;bottom:0;width:1px;background:var(--line)}
 .tl li:last-child::after{display:none}
 .tl time{display:block;font:500 11.5px/1.4 var(--f-mono);color:var(--muted)}
-.tags{display:flex;gap:6px;flex-wrap:wrap}
 
-/* Workflows */
-.wf{display:grid;grid-template-columns:300px minmax(0,1fr)}
+/* Automations */
+.wf{display:grid;grid-template-columns:290px minmax(0,1fr)}
 @media (max-width:860px){.wf{grid-template-columns:1fr}}
-.wf-list{border-right:1px solid var(--line);padding:10px;display:grid;gap:4px;align-content:start;max-height:760px;overflow:auto}
-@media (max-width:860px){.wf-list{border-right:0;border-bottom:1px solid var(--line);grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);max-height:none;overflow-x:auto}}
-.wf-item{all:unset;box-sizing:border-box;display:grid;gap:3px;padding:11px 12px;border-radius:11px;cursor:pointer}
-.wf-item:hover{background:var(--panel)}
-.wf-item:focus-visible{outline:2.5px solid var(--orange)}
-.wf-item[aria-pressed="true"]{background:var(--panel);box-shadow:inset 3px 0 0 var(--orange)}
+.wf-list{border-right:1px solid var(--line);padding:12px;display:grid;gap:14px;align-content:start}
+.grp{display:grid;gap:2px}
+.grp>span{font:600 11.5px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:6px 10px}
+@media (max-width:860px){.wf-list{border-right:0;border-bottom:1px solid var(--line);grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.wf-list{grid-template-columns:1fr}}
+.wf-item{all:unset;box-sizing:border-box;display:grid;gap:2px;padding:10px;border-radius:10px;cursor:pointer}
+.wf-item:hover{background:var(--sunk)}
+.wf-item:focus-visible{outline:2.5px solid var(--gold)}
+.wf-item[aria-pressed="true"]{background:var(--sunk);box-shadow:inset 3px 0 0 var(--gold)}
 .wf-item b{font:600 14px/1.3 var(--f-body)}
-.wf-item span{font-size:12.5px;color:var(--muted);line-height:1.35}
-.wf-main{padding:22px clamp(16px,3vw,32px);display:grid;gap:18px;align-content:start;min-width:0}
-.wf-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start}
-.wf-top p{color:var(--muted);font-size:14.5px;max-width:58ch;margin-top:6px}
-.wf-stats{display:flex;gap:8px;flex-wrap:wrap}
-.canvas{background:var(--panel);border-radius:14px;padding:22px 14px;display:grid;justify-items:center;gap:0;
-  background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:16px 16px}
-.node{width:min(440px,100%);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 14px;display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:center;box-shadow:0 1px 2px rgba(0,0,0,.05)}
-.node .ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font:700 11px/1 var(--f-mono);background:var(--bgc);color:var(--fgc)}
-.node .lb{font:600 14px/1.3 var(--f-body)}
+.wf-item small{font-size:12.5px;color:var(--muted);line-height:1.35}
+.wf-main{padding:22px clamp(16px,3vw,30px);display:grid;gap:18px;align-content:start;min-width:0}
+.wf-main header p{color:var(--muted);font-size:15px;max-width:62ch;margin-top:6px}
+.result-line{display:flex;gap:10px;flex-wrap:wrap}
+.canvas{background:var(--sunk);border-radius:14px;padding:22px 14px;display:grid;justify-items:center;background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:16px 16px}
+.node{width:min(460px,100%);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:center}
+.node .ic{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;font:600 10.5px/1 var(--f-mono);background:var(--bgc);color:var(--fgc)}
+.node .lb{font:600 13.5px/1.3 var(--f-body)}
 .node .dt{font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:2px}
-.node.trigger{border-color:color-mix(in srgb,var(--gold) 70%,var(--line));border-width:1.5px}
-.link{width:1.5px;height:20px;background:color-mix(in srgb,var(--muted) 45%,transparent)}
-.branch{width:min(640px,100%);display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.branch>div{display:grid;justify-items:center;align-content:start;gap:0}
-.branch .bl{font:600 11px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 10px;background:var(--surface);border:1px dashed var(--line);border-radius:999px}
+.node.trig{border:1.5px solid color-mix(in srgb,var(--gold) 75%,var(--line))}
+.link{width:1.5px;height:18px;background:color-mix(in srgb,var(--muted) 45%,transparent)}
+.branch{width:min(660px,100%);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.branch>div{display:grid;justify-items:center;align-content:start}
+.branch .bl{font:600 11px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 10px;background:var(--surface);border:1px dashed var(--line);border-radius:999px}
 .branch .node{width:100%}
 @media (max-width:560px){.branch{grid-template-columns:1fr}}
-.t-trig{--bgc:var(--warn-bg);--fgc:var(--gold-ink)}
-.t-sms{--bgc:var(--good-bg);--fgc:var(--good)}
-.t-mail{--bgc:var(--info-bg);--fgc:var(--info)}
-.t-wait{--bgc:var(--panel);--fgc:var(--muted)}
-.t-if{--bgc:color-mix(in srgb,var(--orange) 18%,transparent);--fgc:var(--orange-ink)}
-.t-task{--bgc:color-mix(in srgb,var(--ink) 9%,transparent);--fgc:var(--ink)}
-.t-crm{--bgc:color-mix(in srgb,var(--ink) 9%,transparent);--fgc:var(--ink)}
-.t-end{--bgc:var(--panel);--fgc:var(--muted)}
-.why{border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14px;display:grid;gap:4px;background:var(--surface)}
-.why b{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-ink)}
+.t-trig{--bgc:var(--gold-soft);--fgc:var(--gold-ink)}
+.t-sms{--bgc:var(--good-soft);--fgc:var(--good)}
+.t-mail{--bgc:var(--info-soft);--fgc:var(--info)}
+.t-wait,.t-end{--bgc:var(--sunk);--fgc:var(--muted)}
+.t-if{--bgc:var(--risk-soft);--fgc:var(--risk)}
+.t-task,.t-crm{--bgc:color-mix(in srgb,var(--ink) 8%,transparent);--fgc:var(--ink)}
+.more{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-items:baseline}
+.more>span{font:600 12px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.more ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.more li{font-size:14px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:var(--surface)}
+@media (max-width:620px){.more{grid-template-columns:1fr}}
 
-/* Phone */
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center}
-@media (max-width:860px){.two{grid-template-columns:1fr}}
-.phone{width:min(340px,100%);margin:0 auto;border-radius:38px;background:var(--navy);padding:12px;box-shadow:var(--shadow)}
-.screen{border-radius:28px;background:var(--surface);height:560px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
-.ph-h{padding:16px 16px 12px;border-bottom:1px solid var(--line);text-align:center;font-size:12.5px;color:var(--muted)}
-.ph-h b{display:block;color:var(--ink);font-size:14.5px}
+/* Text-back + reporting */
+.two{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,48px);align-items:start}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+.phone{width:min(330px,100%);margin:0 auto;border-radius:36px;background:var(--dark);padding:11px;box-shadow:var(--shadow)}
+.screen{border-radius:26px;background:var(--surface);height:520px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
+.ph-h{padding:14px;border-bottom:1px solid var(--line);text-align:center;font-size:12px;color:var(--muted)}
+.ph-h b{display:block;color:var(--ink);font-size:14px}
 .msgs{padding:14px;display:flex;flex-direction:column;gap:8px;overflow:auto}
-.bub{max-width:82%;padding:9px 12px;border-radius:16px;font-size:13.5px;line-height:1.4;animation:pop .3s ease both}
-.bub.me{align-self:flex-end;background:var(--orange);color:#0A2238;border-bottom-right-radius:5px}
-.bub.them{align-self:flex-start;background:var(--panel);border-bottom-left-radius:5px}
-.sys{align-self:center;font:500 11px/1.3 var(--f-mono);color:var(--muted);text-align:center;padding:4px 0}
+.bub{max-width:84%;padding:9px 12px;border-radius:16px;font-size:13.5px;line-height:1.4}
+.bub.me{align-self:flex-end;background:var(--dark);color:var(--on-dark);border-bottom-right-radius:5px}
+.bub.them{align-self:flex-start;background:var(--sunk);border-bottom-left-radius:5px}
+.bub.new{animation:pop .3s ease both}
+.sysmsg{align-self:center;font:500 11px/1.35 var(--f-mono);color:var(--muted);text-align:center;padding:2px 6px}
 @keyframes pop{from{opacity:0;transform:translateY(6px)}}
-.ph-f{padding:10px 14px 16px;border-top:1px solid var(--line);display:flex;gap:8px}
-.ph-f .btn{flex:1;justify-content:center;padding:11px 14px;font-size:14px}
-.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
-.checks li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15px}
-.checks li::before{content:"";width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--good-bg);box-shadow:inset 0 0 0 5px var(--good-bg),inset 0 0 0 9px var(--good)}
-
-/* Dashboard */
-.dash{padding:18px;display:grid;gap:16px}
-.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.kpi{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:4px}
-.kpi span{font-size:12.5px;color:var(--muted)}
-.kpi b{font:700 24px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
-.kpi i{font-style:normal;font-size:12px;font-weight:600;color:var(--good)}
-.charts{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px}
-@media (max-width:860px){.charts{grid-template-columns:1fr}}
-.panel{border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
-.panel h4{margin:0 0 12px;font:600 14px/1.3 var(--f-body)}
+.ph-f{padding:10px 14px 14px;border-top:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 14px/1 var(--f-body);text-decoration:none;border-radius:999px;padding:12px 18px;border:1.5px solid var(--line);cursor:pointer;background:var(--surface);color:var(--ink);width:100%}
+.btn:hover{border-color:var(--gold)}
+.dash{padding:16px;display:grid;gap:14px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:620px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:4px}
+.kpi span{font-size:12px;color:var(--muted)}
+.kpi b{font:700 28px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.panel{border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.panel h4{margin:0 0 12px;font:600 13.5px/1.3 var(--f-body)}
 .bars{display:grid;gap:9px}
-.bar{display:grid;grid-template-columns:140px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:13px}
-.bar .tr{height:12px;border-radius:6px;background:var(--panel);overflow:hidden}
-.bar .fl{height:100%;border-radius:6px;background:var(--orange)}
-.bar .vl{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
-@media (max-width:480px){.bar{grid-template-columns:104px minmax(0,1fr) 30px}}
-.funnel{display:grid;gap:7px}
-.fn{display:grid;grid-template-columns:minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:13px}
-.fn .fb{height:28px;border-radius:7px;background:color-mix(in srgb,var(--gold) 55%,transparent);display:flex;align-items:center;padding-left:10px;font-weight:600;color:var(--ink);white-space:nowrap;min-width:max-content}
-.fn .pc{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{display:grid;grid-template-columns:150px minmax(0,1fr) 28px;gap:10px;align-items:center;font-size:13px}
+.bar .tr{height:10px;border-radius:5px;background:var(--sunk);overflow:hidden}
+.bar .fl{display:block;height:100%;border-radius:5px;background:var(--gold)}
+.bar .vl{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+@media (max-width:480px){.bar{grid-template-columns:112px minmax(0,1fr) 26px}}
 
 /* ROI */
-.roi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.roi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
 @media (max-width:860px){.roi{grid-template-columns:1fr}}
 .inputs{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:18px}
 .fld{display:grid;gap:8px}
-.fld label{display:flex;justify-content:space-between;gap:12px;font:500 14px/1.3 var(--f-body)}
-.fld label output{font:600 14px/1.3 var(--f-mono);color:var(--orange-ink)}
-.fld input[type=range]{width:100%;accent-color:var(--orange)}
+.fld label{display:flex;justify-content:space-between;gap:12px;font:500 14px/1.35 var(--f-body)}
+.fld output{font:600 14px/1.35 var(--f-mono);color:var(--gold-ink);white-space:nowrap}
+.fld input{width:100%;accent-color:var(--gold)}
 .fld small{color:var(--muted);font-size:12.5px}
-.result{background:var(--navy);color:var(--on-navy);border-radius:18px;padding:26px;display:grid;gap:18px;align-content:start}
-.result .big{font:700 clamp(40px,6vw,58px)/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--gold)}
-.result .rows{display:grid;gap:10px;font-size:14.5px}
-.result .rows div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(244,236,225,.14);padding-bottom:10px}
-.result .rows b{font-variant-numeric:tabular-nums}
-.result small{opacity:.7;font-size:12.5px;line-height:1.5}
+.out{background:var(--dark);color:var(--on-dark);border-radius:18px;padding:26px;display:grid;gap:18px;align-content:start}
+.out .big{font:700 clamp(48px,7vw,68px)/1 var(--f-display);color:var(--gold);font-variant-numeric:tabular-nums}
+.out .rows{display:grid;gap:10px;font-size:14.5px}
+.out .rows div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(246,243,236,.13);padding-bottom:10px}
+.out .rows b{font-variant-numeric:tabular-nums}
+.out small{color:var(--on-dark-muted);font-size:12.5px;line-height:1.5}
 
 /* Plan */
-.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:ph}
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 @media (max-width:900px){.phases{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.phases{grid-template-columns:1fr}}
-.phase{border-top:3px solid var(--ink);padding-top:16px;display:grid;gap:10px;align-content:start}
-.phase .wk{font:500 12.5px/1 var(--f-mono);color:var(--muted)}
-.phase h3::before{counter-increment:ph;content:counter(ph) ". ";color:var(--orange-ink)}
-.phase ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14.5px;color:var(--muted)}
-.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:36px}
-@media (max-width:860px){.notes{grid-template-columns:1fr}}
-.note{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:6px;font-size:14.5px}
-.note b{font:600 15px/1.3 var(--f-body)}
-.note p{color:var(--muted)}
+.phase{border-top:3px solid var(--ink);padding-top:14px;display:grid;gap:8px;align-content:start}
+.phase .wk{font:500 12px/1 var(--f-mono);color:var(--muted)}
+.phase h3 em{font-style:normal;color:var(--gold-ink);margin-right:6px}
+.phase ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14.5px;color:var(--muted)}
+.cares{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:860px){.cares{grid-template-columns:1fr}}
+.care{border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:6px;background:var(--surface)}
+.care b{font-size:15px}
+.care p{color:var(--muted);font-size:14.5px}
 
 /* Close */
-.close{background:var(--navy);color:var(--on-navy);border-radius:26px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center}
+.close{background:var(--dark);color:var(--on-dark);border-radius:24px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
 @media (max-width:860px){.close{grid-template-columns:1fr}}
-.close h2{color:var(--on-navy)}
-.close p{opacity:.8;margin-top:14px}
-.close ol{margin:0;padding-left:20px;display:grid;gap:10px}
+.close p{color:var(--on-dark-muted);margin-top:14px}
+.close ol{margin:0;padding-left:22px;display:grid;gap:12px}
 .close ol li::marker{color:var(--gold);font-weight:700}
-footer{padding-block:36px 48px;color:var(--muted);font-size:13px}
+footer{padding-block:32px 44px;color:var(--muted);font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
@@ -282,9 +278,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><span>Crossmind</span><span class="x">×</span><span class="b">Biagio’s</span></a>
+    <a class="brand" href="#top">Crossmind<span>×</span>Biagio’s</a>
     <nav class="nav" aria-label="Sections">
-      <a href="#today">Today</a><a href="#pipelines">Pipelines</a><a href="#workflows">Automations</a><a href="#textback">Text-back</a><a href="#reporting">Reporting</a><a href="#roi">Impact</a><a href="#plan">Plan</a>
+      <a href="#findings">Findings</a><a href="#system">The system</a><a href="#pipelines">Pipelines</a><a href="#automations">Automations</a><a href="#plan">Plan</a>
     </nav>
   </div>
 </header>
@@ -293,34 +289,92 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="hero">
     <div class="wrap grid">
       <div>
-        <div class="for"><span class="dot">B</span>Prepared for Mike Ziola, Biagio’s Kitchen + Catering</div>
-        <h1>Every inquiry answered. <em>Every guest invited back.</em></h1>
-        <p class="lede">A GoHighLevel setup built around how Biagio’s actually makes money: catering quotes, holiday parties, the pizza trailer, Dinner + Show nights and the dining room. One CRM, clear pipelines, and automations that follow up so your team doesn’t have to remember to.</p>
-        <div class="cta-row">
-          <a class="btn pri" href="#pipelines">See the catering pipeline</a>
-          <a class="btn sec" href="#workflows">Browse the automations</a>
-        </div>
+        <p class="prep">Prepared for <b>Mike Ziola</b>, Owner, Biagio’s Kitchen + Catering · November 2026</p>
+        <h1>One place for every guest, <span class="g">and a follow-up that never forgets.</span></h1>
+        <p class="lede">A GoHighLevel setup for Biagio’s: a CRM that brings every catering, event and pizza trailer inquiry into one place, and automations that reply right away, follow up, and bring clients back next year.</p>
       </div>
-      <aside class="ticker" aria-label="Example of automations running on a Tuesday">
-        <div class="hd"><span>A Tuesday in your CRM</span><span class="live"><i></i>Example</span></div>
-        <ul class="feed">
-          <li><time>9:02</time><div><b>Catering quote form</b> from a Kanata office, 60 guests<span class="k">Text + email sent in 40 seconds. Opportunity created. Coordinator tasked.</span></div></li>
-          <li><time>11:47</time><div><b>Missed call</b> during lunch rush<span class="k">Auto-text: “Sorry we missed you! Is this about catering, a reservation or a pickup?”</span></div></li>
-          <li><time>14:15</time><div><b>Quote viewed, no reply</b> after 2 days<span class="k">Friendly nudge with the deposit link.</span></div></li>
-          <li><time>17:30</time><div><b>Last year’s holiday party</b> client<span class="k">“Want to hold the same date for this December?”</span></div></li>
-        </ul>
+      <aside class="glance" aria-label="The proposal at a glance">
+        <h3>At a glance</h3>
+        <dl>
+          <div><dt>1</dt><dd>CRM and shared inbox for every inquiry, call and message</dd></div>
+          <div><dt>3</dt><dd>Pipelines: Catering, Events &amp; holiday parties, Pizza trailer</dd></div>
+          <div><dt>6</dt><dd>Core automations, running within the first month</dd></div>
+          <div><dt>~6</dt><dd>Weeks from kickoff to fully live, with team training</dd></div>
+        </dl>
       </aside>
     </div>
   </div>
 
-  <!-- TODAY -->
-  <section class="ch" id="today">
+  <!-- FINDINGS -->
+  <section class="ch" id="findings">
     <div class="wrap">
       <div class="ch-head">
-        <div><p class="eyebrow">Where leads come from today</p><h2>Eight doors into Biagio’s, and no single place to see who walked through them</h2></div>
-        <p class="lede">Your site already brings in a lot: the catering quote form, phone calls to the restaurant, OpenTable bookings, gift cards, the newsletter and event tickets. GoHighLevel pulls them into one contact record so every person gets the right next step.</p>
+        <div><p class="eyebrow">What we found on biagios.ca</p><h2>Plenty of demand. No single place to manage it.</h2></div>
+        <p class="lede">Biagio’s has more ways to book than most restaurants: catering, holiday parties, the pizza trailer, Dinner + Show with Yuk Yuk’s, Dueling Pianos, Wine + Dine Thursdays and Meals to Go. Each one brings in leads differently. Here is where we see the biggest gains.</p>
       </div>
-      <div class="sources" id="sources"></div>
+      <div class="finds">
+        <div class="find">
+          <span class="k">Inquiries</span>
+          <h3>Six separate contact forms, each sending its own email</h3>
+          <p>Catering, holiday parties, the pizza trailer, Dinner + Show, Dueling Pianos and the contact page each have their own form. Whoever opens the email first owns the follow-up, and nothing shows what is still waiting for a reply.</p>
+          <div class="fix">Every form feeds one CRM, opens a deal in the right pipeline, and goes to the right person on your team.</div>
+        </div>
+        <div class="find">
+          <span class="k">Phone</span>
+          <h3>Calls come in when the dining room is closed</h3>
+          <p>The dining room opens at 5 PM most days and is closed Mondays. Corporate planners usually call between 9 and 5, and an unanswered call often means they try the next caterer.</p>
+          <div class="fix">Missed calls get a text back within seconds, and the reply goes to Sarah or Ben the same day.</div>
+        </div>
+        <div class="find">
+          <span class="k">Guest data</span>
+          <h3>Your guests are spread across five systems</h3>
+          <p>OpenTable holds reservations, Silverpay handles takeout and gift cards, Uber Eats handles delivery, the newsletter has its own list, and catering clients live in inboxes. Nobody sees the whole guest.</p>
+          <div class="fix">One contact record per guest, showing their orders, events, notes and every message.</div>
+        </div>
+        <div class="find">
+          <span class="k">Repeat business</span>
+          <h3>Happy clients aren’t asked to come back</h3>
+          <p>Your reviews mention clients who book “two years in a row.” Today that depends on them remembering. Holiday parties, team lunches and summer trailer events are bookings that come back every year.</p>
+          <div class="fix">Each client gets an automatic reminder about ten months later to book the same date again.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM -->
+  <section class="ch" id="system">
+    <div class="wrap">
+      <div class="ch-head">
+        <div><p class="eyebrow">The system</p><h2>Everything comes in one door and goes to the right person</h2></div>
+        <p class="lede">GoHighLevel sits behind the website you already have. Nothing changes for your guests except faster replies. For your team, every inquiry shows up assigned, with the details already filled in.</p>
+      </div>
+      <div class="sys">
+        <div class="col">
+          <span class="lab">Comes in from</span>
+          <div class="chip">Website forms <small>Catering, events, trailer</small></div>
+          <div class="chip">Phone calls <small>Missed and after hours</small></div>
+          <div class="chip">Facebook, Instagram, Google <small>Messages and reviews</small></div>
+          <div class="chip">OpenTable, Silverpay <small>Where they can connect</small></div>
+        </div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 36 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 8h32M27 2l6 6-6 6"/></svg></div>
+        <div class="hub">
+          <div class="t">Go<span>High</span>Level</div>
+          <ul>
+            <li>One contact record per guest</li>
+            <li>Pipelines that show every open booking and its value</li>
+            <li>Automations that reply and follow up</li>
+            <li>A shared inbox for texts, email and social messages</li>
+          </ul>
+        </div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 36 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 8h32M27 2l6 6-6 6"/></svg></div>
+        <div class="col">
+          <span class="lab">Goes to</span>
+          <div class="person"><span class="av">S</span><div><b>Sarah</b><span>Catering, events and holiday parties</span></div></div>
+          <div class="person"><span class="av">B</span><div><b>Ben</b><span>Pizza trailer bookings</span></div></div>
+          <div class="person"><span class="av">M</span><div><b>Mike</b><span>Weekly numbers, large deals, unhappy guests</span></div></div>
+        </div>
+      </div>
+      <p class="mock-note">Routing follows the roles listed on your Talk to Us page, and we’d confirm it with you.</p>
     </div>
   </section>
 
@@ -328,97 +382,76 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section class="ch" id="pipelines">
     <div class="wrap">
       <div class="ch-head">
-        <div><p class="eyebrow">CRM pipelines</p><h2>See every catering job, from first inquiry to the rebook</h2></div>
-        <p class="lede">Each line of business gets its own pipeline, with stages that match how your team already works. Click any card to see the contact record and what the system did automatically.</p>
+        <div><p class="eyebrow">CRM pipelines</p><h2>See every booking and what it’s worth</h2></div>
+        <p class="lede">Each line of business gets a board with stages that match how your team already works. Click a card to open the guest’s record and see what the system did on its own.</p>
       </div>
       <div class="app">
         <div class="app-bar">
-          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span class="ttl">Opportunities · <b id="pl-name">Catering</b></span>
+          <span class="ttl">Opportunities · <b id="pl-name">Catering</b> · <span id="pl-total" class="num"></span> open</span>
           <div class="seg" role="group" aria-label="Choose a pipeline" id="pl-seg"></div>
         </div>
         <div class="split">
-          <div style="min-width:0">
-            <div class="kb-meta" id="kb-meta"></div>
-            <div class="kb-scroll"><div class="kb" id="kb"></div></div>
-          </div>
+          <div class="kb-scroll"><div class="kb" id="kb"></div></div>
           <aside class="drawer" id="drawer" aria-live="polite"></aside>
         </div>
       </div>
-      <p class="mock-note">Mockup with sample contacts. Stage names and fields get set up with your team in the first week.</p>
+      <p class="mock-note">Mockup with made-up guests. We set the stages and fields with your team in week one.</p>
     </div>
   </section>
 
-  <!-- WORKFLOWS -->
-  <section class="ch" id="workflows">
+  <!-- AUTOMATIONS -->
+  <section class="ch" id="automations">
     <div class="wrap">
       <div class="ch-head">
-        <div><p class="eyebrow">Automations &amp; workflows</p><h2>The follow-up your team means to do, done every time</h2></div>
-        <p class="lede">These are the workflows we’d build first, drawn the way they look in the GoHighLevel workflow builder. Each one stops the moment a real person replies, so nobody gets a robot message after they’ve already talked to you.</p>
+        <div><p class="eyebrow">Automations</p><h2>Six workflows that do the follow-up for you</h2></div>
+        <p class="lede">These are the six we’d build first, shown as they look in the GoHighLevel builder. Each one stops as soon as a guest replies or books, so no one gets an automated message after they’ve already talked to your team.</p>
       </div>
       <div class="app">
-        <div class="app-bar">
-          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span class="ttl">Automation · <b>Workflows</b></span>
-        </div>
+        <div class="app-bar"><span class="ttl">Automation · <b>Workflows</b></span></div>
         <div class="wf">
-          <div class="wf-list" id="wf-list" role="group" aria-label="Choose a workflow"></div>
+          <div class="wf-list" id="wf-list"></div>
           <div class="wf-main" id="wf-main" aria-live="polite"></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- TEXTBACK -->
-  <section class="ch" id="textback">
-    <div class="wrap two">
-      <div>
-        <p class="eyebrow">Missed-call text-back</p>
-        <h2 style="margin-top:14px">The lunch rush won’t cost you a catering job</h2>
-        <p class="lede" style="margin-top:18px">When nobody can pick up the restaurant line, the caller gets a text within seconds. Replies land in one shared inbox alongside Facebook, Instagram, Google and email messages, so whoever is free can answer.</p>
-        <ul class="checks">
-          <li>Works on your existing number through call forwarding, or a new local 613 number.</li>
-          <li>Different replies during service hours and after close.</li>
-          <li>Catering replies drop straight into the catering pipeline.</li>
-          <li>Everyone on the team can answer from the GoHighLevel phone app.</li>
+      <div class="more">
+        <span>Phase 2 campaigns</span>
+        <ul>
+          <li>Dinner + Show and Dueling Pianos reminders</li>
+          <li>New Year’s Eve and holiday promotions</li>
+          <li>Gift card offers, like the 25OFF Black Friday deal</li>
+          <li>Birthday offers</li>
+          <li>Wine + Dine Thursday regulars</li>
+          <li>Win-back for clients who haven’t ordered in a while</li>
         </ul>
       </div>
-      <div>
-        <div class="phone">
-          <div class="screen">
-            <div class="ph-h"><b>Biagio’s Kitchen + Catering</b>Conversation with a caller</div>
-            <div class="msgs" id="msgs"></div>
-            <div class="ph-f"><button class="btn pri" id="play" type="button">Replay the conversation</button></div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- REPORTING -->
-  <section class="ch" id="reporting">
+  <!-- TEXT-BACK + REPORTING -->
+  <section class="ch" id="see">
     <div class="wrap">
       <div class="ch-head">
-        <div><p class="eyebrow">Reporting</p><h2>Know which channels fill the calendar</h2></div>
-        <p class="lede">A dashboard you can check from your phone: how many inquiries came in, how fast the team answered, how many turned into booked events, and what is sitting in the pipeline for next month.</p>
+        <div><p class="eyebrow">What you and your guests see</p><h2>A quick reply for them, a clear picture for you</h2></div>
+        <p class="lede">On the left is what a caller gets when nobody can pick up. On the right is the dashboard you’d check on your phone each week.</p>
       </div>
-      <div class="app">
-        <div class="app-bar">
-          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span class="ttl">Reporting · <b>Last 30 days</b></span>
-          <span class="pill w" style="margin-left:auto">Sample numbers</span>
-        </div>
-        <div class="dash">
-          <div class="kpis">
-            <div class="kpi"><span>New inquiries</span><b>58</b><i>+14 vs. prior 30 days</i></div>
-            <div class="kpi"><span>Median first reply</span><b>1 min</b><i>Automated text + email</i></div>
-            <div class="kpi"><span>Quote → booked</span><b>38%</b><i>+9 pts</i></div>
-            <div class="kpi"><span>Open pipeline</span><b>$46.2k</b><i>Next 60 days</i></div>
-            <div class="kpi"><span>New Google reviews</span><b>21</b><i>Avg 4.8 stars</i></div>
+      <div class="two">
+        <div class="phone">
+          <div class="screen">
+            <div class="ph-h"><b>Biagio’s Kitchen + Catering</b>Text conversation</div>
+            <div class="msgs" id="msgs"></div>
+            <div class="ph-f"><button class="btn" id="play" type="button">Replay conversation</button></div>
           </div>
-          <div class="charts">
-            <div class="panel"><h4>Inquiries by source</h4><div class="bars" id="bars"></div></div>
-            <div class="panel"><h4>Catering funnel</h4><div class="funnel" id="funnel"></div></div>
+        </div>
+        <div class="app">
+          <div class="app-bar"><span class="ttl">Reporting · <b>Last 30 days</b></span><span class="sample" style="margin-left:auto">Sample numbers</span></div>
+          <div class="dash">
+            <div class="kpis">
+              <div class="kpi"><span>New inquiries</span><b>58</b></div>
+              <div class="kpi"><span>Median first reply</span><b>1 min</b></div>
+              <div class="kpi"><span>Quotes booked</span><b>38%</b></div>
+              <div class="kpi"><span>Open pipeline</span><b>$46k</b></div>
+            </div>
+            <div class="panel"><h4>Where inquiries came from</h4><div class="bars" id="bars"></div></div>
           </div>
         </div>
       </div>
@@ -429,27 +462,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section class="ch" id="roi">
     <div class="wrap">
       <div class="ch-head">
-        <div><p class="eyebrow">What it could be worth</p><h2>Plug in your own numbers</h2></div>
-        <p class="lede">Faster replies and steady follow-up usually lift how many quotes turn into bookings, and annual reminders bring corporate clients back. Move the sliders to match Biagio’s; nothing here is a promise, it’s a way to size the opportunity together.</p>
+        <div><p class="eyebrow">Sizing it up</p><h2>What faster follow-up could be worth</h2></div>
+        <p class="lede">Move the sliders to match Biagio’s numbers. This is a rough guide to talk through together, not a promise. It only counts catering and events, not the dining room.</p>
       </div>
       <div class="roi">
-        <form class="inputs" id="roi-form" onsubmit="return false">
-          <div class="fld"><label for="r-inq">Catering &amp; event inquiries per month <output id="o-inq"></output></label><input type="range" id="r-inq" min="5" max="150" step="1" value="40"></div>
-          <div class="fld"><label for="r-avg">Average catering or event order <output id="o-avg"></output></label><input type="range" id="r-avg" min="300" max="6000" step="50" value="1400"></div>
-          <div class="fld"><label for="r-now">Inquiries booked today <output id="o-now"></output></label><input type="range" id="r-now" min="5" max="70" step="1" value="25"></div>
-          <div class="fld"><label for="r-new">Inquiries booked with follow-up in place <output id="o-new"></output></label><input type="range" id="r-new" min="5" max="80" step="1" value="32"><small>A seven-point lift is a cautious starting assumption.</small></div>
-          <div class="fld"><label for="r-past">Past catering clients in your records <output id="o-past"></output></label><input type="range" id="r-past" min="0" max="1500" step="10" value="300"></div>
-          <div class="fld"><label for="r-rb">Past clients who rebook from reminders, per year <output id="o-rb"></output></label><input type="range" id="r-rb" min="0" max="30" step="1" value="8"></div>
+        <form class="inputs" id="roi-form">
+          <div class="fld"><label for="r-inq">Catering and event inquiries per month <output id="o-inq"></output></label><input type="range" id="r-inq" min="5" max="150" value="40"></div>
+          <div class="fld"><label for="r-avg">Average order <output id="o-avg"></output></label><input type="range" id="r-avg" min="300" max="6000" step="50" value="1400"></div>
+          <div class="fld"><label for="r-lift">More inquiries booked with follow-up <output id="o-lift"></output></label><input type="range" id="r-lift" min="0" max="20" value="5"><small>Five points is a cautious starting point.</small></div>
+          <div class="fld"><label for="r-past">Past clients asked to rebook each year <output id="o-past"></output></label><input type="range" id="r-past" min="0" max="1000" step="10" value="250"></div>
+          <div class="fld"><label for="r-rb">Of those, how many rebook <output id="o-rb"></output></label><input type="range" id="r-rb" min="0" max="30" value="8"></div>
         </form>
-        <div class="result" aria-live="polite">
-          <div><p style="opacity:.75;font-size:14px">Estimated added revenue per year</p><div class="big" id="r-total">$0</div></div>
+        <div class="out" aria-live="polite">
+          <div><p style="color:var(--on-dark-muted);font-size:14px">Estimated added revenue per year</p><div class="big" id="r-total">$0</div></div>
           <div class="rows">
-            <div><span>Extra bookings from faster follow-up</span><b id="r-b1"></b></div>
-            <div><span>Revenue from those bookings</span><b id="r-v1"></b></div>
+            <div><span>Extra bookings from follow-up</span><b id="r-b1"></b></div>
             <div><span>Rebooked past clients</span><b id="r-b2"></b></div>
-            <div><span>Revenue from rebooks</span><b id="r-v2"></b></div>
           </div>
-          <small>Estimate only: inquiries × 12 × (new rate − current rate) × average order, plus past clients × rebook rate × average order. It leaves out dining room, gift card and event ticket campaigns.</small>
+          <small>How we calculate it: inquiries × 12 × extra booking rate × average order, plus past clients × rebook rate × average order.</small>
         </div>
       </div>
     </div>
@@ -459,19 +489,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section class="ch" id="plan">
     <div class="wrap">
       <div class="ch-head">
-        <div><p class="eyebrow">How we’d roll it out</p><h2>Live in about six weeks, one piece at a time</h2></div>
-        <p class="lede">We set up, test and hand over in stages so your team is never learning everything at once. Timing depends on how quickly we can get your contact lists and phone setup sorted.</p>
+        <div><p class="eyebrow">How we’d roll it out</p><h2>Live in about six weeks</h2></div>
+        <p class="lede">We build and test each part before switching it on, so your team learns one thing at a time. The core automations run within the first month, well ahead of spring trailer bookings and next year’s holiday party season.</p>
       </div>
       <div class="phases">
-        <div class="phase"><span class="wk">Weeks 1–2</span><h3>Foundation</h3><ul><li>Sub-account, users and permissions</li><li>Import past catering and event contacts</li><li>Pipelines and custom fields (guests, event date, dietary needs)</li><li>Catering, holiday party and pizza trailer forms</li><li>Business texting registration</li></ul></div>
-        <div class="phase"><span class="wk">Weeks 3–4</span><h3>Core automations</h3><ul><li>Speed-to-lead follow-up</li><li>Missed-call text-back</li><li>Quote follow-up and deposit links</li><li>Pre-event confirmations</li><li>Review requests</li></ul></div>
-        <div class="phase"><span class="wk">Weeks 5–6</span><h3>Campaigns</h3><ul><li>Holiday party rebooking</li><li>Show and event reminders</li><li>Birthday and guest club</li><li>Gift card and seasonal pushes</li><li>Win-back for quiet clients</li></ul></div>
-        <div class="phase"><span class="wk">Ongoing</span><h3>Train &amp; tune</h3><ul><li>Team training and short how-to videos</li><li>Reporting dashboard</li><li>Monthly check-in on what’s working</li><li>New workflows as the business changes</li></ul></div>
+        <div class="phase"><span class="wk">Weeks 1–2</span><h3><em>1</em>Foundation</h3><ul><li>Account, users and permissions</li><li>Import past catering and event clients</li><li>Pipelines and booking fields</li><li>Connect your website forms</li><li>Register your number for business texting</li></ul></div>
+        <div class="phase"><span class="wk">Weeks 3–4</span><h3><em>2</em>Core automations</h3><ul><li>Instant reply to inquiries</li><li>Missed-call text-back</li><li>Quote follow-up and deposits</li><li>Pre-event confirmations</li><li>Review requests</li></ul></div>
+        <div class="phase"><span class="wk">Weeks 5–6</span><h3><em>3</em>Rebooking and campaigns</h3><ul><li>Annual rebooking</li><li>Show and event reminders</li><li>Seasonal and gift card campaigns</li></ul></div>
+        <div class="phase"><span class="wk">After launch</span><h3><em>4</em>Training and support</h3><ul><li>Hands-on training for Sarah, Ben and the team</li><li>Short how-to videos</li><li>A monthly review of the numbers</li></ul></div>
       </div>
-      <div class="notes">
-        <div class="note"><b>CASL-ready from day one</b><p>Canada’s anti-spam law sets how long you can message people: about two years after a purchase and six months after an inquiry, unless they opt in. We tag consent and timing on every contact so campaigns only go to people you’re allowed to reach.</p></div>
-        <div class="note"><b>Works with what you use</b><p>We’ll look at connecting OpenTable, your gift card platform and your newsletter through integrations or Zapier during discovery, and tell you plainly what connects cleanly and what needs a workaround.</p></div>
-        <div class="note"><b>The right tone for every event</b><p>Funeral and celebration-of-life catering is excluded from review asks and promotions automatically. Those clients get a simple, respectful thank-you instead.</p></div>
+      <div class="cares">
+        <div class="care"><b>Follows Canada’s anti-spam law (CASL)</b><p>We record consent on every contact. Marketing only goes to people you’re allowed to email: generally up to two years after a purchase or six months after an inquiry, unless they’ve opted in.</p></div>
+        <div class="care"><b>Works with the tools you already use</b><p>We’ll check what OpenTable, Silverpay and your newsletter can share, then tell you plainly what connects directly and what needs a workaround.</p></div>
+        <div class="care"><b>Respects the occasion</b><p>Funeral and celebration-of-life clients never get review requests or promotions. They get a simple, respectful thank-you instead.</p></div>
       </div>
     </div>
   </section>
@@ -480,13 +510,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <div class="close">
         <div>
-          <h2>Let’s map Biagio’s first 30 days</h2>
-          <p>Bring your questions to the call. We’ll pick the two or three workflows that would make the biggest difference this holiday season and start there.</p>
+          <h2>Next steps</h2>
+          <p>On our call, we’ll go through this together and pick the first workflows to launch.</p>
         </div>
         <ol>
-          <li>Walk through this plan and adjust it to how your team works.</li>
-          <li>Agree on the first pipelines and automations to launch.</li>
-          <li>Get access to your GoHighLevel account and contact lists, and start building.</li>
+          <li>Go through this plan and adjust it to how your team works.</li>
+          <li>Agree on scope, timeline and the first three automations.</li>
+          <li>Get access to GoHighLevel and your client lists, and start the build.</li>
         </ol>
       </div>
     </div>
@@ -494,264 +524,205 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </main>
 
 <footer>
-  <div class="wrap"><span>Prepared by Crossmind Solutions · crossmind.ca</span><span>Mockups use sample data. GoHighLevel is a trademark of its owner.</span></div>
+  <div class="wrap"><span>Prepared by Crossmind Solutions · crossmind.ca</span><span>All guests, numbers and messages shown are examples.</span></div>
 </footer>
 
 <script>
 (function(){
-const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const money=n=>'$'+Math.round(n).toLocaleString('en-CA');
-
-/* ---------- Sources ---------- */
-const SOURCES=[
- ['Catering quote form','Goes to an inbox. Follow-up depends on who sees it first.','Instant text + email, opportunity created, coordinator tasked.','o','Biggest win'],
- ['Restaurant phone line','Missed calls at lunch and dinner are lost leads.','Missed-call text-back within seconds, logged to the contact.','o','Quick win'],
- ['Holiday party inquiries','Seasonal rush every fall, tracked by hand.','Own pipeline, deposit reminders, rebook next year.','g',''],
- ['Pizza trailer bookings','Date checks and quotes over email.','Date-hold form, quote follow-up, pre-event checklist.','g',''],
- ['OpenTable reservations','Guest details stay inside OpenTable.','Sync guests where possible for birthdays and win-back.','i','Check in discovery'],
- ['Dinner + Show, Dueling Pianos','Ticket buyers rarely hear about the next show.','Tag by show, remind before, invite to the next date.','g',''],
- ['Gift cards','Buyers aren’t part of your list.','Holiday promos, “come redeem” nudges.','i','Check in discovery'],
- ['Newsletter, Facebook, Instagram','Messages split across apps.','One shared inbox, every message tied to a contact.','g','']
-];
-$('#sources').innerHTML=SOURCES.map(s=>`<div class="src"><div class="t">${esc(s[0])}</div><div class="now">${esc(s[1])}</div><div class="then">${esc(s[2])}</div>${s[4]?`<span class="pill ${s[3]} tag">${esc(s[4])}</span>`:''}</div>`).join('');
+var $=function(s){return document.querySelector(s)};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function money(n){return '$'+Math.round(n).toLocaleString('en-CA')}
 
 /* ---------- Pipelines ---------- */
-const PIPES={
- catering:{name:'Catering',stages:['New inquiry','Contacted','Menu + quote sent','Deposit paid','Booked','Completed','Rebook window'],
-  cards:[
-   ['Jordan P.','Corporate lunch · Kanata office',60,'Dec 4',1650,'Quote form',0,['Corporate']],
-   ['Priya S.','Film set · 3-day shoot',45,'Jan 13',4200,'Missed call',0,['Film set','Recurring']],
-   ['Marc L.','Hockey tournament · team meals',80,'Feb 21',2400,'Facebook',1,['Sports']],
-   ['Elena R.','Celebration of life',70,'Nov 28',1900,'Phone',1,['Funeral','No promos']],
-   ['Dana K.','Staff appreciation lunch',35,'Dec 11',980,'Google',2,['Corporate','Vegetarian x6']],
-   ['Tom H.','Community fundraiser',150,'Jan 30',3600,'Quote form',2,['Community']],
-   ['Aisha M.','Corporate holiday party',90,'Dec 18',5400,'Quote form',3,['Corporate','Gluten-free x4']],
-   ['Chris B.','Office pizza Friday',25,'Dec 6',520,'Repeat client',4,['Corporate','Repeat']],
-   ['Lindsay W.','Year-end team dinner',40,'Dec 12',1700,'Referral',4,['Corporate']],
-   ['Sam O.','Engineering offsite',55,'Nov 14',2100,'Quote form',5,['Corporate','Review sent']],
-   ['Rachel T.','Holiday party 2025',110,'Dec 2025',6200,'Past client',6,['Corporate','Annual']]
-  ]},
- events:{name:'Holiday parties & private events',stages:['New inquiry','Call / tour','Proposal sent','Deposit paid','Confirmed','Completed'],
-  cards:[
-   ['Nadia F.','Office party · dining room',32,'Dec 15',2240,'Holiday form',0,['Holiday']],
-   ['Kevin D.','NYE Dinner + Show · group',12,'Dec 31',1500,'Website',0,['NYE']],
-   ['Grace Y.','Retirement dinner',24,'Jan 18',1680,'Phone',1,['Private']],
-   ['Omar Z.','Dueling Pianos · birthday group',14,'Jan 23',980,'Instagram',2,['Birthday','Show']],
-   ['Brooke A.','Team holiday lunch',40,'Dec 10',2800,'Holiday form',3,['Holiday']],
-   ['Ian C.','Wine + Dine table',8,'Dec 5',640,'Newsletter',4,['Wine + Dine']],
-   ['Monica V.','Holiday party · buyout',60,'Dec 19',5100,'Past client',4,['Holiday','VIP']],
-   ['Paul E.','Anniversary dinner',16,'Nov 8',1120,'OpenTable',5,['Private','Review sent']]
-  ]},
- trailer:{name:'Pizza trailer',stages:['Date request','Date held','Quote sent','Deposit paid','Booked','Completed'],
-  cards:[
-   ['Shefali K.','Backyard garden party',40,'Jun 14',1400,'Trailer form',0,['Private','Allergies']],
-   ['Ryan G.','Company summer BBQ',120,'Jul 9',3300,'Trailer form',1,['Corporate']],
-   ['Lea N.','Wedding late-night slice',150,'Aug 22',2900,'Instagram',2,['Wedding']],
-   ['Mitch J.','School fun fair',300,'Jun 6',3800,'Referral',3,['Community']],
-   ['Carla S.','Neighbourhood block party',80,'Jul 19',1900,'Past client',4,['Community','Repeat']],
-   ['Ben W.','Fall harvest event',90,'Oct 4',2200,'Trailer form',5,['Community','Review sent']]
-  ]}
+/* card: name, event, guests, date, value, source, stage index, tags */
+var PIPES={
+ catering:{name:'Catering',owner:'Sarah',stages:['New inquiry','Contacted','Quote sent','Deposit paid','Confirmed','Completed'],cards:[
+  {n:'Jordan P.',e:'Corporate lunch, Kanata office',g:60,d:'Dec 4',v:1650,s:'Catering form',st:0,t:['Corporate']},
+  {n:'Priya S.',e:'Film set, 3-day shoot',g:45,d:'Jan 13',v:4200,s:'Missed call',st:0,t:['Film set']},
+  {n:'Marc L.',e:'Hockey tournament meals',g:80,d:'Feb 21',v:2400,s:'Facebook',st:1,t:['Sports']},
+  {n:'Elena R.',e:'Celebration of life',g:70,d:'Nov 28',v:1900,s:'Phone',st:1,t:['Funeral','No marketing']},
+  {n:'Dana K.',e:'Staff appreciation lunch',g:35,d:'Dec 11',v:980,s:'Google',st:2,t:['Corporate','6 vegetarian']},
+  {n:'Aisha M.',e:'Corporate holiday lunch',g:90,d:'Dec 18',v:5400,s:'Catering form',st:3,t:['Corporate','4 gluten-free']},
+  {n:'Chris B.',e:'Office pizza Friday',g:25,d:'Dec 6',v:520,s:'Repeat client',st:4,t:['Corporate','Repeat']},
+  {n:'Sam O.',e:'Engineering offsite',g:55,d:'Nov 14',v:2100,s:'Catering form',st:5,t:['Corporate']}]},
+ events:{name:'Events & holiday parties',owner:'Sarah',stages:['New inquiry','Call or tour','Package sent','Deposit paid','Confirmed','Completed'],cards:[
+  {n:'Nadia F.',e:'Holiday party + comedy show',g:48,d:'Dec 12',v:4300,s:'Holiday party form',st:0,t:['Holiday','Yuk Yuk’s']},
+  {n:'Kevin D.',e:'NYE Dinner + Show, group',g:10,d:'Dec 31',v:1450,s:'Website',st:1,t:['NYE']},
+  {n:'Omar Z.',e:'Dueling Pianos birthday group',g:14,d:'Jan 23',v:980,s:'Instagram',st:2,t:['Birthday']},
+  {n:'Brooke A.',e:'Holiday buffet lunch',g:70,d:'Dec 10',v:3900,s:'Holiday party form',st:3,t:['Holiday']},
+  {n:'Monica V.',e:'Holiday party, full menu',g:110,d:'Dec 19',v:7700,s:'Past client',st:4,t:['Holiday','Repeat']},
+  {n:'Paul E.',e:'Retirement dinner',g:24,d:'Nov 8',v:1680,s:'OpenTable',st:5,t:['Private']}]},
+ trailer:{name:'Pizza trailer',owner:'Ben',stages:['Date request','Date held','Quote sent','Deposit paid','Booked','Completed'],cards:[
+  {n:'Ryan G.',e:'Company summer BBQ',g:120,d:'Jul 9',v:3300,s:'Trailer form',st:0,t:['Corporate']},
+  {n:'Lea N.',e:'Wedding late-night pizza',g:150,d:'Aug 21',v:2900,s:'Instagram',st:1,t:['Wedding']},
+  {n:'Mitch J.',e:'School fun fair',g:300,d:'Jun 5',v:3800,s:'Referral',st:2,t:['Community']},
+  {n:'Carla S.',e:'Neighbourhood block party',g:80,d:'Jul 17',v:1900,s:'Past client',st:3,t:['Repeat']},
+  {n:'Hana T.',e:'Backyard garden party',g:40,d:'Jun 19',v:1400,s:'Trailer form',st:4,t:['Allergies noted']},
+  {n:'Ben W.',e:'Fall harvest festival',g:220,d:'Oct 4',v:3600,s:'Trailer form',st:5,t:['Community']}]}
 };
-let pipe='catering', sel=null;
-$('#pl-seg').innerHTML=Object.entries(PIPES).map(([k,p])=>`<button type="button" data-p="${k}" aria-pressed="${k===pipe}">${esc(p.name.replace(' & private events',''))}</button>`).join('');
-$('#pl-seg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;pipe=b.dataset.p;sel=null;renderPipe()});
+var pipe='catering', sel=1;
+
+$('#pl-seg').innerHTML=Object.keys(PIPES).map(function(k){return '<button type="button" data-p="'+k+'" aria-pressed="'+(k===pipe)+'">'+esc(PIPES[k].name)+'</button>'}).join('');
+$('#pl-seg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pipe=b.dataset.p;sel=0;renderPipe()});
 
 function timeline(c,P){
-  const st=c[6], src=c[5], t=[];
-  t.push(['Day 0 · 0:00',`Came in from <b>${esc(src)}</b>`,'var(--gold)']);
-  t.push(['Day 0 · 0:01','Auto-text and email sent with menu link','var(--good)']);
-  t.push(['Day 0 · 0:01','Opportunity created, coordinator tasked to call','var(--ink)']);
-  if(st>=1)t.push(['Day 0 · 0:24','Coordinator called, notes logged','var(--ink)']);
-  if(st>=2)t.push(['Day 1',`${P==='trailer'?'Quote':'Menu + quote'} sent, follow-up set for 2 days`,'var(--info)']);
-  if(st>=3)t.push(['Day 3','Deposit paid by text-to-pay link','var(--good)']);
-  if(st>=4)t.push(['7 days before','Headcount + dietary check sent','var(--info)']);
-  if(st>=5)t.push(['Day after',c[7].includes('Funeral')?'Simple thank-you sent (no review ask)':'Thank-you + Google review request','var(--good)']);
-  if(st>=6)t.push(['10 months later','“Hold the same date this year?” sent','var(--orange)']);
-  return t;
+  var out=[['Day 0, 9:02 AM','Came in through <b>'+esc(c.s)+'</b>','var(--gold)'],
+           ['Day 0, 9:03 AM','Text and email sent automatically, with the menu','var(--good)'],
+           ['Day 0, 9:03 AM','Assigned to '+P.owner+' with a task to call','var(--ink)']];
+  if(c.st>=1)out.push(['Day 0, 10:15 AM',P.owner+' called, notes saved to the record','var(--ink)']);
+  if(c.st>=2)out.push(['Day 1','Quote sent, follow-up scheduled','var(--info)']);
+  if(c.st>=3)out.push(['Day 3','Deposit paid through a text link','var(--good)']);
+  if(c.st>=4)out.push(['7 days before','Headcount and dietary needs confirmed','var(--info)']);
+  if(c.st>=5)out.push(['Day after',c.t.indexOf('Funeral')>-1?'A simple thank-you, no review request':'Thank-you and Google review request','var(--good)']);
+  if(c.st>=5)out.push(['In 10 months','Reminder to rebook is scheduled','var(--gold)']);
+  return out;
 }
+function pillClass(t){return t==='No marketing'?'r':(/vegetarian|gluten|Allergies/.test(t)?'i':(t==='Repeat'?'g':''))}
 function renderDrawer(){
-  const P=PIPES[pipe], c=sel!=null?P.cards[sel]:null, d=$('#drawer');
-  if(!c){d.innerHTML=`<p class="eyebrow">Contact record</p><h3>Pick a card</h3><p class="mut" style="font-size:14px">Every opportunity links to one contact: their past orders, messages, dietary notes and every automated touch, in one timeline.</p>`;return}
-  d.innerHTML=`<p class="eyebrow">${esc(P.stages[c[6]])}</p><h3>${esc(c[0])}</h3>
-  <dl class="kv"><dt>Event</dt><dd>${esc(c[1])}</dd><dt>Guests</dt><dd class="num">${c[2]}</dd><dt>Date</dt><dd>${esc(c[3])}</dd><dt>Value</dt><dd class="num">${money(c[4])}</dd><dt>Source</dt><dd>${esc(c[5])}</dd></dl>
-  <div class="tags">${c[7].map(x=>`<span class="pill ${x==='No promos'?'w':x.includes('x')||x==='Allergies'?'i':''}">${esc(x)}</span>`).join('')}</div>
-  <div><p class="eyebrow" style="margin-bottom:10px">Timeline</p><ul class="tl">${timeline(c,pipe).map(x=>`<li style="--c:${x[2]}"><time>${x[0]}</time>${x[1]}</li>`).join('')}</ul></div>`;
+  var P=PIPES[pipe], c=P.cards[sel], d=$('#drawer');
+  d.innerHTML='<p class="eyebrow">'+esc(P.stages[c.st])+'</p><h3 style="font-size:19px">'+esc(c.n)+'</h3>'+
+   '<dl class="kv"><dt>Event</dt><dd>'+esc(c.e)+'</dd><dt>Guests</dt><dd class="num">'+c.g+'</dd><dt>Date</dt><dd>'+esc(c.d)+'</dd><dt>Value</dt><dd class="num">'+money(c.v)+'</dd><dt>Owner</dt><dd>'+P.owner+'</dd></dl>'+
+   '<div class="tags">'+c.t.map(function(t){return '<span class="pill '+pillClass(t)+'">'+esc(t)+'</span>'}).join('')+'</div>'+
+   '<ul class="tl">'+timeline(c,P).map(function(x){return '<li style="--c:'+x[2]+'"><time>'+x[0]+'</time>'+x[1]+'</li>'}).join('')+'</ul>';
 }
 function renderPipe(){
-  const P=PIPES[pipe];
+  var P=PIPES[pipe];
   $('#pl-name').textContent=P.name;
-  document.querySelectorAll('#pl-seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p===pipe));
-  const open=P.cards.filter(c=>c[6]<P.stages.length-(pipe==='catering'?2:1));
-  $('#kb-meta').innerHTML=`<span><b class="num">${P.cards.length}</b> <span class="mut">opportunities</span></span><span><b class="num">${money(open.reduce((a,c)=>a+c[4],0))}</b> <span class="mut">open value</span></span><span><b class="num">${P.cards.reduce((a,c)=>a+c[2],0).toLocaleString('en-CA')}</b> <span class="mut">guests</span></span>`;
-  $('#kb').innerHTML=P.stages.map((s,i)=>{const cs=P.cards.map((c,j)=>[c,j]).filter(([c])=>c[6]===i);
-    return `<div class="col"><div class="col-h"><b>${esc(s)}</b><span>${money(cs.reduce((a,[c])=>a+c[4],0))}</span></div>${cs.map(([c,j])=>`<button type="button" class="card" data-i="${j}" aria-current="${sel===j}"><span class="n">${esc(c[0])}</span><span class="d">${esc(c[1])}</span><span class="row"><span class="pill">${c[2]} guests · ${esc(c[3])}</span><span class="v">${money(c[4])}</span></span></button>`).join('')}</div>`}).join('');
+  $('#pl-total').textContent=money(P.cards.filter(function(c){return c.st<P.stages.length-1}).reduce(function(a,c){return a+c.v},0));
+  [].forEach.call(document.querySelectorAll('#pl-seg button'),function(b){b.setAttribute('aria-pressed',b.dataset.p===pipe)});
+  $('#kb').innerHTML=P.stages.map(function(s,i){
+    var cs=[];P.cards.forEach(function(c,j){if(c.st===i)cs.push([c,j])});
+    return '<div class="col"><div class="col-h"><b>'+esc(s)+'</b><span>'+cs.length+'</span></div>'+cs.map(function(x){var c=x[0];
+      return '<button type="button" class="card" data-i="'+x[1]+'" aria-current="'+(sel===x[1])+'"><span class="n">'+esc(c.n)+'</span><span class="d">'+esc(c.e)+'</span><span class="row"><span>'+c.g+' guests · '+esc(c.d)+'</span><span class="v">'+money(c.v)+'</span></span></button>'}).join('')+'</div>';
+  }).join('');
   renderDrawer();
 }
-$('#kb').addEventListener('click',e=>{const b=e.target.closest('.card');if(!b)return;sel=+b.dataset.i;document.querySelectorAll('#kb .card').forEach(x=>x.setAttribute('aria-current',x===b));renderDrawer()});
-sel=6; renderPipe();
+$('#kb').addEventListener('click',function(e){var b=e.target.closest('.card');if(!b)return;sel=+b.dataset.i;
+  [].forEach.call(document.querySelectorAll('#kb .card'),function(x){x.setAttribute('aria-current',x===b)});renderDrawer()});
+renderPipe();
 
-/* ---------- Workflows ---------- */
-// node: [type, label, detail]; branch: ['branch', [labelA, nodes], [labelB, nodes]]
-const IC={trig:'⚡',sms:'SMS',mail:'@',wait:'⏱',if:'IF',task:'✓',crm:'CRM',end:'■'};
-const WF=[
- {n:'Catering inquiry speed-to-lead',s:'Answer every quote request in under a minute',
-  d:'People asking for catering quotes usually contact two or three caterers. The first one to reply with something useful tends to win the job.',
-  stats:['Stops when they reply','Runs 24/7'],
-  flow:[['trig','Trigger: Form submitted','Catering quote form (event type, date, guests, location)'],
-   ['crm','Create opportunity','Catering pipeline → New inquiry, value estimated from guest count'],
-   ['sms','Send SMS','“Hi {first name}, thanks for thinking of Biagio’s for your {event type}! We’ll call you shortly. Menus: biagios.ca/ottawa-catering-service”'],
-   ['mail','Send email','Catering menu PDF, dietary options, FAQ on delivery and setup'],
-   ['task','Assign task to catering coordinator','“Call {first name} within 30 min” with the form details attached'],
-   ['wait','Wait 30 minutes',''],
-   ['if','If stage is still New inquiry',''],
-   ['branch',['Yes',[['task','Alert the manager','Text to the manager: inquiry not yet contacted'],['wait','Wait 1 day',''],['sms','Send SMS','“Still planning your event on {date}? Happy to build a menu around your budget.”']]],
-             ['No',[['end','End workflow','Coordinator is on it']]]]
- ]},
- {n:'Missed-call text-back',s:'Turn missed calls into conversations',
-  d:'During service the phone often rings out. A quick text keeps the caller from moving on to the next search result.',
-  stats:['Seconds after the call','Hours-aware'],
-  flow:[['trig','Trigger: Call status is Missed','Restaurant line or tracking number'],
-   ['if','If within opening hours',''],
-   ['branch',['Open',[['sms','Send SMS','“Sorry we missed you! We’re in the middle of service. Is this about catering, a reservation, or a pickup order?”']]],
-             ['Closed',[['sms','Send SMS','“Thanks for calling Biagio’s! We’re closed right now. Book a table: OpenTable link. Catering: reply here and we’ll call in the morning.”']]]],
-   ['wait','Wait for reply','Up to 4 hours'],
-   ['if','If reply mentions catering or event',''],
-   ['branch',['Yes',[['crm','Create opportunity','Catering → New inquiry'],['task','Assign to coordinator','']]],['No',[['task','Notify front of house','Reply in shared inbox']]]]
- ]},
- {n:'Quote follow-up & deposit',s:'No quote goes quiet without a nudge',
-  d:'Most quotes that don’t close simply get forgotten on the client’s side. Two friendly touches and an easy deposit link fix most of that.',
-  stats:['Text-to-pay link','Stops on reply'],
-  flow:[['trig','Trigger: Pipeline stage changed','Moved to Menu + quote sent'],
-   ['wait','Wait 2 days',''],
-   ['if','If no reply and no deposit',''],
-   ['branch',['Yes',[['sms','Send SMS','“Hi {first name}, any questions on the menu for {date}? We can adjust portions or swap dishes.”'],['wait','Wait 3 days',''],['mail','Send email','“Hold your date with a deposit” with payment link'],['wait','Wait 4 days',''],['task','Task: personal call','Last check before releasing the date']]],
-             ['No',[['end','End workflow','']]]],
-   ['trig','When deposit is paid','Invoice paid → move to Deposit paid, send confirmation']
- ]},
- {n:'Pre-event confirmation',s:'Headcount and dietary needs, collected on time',
-  d:'Your reviews mention how well the team handles dietary restrictions and last-minute changes. This makes collecting those details automatic.',
-  stats:['7 days + 1 day before'],
-  flow:[['trig','Trigger: 7 days before event date','Opportunity in Booked'],
-   ['sms','Send SMS + form link','“Your Biagio’s catering is next {weekday}! Confirm headcount, allergies and delivery details here.”'],
-   ['wait','Wait 2 days',''],
-   ['if','If form not completed',''],
-   ['branch',['Yes',[['task','Task: call to confirm','']]],['No',[['crm','Update fields','Final headcount, dietary notes on the kitchen sheet']]]],
-   ['wait','Wait until 1 day before',''],
-   ['sms','Send SMS','“All set for tomorrow. Delivery window {time}. Text this number if anything changes.”']
- ]},
- {n:'Review request & referral',s:'More 5-star reviews on Google',
-  d:'Happy catering clients rarely leave reviews unless asked. A quick ask the day after turns them into new bookings. Unhappy replies come to you privately first.',
-  stats:['Skips funeral catering'],
-  flow:[['trig','Trigger: Stage changed to Completed',''],
-   ['if','If tag is Funeral',''],
-   ['branch',['Yes',[['mail','Send thank-you card email','Simple, respectful, no review or promo'],['end','End workflow','']]],
-             ['No',[['wait','Wait 1 day',''],['sms','Send SMS','“How did everything go? Tap a star: 1–5”']]]],
-   ['if','If rating is 4 or 5',''],
-   ['branch',['4–5',[['sms','Send Google review link','“Would you share that on Google? It really helps a local business.”'],['wait','Wait 7 days',''],['mail','Referral email','“Know someone planning an event?”']]],
-             ['1–3',[['task','Alert owner','Private feedback, call within 24 hours']]]]
- ]},
- {n:'Holiday party rebook',s:'Bring last year’s parties back automatically',
-  d:'Corporate clients who loved their holiday party are your easiest bookings. Reaching them before they start looking locks in December dates early.',
-  stats:['Runs every year'],
-  flow:[['trig','Trigger: 10 months after event','Tag: Holiday party'],
-   ['crm','Move to Rebook window','Catering or Events pipeline'],
-   ['mail','Send email','“Same date this December?” with last year’s menu and headcount filled in'],
-   ['wait','Wait 4 days',''],
-   ['if','If no reply',''],
-   ['branch',['Yes',[['sms','Send SMS','“Holiday dates are filling up. Want me to pencil you in for {last year’s date}?”'],['wait','Wait 5 days',''],['task','Task: owner calls top clients','Clients over $3,000 last year']]],['No',[['end','Hand to coordinator','']]]]
- ]},
- {n:'Show & event reminders',s:'Dinner + Show, Dueling Pianos, New Year’s Eve',
-  d:'People who came to one show are the most likely to buy tickets for the next one. Tagging by show lets you invite the right crowd.',
-  stats:['Tag-based'],
-  flow:[['trig','Trigger: Tag added','Show: Dueling Pianos (from booking or ticket sale)'],
-   ['wait','Wait until 2 days before',''],
-   ['sms','Send SMS','“See you {day} for Dueling Pianos! Dinner starts at {time}. Reply if your group size changes.”'],
-   ['wait','Wait until the day after',''],
-   ['mail','Send email','Thanks, photos, and early access to the next dates'],
-   ['crm','Add to list','Show fans → invited first when new dates drop']
- ]},
- {n:'Birthday & guest club',s:'A reason to celebrate at Biagio’s',
-  d:'Collect birthdays through a simple guest club sign-up on your site, Wi-Fi or table QR codes, then send a treat in the guest’s birthday month.',
-  stats:['CASL consent captured'],
-  flow:[['trig','Trigger: Birthday reminder','14 days before birthday'],
-   ['sms','Send SMS','“Happy early birthday, {first name}! Dessert is on us at Biagio’s this month. Book a table: link”'],
-   ['wait','Wait 10 days',''],
-   ['if','If no reservation yet',''],
-   ['branch',['Yes',[['mail','Send email','Reminder plus Dinner + Show dates that month']]],['No',[['end','End workflow','']]]]
- ]},
- {n:'Gift card & seasonal campaigns',s:'Like the $100 → $125 Black Friday offer',
-  d:'Send seasonal offers to the right segment: past gift card buyers, corporate clients for staff gifts, and dining guests. Follow up with a reminder before the deadline.',
-  stats:['Segmented','Deadline-aware'],
-  flow:[['trig','Trigger: Campaign start date','Nov 24'],
-   ['if','Segment',''],
-   ['branch',['Corporate',[['mail','Email: staff gift idea','Bulk gift cards for client and staff gifts']]],['Diners',[['sms','SMS: Black Friday offer','“$100 gift card = $125 in value, until Nov 30”']]]],
-   ['wait','Wait until Nov 28',''],
-   ['sms','Last-chance reminder','Only to people who didn’t buy'],
-   ['wait','Wait until January',''],
-   ['mail','“Come redeem” nudge','To gift card recipients, with January show dates']
- ]},
- {n:'Win-back for quiet clients',s:'Re-engage clients who haven’t ordered in a while',
-  d:'A light-touch check-in for catering clients who haven’t ordered in six months, timed so you stay within consent rules.',
-  stats:['CASL-aware'],
-  flow:[['trig','Trigger: No order in 180 days','Tag: Catering client'],
-   ['if','If consent is still valid',''],
-   ['branch',['Yes',[['mail','Send email','New seasonal menu and “what’s new at the Mercato”'],['wait','Wait 7 days',''],['sms','Send SMS','“Planning any team lunches this season? Returning clients get a little something extra this month.”']]],['No',[['end','End workflow','Ask for opt-in at their next order']]]]
- ]}
+/* ---------- Automations ---------- */
+/* step: {k:type, l:label, d:detail}; branch step: {k:'branch', a:[label, steps], b:[label, steps]} */
+var IC={trig:'GO',sms:'SMS',mail:'@',wait:'⏱',if:'IF',task:'✓',crm:'CRM',end:'■'};
+function S(k,l,d){return {k:k,l:l,d:d||''}}
+function B(la,a,lb,b){return {k:'branch',a:[la,a],b:[lb,b]}}
+var GROUPS=[
+ ['Win the booking',[
+  {n:'Instant reply to inquiries',s:'Reply to every request in about a minute',
+   why:'Event planners usually ask two or three caterers at once, and the first useful reply often wins the job. This one works evenings and weekends too.',
+   res:['Replies in about a minute','Assigns the right person'],
+   flow:[S('trig','Form submitted','Catering, holiday party or pizza trailer form'),
+    S('crm','Create a deal','In the right pipeline, value estimated from the guest count'),
+    S('sms','Text the guest','“Hi {first name}, thanks for reaching out to Biagio’s about your {event type} on {date}! Sarah will call you shortly.”'),
+    S('mail','Email the menu','Catering menu with gluten-free and vegetarian options marked'),
+    S('task','Task for Sarah or Ben','Call within 2 business hours, with all the form details attached'),
+    S('wait','Wait 2 business hours'),
+    S('if','Still not contacted?'),
+    B('Yes',[S('task','Alert Mike','A heads-up that a lead is waiting')],'No',[S('end','Done','The team has it')])]},
+  {n:'Missed-call text-back',s:'Turns missed calls into conversations',
+   why:'Many calls about catering come in during the day, before the dining room opens. A quick text keeps that caller from moving on to the next search result.',
+   res:['Text within seconds','Different reply after hours'],
+   flow:[S('trig','Missed call','Restaurant line, 613-828-0770'),
+    S('if','During opening hours?'),
+    B('Open',[S('sms','Text the caller','“Sorry we missed you, we’re in the middle of service! Is this about catering, a reservation or a takeout order?”')],
+      'Closed',[S('sms','Text the caller','“Thanks for calling Biagio’s! We’re closed right now. Reply here about catering or events and we’ll get back to you in the morning.”')]),
+    S('wait','Wait for a reply'),
+    S('if','Asking about catering or an event?'),
+    B('Yes',[S('crm','Create a deal','Catering or events pipeline'),S('task','Assign to Sarah or Ben')],'No',[S('task','Answer from the shared inbox')])]},
+  {n:'Quote follow-up and deposit',s:'Follows up on quotes that haven’t been answered',
+   why:'Most quotes that don’t book were simply forgotten by a busy client. Two friendly reminders and a link to pay the deposit make it easy to say yes.',
+   res:['Pay the deposit by text','Stops when they reply'],
+   flow:[S('trig','Deal moved to Quote sent'),
+    S('wait','Wait 2 days'),
+    S('if','No reply and no deposit?'),
+    B('Yes',[S('sms','Friendly check-in','“Any questions about the menu for {date}? We’re happy to adjust it.”'),S('wait','Wait 3 days'),S('mail','Deposit link','“Hold your date with a deposit”'),S('wait','Wait 4 days'),S('task','Personal call','A last call before the date is released')],
+      'No',[S('end','Done')])]}
+ ]],
+ ['Run a great event',[
+  {n:'Pre-event confirmation',s:'Collects headcount and dietary needs on time',
+   why:'Reviews regularly praise how your team handles dietary needs and last-minute changes. This collects those details on time, so the kitchen gets them without anyone chasing.',
+   res:['Sent 7 days and 1 day before'],
+   flow:[S('trig','7 days before the event','Booked or confirmed deals'),
+    S('sms','Send a confirmation form','Final headcount, allergies, delivery details'),
+    S('wait','Wait 2 days'),
+    S('if','Form completed?'),
+    B('No',[S('task','Call to confirm')],'Yes',[S('crm','Update the booking','Notes added to the kitchen sheet')]),
+    S('wait','Wait until the day before'),
+    S('sms','Day-before reminder','“All set for tomorrow! We arrive between {time window}.”')]},
+  {n:'Review request',s:'Gets more 5-star reviews on Google',
+   why:'Happy clients rarely leave a review unless you ask. This asks the day after the event, and sends any unhappy feedback to Mike privately before it reaches Google.',
+   res:['Skips funeral catering','Unhappy feedback goes to Mike'],
+   flow:[S('trig','Deal moved to Completed'),
+    S('if','Funeral or celebration of life?'),
+    B('Yes',[S('mail','A simple, respectful thank-you'),S('end','Done')],'No',[S('wait','Wait 1 day'),S('sms','“How did everything go?”','Rate from 1 to 5')]),
+    S('if','Rated 4 or 5?'),
+    B('4–5',[S('sms','Send the Google review link')],'1–3',[S('task','Alert Mike','Call within 24 hours')])]}
+ ]],
+ ['Bring them back',[
+  {n:'Annual rebooking',s:'Asks last year’s clients to book again',
+   why:'Holiday parties, team lunches and summer trailer events often happen every year. Reaching those clients first secures the date before they start looking around.',
+   res:['Runs on its own every year'],
+   flow:[S('trig','10 months after the event','Holiday party, corporate catering or pizza trailer'),
+    S('mail','“Same date this year?”','Includes last year’s menu and headcount'),
+    S('wait','Wait 4 days'),
+    S('if','No reply?'),
+    B('Yes',[S('sms','Text reminder','“Our December dates are filling up. Want us to hold {last year’s date} for you?”'),S('task','Mike calls top clients','Clients who spent over $3,000 last year')],'No',[S('end','Goes to Sarah')])]}
+ ]]
 ];
-let wf=0;
-$('#wf-list').innerHTML=WF.map((w,i)=>`<button type="button" class="wf-item" data-i="${i}" aria-pressed="${i===wf}"><b>${esc(w.n)}</b><span>${esc(w.s)}</span></button>`).join('');
-$('#wf-list').addEventListener('click',e=>{const b=e.target.closest('.wf-item');if(!b)return;wf=+b.dataset.i;renderWF()});
-function nodeHTML(n){return `<div class="node t-${n[0]}${n[0]==='trig'?' trigger':''}"><span class="ic" aria-hidden="true">${IC[n[0]]}</span><div><div class="lb">${esc(n[1])}</div>${n[2]?`<div class="dt">${esc(n[2])}</div>`:''}</div></div>`}
-function flowHTML(list){return list.map((n,i)=>(i?'<div class="link"></div>':'')+(n[0]==='branch'
-  ?`<div class="branch">${[n[1],n[2]].map(b=>`<div><span class="bl">${esc(b[0])}</span>${b[1].map(x=>'<div class="link"></div>'+nodeHTML(x)).join('')}</div>`).join('')}</div>`
-  :nodeHTML(n))).join('')}
+var WF=[];GROUPS.forEach(function(g){g[1].forEach(function(w){WF.push(w)})});
+var wf=0, idx=0;
+$('#wf-list').innerHTML=GROUPS.map(function(g){return '<div class="grp" role="group" aria-label="'+esc(g[0])+'"><span>'+esc(g[0])+'</span>'+g[1].map(function(w){var i=idx++;return '<button type="button" class="wf-item" data-i="'+i+'" aria-pressed="'+(i===0)+'"><b>'+esc(w.n)+'</b><small>'+esc(w.s)+'</small></button>'}).join('')+'</div>'}).join('');
+$('#wf-list').addEventListener('click',function(e){var b=e.target.closest('.wf-item');if(!b)return;wf=+b.dataset.i;renderWF()});
+function nodeHTML(n){return '<div class="node t-'+n.k+(n.k==='trig'?' trig':'')+'"><span class="ic" aria-hidden="true">'+IC[n.k]+'</span><div><div class="lb">'+esc(n.l)+'</div>'+(n.d?'<div class="dt">'+esc(n.d)+'</div>':'')+'</div></div>'}
+function flowHTML(list){return list.map(function(n,i){var pre=i?'<div class="link"></div>':'';
+  if(n.k!=='branch')return pre+nodeHTML(n);
+  return pre+'<div class="branch">'+[n.a,n.b].map(function(br){return '<div><span class="bl">'+esc(br[0])+'</span>'+br[1].map(function(x){return '<div class="link"></div>'+nodeHTML(x)}).join('')+'</div>'}).join('')+'</div>';
+}).join('')}
 function renderWF(){
-  const w=WF[wf];
-  document.querySelectorAll('.wf-item').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===wf));
-  $('#wf-main').innerHTML=`<div class="wf-top"><div><h3>${esc(w.n)}</h3><p>${esc(w.d)}</p></div><div class="wf-stats"><span class="pill g">Published</span>${w.stats.map(s=>`<span class="pill">${esc(s)}</span>`).join('')}</div></div><div class="canvas">${flowHTML(w.flow)}</div>`;
+  var w=WF[wf];
+  [].forEach.call(document.querySelectorAll('.wf-item'),function(b){b.setAttribute('aria-pressed',+b.dataset.i===wf)});
+  $('#wf-main').innerHTML='<header><h3 style="font-size:20px">'+esc(w.n)+'</h3><p>'+esc(w.why)+'</p></header><div class="result-line">'+w.res.map(function(r){return '<span class="pill g">'+esc(r)+'</span>'}).join('')+'</div><div class="canvas">'+flowHTML(w.flow)+'</div>';
 }
 renderWF();
 
-/* ---------- Phone ---------- */
-const CONVO=[
- ['sys','Missed call · 12:14 PM'],
- ['me','Hi! Sorry we missed your call, it’s lunch rush at Biagio’s. Is this about catering, a reservation, or a pickup order?'],
- ['them','Catering! Looking at a lunch for about 50 people at our office on the 12th.'],
- ['me','Wonderful, thanks! Here’s our catering menu: biagios.ca/ottawa-catering-service. Our catering coordinator will call you within 30 minutes. Any dietary needs we should know about?'],
+/* ---------- Text-back ---------- */
+var CONVO=[
+ ['sys','Missed call · Tue 10:42 AM (dining room closed)'],
+ ['me','Thanks for calling Biagio’s! We’re not open yet. Is this about catering, an event, or a reservation?'],
+ ['them','Catering. Lunch for about 50 at our office on the 12th.'],
+ ['me','Perfect! Here’s our catering menu: biagios.ca/ottawa-catering-service. Sarah, our events coordinator, will call you before noon. Any dietary needs?'],
  ['them','A few vegetarians and one gluten-free.'],
- ['sys','Opportunity created · Catering → New inquiry · Tagged GF, Vegetarian'],
- ['me','Noted! GF pasta and pizza crust are available. Talk soon.'],
- ['sys','Coordinator called at 12:31 PM']
+ ['sys','Deal created in Catering · Assigned to Sarah'],
+ ['me','Noted! We have gluten-free pasta and pizza crust. Talk soon.'],
+ ['sys','Sarah called at 11:20 AM']
 ];
-let timers=[];
-function play(){timers.forEach(clearTimeout);timers=[];const m=$('#msgs');m.innerHTML='';
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  CONVO.forEach((c,i)=>{const add=()=>{const el=document.createElement('div');el.className=c[0]==='sys'?'sys':'bub '+c[0];el.textContent=c[1];m.appendChild(el);m.scrollTop=m.scrollHeight};
-    if(reduce||i===0)add();else timers.push(setTimeout(add,i*1100))});}
-function showAll(){const m=$('#msgs');m.innerHTML='';CONVO.forEach(c=>{const el=document.createElement('div');el.className=c[0]==='sys'?'sys':'bub '+c[0];el.style.animation='none';el.textContent=c[1];m.appendChild(el)})}
+var timers=[];
+function bubble(c,anim){var el=document.createElement('div');el.className=c[0]==='sys'?'sysmsg':'bub '+c[0]+(anim?' new':'');el.textContent=c[1];return el}
+function showAll(){var m=$('#msgs');m.innerHTML='';CONVO.forEach(function(c){m.appendChild(bubble(c,false))})}
+function play(){timers.forEach(clearTimeout);timers=[];var m=$('#msgs');m.innerHTML='';
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){showAll();return}
+  CONVO.forEach(function(c,i){timers.push(setTimeout(function(){m.appendChild(bubble(c,true));m.scrollTop=m.scrollHeight},i*1000))})}
 $('#play').addEventListener('click',play);
 showAll();
 
-/* ---------- Dashboard ---------- */
-const SRC=[['Catering quote form',19],['Missed-call text-back',11],['Google Business',9],['Repeat / rebook',8],['Facebook + Instagram',6],['Referral',5]];
-const mx=Math.max(...SRC.map(s=>s[1]));
-$('#bars').innerHTML=SRC.map(s=>`<div class="bar"><span>${esc(s[0])}</span><span class="tr"><span class="fl" style="display:block;width:${s[1]/mx*100}%"></span></span><span class="vl">${s[1]}</span></div>`).join('');
-const FN=[['Inquiries',58],['Contacted same day',55],['Quote sent',41],['Deposit paid',22],['Completed',18]];
-$('#funnel').innerHTML=FN.map(f=>`<div class="fn"><div style="min-width:0"><div class="fb" style="width:${Math.max(f[1]/FN[0][1]*100,38)}%">${esc(f[0])} · ${f[1]}</div></div><span class="pc">${Math.round(f[1]/FN[0][1]*100)}%</span></div>`).join('');
+/* ---------- Reporting ---------- */
+var SRC=[['Website forms',21],['Missed-call text-back',12],['Google Business Profile',9],['Repeat and rebook',8],['Facebook and Instagram',5],['Referrals',3]];
+var mx=Math.max.apply(null,SRC.map(function(s){return s[1]}));
+$('#bars').innerHTML=SRC.map(function(s){return '<div class="bar"><span>'+esc(s[0])+'</span><span class="tr"><span class="fl" style="width:'+(s[1]/mx*100)+'%"></span></span><span class="vl">'+s[1]+'</span></div>'}).join('');
 
 /* ---------- ROI ---------- */
-const ids=['inq','avg','now','new','past','rb'];
 function calc(){
-  const v={};ids.forEach(k=>v[k]=+$('#r-'+k).value);
-  if(v.new<v.now){v.new=v.now;$('#r-new').value=v.now}
-  $('#o-inq').textContent=v.inq;$('#o-avg').textContent=money(v.avg);$('#o-now').textContent=v.now+'%';$('#o-new').textContent=v.new+'%';$('#o-past').textContent=v.past.toLocaleString('en-CA');$('#o-rb').textContent=v.rb+'%';
-  const b1=v.inq*12*(v.new-v.now)/100, b2=v.past*v.rb/100;
-  $('#r-b1').textContent=Math.round(b1)+' / yr';$('#r-v1').textContent=money(b1*v.avg);
-  $('#r-b2').textContent=Math.round(b2)+' / yr';$('#r-v2').textContent=money(b2*v.avg);
-  $('#r-total').textContent=money(b1*v.avg+b2*v.avg);
+  var v={};['inq','avg','lift','past','rb'].forEach(function(k){v[k]=+$('#r-'+k).value});
+  $('#o-inq').textContent=v.inq;$('#o-avg').textContent=money(v.avg);$('#o-lift').textContent='+'+v.lift+' pts';
+  $('#o-past').textContent=v.past.toLocaleString('en-CA');$('#o-rb').textContent=v.rb+'%';
+  var b1=v.inq*12*v.lift/100, b2=v.past*v.rb/100;
+  $('#r-b1').textContent=Math.round(b1)+' bookings · '+money(b1*v.avg);
+  $('#r-b2').textContent=Math.round(b2)+' bookings · '+money(b2*v.avg);
+  $('#r-total').textContent=money((b1+b2)*v.avg);
 }
-$('#roi-form').addEventListener('input',calc);calc();
+$('#roi-form').addEventListener('input',calc);
+$('#roi-form').addEventListener('submit',function(e){e.preventDefault()});
+calc();
 })();
 </script>
 </body>
