@@ -28,7 +28,7 @@ S = requests.Session()
 S.headers["User-Agent"] = UA
 TODAY = dt.date.today()
 
-MAX_GEOCODE = int(os.environ.get("MAX_GEOCODE", "900"))      # ~1 per second (Nominatim policy)
+MAX_GEOCODE = int(os.environ.get("MAX_GEOCODE", "3000"))      # ~1 per second (Nominatim policy)
 MAX_BUILDERS = int(os.environ.get("MAX_BUILDERS", "120"))     # websites looked up per run
 KEEP_MONTHS = 30
 
