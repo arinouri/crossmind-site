@@ -86,6 +86,7 @@ def find_items():
             iid = f.get("id") or props.get("id")
             if not iid or not re.search(r"permit", title, re.I) or not re.search(r"pool|demolition", title, re.I):
                 continue
+            log("  candidate:", title, iid)
             m = re.search(r"(20\d\d)", title)
             if m and int(m.group(1)) in want and int(m.group(1)) not in found:
                 found[int(m.group(1))] = (int(m.group(1)), iid, title)
@@ -411,6 +412,14 @@ def main():
         if not blob:
             continue
         rows = parse_xlsx(blob)
+        if not rows:
+            wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+            for ws in wb.worksheets[:3]:
+                log("  sheet", ws.title)
+                for i, r in enumerate(ws.iter_rows(values_only=True)):
+                    log("   ", [c for c in r][:20])
+                    if i > 6:
+                        break
         kept = [p for p in rows if relevant(p)]
         log(f"{title}: {len(rows)} rows, {len(kept)} kept")
         for p in kept:
