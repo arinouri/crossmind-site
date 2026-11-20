@@ -1,7 +1,21 @@
 {
+ "10972827": {
+  "checked": "2026-11-20",
+  "homes": 89,
+  "last": "2019-05",
+  "name": "10972827  Canada Inc.",
+  "sites": 0
+ },
  "12278430": {
   "checked": "2026-11-20",
   "name": "12278430 Canada Inc.",
+  "sites": 1
+ },
+ "1382732-ontario-c-o-code": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-08",
+  "name": "1382732 Ontario Inc. C/O Code Construction",
   "sites": 1
  },
  "1503893-ontario-o-a-park-view": {
@@ -9,13 +23,125 @@
   "name": "1503893 Ontario Inc. O/A Park View Homes",
   "sites": 1
  },
+ "1504107-ontario": {
+  "checked": "2026-11-20",
+  "homes": 2,
+  "last": "2018-08",
+  "name": "1504107 Ontario Inc.",
+  "sites": 1
+ },
+ "175-main-st-c-o-eq": {
+  "checked": "2026-11-20",
+  "homes": 36,
+  "last": "2018-06",
+  "name": "175 Main St. Inc. C/O Eq Homes",
+  "sites": 0
+ },
+ "2358771-ontario": {
+  "checked": "2026-11-20",
+  "homes": 300,
+  "last": "2019-03",
+  "name": "2358771 Ontario Inc.",
+  "sites": 0
+ },
+ "2427450-ontario": {
+  "homes": 7,
+  "last": "2020-09",
+  "name": "2427450 Ontario Inc.",
+  "sites": 0
+ },
+ "2505853-ontario": {
+  "checked": "2026-11-20",
+  "homes": 24,
+  "last": "2019-07",
+  "name": "2505853 Ontario Inc.",
+  "sites": 0
+ },
+ "2516971-ontario": {
+  "homes": 15,
+  "last": "2021-09",
+  "name": "2516971 Ontario Inc.",
+  "sites": 0
+ },
+ "2546884-ontario": {
+  "homes": 12,
+  "last": "2022-04",
+  "name": "2546884 Ontario Inc.",
+  "sites": 0
+ },
+ "2592935-ontario": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-06",
+  "name": "2592935 Ontario Inc.",
+  "sites": 20
+ },
+ "2793241-ontario": {
+  "homes": 10,
+  "last": "2023-12",
+  "name": "2793241 Ontario Inc.",
+  "sites": 0
+ },
  "360-degree": {
   "checked": "2026-11-20",
   "name": "360 Degree Development",
   "sites": 1
  },
+ "4176855": {
+  "checked": "2026-11-20",
+  "homes": 16,
+  "last": "2021-02",
+  "name": "4176855 Canada Inc.",
+  "sites": 1
+ },
+ "560-rideau-c-o-richcraft": {
+  "checked": "2026-11-20",
+  "homes": 198,
+  "last": "2020-01",
+  "name": "560 Rideau Inc. C/O Richcraft Homes Ltd.",
+  "sites": 1
+ },
+ "7184841": {
+  "homes": 7,
+  "last": "2023-07",
+  "name": "7184841 Canada Inc.",
+  "sites": 0
+ },
+ "7184841-o-a-omega": {
+  "checked": "2026-11-20",
+  "homes": 21,
+  "last": "2022-06",
+  "name": "7184841 Canada Inc. O/A Omega Homes",
+  "sites": 0
+ },
+ "8076065": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-09",
+  "name": "8076065 Canada Inc.",
+  "sites": 1
+ },
+ "a-and-b-bulat": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@bulathomes.com",
+   "sales@bulathomes.com"
+  ],
+  "homes": 38,
+  "last": "2021-01",
+  "name": "A & B Bulat Homes Ltd.",
+  "phones": [
+   "613-723-1008",
+   "613-727-0209"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.bulathomes.com"
+ },
  "absolute-restoration-and": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-06",
   "name": "Absolute Restoration & Construction Inc.",
   "sites": 1
  },
@@ -23,6 +149,34 @@
   "checked": "2026-11-20",
   "name": "Acc Par Systems Ltd.",
   "sites": 1
+ },
+ "aecom-architects": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-08",
+  "name": "Aecom Canada Architects Ltd.",
+  "sites": 2
+ },
+ "agl": {
+  "homes": 10,
+  "last": "2018-09",
+  "name": "Agl Homes",
+  "sites": 0
+ },
+ "alliance-engineering-and": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@allianceme.ca"
+  ],
+  "homes": 0,
+  "last": "2018-03",
+  "name": "Alliance Engineering And Construction Ltd.",
+  "phones": [
+   "613-822-3040"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://allianceengineering.ca"
  },
  "alpha-technologies": {
   "checked": "2026-11-20",
@@ -37,13 +191,20 @@
   "source": "website",
   "website": "https://www.alphabuilders.ca"
  },
+ "alti": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-07",
+  "name": "Alti Construction Ltd.",
+  "sites": 2
+ },
  "amsted-design-build": {
   "checked": "2026-11-20",
   "emails": [
    "info@amsted.ca"
   ],
-  "homes": 0,
-  "last": "2023-02",
+  "homes": 10,
+  "last": "2023-12",
   "name": "Amsted Design Build",
   "phones": [
    "613-836-7434"
@@ -52,15 +213,143 @@
   "source": "website",
   "website": "https://www.amsted.ca"
  },
+ "antilia": {
+  "homes": 11,
+  "last": "2020-06",
+  "name": "Antilia Homes Corp.",
+  "sites": 0,
+  "website": null
+ },
  "anything-guys": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-10",
   "name": "The Anything Guys Inc.",
   "sites": 1
  },
  "arcades-design": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-06",
   "name": "Arcades Design",
   "sites": 1
+ },
+ "argue": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@argueconstruction.ca",
+   "accounting@argueconstruction.ca"
+  ],
+  "homes": 20,
+  "last": "2023-08",
+  "name": "Argue Construction Ltd.",
+  "phones": [
+   "613-831-7044",
+   "613-831-6344"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://argueconstruction.ca"
+ },
+ "ark": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@arkconstruction.ca"
+  ],
+  "homes": 2,
+  "last": "2023-04",
+  "name": "Ark Construction Ltd.",
+  "phones": [
+   "613-224-6200",
+   "613-599-3118"
+  ],
+  "sites": 9,
+  "source": "website",
+  "website": "https://www.arkconstruction.ca"
+ },
+ "art": {
+  "checked": "2026-11-20",
+  "homes": 23,
+  "last": "2023-12",
+  "name": "Art Construction Inc.",
+  "sites": 0
+ },
+ "arterra": {
+  "homes": 6,
+  "last": "2020-01",
+  "name": "Arterra Homes Inc.",
+  "sites": 0
+ },
+ "ashcroft": {
+  "checked": "2026-11-20",
+  "homes": 31,
+  "last": "2022-09",
+  "name": "Ashcroft Homes",
+  "sites": 1,
+  "website": null
+ },
+ "ashcroft-citi-place": {
+  "checked": "2026-11-20",
+  "homes": 256,
+  "last": "2022-10",
+  "name": "Ashcroft Homes - Citi Place Inc.",
+  "sites": 0
+ },
+ "ashcroft-eastboro": {
+  "homes": 9,
+  "last": "2022-05",
+  "name": "Ashcroft Homes -Eastboro Inc.",
+  "sites": 0
+ },
+ "asl-agrodrain": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-07",
+  "name": "Asl Agrodrain Limited",
+  "sites": 1
+ },
+ "avicor": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-06",
+  "name": "Avicor Construction",
+  "sites": 3
+ },
+ "barbican": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-08",
+  "name": "Barbican Construction Ltd.",
+  "phones": [
+   "613-842-0600"
+  ],
+  "sites": 4,
+  "source": "website",
+  "website": "https://barbicangroup.com"
+ },
+ "basscon": {
+  "checked": "2026-11-20",
+  "homes": 268,
+  "last": "2020-04",
+  "name": "Basscon Group Inc.",
+  "sites": 2
+ },
+ "bassi": {
+  "checked": "2026-11-20",
+  "emails": [
+   "office@bassi.ca",
+   "office@bassi.caaddress"
+  ],
+  "homes": 644,
+  "last": "2023-06",
+  "name": "Bassi Construction",
+  "phones": [
+   "613-822-6767",
+   "613-822-6777"
+  ],
+  "sites": 12,
+  "source": "website",
+  "website": "https://bassi.ca"
  },
  "bbs": {
   "checked": "2026-11-20",
@@ -68,22 +357,69 @@
    "admin@bbsconstruction.ca",
    "daryna@bbsconstruction.ca"
   ],
+  "homes": 9,
+  "last": "2023-12",
   "name": "Bbs Construction Ltd.",
   "phones": [
    "613-226-8830"
   ],
-  "sites": 1,
+  "sites": 2,
   "source": "website",
   "website": "https://bbsconstruction.ca"
  },
+ "becc": {
+  "checked": "2026-11-20",
+  "homes": 32,
+  "last": "2023-03",
+  "name": "Becc Construction Ltd.",
+  "sites": 0
+ },
  "belfor-property-restoration": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-08",
   "name": "Belfor Property Restoration",
   "sites": 1,
   "website": null
  },
+ "bgis": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-10",
+  "name": "Bgis",
+  "sites": 8
+ },
+ "blt-services": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-12",
+  "name": "Blt Construction Services Inc.",
+  "sites": 1
+ },
+ "blueprint": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2019-09",
+  "name": "Blueprint Properties Inc.",
+  "sites": 1
+ },
+ "blueprint-services": {
+  "checked": "2026-11-20",
+  "homes": 918,
+  "last": "2022-07",
+  "name": "Blueprint Construction Services Limited",
+  "sites": 0
+ },
+ "boemac": {
+  "homes": 7,
+  "last": "2023-09",
+  "name": "Boemac",
+  "sites": 0
+ },
  "bravar-custom-builders": {
   "checked": "2026-11-20",
+  "homes": 2,
+  "last": "2021-09",
   "name": "Bravar Custom Builders",
   "phones": [
    "613-692-6155"
@@ -91,6 +427,31 @@
   "sites": 1,
   "source": "website",
   "website": "https://www.bravar.com"
+ },
+ "brian-shane": {
+  "homes": 7,
+  "last": "2022-09",
+  "name": "Brian Shane Construction Limited",
+  "sites": 0,
+  "website": null
+ },
+ "broccolini": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2020-07",
+  "name": "Broccolini Construction Ottawa Inc.",
+  "sites": 4,
+  "source": "website",
+  "website": "https://www.broccolini.com"
+ },
+ "broccolini-ont": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2018-11",
+  "name": "Broccolini Construction Ont. Inc.",
+  "sites": 1,
+  "source": "website",
+  "website": "https://www.broccolini.com"
  },
  "bruce-mechanical": {
   "checked": "2026-11-20",
@@ -106,10 +467,77 @@
   "source": "website",
   "website": "https://www.brucemechanical.com"
  },
+ "bruyere": {
+  "homes": 12,
+  "last": "2022-05",
+  "name": "Bruyere Homes",
+  "sites": 0
+ },
  "buchholz-dean": {
   "checked": "2026-11-20",
   "name": "Buchholz, Dean",
   "sites": 1
+ },
+ "builders": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@ottawatourism.ca"
+  ],
+  "homes": 0,
+  "last": "2020-02",
+  "name": "Ottawa Builders Inc.",
+  "sites": 1,
+  "source": "website",
+  "website": "https://ottawatourism.ca"
+ },
+ "built-by-bellagio": {
+  "homes": 5,
+  "last": "2023-07",
+  "name": "Built By Bellagio Inc.",
+  "sites": 0
+ },
+ "bulat": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@bulathomes.com",
+   "sales@bulathomes.com"
+  ],
+  "homes": 75,
+  "last": "2023-10",
+  "name": "Bulat Homes Ltd.",
+  "phones": [
+   "613-723-1008",
+   "613-727-0209"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.bulathomes.com"
+ },
+ "burmont": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@burmontconstruction.ca",
+   "lemonad@jovanny.ru",
+   "team@latofonts.com"
+  ],
+  "homes": 0,
+  "last": "2022-02",
+  "name": "Burmont Construction",
+  "phones": [
+   "613-233-1010"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://burmontconstruction.ca"
+ },
+ "c-and-l": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-11",
+  "name": "C & L Construction Ottawa Limited",
+  "sites": 7,
+  "source": "website",
+  "website": "https://www.craigslist.org"
  },
  "c-giamberardino-contracting": {
   "checked": "2026-11-20",
@@ -119,48 +547,114 @@
    "maria@cgci.ca",
    "johanne@cgci.ca"
   ],
+  "homes": 0,
+  "last": "2021-11",
   "name": "C. Giamberardino Contracting Inc.",
   "phones": [
    "613-226-5550",
    "613-226-3458"
   ],
-  "sites": 3,
+  "sites": 7,
   "source": "website",
   "website": "https://cgci.ca"
  },
  "caivan": {
   "checked": "2026-11-20",
+  "homes": 3749,
+  "last": "2023-11",
   "name": "Caivan Ltd.",
   "phones": [
    "613-518-1864",
    "613-518-2364"
   ],
-  "sites": 13,
+  "sites": 41,
   "source": "website",
   "website": "https://caivan.com"
  },
  "caivan-barrhaven-conservancy": {
   "checked": "2026-11-20",
+  "homes": 480,
+  "last": "2023-11",
   "name": "Caivan Barrhaven Conservancy Inc.",
   "phones": [
    "613-518-1864",
    "613-518-2364"
   ],
-  "sites": 19,
+  "sites": 27,
   "source": "website",
   "website": "https://caivan.com"
  },
- "caivan-renaud": {
+ "caivan-greenbank": {
   "checked": "2026-11-20",
-  "homes": 16,
-  "last": "2023-01",
-  "name": "Caivan (Renaud) Inc.",
-  "sites": 0
+  "homes": 1525,
+  "last": "2023-04",
+  "name": "Caivan Greenbank Development",
+  "phones": [
+   "613-518-1864",
+   "613-518-2364"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://caivan.com"
  },
  "cajo-adi": {
   "checked": "2026-11-20",
   "name": "Cajo, Adi",
   "sites": 1
+ },
+ "campanale": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@campanale.com"
+  ],
+  "homes": 578,
+  "last": "2020-06",
+  "name": "Campanale Construction Ltd.",
+  "phones": [
+   "613-730-7000"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.campanale.com"
+ },
+ "campanale-brothers": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@campanale.com"
+  ],
+  "homes": 257,
+  "last": "2023-08",
+  "name": "Campanale Brothers Construction Ltd.",
+  "phones": [
+   "613-730-7000"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.campanale.com"
+ },
+ "canci-nick": {
+  "checked": "2026-11-20",
+  "homes": 24,
+  "last": "2018-03",
+  "name": "Canci, Nick",
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.cancihomes.com"
+ },
+ "canswede": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@canswede.ca"
+  ],
+  "homes": 5,
+  "last": "2023-12",
+  "name": "Canswede Homes Inc.",
+  "phones": [
+   "613-715-2424"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://customhomesottawa.ca"
  },
  "capretta-steven": {
   "checked": "2026-11-20",
@@ -169,29 +663,34 @@
  },
  "cardel": {
   "checked": "2026-11-20",
+  "homes": 1832,
+  "last": "2023-12",
   "name": "Cardel Homes Inc.",
-  "sites": 18,
+  "sites": 50,
   "source": "website",
   "website": "https://www.cardelhomes.com"
  },
- "cardel-homes": {
-  "checked": "2026-11-20",
-  "homes": 25,
-  "last": "2023-01",
-  "name": "Cardel Homes",
-  "sites": 0
- },
- "cardel-homes-ottawa-division": {
-  "checked": "2026-11-20",
-  "homes": 53,
-  "last": "2023-02",
-  "name": "Cardel Homes Inc. Ottawa Division",
+ "carleton": {
+  "homes": 16,
+  "last": "2023-03",
+  "name": "Ottawa Carleton Construction Ltd.",
   "sites": 0
  },
  "cartesian": {
   "checked": "2026-11-20",
+  "homes": 15,
+  "last": "2023-03",
   "name": "Cartesian Homes Inc.",
   "sites": 1
+ },
+ "cassidy-e-w": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-03",
+  "name": "Cassidy E.W. Construction",
+  "sites": 2,
+  "source": "website",
+  "website": "https://cassidyinc.com"
  },
  "cassidy-e-w-consultant": {
   "checked": "2026-11-20",
@@ -200,60 +699,208 @@
   "source": "website",
   "website": "https://cassidyinc.com"
  },
+ "castelo-custom": {
+  "homes": 5,
+  "last": "2021-10",
+  "name": "Castelo Custom Homes",
+  "sites": 0
+ },
+ "cdrg-red-team": {
+  "checked": "2026-11-20",
+  "emails": [
+   "storm@redteam.ca"
+  ],
+  "homes": 0,
+  "last": "2023-11",
+  "name": "Cdrg Red Team",
+  "phones": [
+   "613-736-9222"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://www.cdrg.ca"
+ },
+ "cedarstone": {
+  "checked": "2026-11-20",
+  "emails": [
+   "kim@cedarstonehomes.com"
+  ],
+  "homes": 34,
+  "last": "2021-05",
+  "name": "Cedarstone Homes Limited",
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.cedarstonehomes.com"
+ },
+ "children-s-hospital-eastern-ontario": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-10",
+  "name": "Children'S Hospital Eastern Ontario",
+  "sites": 7
+ },
+ "chmiel-architects": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@chmielarchitects.com"
+  ],
+  "homes": 0,
+  "last": "2021-11",
+  "name": "Chmiel Architects Incorporated",
+  "phones": [
+   "613-234-3585",
+   "613-234-6224"
+  ],
+  "sites": 3,
+  "source": "website",
+  "website": "https://www.chmielarchitects.com"
+ },
  "claridge": {
   "checked": "2026-11-20",
+  "homes": 7872,
+  "last": "2023-12",
   "name": "Claridge Homes Inc.",
   "phones": [
    "613-233-6030",
    "613-232-3888",
    "613-672-7930"
   ],
-  "sites": 82,
+  "sites": 102,
   "source": "website",
   "website": "https://www.claridgehomes.com"
  },
- "claridge-homes-bank-st-lp": {
+ "claridge-l-p": {
   "checked": "2026-11-20",
-  "homes": 16,
-  "last": "2023-02",
-  "name": "Claridge Homes (Bank St) Lp",
-  "sites": 0
+  "homes": 1149,
+  "last": "2022-09",
+  "name": "Claridge Homes L.P.",
+  "phones": [
+   "613-233-6030",
+   "613-232-3888",
+   "613-672-7930"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://www.claridgehomes.com"
  },
- "claridge-homes-rivers-edge-south": {
+ "coldbox-builders": {
   "checked": "2026-11-20",
-  "homes": 72,
-  "last": "2023-02",
-  "name": "Claridge Homes (Rivers Edge South) Inc.",
+  "homes": 0,
+  "last": "2021-09",
+  "name": "Coldbox Builders",
+  "sites": 1
+ },
+ "colliers-project-leaders": {
+  "checked": "2026-11-20",
+  "emails": [
+   "accommodations@colliers.com"
+  ],
+  "homes": 0,
+  "last": "2020-06",
+  "name": "Colliers Project Leaders",
+  "sites": 3,
+  "source": "website",
+  "website": "https://www.colliers.com"
+ },
+ "colonnade-bridgeport": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-06",
+  "name": "Colonnade Bridgeport",
+  "phones": [
+   "613-225-8118",
+   "613-225-3898"
+  ],
+  "sites": 3,
+  "source": "website",
+  "website": "https://colonnadebridgeport.ca"
+ },
+ "concorde": {
+  "homes": 10,
+  "last": "2023-12",
+  "name": "Concorde Properties",
   "sites": 0
  },
  "conite": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-05",
   "name": "Conite",
   "sites": 1
  },
- "contractor-unknown": {
+ "corporate-contracting-svs": {
   "checked": "2026-11-20",
-  "homes": 51,
-  "last": "2023-02",
-  "name": "Contractor Unknown",
-  "sites": 0
+  "homes": 0,
+  "last": "2019-11",
+  "name": "Corporate Contracting Svs. Ltd.",
+  "sites": 2
+ },
+ "crossford": {
+  "homes": 7,
+  "last": "2023-11",
+  "name": "Crossford Construction",
+  "sites": 0,
+  "website": null
  },
  "csv-architects": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-06",
   "name": "Csv Architects",
   "sites": 1,
   "website": null
  },
+ "dauray-enterprises-icr": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-04",
+  "name": "Dauray Enterprises Icr",
+  "sites": 3
+ },
+ "david-j-cupido": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-08",
+  "name": "David J. Cupido Construction Ltd.",
+  "sites": 1
+ },
  "dcr-phoenix": {
   "checked": "2026-11-20",
+  "homes": 2575,
+  "last": "2023-11",
   "name": "Dcr Phoenix Development Corporation Limited",
-  "sites": 7
+  "sites": 15
  },
- "dcr-phoenix-development": {
+ "dcr-phoenix-rentals": {
   "checked": "2026-11-20",
-  "homes": 6,
-  "last": "2023-02",
-  "name": "Dcr Phoenix Development Corporation Limited",
+  "homes": 18,
+  "last": "2020-01",
+  "name": "Dcr/Phoenix Rentals Inc.",
+  "sites": 0
+ },
+ "de-marco": {
+  "homes": 8,
+  "last": "2022-12",
+  "name": "De Marco Construction",
+  "sites": 0
+ },
+ "deangelus-contracting": {
+  "homes": 10,
+  "last": "2023-10",
+  "name": "Deangelus Contracting Ltd.",
+  "sites": 0
+ },
+ "defran": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2018-09",
+  "name": "Defran Inc.",
+  "sites": 2
+ },
+ "demarco": {
+  "homes": 8,
+  "last": "2023-09",
+  "name": "Demarco Construction Limited",
   "sites": 0
  },
  "designs-by-theriault": {
@@ -266,8 +913,53 @@
   "name": "Disaster Rx Dki",
   "sites": 1
  },
+ "dls": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-07",
+  "name": "Dls Construction Inc.",
+  "sites": 2
+ },
+ "dmj-gestion-management": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-06",
+  "name": "Dmj Gestion Management",
+  "sites": 3
+ },
+ "dolyn": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@dolyn.com"
+  ],
+  "homes": 0,
+  "last": "2023-01",
+  "name": "Dolyn Developments Inc.",
+  "phones": [
+   "613-224-7268",
+   "613-224-0579"
+  ],
+  "sites": 10,
+  "source": "website",
+  "website": "https://dolyn.com"
+ },
+ "doran": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-01",
+  "name": "Doran Construction",
+  "phones": [
+   "613-526-2400",
+   "613-526-2880"
+  ],
+  "sites": 3,
+  "source": "website",
+  "website": "https://doran.ca"
+ },
  "doran-contractors": {
   "checked": "2026-11-20",
+  "homes": 425,
+  "last": "2023-04",
   "name": "Doran Contractors Limited",
   "phones": [
    "613-526-2400",
@@ -277,15 +969,198 @@
   "source": "website",
   "website": "https://doran.ca"
  },
+ "doyle": {
+  "checked": "2026-11-20",
+  "emails": [
+   "sales@doylehomes.ca"
+  ],
+  "homes": 109,
+  "last": "2023-03",
+  "name": "Doyle Homes",
+  "phones": [
+   "613-831-7924"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://doylehomes.ca"
+ },
+ "drumco": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-11",
+  "name": "Drumco Construction Inc.",
+  "sites": 1
+ },
+ "durabuilt": {
+  "checked": "2026-11-20",
+  "emails": [
+   "estimating@durabuilt.ca",
+   "angelo@durabuilt.ca",
+   "fred@durabuilt.ca",
+   "matt@durabuilt.ca"
+  ],
+  "homes": 1,
+  "last": "2021-06",
+  "name": "Durabuilt Construction",
+  "phones": [
+   "613-565-9276",
+   "613-565-9279"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://durabuilt.ca"
+ },
+ "ebc": {
+  "checked": "2026-11-20",
+  "emails": [
+   "ebc@ebcinc.com",
+   "ebc-brossard@ebcinc.com",
+   "ebc-toronto@ebcinc.com",
+   "ebc-mtl@ebcinc.com"
+  ],
+  "homes": 532,
+  "last": "2022-09",
+  "name": "Ebc Inc.",
+  "phones": [
+   "613-564-0600"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.ebcinc.com"
+ },
+ "ekobuilt": {
+  "homes": 10,
+  "last": "2023-10",
+  "name": "Ekobuilt Inc.",
+  "sites": 0,
+  "website": null
+ },
+ "elder-jones": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-01",
+  "name": "Elder Jones",
+  "sites": 10
+ },
+ "ellisdon": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-07",
+  "name": "Ellisdon Corporation",
+  "sites": 7
+ },
+ "emrye": {
+  "homes": 5,
+  "last": "2022-05",
+  "name": "Emrye Inc.",
+  "sites": 0
+ },
  "eq": {
   "checked": "2026-11-20",
   "emails": [
    "info@eqhomes.ca"
   ],
+  "homes": 1920,
+  "last": "2023-10",
   "name": "Eq Homes",
   "sites": 9,
   "source": "website",
   "website": "https://eqhomes.ca"
+ },
+ "ergon": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-02",
+  "name": "Ergon Construction",
+  "sites": 1
+ },
+ "evolution-drywall-and-acoustic": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-11",
+  "name": "Evolution Drywall And Acoustic",
+  "sites": 4
+ },
+ "f-trottier": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-10",
+  "name": "F. Trottier Construction Ltd.",
+  "sites": 1
+ },
+ "falsetto": {
+  "checked": "2026-11-20",
+  "homes": 42,
+  "last": "2023-10",
+  "name": "Falsetto Homes Inc.",
+  "sites": 0
+ },
+ "fernbank-crossing-regional": {
+  "checked": "2026-11-20",
+  "emails": [
+   "anna.o@condogroup.ca"
+  ],
+  "homes": 285,
+  "last": "2020-11",
+  "name": "Fernbank Crossing Regional Inc.",
+  "phones": [
+   "613-237-9519",
+   "613-762-5704"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.fernbankcrossing.ca"
+ },
+ "fernbank-terra-flats": {
+  "checked": "2026-11-20",
+  "homes": 144,
+  "last": "2018-10",
+  "name": "Fernbank Terra Flats Inc.",
+  "sites": 0
+ },
+ "fes-property-management": {
+  "checked": "2026-11-20",
+  "homes": 100,
+  "last": "2019-05",
+  "name": "Fes Property Management Inc.",
+  "sites": 0
+ },
+ "figurr-architects": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-06",
+  "name": "Figurr Architects",
+  "phones": [
+   "613-695-6122"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://figurr.ca"
+ },
+ "finishing-touch": {
+  "homes": 8,
+  "last": "2021-06",
+  "name": "The Finishing Touch Construction",
+  "sites": 0
+ },
+ "fj": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-11",
+  "name": "Fj Construction",
+  "phones": [
+   "613-762-0655"
+  ],
+  "sites": 7,
+  "source": "website",
+  "website": "https://fjconstruction.ca"
+ },
+ "g-lemay": {
+  "checked": "2026-11-20",
+  "homes": 35,
+  "last": "2018-10",
+  "name": "G. Lemay Construction Inc.",
+  "sites": 0
  },
  "ga-contracting": {
   "checked": "2026-11-20",
@@ -294,52 +1169,260 @@
   "source": "website",
   "website": "https://gadevelopments.ca"
  },
+ "gary-nyentap": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-11",
+  "name": "Gary Nyentap Construction Inc.",
+  "sites": 1
+ },
+ "gba-and-project-management": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@gbagroup.ca",
+   "swalton@gbagroup.ca"
+  ],
+  "homes": 56,
+  "last": "2020-09",
+  "name": "Gba Development And Project Management",
+  "phones": [
+   "613-680-9450"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://gbagroup.ca"
+ },
+ "gemstone": {
+  "homes": 7,
+  "last": "2021-10",
+  "name": "Gemstone Developments",
+  "sites": 0,
+  "website": null
+ },
+ "general-contractors": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@ottawatourism.ca"
+  ],
+  "homes": 9,
+  "last": "2022-03",
+  "name": "Ottawa General Contractors",
+  "sites": 2,
+  "source": "website",
+  "website": "https://ottawatourism.ca"
+ },
+ "giamberardino-contracting": {
+  "checked": "2026-11-20",
+  "emails": [
+   "chris@cgci.ca",
+   "jason@cgci.ca",
+   "maria@cgci.ca",
+   "johanne@cgci.ca"
+  ],
+  "homes": 0,
+  "last": "2020-01",
+  "name": "Giamberardino Contracting Inc.",
+  "phones": [
+   "613-226-5550",
+   "613-226-3458"
+  ],
+  "sites": 5,
+  "source": "website",
+  "website": "https://cgci.ca"
+ },
  "glenview": {
   "checked": "2026-11-20",
   "emails": [
    "info@glenview.ca"
   ],
+  "homes": 1469,
+  "last": "2023-12",
   "name": "Glenview Homes Ltd.",
   "phones": [
    "613-748-3700"
   ],
-  "sites": 9,
+  "sites": 14,
   "source": "website",
   "website": "https://glenview.ca"
  },
- "glenview-homes-innes": {
+ "glenview-holding": {
   "checked": "2026-11-20",
-  "homes": 73,
-  "last": "2023-02",
-  "name": "Glenview Homes (Innes) Ltd.",
+  "emails": [
+   "info@glenview.ca"
+  ],
+  "homes": 36,
+  "last": "2023-09",
+  "name": "Glenview Holding Limited",
+  "phones": [
+   "613-748-3700"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://glenview.ca"
+ },
+ "gncr": {
+  "checked": "2026-11-20",
+  "homes": 64,
+  "last": "2021-05",
+  "name": "Gncr Developments Inc.",
   "sites": 0
+ },
+ "gng-contracting": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-01",
+  "name": "Gng Contracting Inc.",
+  "sites": 1
  },
  "gorham": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-05",
   "name": "The Gorham Group",
   "sites": 1
  },
  "govan-brown-and-associates": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-04",
   "name": "Govan Brown & Associates Ltd.",
   "sites": 1,
   "source": "website",
   "website": "https://govanbrown.com"
+ },
+ "greatwise": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@greatwise.ca",
+   "clientcare@greatwise.ca"
+  ],
+  "homes": 100,
+  "last": "2019-10",
+  "name": "Greatwise Developments Corporation",
+  "sites": 0,
+  "source": "website",
+  "website": "https://greatwise.ca"
+ },
+ "greely-family-farm": {
+  "checked": "2026-11-20",
+  "emails": [
+   "inquiries@greely.com"
+  ],
+  "homes": 0,
+  "last": "2020-12",
+  "name": "Greely Family Farm Inc.",
+  "phones": [
+   "613-822-0500"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://www.greely.com"
  },
  "greenmark-builders": {
   "checked": "2026-11-20",
   "emails": [
    "mark@greenmarkbuilders.com"
   ],
+  "homes": 10,
+  "last": "2020-07",
   "name": "Greenmark Builders Inc.",
   "sites": 1,
   "source": "website",
   "website": "https://www.greenmarkbuilders.com"
  },
+ "greystone-village": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@greystoneconstruction.com",
+   "kristinaobrien@greystoneconstruction.com",
+   "cobrien@greystoneconstruction.com"
+  ],
+  "homes": 85,
+  "last": "2021-12",
+  "name": "Greystone Village Inc.",
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.greystoneconstruction.com"
+ },
+ "greystone-village-retirement-residence": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@greystoneconstruction.com",
+   "kristinaobrien@greystoneconstruction.com",
+   "cobrien@greystoneconstruction.com"
+  ],
+  "homes": 1,
+  "last": "2018-08",
+  "name": "Greystone Village Retirement Residence Inc.",
+  "sites": 1,
+  "source": "website",
+  "website": "https://www.greystoneconstruction.com"
+ },
+ "grizzly": {
+  "checked": "2026-11-20",
+  "emails": [
+   "sales@grizzlyhomes.com"
+  ],
+  "homes": 40,
+  "last": "2023-11",
+  "name": "Grizzly Homes",
+  "phones": [
+   "613-880-0031"
+  ],
+  "sites": 4,
+  "source": "website",
+  "website": "https://www.grizzlyhomes.com"
+ },
+ "gsc": {
+  "homes": 7,
+  "last": "2020-08",
+  "name": "Gsc Construction",
+  "sites": 0
+ },
+ "guildcrest": {
+  "homes": 10,
+  "last": "2023-07",
+  "name": "Guildcrest Homes",
+  "sites": 0
+ },
+ "guildcrest-building": {
+  "checked": "2026-11-20",
+  "homes": 14,
+  "last": "2021-08",
+  "name": "Guildcrest Building Corporation",
+  "sites": 2
+ },
+ "habitat-for-humanity": {
+  "homes": 16,
+  "last": "2018-03",
+  "name": "Habitat For Humanity",
+  "sites": 0
+ },
+ "habitations-leclair": {
+  "homes": 9,
+  "last": "2021-04",
+  "name": "Habitations Leclair",
+  "sites": 0
+ },
  "hache-peter": {
   "checked": "2026-11-20",
   "name": "Hache, Peter",
   "sites": 1
+ },
+ "haslett": {
+  "checked": "2026-11-20",
+  "homes": 26,
+  "last": "2021-09",
+  "name": "Haslett Construction Inc.",
+  "sites": 3,
+  "source": "website",
+  "website": "http://haslettconstruction.com"
+ },
+ "helmer-shelley": {
+  "homes": 8,
+  "last": "2018-07",
+  "name": "Helmer, Shelley",
+  "sites": 0
  },
  "hn": {
   "checked": "2026-11-20",
@@ -347,33 +1430,64 @@
    "info@hnhomes.com",
    "megan@hnhomes.com"
   ],
+  "homes": 1867,
+  "last": "2023-12",
   "name": "Hn Homes Limited Partnership",
   "phones": [
    "613-260-8818",
    "613-425-0880"
   ],
-  "sites": 10,
+  "sites": 35,
   "source": "website",
   "website": "https://hnhomes.com"
  },
+ "hobin-built-2518474-ontario": {
+  "homes": 8,
+  "last": "2020-12",
+  "name": "Hobin Built / 2518474 Ontario Limited",
+  "sites": 0
+ },
  "holland-and-renovations": {
   "checked": "2026-11-20",
+  "homes": 4,
+  "last": "2023-09",
   "name": "Holland Homes & Renovations",
   "sites": 1
  },
  "homestead-land-holdings": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-02",
   "name": "Homestead Land Holdings",
   "sites": 1,
   "source": "website",
   "website": "https://www.homestead.ca"
  },
- "independant-development-group": {
+ "house-legends": {
+  "homes": 5,
+  "last": "2021-07",
+  "name": "House Legends Construction Limited",
+  "sites": 0
+ },
+ "hybrid": {
+  "homes": 16,
+  "last": "2022-10",
+  "name": "Hybrid Homes",
+  "sites": 0
+ },
+ "independant": {
   "checked": "2026-11-20",
-  "homes": 23,
-  "last": "2018-01",
+  "homes": 52,
+  "last": "2018-04",
   "name": "Independant Development Group",
   "sites": 0
+ },
+ "innovative": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-06",
+  "name": "Innovative Construction Inc.",
+  "sites": 5
  },
  "interior-contracting-and-managment": {
   "checked": "2026-11-20",
@@ -382,29 +1496,304 @@
  },
  "ironclad": {
   "checked": "2026-11-20",
+  "homes": 39,
+  "last": "2020-03",
   "name": "Ironclad Developments Inc.",
   "sites": 1
  },
+ "irontree-builders": {
+  "checked": "2026-11-20",
+  "homes": 18,
+  "last": "2019-09",
+  "name": "Irontree Builders Inc.",
+  "sites": 2
+ },
+ "ivory": {
+  "checked": "2026-11-20",
+  "homes": 4,
+  "last": "2018-03",
+  "name": "Ivory Homes",
+  "sites": 4
+ },
+ "j-m-projem": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-01",
+  "name": "J.M. Projem Construction Inc.",
+  "sites": 3
+ },
+ "jackson": {
+  "checked": "2026-11-20",
+  "homes": 16,
+  "last": "2022-09",
+  "name": "Jackson Homes",
+  "sites": 1
+ },
+ "jbpa": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@jbpa.ca",
+   "accounting@jbpa.ca",
+   "info@yoursite.com"
+  ],
+  "homes": 0,
+  "last": "2023-12",
+  "name": "Jbpa Developments Inc.",
+  "phones": [
+   "613-695-6767"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://www.jbpa.ca"
+ },
  "jean-daoust": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-01",
   "name": "Jean Daoust Construction Inc.",
   "sites": 2
  },
+ "jlg": {
+  "checked": "2026-11-20",
+  "homes": 36,
+  "last": "2020-06",
+  "name": "Jlg Developments Inc.",
+  "sites": 0
+ },
+ "jo-peach": {
+  "homes": 10,
+  "last": "2019-05",
+  "name": "Jo Peach Construction",
+  "sites": 0
+ },
+ "john-gerard": {
+  "checked": "2026-11-20",
+  "emails": [
+   "complaints@creation.co.uk",
+   "complaint.info@financial-ombudsman.org.uk"
+  ],
+  "homes": 21,
+  "last": "2021-07",
+  "name": "John Gerard Homes",
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.johnlewis.com"
+ },
+ "john-howard-society": {
+  "checked": "2026-11-20",
+  "emails": [
+   "complaints@creation.co.uk",
+   "complaint.info@financial-ombudsman.org.uk"
+  ],
+  "homes": 29,
+  "last": "2021-12",
+  "name": "John Howard Society Of Ottawa",
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.johnlewis.com"
+ },
+ "johnston-main-frank": {
+  "checked": "2026-11-20",
+  "homes": 4,
+  "last": "2022-09",
+  "name": "Johnston-Main, Frank",
+  "sites": 1
+ },
  "jones-bros": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-07",
   "name": "Jones Bros Construction Inc.",
+  "sites": 1
+ },
+ "jp-gravel": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-10",
+  "name": "Jp Gravel Construction  Inc.",
+  "sites": 5
+ },
+ "jpl-service": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-08",
+  "name": "Jpl Construction Service Inc.",
+  "sites": 1
+ },
+ "kenvest": {
+  "homes": 8,
+  "last": "2023-08",
+  "name": "Kenvest Developments Inc.",
+  "sites": 0
+ },
+ "kenwood": {
+  "homes": 8,
+  "last": "2018-05",
+  "name": "Kenwood Homes Inc.",
+  "sites": 0
+ },
+ "kiewit-eurovia-vinci": {
+  "checked": "2026-11-20",
+  "homes": 5,
+  "last": "2021-11",
+  "name": "Kiewit Eurovia Vinci Ottawa Partnership",
+  "sites": 2
+ },
+ "klinger": {
+  "checked": "2026-11-20",
+  "homes": 15,
+  "last": "2022-05",
+  "name": "Klinger Homes",
+  "sites": 1
+ },
+ "krista": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2023-11",
+  "name": "Krista Construction Ltd.",
+  "sites": 9
+ },
+ "krp": {
+  "checked": "2026-11-20",
+  "emails": [
+   "enquiries@krp.ca",
+   "aiannuzzi@krp.ca"
+  ],
+  "homes": 0,
+  "last": "2022-03",
+  "name": "Krp Properties",
+  "sites": 10,
+  "source": "website",
+  "website": "https://www.krp.ca"
+ },
+ "ksl": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-07",
+  "name": "Ksl Construction",
+  "sites": 7
+ },
+ "kuang-randy": {
+  "homes": 7,
+  "last": "2021-07",
+  "name": "Kuang, Randy",
+  "sites": 0
+ },
+ "labelle-tents": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-09",
+  "name": "Labelle Tents Inc.",
   "sites": 1
  },
  "laka-design-and-drafting": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-06",
   "name": "Laka Design & Drafting Inc.",
   "sites": 1
+ },
+ "landric": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@landrichomes.com"
+  ],
+  "homes": 144,
+  "last": "2022-02",
+  "name": "Landric Homes",
+  "phones": [
+   "613-216-3413",
+   "819-772-4501"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://landrichomes.com"
+ },
+ "laplante-claude": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-06",
+  "name": "Laplante, Claude",
+  "sites": 1,
+  "source": "website",
+  "website": "https://laplanteconstruction.com"
+ },
+ "lar-mex": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-09",
+  "name": "Lar-Mex Inc.",
+  "sites": 1
+ },
+ "larchwood-urban": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@larchwood.ca"
+  ],
+  "homes": 27,
+  "last": "2021-12",
+  "name": "Larchwood Urban Developments Inc.",
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.larchwood.ca"
+ },
+ "legault-builders": {
+  "homes": 7,
+  "last": "2021-03",
+  "name": "Legault Builders",
+  "sites": 0
+ },
+ "lemay-maisons-lemay": {
+  "homes": 9,
+  "last": "2018-03",
+  "name": "Lemay Homes-Maisons Lemay",
+  "sites": 0
+ },
+ "les-constructions-lovail": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-08",
+  "name": "Les Constructions Lovail Inc.",
+  "sites": 3
+ },
+ "lloyd-phillips-and-associates": {
+  "checked": "2026-11-20",
+  "homes": 208,
+  "last": "2019-10",
+  "name": "Lloyd Phillips & Associates Ltd.",
+  "sites": 0
+ },
+ "lockwood-brothers": {
+  "homes": 6,
+  "last": "2023-07",
+  "name": "Lockwood Brothers Construction",
+  "sites": 0,
+  "website": null
+ },
+ "longwood-building": {
+  "checked": "2026-11-20",
+  "emails": [
+   "salesmorris@longwoodbuilders.com"
+  ],
+  "homes": 188,
+  "last": "2022-10",
+  "name": "Longwood Building Corporation",
+  "phones": [
+   "613-446-1506",
+   "613-746-1300",
+   "613-746-3997"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://longwoodbuilders.com"
  },
  "luciano-carpentry": {
   "checked": "2026-11-20",
   "emails": [
    "info@lucianocarpentry.com"
   ],
+  "homes": 0,
+  "last": "2023-04",
   "name": "Luciano Carpentry Inc.",
   "phones": [
    "613-229-0391"
@@ -413,24 +1802,131 @@
   "source": "website",
   "website": "https://www.lucianocarpentry.com"
  },
+ "lundy": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-06",
+  "name": "Lundy",
+  "sites": 2
+ },
+ "lwg-architectural-interiors": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-10",
+  "name": "Lwg Architectural Interiors Inc.",
+  "sites": 1
+ },
+ "m-and-m-interior-contracting": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-12",
+  "name": "M&M Interior Contracting",
+  "sites": 5
+ },
  "macdonald-tim": {
   "checked": "2026-11-20",
   "name": "Macdonald, Tim",
   "sites": 1
+ },
+ "mackie": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@mackiehomes.ca",
+   "email@website.com"
+  ],
+  "homes": 56,
+  "last": "2021-03",
+  "name": "Mackie Homes",
+  "phones": [
+   "613-806-1304"
+  ],
+  "sites": 5,
+  "source": "website",
+  "website": "https://www.mackiehomes.ca"
+ },
+ "maddison": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@maddisonconstruction.com"
+  ],
+  "homes": 0,
+  "last": "2022-11",
+  "name": "Maddison Construction Limited",
+  "phones": [
+   "613-274-4474"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://maddisonconstruction.com"
+ },
+ "madison-general-contracting": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-07",
+  "name": "Madison General Contracting",
+  "sites": 1
+ },
+ "main-and-main-asset-management": {
+  "checked": "2026-11-20",
+  "emails": [
+   "micah@micahrich.com"
+  ],
+  "homes": 4,
+  "last": "2023-05",
+  "name": "Main And Main Asset Management",
+  "phones": [
+   "613-882-4467"
+  ],
+  "sites": 3,
+  "source": "website",
+  "website": "https://mainhomes.ca"
+ },
+ "maple-leaf-custom": {
+  "checked": "2026-11-20",
+  "homes": 65,
+  "last": "2023-09",
+  "name": "Maple Leaf Custom Homes",
+  "sites": 0
+ },
+ "maple-leaf-design-and": {
+  "checked": "2026-11-20",
+  "homes": 42,
+  "last": "2022-10",
+  "name": "Maple Leaf Design And Construction",
+  "sites": 0,
+  "website": null
  },
  "marant": {
   "checked": "2026-11-20",
   "emails": [
    "mail@marant.ca"
   ],
+  "homes": 0,
+  "last": "2023-11",
   "name": "Marant Construction Ltd.",
   "phones": [
    "613-569-0093",
    "613-569-1366"
   ],
-  "sites": 1,
+  "sites": 14,
   "source": "website",
   "website": "https://marant.ca"
+ },
+ "massicotte-bros": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@massicotte-group.com",
+   "estimates@massicotte-group.com"
+  ],
+  "homes": 0,
+  "last": "2019-04",
+  "name": "Massicotte Bros. Construction",
+  "phones": [
+   "613-748-7051"
+  ],
+  "sites": 9,
+  "source": "website",
+  "website": "https://www.massicotteconstruction.com"
  },
  "mattamy": {
   "checked": "2026-11-20",
@@ -440,34 +1936,93 @@
    "siennavillage.sef@mattamycorp.com",
    "brightmore.swf@mattamycorp.com"
   ],
+  "homes": 29735,
+  "last": "2023-11",
   "name": "Mattamy Limited",
-  "sites": 61,
+  "sites": 76,
+  "source": "website",
+  "website": "https://mattamyhomes.com"
+ },
+ "mattamy-half-moon-bay": {
+  "checked": "2026-11-20",
+  "emails": [
+   "trades.canada@mattamycorp.com",
+   "trades.us@mattamycorp.com",
+   "siennavillage.sef@mattamycorp.com",
+   "brightmore.swf@mattamycorp.com"
+  ],
+  "homes": 488,
+  "last": "2021-09",
+  "name": "Mattamy Homes - Half Moon Bay",
+  "sites": 0,
   "source": "website",
   "website": "https://mattamyhomes.com"
  },
  "mattino": {
   "checked": "2026-11-20",
+  "homes": 300,
+  "last": "2022-10",
   "name": "Mattino Developments",
   "phones": [
    "613-470-0052",
    "613-440-3767"
   ],
-  "sites": 2,
+  "sites": 7,
   "source": "website",
   "website": "https://mattino.ca"
  },
+ "mb-ford": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@mbford.ca",
+   "chris@mbford.ca",
+   "russell@mbford.ca",
+   "marc@mbford.ca"
+  ],
+  "homes": 2,
+  "last": "2023-11",
+  "name": "Mb Ford Construction Ltd.",
+  "phones": [
+   "613-978-1426",
+   "613-292-4321",
+   "613-880-3446"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://www.mbford.ca"
+ },
  "mcdonald-bros": {
   "checked": "2026-11-20",
+  "homes": 70,
+  "last": "2023-07",
   "name": "Mcdonald Bros. Construction Inc.",
   "sites": 1
  },
  "mcdonald-brothers": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-07",
   "name": "Mcdonald Brothers Construction Inc.",
   "sites": 1
  },
+ "mchale-brendan": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-12",
+  "name": "Mchale, Brendan",
+  "sites": 1
+ },
+ "mci-micucci-contracting": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-06",
+  "name": "Mci - Micucci Contracting Inc.",
+  "sites": 6
+ },
  "mcnolty-mechanical": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-03",
   "name": "Mcnolty Mechanical Inc.",
   "sites": 1
  },
@@ -481,17 +2036,63 @@
   "source": "website",
   "website": "https://www.melhetherington.com"
  },
+ "metric": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@metrichomes.com",
+   "service@metrichomes.com",
+   "accounts@metrichomes.com",
+   "trades@metrichomes.com"
+  ],
+  "homes": 225,
+  "last": "2023-11",
+  "name": "Metric Homes",
+  "phones": [
+   "613-296-7000",
+   "613-836-8079"
+  ],
+  "sites": 7,
+  "source": "website",
+  "website": "https://www.metrichomes.com"
+ },
+ "metro-ontario": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-08",
+  "name": "Metro Ontario Inc.",
+  "sites": 5
+ },
+ "michanie": {
+  "checked": "2026-11-20",
+  "homes": 2,
+  "last": "2022-11",
+  "name": "Michanie Construction Inc.",
+  "sites": 1
+ },
  "minto": {
   "checked": "2026-11-20",
+  "homes": 17844,
+  "last": "2023-12",
   "name": "Minto Communities Inc.",
-  "sites": 57,
+  "sites": 99,
   "website": null
  },
- "minto-communities": {
-  "checked": "2026-11-20",
-  "homes": 61,
-  "last": "2023-02",
-  "name": "Minto Communities Inc.",
+ "minto-multi-residential-income-partners-i-gp": {
+  "homes": 16,
+  "last": "2021-06",
+  "name": "Minto Multi-Residential Income Partners I, Gp Inc.",
+  "sites": 0
+ },
+ "miroca-design": {
+  "homes": 11,
+  "last": "2023-11",
+  "name": "Miroca Design Inc.",
+  "sites": 0
+ },
+ "miroca-design-consulting-services": {
+  "homes": 11,
+  "last": "2022-02",
+  "name": "Miroca Design Consulting Services Inc.",
   "sites": 0
  },
  "mistral-general-contracting-14962257": {
@@ -507,15 +2108,82 @@
   "source": "website",
   "website": "https://www.mistralgroup.ca"
  },
+ "moda-c-o-staltari-commercial-real-estate": {
+  "homes": 6,
+  "last": "2022-04",
+  "name": "Moda Development Corp.  C/O Staltari Commercial Real Estate Corp.",
+  "sites": 0
+ },
+ "modello": {
+  "homes": 5,
+  "last": "2022-08",
+  "name": "Modello Homes Ltd.",
+  "sites": 0
+ },
  "modern-niagara": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-06",
   "name": "Modern Niagara Ottawa Inc.",
   "phones": [
    "613-591-7505"
   ],
-  "sites": 2,
+  "sites": 3,
   "source": "website",
   "website": "https://modernniagara.com"
+ },
+ "moderna-design": {
+  "checked": "2026-11-20",
+  "homes": 20,
+  "last": "2022-08",
+  "name": "Moderna Homes Design Inc.",
+  "sites": 1
+ },
+ "morley-hoppner": {
+  "checked": "2026-11-20",
+  "emails": [
+   "reception@morleyhoppner.com",
+   "accounts@loopmarketing.ca"
+  ],
+  "homes": 534,
+  "last": "2023-10",
+  "name": "Morley Hoppner Limited",
+  "phones": [
+   "613-831-5490"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://morleyhoppner.com"
+ },
+ "morrison-hershfield": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-06",
+  "name": "Morrison Hershfield Limited",
+  "sites": 1
+ },
+ "motta-ivan": {
+  "checked": "2026-11-20",
+  "homes": 36,
+  "last": "2022-07",
+  "name": "Motta, Ivan",
+  "sites": 0
+ },
+ "mp-lundy": {
+  "checked": "2026-11-20",
+  "emails": [
+   "vasb@zcyhaql.pbz",
+   "ue@zcyhaql.pbz"
+  ],
+  "homes": 2,
+  "last": "2023-10",
+  "name": "Mp Lundy",
+  "phones": [
+   "613-233-8484"
+  ],
+  "sites": 8,
+  "source": "website",
+  "website": "https://www.mplundy.com"
  },
  "mr-foundation": {
   "checked": "2026-11-20",
@@ -524,66 +2192,224 @@
    "reception@mrfoundation.com"
   ],
   "homes": 0,
-  "last": "2023-01",
+  "last": "2023-12",
   "name": "Mr Foundation Inc.",
   "phones": [
    "613-746-7300"
   ],
-  "sites": 1,
+  "sites": 2,
   "source": "website",
   "website": "https://mrfoundation.com"
+ },
+ "msr": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@msrottawa.com"
+  ],
+  "homes": 0,
+  "last": "2022-03",
+  "name": "Msr Ottawa",
+  "phones": [
+   "613-230-4888"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://msrottawa.com"
+ },
+ "navstar": {
+  "homes": 8,
+  "last": "2018-10",
+  "name": "Navstar Homes",
+  "sites": 0
  },
  "noah-s-and-investments": {
   "checked": "2026-11-20",
   "name": "Noah'S Construction And Investments Inc.",
   "sites": 1
  },
+ "oakwood-builders": {
+  "homes": 10,
+  "last": "2020-12",
+  "name": "Oakwood Builders",
+  "sites": 0
+ },
+ "oakwood-designers-and-builders": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@oakwood.ca",
+   "email@youraddress.com"
+  ],
+  "homes": 17,
+  "last": "2023-12",
+  "name": "Oakwood Designers & Builders Inc.",
+  "phones": [
+   "613-236-8001"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://oakwood.ca"
+ },
  "ogc": {
   "checked": "2026-11-20",
-  "homes": 0,
-  "last": "2023-02",
+  "homes": 8,
+  "last": "2023-10",
   "name": "Ogc Ltd.",
   "sites": 3
  },
+ "omega": {
+  "homes": 6,
+  "last": "2023-08",
+  "name": "Omega Homes",
+  "sites": 0,
+  "website": null
+ },
+ "one-tree": {
+  "homes": 8,
+  "last": "2023-07",
+  "name": "One Tree Homes Inc.",
+  "sites": 0
+ },
+ "pagi": {
+  "homes": 13,
+  "last": "2023-12",
+  "name": "Pagi Developments Inc.",
+  "sites": 0
+ },
  "pandore-innovations": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-04",
   "name": "Pandore Innovations",
+  "sites": 1
+ },
+ "paranis": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@paranis.ca"
+  ],
+  "homes": 0,
+  "last": "2019-09",
+  "name": "Paranis Construction Inc.",
+  "phones": [
+   "613-742-7639",
+   "819-772-4236",
+   "613-742-5697"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://www.paranis.ca"
+ },
+ "park-view": {
+  "checked": "2026-11-20",
+  "homes": 28,
+  "last": "2021-03",
+  "name": "Park View Homes",
+  "sites": 0,
+  "website": null
+ },
+ "parkin-architects": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-09",
+  "name": "Parkin Architects Limited",
+  "sites": 5
+ },
+ "parkview": {
+  "checked": "2026-11-20",
+  "homes": 40,
+  "last": "2021-01",
+  "name": "Parkview Homes",
   "sites": 1
  },
  "pathways-regional": {
   "checked": "2026-11-20",
+  "homes": 330,
+  "last": "2023-12",
   "name": "Pathways Regional Inc.",
   "sites": 5
  },
  "pathways-south-regional": {
   "checked": "2026-11-20",
+  "homes": 581,
+  "last": "2023-12",
   "name": "Pathways South Regional Inc.",
-  "sites": 3
+  "sites": 15
  },
  "patten-2000": {
   "checked": "2026-11-20",
   "emails": [
    "sales@pattenhomes.com"
   ],
+  "homes": 600,
+  "last": "2023-10",
   "name": "Patten Homes 2000",
   "phones": [
    "613-227-8452",
    "613-831-5674"
   ],
-  "sites": 3,
+  "sites": 5,
   "source": "website",
   "website": "https://pattenhomes.com"
  },
+ "paul-marques-architect": {
+  "checked": "2026-11-20",
+  "homes": 2,
+  "last": "2022-03",
+  "name": "Paul Marques Architect Inc.",
+  "sites": 1
+ },
+ "pcl": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2023-08",
+  "name": "Pcl Construction",
+  "sites": 2
+ },
+ "pcl-constructors": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-12",
+  "name": "Pcl Constructors Canada Inc.",
+  "sites": 28
+ },
  "pcl-ed-a-joint-venture": {
   "checked": "2026-11-20",
+  "homes": 3,
+  "last": "2023-08",
   "name": "Pcl/Ed, A Joint Venture",
-  "sites": 1
+  "sites": 8
+ },
+ "petroff-architects": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-09",
+  "name": "Petroff Partnership Architects",
+  "sites": 3
+ },
+ "phoenix": {
+  "checked": "2026-11-20",
+  "emails": [
+   "jkhoury@phoenixhomes.ca"
+  ],
+  "homes": 59,
+  "last": "2023-05",
+  "name": "Phoenix Homes",
+  "phones": [
+   "613-723-9227",
+   "613-723-2235",
+   "613-470-1336"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.phoenixhomes.ca"
  },
  "picasso-custom": {
   "checked": "2026-11-20",
   "emails": [
    "picassocustomhomesltd@gmail.com"
   ],
+  "homes": 8,
+  "last": "2022-02",
   "name": "Picasso Custom Homes Ltd.",
   "phones": [
    "613-299-0297"
@@ -592,48 +2418,255 @@
   "source": "website",
   "website": "https://www.picassohomes.ca"
  },
- "provence-orleans-realty-investment": {
+ "pomerleau": {
   "checked": "2026-11-20",
   "homes": 3,
-  "last": "2023-01",
+  "last": "2022-07",
+  "name": "Pomerleau Inc.",
+  "sites": 6
+ },
+ "premiere": {
+  "checked": "2026-11-20",
+  "homes": 4,
+  "last": "2023-05",
+  "name": "Premiere Construction Ltd.",
+  "phones": [
+   "343-880-4431",
+   "343-880-4473"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://premiereconstruction.ca"
+ },
+ "premium": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@premiummg.ca"
+  ],
+  "homes": 0,
+  "last": "2022-06",
+  "name": "Premium Construction",
+  "sites": 3,
+  "source": "website",
+  "website": "https://premiummg.ca"
+ },
+ "prestwick-building": {
+  "homes": 12,
+  "last": "2020-01",
+  "name": "Prestwick Building Corporation",
+  "sites": 0,
+  "website": null
+ },
+ "priority-fire-equipment": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-09",
+  "name": "Priority Fire Equipment Inc.",
+  "sites": 1
+ },
+ "prisma": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-12",
+  "name": "Prisma Construction",
+  "sites": 29
+ },
+ "projex-design-build": {
+  "checked": "2026-11-20",
+  "homes": 17,
+  "last": "2020-07",
+  "name": "Projex Design Build",
+  "sites": 2
+ },
+ "provence-orleans-realty-investment": {
+  "checked": "2026-11-20",
+  "homes": 786,
+  "last": "2023-12",
   "name": "Provence Orleans Realty Investment Inc.",
   "sites": 9
  },
+ "r-k-porter-general-contracting": {
+  "homes": 12,
+  "last": "2021-07",
+  "name": "R. K. Porter General Contracting",
+  "sites": 0
+ },
+ "raby-kris": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-08",
+  "name": "Raby, Kris",
+  "sites": 1
+ },
+ "rassco": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-11",
+  "name": "Rassco Construction",
+  "sites": 1
+ },
+ "read-jones-christoffersen": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2020-06",
+  "name": "Read Jones Christoffersen Ltd.",
+  "sites": 1
+ },
+ "reliance": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-10",
+  "name": "Reliance Construction",
+  "sites": 27
+ },
+ "retrofit-solutions": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@retrofitsolutions.ca"
+  ],
+  "homes": 0,
+  "last": "2022-06",
+  "name": "Retrofit Solutions Inc.",
+  "phones": [
+   "613-447-8120"
+  ],
+  "sites": 5,
+  "source": "website",
+  "website": "https://www.retrofitsolutions.ca"
+ },
+ "richard-ziegler-architect": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-09",
+  "name": "Richard Ziegler Architect Inc.",
+  "sites": 2
+ },
  "richcraft": {
   "checked": "2026-11-20",
+  "homes": 13313,
+  "last": "2023-12",
   "name": "Richcraft Homes Limited",
   "phones": [
    "613-739-7111",
    "613-739-4233",
    "613-739-5777"
   ],
-  "sites": 67,
+  "sites": 109,
   "source": "website",
   "website": "https://www.richcraft.com"
  },
- "richcraft-homes": {
+ "richcraftgroup": {
   "checked": "2026-11-20",
-  "homes": 6,
-  "last": "2019-01",
-  "name": "Richcraft Homes Limited",
+  "homes": 169,
+  "last": "2023-07",
+  "name": "Richcraftgroup Of Companies",
   "sites": 0
+ },
+ "riocan-management": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-06",
+  "name": "Riocan Management Inc.",
+  "sites": 2
+ },
+ "rivington": {
+  "checked": "2026-11-20",
+  "homes": 35,
+  "last": "2022-11",
+  "name": "Rivington Homes Ltd.",
+  "sites": 0
+ },
+ "rla-architecture": {
+  "checked": "2026-11-20",
+  "emails": [
+   "admin@rlaarchitecture.ca"
+  ],
+  "homes": 0,
+  "last": "2021-05",
+  "name": "Rla Architecture",
+  "phones": [
+   "613-724-9932"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://www.rlaarchitecture.ca"
+ },
+ "rnd": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@rndconstruction.ca",
+   "roy@rndconstruction.ca",
+   "diane@rndconstruction.ca",
+   "karla@rndconstruction.ca"
+  ],
+  "homes": 21,
+  "last": "2022-09",
+  "name": "Rnd Construction",
+  "phones": [
+   "613-523-8598",
+   "613-523-1354"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://rndconstruction.ca"
+ },
+ "robert-general-contractor": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-10",
+  "name": "Robert Construction General Contractor Inc.",
+  "sites": 2
  },
  "roca": {
   "checked": "2026-11-20",
+  "homes": 30,
+  "last": "2021-09",
   "name": "Roca Homes",
-  "sites": 1,
+  "sites": 2,
   "website": null
+ },
+ "rodgers-brad": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2021-12",
+  "name": "Rodgers, Brad",
+  "sites": 2
+ },
+ "rojo-management": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-02",
+  "name": "Rojo Construction Management Inc.",
+  "sites": 8
  },
  "ron-eastern": {
   "checked": "2026-11-20",
+  "homes": 1622,
+  "last": "2023-10",
   "name": "Ron Eastern Construction Ltd.",
-  "sites": 1
+  "sites": 14
+ },
+ "roof-over-head": {
+  "homes": 7,
+  "last": "2020-06",
+  "name": "Roof Over Head Developments Inc.",
+  "sites": 0
+ },
+ "s-j-lawrence-architect": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-11",
+  "name": "S.J. Lawrence Architect Inc.",
+  "sites": 2,
+  "website": null
  },
  "service-master": {
   "checked": "2026-11-20",
   "emails": [
    "info@homeservicegroup.ca"
   ],
+  "homes": 1,
+  "last": "2023-07",
   "name": "Service Master Of Ottawa",
   "phones": [
    "613-233-1115"
@@ -647,18 +2680,108 @@
   "emails": [
    "info@seymourpacific.ca"
   ],
+  "homes": 0,
+  "last": "2023-12",
   "name": "Seymour Pacific Developments Ltd.",
   "sites": 2,
   "source": "website",
   "website": "https://seymourpacific.ca"
  },
+ "sherbrooke-urban": {
+  "homes": 5,
+  "last": "2020-09",
+  "name": "Sherbrooke Urban Developments Ltd.",
+  "sites": 0,
+  "website": null
+ },
+ "shurway-contracting": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-10",
+  "name": "Shurway Contracting Ltd.",
+  "sites": 2
+ },
+ "smart-living": {
+  "homes": 16,
+  "last": "2022-09",
+  "name": "Smart Living Properties",
+  "sites": 0
+ },
+ "source-four": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-03",
+  "name": "Source Four Construction Ltd.",
+  "sites": 1
+ },
+ "south-shores": {
+  "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2019-10",
+  "name": "South Shores Homes",
+  "sites": 1
+ },
+ "spartan-bioscience": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2018-11",
+  "name": "Spartan Bioscience",
+  "sites": 3
+ },
+ "stantec": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-08",
+  "name": "Stantec",
+  "sites": 2,
+  "source": "website",
+  "website": "https://www.stantec.com"
+ },
+ "succession": {
+  "checked": "2026-11-20",
+  "homes": 2,
+  "last": "2019-07",
+  "name": "Succession Developments Corporation",
+  "sites": 1
+ },
+ "sundev": {
+  "homes": 6,
+  "last": "2022-04",
+  "name": "Sundev Homes Ltd.",
+  "sites": 0
+ },
+ "sunter": {
+  "homes": 5,
+  "last": "2021-08",
+  "name": "Sunter Homes Inc.",
+  "sites": 0,
+  "website": null
+ },
+ "sylvain-brisebois": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-04",
+  "name": "Sylvain Brisebois Construction Ltd.",
+  "sites": 1
+ },
  "t-and-m-electrical": {
   "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-08",
   "name": "T & M Electrical Limited",
   "sites": 2
  },
+ "tactron": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2019-10",
+  "name": "Construction Tactron",
+  "sites": 1
+ },
  "talos": {
   "checked": "2026-11-20",
+  "homes": 25,
+  "last": "2023-09",
   "name": "Talos Homes Limited",
   "phones": [
    "613-444-0270"
@@ -666,6 +2789,13 @@
   "sites": 1,
   "source": "website",
   "website": "https://taloshomes.com"
+ },
+ "talos-custom": {
+  "homes": 10,
+  "last": "2023-12",
+  "name": "Talos Custom Homes Ltd.",
+  "sites": 0,
+  "website": null
  },
  "tamarack": {
   "checked": "2026-11-20",
@@ -675,37 +2805,143 @@
    "dennis.regnier@tamarackhomes.com",
    "jia.zhang@tamarackhomes.com"
   ],
+  "homes": 5947,
+  "last": "2023-12",
   "name": "Tamarack Homes",
   "phones": [
    "613-739-2919",
    "613-830-8467",
    "613-822-1101"
   ],
-  "sites": 39,
+  "sites": 66,
   "source": "website",
   "website": "https://tamarackhomes.com"
  },
- "tamarack-developments": {
+ "taplen": {
   "checked": "2026-11-20",
-  "homes": 38,
-  "last": "2019-01",
-  "name": "Tamarack Developments Corporation",
-  "sites": 0
+  "emails": [
+   "massal@taplenconstruction.com"
+  ],
+  "homes": 0,
+  "last": "2019-09",
+  "name": "Taplen Construction Inc.",
+  "phones": [
+   "613-521-2550"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://www.taplenconstruction.com"
  },
  "tartan": {
   "checked": "2026-11-20",
   "emails": [
    "designcentre@tartanhomes.com"
   ],
+  "homes": 2220,
+  "last": "2023-11",
   "name": "Tartan Homes Corporation",
   "phones": [
    "613-822-3129",
    "613-229-2942",
    "613-238-2040"
   ],
-  "sites": 17,
+  "sites": 18,
   "source": "website",
   "website": "https://tartanhomes.com"
+ },
+ "taventi": {
+  "checked": "2026-11-20",
+  "homes": 46,
+  "last": "2023-09",
+  "name": "Taventi Inc.",
+  "sites": 0
+ },
+ "tc-united": {
+  "homes": 13,
+  "last": "2019-10",
+  "name": "Tc United Group Inc.",
+  "sites": 0
+ },
+ "terlin": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@terlin.ca"
+  ],
+  "homes": 1,
+  "last": "2023-12",
+  "name": "Terlin Construction Limited",
+  "phones": [
+   "613-821-0768"
+  ],
+  "sites": 31,
+  "source": "website",
+  "website": "https://terlin.ca"
+ },
+ "theberge": {
+  "checked": "2026-11-20",
+  "emails": [
+   "sales@thebergehomes.com"
+  ],
+  "homes": 18,
+  "last": "2021-10",
+  "name": "Theberge Developments Ltd.",
+  "phones": [
+   "613-421-1515"
+  ],
+  "sites": 0,
+  "source": "website",
+  "website": "https://www.thebergehomes.com"
+ },
+ "theory": {
+  "checked": "2026-11-20",
+  "homes": 20,
+  "last": "2020-07",
+  "name": "Theory Developments Inc.",
+  "sites": 0
+ },
+ "theriault-design": {
+  "homes": 6,
+  "last": "2020-08",
+  "name": "Theriault Design",
+  "sites": 0
+ },
+ "theriault-design-and-build": {
+  "checked": "2026-11-20",
+  "homes": 19,
+  "last": "2023-03",
+  "name": "Theriault Home Design And Build Inc.",
+  "sites": 0
+ },
+ "thomas-fuller": {
+  "checked": "2026-11-20",
+  "homes": 100,
+  "last": "2021-09",
+  "name": "Thomas Fuller Construction Co. Limited",
+  "phones": [
+   "613-728-7000"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://thomasgroup.ca"
+ },
+ "timbercross": {
+  "homes": 11,
+  "last": "2023-07",
+  "name": "Timbercross Homes Inc.",
+  "sites": 0
+ },
+ "trane": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-05",
+  "name": "Trane Canada",
+  "sites": 2
+ },
+ "trigal": {
+  "homes": 7,
+  "last": "2019-05",
+  "name": "Trigal Construction",
+  "sites": 0
  },
  "trottier": {
   "checked": "2026-11-20",
@@ -714,8 +2950,45 @@
  },
  "tsh-custom-c-o-tim-streek": {
   "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2020-08",
   "name": "Tsh Custom Homes C/O Tim Streek",
+  "sites": 3
+ },
+ "ttf-engineering": {
+  "checked": "2026-11-20",
+  "emails": [
+   "terryv@ttfengineering.ca"
+  ],
+  "homes": 0,
+  "last": "2020-11",
+  "name": "Ttf Engineering Inc.",
+  "phones": [
+   "613-592-1677"
+  ],
+  "sites": 1,
+  "source": "website",
+  "website": "https://www.ttfengineering.ca"
+ },
+ "turner": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2023-12",
+  "name": "Turner Construction Company",
   "sites": 1
+ },
+ "turner-fleischer-architects": {
+  "checked": "2026-11-20",
+  "homes": 3,
+  "last": "2022-08",
+  "name": "Turner Fleischer Architects Inc.",
+  "sites": 1
+ },
+ "u-and-i-builders": {
+  "homes": 8,
+  "last": "2021-09",
+  "name": "U & I Builders Ltd.",
+  "sites": 0
  },
  "uniform-march-road": {
   "checked": "2026-11-20",
@@ -743,21 +3016,30 @@
    "dswant@uniformdevelopments.com",
    "wmatthews@uniformdevelopments.com"
   ],
+  "homes": 1126,
+  "last": "2023-03",
   "name": "Uniform Urban Developments Ltd.",
   "phones": [
    "613-225-0770",
    "613-723-1675",
    "613-672-8154"
   ],
-  "sites": 3,
+  "sites": 8,
   "source": "website",
   "website": "https://uniformdevelopments.com"
  },
- "uniform-urban-developments": {
+ "upscale": {
   "checked": "2026-11-20",
-  "homes": 63,
-  "last": "2023-01",
-  "name": "Uniform Urban Developments Ltd.",
+  "homes": 73,
+  "last": "2023-09",
+  "name": "Upscale Homes Inc.",
+  "sites": 0
+ },
+ "urban-rise": {
+  "checked": "2026-11-20",
+  "homes": 20,
+  "last": "2018-06",
+  "name": "Urban Rise Development Inc.",
   "sites": 0
  },
  "urbandale": {
@@ -767,22 +3049,17 @@
    "kanatalakes@urbandale.com",
    "leitrimflats@urbandale.com"
   ],
+  "homes": 4441,
+  "last": "2023-11",
   "name": "Urbandale Construction",
   "phones": [
    "613-822-2190",
    "613-695-3011",
    "613-599-6157"
   ],
-  "sites": 19,
+  "sites": 56,
   "source": "website",
   "website": "https://urbandale.com"
- },
- "urbandale-construction": {
-  "checked": "2026-11-20",
-  "homes": 58,
-  "last": "2023-01",
-  "name": "Urbandale Construction",
-  "sites": 0
  },
  "urbandale-riverside-gate": {
   "checked": "2026-11-20",
@@ -791,6 +3068,8 @@
    "kanatalakes@urbandale.com",
    "leitrimflats@urbandale.com"
   ],
+  "homes": 17,
+  "last": "2019-05",
   "name": "Urbandale Riverside Gate Inc.",
   "phones": [
    "613-822-2190",
@@ -801,11 +3080,33 @@
   "source": "website",
   "website": "https://urbandale.com"
  },
+ "urbanlux": {
+  "homes": 7,
+  "last": "2018-11",
+  "name": "Urbanlux Homes Inc.",
+  "sites": 0
+ },
  "valecraft": {
   "checked": "2026-11-20",
+  "homes": 1638,
+  "last": "2023-09",
   "name": "Valecraft Homes Ltd.",
   "sites": 1,
   "website": null
+ },
+ "vanderwestern-and-rutherford-associates": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2022-08",
+  "name": "Vanderwestern & Rutherford Associates",
+  "sites": 3
+ },
+ "vcl": {
+  "checked": "2026-11-20",
+  "homes": 7,
+  "last": "2023-08",
+  "name": "Vcl Construction",
+  "sites": 8
  },
  "veinard-investments": {
   "checked": "2026-11-20",
@@ -823,11 +3124,32 @@
   "source": "website",
   "website": "https://www.veinard.ca"
  },
+ "vezeau-laura-ann": {
+  "checked": "2026-11-20",
+  "homes": 0,
+  "last": "2021-04",
+  "name": "Vezeau, Laura  Ann",
+  "sites": 1
+ },
+ "victoria": {
+  "checked": "2026-11-20",
+  "emails": [
+   "info@victoriainc.ca"
+  ],
+  "homes": 8,
+  "last": "2019-04",
+  "name": "Victoria Homes Construction Limited",
+  "sites": 2,
+  "source": "website",
+  "website": "https://victoriainc.ca"
+ },
  "vitality-landscaping": {
   "checked": "2026-11-20",
   "emails": [
    "info@vitalitylandscaping.com"
   ],
+  "homes": 1,
+  "last": "2020-12",
   "name": "Vitality Landscaping Inc.",
   "phones": [
    "613-299-7670"
@@ -836,10 +3158,76 @@
   "source": "website",
   "website": "https://www.vitalitylandscaping.com"
  },
+ "warlyn": {
+  "checked": "2026-11-20",
+  "homes": 36,
+  "last": "2021-01",
+  "name": "Warlyn Construction Ltd.",
+  "sites": 0
+ },
  "waterdon": {
   "checked": "2026-11-20",
+  "homes": 1,
+  "last": "2021-03",
   "name": "Waterdon Construction",
+  "sites": 4
+ },
+ "watko": {
+  "checked": "2026-11-20",
+  "homes": 2,
+  "last": "2022-10",
+  "name": "Watko Construction Ltd.",
   "sites": 1
+ },
+ "weima-gordon": {
+  "homes": 5,
+  "last": "2021-12",
+  "name": "Weima, Gordon",
+  "sites": 0
+ },
+ "west-hill": {
+  "checked": "2026-11-20",
+  "homes": 19,
+  "last": "2022-12",
+  "name": "West Hill Homes Ltd.",
+  "sites": 0
+ },
+ "westrade": {
+  "checked": "2026-11-20",
+  "emails": [
+   "office@westrade.ca"
+  ],
+  "homes": 0,
+  "last": "2022-03",
+  "name": "Westrade Construction Limited",
+  "phones": [
+   "613-820-1770"
+  ],
+  "sites": 3,
+  "source": "website",
+  "website": "https://westrade.ca"
+ },
+ "westview-projects": {
+  "checked": "2026-11-20",
+  "emails": [
+   "build@westviewprojects.com"
+  ],
+  "homes": 1,
+  "last": "2023-12",
+  "name": "Westview Projects Inc.",
+  "phones": [
+   "613-415-7776"
+  ],
+  "sites": 2,
+  "source": "website",
+  "website": "https://www.westviewprojects.com"
+ },
+ "windmill-green-fund-vi": {
+  "checked": "2026-11-20",
+  "homes": 19,
+  "last": "2022-11",
+  "name": "Windmill Green Fund Lp Vi",
+  "sites": 0
  },
  "yaztech-mechanical": {
   "checked": "2026-11-20",
@@ -853,6 +3241,8 @@
   "emails": [
    "info@zanuttaconstruction.com"
   ],
+  "homes": 1,
+  "last": "2023-05",
   "name": "Zanutta Construction",
   "phones": [
    "613-298-9381"
