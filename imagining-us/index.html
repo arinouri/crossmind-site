@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imagining Us by Jalen Vale</title>
+<meta name="description" content="Imagining Us: An Examination of Almost-Relationships, by Jalen Vale. A clear, compassionate guide to the grief of almost-love.">
+<meta property="og:title" content="Imagining Us by Jalen Vale">
+<meta property="og:description" content="An Examination of Almost-Relationships. A clear, compassionate guide to the grief of almost-love.">
+<meta property="og:image" content="https://crossmind.ca/imagining-us/cover.jpg">
+<meta property="og:type" content="book">
+<link rel="icon" href="cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE  calm, literary, trustworthy: a publisher's book page
+   IDEA   the cover's dusk over the lake: deep lake blue, sunset peach, quiet white paper
+   PICTURE the book itself standing in the dusk band, spine and front visible
+   COLOUR white paper, lake ink #1b3354, sunset #e0784f accent, dusk gradient band
+   TYPE   Cormorant Garamond (the cover's classic caps) + Source Serif 4 text + Figtree for UI
+   LAYOUT hero band with title and book, then editions, the book, sample, readers, footer */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0d1624);--ink:light-dark(#16212f,#e8edf5);--mute:light-dark(#566275,#a6b2c4);
+--lake:light-dark(#1b3354,#c9d8ee);--sun:light-dark(#c95f37,#f2a079);--sunbg:light-dark(#e0784f,#e0784f);
+--card:light-dark(#ffffff,#132036);--line:light-dark(#e3e8ef,#24324a);
+--paper:light-dark(#fbf8f3,#f7f3ec);--soft:light-dark(#f3f6fa,#111c2e);
+--display:"Cormorant Garamond",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Figtree",system-ui,sans-serif}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body);overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:var(--sun)}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:4px}
+.in{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
+.band{padding-block:clamp(48px,7vw,96px)}
+/* header */
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.mark{font-family:var(--display);font-weight:600;font-size:22px;color:var(--lake);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:clamp(14px,2.4vw,28px);font-family:var(--ui);font-size:15px;font-weight:500;align-items:center}
+nav a{color:var(--ink);text-decoration:none;opacity:.8}
+nav a:hover{opacity:1}
+nav .buy{opacity:1;background:var(--lake);color:var(--bg);padding:9px 16px;border-radius:999px}
+/* hero */
+.hero{background:linear-gradient(180deg,#22416b 0%,#4d6c98 38%,#a99bb3 70%,#f1b48f 100%);color:#fff;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(48px,7vw,88px) 0}
+.kicker{font-family:var(--ui);font-size:15px;font-weight:500;color:#fde6d6;margin:0 0 14px}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(52px,8vw,92px);line-height:.98;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.sub{font-family:var(--display);font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.2;margin:10px 0 18px;color:#eef2fa}
+.by{font-family:var(--ui);font-size:16px;font-weight:600;margin:0 0 22px;color:#fff}
+.lede{max-width:52ch;margin:0 0 30px;color:#f4f6fb;font-size:18px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:clamp(40px,6vw,80px)}
+.btn{font:600 16px var(--ui);min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+.btn.solid{background:#fff;color:#1b3354}
+.btn.solid:hover{background:#fdeee4}
+.btn.line{border-color:rgba(255,255,255,.75);color:#fff;background:transparent}
+.btn.line:hover{background:rgba(255,255,255,.12)}
+.stage{position:relative;display:grid;place-items:end center;align-self:end;min-height:440px;padding-bottom:0}
+.book{position:relative;width:min(300px,64vw);aspect-ratio:2/3;transform:perspective(1100px) rotateY(30deg);transform-style:preserve-3d;margin-bottom:46px;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.book:hover{transform:perspective(1100px) rotateY(18deg)}
+.book .front{position:absolute;inset:0;border-radius:2px 4px 4px 2px;overflow:hidden;box-shadow:inset 3px 0 6px rgba(0,0,0,.25)}
+.book .front img{width:100%;height:100%;object-fit:cover}
+.book .spine{position:absolute;top:0;bottom:0;left:-34px;width:34px;transform:rotateY(-90deg);transform-origin:right;background:linear-gradient(90deg,#132643,#1d3961);display:grid;place-items:center}
+.book .spine span{writing-mode:vertical-rl;font:600 13px var(--display);letter-spacing:.16em;color:#e9eef7;white-space:nowrap}
+.book::after{content:"";position:absolute;left:-10%;right:-30%;bottom:-34px;height:30px;background:radial-gradient(closest-side,rgba(10,20,40,.45),transparent);transform:translateZ(-1px)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.book{transition:none}}
+/* sections */
+h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);line-height:1.05;margin:0 0 14px;color:var(--lake);text-wrap:balance}
+.intro{max-width:62ch;color:var(--mute);margin:0 0 34px}
+/* editions: a publisher's formats list */
+.formats{border-top:2px solid var(--lake)}
+.fmt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) 150px 210px;gap:28px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
+.fmt h3{font:500 32px/1.05 var(--display);margin:0;color:var(--lake)}
+.fmt .st{display:block;font:500 14px var(--ui);color:var(--mute);margin-top:6px}
+.fmt .st.on{color:light-dark(#1d6a43,#8fd9b0)}
+.fmt p{margin:0;font-size:16px;color:var(--mute)}
+.fmt .pr{font:600 19px var(--ui);color:var(--ink);white-space:nowrap}
+.fmt .pr small{display:block;font:400 14px var(--ui);color:var(--mute)}
+.act{justify-self:end;font:600 15px var(--ui);min-height:46px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap}
+.act.buy{background:var(--lake);color:var(--bg)}
+.act.buy:hover{background:var(--sun);color:#fff}
+.act.ghost{border:1.5px solid var(--line);color:var(--ink)}
+.act.wait{color:var(--mute);padding:0}
+.direct{margin-top:26px;font:15px/1.6 var(--ui);color:var(--mute);max-width:70ch}
+.direct b{color:var(--ink)}
+/* book */
+.about{background:var(--soft)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.layers{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:2px;font-family:var(--ui);font-size:16px}
+.layers li{display:grid;grid-template-columns:14px 140px minmax(0,1fr);gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.layers i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.layers b{color:var(--ink)}
+.layers span{color:var(--mute)}
+.figwrap{background:#fff;border-radius:14px;padding:clamp(14px,2vw,24px);box-shadow:0 1px 0 var(--line),0 20px 50px rgba(20,35,60,.10)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+.facts div{border-top:2px solid var(--sun);padding-top:12px;font:15px/1.5 var(--ui);color:var(--mute)}
+.facts b{display:block;font:500 34px/1.1 var(--display);color:var(--lake)}
+/* reader */
+.reader{background:var(--paper);color:#1d2433;border-radius:16px;overflow:hidden;box-shadow:0 1px 0 var(--line),0 30px 70px rgba(20,35,60,.14)}
+.rbar{display:flex;align-items:center;gap:14px;padding:14px 18px;background:#efe8dd;border-bottom:1px solid #e2d8c9;font:15px var(--ui);flex-wrap:wrap}
+.play{width:48px;height:48px;border-radius:50%;border:0;background:#1b3354;color:#fff;cursor:pointer;display:grid;place-items:center;flex:none}
+.play svg{width:18px;height:18px}
+.track{flex:1;min-width:140px;height:6px;background:#dccfbc;border-radius:3px;position:relative;cursor:pointer}
+.track i{position:absolute;inset:0 auto 0 0;width:0;background:#1b3354;border-radius:3px}
+.time{font-variant-numeric:tabular-nums;color:#5c667a;white-space:nowrap}
+.rate{font:15px var(--ui);border:1px solid #cdbfa9;background:#fff;border-radius:8px;padding:6px 8px;color:#1d2433;min-height:36px}
+.page{padding:40px clamp(20px,6vw,64px) 26px;min-height:400px;font-size:18px}
+.page h3{font:italic 500 32px var(--display);text-align:center;margin:0 0 22px;color:#1b3354}
+.para{margin:0 0 12px;text-indent:1.4em;padding:3px 8px;border-radius:6px;cursor:pointer;transition:background .2s}
+.para.first{text-indent:0}
+.para.q{text-indent:0;font-style:italic;padding-left:2.2em}
+.para:hover{background:#f1ebe1}
+.para.on{background:#fbe0cf}
+.pfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;border-top:1px solid #e2d8c9;font:15px var(--ui);color:#5c667a;flex-wrap:wrap}
+.pfoot button{font:600 15px var(--ui);background:none;border:1px solid #cdbfa9;border-radius:999px;padding:0 16px;min-height:42px;cursor:pointer;color:#1d2433}
+.pfoot button:disabled{opacity:.4;cursor:default}
+.pfoot .listen{background:#1b3354;border-color:#1b3354;color:#fff}
+.note{font:14px var(--ui);color:var(--mute);margin-top:14px}
+.samplegrid{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:40px;align-items:start}
+.how{font-family:var(--ui);font-size:15px;color:var(--mute);display:grid;gap:18px}
+.how b{display:block;font:600 17px var(--ui);color:var(--ink);margin-bottom:2px}
+/* readers */
+.who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.who blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;font:italic 500 23px/1.35 var(--display);color:var(--ink)}
+.cta{background:#1b3354;color:#fff;text-align:left}
+.cta .in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.cta h2{color:#fff;margin:0}
+.cta p{margin:6px 0 0;color:#cfdbee;font-family:var(--ui)}
+footer{border-top:1px solid var(--line);padding:28px 0 36px;font:14px var(--ui);color:var(--mute)}
+footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--mute)}
+@media(max-width:980px){.fmt{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) auto;}.fmt .act{grid-column:1/-1;justify-self:start}.samplegrid{grid-template-columns:minmax(0,1fr)}.how{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:780px){.hero .in,.two{grid-template-columns:minmax(0,1fr)}.stage{min-height:380px;order:-1}.hero .in{padding-top:28px}.who,.facts{grid-template-columns:minmax(0,1fr)}.cta .in{grid-template-columns:minmax(0,1fr)}.how{grid-template-columns:minmax(0,1fr)}nav a:not(.buy){display:none}}
+@media(max-width:640px){.fmt{grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;padding:22px 0}.fmt p{grid-column:1/-1;grid-row:2}.fmt .pr{grid-row:1;grid-column:2;text-align:right}.fmt .act{grid-row:3}}
+@media(max-width:560px){.layers li{grid-template-columns:14px 110px minmax(0,1fr)}.page{font-size:17px}.direct{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="in">
+  <a class="mark" href="#top">Imagining Us</a>
+  <nav aria-label="Sections">
+    <a href="#editions">Editions</a><a href="#book">The book</a><a href="#sample">Read &amp; listen</a>
+    <a class="buy" href="https://www.amazon.com/dp/B0HM5NNB43">Buy the eBook</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="in">
+  <div>
+    <p class="kicker">Relationship psychology</p>
+    <h1>Imagining Us</h1>
+    <p class="sub">An Examination of Almost-Relationships</p>
+    <p class="by">By Jalen Vale</p>
+    <p class="lede">For the relationship that never had a name. A clear, compassionate guide to why almost-love can hurt as much as a real breakup, and how to separate what happened from what you hoped would happen.</p>
+    <div class="btns">
+      <a class="btn solid" href="https://www.amazon.com/dp/B0HM5NNB43">Get the Kindle edition, $4.99</a>
+      <a class="btn line" href="#sample">Read &amp; listen to a sample</a>
+    </div>
+  </div>
+  <div class="stage" aria-hidden="true">
+    <div class="book"><div class="spine"><span>IMAGINING US &nbsp;·&nbsp; JALEN VALE</span></div><div class="front"><img src="cover.jpg" alt=""></div></div>
+  </div>
+</div></section>
+
+<section class="band" id="editions"><div class="in">
+  <h2>Choose your edition</h2>
+  <p class="intro">Read it on Kindle today. The paperback and audiobook are on the way, and the Read-Along Edition, with narration on every page, arrives in January.</p>
+  <div class="formats">
+    <div class="fmt">
+      <div><h3>Kindle eBook</h3><span class="st on">Available now</span></div>
+      <p>The complete book on any Kindle device or the free Kindle app, with all 14 diagrams.</p>
+      <span class="pr">$4.99<small>USD</small></span>
+      <a class="act buy" href="https://www.amazon.com/dp/B0HM5NNB43">Buy on Amazon</a>
+    </div>
+    <div class="fmt">
+      <div><h3>Paperback</h3><span class="st">Coming soon</span></div>
+      <p>84 pages, 6 × 9 in, on cream paper with a matte cover. Every diagram in print.</p>
+      <span class="pr">Amazon<small>and direct from us</small></span>
+      <span class="act wait">Available soon</span>
+    </div>
+    <div class="fmt">
+      <div><h3>Audiobook</h3><span class="st">Coming soon</span></div>
+      <p>The full book, chapter by chapter, narrated in a natural digital voice.</p>
+      <span class="pr">Spotify<small>audiobooks</small></span>
+      <span class="act wait">Available soon</span>
+    </div>
+    <div class="fmt">
+      <div><h3>Read-Along Edition</h3><span class="st">January 2027</span></div>
+      <p>The complete book with narration on every page. Read, listen, or do both at once.</p>
+      <span class="pr">This site<small>only here</small></span>
+      <a class="act ghost" href="#sample">Try the sample</a>
+    </div>
+  </div>
+  <p class="direct"><b>Ordering a paperback from us?</b> Each copy is printed on demand and shipped straight to you, usually within one to two weeks.</p>
+</div></section>
+
+<section class="band about" id="book"><div class="in">
+  <div class="two">
+    <div>
+      <h2>A love that never quite began can still end.</h2>
+      <p>An almost-relationship emerges when one close friend or colleague develops romantic feelings for another. Both recognize a meaningful connection, but one builds an emotional attachment before mutual romantic desire is confirmed. That imbalance is what gives the relationship its name: <em>almost</em>.</p>
+      <p>Rather than offering simplistic dating advice, <em>Imagining Us</em> gives you a framework for telling apart what is real, what you interpreted, what you hoped and what you imagined.</p>
+      <ul class="layers" aria-label="The six layers of the framework">
+        <li style="--c:#3a5f95"><i></i><b>Reality</b><span>What exists</span></li>
+        <li style="--c:#34507a"><i></i><b>Interpretation</b><span>What I believe it means</span></li>
+        <li style="--c:#5b6f99"><i></i><b>Hope</b><span>What I believe could happen</span></li>
+        <li style="--c:#9a8aa9"><i></i><b>Fantasy</b><span>What I imagine happening</span></li>
+        <li style="--c:#d98f6b"><i></i><b>Attachment</b><span>What I begin emotionally investing in</span></li>
+        <li style="--c:#e0784f"><i></i><b>Mutuality</b><span>What we actually establish together</span></li>
+      </ul>
+    </div>
+    <figure class="figwrap" style="margin:0"><img src="framework.png" alt="The Imagining Us Almost-Relationship Framework diagram, one of 14 diagrams in the book"></figure>
+  </div>
+  <div class="facts">
+    <div><b>5 parts, 15 chapters</b>From naming the relationship to letting go and loving again.</div>
+    <div><b>14 diagrams</b>Visual tools that make the framework easy to work through.</div>
+    <div><b>Grounded in research</b>Attachment, ambiguous loss and interpersonal perception, with full sources.</div>
+  </div>
+</div></section>
+
+<section class="band" id="sample"><div class="in">
+  <h2>Read it. Hear it. Page by page.</h2>
+  <p class="intro">This is a preview of the Read-Along Edition. Press play and each passage lights up as it’s read, or tap any paragraph to start listening from there.</p>
+  <div class="samplegrid">
+    <div>
+      <div class="reader" aria-label="Read-along sample">
+        <div class="rbar">
+          <button class="play" id="play" aria-label="Play narration"><svg viewBox="0 0 24 24" fill="currentColor" id="pi"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="track" id="track" role="slider" aria-label="Narration position" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="fill"></i></div>
+          <span class="time" id="time">0:00 / 6:02</span>
+          <label for="rate" style="color:#5c667a">Speed</label>
+          <select class="rate" id="rate"><option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option></select>
+        </div>
+        <div class="page" id="page" aria-live="polite"></div>
+        <div class="pfoot">
+          <button id="prev">Previous</button>
+          <span id="pnum">Page 1 of 4</span>
+          <button class="listen" id="listen">Listen to this page</button>
+          <button id="next">Next</button>
+        </div>
+      </div>
+      <p class="note">Sample: the Author’s Note and Introduction. Narration is a digital voice.</p>
+    </div>
+    <div class="how">
+      <div><b>Every page has a voice</b>Narration follows the text, so you never lose your place.</div>
+      <div><b>Start anywhere</b>Tap a paragraph and the narration jumps straight to it.</div>
+      <div><b>Your pace</b>Slow it down to reflect, or speed it up to skim.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band about"><div class="in">
+  <h2>Written for anyone who has said “we weren’t really together, but…”</h2>
+  <p class="intro">If any of these sound familiar, this book was written for you.</p>
+  <div class="who">
+    <blockquote>You’re grieving someone you never officially dated, and the people around you don’t understand why it hurts this much.</blockquote>
+    <blockquote>You keep replaying messages, moments and signals, trying to work out what it all meant.</blockquote>
+    <blockquote>You want to love again without getting caught in a story only one of you was living.</blockquote>
+  </div>
+</div></section>
+
+<section class="band cta"><div class="in">
+  <div><h2>Start reading tonight.</h2><p>The Kindle edition is available now on Amazon.</p></div>
+  <a class="btn solid" href="https://www.amazon.com/dp/B0HM5NNB43">Get the Kindle edition, $4.99</a>
+</div></section>
+</main>
+
+<footer><div class="in">
+  <span>© 2026 Jalen Vale. All rights reserved.</span>
+  <span><a href="#editions">Editions</a> · <a href="#book">The book</a> · <a href="#sample">Sample</a></span>
+</div></footer>
+<script>
+{
+const DATA = [{"h": "Author’s Note"}, {"p": "There are relationships we know how to describe. We can say when they began. We can say when they ended. We can explain who was involved and what happened. And then there are relationships that live in the spaces between categories, somewhere between friendship, attraction, intimacy, hope, and possibility. These relationships are called almost-relationships and can be very confusing.", "t": 0.0}, {"p": "Imagining Us explores the almost-relationship, the emotionally complicated space between friendship, intimacy and romantic commitment. It examines why people become attached to relationships that remain undefined, how imagination shapes romantic perception, and what happens when two people experience the same connection but assign it different meanings.", "t": 27.84}, {"p": "The book’s central question is: What happens when one person in a relationship falls in love with the possibility of love?", "t": 50.54}, {"p": "Rather than offering simplistic dating advice, Imagining Us provides a framework for distinguishing between relationship reality, relationship hope and relationship fantasy. Its distinctive contribution to relationship psychology is an examination of interpretive asymmetry: the way two people can share the same behaviours, intimacy and history while constructing different psychological realities. The book explores how ambiguity creates an interpretive environment in which attention, memory, hope and imagined futures can intensify attachment before mutual romantic desire exists.", "t": 58.64}, {"p": "It draws on relationship psychology, research on uncertainty and interpersonal perception, cultural observation, relatable scenarios, and reflective analysis to explore ambiguity, vulnerability, communication, boundaries and the grief associated with the end of an almost-relationship.", "t": 90.71}, {"p": "The experience can feel confusing and isolating because the outside world may not recognize it as a loss. There was no marriage. No shared home. No official breakup. Sometimes there wasn’t even a first date. And yet something still ended, painfully. You still feel grief. You still experience longing. You still wonder what your relationship might have become.", "t": 106.02}, {"p": "The distinctive focus of Imagining Us is not simply on whether a relationship is defined, but how ambiguity changes perception. When commitment is absent, ordinary interactions can become evidence, possibility can feel like probability, and an imagined future can begin to function emotionally like a real one.", "t": 131.82}, {"p": "This is the beginning of understanding your experience in an almost-relationship, the point at which clarity becomes possible.", "t": 152.38}, {"h": "Introduction"}, {"p": "There is a kind of heartbreak that can leave you wondering if you have a right to grieve. A void between you and someone you love, who is a close friend but not your partner. You weren't married. You weren't engaged. You weren't even dating and there was no breakup. And still, something special that had a powerful hold on you suddenly and traumatically ended.", "t": 162.96}, {"p": "It’s difficult to explain this relationship to someone who wasn't there. The usual progress markers don’t exist. There was no anniversary to remember, no apartment you once shared, no “together” photos that need to be put away, no relationship status to change. There may be nothing obvious for the outside world to recognize as loss, and yet you feel lost. You remember how easily conversations flowed and how deeply you felt the undeniable intimacy.", "t": 195.47}, {"p": "There are unanswered questions that have nowhere to land.", "t": 225.44}, {"q": ["What if we'd met at another time?", "What if they had been ready?", "What if I had said what I felt sooner?", "What if I had said less?", "What if I had said more?", "What if circumstances had been different?", "What if that one conversation or trip together had gone another way?"], "t": 229.41}, {"p": "You might tell yourself you're being ridiculous, dramatic, naïve. You might minimize the entire experience when someone asks what happened. \"It wasn't really anything.\" \"We weren't together.\" \"It was complicated.\" \"I don't even know what to call it.\"", "t": 251.21}, {"p": "That may be true, but you can begin making room for someone inside yourself long before they have agreed to occupy that space. You can become entranced by their voice, their humor, their attention, their aura, their sharing, and, most importantly, the way you feel when you’re with them and know that you are being seen, respected, appreciated, understood and loved for who you are.", "t": 267.06}, {"p": "This book is about the romantic relationship you wanted but never had. It’s about the painful loss of something that may never have become fully realized outside your inner world, but which became undeniably real and powerful inside it. It’s about the relationship that seemed to be taking shape and then didn't. It’s about the person who cared about you but could not meet you where you were. It’s about the future that shimmered, then vanished.", "t": 292.25}, {"p": "Clinicians call it ambiguous loss, but elegy knows it as the grief of almost-love. Attachment research tells us this is human: we bond to imagined continuities, to the soft outline of a life that never quite formed. Attachment dynamics explain the rupture and the longing; mourning explains the silence that follows.", "t": 319.26}, {"p": "To understand why this kind of loss can be so powerful, you must understand what you were attached to that was suddenly removed from the inner world you constructed. The person. The possibility. The feeling. The meaning. The future. The unanswered question.", "t": 341.97}];
+const PAGES = [[0,8],[8,9],[9,13],[13,DATA.length]]; // by item index; set below
+(function(){
+  // group: page1 = note paras 1-4, page2 = note 5-8, page3 = intro to questions, page4 = rest
+  const idx = DATA.map((d,i)=>i);
+  const introH = DATA.findIndex(d=>d.h==='Introduction');
+  const q = DATA.findIndex(d=>d.q);
+  PAGES.length=0;
+  PAGES.push([0,5],[5,introH],[introH,q+1],[q+1,DATA.length]);
+})();
+const DUR = 362.08;
+const fmt = s => { s=Math.max(0,Math.floor(s)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
+const $ = id => document.getElementById(id);
+const audio = new Audio(); audio.preload='none';
+let loaded=false, cur=0, stopAt=null;
+const timed = DATA.map((d,i)=>({...d,i})).filter(d=>'t' in d);
+function pageStart(p){ const it=DATA.slice(PAGES[p][0],PAGES[p][1]).find(d=>'t' in d); return it?it.t:0; }
+function pageEnd(p){ return p+1<PAGES.length?pageStart(p+1):DUR; }
+function render(){
+  const [a,b]=PAGES[cur]; const el=$('page'); el.innerHTML='';
+  let first=true;
+  for(let i=a;i<b;i++){
+    const d=DATA[i];
+    if(d.h){ const h=document.createElement('h3'); h.textContent=d.h; el.appendChild(h); first=true; continue; }
+    const p=document.createElement('p'); p.className='para'+(first?' first':'')+(d.q?' q':''); first=false;
+    p.dataset.i=i; p.tabIndex=0;
+    if(d.q){ d.q.forEach((l,k)=>{ if(k) p.appendChild(document.createElement('br')); p.appendChild(document.createTextNode(l)); }); }
+    else p.textContent=d.p;
+    p.addEventListener('click',()=>seek(d.t,true,i)); p.addEventListener('keydown',e=>{if(e.key==='Enter')seek(d.t,true,i)});
+    el.appendChild(p);
+  }
+  $('pnum').textContent=`Page ${cur+1} of ${PAGES.length}`;
+  $('prev').disabled=cur===0; $('next').disabled=cur===PAGES.length-1;
+  highlight();
+}
+// Mode: "file" uses the recorded narration (intro.mp3 hosted beside this page);
+// "voice" falls back to the built-in reading voice when the recording isn't hosted here.
+let mode=null, tts=null, ttsOn=false, ttsIdx=null;
+async function ensure(){
+  if(mode) return;
+  $('time').textContent='Loading…';
+  try{
+    const r=await fetch('intro.mp3'); if(!r.ok) throw 0; const b=await r.blob(); if(b.size<10000) throw 0;
+    audio.src=URL.createObjectURL(b); mode='file'; loaded=true;
+    await new Promise(res=>{ if(audio.readyState>=1) res(); else audio.addEventListener('loadedmetadata',res,{once:true}); });
+  }catch(e){
+    tts = window.claude ? await window.claude.use('tts') : null;
+    if(!tts){ mode='none'; $('time').textContent='Narration unavailable here'; return; }
+    mode='voice'; $('time').textContent='Preview voice';
+    tts.onState(({state})=>{ ttsOn = state==='speaking'; $('pi').innerHTML = ttsOn ? '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>' : '<path d="M8 5v14l11-7z"/>'; if(!ttsOn){ ttsIdx=null; highlight(); } });
+    tts.onLine(({id})=>{ ttsIdx=+id; const p=PAGES.findIndex(([a,b])=>ttsIdx>=a&&ttsIdx<b); if(p!==cur){cur=p;render();} highlight(); });
+  }
+}
+function speakFrom(i, toEnd){
+  const [a,b]=PAGES[cur]; const lines=[];
+  const last = toEnd ? b : b;
+  for(let k=Math.max(i,a);k<last;k++){ const d=DATA[k]; if(d.h) continue; lines.push({text: d.p || d.q.join(' '), id:String(k)}); }
+  tts.setRate && tts.setRate(+$('rate').value);
+  tts.speak(lines,{rate:+$('rate').value}).catch(()=>{});
+}
+async function seek(t,play,i){
+  await ensure();
+  if(mode==='voice'){ if(play) speakFrom(i ?? PAGES[cur][0], true); return; }
+  if(mode!=='file') return;
+  try{ audio.currentTime=t; stopAt=null; if(play){ audio.playbackRate=+$('rate').value; await audio.play(); } }catch(e){ $('time').textContent='Audio could not load'; }
+}
+function which(t){ if(mode==='voice') return ttsIdx; let k=null; for(const d of timed){ if(d.t<=t+0.05) k=d.i; } return k; }
+function highlight(){
+  const k=which(audio.currentTime||0);
+  document.querySelectorAll('.para').forEach(p=>p.classList.toggle('on', (mode==='voice'? ttsOn : !audio.paused) && +p.dataset.i===k));
+}
+function setIcon(){ $('pi').innerHTML = audio.paused ? '<path d="M8 5v14l11-7z"/>' : '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>'; $('play').setAttribute('aria-label', audio.paused?'Play narration':'Pause narration'); }
+audio.addEventListener('timeupdate',()=>{
+  const t=audio.currentTime; $('fill').style.width=(t/DUR*100)+'%'; $('track').setAttribute('aria-valuenow',Math.round(t/DUR*100));
+  $('time').textContent=fmt(t)+' / '+fmt(DUR);
+  if(stopAt!==null && t>=stopAt){ audio.pause(); stopAt=null; }
+  const k=which(t); if(k!==null && !audio.paused){ const p=PAGES.findIndex(([a,b])=>k>=a&&k<b); if(p!==cur){ cur=p; render(); } }
+  highlight();
+});
+audio.addEventListener('play',setIcon); audio.addEventListener('pause',()=>{setIcon();highlight();});
+$('play').addEventListener('click',async()=>{ await ensure(); if(mode==='voice'){ if(ttsOn) tts.stop(); else speakFrom(PAGES[cur][0],true); return; } if(mode!=='file') return; if(audio.paused){ if(audio.currentTime<pageStart(cur)-0.5||audio.currentTime>pageEnd(cur)) audio.currentTime=pageStart(cur); audio.playbackRate=+$('rate').value; audio.play().catch(()=>{}); } else audio.pause(); });
+$('listen').addEventListener('click',async()=>{ await seek(pageStart(cur),true,PAGES[cur][0]); if(mode==='file') stopAt=pageEnd(cur); });
+$('rate').addEventListener('change',()=>{ audio.playbackRate=+$('rate').value; if(tts&&tts.setRate) tts.setRate(+$('rate').value); });
+$('track').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); seek((e.clientX-r.left)/r.width*DUR, !audio.paused); });
+$('track').addEventListener('keydown',e=>{ if(e.key==='ArrowRight') seek(Math.min(DUR,(audio.currentTime||0)+10),!audio.paused); if(e.key==='ArrowLeft') seek(Math.max(0,(audio.currentTime||0)-10),!audio.paused); });
+$('prev').addEventListener('click',()=>{ if(cur>0){cur--;render(); if(!audio.paused||ttsOn) seek(pageStart(cur),true,PAGES[cur][0]);} });
+$('next').addEventListener('click',()=>{ if(cur<PAGES.length-1){cur++;render(); if(!audio.paused||ttsOn) seek(pageStart(cur),true,PAGES[cur][0]);} });
+render();
+}
+</script>
+</body>
+</html>
