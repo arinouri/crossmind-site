@@ -164,7 +164,7 @@ table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-bl
 
 <section id="view-builders" class="page hide">
   <h2>Builders to win</h2>
-  <p class="note" style="margin:0 0 14px">One builder can bring every project they have. Ranked by upcoming cleaning value. Click a row for emails and all their sites.</p>
+  <p class="note" style="margin:0 0 14px">Every active Ottawa builder: the ones tied to current sites first, then the busiest home builders of recent years. Click a row for emails, phones and their sites.</p>
   <table class="stack"><thead><tr><th>Builder</th><th class="n">Sites</th><th class="n">Units</th><th class="n">Est. value</th><th>Cleaning from</th><th>Email</th><th>Stage</th></tr></thead><tbody id="bRows"></tbody></table>
 </section>
 
@@ -315,7 +315,7 @@ function render(){
   const d=due().length;$('#kDue').textContent=d;$('#dueN').textContent=d;$('#dueN').classList.toggle('hide',!d);
   $('#rows').innerHTML=r.length?r.slice(0,300).map(p=>{const ct=contactOf(p.bkey);return `<button class="row${p.id===selId?' sel':''}" data-id="${esc(p.id)}">
     <i class="dot d-${p.st}"></i>
-    <div><h3>${esc(p.addr)}${p.city!=='Ottawa'?', '+esc(p.city):''}</h3><p>${p.owner?'Homeowner-built':p.bkey?esc(p.builder)+(ct.emails.length?' · <span class="mail">✉ email</span>':''):'Builder not listed yet'}</p>
+    <div><h3>${esc(p.addr)}${p.city!=='Ottawa'?', '+esc(p.city):''}</h3><p>${p.owner?'Homeowner-built':p.bkey?(p.bsrc?'Likely ':'')+esc(p.builder)+(ct.emails.length?' · <span class="mail">✉ email</span>':''):'Builder not listed yet'}</p>
     <p><span class="tag ${p.st}">${STL[p.st]}</span> ${esc(p.cat)}${p.units?' · '+p.units+' units':''}</p></div>
     <div class="rt"><b>${money(p.est)}</b>clean ${fmtM(p.qa)}</div></button>`}).join('')+(r.length>300?`<p class="empty">Showing the 300 most relevant — narrow the filters or use the map.</p>`:''):'<p class="empty">No sites match these filters.</p>';
   drawMarkers(r);
@@ -395,6 +395,7 @@ function openLead(id){
   <p style="margin:12px 0 0">${esc(p.desc)}</p>
   <div class="kv"><div><span>Units</span><b>${p.units||'—'}</b></div><div><span>Permit value</span><b>${p.value?money(p.value):'—'}</b></div><div><span>Est. cleaning job</span><b>${money(p.est)}</b></div>
   <div><span>Area</span><b>${Math.round(p.sqft).toLocaleString()} ft²${p.area>0?'':'*'}</b></div><div><span>Permit issued</span><b>${esc(p.issued)}</b></div><div><span>Type</span><b>${esc(p.cat)}</b></div></div>
+  ${p.bsrc?`<p class="note" style="margin:12px 0 0"><span class="tag">Likely builder</span> ${esc(p.bsrc)} — confirm when you call.</p>`:''}
   ${p.owner?`<div class="contact"><h3>Homeowner-built</h3><p style="margin:0">The City doesn't publish the owner's name. Reach them with a flyer or a site visit — usually a small job.</p></div>`:!p.bkey?findBlock(p):contactBlock(p.bkey,p)+(others>1?`<button class="btn" data-builder="${esc(p.bkey)}">See all ${others} ${esc(p.builder)} sites</button>`:'')}
   ${timeline(p)}
   <p class="note">${p.area>0?'':'* Area estimated from units or value. '}${p.approx?'Map pin is approximate (postal area). ':''}${p.kind==='Manual'?'Added by hand.':'Permit '+esc(p.id)+' · City of Ottawa open data.'}</p>`);
@@ -411,17 +412,18 @@ function openBuilder(k){
   const ps=sites.filter(p=>p.bkey===k).sort((a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa);const name=(builders[k]||{}).name||ps[0]?.builder||'Builder';selB=k;selId=null;
   openSheet(`<button class="x" data-close>×</button><span class="tag">Builder</span><h2>${esc(name)}</h2>
   <div class="kv"><div><span>Sites</span><b>${ps.length}</b></div><div><span>Units</span><b>${ps.reduce((s,p)=>s+(p.units||0),0)||'—'}</b></div><div><span>Upcoming cleaning</span><b>${money(ps.filter(p=>p.st!=='done').reduce((s,p)=>s+p.est,0))}</b></div></div>
-  ${contactBlock(k,ps[0])}
-  <h3 style="margin:22px 0 8px">Their sites</h3><div class="projs">${ps.map(p=>`<button data-lead="${esc(p.id)}"><span><b>${esc(p.addr)}</b><br><span class="note">${esc(p.cat)}${p.units?' · '+p.units+' units':''} · clean ~${fmtM(p.qa)}</span></span><span class="tag ${p.st}">${STL[p.st]}</span></button>`).join('')}</div>`);
+  ${contactBlock(k,ps[0]||null)}
+  <h3 style="margin:22px 0 8px">Their sites</h3>${ps.length?'':'<p class="note">No current permits matched to them yet — they built '+((builders[k]||{}).homes||0)+' homes in Ottawa in 2018–23, so they\'re worth a call.</p>'}<div class="projs">${ps.map(p=>`<button data-lead="${esc(p.id)}"><span><b>${esc(p.addr)}</b><br><span class="note">${esc(p.cat)}${p.units?' · '+p.units+' units':''} · clean ~${fmtM(p.qa)}</span></span><span class="tag ${p.st}">${STL[p.st]}</span></button>`).join('')}</div>`);
 }
 
 /* ---------- builders + follow-ups ---------- */
 function renderBuilders(){
   const g={};sites.filter(p=>p.bkey).forEach(p=>{(g[p.bkey]??={k:p.bkey,ps:[]}).ps.push(p)});
+  for(const [k,b] of Object.entries(builders))if(!g[k]&&b.homes)g[k]={k,ps:[]};
   const q=F.q.toLowerCase();
-  const list=Object.values(g).map(b=>{const live=b.ps.filter(p=>p.st!=='done');return {...b,name:(builders[b.k]||{}).name||b.ps[0].builder,units:b.ps.reduce((s,p)=>s+(p.units||0),0),val:live.reduce((s,p)=>s+p.est,0),next:[...live].sort((a,c)=>a.qa-c.qa)[0],ct:contactOf(b.k)}})
-    .filter(b=>(!q||b.name.toLowerCase().includes(q))&&(!F.mail||b.ct.emails.length)).sort((a,b)=>b.val-a.val);
-  $('#bRows').innerHTML=list.length?list.slice(0,400).map(b=>{const st=b.ct.c.stage||'New';return `<tr class="click" data-builder="${esc(b.k)}"><td><b>${esc(b.name)}</b></td><td class="n">${b.ps.length}</td><td class="n">${b.units||'—'}</td><td class="n">${money(b.val)}</td>
+  const list=Object.values(g).map(b=>{const live=b.ps.filter(p=>p.st!=='done');return {...b,name:(builders[b.k]||{}).name||b.ps[0]?.builder||b.k,homes:(builders[b.k]||{}).homes||0,units:b.ps.reduce((s,p)=>s+(p.units||0),0),val:live.reduce((s,p)=>s+p.est,0),next:[...live].sort((a,c)=>a.qa-c.qa)[0],ct:contactOf(b.k)}})
+    .filter(b=>(!q||b.name.toLowerCase().includes(q))&&(!F.mail||b.ct.emails.length)).sort((a,b)=>b.val-a.val||b.homes-a.homes);
+  $('#bRows').innerHTML=list.length?list.slice(0,400).map(b=>{const st=b.ct.c.stage||'New';return `<tr class="click" data-builder="${esc(b.k)}"><td><b>${esc(b.name)}</b>${b.homes?`<br><span class="note">${b.homes.toLocaleString()} homes built 2018–23</span>`:''}</td><td class="n">${b.ps.length||'—'}</td><td class="n">${b.units||'—'}</td><td class="n">${money(b.val)}</td>
   <td>${b.next?`<span class="tag ${b.next.st}">${fmtM(b.next.qa)}</span>`:'—'}</td><td>${b.ct.emails.length?`<span class="mail">${esc(b.ct.emails[0])}</span>`:b.ct.phones.length?esc(b.ct.phones[0]):'<span class="note">—</span>'}</td><td><span class="stage st-${st.replace(' ','-')}">${st}</span></td></tr>`}).join(''):'<tr><td colspan="7" class="empty">No builders yet.</td></tr>';
 }
 function renderFollow(){
@@ -485,8 +487,10 @@ ${sig()}`}
 };
 let cur={p:null,k:null,t:'site'};
 function compose(id,k,to){
-  const p=sites.find(z=>z.id===id)||sites.find(z=>z.bkey===k);if(!p)return;k=k||p.bkey;const ct=contactOf(k);
-  cur={p,k,t:['Contacted','Replied','Quote sent'].includes(ct.c.stage)?'follow':'site'};
+  let p=sites.find(z=>z.id===id)||sites.find(z=>z.bkey===k);const real=!!p;
+  if(!p){if(!k)return;p={addr:'your upcoming projects',builder:(builders[k]||{}).name||k,desc:'',units:0,qa:addM(TODAY,3),bkey:k}}
+  k=k||p.bkey;const ct=contactOf(k);
+  cur={p,k,t:['Contacted','Replied','Quote sent'].includes(ct.c.stage)?'follow':real?'site':'intro'};
   $('#cTo').value=to||ct.emails[0]||'';$('#cToList').innerHTML=ct.emails.map(e=>`<option value="${esc(e)}">`).join('');$('#cName').value=first(ct.c.contact);
   $('#cT').textContent='Email '+(ct.name||p.builder);
   $('#tpls').innerHTML=Object.entries(TPL).map(([key,v])=>`<button class="chip" data-tpl="${key}" aria-pressed="${key===cur.t}">${v.label}</button>`).join('');

@@ -29,7 +29,7 @@ S.headers["User-Agent"] = UA
 TODAY = dt.date.today()
 
 MAX_GEOCODE = int(os.environ.get("MAX_GEOCODE", "3000"))      # ~1 per second (Nominatim policy)
-MAX_BUILDERS = int(os.environ.get("MAX_BUILDERS", "120"))     # websites looked up per run
+MAX_BUILDERS = int(os.environ.get("MAX_BUILDERS", "200"))     # websites looked up per run
 KEEP_MONTHS = 30
 
 
@@ -68,9 +68,9 @@ OWNER = re.compile(r"^\W*contractor\W*$", re.I)
 SEARCH = "https://open.ottawa.ca/api/search/v1/collections/all/items"
 
 
-def find_items():
-    """Return [(year, item_id, title)] for this year's and last year's permit files."""
-    want = {TODAY.year, TODAY.year - 1}
+def find_items(want=None):
+    """Return [(year, item_id, title)] for permit files covering the given years (default: this year and last)."""
+    want = want or {TODAY.year, TODAY.year - 1}
     found = {}
     for q in ["Construction Demolition Pool Permits", "pool enclosure permits monthly"]:
         try:
@@ -292,14 +292,26 @@ def tokens(name):
              "contracting", "general", "contractors", "services", "and", "design", "renovations", "properties"}]
 
 
-def search_site(name):
+def search_links(name):
+    """Result links from DuckDuckGo, falling back to Bing."""
+    out = []
     try:
         r = S.post("https://html.duckduckgo.com/html/", data={"q": f'"{name}" Ottawa'}, timeout=30)
-        soup = BeautifulSoup(r.text, "html.parser")
+        out = BeautifulSoup(r.text, "html.parser").select("a.result__a")[:8]
     except Exception:
-        return None
+        pass
+    if not out:
+        try:
+            r = S.get("https://www.bing.com/search", params={"q": f'"{name}" Ottawa', "cc": "CA"}, timeout=30)
+            out = BeautifulSoup(r.text, "html.parser").select("li.b_algo h2 a")[:8]
+        except Exception:
+            pass
+    return out
+
+
+def search_site(name):
     toks = tokens(name)
-    for a in soup.select("a.result__a")[:8]:
+    for a in search_links(name):
         href = a.get("href", "")
         if "uddg=" in href:
             href = unquote(parse_qs(urlparse(href).query).get("uddg", [""])[0])
@@ -377,7 +389,7 @@ def gohba_directory():
     return out
 
 
-def enrich_builders(sites, builders):
+def enrich_builders(sites, builders, hist=None):
     manual = {bkey(k): v for k, v in load("builders-manual.json", {}).items()}
     counts = {}
     for p in sites:
@@ -385,6 +397,15 @@ def enrich_builders(sites, builders):
             continue
         counts[p["bkey"]] = counts.get(p["bkey"], 0) + 1
         builders.setdefault(p["bkey"], {"name": p["builder"]})
+    # plus the most active home builders of recent years, even with no site matched yet
+    hb = sorted((hist or {}).get("builders", {}).items(), key=lambda kv: -kv[1]["homes"])
+    for k, v in hb[:int(os.environ.get("DIRECTORY_SIZE", "250"))]:
+        if v["homes"] >= 5:
+            counts.setdefault(k, 0)
+            builders.setdefault(k, {"name": v["name"]})
+    for k, v in (hist or {}).get("builders", {}).items():
+        if k in builders:
+            builders[k]["homes"], builders[k]["last"] = v["homes"], v["last"][:7]
     gohba = gohba_directory() if any(k not in builders or "checked" not in builders[k] for k in counts) else {}
     todo = sorted(counts, key=lambda k: -counts[k])
     looked = 0
@@ -420,6 +441,102 @@ def enrich_builders(sites, builders):
         log(f"  {b['name']}: {b.get('website') or 'no site'} {b.get('emails') or ''}")
     log(f"looked up {looked} builders")
     return {k: v for k, v in builders.items() if k in counts}
+
+
+# ---------------------------------------------------------------- 5. who's building it (learned from past permits)
+# Until 2023 the City published the contractor on every permit. Builders work a street or a subdivision
+# for years, and a lot often gets several permits (footings, then the house). So we learn
+#   address -> contractor   and   street -> which contractor built most new homes there
+# from the named years, and use it to name the builder on today's unnamed permits.
+HIST_YEARS = int(os.environ.get("HIST_YEARS", "6"))
+SUFFIX = {"street": "st", "avenue": "ave", "av": "ave", "road": "rd", "drive": "dr", "crescent": "cres", "cr": "cres",
+          "boulevard": "blvd", "court": "crt", "ct": "crt", "place": "pl", "private": "pvt", "priv": "pvt",
+          "circle": "cir", "terrace": "terr", "lane": "lane", "ln": "lane", "way": "way", "row": "row",
+          "gate": "gate", "heights": "hts", "parkway": "pkwy", "square": "sq", "trail": "trail", "grove": "grove"}
+NEWBUILD = re.compile(r"(?i)^construct(ion of)?\b|new (dwelling|building|home)")
+
+
+def norm_street(addr):
+    a = clean_addr(str(addr or "")).lower()
+    a = re.sub(r"^[\d\-]+[a-z]?\s+", "", a)                      # house number
+    a = re.sub(r"(?i)\b(unit|suite|#)\s*\S+", "", a)
+    a = re.sub(r"[^a-z0-9' ]+", " ", a)
+    w = [SUFFIX.get(x, x) for x in a.split()]
+    return " ".join(w).strip()
+
+
+def norm_addr(addr):
+    a = clean_addr(str(addr or "")).lower()
+    m = re.match(r"^\s*(\d+)\s*[a-z]?\b", a)
+    return f"{m.group(1)} {norm_street(a)}" if m else ""
+
+
+def learn_builders():
+    cache = load("history.json", {})
+    if cache.get("built") == TODAY.strftime("%Y-%m") and cache.get("street"):
+        return cache
+    years = set(range(2023 - HIST_YEARS + 1, 2024))
+    by_addr, by_street, counts = {}, {}, {}
+    for year, iid, title in find_items(years):
+        blob = download(iid)
+        if not blob:
+            continue
+        rows = parse_xlsx(blob)
+        named = 0
+        for p in rows:
+            b = p["builder"]
+            if not b or OWNER.match(b) or SKIP.search(p["desc"] + " " + p["kind"]):
+                continue
+            named += 1
+            k = bkey(b)
+            counts[k] = counts.get(k, {"name": b, "n": 0, "homes": 0, "last": ""})
+            c = counts[k]
+            c["n"] += 1
+            c["last"] = max(c["last"], p["issued"])
+            na = norm_addr(p["addr"])
+            if na:
+                by_addr[na] = [k, p["issued"]] if na not in by_addr or by_addr[na][1] <= p["issued"] else by_addr[na]
+            if NEWBUILD.search(p["desc"]) and (p["units"] >= 1 or p["value"] >= 300000):
+                c["homes"] += max(1, p["units"])
+                st = f'{norm_street(p["addr"])}|{(p["pc"] or "")[:3]}'
+                by_street.setdefault(st, {})
+                by_street[st][k] = by_street[st].get(k, 0) + 1
+        log(f"history {title}: {len(rows)} rows, {named} with a contractor")
+    hist = {"built": TODAY.strftime("%Y-%m"), "addr": by_addr, "street": by_street, "builders": counts}
+    if by_street:
+        save("history.json", hist, compact=True)
+    return hist if by_street else cache
+
+
+def name_builders(sites, hist):
+    n_addr = n_street = 0
+    names = hist.get("builders", {})
+    for p in sites:
+        if p.get("builder") or p.get("owner"):
+            continue
+        hit = hist.get("addr", {}).get(norm_addr(p["addr"]))
+        if hit and hit[0] in names:
+            p["builder"], p["bsrc"] = names[hit[0]]["name"], f"Earlier permit at this address ({hit[1][:4]})"
+            n_addr += 1
+            continue
+        if not NEWBUILD.search(p["desc"]) and p["units"] < 1:
+            continue
+        st = hist.get("street", {}).get(f'{norm_street(p["addr"])}|{(p["pc"] or "")[:3]}') or {}
+        if not st:   # postal code missing on one side: try street alone
+            st = {}
+            key = norm_street(p["addr"]) + "|"
+            for k2, v in hist.get("street", {}).items():
+                if k2.startswith(key):
+                    for b, c in v.items():
+                        st[b] = st.get(b, 0) + c
+        total = sum(st.values())
+        if total >= 3:
+            top, c = max(st.items(), key=lambda kv: kv[1])
+            if c / total >= 0.6 and top in names:
+                p["builder"] = names[top]["name"]
+                p["bsrc"] = f"Built {c} of the last {total} new homes on this street"
+                n_street += 1
+    log(f"named builders: {n_addr} by address, {n_street} by street")
 
 
 # ---------------------------------------------------------------- main
@@ -463,6 +580,11 @@ def main():
     if not sites:
         log("No permits collected — keeping existing data.")
         sys.exit(0)
+    for p in sites:            # forget last week's guesses; re-derive from history each run
+        if p.get("bsrc"):
+            p["builder"] = ""
+            p.pop("bsrc", None)
+    name_builders(sites, learn_builders())
     for p in sites:
         p["owner"] = bool(OWNER.match(p["builder"] or ""))
         p["bkey"] = bkey(p["builder"]) if p["builder"] and not p["owner"] else ""
@@ -471,7 +593,7 @@ def main():
     geocode(sorted(sites, key=lambda p: p["issued"], reverse=True), cache)
     save("geocache.json", cache)
 
-    builders = enrich_builders(sites, load("builders.json", {}))
+    builders = enrich_builders(sites, load("builders.json", {}), load("history.json", {}))
     save("builders.json", builders)
 
     sites.sort(key=lambda p: p["issued"], reverse=True)
