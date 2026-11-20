@@ -1,1 +1,100 @@
-{}
+{
+ "caivan-renaud": {
+  "checked": "2026-11-20",
+  "homes": 16,
+  "last": "2023-01",
+  "name": "Caivan (Renaud) Inc.",
+  "sites": 0
+ },
+ "cardel-homes": {
+  "checked": "2026-11-20",
+  "homes": 25,
+  "last": "2023-01",
+  "name": "Cardel Homes",
+  "sites": 0
+ },
+ "cardel-homes-ottawa-division": {
+  "checked": "2026-11-20",
+  "homes": 53,
+  "last": "2023-02",
+  "name": "Cardel Homes Inc. Ottawa Division",
+  "sites": 0
+ },
+ "claridge-homes-bank-st-lp": {
+  "checked": "2026-11-20",
+  "homes": 16,
+  "last": "2023-02",
+  "name": "Claridge Homes (Bank St) Lp",
+  "sites": 0
+ },
+ "claridge-homes-rivers-edge-south": {
+  "checked": "2026-11-20",
+  "homes": 72,
+  "last": "2023-02",
+  "name": "Claridge Homes (Rivers Edge South) Inc.",
+  "sites": 0
+ },
+ "contractor-unknown": {
+  "checked": "2026-11-20",
+  "homes": 51,
+  "last": "2023-02",
+  "name": "Contractor Unknown",
+  "sites": 0
+ },
+ "dcr-phoenix-development": {
+  "checked": "2026-11-20",
+  "homes": 6,
+  "last": "2023-02",
+  "name": "Dcr Phoenix Development Corporation Limited",
+  "sites": 0
+ },
+ "glenview-homes-innes": {
+  "checked": "2026-11-20",
+  "homes": 73,
+  "last": "2023-02",
+  "name": "Glenview Homes (Innes) Ltd.",
+  "sites": 0
+ },
+ "independant-development-group": {
+  "checked": "2026-11-20",
+  "homes": 23,
+  "last": "2018-01",
+  "name": "Independant Development Group",
+  "sites": 0
+ },
+ "minto-communities": {
+  "checked": "2026-11-20",
+  "homes": 61,
+  "last": "2023-02",
+  "name": "Minto Communities Inc.",
+  "sites": 0
+ },
+ "richcraft-homes": {
+  "checked": "2026-11-20",
+  "homes": 6,
+  "last": "2019-01",
+  "name": "Richcraft Homes Limited",
+  "sites": 0
+ },
+ "tamarack-developments": {
+  "checked": "2026-11-20",
+  "homes": 38,
+  "last": "2019-01",
+  "name": "Tamarack Developments Corporation",
+  "sites": 0
+ },
+ "uniform-urban-developments": {
+  "checked": "2026-11-20",
+  "homes": 63,
+  "last": "2023-01",
+  "name": "Uniform Urban Developments Ltd.",
+  "sites": 0
+ },
+ "urbandale-construction": {
+  "checked": "2026-11-20",
+  "homes": 58,
+  "last": "2023-01",
+  "name": "Urbandale Construction",
+  "sites": 0
+ }
+}
