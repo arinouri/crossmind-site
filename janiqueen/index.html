@@ -242,6 +242,7 @@ const LS={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){re
 let settings=Object.assign({name:'',title:'Business Development',phone:'',email:'',web:'',rate:0.45},LS.get('jq.settings',{}));
 let crm=LS.get('jq.crm',{});          // per builder: {stage,follow,notes,contact,email,phone}
 let mine=LS.get('jq.mysites',[]);      // sites added by hand
+let siteB=LS.get('jq.sitebuilder',{}); // site id -> builder name you found
 let sites=[],builders={},meta={},selId=null,selB=null;
 const F={q:'',st:new Set(['now','win','early']),type:'',size:'1',area:'',mail:false,sort:'soon'};
 const STL={now:'Contact now',win:'In window',early:'Early',done:'Likely done'},STO={now:0,win:1,early:2,done:3};
@@ -260,6 +261,8 @@ function catOf(p){const d=(p.desc||'').toLowerCase(),t=(p.type||'').toLowerCase(
 const FSA={K1A:[45.42,-75.70],K1B:[45.41,-75.60],K1C:[45.475,-75.52],K1E:[45.48,-75.47],K1G:[45.40,-75.63],K1H:[45.39,-75.665],K1J:[45.44,-75.62],K1K:[45.43,-75.645],K1L:[45.44,-75.66],K1M:[45.445,-75.68],K1N:[45.43,-75.69],K1P:[45.42,-75.70],K1R:[45.41,-75.71],K1S:[45.40,-75.69],K1T:[45.35,-75.62],K1V:[45.35,-75.66],K1W:[45.44,-75.555],K1X:[45.31,-75.62],K1Y:[45.40,-75.73],K1Z:[45.39,-75.745],K2A:[45.375,-75.775],K2B:[45.36,-75.80],K2C:[45.36,-75.75],K2E:[45.34,-75.73],K2G:[45.33,-75.76],K2H:[45.33,-75.80],K2J:[45.27,-75.745],K2K:[45.345,-75.91],K2L:[45.305,-75.89],K2M:[45.285,-75.885],K2P:[45.415,-75.69],K2R:[45.30,-75.80],K2S:[45.26,-75.925],K2T:[45.33,-75.92],K2V:[45.29,-75.93],K2W:[45.36,-75.97],K4A:[45.465,-75.48],K4B:[45.38,-75.40],K4C:[45.50,-75.40],K4K:[45.44,-75.27],K4M:[45.24,-75.70],K4P:[45.26,-75.56],K0A:[45.20,-75.80],J8T:[45.48,-75.70],J8Y:[45.45,-75.75],J8Z:[45.46,-75.78],J9A:[45.43,-75.79],J9H:[45.40,-75.85],J8P:[45.49,-75.62],J8R:[45.50,-75.55],J8L:[45.55,-75.42]};
 const hash=s=>{let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0};
 function enrich(p){
+  if(siteB[p.id]){p.builder=siteB[p.id];p.bkey=bkey(p.builder);p.owner=false}
+  if(p.bkey==null)p.bkey=p.builder&&!p.owner?bkey(p.builder):'';
   p.cat=p.cat||catOf(p);const [a,b]=classify(p);const iss=new Date(p.issued+'T12:00:00');
   p.fS=addM(iss,a);p.fE=addM(iss,b);p.qa=addM(p.fS,-1.5);
   p.st=TODAY>addM(p.fE,1)?'done':TODAY>=p.qa?'win':(p.qa-TODAY)/864e5<=120?'now':'early';
@@ -269,7 +272,7 @@ function enrich(p){
   p.area_=p.city!=='Ottawa'?p.city:(p.muni||'Ottawa');
   return p;
 }
-function contactOf(k){const b=builders[k]||{},c=crm[k]||{};const emails=[...new Set([c.email,...(b.emails||[])].filter(Boolean))];const phones=[...new Set([c.phone,...(b.phones||[])].filter(Boolean))];return {name:b.name,website:b.website,emails,phones,c}}
+function contactOf(k){if(!k)return {emails:[],phones:[],c:{}};const b=builders[k]||{},c=crm[k]||{};const emails=[...new Set([c.email,...(b.emails||[])].filter(Boolean))];const phones=[...new Set([c.phone,...(b.phones||[])].filter(Boolean))];return {name:b.name,website:b.website,emails,phones,c}}
 
 /* ---------- load ---------- */
 async function boot(){
@@ -278,9 +281,9 @@ async function boot(){
   try{const r=await fetch('data/builders.json',{cache:'no-cache'});if(r.ok)builders=await r.json()}catch(e){}
   meta=data;
   sites=[...data.sites,...mine].map(p=>enrich({...p}));
-  for(const p of mine){if(!p.owner&&p.bkey&&!builders[p.bkey])builders[p.bkey]={name:p.builder,emails:[]}}
+  for(const p of sites){if(p.bkey&&!builders[p.bkey])builders[p.bkey]={name:p.builder,emails:[]}}
   const withMail=Object.values(builders).filter(b=>b.emails&&b.emails.length).length;
-  $('#status').innerHTML=data.updated?`Updated ${new Date(data.updated).toLocaleDateString('en-CA',{month:'long',day:'numeric'})} · ${data.sites.length.toLocaleString()} City of Ottawa permits · ${withMail} builder emails found automatically · refreshes every Monday`
+  $('#status').innerHTML=data.updated?`Updated ${new Date(data.updated).toLocaleDateString('en-CA',{month:'long',day:'numeric'})} · ${data.sites.length.toLocaleString()} construction sites from City of Ottawa permits · ${withMail} builder emails found automatically · refreshes every Monday`
     :'<b>First collection is running.</b> The City of Ottawa permits and builder emails will appear here within about an hour. Sites you add by hand show now.';
   const types=[...new Set(sites.map(p=>p.cat))].sort();$('#fType').innerHTML='<option value="">All project types</option>'+types.map(t=>`<option>${esc(t)}</option>`).join('');
   const areas=[...new Set(sites.map(p=>p.area_).filter(Boolean))].sort();$('#fArea').innerHTML='<option value="">All areas</option>'+areas.map(t=>`<option>${esc(t)}</option>`).join('');
@@ -293,7 +296,7 @@ function filtered(){
   let r=sites.filter(p=>F.st.has(p.st)&&(!F.type||p.cat===F.type)&&(!F.area||p.area_===F.area)&&!(p.owner&&F.size!=='0'));
   if(F.size==='1')r=r.filter(p=>p.units>=2||p.cat!=='Low-rise residential'&&p.cat!=='Addition'||p.value>=1e6);
   else if(F.size==='big')r=r.filter(p=>p.value>=5e6);else if(+F.size>1)r=r.filter(p=>p.units>=+F.size);
-  if(F.mail)r=r.filter(p=>!p.owner&&contactOf(p.bkey).emails.length);
+  if(F.mail)r=r.filter(p=>contactOf(p.bkey).emails.length);
   if(q)r=r.filter(p=>(p.addr+' '+p.builder+' '+p.desc+' '+p.pc+' '+p.area_).toLowerCase().includes(q));
   return r.sort({soon:(a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa,value:(a,b)=>b.est-a.est,new:(a,b)=>b.issued.localeCompare(a.issued)}[F.sort]);
 }
@@ -305,12 +308,12 @@ function render(){
   $('#count').textContent=r.length.toLocaleString()+(r.length===1?' site':' sites');
   $('#kNow').textContent=sites.filter(p=>p.st==='now'&&!p.owner).length;
   $('#kWin').textContent=sites.filter(p=>p.st==='win'&&!p.owner).length;
-  const live=new Set(sites.filter(p=>!p.owner&&p.st!=='done').map(p=>p.bkey));
+  const live=new Set(sites.filter(p=>p.bkey&&p.st!=='done').map(p=>p.bkey));
   $('#kMail').textContent=[...live].filter(k=>contactOf(k).emails.length).length+' / '+live.size;
   const d=due().length;$('#kDue').textContent=d;$('#dueN').textContent=d;$('#dueN').classList.toggle('hide',!d);
-  $('#rows').innerHTML=r.length?r.slice(0,300).map(p=>{const ct=p.owner?null:contactOf(p.bkey);return `<button class="row${p.id===selId?' sel':''}" data-id="${esc(p.id)}">
+  $('#rows').innerHTML=r.length?r.slice(0,300).map(p=>{const ct=contactOf(p.bkey);return `<button class="row${p.id===selId?' sel':''}" data-id="${esc(p.id)}">
     <i class="dot d-${p.st}"></i>
-    <div><h3>${esc(p.addr)}${p.city!=='Ottawa'?', '+esc(p.city):''}</h3><p>${esc(p.owner?'Homeowner-built':p.builder)}${ct&&ct.emails.length?' · <span class="mail">✉ email</span>':''}</p>
+    <div><h3>${esc(p.addr)}${p.city!=='Ottawa'?', '+esc(p.city):''}</h3><p>${p.owner?'Homeowner-built':p.bkey?esc(p.builder)+(ct.emails.length?' · <span class="mail">✉ email</span>':''):'Builder not listed yet'}</p>
     <p><span class="tag ${p.st}">${STL[p.st]}</span> ${esc(p.cat)}${p.units?' · '+p.units+' units':''}</p></div>
     <div class="rt"><b>${money(p.est)}</b>clean ${fmtM(p.qa)}</div></button>`}).join('')+(r.length>300?`<p class="empty">Showing the 300 most relevant — narrow the filters or use the map.</p>`:''):'<p class="empty">No sites match these filters.</p>';
   drawMarkers(r);
@@ -335,7 +338,7 @@ let markers={};
 function drawMarkers(r){
   if(!cluster)return;cluster.clearLayers();markers={};
   cluster.addLayers(r.map(p=>{const m=L.circleMarker([p.lat,p.lng],{radius:5+Math.min(9,Math.sqrt(p.est/1500)),color:p.id===selId?'#000':'#121212',weight:p.id===selId?3:1,fillColor:COL[p.st],fillOpacity:.95});
-    m.bindTooltip(`<b>${esc(p.addr)}</b><br>${esc(p.owner?'Homeowner-built':p.builder)}`);m.on('click',()=>openLead(p.id));markers[p.id]=m;return m}));
+    m.bindTooltip(`<b>${esc(p.addr)}</b><br>${esc(p.owner?'Homeowner-built':p.builder||p.cat)}`);m.on('click',()=>openLead(p.id));markers[p.id]=m;return m}));
 }
 function focus(p){if(map)map.setView([p.lat,p.lng],Math.max(map.getZoom(),15),{animate:!matchMedia('(prefers-reduced-motion: reduce)').matches})}
 
@@ -365,17 +368,24 @@ function contactBlock(k,p){
 }
 function openLead(id){
   const p=sites.find(z=>z.id===id);if(!p)return;selId=id;selB=p.owner?null:p.bkey;
-  const others=p.owner?0:sites.filter(z=>z.bkey===p.bkey).length;
+  const others=p.bkey?sites.filter(z=>z.bkey===p.bkey).length:0;
   openSheet(`<button class="x" data-close>×</button><span class="tag ${p.st}">${STL[p.st]}</span>
   <h2>${esc(p.addr)}${p.city!=='Ottawa'?', '+esc(p.city):''}</h2><p style="margin:0;color:var(--mute)">${esc([p.pc,p.ward&&'Ward '+p.ward,p.muni].filter(Boolean).join(' · '))}</p>
   <p style="margin:12px 0 0">${esc(p.desc)}</p>
   <div class="kv"><div><span>Units</span><b>${p.units||'—'}</b></div><div><span>Permit value</span><b>${p.value?money(p.value):'—'}</b></div><div><span>Est. cleaning job</span><b>${money(p.est)}</b></div>
   <div><span>Area</span><b>${Math.round(p.sqft).toLocaleString()} ft²${p.area>0?'':'*'}</b></div><div><span>Permit issued</span><b>${esc(p.issued)}</b></div><div><span>Type</span><b>${esc(p.cat)}</b></div></div>
-  ${p.owner?`<div class="contact"><h3>Homeowner-built</h3><p style="margin:0">The City doesn't publish the owner's name. Reach them with a flyer or a site visit — usually a small job.</p></div>`:contactBlock(p.bkey,p)+(others>1?`<button class="btn" data-builder="${esc(p.bkey)}">See all ${others} ${esc(p.builder)} sites</button>`:'')}
+  ${p.owner?`<div class="contact"><h3>Homeowner-built</h3><p style="margin:0">The City doesn't publish the owner's name. Reach them with a flyer or a site visit — usually a small job.</p></div>`:!p.bkey?findBlock(p):contactBlock(p.bkey,p)+(others>1?`<button class="btn" data-builder="${esc(p.bkey)}">See all ${others} ${esc(p.builder)} sites</button>`:'')}
   ${timeline(p)}
   <p class="note">${p.area>0?'':'* Area estimated from units or value. '}${p.approx?'Map pin is approximate (postal area). ':''}${p.kind==='Manual'?'Added by hand.':'Permit '+esc(p.id)+' · City of Ottawa open data.'}</p>`);
   render();focus(p);
 }
+function findBlock(p){const q=encodeURIComponent;const a=p.addr+(p.city!=='Ottawa'?', '+p.city:', Ottawa');
+  return `<div class="contact"><h3>Who's building this?</h3><p style="margin:0">The City's permit list doesn't name the builder for this site. Usually it takes a minute to find:</p>
+  <div class="acts"><a class="btn sm" target="_blank" rel="noopener" href="https://www.google.com/search?q=${q('"'+p.addr+'" Ottawa '+(p.units>1?'new homes builder':'construction'))}">Search the address ↗</a>
+  <a class="btn sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${q(a)}">See the site sign on Street View ↗</a>
+  ${/residential|multi/i.test(p.cat)?`<a class="btn sm" target="_blank" rel="noopener" href="https://obd.hcraontario.ca/">Ontario Builder Directory ↗</a>`:''}</div>
+  <label>Builder name<input id="setB" placeholder="e.g. the company on the site sign"></label><button class="btn dark" data-setb="${esc(p.id)}">Save builder</button>
+  <p class="note" style="margin:0">Once saved, the builder is linked to this site and any others you tag, with their website, phone and email tools.</p></div>`}
 function openBuilder(k){
   const ps=sites.filter(p=>p.bkey===k).sort((a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa);const name=(builders[k]||{}).name||ps[0]?.builder||'Builder';selB=k;selId=null;
   openSheet(`<button class="x" data-close>×</button><span class="tag">Builder</span><h2>${esc(name)}</h2>
@@ -386,7 +396,7 @@ function openBuilder(k){
 
 /* ---------- builders + follow-ups ---------- */
 function renderBuilders(){
-  const g={};sites.filter(p=>!p.owner).forEach(p=>{(g[p.bkey]??={k:p.bkey,ps:[]}).ps.push(p)});
+  const g={};sites.filter(p=>p.bkey).forEach(p=>{(g[p.bkey]??={k:p.bkey,ps:[]}).ps.push(p)});
   const q=F.q.toLowerCase();
   const list=Object.values(g).map(b=>{const live=b.ps.filter(p=>p.st!=='done');return {...b,name:(builders[b.k]||{}).name||b.ps[0].builder,units:b.ps.reduce((s,p)=>s+(p.units||0),0),val:live.reduce((s,p)=>s+p.est,0),next:[...live].sort((a,c)=>a.qa-c.qa)[0],ct:contactOf(b.k)}})
     .filter(b=>(!q||b.name.toLowerCase().includes(q))&&(!F.mail||b.ct.emails.length)).sort((a,b)=>b.val-a.val);
@@ -506,6 +516,7 @@ document.addEventListener('click',e=>{
   const r=t.closest('.row');if(r)return openLead(r.dataset.id);
   const bd=t.closest('[data-builder]');if(bd)return openBuilder(bd.dataset.builder);
   const ld=t.closest('[data-lead]');if(ld)return openLead(ld.dataset.lead);
+  const sb=t.closest('[data-setb]');if(sb){const n=$('#setB').value.trim();if(!n)return;siteB[sb.dataset.setb]=n;LS.set('jq.sitebuilder',siteB);boot().then(()=>openLead(sb.dataset.setb));return}
   const s=t.closest('[data-st]');if(s){const k=s.dataset.st;F.st.has(k)?F.st.delete(k):F.st.add(k);chips();render();return}
   const tb=t.closest('[data-tab]');if(tb)return tab(tb.dataset.tab);
   const qk=t.closest('[data-quick]');if(qk){const k=qk.dataset.quick;if(k==='follow')return tab('follow');if(k==='mail'){F.mail=true;$('#fMail').checked=true;tab('builders');return}F.st=new Set([k]);chips();tab('sites');}

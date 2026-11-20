@@ -115,16 +115,17 @@ def download(iid):
 COLS = {
     "stno": r"^(st(reet)?\s*(#|no|num)|civic|house)",
     "stname": r"^(st(reet)?\s*name|road\s*name)",
-    "addr": r"^(address|location|adresse)$",
+    "addr": r"^((street\s*)?address|location|adresse)$",
     "pc": r"postal|code postal",
     "ward": r"^ward|quartier|district",
-    "muni": r"municip|former",
+    "muni": r"municip|former|community",
     "builder": r"contractor|builder|entrepreneur|applicant",
     "type": r"(b(ui)?ld?g?\.?\s*type|building\s*type|type de b)",
     "desc": r"desc",
     "units": r"^(du|d\.u\.|dwelling|units|# ?units|logements)",
     "value": r"value|valeur",
-    "area": r"(ft2|sq\.?\s*f|area|superficie)",
+    "aream": r"(square\s*met|sq\.?\s*m\b|^m2$|superficie)",
+    "area": r"(ft2|sq\.?\s*f|area)",
     "id": r"(permit\s*(#|no|num)|^permit$|^folder|num[ée]ro)",
     "kind": r"(appl(ication)?\s*type|permit\s*type|type\s*of\s*work|work\s*type)",
     "issued": r"issue|[ée]mis",
@@ -159,6 +160,22 @@ def title_case(s):
     return re.sub(r"\b(Nw|Ne|Sw|Se|N|S|E|W)\b", lambda m: m.group(1).upper(), s)
 
 
+def clean_addr(a):
+    first = [l for l in re.split(r"[\r\n]+", a) if l.strip()]
+    a = first[0] if first else ""
+    a = re.sub(r"(?i)^unit/lot\s*\S+\s*-\s*block\s*\S+\s*-\s*", "", a)
+    a = re.sub(r"(?i)\b(OUEST|EST|NORD|SUD)/(WEST|EAST|NORTH|SOUTH)\b", lambda m: m.group(2), a)
+    return a.strip()
+
+
+def kind_from(pid, desc):
+    if pid.upper().startswith("POOL") or re.search(r"(?i)pool", desc):
+        return "Pool Enclosure"
+    if pid.upper().startswith("DEM") or re.match(r"(?i)demolish", desc):
+        return "Demolition"
+    return "Construction"
+
+
 def nice_name(n):
     if OWNER.match(n) or not n.isupper():
         return n
@@ -183,7 +200,7 @@ def parse_rows(rows, city="Ottawa"):
             continue
         g = lambda k: cells[cmap[k]] if k in cmap and cmap[k] < len(cells) else ""
         if "addr" in cmap:
-            addr = str(g("addr"))
+            addr = clean_addr(str(g("addr") or ""))
         else:
             no = g("stno")
             if isinstance(no, float) and no.is_integer():
@@ -202,8 +219,9 @@ def parse_rows(rows, city="Ottawa"):
             "muni": str(g("muni") or "").strip().title(), "city": city,
             "builder": nice_name(str(g("builder") or "").strip()), "type": str(g("type") or "").strip(),
             "desc": str(g("desc") or "").strip(), "units": max(0, int(num(g("units")))),
-            "value": round(num(g("value"))), "area": round(num(g("area"))),
-            "id": str(pid or f"{addr}|{issued}"), "issued": issued, "kind": str(g("kind") or "").strip(),
+            "value": round(num(g("value"))), "area": round(num(g("area")) or num(g("aream")) * 10.764),
+            "id": str(pid or f"{addr}|{issued}"), "issued": issued,
+            "kind": str(g("kind") or "").strip() or kind_from(str(pid or ""), str(g("desc") or "")),
         })
     return out
 
@@ -216,13 +234,15 @@ def parse_xlsx(blob):
     return rows
 
 
-SKIP = re.compile(r"pool|demoli|\bsign\b|\bshed\b|\bdeck\b|fence|solar|\btent\b|retaining wall|signage", re.I)
+SKIP = re.compile(r"pool|demoli|\bsign\b|\bshed\b|\bdeck\b|fence|solar|\btent\b|retaining wall|signage|plumbing only|"
+                  r"portable|woodstove|chimney|backwater|sump|basement|insulation|^revision|gazebo|cell tower|antenna|"
+                  r"hvac only|sprinkler only|fire alarm", re.I)
 ICI = re.compile(r"commerc|office|retail|industr|instit|mercantile|assembly|restaurant|school|hotel|clinic|warehouse", re.I)
 
 
 def relevant(p):
     t = f"{p['kind']} {p['desc']} {p['type']}"
-    if SKIP.search(t) or re.match(r"(?i)^(demolish|enclos)", p["desc"]):
+    if SKIP.search(t) or re.match(r"(?i)^(demolish|enclos|revision)", p["desc"]):
         return False
     return p["units"] >= 1 or p["value"] >= 150000 or (ICI.search(t) and p["value"] >= 50000)
 
@@ -361,7 +381,7 @@ def enrich_builders(sites, builders):
     manual = {bkey(k): v for k, v in load("builders-manual.json", {}).items()}
     counts = {}
     for p in sites:
-        if p.get("owner"):
+        if not p.get("bkey"):
             continue
         counts[p["bkey"]] = counts.get(p["bkey"], 0) + 1
         builders.setdefault(p["bkey"], {"name": p["builder"]})
@@ -414,14 +434,6 @@ def main():
         if not blob:
             continue
         rows = parse_xlsx(blob)
-        if not rows:
-            wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
-            for ws in wb.worksheets[:1]:
-                log("  sheet", ws.title)
-                for i, r in enumerate(ws.iter_rows(values_only=True)):
-                    log("   ", [c for c in r][:20])
-                    if i > 45:
-                        break
         kept = [p for p in rows if relevant(p)]
         log(f"{title}: {len(rows)} rows, {len(kept)} kept")
         for p in kept:
@@ -452,8 +464,8 @@ def main():
         log("No permits collected — keeping existing data.")
         sys.exit(0)
     for p in sites:
-        p["owner"] = bool(OWNER.match(p["builder"] or "")) or not p["builder"]
-        p["bkey"] = "" if p["owner"] else bkey(p["builder"])
+        p["owner"] = bool(OWNER.match(p["builder"] or ""))
+        p["bkey"] = bkey(p["builder"]) if p["builder"] and not p["owner"] else ""
 
     cache = load("geocache.json", {})
     geocode(sorted(sites, key=lambda p: p["issued"], reverse=True), cache)
