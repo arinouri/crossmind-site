@@ -86,10 +86,12 @@ def find_items():
             iid = f.get("id") or props.get("id")
             if not iid or not re.search(r"permit", title, re.I) or not re.search(r"pool|demolition", title, re.I):
                 continue
-            log("  candidate:", title, iid)
-            m = re.search(r"(20\d\d)", title)
-            if m and int(m.group(1)) in want and int(m.group(1)) not in found:
-                found[int(m.group(1))] = (int(m.group(1)), iid, title)
+            years = [int(y) for y in re.findall(r"20\d\d", title)]
+            if not years:
+                continue
+            y = max(years)
+            if y in want and y not in found:
+                found[y] = (y, iid, title)
     return sorted(found.values())
 
 
@@ -414,11 +416,11 @@ def main():
         rows = parse_xlsx(blob)
         if not rows:
             wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
-            for ws in wb.worksheets[:3]:
+            for ws in wb.worksheets[:1]:
                 log("  sheet", ws.title)
                 for i, r in enumerate(ws.iter_rows(values_only=True)):
                     log("   ", [c for c in r][:20])
-                    if i > 6:
+                    if i > 45:
                         break
         kept = [p for p in rows if relevant(p)]
         log(f"{title}: {len(rows)} rows, {len(kept)} kept")
