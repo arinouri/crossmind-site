@@ -31,6 +31,8 @@ TODAY = dt.date.today()
 MAX_GEOCODE = int(os.environ.get("MAX_GEOCODE", "3000"))      # ~1 per second (Nominatim policy)
 MAX_BUILDERS = int(os.environ.get("MAX_BUILDERS", "200"))     # websites looked up per run
 KEEP_MONTHS = 30
+START = time.time()
+minutes = lambda: (time.time() - START) / 60
 
 
 def log(*a):
@@ -63,6 +65,7 @@ def bkey(name):
 
 
 OWNER = re.compile(r"^\W*contractor\W*$", re.I)
+UNKNOWN = re.compile(r"^\W*(contractor\s*unknown|unknown|n/?a|tbd|owner)\W*$", re.I)
 
 # ---------------------------------------------------------------- 1. find + download
 SEARCH = "https://open.ottawa.ca/api/search/v1/collections/all/items"
@@ -103,7 +106,7 @@ def download(iid):
     for u in urls:
         try:
             r = S.get(u, timeout=180)
-            if r.ok and r.content[:2] == b"PK":
+            if r.ok and (r.content[:2] == b"PK" or r.content[:4] == b"\xd0\xcf\x11\xe0"):
                 return r.content
             log("  not an xlsx from", u, r.status_code)
         except Exception as e:
@@ -114,9 +117,9 @@ def download(iid):
 # ---------------------------------------------------------------- 2. parse
 COLS = {
     "stno": r"^(st(reet)?\s*(#|no|num)|civic|house)",
-    "stname": r"^(st(reet)?\s*name|road\s*name)",
+    "stname": r"^(st(reet)?\s*name|road\s*name|road$)",
     "addr": r"^((street\s*)?address|location|adresse)$",
-    "pc": r"postal|code postal",
+    "pc": r"postal|code postal|^pc$",
     "ward": r"^ward|quartier|district",
     "muni": r"municip|former|community",
     "builder": r"contractor|builder|entrepreneur|applicant",
@@ -127,7 +130,7 @@ COLS = {
     "aream": r"(square\s*met|sq\.?\s*m\b|^m2$|superficie)",
     "area": r"(ft2|sq\.?\s*f|area)",
     "id": r"(permit\s*(#|no|num)|^permit$|^folder|num[ée]ro)",
-    "kind": r"(appl(ication)?\s*type|permit\s*type|type\s*of\s*work|work\s*type)",
+    "kind": r"(appl\.?(ication)?\s*type|permit\s*type|type\s*of\s*work|work\s*type)",
     "issued": r"issue|[ée]mis",
 }
 HEADER_HINT = re.compile(r"ward|contractor|desc|postal|issue")
@@ -217,7 +220,7 @@ def parse_rows(rows, city="Ottawa"):
             "addr": title_case(addr), "pc": str(g("pc") or "").upper().strip(),
             "ward": re.sub(r"(?i)ward\s*", "", str(g("ward") or "")).strip(),
             "muni": str(g("muni") or "").strip().title(), "city": city,
-            "builder": nice_name(str(g("builder") or "").strip()), "type": str(g("type") or "").strip(),
+            "builder": "" if UNKNOWN.match(str(g("builder") or "")) else nice_name(str(g("builder") or "").strip()), "type": str(g("type") or "").strip(),
             "desc": str(g("desc") or "").strip(), "units": max(0, int(num(g("units")))),
             "value": round(num(g("value"))), "area": round(num(g("area")) or num(g("aream")) * 10.764),
             "id": str(pid or f"{addr}|{issued}"), "issued": issued,
@@ -227,9 +230,25 @@ def parse_rows(rows, city="Ottawa"):
 
 
 def parse_xlsx(blob):
-    wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     rows = []
+    if blob[:4] == b"\xd0\xcf\x11\xe0":          # old .xls
+        import xlrd
+        book = xlrd.open_workbook(file_contents=blob)
+        for sh in book.sheets():
+            def it(sh=sh):
+                for i in range(sh.nrows):
+                    out = []
+                    for c in sh.row(i):
+                        if c.ctype == xlrd.XL_CELL_DATE:
+                            out.append(xlrd.xldate.xldate_as_datetime(c.value, book.datemode))
+                        else:
+                            out.append(c.value)
+                    yield out
+            rows += parse_rows(it())
+        return rows
+    wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     for ws in wb.worksheets:
+        ws.reset_dimensions()                       # some City files under-report their size
         rows += parse_rows(ws.iter_rows(values_only=True))
     return rows
 
@@ -254,7 +273,7 @@ def geocode(sites, cache):
         k = f"{p['addr']}|{p['city']}".lower()
         if k in cache:
             hit = cache[k]
-        elif done < MAX_GEOCODE:
+        elif done < MAX_GEOCODE and minutes() < 45:
             addr = re.split(r"\s*(,|unit|#|suite)\s*", p["addr"], flags=re.I)[0]
             prov = "Quebec" if p["city"].lower() == "gatineau" else "Ontario"
             try:
@@ -313,6 +332,13 @@ def search_site(name):
     toks = tokens(name)
     for a in search_links(name):
         href = a.get("href", "")
+        if "bing.com/ck/" in href and "u=a1" in href:
+            import base64
+            b = parse_qs(urlparse(href).query).get("u", [""])[0][2:]
+            try:
+                href = base64.urlsafe_b64decode(b + "=" * (-len(b) % 4)).decode("utf-8", "ignore")
+            except Exception:
+                continue
         if "uddg=" in href:
             href = unquote(parse_qs(urlparse(href).query).get("uddg", [""])[0])
         host = urlparse(href).netloc.lower()
@@ -367,7 +393,7 @@ def scrape_contacts(site):
 def gohba_directory():
     """Best effort: names, phones and websites from the Greater Ottawa Home Builders' Association directory."""
     out = {}
-    for base in ["https://gohba.ca/directory/page/{}/", "https://www.gohba.ca/directory/page/{}/"]:
+    for base in ["https://testing.gohba.ca/find-a-builder/page/{}/", "https://testing.gohba.ca/directory/page/{}/"]:
         for n in range(1, 40):
             try:
                 r = S.get(base.format(n), timeout=30)
@@ -383,8 +409,6 @@ def gohba_directory():
                     if name:
                         out[bkey(name)] = {"name": name, "phone": l.split(":", 1)[1].strip(), "website": web}
             time.sleep(0.5)
-        if out:
-            break
     log(f"GOHBA directory: {len(out)} members")
     return out
 
@@ -424,7 +448,7 @@ def enrich_builders(sites, builders, hist=None):
         last = b.get("checked")
         age = (TODAY - dt.date.fromisoformat(last)).days if last else 9999
         stale = age > (90 if b.get("emails") else 30)
-        if not stale or looked >= MAX_BUILDERS:
+        if not stale or looked >= MAX_BUILDERS or minutes() > 75:
             continue
         looked += 1
         site = b.get("website") or search_site(b["name"])
