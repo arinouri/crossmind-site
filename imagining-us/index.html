@@ -69,8 +69,8 @@ h1{font-family:var(--display);font-weight:500;font-size:clamp(52px,8vw,92px);lin
 h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);line-height:1.05;margin:0 0 14px;color:var(--lake);text-wrap:balance}
 .intro{max-width:62ch;color:var(--mute);margin:0 0 34px}
 /* one-minute audio ad */
-.adband{background:var(--soft);border-bottom:1px solid var(--line)}
-.adband .in{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding-block:26px}
+.minute{background:var(--soft);border-bottom:1px solid var(--line)}
+.minute .in{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding-block:26px}
 .lplay{width:64px;height:64px;border-radius:50%;border:0;background:var(--sun);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px color-mix(in srgb,var(--sunbg) 35%,transparent)}
 .lplay:hover{filter:brightness(1.06)}
 .lplay svg{width:24px;height:24px}
@@ -175,12 +175,12 @@ footer a{color:var(--mute)}
   </div>
 </div></section>
 
-<section class="adband" aria-label="One-minute audio introduction"><div class="in">
-  <button class="lplay" id="adplay" aria-label="Play the one-minute introduction"><svg viewBox="0 0 24 24" fill="currentColor" id="adicon"><path d="M8 5v14l11-7z"/></svg></button>
+<section class="minute" aria-label="One-minute audio introduction"><div class="in">
+  <button class="lplay" id="mplay" aria-label="Play the one-minute introduction"><svg viewBox="0 0 24 24" fill="currentColor" id="micon"><path d="M8 5v14l11-7z"/></svg></button>
   <div class="lmeta">
     <h2>Imagining Us in one minute</h2>
     <p>Press play for a short spoken introduction to the book.</p>
-    <div class="lbar"><div class="ltrack" id="adtrack" role="slider" tabindex="0" aria-label="Introduction position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="adfill"></i></div><span class="ltime" id="adtime">0:00 / 1:08</span></div>
+    <div class="lbar"><div class="ltrack" id="mtrack" role="slider" tabindex="0" aria-label="Introduction position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="mfill"></i></div><span class="ltime" id="mtime">0:00 / 1:08</span></div>
   </div>
 </div></section>
 
@@ -384,15 +384,15 @@ render();
 }
 
 {
-  const a=new Audio('ad.mp3'); a.preload='metadata';
+  const a=new Audio('one-minute.mp3'); a.preload='metadata';
   const $=id=>document.getElementById(id), f=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
   const D=()=>a.duration&&isFinite(a.duration)?a.duration:68;
-  const icon=()=>{$('adicon').innerHTML=a.paused?'<path d="M8 5v14l11-7z"/>':'<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>';$('adplay').setAttribute('aria-label',a.paused?'Play the one-minute introduction':'Pause the introduction')};
-  $('adplay').addEventListener('click',()=>{ if(a.paused){ a.play().catch(()=>{$('adtime').textContent='Audio could not play here'}); } else a.pause(); });
+  const icon=()=>{$('micon').innerHTML=a.paused?'<path d="M8 5v14l11-7z"/>':'<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>';$('mplay').setAttribute('aria-label',a.paused?'Play the one-minute introduction':'Pause the introduction')};
+  $('mplay').addEventListener('click',()=>{ if(a.paused){ a.play().catch(()=>{$('mtime').textContent='Audio could not play here'}); } else a.pause(); });
   a.addEventListener('play',icon); a.addEventListener('pause',icon); a.addEventListener('ended',()=>{a.currentTime=0;icon()});
-  a.addEventListener('timeupdate',()=>{const p=a.currentTime/D()*100;$('adfill').style.width=p+'%';$('adtrack').setAttribute('aria-valuenow',Math.round(p));$('adtime').textContent=f(a.currentTime)+' / '+f(D())});
-  $('adtrack').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*D()});
-  $('adtrack').addEventListener('keydown',e=>{if(e.key==='ArrowRight')a.currentTime=Math.min(D(),a.currentTime+5);if(e.key==='ArrowLeft')a.currentTime=Math.max(0,a.currentTime-5)});
+  a.addEventListener('timeupdate',()=>{const p=a.currentTime/D()*100;$('mfill').style.width=p+'%';$('mtrack').setAttribute('aria-valuenow',Math.round(p));$('mtime').textContent=f(a.currentTime)+' / '+f(D())});
+  $('mtrack').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*D()});
+  $('mtrack').addEventListener('keydown',e=>{if(e.key==='ArrowRight')a.currentTime=Math.min(D(),a.currentTime+5);if(e.key==='ArrowLeft')a.currentTime=Math.max(0,a.currentTime-5)});
 }
 </script>
 </body>
