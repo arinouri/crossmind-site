@@ -307,7 +307,7 @@ BLOCK = re.compile(r"facebook|linkedin|instagram|twitter|x\.com|youtube|yelp|yel
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PHONE = re.compile(r"(?:\+?1[\s.-]?)?\(?(613|343|819|873)\)?[\s.-]?\d{3}[\s.-]?\d{4}")
 BAD_EMAIL = re.compile(r"\.(png|jpe?g|gif|webp|svg)$|sentry|wixpress|example\.|domain\.com|godaddy|@email\.|"
-                       r"yourname|name@|user@|squarespace|cloudflare", re.I)
+                       r"yourname|name@|user@|squarespace|cloudflare|mysite|bondholder|investor|media@|press@|careers@|jobs@|hr@", re.I)
 
 
 def tokens(name):
@@ -351,7 +351,7 @@ def guess_site(name):
             except Exception:
                 continue
             title = (BeautifulSoup(r.text[:20000], "html.parser").title or BeautifulSoup("", "html.parser")).get_text(" ").lower() if r.ok else ""
-            if r.ok and toks and (toks[0] in title or toks[0] in urlparse(r.url).netloc) and re.search(r"ottawa|ontario|canada|homes|build|construct", r.text[:200000], re.I):
+            if r.ok and toks and (toks[0] in title or toks[0] in urlparse(r.url).netloc) and re.search(r"ottawa|kanata|orl[ée]ans|barrhaven|nepean|stittsville", r.text[:300000], re.I):
                 return f"{urlparse(r.url).scheme}://{urlparse(r.url).netloc}"
     return None
 
@@ -511,7 +511,7 @@ SUFFIX = {"street": "st", "avenue": "ave", "av": "ave", "road": "rd", "drive": "
           "gate": "gate", "heights": "hts", "parkway": "pkwy", "square": "sq", "trail": "trail", "grove": "grove"}
 TRADE = re.compile(r"(?i)security|alarm|sign|pool|fence|roof|electric|plumb|mechanical|hvac|heating|sprinkler|"
                    r"fire protection|elevator|solar|window|door|glass|paving|landscap|demoli|excavat|shoring|crane|"
-                   r"furniture|telecom|bell |rogers|tower")
+                   r"furniture|telecom|bell |rogers|tower|city of ottawa|ottawa-carleton|school board")
 NEWBUILD = re.compile(r"(?i)^construct(ion of)?\b|new (dwelling|building|home)")
 
 
