@@ -68,6 +68,18 @@ h1{font-family:var(--display);font-weight:500;font-size:clamp(52px,8vw,92px);lin
 /* sections */
 h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);line-height:1.05;margin:0 0 14px;color:var(--lake);text-wrap:balance}
 .intro{max-width:62ch;color:var(--mute);margin:0 0 34px}
+/* one-minute audio ad */
+.adband{background:var(--soft);border-bottom:1px solid var(--line)}
+.adband .in{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding-block:26px}
+.lplay{width:64px;height:64px;border-radius:50%;border:0;background:var(--sun);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px color-mix(in srgb,var(--sunbg) 35%,transparent)}
+.lplay:hover{filter:brightness(1.06)}
+.lplay svg{width:24px;height:24px}
+.lmeta h2{font-size:clamp(26px,3vw,34px);margin:0 0 4px}
+.lmeta p{margin:0 0 12px;font:15px var(--ui);color:var(--mute)}
+.lbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;font:14px var(--ui);color:var(--mute)}
+.ltrack{height:6px;border-radius:3px;background:var(--line);position:relative;cursor:pointer}
+.ltrack i{position:absolute;inset:0 auto 0 0;width:0;border-radius:3px;background:var(--sun)}
+.ltime{font-variant-numeric:tabular-nums;white-space:nowrap}
 /* editions: a publisher's formats list */
 .formats{border-top:2px solid var(--lake)}
 .fmt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) 150px 210px;gap:28px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
@@ -160,6 +172,15 @@ footer a{color:var(--mute)}
   </div>
   <div class="stage" aria-hidden="true">
     <div class="book"><div class="spine"><span>IMAGINING US &nbsp;·&nbsp; JALEN VALE</span></div><div class="front"><img src="cover.jpg" alt=""></div></div>
+  </div>
+</div></section>
+
+<section class="adband" aria-label="One-minute audio introduction"><div class="in">
+  <button class="lplay" id="adplay" aria-label="Play the one-minute introduction"><svg viewBox="0 0 24 24" fill="currentColor" id="adicon"><path d="M8 5v14l11-7z"/></svg></button>
+  <div class="lmeta">
+    <h2>Imagining Us in one minute</h2>
+    <p>Press play for a short spoken introduction to the book.</p>
+    <div class="lbar"><div class="ltrack" id="adtrack" role="slider" tabindex="0" aria-label="Introduction position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="adfill"></i></div><span class="ltime" id="adtime">0:00 / 1:08</span></div>
   </div>
 </div></section>
 
@@ -360,6 +381,18 @@ $('track').addEventListener('keydown',e=>{ if(e.key==='ArrowRight') seek(Math.mi
 $('prev').addEventListener('click',()=>{ if(cur>0){cur--;render(); if(!audio.paused||ttsOn) seek(pageStart(cur),true,PAGES[cur][0]);} });
 $('next').addEventListener('click',()=>{ if(cur<PAGES.length-1){cur++;render(); if(!audio.paused||ttsOn) seek(pageStart(cur),true,PAGES[cur][0]);} });
 render();
+}
+
+{
+  const a=new Audio('ad.mp3'); a.preload='metadata';
+  const $=id=>document.getElementById(id), f=s=>{s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+  const D=()=>a.duration&&isFinite(a.duration)?a.duration:68;
+  const icon=()=>{$('adicon').innerHTML=a.paused?'<path d="M8 5v14l11-7z"/>':'<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>';$('adplay').setAttribute('aria-label',a.paused?'Play the one-minute introduction':'Pause the introduction')};
+  $('adplay').addEventListener('click',()=>{ if(a.paused){ a.play().catch(()=>{$('adtime').textContent='Audio could not play here'}); } else a.pause(); });
+  a.addEventListener('play',icon); a.addEventListener('pause',icon); a.addEventListener('ended',()=>{a.currentTime=0;icon()});
+  a.addEventListener('timeupdate',()=>{const p=a.currentTime/D()*100;$('adfill').style.width=p+'%';$('adtrack').setAttribute('aria-valuenow',Math.round(p));$('adtime').textContent=f(a.currentTime)+' / '+f(D())});
+  $('adtrack').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*D()});
+  $('adtrack').addEventListener('keydown',e=>{if(e.key==='ArrowRight')a.currentTime=Math.min(D(),a.currentTime+5);if(e.key==='ArrowLeft')a.currentTime=Math.max(0,a.currentTime-5)});
 }
 </script>
 </body>
