@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Jani Queen · Site Leads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+<style>
+/* VOICE: a working sales desk for a post-construction cleaning crew — direct, practical.
+   IDEA: a site superintendent's permit board: the city map pinned up beside a job list.
+   PICTURE: the live map of Ottawa sites, coloured by when each needs its QA / PDI / final clean.
+   COLOUR and TYPE: white, black ink, concrete planes, hi-vis yellow for "call now"; Hanken Grotesk.
+   LAYOUT: slim header + figures, map and list side by side, details slide in; stacks under 900px. */
+:root{color-scheme:light dark;
+--bg:light-dark(#fff,#161615);--ink:light-dark(#121212,#ecebe6);--mute:light-dark(#62625d,#a6a59e);
+--plane:light-dark(#ecebe7,#232321);--plane2:light-dark(#d8d8d4,#2f2f2c);--line:light-dark(#d2d2cd,#3a3a36);
+--vis:#ffe600;--visInk:#121212;--win:light-dark(#0b6b5e,#4fc7b0);--early:light-dark(#8a8a84,#7d7d77);--done:light-dark(#c4c4be,#4a4a46);--card:light-dark(#fff,#1d1d1b)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Hanken Grotesk",system-ui,sans-serif;overflow-x:clip}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}a{color:inherit}
+header{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:12px max(3vw,16px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;margin-inline-end:auto}
+.crown{width:36px;height:36px;border-radius:9px;background:#121212;display:grid;place-items:center}
+.brand b{font-size:19px;font-weight:800}.brand span{color:var(--mute);font-size:13.5px;display:block;line-height:1.15}
+.tabs{display:flex;gap:4px;background:var(--plane);padding:4px;border-radius:10px;flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:8px 14px;border-radius:7px;min-height:40px;font-weight:600;color:var(--mute)}
+.tabs button[aria-selected=true]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px #0002}
+.tabs em{font-style:normal;background:var(--vis);color:#121212;border-radius:99px;padding:0 7px;font-size:13px;margin-inline-start:4px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 14px;min-height:44px;font-weight:600;display:inline-flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap}
+.btn.dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}.btn.vis{background:var(--vis);color:#121212;border-color:#d9c400}
+.btn.sm{min-height:36px;padding:6px 11px;font-size:14px}
+.status{font-size:13px;color:var(--mute);padding:7px max(3vw,16px);border-bottom:1px solid var(--line)}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.fig1{padding:12px max(3vw,16px);border-inline-end:1px solid var(--line);background:none;border-block:0;border-inline-start:0;text-align:start}.fig1:last-child{border-inline-end:0}
+.fig1 b{display:block;font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.05;white-space:nowrap}
+.fig1 span{color:var(--mute);font-size:14px}
+.fig1.hot b{background:var(--vis);color:#121212;width:fit-content;padding:0 8px;border-radius:6px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;padding:10px max(3vw,16px);background:var(--plane);align-items:center}
+.filters input,.filters select{min-height:42px;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:8px 11px;font-size:16px}
+.filters input[type=search]{flex:1 1 220px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 12px;min-height:38px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:7px}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip input{width:18px;height:18px;margin:0}
+.dot{width:11px;height:11px;border-radius:50%;flex:none;display:inline-block}
+.d-now{background:var(--vis);box-shadow:0 0 0 2px #121212 inset}.d-win{background:var(--win)}.d-early{background:var(--early)}.d-done{background:var(--done)}
+main{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);height:calc(100vh - 250px);min-height:560px}
+#map{border-inline-end:1px solid var(--line);background:var(--plane);z-index:0}
+.list{display:flex;flex-direction:column;min-height:0}
+.listhead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line)}
+.listhead select{min-height:40px;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 8px}
+.rows{overflow-y:auto;flex:1}
+.row{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:4px 12px;padding:12px 16px;border:0;border-bottom:1px solid var(--line);cursor:pointer;background:none;text-align:start;width:100%}
+.row:hover,.row.sel{background:var(--plane)}.row .dot{margin-top:6px}
+.row h3{margin:0;font-size:16px;font-weight:700;line-height:1.3}.row p{margin:0;color:var(--mute);font-size:14px}
+.row .rt{text-align:end;font-size:13.5px;white-space:nowrap;color:var(--mute)}.row .rt b{display:block;font-size:16px;color:var(--ink)}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:5px;background:var(--plane2);white-space:nowrap}
+.tag.now{background:var(--vis);color:#121212}.tag.win{background:var(--win);color:#fff}
+.mail{color:var(--win);font-weight:700}
+.empty{padding:40px 20px;text-align:center;color:var(--mute)}
+.page{padding:0 max(3vw,16px) 40px}
+.page h2{font-size:30px;margin:22px 0 4px;letter-spacing:-.02em}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:start;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--mute);font-weight:600}td.n,th.n{text-align:end;white-space:nowrap}
+tr.click{cursor:pointer}tr.click:hover{background:var(--plane)}
+.stage{font-size:13px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--plane2);white-space:nowrap}
+.st-Contacted,.st-Replied{background:#dbe9ff;color:#0b3a7a}.st-Quote-sent{background:#ffe9c7;color:#7a4300}.st-Won{background:var(--win);color:#fff}.st-Not-now{background:var(--done);color:var(--ink)}
+.scrim{position:fixed;inset:0;background:#0006;z-index:1000;display:none}
+.sheet{position:fixed;top:0;right:0;bottom:0;width:min(580px,100%);background:var(--bg);z-index:1001;transform:translateX(105%);transition:transform .22s ease;overflow-y:auto;box-shadow:-10px 0 30px #0003}
+.sheet.open{transform:none}.sheet .in{padding:22px 24px 40px}
+.sheet h2{font-size:28px;line-height:1.08;margin:6px 0 4px;text-wrap:balance;letter-spacing:-.02em}
+.x{position:sticky;top:0;float:right;width:44px;height:44px;border-radius:9px;border:1px solid var(--line);background:var(--card);font-size:22px;z-index:2}
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:16px 0}
+.kv div{background:var(--card);padding:10px 12px}.kv span{display:block;font-size:12.5px;color:var(--mute)}.kv b{font-size:17px}
+.contact{border:2px solid var(--ink);border-radius:12px;padding:14px;margin:16px 0;display:grid;gap:10px}
+.contact h3{margin:0;font-size:18px}
+.elist{display:flex;flex-direction:column;gap:6px}
+.elist a{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:9px 12px;text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.track{position:relative;height:56px;background:var(--plane);border-radius:10px;overflow:hidden}
+.seg{position:absolute;top:0;bottom:0}.seg i{position:absolute;left:6px;top:6px;font-style:normal;font-size:12px;font-weight:700;color:#121212}
+.today{position:absolute;top:0;bottom:0;width:2px;background:var(--ink)}
+.today::after{content:"Today";position:absolute;bottom:4px;left:5px;font-size:11px;font-weight:700}
+.tscale{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:4px}
+.note{font-size:13px;color:var(--mute)}
+details.crm{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:14px 0}
+details.crm summary{font-weight:700;cursor:pointer;min-height:28px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:10px}
+label{display:grid;gap:4px;font-size:14px;font-weight:600}
+label input,label select,label textarea{min-height:44px;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 11px;font-size:16px;font-weight:400}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.projs{display:grid;gap:6px}
+.projs button{display:flex;justify-content:space-between;gap:10px;text-align:start;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:10px 12px;min-height:44px}
+.modal{position:fixed;inset:0;z-index:1100;display:none;place-items:center;padding:16px;background:#0007}
+.modal.open{display:grid}
+.box{background:var(--bg);width:min(760px,100%);max-height:calc(100vh - 32px);overflow-y:auto;border-radius:14px;padding:22px 24px}
+.box h2{margin:0 0 12px;font-size:24px}
+textarea#body{min-height:320px;line-height:1.5;resize:vertical;font-size:15.5px}
+.tpls{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:10px;z-index:1200;font-weight:600;display:none;max-width:90vw}
+.hide{display:none!important}
+.leaflet-container{font:inherit}
+.mc{background:#121212;color:#ffe600;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;border:3px solid #ffe600}
+.legend{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;display:grid;gap:3px}
+.legend div{display:flex;align-items:center;gap:7px}
+@media(max-width:900px){main{grid-template-columns:minmax(0,1fr);height:auto}#map{height:420px;border:0;border-bottom:1px solid var(--line)}.rows{overflow:visible}}
+@media(max-width:600px){.figs{grid-template-columns:repeat(2,minmax(0,1fr))}.fig1:nth-child(2){border-inline-end:0}.fig1:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.kv{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}.sheet .in{padding:16px}.box{padding:16px}#map{height:360px}
+table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;color:var(--mute);font-size:13px}.stack td:empty{display:none}.legend .ld{display:none}}
+@media(prefers-reduced-motion:reduce){.sheet{transition:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="crown" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 18 L4.5 7 L9 11.5 L12 5 L15 11.5 L19.5 7 L21 18 Z" fill="#ffe600"/><rect x="3" y="19" width="18" height="2.2" rx="1" fill="#ffe600"/></svg></div>
+    <div><b>Jani Queen</b><span>Construction site leads · Ottawa &amp; area</span></div>
+  </div>
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="sites" aria-selected="true">Sites</button>
+    <button role="tab" data-tab="builders" aria-selected="false">Builders</button>
+    <button role="tab" data-tab="follow" aria-selected="false">Follow-ups<em id="dueN" class="hide">0</em></button>
+  </div>
+  <button class="btn" id="openAdd">+ Add a site</button>
+  <button class="btn" id="openSettings">Settings</button>
+</header>
+<div class="status" id="status">Loading sites…</div>
+
+<section class="figs" aria-label="Summary">
+  <button class="fig1 hot" data-quick="now"><b id="kNow">–</b><span>sites to contact now</span></button>
+  <button class="fig1" data-quick="win"><b id="kWin">–</b><span>cleaning likely underway</span></button>
+  <button class="fig1" data-quick="mail"><b id="kMail">–</b><span>builders with an email</span></button>
+  <button class="fig1" data-quick="follow"><b id="kDue">–</b><span>follow-ups due</span></button>
+</section>
+
+<section class="filters" aria-label="Filters">
+  <input type="search" id="q" placeholder="Search address, builder, street…" aria-label="Search">
+  <div class="chips" id="stChips"></div>
+  <select id="fType" aria-label="Project type"><option value="">All project types</option></select>
+  <select id="fSize" aria-label="Project size"><option value="0">Any size</option><option value="1" selected>Skip single small homes</option><option value="6">6+ units</option><option value="20">20+ units</option><option value="big">$5M+ value</option></select>
+  <select id="fArea" aria-label="Area"><option value="">All areas</option></select>
+  <label class="chip"><input type="checkbox" id="fMail"> Has email</label>
+</section>
+
+<div id="view-sites">
+<main>
+  <div id="map" aria-label="Map of construction sites"></div>
+  <section class="list" aria-label="Sites">
+    <div class="listhead"><b id="count">0 sites</b>
+      <select id="sort" aria-label="Sort"><option value="soon">Soonest cleaning first</option><option value="value">Biggest job first</option><option value="new">Newest permit first</option></select></div>
+    <div class="rows" id="rows"></div>
+  </section>
+</main>
+</div>
+
+<section id="view-builders" class="page hide">
+  <h2>Builders to win</h2>
+  <p class="note" style="margin:0 0 14px">One builder can bring every project they have. Ranked by upcoming cleaning value. Click a row for emails and all their sites.</p>
+  <table class="stack"><thead><tr><th>Builder</th><th class="n">Sites</th><th class="n">Units</th><th class="n">Est. value</th><th>Cleaning from</th><th>Email</th><th>Stage</th></tr></thead><tbody id="bRows"></tbody></table>
+</section>
+
+<section id="view-follow" class="page hide">
+  <h2>Follow-ups</h2>
+  <p class="note" style="margin:0 0 14px">Builders you've contacted, oldest follow-up first. Anything due today or earlier is highlighted.</p>
+  <table class="stack"><thead><tr><th>Builder</th><th>Follow up</th><th>Stage</th><th>Contact</th><th>Notes</th></tr></thead><tbody id="fRows"></tbody></table>
+  <div class="acts" style="margin-top:20px"><button class="btn" id="exportCrm">Download backup</button><label class="btn" style="display:inline-flex">Restore backup<input type="file" id="importCrm" accept=".json" class="hide"></label></div>
+  <p class="note">Your pipeline (stages, notes, contacts you add) is saved in this browser. Download a backup now and then, or to move it to another computer.</p>
+</section>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" aria-label="Details"><div class="in" id="sheetIn"></div></aside>
+
+<div class="modal" id="mCompose" role="dialog" aria-modal="true" aria-labelledby="cT"><div class="box">
+  <button class="x" data-close>×</button>
+  <h2 id="cT">Email</h2>
+  <div class="tpls" id="tpls"></div>
+  <div class="grid2"><label>To<input id="cTo" type="email" placeholder="name@builder.ca" list="cToList"></label><label>Contact first name<input id="cName" placeholder="optional"></label></div>
+  <datalist id="cToList"></datalist>
+  <label style="margin-top:10px">Subject<input id="cSub"></label>
+  <label style="margin-top:10px">Message<textarea id="body"></textarea></label>
+  <p class="note" id="cHint"></p>
+  <div class="acts">
+    <a class="btn dark" id="cGmail" target="_blank" rel="noopener">Open in Gmail</a>
+    <a class="btn" id="cOutlook" target="_blank" rel="noopener">Outlook</a>
+    <a class="btn" id="cMailto">Mail app</a>
+    <button class="btn" id="cCopy">Copy</button>
+    <button class="btn vis" id="cMark">I sent it ✓</button>
+  </div>
+</div></div>
+
+<div class="modal" id="mSettings" role="dialog" aria-modal="true" aria-labelledby="sT"><div class="box">
+  <button class="x" data-close>×</button>
+  <h2 id="sT">Settings</h2>
+  <p class="note">Used for the email signature and price estimates. Saved in this browser.</p>
+  <div class="grid2">
+    <label>Your name<input id="sName"></label><label>Title<input id="sTitle" placeholder="Business Development"></label>
+    <label>Phone<input id="sPhone"></label><label>Email<input id="sEmail" type="email"></label>
+    <label>Website<input id="sWeb"></label><label>Starting rate ($ / sq ft)<input id="sRate" type="number" step="0.01" min="0"></label>
+  </div>
+  <div class="acts" style="margin-top:14px"><button class="btn dark" id="sSave">Save</button></div>
+</div></div>
+
+<div class="modal" id="mAdd" role="dialog" aria-modal="true" aria-labelledby="aT"><div class="box">
+  <button class="x" data-close>×</button>
+  <h2 id="aT">Add a site</h2>
+  <p class="note">For sites the City's list doesn't cover — Gatineau, nearby towns, or a crane you drove past. Saved in this browser.</p>
+  <div class="grid2">
+    <label>Street address<input id="aAddr" placeholder="123 Main St"></label><label>City<input id="aCity" value="Gatineau"></label>
+    <label>Builder<input id="aBuilder"></label><label>Builder email<input id="aEmail" type="email"></label>
+    <label>Type<select id="aType"><option>Multi-unit</option><option>Low-rise residential</option><option>Commercial / ICI</option><option>Interior fit-up</option></select></label>
+    <label>Units<input id="aUnits" type="number" min="0" value="0"></label>
+    <label>Approx. sq ft<input id="aArea" type="number" min="0"></label><label>Construction started<input id="aDate" type="date"></label>
+  </div>
+  <label style="margin-top:10px">What's being built<input id="aDesc"></label>
+  <div class="acts" style="margin-top:14px"><button class="btn dark" id="aSave">Add to map</button></div>
+  <p class="note" id="aMsg"></p>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<script>
+{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const TODAY=new Date(),ISO=d=>d.toISOString().slice(0,10);
+const money=v=>v>=1e6?'$'+(v/1e6).toFixed(v>=1e7?0:1)+'M':v>=1e3?'$'+Math.round(v/1e3)+'K':'$'+Math.round(v);
+const fmtM=d=>d.toLocaleDateString('en-CA',{month:'short',year:'numeric'});
+const fmtD=s=>new Date(s+'T12:00').toLocaleDateString('en-CA',{month:'short',day:'numeric'});
+const addM=(d,m)=>{const x=new Date(d);x.setDate(x.getDate()+Math.round(m*30.4));return x};
+const bkey=n=>String(n||'').normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9 ]+/g,' ').replace(/\b(the|inc|incorporated|ltd|limited|corp|corporation|co|company|llc|ltee)\b/g,' ').trim().replace(/\s+/g,'-')||'unknown';
+let toastT;const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(toastT);toastT=setTimeout(()=>t.style.display='none',3200)};
+const LS={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){toast('Could not save in this browser.')}}};
+
+/* ---------- state ---------- */
+let settings=Object.assign({name:'',title:'Business Development',phone:'',email:'',web:'',rate:0.45},LS.get('jq.settings',{}));
+let crm=LS.get('jq.crm',{});          // per builder: {stage,follow,notes,contact,email,phone}
+let mine=LS.get('jq.mysites',[]);      // sites added by hand
+let sites=[],builders={},meta={},selId=null,selB=null;
+const F={q:'',st:new Set(['now','win','early']),type:'',size:'1',area:'',mail:false,sort:'soon'};
+const STL={now:'Contact now',win:'In window',early:'Early',done:'Likely done'},STO={now:0,win:1,early:2,done:3};
+
+/* ---------- timing model ---------- */
+function classify(p){const u=p.units||0;
+  switch(p.cat){case 'Interior fit-up':return p.value>2e6?[4,9]:[2,5];case 'Addition':return [3,6];
+  case 'Multi-unit':{const e=Math.min(u/20,12);return [14+e*.5,20+e]}case 'Low-rise residential':{const e=Math.min(u/12,6);return [7+e,11+e]}default:return [10,16]}}
+function catOf(p){const d=(p.desc||'').toLowerCase(),t=(p.type||'').toLowerCase(),u=p.units||0;
+  if(/warehouse|office|retail|commerc|industr|instit|school|restaurant|plaza|clinic|store|mercantile|church|arena|hospital/.test(t+' '+d)&&!/apart|dwelling|residential/.test(t+' '+d))return /interior|fit[- ]?up|alteration|tenant/.test(d)?'Interior fit-up':'Commercial / ICI';
+  if(/interior|fit[- ]?up|alteration|renovat|tenant|convert/.test(d)&&!/construct an? \d+ storey|new building/.test(d))return 'Interior fit-up';
+  if(/addition/.test(d)&&u<2)return 'Addition';
+  if(/apart|stack|mixed|condo|tower|retire|hotel/.test(t+' '+d)||u>=30)return 'Multi-unit';
+  if(/single|semi|row|town|duplex|triplex|\bhouse\b|dwelling/.test(t+' '+d))return 'Low-rise residential';
+  return 'Commercial / ICI'}
+const FSA={K1A:[45.42,-75.70],K1B:[45.41,-75.60],K1C:[45.475,-75.52],K1E:[45.48,-75.47],K1G:[45.40,-75.63],K1H:[45.39,-75.665],K1J:[45.44,-75.62],K1K:[45.43,-75.645],K1L:[45.44,-75.66],K1M:[45.445,-75.68],K1N:[45.43,-75.69],K1P:[45.42,-75.70],K1R:[45.41,-75.71],K1S:[45.40,-75.69],K1T:[45.35,-75.62],K1V:[45.35,-75.66],K1W:[45.44,-75.555],K1X:[45.31,-75.62],K1Y:[45.40,-75.73],K1Z:[45.39,-75.745],K2A:[45.375,-75.775],K2B:[45.36,-75.80],K2C:[45.36,-75.75],K2E:[45.34,-75.73],K2G:[45.33,-75.76],K2H:[45.33,-75.80],K2J:[45.27,-75.745],K2K:[45.345,-75.91],K2L:[45.305,-75.89],K2M:[45.285,-75.885],K2P:[45.415,-75.69],K2R:[45.30,-75.80],K2S:[45.26,-75.925],K2T:[45.33,-75.92],K2V:[45.29,-75.93],K2W:[45.36,-75.97],K4A:[45.465,-75.48],K4B:[45.38,-75.40],K4C:[45.50,-75.40],K4K:[45.44,-75.27],K4M:[45.24,-75.70],K4P:[45.26,-75.56],K0A:[45.20,-75.80],J8T:[45.48,-75.70],J8Y:[45.45,-75.75],J8Z:[45.46,-75.78],J9A:[45.43,-75.79],J9H:[45.40,-75.85],J8P:[45.49,-75.62],J8R:[45.50,-75.55],J8L:[45.55,-75.42]};
+const hash=s=>{let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0};
+function enrich(p){
+  p.cat=p.cat||catOf(p);const [a,b]=classify(p);const iss=new Date(p.issued+'T12:00:00');
+  p.fS=addM(iss,a);p.fE=addM(iss,b);p.qa=addM(p.fS,-1.5);
+  p.st=TODAY>addM(p.fE,1)?'done':TODAY>=p.qa?'win':(p.qa-TODAY)/864e5<=120?'now':'early';
+  p.sqft=p.area>0?p.area:(p.units?p.units*(p.cat==='Multi-unit'?900:1900):Math.max(1500,(p.value||0)/180));
+  p.est=p.sqft*settings.rate;p.city=p.city||'Ottawa';
+  if(p.lat==null){const f=(p.pc||'').toUpperCase().replace(/\s/g,'').slice(0,3),c=FSA[f]||[45.40,-75.70],h=hash(p.id);p.lat=c[0]+((h%1000)/1000-.5)*.016;p.lng=c[1]+(((h>>10)%1000)/1000-.5)*.024;p.approx=true}
+  p.area_=p.city!=='Ottawa'?p.city:(p.muni||'Ottawa');
+  return p;
+}
+function contactOf(k){const b=builders[k]||{},c=crm[k]||{};const emails=[...new Set([c.email,...(b.emails||[])].filter(Boolean))];const phones=[...new Set([c.phone,...(b.phones||[])].filter(Boolean))];return {name:b.name,website:b.website,emails,phones,c}}
+
+/* ---------- load ---------- */
+async function boot(){
+  let data={sites:[]};
+  try{const r=await fetch('data/leads.json',{cache:'no-cache'});if(r.ok)data=await r.json()}catch(e){}
+  try{const r=await fetch('data/builders.json',{cache:'no-cache'});if(r.ok)builders=await r.json()}catch(e){}
+  meta=data;
+  sites=[...data.sites,...mine].map(p=>enrich({...p}));
+  for(const p of mine){if(!p.owner&&p.bkey&&!builders[p.bkey])builders[p.bkey]={name:p.builder,emails:[]}}
+  const withMail=Object.values(builders).filter(b=>b.emails&&b.emails.length).length;
+  $('#status').innerHTML=data.updated?`Updated ${new Date(data.updated).toLocaleDateString('en-CA',{month:'long',day:'numeric'})} · ${data.sites.length.toLocaleString()} City of Ottawa permits · ${withMail} builder emails found automatically · refreshes every Monday`
+    :'<b>First collection is running.</b> The City of Ottawa permits and builder emails will appear here within about an hour. Sites you add by hand show now.';
+  const types=[...new Set(sites.map(p=>p.cat))].sort();$('#fType').innerHTML='<option value="">All project types</option>'+types.map(t=>`<option>${esc(t)}</option>`).join('');
+  const areas=[...new Set(sites.map(p=>p.area_).filter(Boolean))].sort();$('#fArea').innerHTML='<option value="">All areas</option>'+areas.map(t=>`<option>${esc(t)}</option>`).join('');
+  render();
+}
+
+/* ---------- filtering ---------- */
+function filtered(){
+  const q=F.q.toLowerCase();
+  let r=sites.filter(p=>F.st.has(p.st)&&(!F.type||p.cat===F.type)&&(!F.area||p.area_===F.area)&&!(p.owner&&F.size!=='0'));
+  if(F.size==='1')r=r.filter(p=>p.units>=2||p.cat!=='Low-rise residential'&&p.cat!=='Addition'||p.value>=1e6);
+  else if(F.size==='big')r=r.filter(p=>p.value>=5e6);else if(+F.size>1)r=r.filter(p=>p.units>=+F.size);
+  if(F.mail)r=r.filter(p=>!p.owner&&contactOf(p.bkey).emails.length);
+  if(q)r=r.filter(p=>(p.addr+' '+p.builder+' '+p.desc+' '+p.pc+' '+p.area_).toLowerCase().includes(q));
+  return r.sort({soon:(a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa,value:(a,b)=>b.est-a.est,new:(a,b)=>b.issued.localeCompare(a.issued)}[F.sort]);
+}
+const due=()=>Object.entries(crm).filter(([k,c])=>c.follow&&c.follow<=ISO(TODAY)&&!['Won','Not now'].includes(c.stage));
+
+/* ---------- render ---------- */
+function render(){
+  const r=filtered();
+  $('#count').textContent=r.length.toLocaleString()+(r.length===1?' site':' sites');
+  $('#kNow').textContent=sites.filter(p=>p.st==='now'&&!p.owner).length;
+  $('#kWin').textContent=sites.filter(p=>p.st==='win'&&!p.owner).length;
+  const live=new Set(sites.filter(p=>!p.owner&&p.st!=='done').map(p=>p.bkey));
+  $('#kMail').textContent=[...live].filter(k=>contactOf(k).emails.length).length+' / '+live.size;
+  const d=due().length;$('#kDue').textContent=d;$('#dueN').textContent=d;$('#dueN').classList.toggle('hide',!d);
+  $('#rows').innerHTML=r.length?r.slice(0,300).map(p=>{const ct=p.owner?null:contactOf(p.bkey);return `<button class="row${p.id===selId?' sel':''}" data-id="${esc(p.id)}">
+    <i class="dot d-${p.st}"></i>
+    <div><h3>${esc(p.addr)}${p.city!=='Ottawa'?', '+esc(p.city):''}</h3><p>${esc(p.owner?'Homeowner-built':p.builder)}${ct&&ct.emails.length?' · <span class="mail">✉ email</span>':''}</p>
+    <p><span class="tag ${p.st}">${STL[p.st]}</span> ${esc(p.cat)}${p.units?' · '+p.units+' units':''}</p></div>
+    <div class="rt"><b>${money(p.est)}</b>clean ${fmtM(p.qa)}</div></button>`}).join('')+(r.length>300?`<p class="empty">Showing the 300 most relevant — narrow the filters or use the map.</p>`:''):'<p class="empty">No sites match these filters.</p>';
+  drawMarkers(r);
+  if(!$('#view-builders').classList.contains('hide'))renderBuilders();
+  if(!$('#view-follow').classList.contains('hide'))renderFollow();
+}
+function chips(){$('#stChips').innerHTML=Object.keys(STL).map(k=>`<button class="chip" data-st="${k}" aria-pressed="${F.st.has(k)}"><i class="dot d-${k}"></i>${STL[k]}</button>`).join('')}
+
+/* ---------- map ---------- */
+let map=null,cluster=null;
+if(window.L){
+  map=L.map('map',{zoomControl:true,preferCanvas:true}).setView([45.36,-75.72],10);
+  const dark=matchMedia('(prefers-color-scheme: dark)').matches;
+  L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_all':'light_all'}/{z}/{x}/{y}{r}.png`,{maxZoom:19,subdomains:'abcd',attribution:'&copy; OpenStreetMap contributors &copy; CARTO'}).addTo(map);
+  cluster=L.markerClusterGroup({chunkedLoading:true,disableClusteringAtZoom:15,maxClusterRadius:45,showCoverageOnHover:false,
+    iconCreateFunction:c=>{const n=c.getChildCount(),s=n<10?34:n<100?42:50;return L.divIcon({html:`<div class="mc" style="width:${s}px;height:${s}px">${n}</div>`,className:'',iconSize:[s,s]})}});
+  map.addLayer(cluster);
+  const lg=L.control({position:'bottomleft'});lg.onAdd=()=>{const d=L.DomUtil.create('div','legend');d.innerHTML='<div><i class="dot d-now"></i>Contact now<span class="ld">&nbsp;— cleaning within ~4 months</span></div><div><i class="dot d-win"></i>In window</div><div><i class="dot d-early"></i>Early</div><div><i class="dot d-done"></i>Likely done</div>';return d};lg.addTo(map);
+}else{$('#map').innerHTML='<p class="empty">Map could not load — check your connection.</p>'}
+const COL={now:'#ffe600',win:'#0b6b5e',early:'#8a8a84',done:'#c4c4be'};
+let markers={};
+function drawMarkers(r){
+  if(!cluster)return;cluster.clearLayers();markers={};
+  cluster.addLayers(r.map(p=>{const m=L.circleMarker([p.lat,p.lng],{radius:5+Math.min(9,Math.sqrt(p.est/1500)),color:p.id===selId?'#000':'#121212',weight:p.id===selId?3:1,fillColor:COL[p.st],fillOpacity:.95});
+    m.bindTooltip(`<b>${esc(p.addr)}</b><br>${esc(p.owner?'Homeowner-built':p.builder)}`);m.on('click',()=>openLead(p.id));markers[p.id]=m;return m}));
+}
+function focus(p){if(map)map.setView([p.lat,p.lng],Math.max(map.getZoom(),15),{animate:!matchMedia('(prefers-reduced-motion: reduce)').matches})}
+
+/* ---------- sheets ---------- */
+function openSheet(html){$('#sheetIn').innerHTML=html;$('#sheet').classList.add('open');$('#scrim').style.display='block';$('#sheet').scrollTop=0}
+function closeSheet(){$('#sheet').classList.remove('open');$('#scrim').style.display='none';selId=null;selB=null;render()}
+function timeline(p){
+  const s=addM(p.qa,-2),e=addM(p.fE,1.5),span=e-s,pc=d=>Math.max(0,Math.min(100,(d-s)/span*100));
+  const segs=[['QA',p.qa,addM(p.fS,-.6),'#d8d8d4'],['PDI',addM(p.fS,-.6),p.fS,'#fff38a'],['Final',p.fS,p.fE,'#ffe600']];
+  return `<p style="margin:18px 0 6px"><b>When they'll need cleaning (estimate)</b></p><div class="track">${segs.map(([n,a,b,c])=>`<div class="seg" style="left:${pc(a)}%;width:${pc(b)-pc(a)}%;background:${c}">${pc(b)-pc(a)>7?`<i>${n}</i>`:''}</div>`).join('')}${TODAY>=s&&TODAY<=e?`<div class="today" style="left:${pc(TODAY)}%"></div>`:''}</div>
+  <div class="tscale"><span>${fmtM(s)}</span><span>${fmtM(e)}</span></div>
+  <p class="note">Based on the permit date and typical build time for ${esc(p.cat.toLowerCase())}. Confirm with the site super.</p>`;
+}
+function contactBlock(k,p){
+  const ct=contactOf(k),c=ct.c;
+  return `<div class="contact"><h3>${esc(ct.name||p?.builder||'')}</h3>
+  ${ct.emails.length?`<div class="elist">${ct.emails.map(e=>`<a href="#" data-compose="${esc(p?p.id:'')}" data-b="${esc(k)}" data-to="${esc(e)}"><span>✉ ${esc(e)}</span><span class="tag now">Write email</span></a>`).join('')}</div>`:`<p style="margin:0">No public email found yet${ct.website?' on their website':''}. Add one below, or call.</p>`}
+  <div class="acts">${ct.phones.map(t=>`<a class="btn sm" href="tel:${esc(t.replace(/\D/g,''))}">☎ ${esc(t)}</a>`).join('')}${ct.website?`<a class="btn sm" href="${esc(ct.website)}" target="_blank" rel="noopener">Website ↗</a>`:''}
+  <a class="btn sm" target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent('"'+(ct.name||'')+'" Ottawa email')}">Search ↗</a>
+  <a class="btn sm" target="_blank" rel="noopener" href="https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent((ct.name||'')+' site superintendent')}">Find the site super ↗</a></div>
+  ${!ct.emails.length?`<button class="btn vis" data-compose="${esc(p?p.id:'')}" data-b="${esc(k)}">Write email anyway</button>`:''}</div>
+  <details class="crm"${c.stage?' open':''}><summary>Pipeline: ${esc(c.stage||'New')}${c.follow?' · follow up '+fmtD(c.follow):''}</summary>
+  <div class="grid2"><label>Stage<select data-c="stage">${['New','Contacted','Replied','Quote sent','Won','Not now'].map(s=>`<option${(c.stage||'New')===s?' selected':''}>${s}</option>`).join('')}</select></label>
+  <label>Follow up on<input data-c="follow" type="date" value="${esc(c.follow)}"></label>
+  <label>Contact name<input data-c="contact" value="${esc(c.contact)}"></label><label>Their email (if different)<input data-c="email" type="email" value="${esc(c.email)}"></label></div>
+  <label style="margin-top:10px">Notes<textarea data-c="notes" rows="3">${esc(c.notes)}</textarea></label></details>`;
+}
+function openLead(id){
+  const p=sites.find(z=>z.id===id);if(!p)return;selId=id;selB=p.owner?null:p.bkey;
+  const others=p.owner?0:sites.filter(z=>z.bkey===p.bkey).length;
+  openSheet(`<button class="x" data-close>×</button><span class="tag ${p.st}">${STL[p.st]}</span>
+  <h2>${esc(p.addr)}${p.city!=='Ottawa'?', '+esc(p.city):''}</h2><p style="margin:0;color:var(--mute)">${esc([p.pc,p.ward&&'Ward '+p.ward,p.muni].filter(Boolean).join(' · '))}</p>
+  <p style="margin:12px 0 0">${esc(p.desc)}</p>
+  <div class="kv"><div><span>Units</span><b>${p.units||'—'}</b></div><div><span>Permit value</span><b>${p.value?money(p.value):'—'}</b></div><div><span>Est. cleaning job</span><b>${money(p.est)}</b></div>
+  <div><span>Area</span><b>${Math.round(p.sqft).toLocaleString()} ft²${p.area>0?'':'*'}</b></div><div><span>Permit issued</span><b>${esc(p.issued)}</b></div><div><span>Type</span><b>${esc(p.cat)}</b></div></div>
+  ${p.owner?`<div class="contact"><h3>Homeowner-built</h3><p style="margin:0">The City doesn't publish the owner's name. Reach them with a flyer or a site visit — usually a small job.</p></div>`:contactBlock(p.bkey,p)+(others>1?`<button class="btn" data-builder="${esc(p.bkey)}">See all ${others} ${esc(p.builder)} sites</button>`:'')}
+  ${timeline(p)}
+  <p class="note">${p.area>0?'':'* Area estimated from units or value. '}${p.approx?'Map pin is approximate (postal area). ':''}${p.kind==='Manual'?'Added by hand.':'Permit '+esc(p.id)+' · City of Ottawa open data.'}</p>`);
+  render();focus(p);
+}
+function openBuilder(k){
+  const ps=sites.filter(p=>p.bkey===k).sort((a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa);const name=(builders[k]||{}).name||ps[0]?.builder||'Builder';selB=k;selId=null;
+  openSheet(`<button class="x" data-close>×</button><span class="tag">Builder</span><h2>${esc(name)}</h2>
+  <div class="kv"><div><span>Sites</span><b>${ps.length}</b></div><div><span>Units</span><b>${ps.reduce((s,p)=>s+(p.units||0),0)||'—'}</b></div><div><span>Upcoming cleaning</span><b>${money(ps.filter(p=>p.st!=='done').reduce((s,p)=>s+p.est,0))}</b></div></div>
+  ${contactBlock(k,ps[0])}
+  <h3 style="margin:22px 0 8px">Their sites</h3><div class="projs">${ps.map(p=>`<button data-lead="${esc(p.id)}"><span><b>${esc(p.addr)}</b><br><span class="note">${esc(p.cat)}${p.units?' · '+p.units+' units':''} · clean ~${fmtM(p.qa)}</span></span><span class="tag ${p.st}">${STL[p.st]}</span></button>`).join('')}</div>`);
+}
+
+/* ---------- builders + follow-ups ---------- */
+function renderBuilders(){
+  const g={};sites.filter(p=>!p.owner).forEach(p=>{(g[p.bkey]??={k:p.bkey,ps:[]}).ps.push(p)});
+  const q=F.q.toLowerCase();
+  const list=Object.values(g).map(b=>{const live=b.ps.filter(p=>p.st!=='done');return {...b,name:(builders[b.k]||{}).name||b.ps[0].builder,units:b.ps.reduce((s,p)=>s+(p.units||0),0),val:live.reduce((s,p)=>s+p.est,0),next:[...live].sort((a,c)=>a.qa-c.qa)[0],ct:contactOf(b.k)}})
+    .filter(b=>(!q||b.name.toLowerCase().includes(q))&&(!F.mail||b.ct.emails.length)).sort((a,b)=>b.val-a.val);
+  $('#bRows').innerHTML=list.length?list.slice(0,400).map(b=>{const st=b.ct.c.stage||'New';return `<tr class="click" data-builder="${esc(b.k)}"><td><b>${esc(b.name)}</b></td><td class="n">${b.ps.length}</td><td class="n">${b.units||'—'}</td><td class="n">${money(b.val)}</td>
+  <td>${b.next?`<span class="tag ${b.next.st}">${fmtM(b.next.qa)}</span>`:'—'}</td><td>${b.ct.emails.length?`<span class="mail">${esc(b.ct.emails[0])}</span>`:b.ct.phones.length?esc(b.ct.phones[0]):'<span class="note">—</span>'}</td><td><span class="stage st-${st.replace(' ','-')}">${st}</span></td></tr>`}).join(''):'<tr><td colspan="7" class="empty">No builders yet.</td></tr>';
+}
+function renderFollow(){
+  const list=Object.entries(crm).filter(([k,c])=>c.stage&&c.stage!=='New').sort((a,b)=>(a[1].follow||'9').localeCompare(b[1].follow||'9'));
+  $('#fRows').innerHTML=list.length?list.map(([k,c])=>{const ct=contactOf(k),late=c.follow&&c.follow<=ISO(TODAY)&&!['Won','Not now'].includes(c.stage);return `<tr class="click" data-builder="${esc(k)}"><td><b>${esc(ct.name||k)}</b></td><td>${c.follow?`<span class="tag ${late?'now':''}">${fmtD(c.follow)}</span>`:'—'}</td><td><span class="stage st-${c.stage.replace(' ','-')}">${esc(c.stage)}</span></td><td>${esc(c.contact||ct.emails[0]||ct.phones[0]||'')}</td><td>${esc((c.notes||'').slice(0,90))}</td></tr>`}).join(''):'<tr><td colspan="5" class="empty">Nothing yet. When you email a builder, press “I sent it ✓” and it lands here with a follow-up date.</td></tr>';
+}
+function setCrm(k,field,val){crm[k]={...(crm[k]||{}),[field]:val,updated:Date.now()};LS.set('jq.crm',crm)}
+
+/* ---------- email ---------- */
+const poss=n=>/s$/i.test(n)?n+"'":n+"'s";
+const proj=d=>{d=String(d||'the project').trim().replace(/\.$/,'');if(/^construct(ion of)?\s+(a|an)\s+/i.test(d))return 'a new '+d.replace(/^construct(ion of)?\s+(a|an)\s+/i,'');if(/^construct\s+/i.test(d))return d.replace(/^construct\s+/i,'');return d.charAt(0).toLowerCase()+d.slice(1)};
+const first=s=>(s||'').trim().split(/\s+/)[0]||'';
+function sig(){const s=settings;return ['Best regards,','',s.name||'[Your name]',[s.title,'Jani Queen'].filter(Boolean).join(' | '),[s.phone,s.email].filter(Boolean).join(' · '),s.web].filter(Boolean).join('\n').replace('Best regards,\n','Best regards,\n\n')}
+const STAGES=`• QA clean – a detailed clean ahead of your quality-assurance walkthrough
+• PDI clean – units presentation-ready for the pre-delivery inspection
+• Final clean – spotless and move-in ready before closing`;
+const rate=()=>'$'+settings.rate.toFixed(2);
+const TPL={
+ site:{label:'About this site',sub:p=>`Post-construction cleaning for ${p.addr}`,body:(p,n)=>`Hi ${n||'there'},
+
+I'm ${settings.name||'[your name]'} with Jani Queen, one of Ottawa's larger post-construction cleaning companies. I saw ${poss(p.builder)} permit for ${proj(p.desc)} at ${p.addr}, and wanted to reach out before you get close to turnover.
+
+We handle the three cleans builders need at the end of a project:
+${STAGES}
+
+Our team is large enough to work around your trades and schedule — including tight turnovers and phased ${p.units>1?'unit ':''}handovers — and we stand behind every ${p.units>1?'unit':'space'} we clean. Pricing typically starts at ${rate()} per square foot depending on scope; exterior windows are quoted separately.
+
+I'd be glad to put together a no-obligation quote for ${p.addr}. Would a quick call this week or next work? If someone on your site team handles this, I'm happy to connect with them directly.
+
+${sig()}`},
+ intro:{label:'General intro',sub:p=>`Post-construction cleaning partner for ${p.builder}`,body:(p,n)=>`Hi ${n||'there'},
+
+I'm ${settings.name||'[your name]'} with Jani Queen. We specialize in post-construction cleaning across Ottawa for residential and commercial builders, and I'd love to be a resource for ${poss(p.builder)} upcoming projects.
+
+${STAGES}
+
+Builders tell us they value our flexibility most: a large, experienced crew means we can scale up for multi-unit handovers and absorb last-minute schedule changes without cutting corners. Pricing generally starts at ${rate()} per square foot, with exterior windows quoted separately.
+
+Could I send over a quote for one of your current sites, or set up a short call?
+
+${sig()}`},
+ warm:{label:'Someone you know',sub:p=>`Jani Queen – cleaning for your projects`,body:(p,n)=>`Hi ${n||'there'},
+
+Hope you've been doing well! I wanted to follow up on our conversation about ${poss(p.builder)} projects and a way we could work together.
+
+Do you currently have a cleaning company handling your construction projects? If you're open to another option, I'd love for Jani Queen to be considered. We're one of the larger cleaning companies in Ottawa, and post-construction is our specialty:
+${STAGES}
+
+Pricing generally starts at ${rate()} per square foot depending on size and scope, with exterior windows quoted separately. Because our team is large and experienced, we can work around your schedule and meet tight deadlines without compromising quality.
+
+If you have anything coming up — ${p.addr} looks like a good fit — I'd be happy to put together a quote. Let me know if you'd like to chat!
+
+${sig()}`},
+ follow:{label:'Follow-up',sub:p=>`Re: Post-construction cleaning for ${p.addr}`,body:(p,n)=>`Hi ${n||'there'},
+
+Just following up on my note about cleaning for ${p.addr}. Based on typical timelines, you'll likely be looking at QA and PDI cleans around ${fmtM(p.qa)}, so now is a good time to lock in a crew.
+
+I'm happy to walk the site and send a firm quote within 48 hours. Is there a good time to connect?
+
+${sig()}`}
+};
+let cur={p:null,k:null,t:'site'};
+function compose(id,k,to){
+  const p=sites.find(z=>z.id===id)||sites.find(z=>z.bkey===k);if(!p)return;k=k||p.bkey;const ct=contactOf(k);
+  cur={p,k,t:['Contacted','Replied','Quote sent'].includes(ct.c.stage)?'follow':'site'};
+  $('#cTo').value=to||ct.emails[0]||'';$('#cToList').innerHTML=ct.emails.map(e=>`<option value="${esc(e)}">`).join('');$('#cName').value=first(ct.c.contact);
+  $('#cT').textContent='Email '+(ct.name||p.builder);
+  $('#tpls').innerHTML=Object.entries(TPL).map(([key,v])=>`<button class="chip" data-tpl="${key}" aria-pressed="${key===cur.t}">${v.label}</button>`).join('');
+  fill();$('#mCompose').classList.add('open');
+}
+function fill(){const v=TPL[cur.t];$('#cSub').value=v.sub(cur.p);$('#body').value=v.body(cur.p,$('#cName').value.trim());links();
+  $('#cHint').textContent=settings.name?'Edit anything, then open it in your email and send. Press “I sent it” after so it’s tracked.':'Tip: add your name and phone in Settings so the signature fills in.'}
+function links(){const to=$('#cTo').value.trim(),su=$('#cSub').value,bo=$('#body').value,e=encodeURIComponent;
+  $('#cGmail').href=`https://mail.google.com/mail/?view=cm&fs=1&to=${e(to)}&su=${e(su)}&body=${e(bo)}`;
+  $('#cOutlook').href=`https://outlook.office.com/mail/deeplink/compose?to=${e(to)}&subject=${e(su)}&body=${e(bo)}`;
+  $('#cMailto').href=`mailto:${to}?subject=${e(su)}&body=${e(bo)}`}
+$('#tpls').addEventListener('click',e=>{const b=e.target.closest('[data-tpl]');if(!b)return;cur.t=b.dataset.tpl;$$('#tpls .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));fill()});
+$('#cName').addEventListener('input',fill);['#cTo','#cSub','#body'].forEach(s=>$(s).addEventListener('input',links));
+$('#cCopy').onclick=async()=>{try{await navigator.clipboard.writeText(`To: ${$('#cTo').value}\nSubject: ${$('#cSub').value}\n\n${$('#body').value}`);toast('Copied')}catch(e){$('#body').select();toast('Press Ctrl/⌘+C to copy')}};
+$('#cMark').onclick=()=>{const k=cur.k;if(!k)return;const d=new Date();d.setDate(d.getDate()+7);
+  const c=crm[k]||{};const next=['Replied','Quote sent','Won'].includes(c.stage)?c.stage:'Contacted';
+  crm[k]={...c,stage:next,follow:ISO(d),updated:Date.now(),notes:((c.notes||'')+`\n${ISO(TODAY)}: emailed ${$('#cTo').value} (${TPL[cur.t].label})`).trim()};
+  if($('#cName').value.trim()&&!c.contact)crm[k].contact=$('#cName').value.trim();
+  const em=$('#cTo').value.trim();if(em&&!contactOf(k).emails.includes(em))crm[k].email=em;
+  LS.set('jq.crm',crm);$('#mCompose').classList.remove('open');toast('Tracked — follow up '+fmtD(ISO(d)));
+  if($('#sheet').classList.contains('open'))selId?openLead(selId):openBuilder(k);render()};
+
+/* ---------- add a site ---------- */
+$('#openAdd').onclick=()=>{$('#aDate').value=$('#aDate').value||ISO(TODAY);$('#aMsg').textContent='';$('#mAdd').classList.add('open')};
+$('#aSave').onclick=async()=>{
+  const addr=$('#aAddr').value.trim(),city=$('#aCity').value.trim()||'Ottawa';if(!addr){$('#aMsg').textContent='Add a street address.';return}
+  $('#aMsg').textContent='Finding it on the map…';let lat=null,lng=null;
+  try{const prov=/gatineau|chelsea|cantley|aylmer|hull|val-des-monts|l'ange|pontiac/i.test(city)?'Quebec':'Ontario';
+    const r=await fetch(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&street=${encodeURIComponent(addr)}&city=${encodeURIComponent(city)}&state=${prov}&country=Canada`);const j=await r.json();if(j[0]){lat=+j[0].lat;lng=+j[0].lon}}catch(e){}
+  if(lat==null){$('#aMsg').textContent='Couldn’t find that address — check the spelling.';return}
+  const builder=$('#aBuilder').value.trim(),k=builder?bkey(builder):'';
+  const p={id:'mine-'+Date.now(),addr,city,muni:city,pc:'',ward:'',builder,bkey:k,owner:!builder,cat:$('#aType').value,type:$('#aType').value,desc:$('#aDesc').value.trim()||$('#aType').value,units:+$('#aUnits').value||0,value:0,area:+$('#aArea').value||0,issued:$('#aDate').value||ISO(TODAY),kind:'Manual',lat,lng};
+  mine.push(p);LS.set('jq.mysites',mine);if(k&&$('#aEmail').value.trim())setCrm(k,'email',$('#aEmail').value.trim());
+  $('#mAdd').classList.remove('open');['#aAddr','#aBuilder','#aEmail','#aDesc','#aArea'].forEach(s=>$(s).value='');
+  await boot();openLead(p.id);toast('Site added');
+};
+
+/* ---------- backup ---------- */
+$('#exportCrm').onclick=()=>{const blob=new Blob([JSON.stringify({crm,mine,settings},null,1)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`jani-queen-pipeline-${ISO(TODAY)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
+$('#importCrm').onchange=async e=>{try{const j=JSON.parse(await e.target.files[0].text());crm={...crm,...(j.crm||{})};mine=[...mine,...(j.mine||[]).filter(m=>!mine.some(x=>x.id===m.id))];if(j.settings)settings={...settings,...j.settings};LS.set('jq.crm',crm);LS.set('jq.mysites',mine);LS.set('jq.settings',settings);await boot();renderFollow();toast('Backup restored')}catch(err){toast('That file isn’t a Jani Queen backup.')}};
+
+/* ---------- events ---------- */
+document.addEventListener('click',e=>{
+  const t=e.target;
+  if(t.closest('[data-close]')){const m=t.closest('.modal');m?m.classList.remove('open'):closeSheet();return}
+  if(t.classList.contains('modal')){t.classList.remove('open');return}
+  const c=t.closest('[data-compose]');if(c){e.preventDefault();return compose(c.dataset.compose,c.dataset.b,c.dataset.to)}
+  const r=t.closest('.row');if(r)return openLead(r.dataset.id);
+  const bd=t.closest('[data-builder]');if(bd)return openBuilder(bd.dataset.builder);
+  const ld=t.closest('[data-lead]');if(ld)return openLead(ld.dataset.lead);
+  const s=t.closest('[data-st]');if(s){const k=s.dataset.st;F.st.has(k)?F.st.delete(k):F.st.add(k);chips();render();return}
+  const tb=t.closest('[data-tab]');if(tb)return tab(tb.dataset.tab);
+  const qk=t.closest('[data-quick]');if(qk){const k=qk.dataset.quick;if(k==='follow')return tab('follow');if(k==='mail'){F.mail=true;$('#fMail').checked=true;tab('builders');return}F.st=new Set([k]);chips();tab('sites');}
+});
+$('#scrim').onclick=closeSheet;
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=document.querySelector('.modal.open');m?m.classList.remove('open'):$('#sheet').classList.contains('open')&&closeSheet()}});
+$('#sheet').addEventListener('change',e=>{const f=e.target.dataset.c;if(f&&selB){setCrm(selB,f,e.target.value);render()}});
+$('#sheet').addEventListener('input',e=>{const f=e.target.dataset.c;if(f==='notes'&&selB)setCrm(selB,f,e.target.value)});
+$('#q').addEventListener('input',e=>{F.q=e.target.value;render()});
+$('#fType').onchange=e=>{F.type=e.target.value;render()};$('#fSize').onchange=e=>{F.size=e.target.value;render()};
+$('#fArea').onchange=e=>{F.area=e.target.value;render()};$('#fMail').onchange=e=>{F.mail=e.target.checked;render()};$('#sort').onchange=e=>{F.sort=e.target.value;render()};
+function tab(n){$$('[data-tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===n));['sites','builders','follow'].forEach(v=>$('#view-'+v).classList.toggle('hide',v!==n));
+  if(n==='builders')renderBuilders();if(n==='follow')renderFollow();if(n==='sites'){render();map&&setTimeout(()=>map.invalidateSize(),50)}
+  try{history.replaceState(null,'','#'+n)}catch(e){}}
+$('#openSettings').onclick=()=>{const s=settings;$('#sName').value=s.name;$('#sTitle').value=s.title;$('#sPhone').value=s.phone;$('#sEmail').value=s.email;$('#sWeb').value=s.web;$('#sRate').value=s.rate;$('#mSettings').classList.add('open')};
+$('#sSave').onclick=()=>{settings={name:$('#sName').value.trim(),title:$('#sTitle').value.trim(),phone:$('#sPhone').value.trim(),email:$('#sEmail').value.trim(),web:$('#sWeb').value.trim(),rate:Math.max(0,parseFloat($('#sRate').value)||0.45)};LS.set('jq.settings',settings);sites.forEach(p=>p.est=p.sqft*settings.rate);render();$('#mSettings').classList.remove('open');toast('Saved')};
+
+chips();boot().then(()=>{const h=location.hash.slice(1);if(['builders','follow'].includes(h))tab(h)});
+}
+</script>
+</body>
+</html>
