@@ -413,7 +413,7 @@ function openBuilder(k){
   openSheet(`<button class="x" data-close>×</button><span class="tag">Builder</span><h2>${esc(name)}</h2>
   <div class="kv"><div><span>Sites</span><b>${ps.length}</b></div><div><span>Units</span><b>${ps.reduce((s,p)=>s+(p.units||0),0)||'—'}</b></div><div><span>Upcoming cleaning</span><b>${money(ps.filter(p=>p.st!=='done').reduce((s,p)=>s+p.est,0))}</b></div></div>
   ${contactBlock(k,ps[0]||null)}
-  <h3 style="margin:22px 0 8px">Their sites</h3>${ps.length?'':'<p class="note">No current permits matched to them yet — they built '+((builders[k]||{}).homes||0)+' homes in Ottawa in 2018–23, so they\'re worth a call.</p>'}<div class="projs">${ps.map(p=>`<button data-lead="${esc(p.id)}"><span><b>${esc(p.addr)}</b><br><span class="note">${esc(p.cat)}${p.units?' · '+p.units+' units':''} · clean ~${fmtM(p.qa)}</span></span><span class="tag ${p.st}">${STL[p.st]}</span></button>`).join('')}</div>`);
+  <h3 style="margin:22px 0 8px">Their sites</h3>${ps.length?'':'<p class="note">No current permits matched to them yet — they were an active Ottawa home builder in 2018–23, so they\'re worth a call.</p>'}<div class="projs">${ps.map(p=>`<button data-lead="${esc(p.id)}"><span><b>${esc(p.addr)}</b><br><span class="note">${esc(p.cat)}${p.units?' · '+p.units+' units':''} · clean ~${fmtM(p.qa)}</span></span><span class="tag ${p.st}">${STL[p.st]}</span></button>`).join('')}</div>`);
 }
 
 /* ---------- builders + follow-ups ---------- */
@@ -423,7 +423,7 @@ function renderBuilders(){
   const q=F.q.toLowerCase();
   const list=Object.values(g).map(b=>{const live=b.ps.filter(p=>p.st!=='done');return {...b,name:(builders[b.k]||{}).name||b.ps[0]?.builder||b.k,homes:(builders[b.k]||{}).homes||0,units:b.ps.reduce((s,p)=>s+(p.units||0),0),val:live.reduce((s,p)=>s+p.est,0),next:[...live].sort((a,c)=>a.qa-c.qa)[0],ct:contactOf(b.k)}})
     .filter(b=>(!q||b.name.toLowerCase().includes(q))&&(!F.mail||b.ct.emails.length)).sort((a,b)=>b.val-a.val||b.homes-a.homes);
-  $('#bRows').innerHTML=list.length?list.slice(0,400).map(b=>{const st=b.ct.c.stage||'New';return `<tr class="click" data-builder="${esc(b.k)}"><td><b>${esc(b.name)}</b>${b.homes?`<br><span class="note">${b.homes.toLocaleString()} homes built 2018–23</span>`:''}</td><td class="n">${b.ps.length||'—'}</td><td class="n">${b.units||'—'}</td><td class="n">${money(b.val)}</td>
+  $('#bRows').innerHTML=list.length?list.slice(0,400).map(b=>{const st=b.ct.c.stage||'New';return `<tr class="click" data-builder="${esc(b.k)}"><td><b>${esc(b.name)}</b>${b.homes?`<br><span class="note">Active Ottawa home builder 2018–23</span>`:''}</td><td class="n">${b.ps.length||'—'}</td><td class="n">${b.units||'—'}</td><td class="n">${money(b.val)}</td>
   <td>${b.next?`<span class="tag ${b.next.st}">${fmtM(b.next.qa)}</span>`:'—'}</td><td>${b.ct.emails.length?`<span class="mail">${esc(b.ct.emails[0])}</span>`:b.ct.phones.length?esc(b.ct.phones[0]):'<span class="note">—</span>'}</td><td><span class="stage st-${st.replace(' ','-')}">${st}</span></td></tr>`}).join(''):'<tr><td colspan="7" class="empty">No builders yet.</td></tr>';
 }
 function renderFollow(){

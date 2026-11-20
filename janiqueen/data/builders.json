@@ -479,16 +479,10 @@
   "sites": 1
  },
  "builders": {
-  "checked": "2026-11-20",
-  "emails": [
-   "info@ottawatourism.ca"
-  ],
   "homes": 0,
   "last": "2020-02",
   "name": "Ottawa Builders Inc.",
-  "sites": 1,
-  "source": "website",
-  "website": "https://ottawatourism.ca"
+  "sites": 1
  },
  "built-by-bellagio": {
   "homes": 5,
@@ -1200,16 +1194,10 @@
   "website": null
  },
  "general-contractors": {
-  "checked": "2026-11-20",
-  "emails": [
-   "info@ottawatourism.ca"
-  ],
   "homes": 9,
   "last": "2022-03",
   "name": "Ottawa General Contractors",
-  "sites": 2,
-  "source": "website",
-  "website": "https://ottawatourism.ca"
+  "sites": 2
  },
  "giamberardino-contracting": {
   "checked": "2026-11-20",

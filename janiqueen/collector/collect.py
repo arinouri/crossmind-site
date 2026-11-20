@@ -334,7 +334,9 @@ def search_links(name):
 
 
 def guess_site(name):
-    toks = tokens(name) or bkey(name).split("-")[:1]
+    toks = tokens(name)
+    if not toks:                                     # "Ottawa Builders Inc." is too generic to guess
+        return None
     words = [w for w in re.sub(r"[^a-z0-9 ]", " ", name.lower()).split() if w not in
              {"inc", "ltd", "limited", "corp", "corporation", "the", "and", "of", "co"}]
     cands = []
