@@ -60,12 +60,15 @@ def bkey(name):
     s = unicodedata.normalize("NFKD", name or "").encode("ascii", "ignore").decode().lower()
     s = re.sub(r"&", " and ", s)
     s = re.sub(r"[^a-z0-9 ]+", " ", s)
-    s = re.sub(r"\b(the|inc|incorporated|ltd|limited|corp|corporation|co|company|llc|ltee|ltée)\b", " ", s)
+    s = re.sub(r"\b(the|inc|incorporated|ltd|limited|corp|corporation|co|company|llc|ltee|ltée|partnership|lp)\b", " ", s)
+    core = re.sub(r"\b(homes?|developments?|communities|construction|group|of|companies|properties|division|canada|ottawa)\b", " ", s)
+    if core.strip():                                 # "Mattamy Homes" / "Mattamy Development" -> "mattamy"
+        s = core
     return re.sub(r"\s+", "-", s.strip()) or "unknown"
 
 
 OWNER = re.compile(r"^\W*contractor\W*$", re.I)
-UNKNOWN = re.compile(r"^\W*(contractor\s*unknown|unknown|n/?a|tbd|owner)\W*$", re.I)
+UNKNOWN = re.compile(r"^\W*(contractor\s*unknown|unknown([\s,]*unknown)?|n/?a|tbd|owner|none)\W*$", re.I)
 
 # ---------------------------------------------------------------- 1. find + download
 SEARCH = "https://open.ottawa.ca/api/search/v1/collections/all/items"
@@ -330,7 +333,33 @@ def search_links(name):
     return out
 
 
+def guess_site(name):
+    toks = tokens(name) or bkey(name).split("-")[:1]
+    words = [w for w in re.sub(r"[^a-z0-9 ]", " ", name.lower()).split() if w not in
+             {"inc", "ltd", "limited", "corp", "corporation", "the", "and", "of", "co"}]
+    cands = []
+    if toks:
+        t = toks[0]
+        cands += [t, t + "homes", t + "construction", t + "group", t + "developments", t + "builders", t + "inc"]
+    if len(words) >= 2:
+        cands.append("".join(words[:2]))
+    for c in dict.fromkeys(cands):
+        for tld in (".com", ".ca"):
+            u = f"https://www.{c}{tld}"
+            try:
+                r = S.get(u, timeout=12)
+            except Exception:
+                continue
+            title = (BeautifulSoup(r.text[:20000], "html.parser").title or BeautifulSoup("", "html.parser")).get_text(" ").lower() if r.ok else ""
+            if r.ok and toks and (toks[0] in title or toks[0] in urlparse(r.url).netloc) and re.search(r"ottawa|ontario|canada|homes|build|construct", r.text[:200000], re.I):
+                return f"{urlparse(r.url).scheme}://{urlparse(r.url).netloc}"
+    return None
+
+
 def search_site(name):
+    hit = guess_site(name)
+    if hit:
+        return hit
     name = re.sub(r"(?i)\b(inc|ltd|limited|corp|corporation|incorporated|group of companies)\b\.?", "", name).strip(" ,.")
     toks = tokens(name)
     for a in search_links(name):
@@ -480,6 +509,9 @@ SUFFIX = {"street": "st", "avenue": "ave", "av": "ave", "road": "rd", "drive": "
           "boulevard": "blvd", "court": "crt", "ct": "crt", "place": "pl", "private": "pvt", "priv": "pvt",
           "circle": "cir", "terrace": "terr", "lane": "lane", "ln": "lane", "way": "way", "row": "row",
           "gate": "gate", "heights": "hts", "parkway": "pkwy", "square": "sq", "trail": "trail", "grove": "grove"}
+TRADE = re.compile(r"(?i)security|alarm|sign|pool|fence|roof|electric|plumb|mechanical|hvac|heating|sprinkler|"
+                   r"fire protection|elevator|solar|window|door|glass|paving|landscap|demoli|excavat|shoring|crane|"
+                   r"furniture|telecom|bell |rogers|tower")
 NEWBUILD = re.compile(r"(?i)^construct(ion of)?\b|new (dwelling|building|home)")
 
 
@@ -521,7 +553,8 @@ def learn_builders():
             c["n"] += 1
             c["last"] = max(c["last"], p["issued"])
             na = norm_addr(p["addr"])
-            if na:
+            big = p["value"] >= 100000 or p["units"] >= 1
+            if na and big and not TRADE.search(b):
                 by_addr[na] = [k, p["issued"]] if na not in by_addr or by_addr[na][1] <= p["issued"] else by_addr[na]
             if NEWBUILD.search(p["desc"]) and (p["units"] >= 1 or p["value"] >= 300000):
                 c["homes"] += max(1, p["units"])
