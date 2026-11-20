@@ -21,3 +21,4 @@ for name in [v["name"] for v in top[:6]]:
     print("LOOKUP", name, site, c.scrape_contacts(site) if site else "")
 g = c.gohba_directory()
 print("GOHBA sample:", list(g.values())[:5])
+# run 1042
