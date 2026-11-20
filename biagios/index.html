@@ -335,6 +335,59 @@ body.intro-on{overflow:hidden}
 .cal span.bk{background:var(--orange);border-color:var(--orange);font-weight:700}
 .sumb{background:var(--navy);color:var(--cream);border-radius:12px;padding:10px 12px;font-size:12.5px;font-weight:500}
 
+
+/* Tailored plan per part of the business */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(32px,5vw,48px)}
+.tabs button{min-height:46px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line-n);background:none;color:var(--navy);font:600 15px var(--f-b);cursor:pointer;transition:background .2s}
+.tabs button:hover{background:rgba(10,34,56,.07)}
+.tabs button[aria-selected=true]{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.plan{margin-top:16px;background:var(--cream);border-radius:24px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,48px);align-items:center}
+@media (max-width:860px){.plan{grid-template-columns:1fr}}
+.plan .who{font:600 13px/1 var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.plan h3{font-size:clamp(26px,3.4vw,36px);margin:10px 0 12px}
+.plan .today{color:var(--ink-soft);font-size:16px}
+.plan .today b{color:var(--navy)}
+.plan ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.plan li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:16px;font-weight:500}
+.plan li::before{content:"✓";width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--cream);display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:1px}
+.plan .care{margin-top:16px;font-size:14px;color:var(--ink-soft);border-left:3px solid var(--orange);padding-left:12px}
+.sample{background:var(--navy);color:var(--cream);border-radius:22px;padding:18px;display:grid;gap:10px}
+.sample small{font:600 11px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--orange-hi)}
+.sample .sb{background:var(--cream);color:var(--navy);border-radius:16px 16px 16px 4px;padding:12px 14px;font-size:15px;line-height:1.45;animation:rise .45s ease both}
+.sample .sr{justify-self:end;background:var(--orange);color:var(--navy);border-radius:16px 16px 4px 16px;padding:9px 13px;font-size:14px;font-weight:500;animation:rise .45s ease .5s both}
+.sample .meta{font-size:12px;color:var(--cream-soft)}
+
+/* A year at Biagio's */
+.months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;margin-top:clamp(32px,5vw,48px)}
+@media (max-width:860px){.months{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media (max-width:420px){.months{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.months button{all:unset;box-sizing:border-box;cursor:pointer;border-radius:14px;background:var(--navy-2);border:1px solid var(--line-c);padding:12px 6px;text-align:center;display:grid;gap:6px;transition:background .2s}
+.months button:hover{background:#163a5c}
+.months button:focus-visible{outline:3px solid var(--cream);outline-offset:2px}
+.months b{font:700 16px/1 var(--f-d)}
+.months i{display:block;width:8px;height:8px;border-radius:50%;margin:0 auto;background:var(--orange-hi);opacity:.55}
+.months button[aria-selected=true]{background:var(--orange);color:var(--navy);border-color:var(--orange)}
+.months button[aria-selected=true] i{background:var(--navy);opacity:1}
+.months .now{font:600 9.5px/1 var(--f-b);letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.mdetail{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,40px);border:1px solid var(--line-c);border-radius:22px;padding:clamp(20px,3.5vw,32px);align-items:center}
+@media (max-width:820px){.mdetail{grid-template-columns:1fr}}
+.mdetail .mm{font:600 13px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--orange-hi)}
+.mdetail h3{font-size:clamp(24px,3vw,32px);margin:10px 0 10px}
+.mdetail p{color:var(--cream-soft)}
+.mdetail .aud{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.mdetail .aud span{border:1px solid var(--line-c);border-radius:999px;padding:6px 12px;font-size:13.5px}
+.mdetail .sb{background:var(--cream);color:var(--navy);border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:15px;line-height:1.45;animation:rise .45s ease both}
+.mdetail .sb small{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+
+/* Questions */
+.faq{margin-top:clamp(32px,5vw,48px);display:grid;gap:10px;max-width:820px}
+.faq details{background:var(--cream);border-radius:18px;padding:0 22px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;font:600 clamp(17px,2vw,19px)/1.3 var(--f-d);letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--cream);display:grid;place-items:center;font:500 20px/1 var(--f-b);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--ink-soft);max-width:62ch}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -389,7 +442,7 @@ body.intro-on{overflow:hidden}
     <h1>More bookings. <em>Less chasing.</em></h1>
     <p class="lead">A simple system for Biagio’s that answers every catering request in seconds, tells your team who to call next, and brings last year’s clients back.</p>
     <div class="cta-row">
-      <button class="btn" type="button" data-watch><span class="pl" aria-hidden="true">▶</span>Watch how it works</button>
+      <button class="btn" type="button" data-watch><span class="pl" aria-hidden="true">▶</span>Watch how it works <span style="font-weight:400;opacity:.7">· 1 min</span></button>
       <a class="cue" href="#noticed"><i></i>Or scroll to read</a>
     </div>
     <div class="works"><span>Built for:</span><span class="ch">Catering</span><span class="ch">Holiday parties</span><span class="ch">Pizza trailer</span><span class="ch">Dinner + Show</span><span class="ch">The dining room</span></div>
@@ -403,7 +456,7 @@ body.intro-on{overflow:hidden}
       <h2>Lots of ways to book. No one place to keep track.</h2>
       <div class="stats">
         <div class="stat"><b>6</b><h3>Separate forms</h3><p>Catering, holiday parties, the pizza trailer, shows and the contact page each send their own email. It’s easy for one to slip.</p></div>
-        <div class="stat"><b>5 PM</b><h3>Doors open</h3><p>Office managers plan catering in the morning. When nobody picks up, they call the next caterer.</p></div>
+        <div class="stat"><b>5 PM</b><h3>Doors open</h3><p>The dining room opens at 5 most days and is closed Mondays. Office managers plan catering in the morning, and if nobody picks up, they call the next caterer.</p></div>
         <div class="stat"><b>×2</b><h3>Two years in a row</h3><p>Your reviews say clients come back. Today that depends on them remembering to call.</p></div>
       </div>
     </div>
@@ -444,6 +497,16 @@ body.intro-on{overflow:hidden}
           <p>Ten months after an event, the client gets a friendly note to book the same date again, before they shop around.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="band" id="tailored" style="padding-top:0">
+    <div class="wrap">
+      <p class="kick">Built for every part of Biagio’s</p>
+      <h2>One system, set up for each way you make money</h2>
+      <p class="sub">Biagio’s is a restaurant, a caterer, a party venue, a pizza truck and a show night all in one. Pick one to see what we’d set up for it.</p>
+      <div class="tabs" role="tablist" aria-label="Parts of the business" id="ptabs"></div>
+      <div class="plan" id="plan" role="tabpanel" aria-live="polite"></div>
     </div>
   </section>
 
@@ -495,7 +558,17 @@ body.intro-on{overflow:hidden}
     </div>
   </section>
 
-  <section class="band" id="setup" style="padding-top:0">
+  <section class="band navy" id="year">
+    <div class="wrap">
+      <p class="kick">A year at Biagio’s</p>
+      <h2>The right message goes out every month</h2>
+      <p class="sub">Once it’s set up, the system runs the seasons for you, and only messages the people each one is for. Tap a month.</p>
+      <div class="months" role="tablist" aria-label="Months" id="months"></div>
+      <div class="mdetail" id="mdetail" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="band" id="setup">
     <div class="wrap">
       <p class="kick">Getting set up</p>
       <h2>Simple from the first call.</h2>
@@ -505,6 +578,21 @@ body.intro-on{overflow:hidden}
         <div class="step"><b>03</b><h3>Your team starts using it</h3><p>We train everyone on the phone app and check in each month to see what’s working.</p></div>
       </div>
       <p class="note">No new website, and nothing new for your guests to learn. You keep running the restaurant. We handle the setup.</p>
+    </div>
+  </section>
+
+  <section class="band" id="questions" style="padding-top:0">
+    <div class="wrap">
+      <p class="kick">Good questions</p>
+      <h2>What owners usually ask us</h2>
+      <div class="faq">
+        <details><summary>Do I need a new website?</summary><p>No. We connect the forms on biagios.ca to the new system. Your guests see the same site; they just get answers faster.</p></details>
+        <details><summary>Will guests know the messages are automatic?</summary><p>We write every message in Biagio’s voice and sign them from your team, like “Sarah from Biagio’s.” As soon as a guest replies, a real person takes over.</p></details>
+        <details><summary>How much will my team have to learn?</summary><p>Very little. Sarah and Ben get one phone app that shows who to call and what’s next. We train everyone and stay on hand for questions.</p></details>
+        <details><summary>Does it work with OpenTable, Silverpay and Uber Eats?</summary><p>Your guests keep booking and ordering the same way. We’ll check what each one can share with the new system and tell you plainly what connects directly and what needs a simple workaround.</p></details>
+        <details><summary>Is it okay to text and email people?</summary><p>Yes, when it’s done right. Canada’s anti-spam law sets the rules, and we build them in: guests who order or inquire can be contacted for a set time, everyone can opt out, and promotions only go to people who agreed to them.</p></details>
+        <details><summary>What about funeral and celebration-of-life catering?</summary><p>Those clients never get review requests or promotions. They get a simple, respectful thank-you and nothing else.</p></details>
+      </div>
     </div>
   </section>
 
@@ -563,6 +651,75 @@ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function calc(){var n=+$('#r-n').value,a=+$('#r-a').value;
   $('#o-n').textContent=n;$('#o-a').textContent='$'+a.toLocaleString('en-CA');$('#o-y').textContent='$'+(n*a*12).toLocaleString('en-CA')}
 $('#r-n').addEventListener('input',calc);$('#r-a').addEventListener('input',calc);calc();
+
+
+/* ---------- Tailored plan per part of the business ---------- */
+function E(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var PARTS=[
+ {k:'Catering',who:'Handled by Sarah',t:'Catering',
+  today:'Requests come in through one form for <b>corporate lunches, film sets, sports teams, community events and funerals</b>, and land in an email inbox.',
+  pts:['An instant reply with the right menu for that kind of event','Every request on Sarah’s board, with the guest count, date and value','Quote reminders, and the deposit paid by text','Headcount and dietary check a week before','Next year’s reminder, timed from this year’s date'],
+  care:'Funeral and celebration-of-life clients get a gentle path with no marketing.',
+  msg:'Hi Priya, thanks for thinking of Biagio’s for your film shoot on Jan 13! Sarah will call you today about crew meals for 45.',rep:'Perfect, talk soon',meta:'Sent 30 seconds after the form'},
+ {k:'Holiday parties',who:'Handled by Sarah',t:'Holiday parties',
+  today:'Four packages for <b>up to 125 guests</b>, lunch or dinner, with or without a <b>Yuk Yuk’s comedy show</b>. Each inquiry is a message to answer by hand.',
+  pts:['The form asks for guest count, lunch or dinner, and show or no show','The right package goes out automatically, with open dates','Deposit reminders until the date is held','In September, last year’s parties are asked to book again first'],
+  msg:'Hi Nadia! Here’s our Holiday Menu + Comedy Show package for 48 guests. Saturday, Dec 12 is still open. Want us to hold it?',rep:'Yes, hold it please!',meta:'Sent with the package attached'},
+ {k:'Pizza trailer',who:'Handled by Ben',t:'Pizza trailer',
+  today:'Wood-fired pizza for <b>backyard parties, weddings, school fairs and company BBQs</b>, from about 40 guests to several hundred. Date checks happen over email.',
+  pts:['Date requests go straight to Ben, with the guest count and location','A quick “your date is open” reply, then a quote reminder','A day-before text with arrival time and setup needs','In spring, last summer’s clients are invited to book again'],
+  msg:'Hi Ryan, good news, July 9 is open for the pizza trailer! Ben will send your quote for 120 guests today.',rep:'Great, thanks Ben',meta:'Sent 1 minute after the request'},
+ {k:'Shows',who:'Dinner + Show, Dueling Pianos, New Year’s Eve',t:'Show nights',
+  today:'Dinner + Show with <b>Yuk Yuk’s</b> downstairs, <b>Dueling Pianos</b> with dinner at 6:00 or 6:30, and the <b>New Year’s Eve</b> dinner and show with Derek Seguin.',
+  pts:['A reminder the day before with the dinner time','After the show, an invite to the next date','Birthday and group bookings flagged for the team','A “shows” list so new dates sell out faster'],
+  msg:'See you tomorrow for Dueling Pianos! Dinner is at 6:30 and the show starts at 7. Reply if your group size changes.',rep:'We’ll be there!',meta:'Sent the day before'},
+ {k:'Dining room',who:'Dining room, takeout and delivery',t:'Dining room and Meals to Go',
+  today:'Reservations on <b>OpenTable</b>, <b>Wine + Dine Thursdays</b> (two pastas and a bottle for $65), <b>Friday Fish and Chips</b> and Meals to Go.',
+  pts:['A simple guest club: sign up at the table or online','A birthday treat in the guest’s birthday month','Thursday Wine + Dine reminders, only to guests who said yes','A “we miss you” note to regulars who haven’t been in a while'],
+  msg:'Happy birthday month, Alex! Dessert is on us at Biagio’s this month. Book a table anytime: [link]',rep:'Booking for Friday!',meta:'Sent 2 weeks before the birthday'},
+ {k:'Gift cards',who:'Seasonal offers',t:'Gift cards',
+  today:'This month’s offer: <b>a $100 gift card gets $125 in value</b> with code 25OFF, online until Nov 30 or in person on Nov 27.',
+  pts:['The offer goes to past guests and corporate clients on the list','A last-chance reminder before it ends','Corporate clients get a “gifts for your team” version','In January, a nudge to come use it, with that month’s show dates'],
+  msg:'Last chance! Buy a $100 Biagio’s gift card and get $125 in value. Ends Nov 30, code 25OFF. [link]',rep:'Just bought two!',meta:'Sent Nov 29 to people who haven’t bought'}
+];
+var pt=0;
+$('#ptabs').innerHTML=PARTS.map(function(p,i){return '<button type="button" role="tab" id="pt-'+i+'" aria-selected="'+(i===0)+'" aria-controls="plan">'+E(p.k)+'</button>'}).join('');
+function renderPart(){var p=PARTS[pt];
+  [].forEach.call($('#ptabs').children,function(b,i){b.setAttribute('aria-selected',i===pt)});
+  $('#plan').setAttribute('aria-labelledby','pt-'+pt);
+  $('#plan').innerHTML='<div><p class="who">'+E(p.who)+'</p><h3>'+E(p.t)+'</h3><p class="today"><b>Today:</b> '+p.today+'</p><ul>'+p.pts.map(function(x){return '<li>'+E(x)+'</li>'}).join('')+'</ul>'+(p.care?'<p class="care">'+E(p.care)+'</p>':'')+'</div>'+
+   '<div class="sample"><small>What the guest gets</small><div class="sb">'+E(p.msg)+'</div><div class="sr">'+E(p.rep)+'</div><span class="meta">'+E(p.meta)+'</span></div>';
+}
+$('#ptabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pt=[].indexOf.call($('#ptabs').children,b);renderPart()});
+$('#ptabs').addEventListener('keydown',function(e){if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;pt=(pt+(e.key==='ArrowRight'?1:-1)+PARTS.length)%PARTS.length;renderPart();$('#ptabs').children[pt].focus()});
+renderPart();
+
+/* ---------- A year at Biagio's ---------- */
+var YEAR=[
+ ['Jan','Fill the show nights','Guests who came to a show, and people with unused gift cards, hear about January’s Dueling Pianos dates first.',['Show guests','Gift card holders'],'New Dueling Pianos dates are out: Jan 7 and Jan 23! Dinner at 6:00 or 6:30, show at 7. Reserve: [link]'],
+ ['Feb','Valentine’s at Biagio’s','Couples and Wine + Dine regulars get an early heads-up to book Valentine’s week before tables fill.',['Dining room guests','Wine + Dine regulars'],'Valentine’s is filling up! Book your table for two before Feb 7: [link]'],
+ ['Mar','Book the summer trailer early','Last summer’s pizza trailer clients are invited to hold their date again, before the weekends go.',['Past trailer clients'],'Planning a summer party again? Last year’s date, Jul 9, is open. Want Ben to hold it?'],
+ ['Apr','Holiday meals to go','Takeout guests hear about holiday dinners to go, like the Easter dinner past guests loved.',['Meals to Go guests'],'Easter dinner to go is back! Order by Thursday for pickup Saturday: [link]'],
+ ['May','Patio season','Dining room guests hear that the patio is open, with garden herbs and the same menu outside.',['Dining room guests'],'The Biagio’s patio is open! Same menu, more sunshine. Book a table: [link]'],
+ ['Jun','Graduations and summer events','Schools, teams and families get a reminder that the pizza trailer and catering still have June dates.',['Community clients','Sports teams'],'Celebrating a graduation or end of season? The pizza trailer still has June dates. Reply to check yours.'],
+ ['Jul','Company BBQs','Corporate clients are offered the pizza trailer or a catered lunch for summer staff events.',['Corporate clients'],'Summer team BBQ coming up? Our wood-fired pizza trailer comes to your office. Want a quote?'],
+ ['Aug','Back to the office','Office managers who ordered before get the fall catering menu as teams come back.',['Corporate clients'],'Welcome back! Here’s our fall catering menu for team lunches and meetings: [link]'],
+ ['Sep','Holiday parties, first call','Last year’s holiday parties get first pick of December dates, before anyone else.',['Last year’s parties'],'Hi Monica, want to hold Saturday, Dec 18 again for your holiday party? Last year’s menu is saved.'],
+ ['Oct','Holiday party push','Everyone who asked about parties hears about the packages, with or without the comedy show.',['Party inquiries','Corporate clients'],'Holiday party dates are going fast. Packages for up to 125 guests, with or without Yuk Yuk’s: [link]'],
+ ['Nov','Black Friday gift cards','The $100 for $125 offer goes to past guests and corporate clients, with a last-chance reminder.',['All opted-in guests','Corporate clients'],'Buy a $100 Biagio’s gift card, get $125 in value. Code 25OFF, until Nov 30: [link]'],
+ ['Dec','New Year’s Eve and party week','Show fans hear about the New Year’s Eve dinner and show, and every booked party gets its confirmations.',['Show guests','Booked parties'],'Ring in 2027 with dinner and Derek Seguin live! Early or late show, $145 per person: [link]']
+];
+var NOW=10, mo=NOW;
+$('#months').innerHTML=YEAR.map(function(m,i){return '<button type="button" role="tab" id="mo-'+i+'" aria-selected="'+(i===mo)+'" aria-controls="mdetail"><b>'+m[0]+'</b><i></i>'+(i===NOW?'<span class="now">Now</span>':'')+'</button>'}).join('');
+function renderMonth(){var m=YEAR[mo];
+  [].forEach.call($('#months').children,function(b,i){b.setAttribute('aria-selected',i===mo)});
+  $('#mdetail').setAttribute('aria-labelledby','mo-'+mo);
+  $('#mdetail').innerHTML='<div><p class="mm">'+['January','February','March','April','May','June','July','August','September','October','November','December'][mo]+'</p><h3>'+E(m[1])+'</h3><p>'+E(m[2])+'</p><div class="aud">'+m[3].map(function(a){return '<span>'+E(a)+'</span>'}).join('')+'</div></div>'+
+   '<div class="sb"><small>Example message</small>'+E(m[4])+'</div>';
+}
+$('#months').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;mo=[].indexOf.call($('#months').children,b);renderMonth()});
+$('#months').addEventListener('keydown',function(e){if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;mo=(mo+(e.key==='ArrowRight'?1:-1)+12)%12;renderMonth();$('#months').children[mo].focus()});
+renderMonth();
 
 /* ---------- Walkthrough scenes ---------- */
 function side(on){return '<div class="side"><b>Biagio’s</b>'+['Requests','Messages','Bookings','Kitchen','Reviews','Calendar'].map(function(x){return '<span class="'+(x===on?'on':'')+'">'+x+'</span>'}).join('')+'</div>'}
