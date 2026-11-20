@@ -1,4 +1,9 @@
 {
+ "1 antares dr|ottawa": [
+  45.3352,
+  -75.705268
+ ],
+ "1 ardagh gt|ottawa": null,
  "1 brewer hunt way|ottawa": [
   45.337349,
   -75.903675
@@ -10,6 +15,10 @@
  "1 fleet st|ottawa": [
   45.415914,
   -75.713382
+ ],
+ "1 framingham cres|ottawa": [
+  45.270895,
+  -75.77262
  ],
  "1 haanel dr|ottawa": [
   45.320467,
@@ -46,6 +55,10 @@
  "1 tauvette st|ottawa": [
   45.430539,
   -75.574075
+ ],
+ "1 vimy place|ottawa": [
+  45.417051,
+  -75.716948
  ],
  "10 a arthur st|ottawa": [
   45.408919,
@@ -94,6 +107,10 @@
   -75.883976
  ],
  "10 marie-curie priv|ottawa": null,
+ "10 marie-curie, prive|ottawa": [
+  45.420926,
+  -75.681052
+ ],
  "10 mckitrick dr|ottawa": [
   45.293605,
   -75.883916
@@ -129,6 +146,10 @@
  "100 blanca st|ottawa": [
   45.280672,
   -75.668046
+ ],
+ "100 bliss cres|ottawa": [
+  45.285104,
+  -75.90145
  ],
  "100 boulonnais grove|ottawa": [
   45.274852,
@@ -187,6 +208,10 @@
   -75.697515
  ],
  "100 ringley priv|ottawa": null,
+ "100 shelleright st|ottawa": [
+  45.277738,
+  -75.872004
+ ],
  "100 silhouette priv|ottawa": null,
  "100 smyth rd|ottawa": [
   45.399549,
@@ -203,6 +228,10 @@
  "1000 adley rd|ottawa": [
   45.434451,
   -75.624652
+ ],
+ "1000 delphinium cres|ottawa": [
+  45.326221,
+  -75.603358
  ],
  "1000 exhibition way|ottawa": [
   45.400054,
@@ -233,6 +262,18 @@
  "1003 petunia cir|ottawa": [
   45.26182,
   -75.686058
+ ],
+ "1004 petunia cir|ottawa": [
+  45.261488,
+  -75.685712
+ ],
+ "1005 merivale rd|ottawa": [
+  45.379791,
+  -75.73295
+ ],
+ "1005 petunia cir|ottawa": [
+  45.261882,
+  -75.685904
  ],
  "1006 blanding st|ottawa": [
   45.322392,
@@ -284,6 +325,10 @@
   45.278963,
   -75.760161
  ],
+ "101 massalia, crois de|ottawa": [
+  45.46582,
+  -75.454235
+ ],
  "101 mike jordan priv|ottawa": null,
  "101 orr farm way|ottawa": [
   45.356667,
@@ -334,6 +379,10 @@
   45.334263,
   -75.925449
  ],
+ "1017 miss ottawa st|ottawa": [
+  45.447526,
+  -75.592028
+ ],
  "1017 stormont st|ottawa": [
   45.358944,
   -75.704049
@@ -371,6 +420,7 @@
   45.274947,
   -75.879888
  ],
+ "102 chandelle priv|ottawa": null,
  "102 first ave|ottawa": [
   45.405467,
   -75.685996
@@ -399,6 +449,10 @@
   45.270091,
   -76.058332
  ],
+ "1025 acoustic way|ottawa": [
+  45.25456,
+  -75.690071
+ ],
  "1025 quigley hill rd|ottawa": [
   45.511811,
   -75.426791
@@ -414,6 +468,10 @@
  "1027 acoustic way|ottawa": [
   45.254518,
   -75.690172
+ ],
+ "1028 bathgate dr|ottawa": [
+  45.436543,
+  -75.620183
  ],
  "1028 calendula pl|ottawa": [
   45.368903,
@@ -511,6 +569,10 @@
   45.274227,
   -75.943074
  ],
+ "104 ed findlay st|ottawa": [
+  45.264095,
+  -75.680328
+ ],
  "104 falldown lane|ottawa": [
   45.345978,
   -76.038999
@@ -526,6 +588,10 @@
  "104 powell ave|ottawa": [
   45.404754,
   -75.694357
+ ],
+ "104 quillside row|ottawa": [
+  45.276881,
+  -75.894235
  ],
  "104 schneider rd|ottawa": [
   45.339945,
@@ -575,6 +641,10 @@
   45.250198,
   -75.610344
  ],
+ "105 boulonnais grove|ottawa": [
+  45.27485,
+  -75.879511
+ ],
  "105 quillside row|ottawa": [
   45.27656,
   -75.893883
@@ -611,6 +681,10 @@
   45.447915,
   -75.647949
  ],
+ "1055 cedar creek dr|ottawa": [
+  45.310532,
+  -75.591259
+ ],
  "1055 greenbank rd|ottawa": [
   45.276811,
   -75.74958
@@ -638,6 +712,14 @@
  "1059 wellington st west|ottawa": [
   45.404002,
   -75.724638
+ ],
+ "106 boulonnais grove|ottawa": [
+  45.275093,
+  -75.879698
+ ],
+ "106 colonnade rd n|ottawa": [
+  45.346225,
+  -75.704639
  ],
  "106 rockmelon st|ottawa": [
   45.262974,
@@ -671,6 +753,10 @@
   45.36094,
   -75.707795
  ],
+ "1065 cadboro rd|ottawa": [
+  45.433207,
+  -75.622178
+ ],
  "1065 corkery rd|ottawa": [
   45.262982,
   -76.073548
@@ -683,9 +769,21 @@
   45.428541,
   -75.633001
  ],
+ "107 boulonnais grove|ottawa": [
+  45.274962,
+  -75.879403
+ ],
+ "107 clematis way|ottawa": [
+  45.260687,
+  -75.688467
+ ],
  "107 deltaview lane|ottawa": [
   45.255611,
   -75.747257
+ ],
+ "107 florence st|ottawa": [
+  45.41133,
+  -75.698295
  ],
  "107 granton ave|ottawa": [
   45.356412,
@@ -748,6 +846,14 @@
   45.346103,
   -75.745359
  ],
+ "108 ploughshare rd|ottawa": [
+  45.293256,
+  -75.910293
+ ],
+ "108 shelleright st|ottawa": [
+  45.278039,
+  -75.872371
+ ],
  "1080 noëlla leclair way|ottawa": [
   45.453294,
   -75.499307
@@ -756,6 +862,18 @@
   45.265214,
   -75.67679
  ],
+ "1081 cope dr|ottawa": [
+  45.258588,
+  -75.906002
+ ],
+ "1084 kenaston st|ottawa": [
+  45.416368,
+  -75.627445
+ ],
+ "1085 cope dr|ottawa": [
+  45.25847,
+  -75.905857
+ ],
  "1088 boucher cres|ottawa": [
   45.208511,
   -75.655626
@@ -763,6 +881,10 @@
  "1088 ralph hennessy ave|ottawa": [
   45.264992,
   -75.676617
+ ],
+ "1089 cope dr|ottawa": [
+  45.258361,
+  -75.90573
  ],
  "109 b guigues ave|ottawa": [
   45.433741,
@@ -776,6 +898,10 @@
   45.276491,
   -75.894192
  ],
+ "109 russell ave|ottawa": [
+  45.42451,
+  -75.67677
+ ],
  "1090 noëlla leclair way|ottawa": [
   45.452692,
   -75.499318
@@ -783,6 +909,14 @@
  "1091 st-laurent blvd|ottawa": [
   45.42631,
   -75.637993
+ ],
+ "1091 st-laurent, boul|ottawa": [
+  45.42631,
+  -75.637993
+ ],
+ "1093 cope dr|ottawa": [
+  45.258251,
+  -75.905601
  ],
  "1094 normandy cres|ottawa": [
   45.360454,
@@ -792,9 +926,17 @@
   45.390449,
   -75.724708
  ],
+ "1095 noella leclair, voie|ottawa": [
+  45.453072,
+  -75.498114
+ ],
  "1095 noëlla leclair way|ottawa": [
   45.453072,
   -75.498114
+ ],
+ "1097 cope dr|ottawa": [
+  45.258143,
+  -75.905468
  ],
  "1097 richard ave|ottawa": [
   45.379794,
@@ -820,6 +962,10 @@
   45.241954,
   -75.747522
  ],
+ "11 thatcher st|ottawa": [
+  45.345118,
+  -75.750441
+ ],
  "11 turtleback way|ottawa": [
   45.250974,
   -75.915669
@@ -827,6 +973,14 @@
  "110 a conservancy dr|ottawa": [
   45.257191,
   -75.760933
+ ],
+ "110 bearbrook rd|ottawa": [
+  45.432049,
+  -75.565579
+ ],
+ "110 boulonnais grove|ottawa": [
+  45.27526,
+  -75.879483
  ],
  "110 forward ave|ottawa": [
   45.408957,
@@ -843,6 +997,10 @@
  "110 place-d'orléans dr|ottawa": [
   45.477349,
   -75.516861
+ ],
+ "110 quillside row|ottawa": [
+  45.276773,
+  -75.894716
  ],
  "110 shelleright st|ottawa": [
   45.278121,
@@ -874,9 +1032,17 @@
   -75.781612
  ],
  "1101 cerceau priv|ottawa": null,
+ "1101 cope dr|ottawa": [
+  45.258041,
+  -75.905316
+ ],
  "1101 prince of wales dr|ottawa": [
   45.377108,
   -75.705243
+ ],
+ "1101 rotary way|ottawa": [
+  45.324524,
+  -75.586491
  ],
  "1101 rue polytek st|ottawa": [
   45.456356,
@@ -890,6 +1056,14 @@
  "1105 a spoor st|ottawa": [
   45.362569,
   -75.948465
+ ],
+ "1105 cope dr|ottawa": [
+  45.25793,
+  -75.905187
+ ],
+ "1108 kitigan grove|ottawa": [
+  45.33492,
+  -75.921508
  ],
  "1108 maisonneuve st|ottawa": [
   45.47547,
@@ -915,9 +1089,17 @@
   45.415984,
   -75.68052
  ],
+ "111 edith margaret pl|ottawa": [
+  45.381334,
+  -76.041292
+ ],
  "111 quillside row|ottawa": [
   45.276456,
   -75.894349
+ ],
+ "111 rappel, cer du|ottawa": [
+  45.440959,
+  -75.497637
  ],
  "111 wellington st|ottawa": [
   45.425064,
@@ -927,6 +1109,10 @@
   45.268383,
   -75.942183
  ],
+ "1110 longfields dr|ottawa": [
+  45.273587,
+  -75.736013
+ ],
  "1110 st-laurent blvd|ottawa": [
   45.395414,
   -75.621061
@@ -934,6 +1120,10 @@
  "1112 maisonneuve st|ottawa": [
   45.47531,
   -75.521263
+ ],
+ "1113 cope dr|ottawa": [
+  45.257748,
+  -75.90497
  ],
  "1114 brian good ave|ottawa": [
   45.254117,
@@ -943,6 +1133,10 @@
   45.454896,
   -75.648987
  ],
+ "1115 kitigan grove|ottawa": [
+  45.335391,
+  -75.921238
+ ],
  "112 b alissia cres|ottawa": [
   45.280452,
   -76.02088
@@ -950,6 +1144,10 @@
  "112 b byron ave|ottawa": [
   45.378137,
   -75.773914
+ ],
+ "112 boulonnais grove|ottawa": [
+  45.275324,
+  -75.879366
  ],
  "112 deltaview lane|ottawa": [
   45.255951,
@@ -976,6 +1174,10 @@
   45.511582,
   -75.45611
  ],
+ "1121 cope dr|ottawa": [
+  45.257548,
+  -75.904727
+ ],
  "1122 carp rd|ottawa": [
   45.267991,
   -75.939354
@@ -987,6 +1189,10 @@
  "1124 gabriel st|ottawa": [
   45.475633,
   -75.520027
+ ],
+ "1125 castle hill cres|ottawa": [
+  45.36681,
+  -75.749437
  ],
  "1125 colonel by dr #12|ottawa": [
   45.385769,
@@ -1016,6 +1222,10 @@
   45.2263,
   -75.683269
  ],
+ "1128 spoor st|ottawa": [
+  45.362928,
+  -75.948867
+ ],
  "113 james cummings ave|ottawa": [
   45.354055,
   -75.843065
@@ -1027,6 +1237,10 @@
  "113 massalia cres|ottawa": [
   45.465792,
   -75.45381
+ ],
+ "113 orchestra way|ottawa": [
+  45.258081,
+  -75.687758
  ],
  "113 orr farm way|ottawa": [
   45.356921,
@@ -1056,6 +1270,14 @@
   45.401822,
   -75.726586
  ],
+ "1130 wellington st w|ottawa": [
+  45.401822,
+  -75.726586
+ ],
+ "1131 cope dr|ottawa": [
+  45.25728,
+  -75.904414
+ ],
  "1132 st. pierre st|ottawa": [
   45.474618,
   -75.522126
@@ -1076,6 +1298,10 @@
   45.284582,
   -75.900863
  ],
+ "114 boulonnais grove|ottawa": [
+  45.275395,
+  -75.879234
+ ],
  "114 fernleigh priv|ottawa": null,
  "114 gartersnake way|ottawa": [
   45.304916,
@@ -1093,9 +1319,17 @@
   45.45162,
   -75.63738
  ],
+ "1142 cope dr|ottawa": [
+  45.257269,
+  -75.903523
+ ],
  "1142 normandy cres|ottawa": [
   45.358647,
   -75.71139
+ ],
+ "1142 spoor st|ottawa": [
+  45.362578,
+  -75.948733
  ],
  "1144 cope dr|ottawa": [
   45.257218,
@@ -1125,6 +1359,10 @@
   45.257504,
   -75.698669
  ],
+ "115 arleux, place d'|ottawa": [
+  45.217289,
+  -75.684387
+ ],
  "115 champagne ave south|ottawa": [
   45.400786,
   -75.712897
@@ -1140,6 +1378,10 @@
  "115 northwestern ave|ottawa": [
   45.405946,
   -75.743881
+ ],
+ "115 ocala st|ottawa": [
+  45.252343,
+  -75.89348
  ],
  "115 springfield rd|ottawa": [
   45.442867,
@@ -1166,6 +1408,10 @@
   -75.874565
  ],
  "1151 cerceau priv|ottawa": null,
+ "1151 cope dr|ottawa": [
+  45.256767,
+  -75.903786
+ ],
  "1152 st. pierre st|ottawa": [
   45.473975,
   -75.521702
@@ -1182,11 +1428,19 @@
   45.426235,
   -75.63036
  ],
+ "1156 spoor st|ottawa": [
+  45.362227,
+  -75.948589
+ ],
  "1158 bank st|ottawa": [
   45.392706,
   -75.682689
  ],
  "1158 cerceau priv|ottawa": null,
+ "1159 cope dr|ottawa": [
+  45.256581,
+  -75.903564
+ ],
  "1159 willow brook way|ottawa": [
   45.239081,
   -75.64559
@@ -1194,6 +1448,14 @@
  "116 albert st|ottawa": [
   45.421334,
   -75.696556
+ ],
+ "116 bayswater ave|ottawa": [
+  45.403628,
+  -75.719154
+ ],
+ "116 boulonnais grove|ottawa": [
+  45.27546,
+  -75.879141
  ],
  "116 kerala pl|ottawa": [
   45.322705,
@@ -1215,6 +1477,10 @@
   45.276663,
   -75.895195
  ],
+ "116 san felice cir|ottawa": [
+  45.271746,
+  -75.85962
+ ],
  "1160 beaverwood rd|ottawa": [
   45.222566,
   -75.683068
@@ -1231,6 +1497,10 @@
   45.226163,
   -75.68874
  ],
+ "1162 river rd|ottawa": [
+  45.228155,
+  -75.669735
+ ],
  "1162 st. pierre st|ottawa": [
   45.473815,
   -75.521291
@@ -1242,6 +1512,14 @@
  "1164 highcroft dr|ottawa": [
   45.226381,
   -75.687831
+ ],
+ "1167 cope dr|ottawa": [
+  45.256413,
+  -75.903229
+ ],
+ "117 arleux, place d'|ottawa": [
+  45.217232,
+  -75.684568
  ],
  "117 ascari rd|ottawa": [
   45.216172,
@@ -1258,6 +1536,10 @@
  "117 gartersnake way|ottawa": [
   45.304504,
   -75.602563
+ ],
+ "117 massalia, crois de|ottawa": [
+  45.465906,
+  -75.453663
  ],
  "117 winding way|ottawa": [
   45.285946,
@@ -1279,6 +1561,10 @@
   45.361526,
   -75.947821
  ],
+ "1178 cope dr|ottawa": [
+  45.256444,
+  -75.90251
+ ],
  "1178 rainbow st|ottawa": [
   45.45331,
   -75.587504
@@ -1286,6 +1572,10 @@
  "118 arleux pl|ottawa": [
   45.217596,
   -75.684707
+ ],
+ "118 ploughshare rd|ottawa": [
+  45.293449,
+  -75.909945
  ],
  "118 quillside row|ottawa": [
   45.276624,
@@ -1307,6 +1597,14 @@
   45.45162,
   -75.63738
  ],
+ "1183 cecil ave|ottawa": [
+  45.379902,
+  -75.669584
+ ],
+ "1186 cope dr|ottawa": [
+  45.256248,
+  -75.902278
+ ],
  "1186 shillington ave|ottawa": [
   45.381187,
   -75.726804
@@ -1314,6 +1612,14 @@
  "1186 wellington st west|ottawa": [
   45.406898,
   -75.721662
+ ],
+ "1188 cummings ave|ottawa": [
+  45.426853,
+  -75.632552
+ ],
+ "119 arleux, place d'|ottawa": [
+  45.217152,
+  -75.684741
  ],
  "119 ascari rd|ottawa": [
   45.216118,
@@ -1346,6 +1652,10 @@
  "1195 richmond rd|ottawa": [
   45.370574,
   -75.782617
+ ],
+ "1196 cummings ave|ottawa": [
+  45.426566,
+  -75.632393
  ],
  "12 b constance lake rd|ottawa": [
   45.397911,
@@ -1387,6 +1697,10 @@
   45.28022,
   -75.669257
  ],
+ "120 boulonnais grove|ottawa": [
+  45.275585,
+  -75.878927
+ ],
  "120 den haag dr|ottawa": [
   45.444313,
   -75.635367
@@ -1411,10 +1725,18 @@
   45.42203,
   -75.63938
  ],
+ "1200 st-laurent, boul|ottawa": [
+  45.422584,
+  -75.639269
+ ],
  "1201 cerceau priv|ottawa": null,
  "1202 b byron ave|ottawa": [
   45.373872,
   -75.778016
+ ],
+ "1204 spoor st|ottawa": [
+  45.360997,
+  -75.947141
  ],
  "1205 royal maple dr|ottawa": [
   45.50727,
@@ -1433,6 +1755,10 @@
   45.429648,
   -75.692019
  ],
+ "121 clematis way|ottawa": [
+  45.260678,
+  -75.688108
+ ],
  "121 iron bridge pl|ottawa": [
   45.334063,
   -75.919733
@@ -1449,6 +1775,10 @@
   45.378109,
   -75.666149
  ],
+ "1219 cope dr|ottawa": [
+  45.255099,
+  -75.901638
+ ],
  "122 a conservancy dr|ottawa": [
   45.257191,
   -75.760933
@@ -1461,6 +1791,10 @@
   45.284374,
   -75.900242
  ],
+ "122 boulonnais grove|ottawa": [
+  45.275653,
+  -75.878824
+ ],
  "122 c brae cres|ottawa": [
   45.253448,
   -75.922376
@@ -1469,6 +1803,7 @@
   45.256946,
   -75.902597
  ],
+ "122 lillian freiman priv|ottawa": null,
  "1220 old innes rd|ottawa": [
   45.409781,
   -75.617446
@@ -1517,9 +1852,21 @@
   45.216,
   -75.685661
  ],
+ "123 clematis way|ottawa": [
+  45.260678,
+  -75.688108
+ ],
+ "123 harvey st|ottawa": [
+  45.414777,
+  -75.678614
+ ],
  "123 paloma cir|ottawa": [
   45.260433,
   -75.761507
+ ],
+ "123 shelleright st|ottawa": [
+  45.278431,
+  -75.873609
  ],
  "123 slater st|ottawa": [
   45.420897,
@@ -1540,6 +1887,10 @@
  "1236 wellington st west|ottawa": [
   45.399468,
   -75.73207
+ ],
+ "1237 donald st|ottawa": [
+  45.430344,
+  -75.638321
  ],
  "1238 anoka st|ottawa": [
   45.378079,
@@ -1586,6 +1937,10 @@
   45.377519,
   -75.664699
  ],
+ "1244 donald st|ottawa": [
+  45.427656,
+  -75.635297
+ ],
  "1248 wellington st west|ottawa": [
   45.406898,
   -75.721662
@@ -1597,6 +1952,14 @@
  "125 blanca st|ottawa": [
   45.279849,
   -75.670963
+ ],
+ "125 brae cres|ottawa": [
+  45.255793,
+  -75.918923
+ ],
+ "125 colonnade rd s|ottawa": [
+  45.345368,
+  -75.701782
  ],
  "125 ed findlay st|ottawa": [
   45.263864,
@@ -1613,6 +1976,10 @@
  "125 oshedinaa st|ottawa": [
   45.454161,
   -75.637568
+ ],
+ "125 shelleright st|ottawa": [
+  45.278508,
+  -75.873708
  ],
  "125 sussex dr|ottawa": [
   45.437126,
@@ -1637,6 +2004,10 @@
   45.378397,
   -75.72794
  ],
+ "1252 trenton ave|ottawa": [
+  45.376123,
+  -75.729223
+ ],
  "1255 evans blvd|ottawa": [
   45.379914,
   -75.665621
@@ -1658,6 +2029,10 @@
   -75.92844
  ],
  "1259 yorks corners rd|ottawa": null,
+ "126 bliss cres|ottawa": [
+  45.284625,
+  -75.899981
+ ],
  "126 craig duncan terr|ottawa": [
   45.25691,
   -75.902271
@@ -1690,6 +2065,7 @@
   45.452545,
   -75.636145
  ],
+ "1263 creekway priv|ottawa": null,
  "1264 trenton ave|ottawa": [
   45.374645,
   -75.732606
@@ -1709,6 +2085,10 @@
  "1268 corkery rd|ottawa": [
   45.271913,
   -76.084217
+ ],
+ "127 arleux, place d'|ottawa": [
+  45.216893,
+  -75.68541
  ],
  "127 burke st|ottawa": [
   45.184317,
@@ -1756,6 +2136,10 @@
   45.256853,
   -75.902125
  ],
+ "128 osgoode st|ottawa": [
+  45.423974,
+  -75.680376
+ ],
  "128 unison st|ottawa": [
   45.261729,
   -75.686801
@@ -1787,6 +2171,10 @@
  "1295 colonial rd|ottawa": [
   45.421081,
   -75.421773
+ ],
+ "1296 carling ave|ottawa": [
+  45.385799,
+  -75.733797
  ],
  "1297 b thames st|ottawa": [
   45.383742,
@@ -1864,9 +2252,14 @@
   45.322242,
   -75.611906
  ],
+ "130 mishi priv|ottawa": null,
  "130 slater st|ottawa": [
   45.420468,
   -75.696255
+ ],
+ "130 unison st|ottawa": [
+  45.261588,
+  -75.686724
  ],
  "1300 stittsville main st|ottawa": [
   45.265253,
@@ -1900,6 +2293,10 @@
  "1303 thames st|ottawa": [
   45.383742,
   -75.735641
+ ],
+ "1304 whitlow grass way|ottawa": [
+  45.360837,
+  -75.947613
  ],
  "1305 baseline rd|ottawa": [
   45.364374,
@@ -1937,6 +2334,10 @@
   45.421774,
   -75.698866
  ],
+ "131 shelleright st|ottawa": [
+  45.27874,
+  -75.873972
+ ],
  "1310 pebble rd|ottawa": [
   45.361098,
   -75.649761
@@ -1944,6 +2345,14 @@
  "1310 wellington st west|ottawa": [
   45.398514,
   -75.736518
+ ],
+ "1314 whitlow grass way|ottawa": [
+  45.361025,
+  -75.94786
+ ],
+ "1315 normandy cres|ottawa": [
+  45.356261,
+  -75.706566
  ],
  "1316 b leaside ave|ottawa": [
   45.382306,
@@ -1974,6 +2383,10 @@
   45.418546,
   -75.63344
  ],
+ "1328 whitlow grass way|ottawa": [
+  45.361288,
+  -75.948199
+ ],
  "133 besserer st|ottawa": [
   45.426611,
   -75.688999
@@ -1985,6 +2398,10 @@
  "133 glentoran way|ottawa": [
   45.263942,
   -75.890544
+ ],
+ "133 shelleright st|ottawa": [
+  45.278824,
+  -75.874081
  ],
  "1330 thames st|ottawa": [
   45.383742,
@@ -2006,6 +2423,10 @@
   45.362338,
   -75.651329
  ],
+ "1339 baseline rd|ottawa": [
+  45.364521,
+  -75.735037
+ ],
  "1339 mory st|ottawa": [
   45.341481,
   -75.639932
@@ -2022,6 +2443,10 @@
   45.344542,
   -76.029373
  ],
+ "134 shelleright st|ottawa": [
+  45.279222,
+  -75.873792
+ ],
  "1340 hemlock rd|ottawa": [
   45.452844,
   -75.632933
@@ -2030,9 +2455,17 @@
   45.364988,
   -75.735353
  ],
+ "1342 corkery rd|ottawa": [
+  45.275487,
+  -76.08755
+ ],
  "1344 youville dr|ottawa": [
   45.461886,
   -75.550214
+ ],
+ "1346 bankfield rd|ottawa": [
+  45.221821,
+  -75.704777
  ],
  "1347 whitlow grass way|ottawa": [
   45.362168,
@@ -2074,6 +2507,10 @@
   45.454799,
   -75.638072
  ],
+ "135 shelleright st|ottawa": [
+  45.278917,
+  -75.874191
+ ],
  "1351 cerceau priv|ottawa": null,
  "1353 b ridgedale st|ottawa": [
   45.34326,
@@ -2112,11 +2549,19 @@
   -75.69654
  ],
  "136 chandelle priv|ottawa": null,
+ "136 colonel nicholson lane|ottawa": [
+  45.500896,
+  -76.116099
+ ],
  "136 craig duncan terr|ottawa": [
   45.257118,
   -75.901593
  ],
  "136 deschamps ave #4|ottawa": [
+  45.436399,
+  -75.66704
+ ],
+ "136 deschamps ave|ottawa": [
   45.436399,
   -75.66704
  ],
@@ -2128,9 +2573,17 @@
   45.357632,
   -75.931093
  ],
+ "136 shelleright st|ottawa": [
+  45.279319,
+  -75.873908
+ ],
  "1360 carling ave|ottawa": [
   45.38451,
   -75.736916
+ ],
+ "1366 carling ave|ottawa": [
+  45.384046,
+  -75.736507
  ],
  "1366 clyde ave|ottawa": [
   45.361529,
@@ -2156,6 +2609,14 @@
   45.441466,
   -75.665109
  ],
+ "137 shelleright st|ottawa": [
+  45.279042,
+  -75.874257
+ ],
+ "1370 carling ave|ottawa": [
+  45.38422,
+  -75.737416
+ ],
  "1370 clyde ave|ottawa": [
   45.359948,
   -75.739759
@@ -2180,9 +2641,17 @@
   45.349621,
   -75.760995
  ],
+ "138 bliss cres|ottawa": [
+  45.285169,
+  -75.899399
+ ],
  "138 forward ave|ottawa": [
   45.407995,
   -75.732488
+ ],
+ "138 ploughshare rd|ottawa": [
+  45.29353,
+  -75.90954
  ],
  "1380 blackhorse crt|ottawa": [
   45.238156,
@@ -2208,6 +2677,7 @@
   45.257522,
   -75.901862
  ],
+ "139 david lewis priv|ottawa": null,
  "139 kerala pl|ottawa": [
   45.32245,
   -75.612552
@@ -2248,6 +2718,10 @@
   45.427243,
   -75.657739
  ],
+ "14 stevens ave|ottawa": [
+  45.428705,
+  -75.666843
+ ],
  "140 blanca st|ottawa": [
   45.280831,
   -75.669592
@@ -2271,6 +2745,10 @@
  "140 prince albert st|ottawa": [
   45.423966,
   -75.658117
+ ],
+ "140 reis rd|ottawa": [
+  45.305613,
+  -75.980855
  ],
  "140 rideau st|ottawa": [
   45.426632,
@@ -2325,6 +2803,10 @@
   45.446507,
   -75.523656
  ],
+ "141 shelleright st|ottawa": [
+  45.27913,
+  -75.874549
+ ],
  "1410 blair towers pl|ottawa": [
   45.435097,
   -75.604954
@@ -2361,6 +2843,10 @@
   45.439906,
   -75.666211
  ],
+ "142 portrush ave|ottawa": [
+  45.276435,
+  -75.738566
+ ],
  "142 unison st|ottawa": [
   45.260899,
   -75.686351
@@ -2376,6 +2862,10 @@
  "1426 st-joseph blvd|ottawa": [
   45.446171,
   -75.55773
+ ],
+ "1427 carling ave|ottawa": [
+  45.385997,
+  -75.740834
  ],
  "1427 michael st|ottawa": [
   45.42011,
@@ -2397,6 +2887,11 @@
  "1430 blair towers pl|ottawa": [
   45.434281,
   -75.606428
+ ],
+ "1431 creekway priv|ottawa": null,
+ "1431 duchess cres|ottawa": [
+  45.235722,
+  -75.621102
  ],
  "1431 merivale rd|ottawa": [
   45.363543,
@@ -2442,6 +2937,10 @@
   45.338248,
   -75.905179
  ],
+ "1445 duford dr|ottawa": [
+  45.472716,
+  -75.508043
+ ],
  "1445 merivale rd|ottawa": [
   45.362612,
   -75.732982
@@ -2471,6 +2970,10 @@
   -75.461674
  ],
  "145 madder priv|ottawa": null,
+ "145 prince albert st|ottawa": [
+  45.424328,
+  -75.65769
+ ],
  "145 spruce st west|ottawa": [
   45.4087,
   -75.716495
@@ -2499,6 +3002,14 @@
   45.261584,
   -75.921134
  ],
+ "1453 woodward ave|ottawa": [
+  45.379601,
+  -75.736447
+ ],
+ "1455 heatherington rd|ottawa": [
+  45.372267,
+  -75.651516
+ ],
  "1458 baseline rd|ottawa": [
   45.333555,
   -75.810807
@@ -2518,6 +3029,14 @@
  "146 mulvihill ave|ottawa": [
   45.394107,
   -75.744841
+ ],
+ "146 ploughshare rd|ottawa": [
+  45.2934,
+  -75.909258
+ ],
+ "146 san felice cir|ottawa": [
+  45.271386,
+  -75.860163
  ],
  "146 st. patrick st|ottawa": [
   45.429475,
@@ -2564,6 +3083,10 @@
   45.395384,
   -75.745884
  ],
+ "148 shelleright st|ottawa": [
+  45.279492,
+  -75.87491
+ ],
  "1480 donald b. munro dr|ottawa": [
   45.338317,
   -76.097336
@@ -2604,6 +3127,10 @@
   45.360032,
   -75.735966
  ],
+ "1483 howie rd|ottawa": [
+  45.287993,
+  -76.081709
+ ],
  "1486 merivale rd|ottawa": [
   45.359942,
   -75.736213
@@ -2611,6 +3138,10 @@
  "1487 richmond rd|ottawa": [
   45.36334,
   -75.789906
+ ],
+ "1487 woodward ave|ottawa": [
+  45.377698,
+  -75.741297
  ],
  "149 berrigan dr|ottawa": [
   45.280103,
@@ -2635,6 +3166,10 @@
  "1496 commodore lane|ottawa": [
   45.155241,
   -75.64263
+ ],
+ "15 b king st n|ottawa": [
+  45.19614,
+  -75.833496
  ],
  "15 capella crt #115|ottawa": [
   45.33144,
@@ -2709,6 +3244,10 @@
   45.417503,
   -75.68859
  ],
+ "150 metcalfe st|ottawa": [
+  45.41985,
+  -75.695141
+ ],
  "150 montréal rd|ottawa": [
   45.434272,
   -75.664605
@@ -2720,6 +3259,10 @@
  "150 rochester st|ottawa": [
   45.408312,
   -75.711858
+ ],
+ "150 shelleright st|ottawa": [
+  45.279379,
+  -75.874984
  ],
  "150 slater st|ottawa": [
   45.420208,
@@ -2733,9 +3276,17 @@
   45.412738,
   -75.632213
  ],
+ "1500 st-laurent, boul|ottawa": [
+  45.412738,
+  -75.632213
+ ],
  "1507 merivale rd|ottawa": [
   45.357608,
   -75.736972
+ ],
+ "1508 duford dr|ottawa": [
+  45.469994,
+  -75.508504
  ],
  "151 bay st #101|ottawa": [
   45.417999,
@@ -2744,6 +3295,10 @@
  "151 craig duncan terr|ottawa": [
   45.257181,
   -75.900978
+ ],
+ "151 keyworth ave|ottawa": [
+  45.403829,
+  -75.746652
  ],
  "151 madder priv|ottawa": null,
  "151 mountbatten ave|ottawa": [
@@ -2811,6 +3366,10 @@
   45.347608,
   -75.63366
  ],
+ "1525 princess patricia way|ottawa": [
+  45.401047,
+  -75.682587
+ ],
  "1526 stittsville main st|ottawa": [
   45.257315,
   -75.921025
@@ -2823,13 +3382,25 @@
   45.479493,
   -75.490055
  ],
+ "153 conservancy dr|ottawa": [
+  45.25692,
+  -75.761072
+ ],
  "153 craig duncan terr|ottawa": [
   45.257097,
   -75.900884
  ],
+ "153 crerar ave|ottawa": [
+  45.385206,
+  -75.729955
+ ],
  "1530 merivale rd|ottawa": [
   45.355491,
   -75.736698
+ ],
+ "1530 morisset ave|ottawa": [
+  45.372896,
+  -75.739785
  ],
  "154 bliss cres|ottawa": [
   45.285953,
@@ -2915,9 +3486,17 @@
   45.200438,
   -75.704543
  ],
+ "156 conservancy dr|ottawa": [
+  45.257359,
+  -75.76108
+ ],
  "156 orr farm way|ottawa": [
   45.357926,
   -75.931839
+ ],
+ "156 san felice cir|ottawa": [
+  45.271266,
+  -75.860561
  ],
  "156 sanford ave|ottawa": [
   45.372032,
@@ -2948,6 +3527,10 @@
   -75.730973
  ],
  "157 séraphin-marion priv|ottawa": null,
+ "157 timber lane|ottawa": [
+  45.503886,
+  -76.232055
+ ],
  "157 unison st|ottawa": [
   45.260533,
   -75.685577
@@ -3096,6 +3679,10 @@
   45.413641,
   -75.616085
  ],
+ "1601 telesat crt|ottawa": [
+  45.428033,
+  -75.602736
+ ],
  "1602 telesat crt|ottawa": [
   45.426978,
   -75.604568
@@ -3181,6 +3768,7 @@
   45.254154,
   -75.916391
  ],
+ "163 david lewis priv|ottawa": null,
  "163 geoffrey st|ottawa": [
   45.392203,
   -75.74412
@@ -3229,6 +3817,10 @@
   45.364458,
   -75.930409
  ],
+ "165 blanca st|ottawa": [
+  45.282001,
+  -75.668231
+ ],
  "165 chapel st|ottawa": [
   45.429247,
   -75.679603
@@ -3236,6 +3828,14 @@
  "165 knoxdale rd|ottawa": [
   45.327979,
   -75.768864
+ ],
+ "165 massalia, crois de|ottawa": [
+  45.46634,
+  -75.452638
+ ],
+ "165 onassa cir|ottawa": [
+  45.292126,
+  -75.795043
  ],
  "165 sparks st|ottawa": [
   45.421531,
@@ -3273,6 +3873,10 @@
   45.393358,
   -75.734564
  ],
+ "166 huron ave n|ottawa": [
+  45.398881,
+  -75.732887
+ ],
  "166 mcgillivray st|ottawa": [
   45.406078,
   -75.679801
@@ -3285,6 +3889,10 @@
   45.415726,
   -75.620537
  ],
+ "1661 bearhill rd|ottawa": [
+  45.303483,
+  -76.078779
+ ],
  "1661 hunt club rd|ottawa": [
   45.360586,
   -75.631391
@@ -3296,6 +3904,10 @@
  "167 kerala pl|ottawa": [
   45.321728,
   -75.613271
+ ],
+ "1670 lockhead rd e|ottawa": [
+  45.139417,
+  -75.644808
  ],
  "1673 carling ave|ottawa": [
   45.379824,
@@ -3313,6 +3925,14 @@
   45.440297,
   -75.496115
  ],
+ "168 shelleright st|ottawa": [
+  45.278376,
+  -75.875757
+ ],
+ "168 succession crt|ottawa": [
+  45.279518,
+  -75.915801
+ ],
  "1680 vimont crt|ottawa": [
   45.490211,
   -75.484026
@@ -3324,6 +3944,14 @@
  "1686 woodward dr|ottawa": [
   45.373562,
   -75.748862
+ ],
+ "169 clemow ave|ottawa": [
+  45.405597,
+  -75.691366
+ ],
+ "169 craig duncan terr|ottawa": [
+  45.256696,
+  -75.900422
  ],
  "169 keyworth ave|ottawa": [
   45.403328,
@@ -3361,6 +3989,7 @@
   45.393218,
   -75.684153
  ],
+ "17 kanata rockeries priv|ottawa": null,
  "17 kippewa dr|ottawa": [
   45.399102,
   -75.700524
@@ -3370,9 +3999,17 @@
   -75.703615
  ],
  "170 parkrose priv|ottawa": null,
+ "170 pretoria ave|ottawa": [
+  45.408592,
+  -75.689283
+ ],
  "170 primrose ave|ottawa": [
   45.410716,
   -75.713678
+ ],
+ "170 shelleright st|ottawa": [
+  45.278274,
+  -75.875858
  ],
  "170 slater st|ottawa": [
   45.41555,
@@ -3406,9 +4043,17 @@
   45.403032,
   -75.727016
  ],
+ "171 gerry lalonde dr|ottawa": [
+  45.453846,
+  -75.486089
+ ],
  "171 kerala pl|ottawa": [
   45.32159,
   -75.613234
+ ],
+ "171 shelleright st|ottawa": [
+  45.278171,
+  -75.875236
  ],
  "1711 wilhaven dr|ottawa": [
   45.498864,
@@ -3426,11 +4071,23 @@
   45.361246,
   -75.950353
  ],
+ "1716 crux rd|ottawa": [
+  45.440412,
+  -75.501625
+ ],
  "172 armstrong st|ottawa": [
   45.402884,
   -75.726771
  ],
  "172 parkrose priv|ottawa": null,
+ "172 shelleright st|ottawa": [
+  45.278165,
+  -75.875958
+ ],
+ "172 succession crt|ottawa": [
+  45.279428,
+  -75.915935
+ ],
  "1721 crux rd|ottawa": [
   45.440551,
   -75.50129
@@ -3439,13 +4096,33 @@
   45.361047,
   -75.950669
  ],
+ "1722 st. bernard st|ottawa": [
+  45.35147,
+  -75.624716
+ ],
+ "1723 rotterdam cir|ottawa": [
+  45.360984,
+  -75.950775
+ ],
  "1725 frobisher lane|ottawa": [
   45.403313,
   -75.664415
  ],
+ "1725 rotterdam cir|ottawa": [
+  45.360917,
+  -75.950878
+ ],
+ "1727 rotterdam cir|ottawa": [
+  45.360839,
+  -75.950992
+ ],
  "1729 bank st|ottawa": [
   45.374221,
   -75.66461
+ ],
+ "1729 rotterdam cir|ottawa": [
+  45.360753,
+  -75.951137
  ],
  "1729 walkley rd|ottawa": [
   45.378377,
@@ -3471,6 +4148,10 @@
   45.321515,
   -75.613326
  ],
+ "173 shelleright st|ottawa": [
+  45.278086,
+  -75.875317
+ ],
  "173 unison st|ottawa": [
   45.260077,
   -75.685322
@@ -3487,6 +4168,10 @@
   45.404953,
   -75.632097
  ],
+ "1732 crux rd|ottawa": [
+  45.440647,
+  -75.50182
+ ],
  "1733 metcalfe farm dr|ottawa": [
   45.237245,
   -75.482356
@@ -3496,6 +4181,10 @@
   -75.482916
  ],
  "174 parkrose priv|ottawa": null,
+ "174 shelleright st|ottawa": [
+  45.278064,
+  -75.876054
+ ],
  "1740 queensdale ave|ottawa": [
   45.348072,
   -75.622747
@@ -3508,6 +4197,10 @@
   45.236939,
   -75.483089
  ],
+ "1742 montreal, ch de|ottawa": [
+  45.445566,
+  -75.609625
+ ],
  "175 a main st|ottawa": [
   45.408884,
   -75.677836
@@ -3515,6 +4208,10 @@
  "175 b james st|ottawa": [
   45.410667,
   -75.701371
+ ],
+ "175 bliss cres|ottawa": [
+  45.286598,
+  -75.899191
  ],
  "175 main st|ottawa": [
   45.409602,
@@ -3528,13 +4225,25 @@
   45.247459,
   -75.986181
  ],
+ "175 succession crt|ottawa": [
+  45.27902,
+  -75.915526
+ ],
  "175 terence matthews cres|ottawa": [
   45.286251,
   -75.872613
  ],
+ "1750 rotterdam cir|ottawa": [
+  45.360573,
+  -75.951802
+ ],
  "1750 russell rd|ottawa": [
   45.404243,
   -75.635971
+ ],
+ "1752 rotterdam cir|ottawa": [
+  45.360507,
+  -75.951709
  ],
  "1753 metcalfe farm dr|ottawa": [
   45.236562,
@@ -3544,9 +4253,21 @@
   45.460439,
   -75.547076
  ],
+ "1756 scott st|ottawa": [
+  45.40048,
+  -75.741512
+ ],
  "176 cameron ave|ottawa": [
   45.38817,
   -75.686368
+ ],
+ "176 gentry rd|ottawa": [
+  45.274719,
+  -76.00242
+ ],
+ "176 succession crt|ottawa": [
+  45.279337,
+  -75.915986
  ],
  "1760 b manotick station rd|ottawa": [
   45.253046,
@@ -3564,6 +4285,10 @@
   45.441172,
   -75.501512
  ],
+ "1766 rotterdam cir|ottawa": [
+  45.359881,
+  -75.950918
+ ],
  "177 armstrong st|ottawa": [
   45.402951,
   -75.727699
@@ -3580,9 +4305,25 @@
   45.393551,
   -75.735289
  ],
+ "1770 rotterdam cir|ottawa": [
+  45.359706,
+  -75.950672
+ ],
  "1771 woodward dr|ottawa": [
   45.371744,
   -75.751278
+ ],
+ "1772 rotterdam cir|ottawa": [
+  45.359609,
+  -75.950556
+ ],
+ "1774 rotterdam cir|ottawa": [
+  45.35951,
+  -75.950402
+ ],
+ "1776 rotterdam cir|ottawa": [
+  45.359472,
+  -75.950229
  ],
  "1778 carling ave|ottawa": [
   45.377103,
@@ -3636,6 +4377,18 @@
   45.360147,
   -75.949698
  ],
+ "179 conservancy dr|ottawa": [
+  45.257556,
+  -75.759474
+ ],
+ "179 gerry lalonde dr|ottawa": [
+  45.453757,
+  -75.486403
+ ],
+ "179 succession crt|ottawa": [
+  45.279037,
+  -75.91571
+ ],
  "1790 rotterdam cir|ottawa": [
   45.359992,
   -75.949193
@@ -3684,6 +4437,10 @@
   45.285013,
   -75.890292
  ],
+ "18 auriga dr|ottawa": [
+  45.333613,
+  -75.706312
+ ],
  "18 burnside ave|ottawa": [
   45.408909,
   -75.73043
@@ -3700,6 +4457,10 @@
  "18 oblats ave|ottawa": [
   45.410819,
   -75.675225
+ ],
+ "18 viewmount dr|ottawa": [
+  45.343277,
+  -75.746556
  ],
  "180 a main st|ottawa": [
   45.409061,
@@ -3736,6 +4497,10 @@
  "180 maclaren st|ottawa": [
   45.41704,
   -75.689303
+ ],
+ "180 succession crt|ottawa": [
+  45.279182,
+  -75.915933
  ],
  "180 wellington st|ottawa": [
   45.421775,
@@ -3793,9 +4558,17 @@
   45.360911,
   -75.948519
  ],
+ "181 craig duncan terr|ottawa": [
+  45.256428,
+  -75.90008
+ ],
  "181 queen st|ottawa": [
   45.421351,
   -75.69997
+ ],
+ "181 shelleright st|ottawa": [
+  45.277741,
+  -75.875645
  ],
  "181 springfield rd|ottawa": [
   45.44493,
@@ -3845,6 +4618,14 @@
   45.406639,
   -75.731275
  ],
+ "183 shelleright st|ottawa": [
+  45.277652,
+  -75.875727
+ ],
+ "183 succession crt|ottawa": [
+  45.279095,
+  -75.915856
+ ],
  "183 woodroffe ave|ottawa": [
   45.376039,
   -75.773753
@@ -3889,6 +4670,18 @@
   45.355165,
   -75.665848
  ],
+ "185 shelleright st|ottawa": [
+  45.277571,
+  -75.875812
+ ],
+ "185 somerset st w|ottawa": [
+  45.417933,
+  -75.69092
+ ],
+ "1850 elevation rd|ottawa": [
+  45.243547,
+  -75.75029
+ ],
  "1856 elevation rd|ottawa": [
   45.243372,
   -75.750155
@@ -3905,9 +4698,18 @@
   45.265946,
   -75.681839
  ],
+ "1864 elevation rd|ottawa": [
+  45.243118,
+  -75.750034
+ ],
  "187 bank st|ottawa": [
   45.417884,
   -75.698305
+ ],
+ "187 david lewis priv|ottawa": null,
+ "187 gerry lalonde dr|ottawa": [
+  45.453668,
+  -75.486715
  ],
  "187 rockmelon st|ottawa": [
   45.264677,
@@ -3916,6 +4718,14 @@
  "187 shelleright st|ottawa": [
   45.277474,
   -75.875891
+ ],
+ "1870 elevation rd|ottawa": [
+  45.242948,
+  -75.749893
+ ],
+ "1880 carling ave|ottawa": [
+  45.37508,
+  -75.758283
  ],
  "1880 kilborn ave|ottawa": [
   45.387943,
@@ -3928,6 +4738,10 @@
  "189 daniel ave|ottawa": [
   45.402439,
   -75.746871
+ ],
+ "189 massalia, crois de|ottawa": [
+  45.466372,
+  -75.453189
  ],
  "189 rideau st|ottawa": [
   45.427558,
@@ -3945,6 +4759,14 @@
   45.286955,
   -75.901726
  ],
+ "19 burnbrook cres|ottawa": [
+  45.347589,
+  -75.825158
+ ],
+ "19 canadian dr|ottawa": [
+  45.200798,
+  -76.013866
+ ],
  "19 lucas lane|ottawa": [
   45.197937,
   -75.978608
@@ -3961,6 +4783,10 @@
   45.417887,
   -75.696156
  ],
+ "190 richmond rd|ottawa": [
+  45.394396,
+  -75.747538
+ ],
  "1900 city park dr|ottawa": [
   45.428506,
   -75.614694
@@ -3976,6 +4802,10 @@
  "1901 banff ave|ottawa": [
   45.371132,
   -75.660787
+ ],
+ "191 bliss cres|ottawa": [
+  45.286986,
+  -75.899661
  ],
  "191 crevasse rd|ottawa": [
   45.438829,
@@ -4002,6 +4832,7 @@
   -75.495992
  ],
  "1923 hawker priv|ottawa": null,
+ "1928 hawker priv|ottawa": null,
  "1929 russell rd #120|ottawa": [
   45.401704,
   -75.62501
@@ -4039,6 +4870,14 @@
   45.45996,
   -75.515643
  ],
+ "1936 sixth line rd|ottawa": [
+  45.417133,
+  -75.934274
+ ],
+ "194 kiwi st|ottawa": [
+  45.265949,
+  -75.681493
+ ],
  "1941 robertson rd #3|ottawa": [
   45.329102,
   -75.824823
@@ -4052,6 +4891,7 @@
   -75.656442
  ],
  "1943 hawker priv|ottawa": null,
+ "1944 hawker priv|ottawa": null,
  "1944 lenester ave|ottawa": [
   45.37102,
   -75.758985
@@ -4080,9 +4920,21 @@
   45.395918,
   -75.668965
  ],
+ "1968 portobello blvd|ottawa": [
+  45.466404,
+  -75.466983
+ ],
+ "197 gerry lalonde dr|ottawa": [
+  45.453557,
+  -75.487108
+ ],
  "197 macmillan lane|ottawa": [
   45.48504,
   -76.074049
+ ],
+ "197 massalia, crois de|ottawa": [
+  45.466293,
+  -75.453483
  ],
  "197 withrow ave|ottawa": [
   45.345851,
@@ -4191,6 +5043,10 @@
   45.261789,
   -75.894533
  ],
+ "20 pretoria ave|ottawa": [
+  45.410328,
+  -75.685197
+ ],
  "20 rappel cir|ottawa": [
   45.439735,
   -75.496387
@@ -4218,6 +5074,10 @@
  "200 ginebik way|ottawa": [
   45.304802,
   -75.596885
+ ],
+ "200 grant carman dr|ottawa": [
+  45.35131,
+  -75.730793
  ],
  "200 kent st|ottawa": [
   45.417121,
@@ -4247,6 +5107,10 @@
   45.457735,
   -75.487651
  ],
+ "2000 bosch pl|ottawa": [
+  45.362033,
+  -75.948408
+ ],
  "2000 innovation dr|ottawa": [
   45.342061,
   -75.926449
@@ -4267,6 +5131,10 @@
   45.458765,
   -75.514998
  ],
+ "2002 bosch pl|ottawa": [
+  45.361958,
+  -75.948499
+ ],
  "2003 bosch pl|ottawa": [
   45.36166,
   -75.948115
@@ -4274,6 +5142,26 @@
  "2003 sharel dr|ottawa": [
   45.385998,
   -75.638058
+ ],
+ "2004 bosch pl|ottawa": [
+  45.361882,
+  -75.948601
+ ],
+ "2005 bosch pl|ottawa": [
+  45.361614,
+  -75.948184
+ ],
+ "2006 bosch pl|ottawa": [
+  45.361815,
+  -75.948713
+ ],
+ "2007 bosch pl|ottawa": [
+  45.361536,
+  -75.948296
+ ],
+ "2008 bosch pl|ottawa": [
+  45.361748,
+  -75.948816
  ],
  "2008 dorval ave|ottawa": [
   45.395441,
@@ -4363,6 +5251,10 @@
   45.458834,
   -75.48816
  ],
+ "203 burrard cres|ottawa": [
+  45.333792,
+  -75.922544
+ ],
  "203 crevasse rd|ottawa": [
   45.439094,
   -75.499904
@@ -4375,6 +5267,10 @@
   45.212921,
   -75.683014
  ],
+ "204 burrard cres|ottawa": [
+  45.333571,
+  -75.923059
+ ],
  "204 ste-monique st|ottawa": [
   45.442142,
   -75.666389
@@ -4382,6 +5278,18 @@
  "2040 arrowsmith dr|ottawa": [
   45.438533,
   -75.595651
+ ],
+ "2042 bosch pl|ottawa": [
+  45.360411,
+  -75.950906
+ ],
+ "2043 bosch pl|ottawa": [
+  45.360118,
+  -75.950528
+ ],
+ "2044 postilion st|ottawa": [
+  45.190914,
+  -75.849804
  ],
  "2045 checkerspot ave|ottawa": [
   45.177335,
@@ -4412,6 +5320,10 @@
   -75.77855
  ],
  "205 madder priv|ottawa": null,
+ "205 massalia, crois de|ottawa": [
+  45.466212,
+  -75.453774
+ ],
  "205 rockmelon st|ottawa": [
   45.26496,
   -75.680073
@@ -4460,22 +5372,46 @@
   45.245391,
   -75.746162
  ],
+ "206 burrard cres|ottawa": [
+  45.333455,
+  -75.923001
+ ],
  "206 ludis way|ottawa": [
   45.445454,
   -75.519827
+ ],
+ "206 prosperity walk|ottawa": [
+  45.277467,
+  -75.894579
  ],
  "206 visionary lane|ottawa": [
   45.364456,
   -75.933239
  ],
  "206 wiggins priv|ottawa": null,
+ "2060 ogilvie rd|ottawa": [
+  45.43775,
+  -75.59862
+ ],
+ "2060 postilion st|ottawa": [
+  45.191458,
+  -75.850472
+ ],
  "2061 checkerspot ave|ottawa": [
   45.177938,
   -75.834692
  ],
+ "2062 postilion st|ottawa": [
+  45.19153,
+  -75.850559
+ ],
  "2063 checkerspot ave|ottawa": [
   45.178005,
   -75.834586
+ ],
+ "2064 postilion st|ottawa": [
+  45.191601,
+  -75.850642
  ],
  "2065 checkerspot ave|ottawa": [
   45.178154,
@@ -4484,6 +5420,10 @@
  "2065 robertson rd|ottawa": [
   45.324469,
   -75.833535
+ ],
+ "2066 postilion st|ottawa": [
+  45.191682,
+  -75.850739
  ],
  "2067 checkerspot ave|ottawa": [
   45.178222,
@@ -4497,6 +5437,10 @@
   45.437683,
   -75.664426
  ],
+ "207 hinchey ave|ottawa": [
+  45.406266,
+  -75.729969
+ ],
  "208 amberly crt|ottawa": [
   45.44761,
   -75.614495
@@ -4508,6 +5452,10 @@
  "208 harthill way|ottawa": [
   45.262293,
   -75.763028
+ ],
+ "208 prosperity walk|ottawa": [
+  45.277446,
+  -75.894688
  ],
  "208 rappel cir|ottawa": [
   45.439658,
@@ -4554,6 +5502,10 @@
   45.452435,
   -75.524543
  ],
+ "2095 st-joseph, boul|ottawa": [
+  45.466427,
+  -75.536001
+ ],
  "21 adstock hts|ottawa": [
   45.284645,
   -75.890418
@@ -4583,6 +5535,10 @@
   45.188973,
   -75.853028
  ],
+ "21 sutcliffe terr|ottawa": [
+  45.291671,
+  -75.739654
+ ],
  "21 tercet terr|ottawa": [
   45.25692,
   -75.905164
@@ -4602,6 +5558,10 @@
  "210 iona st|ottawa": [
   45.39158,
   -75.741523
+ ],
+ "210 prosperity walk|ottawa": [
+  45.277425,
+  -75.894802
  ],
  "2100 scott st|ottawa": [
   45.394129,
@@ -4640,6 +5600,7 @@
   45.413547,
   -75.706419
  ],
+ "211 david lewis priv|ottawa": null,
  "211 templemore mews|ottawa": [
   45.261825,
   -75.893114
@@ -4665,6 +5626,10 @@
   45.401436,
   -75.697439
  ],
+ "212 mcarthur ave|ottawa": [
+  45.431026,
+  -75.660971
+ ],
  "212 prosperity walk|ottawa": [
   45.277414,
   -75.894944
@@ -4682,6 +5647,10 @@
   45.37341,
   -75.767592
  ],
+ "2126 robertson rd|ottawa": [
+  45.321199,
+  -75.834279
+ ],
  "2129 arch st|ottawa": [
   45.391981,
   -75.629421
@@ -4693,6 +5662,10 @@
  "213 crevasse rd|ottawa": [
   45.439293,
   -75.499184
+ ],
+ "213 gerry lalonde dr|ottawa": [
+  45.453358,
+  -75.487838
  ],
  "213 jameela row|ottawa": [
   45.4462,
@@ -4771,6 +5744,10 @@
   45.369442,
   -75.768761
  ],
+ "215 slater st|ottawa": [
+  45.4197,
+  -75.699558
+ ],
  "2150 robertson rd #21|ottawa": [
   45.319257,
   -75.836003
@@ -4787,6 +5764,10 @@
   45.445579,
   -75.519396
  ],
+ "216 mcarthur ave|ottawa": [
+  45.431117,
+  -75.660838
+ ],
  "216 visionary lane|ottawa": [
   45.364222,
   -75.932943
@@ -4794,6 +5775,10 @@
  "2162 prince of wales dr|ottawa": [
   45.33358,
   -75.70187
+ ],
+ "2164 montreal, ch de|ottawa": [
+  45.448549,
+  -75.589336
  ],
  "2164 montréal rd|ottawa": [
   45.448549,
@@ -4819,6 +5804,10 @@
   45.461222,
   -75.499478
  ],
+ "218 burrard cres|ottawa": [
+  45.333208,
+  -75.922148
+ ],
  "218 castlefrank rd|ottawa": [
   45.286867,
   -75.880875
@@ -4839,6 +5828,10 @@
   45.431141,
   -75.660662
  ],
+ "218 prosperity walk|ottawa": [
+  45.277317,
+  -75.895335
+ ],
  "2183 thurston|ottawa": [
   45.380226,
   -75.621218
@@ -4846,6 +5839,14 @@
  "2185 arch st|ottawa": [
   45.390316,
   -75.628828
+ ],
+ "219 argyle ave|ottawa": [
+  45.411427,
+  -75.690935
+ ],
+ "219 grandview rd|ottawa": [
+  45.362719,
+  -75.85958
  ],
  "219 rockmelon st|ottawa": [
   45.265181,
@@ -4907,6 +5908,14 @@
   45.327306,
   -75.706891
  ],
+ "22 robert kemp st|ottawa": [
+  45.335576,
+  -75.607168
+ ],
+ "22 sycamore dr|ottawa": [
+  45.317003,
+  -75.822808
+ ],
  "220 a woodroffe ave|ottawa": [
   45.331127,
   -75.750509
@@ -4926,6 +5935,10 @@
  "220 laurier ave west|ottawa": [
   45.419534,
   -75.696016
+ ],
+ "220 prosperity walk|ottawa": [
+  45.277291,
+  -75.89547
  ],
  "220 sparks st|ottawa": [
   45.421132,
@@ -4949,9 +5962,17 @@
   45.389695,
   -75.630364
  ],
+ "221 castlefrank rd|ottawa": [
+  45.286993,
+  -75.881554
+ ],
  "221 falsetto st|ottawa": [
   45.429966,
   -75.518758
+ ],
+ "221 massalia, crois de|ottawa": [
+  45.466143,
+  -75.454401
  ],
  "221 rockmelon st|ottawa": [
   45.265222,
@@ -4969,17 +5990,30 @@
   45.392589,
   -75.61072
  ],
+ "222 apricot st|ottawa": [
+  45.26538,
+  -75.682236
+ ],
  "222 citigate dr|ottawa": [
   45.268156,
   -75.789842
  ],
+ "222 lillian freiman priv|ottawa": null,
  "222 massalia cres|ottawa": [
   45.466557,
   -75.45452
  ],
+ "222 prosperity walk|ottawa": [
+  45.277258,
+  -75.895612
+ ],
  "222 queen st|ottawa": [
   45.420219,
   -75.70101
+ ],
+ "222 somerset st w|ottawa": [
+  45.417089,
+  -75.69151
  ],
  "2220 copperhead st|ottawa": [
   45.440077,
@@ -4988,6 +6022,10 @@
  "2220 walkley rd|ottawa": [
   45.387116,
   -75.619428
+ ],
+ "2222 carling ave|ottawa": [
+  45.369013,
+  -75.772191
  ],
  "2236 copperhead st|ottawa": [
   45.440207,
@@ -5025,6 +6063,10 @@
   45.440246,
   -75.499866
  ],
+ "2248 copperhead st|ottawa": [
+  45.44028,
+  -75.499725
+ ],
  "225 bankside way|ottawa": [
   45.257473,
   -75.746225
@@ -5057,6 +6099,10 @@
   45.400779,
   -75.693349
  ],
+ "2261 tecumseh st|ottawa": [
+  45.35538,
+  -75.766719
+ ],
  "2262 braeside ave|ottawa": [
   45.384314,
   -75.66062
@@ -5073,9 +6119,17 @@
   45.277559,
   -75.872474
  ],
+ "227 gretsch rd|ottawa": [
+  45.324579,
+  -75.588063
+ ],
  "2270 st-laurent blvd|ottawa": [
   45.386347,
   -75.616805
+ ],
+ "2270 wilhaven dr|ottawa": [
+  45.499077,
+  -75.413008
  ],
  "228 bank st|ottawa": [
   45.389264,
@@ -5092,6 +6146,10 @@
  "228 hampshire pl|ottawa": [
   45.29256,
   -75.90992
+ ],
+ "2280 lawn ave|ottawa": [
+  45.370309,
+  -75.777074
  ],
  "2283 st-laurent blvd|ottawa": [
   45.386162,
@@ -5137,6 +6195,10 @@
   45.124798,
   -75.960329
  ],
+ "23 strathcona ave|ottawa": [
+  45.410107,
+  -75.684477
+ ],
  "23 sutcliffe terr|ottawa": [
   45.291756,
   -75.739743
@@ -5152,6 +6214,10 @@
  "230 kilcooly lane|ottawa": [
   45.262572,
   -75.890186
+ ],
+ "230 queen st|ottawa": [
+  45.424748,
+  -75.656099
  ],
  "230 wesley ave|ottawa": [
   45.391647,
@@ -5181,6 +6247,10 @@
   45.287726,
   -75.900479
  ],
+ "231 burrard cres|ottawa": [
+  45.333765,
+  -75.922001
+ ],
  "2310 virginia dr|ottawa": [
   45.386294,
   -75.645271
@@ -5188,6 +6258,10 @@
  "2311 st-joseph blvd|ottawa": [
   45.468528,
   -75.531804
+ ],
+ "232 apricot st|ottawa": [
+  45.265214,
+  -75.682657
  ],
  "232 b metric cir|ottawa": [
   45.283562,
@@ -5212,6 +6286,10 @@
  "2323 stevenage dr|ottawa": [
   45.380294,
   -75.610072
+ ],
+ "2326 kilchurn terr|ottawa": [
+  45.243864,
+  -75.632361
  ],
  "2328 aphrodite priv|ottawa": null,
  "233 amarnath cir|ottawa": [
@@ -5282,6 +6360,10 @@
   45.277372,
   -75.872733
  ],
+ "235 mariposa ave|ottawa": [
+  45.448354,
+  -75.679759
+ ],
  "235 metric cir|ottawa": [
   45.283562,
   -75.887229
@@ -5294,9 +6376,17 @@
   45.34706,
   -75.361314
  ],
+ "236 cornice st|ottawa": [
+  45.4405,
+  -75.497846
+ ],
  "236 craig duncan terr|ottawa": [
   45.255401,
   -75.900565
+ ],
+ "236 ginebik way|ottawa": [
+  45.30542,
+  -75.59868
  ],
  "236 richmond rd|ottawa": [
   45.393707,
@@ -5326,6 +6416,10 @@
   45.257181,
   -75.456231
  ],
+ "2375 carp rd|ottawa": [
+  45.287291,
+  -75.965961
+ ],
  "2375 cheshire rd|ottawa": [
   45.353838,
   -75.77204
@@ -5339,6 +6433,10 @@
   -75.681178
  ],
  "238 wiggins priv|ottawa": null,
+ "2380 cleroux, crois|ottawa": [
+  45.436355,
+  -75.55033
+ ],
  "2380 cléroux cres|ottawa": [
   45.436355,
   -75.55033
@@ -5350,6 +6448,10 @@
  "2390 trim rd|ottawa": [
   45.45506,
   -75.450814
+ ],
+ "2396 cleroux, crois|ottawa": [
+  45.436172,
+  -75.549629
  ],
  "2396 cléroux cres|ottawa": [
   45.436172,
@@ -5367,6 +6469,10 @@
   45.186347,
   -75.846221
  ],
+ "24 surf scoter lane|ottawa": [
+  45.260234,
+  -75.688174
+ ],
  "24 tercet terr|ottawa": [
   45.256985,
   -75.904748
@@ -5379,6 +6485,10 @@
  "240 catherine st|ottawa": [
   45.409095,
   -75.692583
+ ],
+ "240 hampshire pl|ottawa": [
+  45.292831,
+  -75.909402
  ],
  "240 michael cowpland dr|ottawa": [
   45.284373,
@@ -5404,6 +6514,14 @@
   45.375167,
   -75.675198
  ],
+ "2405 emmett rd|ottawa": [
+  45.494567,
+  -75.350315
+ ],
+ "2405 mer-bleue, ch de la|ottawa": [
+  45.443284,
+  -75.497131
+ ],
  "2405 st-laurent blvd|ottawa": [
   45.381628,
   -75.625145
@@ -5420,14 +6538,34 @@
   45.28537,
   -75.882817
  ],
+ "241 monticello ave|ottawa": [
+  45.272133,
+  -75.860979
+ ],
+ "2412 carlsen ave|ottawa": [
+  45.375167,
+  -75.675198
+ ],
  "2413 carp rd|ottawa": [
   45.287636,
   -75.969658
  ],
+ "2413 ryan dr|ottawa": [
+  45.347045,
+  -75.782152
+ ],
  "2416 c howland ave|ottawa": null,
+ "2417 baseline rd|ottawa": [
+  45.344312,
+  -75.780749
+ ],
  "242 b byron ave|ottawa": [
   45.373872,
   -75.778016
+ ],
+ "242 bliss cres|ottawa": [
+  45.287798,
+  -75.901159
  ],
  "242 les emmerson dr|ottawa": [
   45.257583,
@@ -5436,6 +6574,10 @@
  "2420 birchgrove rd|ottawa": [
   45.483913,
   -75.330436
+ ],
+ "2420 navaho dr|ottawa": [
+  45.349013,
+  -75.759122
  ],
  "2421 lancaster rd|ottawa": [
   45.402382,
@@ -5466,6 +6608,10 @@
   45.436167,
   -75.547398
  ],
+ "2446 bank st|ottawa": [
+  45.352792,
+  -75.647393
+ ],
  "2447 wyndale cres|ottawa": [
   45.381568,
   -75.645841
@@ -5478,6 +6624,10 @@
   45.418357,
   -75.691975
  ],
+ "245 crevasse, ch de la|ottawa": [
+  45.439889,
+  -75.497384
+ ],
  "245 hampshire pl|ottawa": [
   45.293095,
   -75.909823
@@ -5489,6 +6639,10 @@
  "245 sylvan ave|ottawa": [
   45.450275,
   -75.671049
+ ],
+ "2450 lancaster rd|ottawa": [
+  45.40117,
+  -75.619006
  ],
  "2450 sixth line rd #b|ottawa": [
   45.444375,
@@ -5505,6 +6659,11 @@
  "246 metric cir|ottawa": [
   45.283231,
   -75.884624
+ ],
+ "246 mishi priv|ottawa": null,
+ "246 sapling grove|ottawa": [
+  45.256284,
+  -75.760566
  ],
  "246 westhaven cres|ottawa": [
   45.388126,
@@ -5570,6 +6729,14 @@
   45.447156,
   -75.461016
  ],
+ "248 cabrelle pl|ottawa": [
+  45.216921,
+  -75.710632
+ ],
+ "248 hampshire pl|ottawa": [
+  45.293039,
+  -75.909066
+ ],
  "2480 walkley rd|ottawa": [
   45.389697,
   -75.61059
@@ -5577,6 +6744,10 @@
  "2481 goldhawk dr|ottawa": [
   45.262246,
   -75.894349
+ ],
+ "2482 carlsen ave|ottawa": [
+  45.375223,
+  -75.675433
  ],
  "2483 goldhawk dr|ottawa": [
   45.26216,
@@ -5683,6 +6854,10 @@
   45.324268,
   -75.780219
  ],
+ "250 sapling grove|ottawa": [
+  45.256419,
+  -75.760248
+ ],
  "250 shakespeare st|ottawa": [
   45.439253,
   -75.663117
@@ -5726,6 +6901,10 @@
  "2507 esprit dr|ottawa": [
   45.445915,
   -75.46597
+ ],
+ "251 bliss cres|ottawa": [
+  45.287343,
+  -75.901106
  ],
  "251 columbus ave|ottawa": [
   45.427147,
@@ -5778,6 +6957,10 @@
  "253 cabrelle pl|ottawa": [
   45.216811,
   -75.709603
+ ],
+ "253 crevasse, ch de la|ottawa": [
+  45.440006,
+  -75.496968
  ],
  "253 mackay st|ottawa": [
   45.44075,
@@ -5859,9 +7042,17 @@
   45.400247,
   -75.745592
  ],
+ "255 hinchey ave|ottawa": [
+  45.404842,
+  -75.72908
+ ],
  "255 kanata ave|ottawa": [
   45.310949,
   -75.905587
+ ],
+ "255 sussex dr|ottawa": [
+  45.433331,
+  -75.698675
  ],
  "255 trumpeter grove|ottawa": [
   45.260282,
@@ -5882,6 +7073,10 @@
  "2555 st-joseph blvd|ottawa": [
   45.471058,
   -75.52577
+ ],
+ "256 cabrelle pl|ottawa": [
+  45.217473,
+  -75.710275
  ],
  "256 rideau st|ottawa": [
   45.427881,
@@ -5984,6 +7179,10 @@
   45.399293,
   -75.7489
  ],
+ "260 sapling grove|ottawa": [
+  45.256716,
+  -75.759466
+ ],
  "2600 leitrim rd|ottawa": [
   45.318095,
   -75.626913
@@ -6032,6 +7231,14 @@
   45.478125,
   -75.511885
  ],
+ "262 sapling grove|ottawa": [
+  45.256776,
+  -75.75932
+ ],
+ "262 westbrook rd|ottawa": [
+  45.269487,
+  -75.963058
+ ],
  "2625 queensview dr|ottawa": [
   45.354385,
   -75.78536
@@ -6075,6 +7282,10 @@
  "264 murray st|ottawa": [
   45.432033,
   -75.687547
+ ],
+ "264 sapling grove|ottawa": [
+  45.256826,
+  -75.759189
  ],
  "2640 innes rd|ottawa": [
   45.431286,
@@ -6132,6 +7343,10 @@
   45.25793,
   -75.762538
  ],
+ "266 sapling grove|ottawa": [
+  45.256872,
+  -75.75907
+ ],
  "2660 norberry cres|ottawa": [
   45.368167,
   -75.683541
@@ -6147,6 +7362,10 @@
  "267 cornice st|ottawa": [
   45.439717,
   -75.499246
+ ],
+ "267 ginebik way|ottawa": [
+  45.305004,
+  -75.599816
  ],
  "267 marier ave|ottawa": [
   45.43675,
@@ -6168,6 +7387,10 @@
   45.363578,
   -75.631164
  ],
+ "268 sapling grove|ottawa": [
+  45.25692,
+  -75.758952
+ ],
  "268 westar farm way|ottawa": [
   45.181788,
   -75.997332
@@ -6175,6 +7398,10 @@
  "2680 queensview dr|ottawa": [
   45.352443,
   -75.787253
+ ],
+ "2681 alta vista dr|ottawa": [
+  45.372291,
+  -75.663058
  ],
  "2685 iris st|ottawa": [
   45.35049,
@@ -6212,6 +7439,14 @@
   45.431663,
   -75.697343
  ],
+ "27 hobin st|ottawa": [
+  45.262681,
+  -75.933309
+ ],
+ "270 albert st|ottawa": [
+  45.419373,
+  -75.701063
+ ],
  "270 apricot st|ottawa": [
   45.264606,
   -75.684313
@@ -6248,6 +7483,14 @@
   45.439649,
   -75.499464
  ],
+ "271 ludis way|ottawa": [
+  45.444913,
+  -75.518027
+ ],
+ "2710 river rd|ottawa": [
+  45.164037,
+  -75.628711
+ ],
  "2717 kinburn side rd|ottawa": [
   45.405675,
   -76.167288
@@ -6260,6 +7503,10 @@
   45.411752,
   -75.706177
  ],
+ "272 cornice st|ottawa": [
+  45.440011,
+  -75.49957
+ ],
  "273 mcarthur ave|ottawa": [
   45.431764,
   -75.657387
@@ -6267,6 +7514,10 @@
  "2733 sarsfield rd|ottawa": [
   45.470003,
   -75.354886
+ ],
+ "2736 cedarview rd|ottawa": [
+  45.277876,
+  -75.77969
  ],
  "2739 steeple hill cres|ottawa": [
   45.263599,
@@ -6370,6 +7621,10 @@
   45.265174,
   -75.891375
  ],
+ "279 montfort st|ottawa": [
+  45.439045,
+  -75.661112
+ ],
  "2790 avoncourt way|ottawa": [
   45.366731,
   -75.673101
@@ -6409,6 +7664,10 @@
  "28 sintaluta walk|ottawa": [
   45.188566,
   -75.853053
+ ],
+ "280 cornice st|ottawa": [
+  45.43988,
+  -75.500023
  ],
  "280 didsbury rd|ottawa": [
   45.305965,
@@ -6455,6 +7714,10 @@
   45.397698,
   -75.600626
  ],
+ "282 cornice st|ottawa": [
+  45.439847,
+  -75.500147
+ ],
  "282 dupuis st|ottawa": [
   45.435586,
   -75.661415
@@ -6470,6 +7733,10 @@
  "282 loretta ave south|ottawa": [
   45.398204,
   -75.713022
+ ],
+ "282 sapling grove|ottawa": [
+  45.257374,
+  -75.757815
  ],
  "2820 springland dr|ottawa": [
   45.363434,
@@ -6555,6 +7822,10 @@
   45.359136,
   -76.124409
  ],
+ "2860 ahearn ave|ottawa": [
+  45.360126,
+  -75.800916
+ ],
  "2861 colonial rd|ottawa": [
   45.440642,
   -75.347081
@@ -6615,6 +7886,10 @@
   45.402856,
   -75.696546
  ],
+ "288 cornice st|ottawa": [
+  45.439742,
+  -75.500503
+ ],
  "288 les emmerson dr|ottawa": [
   45.258245,
   -75.761726
@@ -6651,9 +7926,21 @@
   45.344996,
   -75.754149
  ],
+ "29 ed findlay st|ottawa": [
+  45.266158,
+  -75.680989
+ ],
  "29 goodwood dr|ottawa": [
   45.263046,
   -75.716414
+ ],
+ "29 manning crt|ottawa": [
+  45.325728,
+  -75.92907
+ ],
+ "29 redpine dr|ottawa": [
+  45.347853,
+  -75.724666
  ],
  "29 tercet terr|ottawa": [
   45.256715,
@@ -6682,6 +7969,10 @@
  "2900 woodroffe ave|ottawa": [
   45.291939,
   -75.728861
+ ],
+ "291 levis, av de|ottawa": [
+  45.435907,
+  -75.657734
  ],
  "2916 cowell rd|ottawa": [
   45.074762,
@@ -6755,6 +8046,10 @@
   45.439174,
   -75.501009
  ],
+ "297 dovercourt ave|ottawa": [
+  45.385015,
+  -75.747388
+ ],
  "297 richmond rd|ottawa": [
   45.393094,
   -75.75192
@@ -6767,9 +8062,17 @@
   45.313124,
   -75.995282
  ],
+ "298 shakespeare st|ottawa": [
+  45.439463,
+  -75.659851
+ ],
  "299 city centre ave|ottawa": [
   45.409513,
   -75.718176
+ ],
+ "299 columbus ave|ottawa": [
+  45.427302,
+  -75.654035
  ],
  "299 dandelion mews|ottawa": [
   45.364063,
@@ -6791,6 +8094,7 @@
   45.261378,
   -75.929629
  ],
+ "3 kanata rockeries priv|ottawa": null,
  "30 adstock hts|ottawa": [
   45.284546,
   -75.88924
@@ -6825,6 +8129,10 @@
   -75.950358
  ],
  "300 hilversum lane|ottawa": null,
+ "300 hunt club rd|ottawa": [
+  45.334751,
+  -75.685672
+ ],
  "300 legget dr|ottawa": [
   45.342204,
   -75.899599
@@ -6924,6 +8232,10 @@
   -75.93691
  ],
  "304 amistad priv|ottawa": null,
+ "304 athabasca hts|ottawa": [
+  45.333221,
+  -75.925217
+ ],
  "304 donald st|ottawa": [
   45.42763,
   -75.655052
@@ -6931,6 +8243,10 @@
  "304 walden dr|ottawa": [
   45.334763,
   -75.919966
+ ],
+ "3044 innes rd|ottawa": [
+  45.421905,
+  -75.588915
  ],
  "3045 baseline rd|ottawa": [
   45.335144,
@@ -6940,9 +8256,17 @@
   45.429262,
   -75.685406
  ],
+ "306 athabasca hts|ottawa": [
+  45.333082,
+  -75.925146
+ ],
  "306 savona terr|ottawa": [
   45.256727,
   -75.698301
+ ],
+ "3061 showcase cres|ottawa": [
+  45.260663,
+  -75.684277
  ],
  "307 deschâtelets ave|ottawa": [
   45.409726,
@@ -6956,16 +8280,33 @@
   45.298794,
   -75.911888
  ],
+ "308 energy st|ottawa": [
+  45.286218,
+  -75.901247
+ ],
  "308 hilversum lane|ottawa": null,
+ "3087 riverside dr|ottawa": [
+  45.362927,
+  -75.687729
+ ],
  "3088 dunrobin rd|ottawa": [
   45.434535,
   -76.033191
  ],
+ "309 clearpath priv|ottawa": null,
  "309 deschâtelets ave|ottawa": [
   45.409726,
   -75.676499
  ],
  "309 john kim bell priv|ottawa": null,
+ "309 solidago mews|ottawa": [
+  45.327815,
+  -75.602314
+ ],
+ "309 ventoux, av du|ottawa": [
+  45.464783,
+  -75.458712
+ ],
  "3095 palladium dr|ottawa": [
   45.298171,
   -75.913471
@@ -7018,6 +8359,10 @@
   45.25574,
   -75.749042
  ],
+ "3100 quail dr|ottawa": [
+  45.34927,
+  -75.630567
+ ],
  "3103 torwood dr|ottawa": [
   45.456085,
   -75.993334
@@ -7054,6 +8399,10 @@
   45.432001,
   -75.655328
  ],
+ "311 ventoux, av du|ottawa": [
+  45.464801,
+  -75.458577
+ ],
  "3112 torwood dr|ottawa": [
   45.459657,
   -75.995654
@@ -7084,6 +8433,10 @@
   45.298567,
   -75.912199
  ],
+ "313 athlone ave|ottawa": [
+  45.395994,
+  -75.752037
+ ],
  "313 dandelion mews|ottawa": [
   45.364224,
   -75.951193
@@ -7095,6 +8448,10 @@
  "3130 woodroffe ave|ottawa": [
   45.280904,
   -75.722172
+ ],
+ "3131 trim rd|ottawa": [
+  45.43329,
+  -75.431726
  ],
  "3132 woodroffe ave|ottawa": [
   45.32893,
@@ -7113,6 +8470,14 @@
   45.297869,
   -75.914487
  ],
+ "315 chapel st|ottawa": [
+  45.429247,
+  -75.679603
+ ],
+ "315 establish ave|ottawa": [
+  45.453335,
+  -75.488815
+ ],
  "315 mart cir|ottawa": [
   45.452204,
   -75.65287
@@ -7125,6 +8490,10 @@
  "315 solidago mews|ottawa": [
   45.327623,
   -75.602755
+ ],
+ "315 walden dr|ottawa": [
+  45.334257,
+  -75.920538
  ],
  "3150 b woodkilton rd|ottawa": [
   45.510636,
@@ -7153,6 +8522,14 @@
  "316 dalhousie st|ottawa": [
   45.429093,
   -75.691595
+ ],
+ "316 energy st|ottawa": [
+  45.286401,
+  -75.900978
+ ],
+ "316 jollity cres|ottawa": [
+  45.259349,
+  -75.753515
  ],
  "316 solidago mews|ottawa": [
   45.327956,
@@ -7189,6 +8566,10 @@
  "3173 findlay creek dr|ottawa": [
   45.320028,
   -75.595541
+ ],
+ "318 establish ave|ottawa": [
+  45.453705,
+  -75.488579
  ],
  "318 solidago mews|ottawa": [
   45.327843,
@@ -7307,10 +8688,15 @@
   45.191008,
   -75.852403
  ],
+ "321 clearpath priv|ottawa": null,
  "321 hilversum lane|ottawa": null,
  "321 king edward ave|ottawa": [
   45.43065,
   -75.68677
+ ],
+ "321 lebreton st s|ottawa": [
+  45.401666,
+  -75.704367
  ],
  "3210 mackey rd|ottawa": [
   45.088951,
@@ -7345,6 +8731,7 @@
   45.258808,
   -75.760459
  ],
+ "322 lillian freiman priv|ottawa": null,
  "322 symphony way|ottawa": [
   45.255421,
   -75.748794
@@ -7393,6 +8780,10 @@
   45.255856,
   -75.904675
  ],
+ "3232 mackey rd|ottawa": [
+  45.067558,
+  -75.752717
+ ],
  "3233 alpenstock ave|ottawa": [
   45.441271,
   -75.49996
@@ -7429,6 +8820,10 @@
   45.258925,
   -75.760169
  ],
+ "326 peninsula rd|ottawa": [
+  45.256737,
+  -75.760931
+ ],
  "326 wilbrod st|ottawa": [
   45.425889,
   -75.684612
@@ -7453,6 +8848,10 @@
  "327 island park dr|ottawa": [
   45.398158,
   -75.743819
+ ],
+ "327 peninsula rd|ottawa": [
+  45.256475,
+  -75.760695
  ],
  "327 rhyme st|ottawa": [
   45.255963,
@@ -7535,6 +8934,10 @@
   45.355687,
   -75.747179
  ],
+ "330 beatrice dr|ottawa": [
+  45.280212,
+  -75.729931
+ ],
  "330 les emmerson dr|ottawa": [
   45.259058,
   -75.759839
@@ -7576,6 +8979,10 @@
   45.350585,
   -75.67217
  ],
+ "3311 roger stevens dr|ottawa": [
+  45.091408,
+  -75.789262
+ ],
  "3316 steeple hill cres|ottawa": [
   45.265988,
   -75.825003
@@ -7608,6 +9015,10 @@
   45.502834,
   -75.460432
  ],
+ "3328 levrier, cours du|ottawa": [
+  45.502888,
+  -75.460267
+ ],
  "333 a preston st|ottawa": [
   45.396438,
   -75.707101
@@ -7636,6 +9047,10 @@
  "3332 mccarthy rd|ottawa": [
   45.350878,
   -75.670272
+ ],
+ "3333 greenbank rd|ottawa": [
+  45.263059,
+  -75.739686
  ],
  "3336 lévrier walk|ottawa": [
   45.503059,
@@ -7677,6 +9092,10 @@
   45.258933,
   -75.759255
  ],
+ "336 peninsula rd|ottawa": [
+  45.257064,
+  -75.760115
+ ],
  "337 cantering dr|ottawa": [
   45.191516,
   -75.851812
@@ -7697,6 +9116,18 @@
   45.302706,
   -75.565149
  ],
+ "3379 trim rd|ottawa": [
+  45.491483,
+  -75.479748
+ ],
+ "338 athabasca hts|ottawa": [
+  45.333721,
+  -75.92361
+ ],
+ "338 peninsula rd|ottawa": [
+  45.257123,
+  -75.759975
+ ],
  "338 timbertrail terr|ottawa": [
   45.473821,
   -75.451443
@@ -7708,6 +9139,10 @@
  "339 rhyme st|ottawa": [
   45.256299,
   -75.905202
+ ],
+ "339 shoveler grove|ottawa": [
+  45.260975,
+  -75.686864
  ],
  "339 wilbrod st|ottawa": [
   45.428371,
@@ -7753,6 +9188,14 @@
   45.339408,
   -75.908942
  ],
+ "340 peninsula rd|ottawa": [
+  45.257173,
+  -75.759829
+ ],
+ "340 richmond rd|ottawa": [
+  45.391944,
+  -75.753871
+ ],
  "340 terry fox dr|ottawa": [
   45.353101,
   -75.914964
@@ -7766,6 +9209,10 @@
   -75.441489
  ],
  "341 hilversum lane|ottawa": null,
+ "341 peninsula rd|ottawa": [
+  45.256814,
+  -75.759831
+ ],
  "342 a queen mary st|ottawa": [
   45.425004,
   -75.654864
@@ -7781,6 +9228,10 @@
  "342 killinchey row|ottawa": [
   45.261531,
   -75.891518
+ ],
+ "342 peninsula rd|ottawa": [
+  45.25723,
+  -75.759679
  ],
  "342 symphony way|ottawa": [
   45.25488,
@@ -7811,7 +9262,15 @@
   45.338248,
   -75.905179
  ],
+ "344 energy st|ottawa": [
+  45.287027,
+  -75.900101
+ ],
  "344 hilversum lane|ottawa": null,
+ "344 peninsula rd|ottawa": [
+  45.257293,
+  -75.759559
+ ],
  "344 slater st|ottawa": [
   45.41784,
   -75.702576
@@ -7880,6 +9339,10 @@
   45.432527,
   -75.660875
  ],
+ "3486 french hill rd|ottawa": [
+  45.484533,
+  -75.336138
+ ],
  "349 danforth ave|ottawa": [
   45.39131,
   -75.754209
@@ -7887,6 +9350,10 @@
  "349 les emmerson dr|ottawa": [
   45.259279,
   -75.75841
+ ],
+ "3494 wilhaven dr|ottawa": [
+  45.503186,
+  -75.346204
  ],
  "3499 mcbean st|ottawa": [
   45.192367,
@@ -7982,6 +9449,10 @@
   45.259329,
   -75.758278
  ],
+ "352 bobolink ridge|ottawa": [
+  45.2702,
+  -75.892603
+ ],
  "352 richmond rd|ottawa": [
   45.391731,
   -75.754379
@@ -8055,6 +9526,14 @@
   45.391538,
   -75.754492
  ],
+ "356 walden dr|ottawa": [
+  45.334248,
+  -75.923199
+ ],
+ "3560 john shaw rd|ottawa": [
+  45.390928,
+  -76.162771
+ ],
  "3561 donnelly dr|ottawa": [
   45.023122,
   -75.738744
@@ -8093,6 +9572,10 @@
   45.333692,
   -75.709699
  ],
+ "36 bolting mews|ottawa": [
+  45.189717,
+  -75.85126
+ ],
  "36 burland st|ottawa": [
   45.357185,
   -75.806119
@@ -8122,9 +9605,17 @@
   45.401382,
   -75.703002
  ],
+ "360 laurier ave w|ottawa": [
+  45.417715,
+  -75.700482
+ ],
  "360 mango st|ottawa": [
   45.265762,
   -75.683544
+ ],
+ "360 shoveler grove|ottawa": [
+  45.259881,
+  -75.686901
  ],
  "3600 brian coburn blvd|ottawa": [
   45.449886,
@@ -8146,6 +9637,10 @@
   45.211031,
   -75.683375
  ],
+ "362 lacasse ave|ottawa": [
+  45.433142,
+  -75.65641
+ ],
  "362 marguerite ave|ottawa": [
   45.430749,
   -75.666528
@@ -8153,6 +9648,10 @@
  "362 mariposa ave|ottawa": [
   45.447487,
   -75.676583
+ ],
+ "362 shoveler grove|ottawa": [
+  45.259788,
+  -75.686874
  ],
  "362 terry fox dr|ottawa": [
   45.350504,
@@ -8183,6 +9682,10 @@
   45.246624,
   -75.921071
  ],
+ "3646 innes rd|ottawa": [
+  45.449142,
+  -75.520163
+ ],
  "3648 becks rd|ottawa": [
   45.426534,
   -76.114685
@@ -8202,6 +9705,10 @@
  "366 mango st|ottawa": [
   45.265572,
   -75.683558
+ ],
+ "367 cottonwood cres|ottawa": [
+  45.465312,
+  -75.496811
  ],
  "3671 strandherd dr|ottawa": [
   45.271385,
@@ -8275,6 +9782,10 @@
   45.256185,
   -75.708742
  ],
+ "3701 carling ave|ottawa": [
+  45.345578,
+  -75.880201
+ ],
  "3701 strandherd dr|ottawa": [
   45.270832,
   -75.74463
@@ -8316,6 +9827,10 @@
   45.279954,
   -75.694996
  ],
+ "3737 twin falls pl|ottawa": [
+  45.287239,
+  -75.690416
+ ],
  "374 b berkley ave|ottawa": [
   45.391707,
   -75.758753
@@ -8327,6 +9842,10 @@
  "374 les emmerson dr|ottawa": [
   45.259031,
   -75.757587
+ ],
+ "3746 larry robinson rd|ottawa": [
+  45.217322,
+  -75.38159
  ],
  "375 codd's rd|ottawa": [
   45.454156,
@@ -8356,6 +9875,10 @@
   45.25592,
   -75.748043
  ],
+ "3766 fallowfield rd|ottawa": [
+  45.287446,
+  -75.757344
+ ],
  "3768 revelstoke dr|ottawa": [
   45.355221,
   -75.696452
@@ -8380,6 +9903,10 @@
   45.324256,
   -75.825206
  ],
+ "3775 a strandherd dr|ottawa": [
+  45.27123,
+  -75.70783
+ ],
  "3776 albion rd|ottawa": [
   45.345867,
   -75.638717
@@ -8393,6 +9920,10 @@
   45.345745,
   -75.63867
  ],
+ "3781 strandherd dr|ottawa": [
+  45.268208,
+  -75.751169
+ ],
  "379 vibert douglas dr|ottawa": [
   45.361273,
   -75.935132
@@ -8405,6 +9936,14 @@
   45.399733,
   -75.676031
  ],
+ "38 jonathan pack st|ottawa": [
+  45.256006,
+  -75.927269
+ ],
+ "38 oakridge blvd|ottawa": [
+  45.341738,
+  -75.753065
+ ],
  "38 osler st|ottawa": [
   45.364427,
   -75.935685
@@ -8412,6 +9951,10 @@
  "38 reynard cres|ottawa": [
   45.184756,
   -75.844711
+ ],
+ "380 hunt club rd|ottawa": [
+  45.338867,
+  -75.68141
  ],
  "380 mango st|ottawa": [
   45.264758,
@@ -8538,6 +10081,10 @@
   45.322859,
   -75.612515
  ],
+ "388 walden dr|ottawa": [
+  45.333982,
+  -75.924566
+ ],
  "3880 b wilhaven dr|ottawa": [
   45.49888,
   -75.422493
@@ -8579,6 +10126,10 @@
   45.340397,
   -75.911142
  ],
+ "3905 innes rd|ottawa": [
+  45.453848,
+  -75.51025
+ ],
  "391 les emmerson dr|ottawa": [
   45.259012,
   -75.758484
@@ -8596,9 +10147,17 @@
   -75.770706
  ],
  "394 hilversum lane|ottawa": null,
+ "3941 torbolton ridge rd|ottawa": [
+  45.504097,
+  -76.173934
+ ],
  "395 gladstone ave|ottawa": [
   45.411985,
   -75.694634
+ ],
+ "395 richmond rd|ottawa": [
+  45.391024,
+  -75.756456
  ],
  "395 segun raji st|ottawa": [
   45.32305,
@@ -8628,9 +10187,17 @@
   45.253357,
   -75.573743
  ],
+ "3978 perennial way|ottawa": [
+  45.252684,
+  -75.572936
+ ],
  "398 segun raji st|ottawa": [
   45.322715,
   -75.612877
+ ],
+ "399 point grey terr|ottawa": [
+  45.332569,
+  -75.927599
  ],
  "3994 john shaw rd|ottawa": [
   45.407585,
@@ -8724,6 +10291,10 @@
   -75.633097
  ],
  "401 antelope priv|ottawa": null,
+ "401 ashbee crt|ottawa": [
+  45.214708,
+  -75.70684
+ ],
  "401 glenroy gilbert dr #1|ottawa": [
   45.268981,
   -75.736662
@@ -8753,9 +10324,17 @@
   45.36183,
   -75.936259
  ],
+ "404 ashbee crt|ottawa": [
+  45.215326,
+  -75.706403
+ ],
  "4043 carling ave|ottawa": [
   45.338676,
   -75.904536
+ ],
+ "405 ashbee crt|ottawa": [
+  45.215024,
+  -75.707055
  ],
  "405 huron ave south|ottawa": [
   45.391442,
@@ -8806,9 +10385,17 @@
   45.258674,
   -75.766858
  ],
+ "409 point grey terr|ottawa": [
+  45.331997,
+  -75.92741
+ ],
  "4097 stonecrest rd|ottawa": [
   45.500438,
   -76.190597
+ ],
+ "41 a william st|ottawa": [
+  45.427705,
+  -75.692143
  ],
  "41 arlington ave|ottawa": [
   45.409757,
@@ -8871,6 +10458,10 @@
   -76.049871
  ],
  "412 tobiano priv|ottawa": null,
+ "4120 innes rd|ottawa": [
+  45.455888,
+  -75.502763
+ ],
  "4120 rideau valley dr|ottawa": [
   45.236773,
   -75.70294
@@ -8931,6 +10522,18 @@
   45.363943,
   -75.93338
  ],
+ "417 ashbee crt|ottawa": [
+  45.215813,
+  -75.708076
+ ],
+ "4170 spratt rd|ottawa": [
+  45.285001,
+  -75.682772
+ ],
+ "418 hartleigh ave|ottawa": [
+  45.370545,
+  -75.779609
+ ],
  "418 iceline priv|ottawa": null,
  "4186 william mcewen dr|ottawa": [
   45.216722,
@@ -8947,6 +10550,10 @@
  "419 segun raji st|ottawa": [
   45.322674,
   -75.613849
+ ],
+ "42 amberly pl|ottawa": [
+  45.447605,
+  -75.614161
  ],
  "42 birchview rd|ottawa": [
   45.344946,
@@ -8967,6 +10574,10 @@
  "420 ashbee crt|ottawa": [
   45.216222,
   -75.707761
+ ],
+ "420 barrett farm dr|ottawa": [
+  45.326223,
+  -75.603927
  ],
  "420 bivouac mews|ottawa": null,
  "420 hazeldean rd|ottawa": [
@@ -8997,6 +10608,7 @@
   45.37039,
   -75.779527
  ],
+ "422 lillian freiman priv|ottawa": null,
  "4220 innes rd|ottawa": [
   45.455665,
   -75.497415
@@ -9041,6 +10653,10 @@
   45.417366,
   -75.702517
  ],
+ "427 laurier ave w|ottawa": [
+  45.417366,
+  -75.702517
+ ],
  "427 lochaber ave|ottawa": [
   45.393715,
   -75.759684
@@ -9052,6 +10668,18 @@
  "4270 louis-forget rd|ottawa": [
   45.117347,
   -75.545478
+ ],
+ "4275 innes rd|ottawa": [
+  45.458694,
+  -75.496329
+ ],
+ "428 george st w|ottawa": [
+  45.401508,
+  -75.711195
+ ],
+ "428 ginger cres|ottawa": [
+  45.24021,
+  -75.481715
  ],
  "4280 innes rd|ottawa": [
   45.472808,
@@ -9093,6 +10721,10 @@
  "4320 b louis-forget rd|ottawa": [
   45.114797,
   -75.54353
+ ],
+ "433 shuttleworth dr|ottawa": [
+  45.324043,
+  -75.587317
  ],
  "435 albert st|ottawa": [
   45.417395,
@@ -9147,6 +10779,10 @@
   45.357953,
   -75.743142
  ],
+ "44 ed findlay st|ottawa": [
+  45.265623,
+  -75.681595
+ ],
  "44 farnham cres|ottawa": [
   45.452854,
   -75.660725
@@ -9175,6 +10811,10 @@
  "4405 innes rd|ottawa": [
   45.46073,
   -75.489624
+ ],
+ "4408 tranquility lane|ottawa": [
+  45.492396,
+  -76.100015
  ],
  "441 mayfair ave south|ottawa": [
   45.395094,
@@ -9208,6 +10848,10 @@
   45.257977,
   -75.760903
  ],
+ "447 march rd|ottawa": [
+  45.340078,
+  -75.918012
+ ],
  "447 roger rd|ottawa": [
   45.397805,
   -75.650243
@@ -9235,6 +10879,10 @@
  "45 buckbean ave|ottawa": [
   45.36559,
   -75.951429
+ ],
+ "45 david dr|ottawa": [
+  45.349495,
+  -75.742188
  ],
  "45 eugenia walk|ottawa": [
   45.321698,
@@ -9318,6 +10966,10 @@
   45.17766,
   -75.837173
  ],
+ "456 dowsley dr|ottawa": [
+  45.277203,
+  -75.874499
+ ],
  "456 mcarthur ave|ottawa": [
   45.432232,
   -75.643577
@@ -9334,13 +10986,33 @@
   45.177581,
   -75.837066
  ],
+ "458 brigatine ave|ottawa": [
+  45.288097,
+  -75.914766
+ ],
+ "458 dowsley dr|ottawa": [
+  45.277226,
+  -75.874609
+ ],
  "459 meynell rd|ottawa": [
   45.177516,
   -75.837
  ],
+ "46 centrepark dr|ottawa": [
+  45.43437,
+  -75.571005
+ ],
+ "46 elgin st|ottawa": [
+  45.423144,
+  -75.695404
+ ],
  "46 pumice pl|ottawa": [
   45.240876,
   -75.747201
+ ],
+ "460 brigatine ave|ottawa": [
+  45.288157,
+  -75.914654
  ],
  "461 cinnamon cres|ottawa": [
   45.3359,
@@ -9366,6 +11038,10 @@
   45.411173,
   -75.693356
  ],
+ "464 brigatine ave|ottawa": [
+  45.28826,
+  -75.914503
+ ],
  "464 churchill ave north|ottawa": [
   45.379367,
   -75.746415
@@ -9377,6 +11053,10 @@
  "465 meynell rd|ottawa": [
   45.177334,
   -75.836757
+ ],
+ "466 brigatine ave|ottawa": [
+  45.288319,
+  -75.914405
  ],
  "466 nelson st|ottawa": [
   45.421864,
@@ -9394,6 +11074,10 @@
   45.368111,
   -75.780161
  ],
+ "467 brigatine ave|ottawa": [
+  45.287975,
+  -75.914143
+ ],
  "467 les emmerson dr|ottawa": [
   45.257675,
   -75.761677
@@ -9402,9 +11086,21 @@
   45.177263,
   -75.836674
  ],
+ "467 shuttleworth dr|ottawa": [
+  45.325,
+  -75.58809
+ ],
+ "468 brigatine ave|ottawa": [
+  45.288374,
+  -75.914314
+ ],
  "469 meynell rd|ottawa": [
   45.177207,
   -75.836596
+ ],
+ "469 wilbrod st|ottawa": [
+  45.429963,
+  -75.675423
  ],
  "4695 stonecrest rd|ottawa": [
   45.475169,
@@ -9434,6 +11130,10 @@
   45.41941,
   -75.947684
  ],
+ "470 brigatine ave|ottawa": [
+  45.288422,
+  -75.914214
+ ],
  "470 bronson ave|ottawa": [
   45.407389,
   -75.703911
@@ -9447,6 +11147,10 @@
   -76.173934
  ],
  "4706 beckwith boundary rd|ottawa": null,
+ "471 dowsley dr|ottawa": [
+  45.277297,
+  -75.875591
+ ],
  "471 hazeldean rd|ottawa": [
   45.298745,
   -75.889233
@@ -9459,9 +11163,21 @@
   45.31248,
   -75.934087
  ],
+ "472 brigatine ave|ottawa": [
+  45.288483,
+  -75.914113
+ ],
  "472 meynell rd|ottawa": [
   45.177282,
   -75.836132
+ ],
+ "472 mutual st|ottawa": [
+  45.433055,
+  -75.646849
+ ],
+ "473 barrett farm dr|ottawa": [
+  45.327471,
+  -75.600691
  ],
  "473 bronson ave|ottawa": [
   45.407664,
@@ -9471,6 +11187,14 @@
   45.177092,
   -75.836412
  ],
+ "4731 stonecrest rd|ottawa": [
+  45.476694,
+  -76.162198
+ ],
+ "474 brigatine ave|ottawa": [
+  45.288547,
+  -75.914008
+ ],
  "474 elgin st|ottawa": [
   45.412328,
   -75.686235
@@ -9479,9 +11203,21 @@
   45.177232,
   -75.836006
  ],
+ "475 brigatine ave|ottawa": [
+  45.288151,
+  -75.913843
+ ],
+ "475 hazeldean rd|ottawa": [
+  45.298016,
+  -75.889454
+ ],
  "475 meynell rd|ottawa": [
   45.17703,
   -75.836294
+ ],
+ "475 richmond rd|ottawa": [
+  45.361689,
+  -75.791539
  ],
  "475 shuttleworth dr|ottawa": [
   45.325215,
@@ -9490,6 +11226,10 @@
  "4755 bank st|ottawa": [
   45.3226,
   -75.594541
+ ],
+ "476 brigatine ave|ottawa": [
+  45.28861,
+  -75.913919
  ],
  "476 meynell rd|ottawa": [
   45.177192,
@@ -9503,6 +11243,10 @@
   45.176965,
   -75.836185
  ],
+ "478 brigatine ave|ottawa": [
+  45.288668,
+  -75.913834
+ ],
  "478 meynell rd|ottawa": [
   45.17714,
   -75.835814
@@ -9510,6 +11254,14 @@
  "4788 albion rd|ottawa": [
   45.291109,
   -75.607479
+ ],
+ "479 dowsley dr|ottawa": [
+  45.277628,
+  -75.875267
+ ],
+ "479 wentworth ave|ottawa": [
+  45.368097,
+  -75.779024
  ],
  "4795 loggers way|ottawa": [
   45.432777,
@@ -9527,6 +11279,10 @@
   45.404842,
   -75.677551
  ],
+ "480 brigatine ave|ottawa": [
+  45.288717,
+  -75.913738
+ ],
  "480 cloverdale rd|ottawa": [
   45.452607,
   -75.673814
@@ -9539,9 +11295,21 @@
   45.177107,
   -75.835679
  ],
+ "481 dowsley dr|ottawa": [
+  45.277734,
+  -75.875168
+ ],
  "481 jackdaw ave|ottawa": [
   45.244966,
   -75.746121
+ ],
+ "481 wentworth ave|ottawa": [
+  45.36839,
+  -75.7789
+ ],
+ "482 brigatine ave|ottawa": [
+  45.288775,
+  -75.913656
  ],
  "482 kensington ave|ottawa": [
   45.39219,
@@ -9555,6 +11323,14 @@
   45.311684,
   -75.588862
  ],
+ "483 brigatine ave|ottawa": [
+  45.288324,
+  -75.913556
+ ],
+ "483 dowsley dr|ottawa": [
+  45.277843,
+  -75.875074
+ ],
  "4837 albion rd|ottawa": [
   45.294606,
   -75.605635
@@ -9562,6 +11338,10 @@
  "484 a roosevelt ave #2|ottawa": [
   45.391863,
   -75.757767
+ ],
+ "484 brigatine ave|ottawa": [
+  45.288827,
+  -75.913568
  ],
  "484 hazeldean rd|ottawa": [
   45.296318,
@@ -9579,13 +11359,33 @@
   45.391863,
   -75.757767
  ],
+ "486 brigatine ave|ottawa": [
+  45.288889,
+  -75.913487
+ ],
  "486 wentworth ave|ottawa": [
   45.368067,
   -75.77929
  ],
+ "487 lewis st|ottawa": [
+  45.414009,
+  -75.694592
+ ],
+ "488 brigatine ave|ottawa": [
+  45.288938,
+  -75.913397
+ ],
+ "488 dowsley dr|ottawa": [
+  45.277939,
+  -75.874273
+ ],
  "488 shoreway dr|ottawa": [
   45.25051,
   -75.553039
+ ],
+ "489 dowsley dr|ottawa": [
+  45.2781,
+  -75.874807
  ],
  "489 jackdaw ave|ottawa": [
   45.245086,
@@ -9614,6 +11414,14 @@
  "49 william st|ottawa": [
   45.427703,
   -75.692033
+ ],
+ "491 brigatine ave|ottawa": [
+  45.288497,
+  -75.913286
+ ],
+ "493 highcroft ave|ottawa": [
+  45.389291,
+  -75.750572
  ],
  "495 march rd|ottawa": [
   45.342813,
@@ -9676,6 +11484,14 @@
   45.445563,
   -75.679336
  ],
+ "50 marketplace ave|ottawa": [
+  45.269876,
+  -75.743705
+ ],
+ "50 narrows pl|ottawa": [
+  45.215589,
+  -75.684391
+ ],
  "50 o'connor st|ottawa": [
   45.420958,
   -75.698783
@@ -9704,6 +11520,10 @@
  "500 lacolle way|ottawa": [
   45.491085,
   -75.480885
+ ],
+ "500 laurier ave w|ottawa": [
+  45.41577,
+  -75.705201
  ],
  "500 palladium dr|ottawa": [
   45.299543,
@@ -9769,6 +11589,10 @@
   45.433803,
   -75.646953
  ],
+ "502 ominik cres|ottawa": [
+  45.331925,
+  -75.929074
+ ],
  "502 turtle island cres|ottawa": [
   45.445907,
   -75.466716
@@ -9785,6 +11609,10 @@
  "504 turtle island cres|ottawa": [
   45.445863,
   -75.46685
+ ],
+ "504 windermere ave|ottawa": [
+  45.384377,
+  -75.765551
  ],
  "5043 abbott st east|ottawa": [
   45.275903,
@@ -9849,6 +11677,10 @@
   45.445429,
   -75.466848
  ],
+ "51 narrows pl|ottawa": [
+  45.215415,
+  -75.684857
+ ],
  "51 tercet terr|ottawa": [
   45.256176,
   -75.904271
@@ -9869,6 +11701,14 @@
  "511 b parade dr|ottawa": [
   45.245814,
   -75.905794
+ ],
+ "511 brigatine ave|ottawa": [
+  45.288122,
+  -75.913411
+ ],
+ "511 elation hts|ottawa": [
+  45.25857,
+  -75.753673
  ],
  "511 galanthus walk|ottawa": [
   45.366585,
@@ -9896,6 +11736,10 @@
   45.445673,
   -75.467453
  ],
+ "513 elation hts|ottawa": [
+  45.258647,
+  -75.753492
+ ],
  "513 reflection st|ottawa": [
   45.44343,
   -75.518063
@@ -9907,6 +11751,10 @@
  "5136 piperville rd|ottawa": [
   45.349902,
   -75.505201
+ ],
+ "5137 piperville rd|ottawa": [
+  45.350364,
+  -75.504986
  ],
  "514 b alcor terr|ottawa": [
   45.249427,
@@ -9980,6 +11828,10 @@
   45.445543,
   -75.467921
  ],
+ "519 elation hts|ottawa": [
+  45.258856,
+  -75.752997
+ ],
  "519 reflection st|ottawa": [
   45.443528,
   -75.51774
@@ -10000,6 +11852,10 @@
   45.289121,
   -75.745686
  ],
+ "52 narrows pl|ottawa": [
+  45.215486,
+  -75.684307
+ ],
  "520 jewelweed dr|ottawa": [
   45.292902,
   -75.991604
@@ -10009,6 +11865,10 @@
   -75.454512
  ],
  "520 pantomime ave|ottawa": null,
+ "520 tahoe hts|ottawa": [
+  45.325392,
+  -75.583666
+ ],
  "520 turtle island cres|ottawa": [
   45.445495,
   -75.468087
@@ -10048,9 +11908,17 @@
   45.25185,
   -75.896541
  ],
+ "523 brigatine ave|ottawa": [
+  45.287869,
+  -75.913817
+ ],
  "523 turtle island cres|ottawa": [
   45.445163,
   -75.467721
+ ],
+ "524 montjay, ch de|ottawa": [
+  45.465815,
+  -75.454549
  ],
  "524 promontory pl|ottawa": [
   45.239536,
@@ -10059,6 +11927,10 @@
  "524 reflection st|ottawa": [
   45.443261,
   -75.517222
+ ],
+ "524 tenor ridge|ottawa": [
+  45.255342,
+  -75.690167
  ],
  "524 turtle island cres|ottawa": [
   45.445398,
@@ -10105,6 +11977,10 @@
   45.443298,
   -75.517096
  ],
+ "526 tenor ridge|ottawa": [
+  45.255393,
+  -75.690059
+ ],
  "526 turtle island cres|ottawa": [
   45.44535,
   -75.468538
@@ -10116,6 +11992,14 @@
  "528 concerto lane|ottawa": [
   45.256598,
   -75.746864
+ ],
+ "528 montjay, ch de|ottawa": [
+  45.465897,
+  -75.454595
+ ],
+ "528 ominik cres|ottawa": [
+  45.331626,
+  -75.927302
  ],
  "528 reflection st|ottawa": [
   45.443336,
@@ -10137,9 +12021,17 @@
   45.404127,
   -75.730021
  ],
+ "53 mcleod st|ottawa": [
+  45.415023,
+  -75.684394
+ ],
  "53 narrows pl|ottawa": [
   45.215305,
   -75.684792
+ ],
+ "53 sweetland ave|ottawa": [
+  45.425426,
+  -75.678872
  ],
  "53 willow st|ottawa": [
   45.407268,
@@ -10148,6 +12040,10 @@
  "530 ingenuity row|ottawa": [
   45.363805,
   -75.932432
+ ],
+ "530 laurier ave w|ottawa": [
+  45.415253,
+  -75.705652
  ],
  "530 ominik cres|ottawa": [
   45.331679,
@@ -10158,6 +12054,10 @@
   -75.588568
  ],
  "531 adventure priv|ottawa": null,
+ "531 brigatine ave|ottawa": [
+  45.287688,
+  -75.914113
+ ],
  "531 tenor ridge|ottawa": [
   45.256187,
   -75.689349
@@ -10170,13 +12070,25 @@
   45.465981,
   -75.454646
  ],
+ "532 ominik cres|ottawa": [
+  45.331724,
+  -75.926921
+ ],
  "5328 kilby lane|ottawa": [
   45.210271,
   -75.655906
  ],
+ "533 cobra cres|ottawa": [
+  45.285929,
+  -75.900934
+ ],
  "5335 bank st|ottawa": [
   45.286976,
   -75.573775
+ ],
+ "534 ominik cres|ottawa": [
+  45.331786,
+  -75.92675
  ],
  "5340 frank kenny rd|ottawa": [
   45.364075,
@@ -10211,6 +12123,18 @@
   45.363948,
   -75.932231
  ],
+ "536 montjay, ch de|ottawa": [
+  45.466062,
+  -75.454691
+ ],
+ "536 ominik cres|ottawa": [
+  45.331897,
+  -75.926572
+ ],
+ "537 montjay, ch de|ottawa": [
+  45.466092,
+  -75.455377
+ ],
  "537 roundhouse cres|ottawa": [
   45.261668,
   -75.891192
@@ -10220,8 +12144,16 @@
   -75.581798
  ],
  "538 celestine priv|ottawa": null,
+ "538 maclaren st|ottawa": [
+  45.412653,
+  -75.700279
+ ],
  "538 stargrass priv|ottawa": null,
  "539 celestine priv|ottawa": null,
+ "539 hitzlay terr|ottawa": [
+  45.322167,
+  -75.946558
+ ],
  "5391 madawaska blvd|ottawa": [
   45.42515,
   -76.321772
@@ -10242,6 +12174,14 @@
   45.426267,
   -75.663586
  ],
+ "54 ed findlay st|ottawa": [
+  45.265312,
+  -75.681362
+ ],
+ "54 narrows pl|ottawa": [
+  45.215379,
+  -75.684226
+ ],
  "540 lisgar st|ottawa": [
   45.413803,
   -75.704029
@@ -10249,6 +12189,10 @@
  "540 montjay rd|ottawa": [
   45.466136,
   -75.45473
+ ],
+ "540 tahoe hts|ottawa": [
+  45.326368,
+  -75.584443
  ],
  "540 woodcliffe priv|ottawa": null,
  "5400 old richmond rd|ottawa": [
@@ -10258,6 +12202,10 @@
  "541 b chapman mills dr|ottawa": [
   45.271933,
   -75.726334
+ ],
+ "542 tahoe hts|ottawa": [
+  45.326407,
+  -75.584623
  ],
  "542 villanelle rd|ottawa": [
   45.254605,
@@ -10323,6 +12271,10 @@
   45.254401,
   -75.903083
  ],
+ "5487 hazeldean rd|ottawa": [
+  45.290207,
+  -75.904417
+ ],
  "549 melbourne ave|ottawa": [
   45.385218,
   -75.751836
@@ -10355,6 +12307,10 @@
   45.406467,
   -75.722475
  ],
+ "55 laurier ave e|ottawa": [
+  45.423896,
+  -75.687202
+ ],
  "55 lodge rd|ottawa": [
   45.265566,
   -75.707103
@@ -10367,9 +12323,17 @@
   45.429558,
   -75.694564
  ],
+ "55 narrows pl|ottawa": [
+  45.215196,
+  -75.684717
+ ],
  "55 norway spruce st|ottawa": [
   45.250351,
   -75.913722
+ ],
+ "55 old sunset blvd|ottawa": [
+  45.396501,
+  -75.699711
  ],
  "55 tercet terr|ottawa": [
   45.256056,
@@ -10378,6 +12342,10 @@
  "550 cumberland st|ottawa": [
   45.424515,
   -75.686495
+ ],
+ "550 ominik cres|ottawa": [
+  45.332848,
+  -75.926668
  ],
  "550 terminal ave|ottawa": [
   45.413908,
@@ -10423,6 +12391,10 @@
   45.332923,
   -75.926761
  ],
+ "554 ominik cres|ottawa": [
+  45.333076,
+  -75.926748
+ ],
  "554 promontory pl|ottawa": [
   45.239696,
   -75.748734
@@ -10442,6 +12414,14 @@
  "555 brittany dr #101|ottawa": [
   45.443674,
   -75.641823
+ ],
+ "555 churchill ave n|ottawa": [
+  45.387026,
+  -75.750412
+ ],
+ "555 cobra cres|ottawa": [
+  45.286467,
+  -75.900169
  ],
  "555 famille-côté ave|ottawa": [
   45.482159,
@@ -10467,9 +12447,17 @@
   45.383691,
   -75.760768
  ],
+ "556 mansfield ave|ottawa": [
+  45.383229,
+  -75.762625
+ ],
  "556 tweedsmuir ave|ottawa": [
   45.38451,
   -75.744629
+ ],
+ "5561 william mcewen dr|ottawa": [
+  45.202877,
+  -75.736645
  ],
  "557 celestine priv|ottawa": null,
  "557 turtle island cres|ottawa": [
@@ -10480,6 +12468,10 @@
   45.223892,
   -75.680488
  ],
+ "558 paakanaak ave|ottawa": [
+  45.3045,
+  -75.597852
+ ],
  "559 cardamom terr|ottawa": [
   45.26489,
   -75.892326
@@ -10487,6 +12479,14 @@
  "5597 hazeldean rd|ottawa": [
   45.287314,
   -75.906683
+ ],
+ "56 capilano dr|ottawa": [
+  45.355928,
+  -75.734231
+ ],
+ "56 narrows pl|ottawa": [
+  45.215267,
+  -75.684146
  ],
  "56 nepean st|ottawa": [
   45.419,
@@ -10508,6 +12508,10 @@
   45.422999,
   -75.69594
  ],
+ "560 paakanaak ave|ottawa": [
+  45.304462,
+  -75.597948
+ ],
  "560 rideau st|ottawa": [
   45.432195,
   -75.676961
@@ -10515,6 +12519,14 @@
  "560 rochester st|ottawa": [
   45.398649,
   -75.706113
+ ],
+ "560 villanelle rd|ottawa": [
+  45.254001,
+  -75.903737
+ ],
+ "561 cobra cres|ottawa": [
+  45.286539,
+  -75.899847
  ],
  "561 turtle island cres|ottawa": [
   45.445179,
@@ -10531,6 +12543,10 @@
  "5620 rockdale rd|ottawa": [
   45.35927,
   -75.357654
+ ],
+ "563 fraser ave|ottawa": [
+  45.383313,
+  -75.761052
  ],
  "563 turtle island cres|ottawa": [
   45.445215,
@@ -10576,6 +12592,14 @@
  "567 turtle island cres|ottawa": [
   45.445304,
   -75.466348
+ ],
+ "5671 hazeldean rd|ottawa": [
+  45.285559,
+  -75.909523
+ ],
+ "5673 fourth line rd|ottawa": [
+  45.178806,
+  -75.774312
  ],
  "5677 osgoode main st|ottawa": [
   45.148832,
@@ -10642,6 +12666,10 @@
   45.255157,
   -75.905826
  ],
+ "573 paakanaak ave|ottawa": [
+  45.304456,
+  -75.59674
+ ],
  "5734 william mcewen dr 5734 b william mcewen dr|ottawa": null,
  "5735 knights dr|ottawa": [
   45.227027,
@@ -10651,6 +12679,10 @@
   45.458737,
   -76.283365
  ],
+ "5735 vars st|ottawa": [
+  45.357094,
+  -75.347644
+ ],
  "574 broadview ave|ottawa": [
   45.383393,
   -75.759396
@@ -10658,6 +12690,10 @@
  "5745 queenscourt cres|ottawa": [
   45.229801,
   -75.6371
+ ],
+ "575 paakanaak ave|ottawa": [
+  45.304423,
+  -75.596843
  ],
  "5754 hazeldean rd|ottawa": [
   45.281405,
@@ -10670,6 +12706,10 @@
  "577 paakanaak ave|ottawa": [
   45.304372,
   -75.596949
+ ],
+ "577 shoreway dr|ottawa": [
+  45.247961,
+  -75.556378
  ],
  "578 brownrigg way|ottawa": [
   45.253298,
@@ -10692,6 +12732,10 @@
   45.465438,
   -75.459296
  ],
+ "579 paakanaak ave|ottawa": [
+  45.304328,
+  -75.59705
+ ],
  "58 a lees ave|ottawa": [
   45.415873,
   -75.67053
@@ -10699,6 +12743,14 @@
  "58 capilano dr|ottawa": [
   45.356373,
   -75.734497
+ ],
+ "58 higwood dr|ottawa": [
+  45.361655,
+  -75.727129
+ ],
+ "58 narrows pl|ottawa": [
+  45.215153,
+  -75.684063
  ],
  "58 rossland ave|ottawa": [
   45.350336,
@@ -10740,6 +12792,10 @@
   45.465438,
   -75.459296
  ],
+ "581 paakanaak ave|ottawa": [
+  45.304288,
+  -75.597167
+ ],
  "582 catleaf row|ottawa": [
   45.440724,
   -75.477532
@@ -10752,6 +12808,14 @@
   45.262257,
   -75.890546
  ],
+ "584 arbia ridge|ottawa": [
+  45.270258,
+  -75.858866
+ ],
+ "584 mansfield ave|ottawa": [
+  45.382318,
+  -75.762119
+ ],
  "5845 lancer ave|ottawa": [
   45.245688,
   -75.634912
@@ -10763,6 +12827,10 @@
  ],
  "586 escala priv|ottawa": null,
  "5870 abbott st east|ottawa": [
+  45.263582,
+  -75.910213
+ ],
+ "5870 abbott st e|ottawa": [
   45.263582,
   -75.910213
  ],
@@ -10795,6 +12863,10 @@
   45.26248,
   -75.890779
  ],
+ "5910 first line rd|ottawa": [
+  45.194987,
+  -75.690819
+ ],
  "5915 perth st|ottawa": [
   45.202148,
   -75.828755
@@ -10823,6 +12895,10 @@
   45.185573,
   -75.706074
  ],
+ "5945 mccordick rd|ottawa": [
+  45.155801,
+  -75.777166
+ ],
  "595 arbia ridge|ottawa": [
   45.270493,
   -75.859537
@@ -10830,6 +12906,10 @@
  "595 industrial ave|ottawa": [
   45.41134,
   -75.641939
+ ],
+ "596 montreal, ch de|ottawa": [
+  45.441098,
+  -75.643253
  ],
  "596 montréal rd|ottawa": [
   45.441098,
@@ -10928,6 +13008,14 @@
   -75.688348
  ],
  "60 finch priv|ottawa": null,
+ "60 marchvale dr|ottawa": [
+  45.356162,
+  -75.984497
+ ],
+ "60 narrows pl|ottawa": [
+  45.215047,
+  -75.683965
+ ],
  "60 oblats ave|ottawa": [
   45.409993,
   -75.675011
@@ -10952,6 +13040,10 @@
  "600 march rd|ottawa": [
   45.348502,
   -75.922128
+ ],
+ "600 paakanaak ave|ottawa": [
+  45.304115,
+  -75.601168
  ],
  "600 pecan priv 602 pecan priv 604 pecan priv 606 pecan priv 608 pecan priv 610 pecan priv 612 pecan priv 614 pecan priv 616 pecan priv 618 pecan priv 620 pecan priv 622 pecan priv|ottawa": null,
  "600 zulu priv|ottawa": null,
@@ -11016,6 +13108,10 @@
   45.285071,
   -75.74539
  ],
+ "605 paakanaak ave|ottawa": [
+  45.303938,
+  -75.599085
+ ],
  "6051 b herberts corners rd|ottawa": [
   45.205693,
   -75.592765
@@ -11037,6 +13133,10 @@
   45.444634,
   -75.466242
  ],
+ "607 paakanaak ave|ottawa": [
+  45.303969,
+  -75.599273
+ ],
  "6071 james bell dr|ottawa": [
   45.201392,
   -75.6427
@@ -11052,6 +13152,10 @@
  "6084 david wiens st|ottawa": [
   45.264806,
   -75.890623
+ ],
+ "6086 voyageur dr|ottawa": [
+  45.475223,
+  -75.557883
  ],
  "609 bee pollen way|ottawa": [
   45.366224,
@@ -11110,9 +13214,21 @@
   45.266373,
   -75.680102
  ],
+ "611 paakanaak ave|ottawa": [
+  45.304014,
+  -75.599473
+ ],
  "612 akamina cir|ottawa": [
   45.331122,
   -75.93083
+ ],
+ "612 bronze copper cres|ottawa": [
+  45.178066,
+  -75.836535
+ ],
+ "6120 fourth line rd|ottawa": [
+  45.153779,
+  -75.750126
  ],
  "613 akamina cir|ottawa": [
   45.331342,
@@ -11130,6 +13246,10 @@
   45.451421,
   -75.636245
  ],
+ "613 paakanaak ave|ottawa": [
+  45.304044,
+  -75.599598
+ ],
  "614 akamina cir|ottawa": [
   45.331166,
   -75.93069
@@ -11141,6 +13261,10 @@
  "614 eastvale dr|ottawa": [
   45.460373,
   -75.598108
+ ],
+ "614 inver lane|ottawa": [
+  45.232184,
+  -75.738525
  ],
  "614 stardust priv|ottawa": null,
  "6147 fernbank rd|ottawa": [
@@ -11160,9 +13284,17 @@
   45.444206,
   -75.466011
  ],
+ "615 paakanaak ave|ottawa": [
+  45.304053,
+  -75.599752
+ ],
  "6150 hazeldean rd|ottawa": [
   45.270546,
   -75.933389
+ ],
+ "616 inver lane|ottawa": [
+  45.232091,
+  -75.738441
  ],
  "616 kirkwood ave|ottawa": [
   45.387023,
@@ -11189,6 +13321,14 @@
   -75.843042
  ],
  "618 iceline priv|ottawa": null,
+ "618 inver lane|ottawa": [
+  45.232007,
+  -75.738379
+ ],
+ "619 alopex row|ottawa": [
+  45.19053,
+  -75.851555
+ ],
  "619 hatch cove lane|ottawa": [
   45.444005,
   -75.465915
@@ -11197,9 +13337,21 @@
   45.266171,
   -75.679931
  ],
+ "619 miikana rd|ottawa": [
+  45.304535,
+  -75.600795
+ ],
  "6199 dwyer hill rd|ottawa": [
   45.063544,
   -75.896697
+ ],
+ "62 narrows pl|ottawa": [
+  45.214946,
+  -75.683896
+ ],
+ "620 alopex row|ottawa": [
+  45.190213,
+  -75.851796
  ],
  "620 bridgeport ave|ottawa": [
   45.214592,
@@ -11208,6 +13360,10 @@
  "620 honeydew st|ottawa": [
   45.266141,
   -75.680221
+ ],
+ "620 inver lane|ottawa": [
+  45.231922,
+  -75.738306
  ],
  "620 moonglade cres|ottawa": [
   45.256182,
@@ -11221,9 +13377,25 @@
   45.458013,
   -75.608757
  ],
+ "621 esteem way|ottawa": [
+  45.454382,
+  -75.487827
+ ],
+ "621 miikana rd|ottawa": [
+  45.304657,
+  -75.600842
+ ],
+ "622 bronze copper cres|ottawa": [
+  45.178254,
+  -75.836136
+ ],
  "622 cityscape st|ottawa": [
   45.445299,
   -75.462767
+ ],
+ "622 inver lane|ottawa": [
+  45.231823,
+  -75.738231
  ],
  "622 westminster ave|ottawa": [
   45.380868,
@@ -11237,10 +13409,15 @@
   45.365883,
   -75.942293
  ],
+ "623 bridgeport ave|ottawa": [
+  45.216048,
+  -75.679329
+ ],
  "623 kochar dr|ottawa": [
   45.358739,
   -75.695761
  ],
+ "623 luminosity priv|ottawa": null,
  "623 miikana rd|ottawa": [
   45.304778,
   -75.600897
@@ -11257,9 +13434,21 @@
   45.401288,
   -75.640947
  ],
+ "6235 nick adams rd|ottawa": [
+  45.22418,
+  -75.599343
+ ],
+ "624 bridgeport ave|ottawa": [
+  45.214404,
+  -75.6841
+ ],
  "624 clarke ave|ottawa": [
   45.438801,
   -75.639852
+ ],
+ "624 inver lane|ottawa": [
+  45.231726,
+  -75.738134
  ],
  "624 sonmarg cres|ottawa": [
   45.2441,
@@ -11286,6 +13475,10 @@
   45.214278,
   -75.684484
  ],
+ "626 inver lane|ottawa": [
+  45.231625,
+  -75.738061
+ ],
  "627 bouvardia cres|ottawa": [
   45.328062,
   -75.60468
@@ -11302,6 +13495,14 @@
   45.459407,
   -75.529264
  ],
+ "628 alopex row|ottawa": [
+  45.18999,
+  -75.851525
+ ],
+ "628 inver lane|ottawa": [
+  45.23153,
+  -75.737993
+ ],
  "628 moonglade cres|ottawa": [
   45.255966,
   -75.746384
@@ -11309,6 +13510,10 @@
  "6280 renaud rd|ottawa": [
   45.432126,
   -75.50918
+ ],
+ "6285 proven line rd|ottawa": [
+  45.120821,
+  -75.792315
  ],
  "629 bouvardia cres|ottawa": [
   45.328183,
@@ -11350,6 +13555,10 @@
   45.443603,
   -75.465943
  ],
+ "630 inver lane|ottawa": [
+  45.231446,
+  -75.737921
+ ],
  "630 montréal rd|ottawa": [
   45.442661,
   -75.641298
@@ -11362,9 +13571,17 @@
   45.283154,
   -75.911821
  ],
+ "631 ribbon st|ottawa": [
+  45.215692,
+  -75.684491
+ ],
  "631 rowanwood ave|ottawa": [
   45.379443,
   -75.766502
+ ],
+ "631 silhouette, prive de la|ottawa": [
+  45.277533,
+  -75.780555
  ],
  "6315 hazeldean rd|ottawa": [
   45.266237,
@@ -11373,6 +13590,10 @@
  "632 bridgeport ave|ottawa": [
   45.214044,
   -75.685295
+ ],
+ "632 bronze copper cres|ottawa": [
+  45.178472,
+  -75.835779
  ],
  "632 hatch cove lane|ottawa": [
   45.443641,
@@ -11510,6 +13731,10 @@
   45.17766,
   -75.839122
  ],
+ "638 ribbon st|ottawa": [
+  45.21574,
+  -75.685419
+ ],
  "6395 second line rd south|ottawa": [
   45.162194,
   -75.678688
@@ -11526,6 +13751,10 @@
   45.336173,
   -75.716757
  ],
+ "64 narrows pl|ottawa": [
+  45.214855,
+  -75.68382
+ ],
  "64 rappel cir|ottawa": [
   45.440393,
   -75.496729
@@ -11533,6 +13762,18 @@
  "640 paakanaak ave|ottawa": [
   45.303963,
   -75.601546
+ ],
+ "640 ribbon st|ottawa": [
+  45.216043,
+  -75.684019
+ ],
+ "641 akamina cir|ottawa": [
+  45.331039,
+  -75.929242
+ ],
+ "641 bronze copper cres|ottawa": [
+  45.178772,
+  -75.834883
  ],
  "641 hosta dr|ottawa": [
   45.262116,
@@ -11546,6 +13787,22 @@
   45.475852,
   -75.533154
  ],
+ "642 bronze copper cres|ottawa": [
+  45.178697,
+  -75.835417
+ ],
+ "643 bronze copper cres|ottawa": [
+  45.178688,
+  -75.834781
+ ],
+ "643 hosta dr|ottawa": [
+  45.262065,
+  -75.686264
+ ],
+ "643 paakanaak ave|ottawa": [
+  45.303511,
+  -75.601469
+ ],
  "6433 prince of wales dr|ottawa": [
   45.145897,
   -75.712507
@@ -11558,11 +13815,27 @@
   45.36372,
   -75.933859
  ],
+ "645 akamina cir|ottawa": [
+  45.330752,
+  -75.929236
+ ],
+ "645 bronze copper cres|ottawa": [
+  45.178588,
+  -75.834692
+ ],
  "6453 b mitch owens rd|ottawa": [
   45.257966,
   -75.620249
  ],
  "646 stargrass priv|ottawa": null,
+ "647 bridgeport ave|ottawa": [
+  45.213255,
+  -75.686124
+ ],
+ "647 bronze copper cres|ottawa": [
+  45.178428,
+  -75.834668
+ ],
  "647 paakanaak ave|ottawa": [
   45.303435,
   -75.601788
@@ -11579,11 +13852,19 @@
   45.213175,
   -75.686296
  ],
+ "649 bronze copper cres|ottawa": [
+  45.178238,
+  -75.83486
+ ],
  "649 upper dwyer hill rd|ottawa": [
   45.228961,
   -76.079487
  ],
  "6494 b bunker rd|ottawa": null,
+ "65 arco way|ottawa": [
+  45.32245,
+  -75.735001
+ ],
  "65 auriga dr|ottawa": [
   45.328508,
   -75.709099
@@ -11633,6 +13914,10 @@
   45.330586,
   -75.929765
  ],
+ "651 bronze copper cres|ottawa": [
+  45.1782,
+  -75.834995
+ ],
  "651 chapman mills dr|ottawa": [
   45.27077,
   -75.731796
@@ -11645,9 +13930,17 @@
   45.252196,
   -75.69501
  ],
+ "6519 old richmond rd|ottawa": [
+  45.227476,
+  -75.808683
+ ],
  "652 akamina cir|ottawa": [
   45.330773,
   -75.930057
+ ],
+ "652 bronze copper cres|ottawa": [
+  45.178365,
+  -75.835461
  ],
  "652 flagstaff dr|ottawa": [
   45.24775,
@@ -11665,6 +13958,18 @@
   45.243804,
   -75.565447
  ],
+ "653 bronze copper cres|ottawa": [
+  45.178143,
+  -75.835092
+ ],
+ "653 highland ave|ottawa": [
+  45.38176,
+  -75.75567
+ ],
+ "653 paakanaak ave|ottawa": [
+  45.303259,
+  -75.602089
+ ],
  "6535 renaud rd|ottawa": [
   45.437686,
   -75.498634
@@ -11681,9 +13986,21 @@
   45.363482,
   -75.933556
  ],
+ "654 paakanaak ave|ottawa": [
+  45.30354,
+  -75.602621
+ ],
+ "655 bronze copper cres|ottawa": [
+  45.178091,
+  -75.83522
+ ],
  "655 donat st|ottawa": [
   45.437363,
   -75.651271
+ ],
+ "655 kanata ave|ottawa": [
+  45.310378,
+  -75.910219
  ],
  "655 terry fox dr|ottawa": [
   45.296174,
@@ -11701,6 +14018,14 @@
   45.250873,
   -75.593159
  ],
+ "657 akamina cir|ottawa": [
+  45.330411,
+  -75.930211
+ ],
+ "657 bronze copper cres|ottawa": [
+  45.17803,
+  -75.835292
+ ],
  "657 paakanaak ave|ottawa": [
   45.303145,
   -75.602425
@@ -11708,6 +14033,10 @@
  "658 hosta dr|ottawa": [
   45.262047,
   -75.687415
+ ],
+ "6584 windsong ave|ottawa": [
+  45.458503,
+  -75.511702
  ],
  "6588 carrière st|ottawa": [
   45.464682,
@@ -11717,6 +14046,14 @@
  "659 bouvardia cres|ottawa": [
   45.328977,
   -75.602592
+ ],
+ "659 bronze copper cres|ottawa": [
+  45.177981,
+  -75.835384
+ ],
+ "659 donat st|ottawa": [
+  45.437244,
+  -75.651199
  ],
  "66 b park ave|ottawa": [
   45.413861,
@@ -11739,6 +14076,10 @@
   45.396494,
   -75.696237
  ],
+ "66 narrows pl|ottawa": [
+  45.214765,
+  -75.683752
+ ],
  "66 rumen way|ottawa": [
   45.253268,
   -75.689751
@@ -11750,6 +14091,10 @@
  "6600 carrière st|ottawa": [
   45.465805,
   -75.523397
+ ],
+ "661 bronze copper cres|ottawa": [
+  45.177928,
+  -75.835483
  ],
  "661 cope dr|ottawa": [
   45.268019,
@@ -11763,9 +14108,14 @@
   45.378979,
   -75.764088
  ],
+ "6610 -grnd fourth line rd|ottawa": null,
  "6617 stanmore st|ottawa": [
   45.246657,
   -75.586622
+ ],
+ "662 bronze copper cres|ottawa": [
+  45.178141,
+  -75.835823
  ],
  "662 flagstaff dr|ottawa": [
   45.249414,
@@ -11779,9 +14129,17 @@
   45.168583,
   -75.631522
  ],
+ "663 bronze copper cres|ottawa": [
+  45.177874,
+  -75.835567
+ ],
  "665 albert st|ottawa": [
   45.410289,
   -75.718935
+ ],
+ "665 bronze copper cres|ottawa": [
+  45.177819,
+  -75.835662
  ],
  "665 industrial ave|ottawa": [
   45.410925,
@@ -11790,6 +14148,10 @@
  "665 miikana rd|ottawa": [
   45.307436,
   -75.599951
+ ],
+ "667 bronze copper cres|ottawa": [
+  45.177759,
+  -75.835756
  ],
  "667 hosta dr|ottawa": [
   45.26146,
@@ -11803,9 +14165,17 @@
   45.214362,
   -75.909396
  ],
+ "6682 fernbank rd|ottawa": [
+  45.233913,
+  -75.933428
+ ],
  "6688 franktown rd|ottawa": [
   45.177085,
   -75.863059
+ ],
+ "669 bronze copper cres|ottawa": [
+  45.177704,
+  -75.83582
  ],
  "669 hosta dr|ottawa": [
   45.261389,
@@ -11831,11 +14201,23 @@
   45.395594,
   -75.722966
  ],
+ "67 narrows pl|ottawa": [
+  45.214589,
+  -75.684232
+ ],
  "670 b morin st|ottawa": [
   45.438652,
   -75.646683
  ],
  "6709 chris tierney priv|ottawa": null,
+ "671 bronze copper cres|ottawa": [
+  45.177636,
+  -75.835912
+ ],
+ "671 paakanaak ave|ottawa": [
+  45.303376,
+  -75.603562
+ ],
  "671 river rd|ottawa": [
   45.270205,
   -75.697288
@@ -11848,9 +14230,25 @@
   45.270649,
   -75.59995
  ],
+ "672 bronze copper cres|ottawa": [
+  45.177879,
+  -75.836151
+ ],
+ "672 hosta dr|ottawa": [
+  45.261717,
+  -75.688241
+ ],
  "673 a tweedsmuir ave|ottawa": [
   45.38451,
   -75.744629
+ ],
+ "673 bronze copper cres|ottawa": [
+  45.177565,
+  -75.836025
+ ],
+ "673 hosta dr|ottawa": [
+  45.261313,
+  -75.688103
  ],
  "673 miikana rd|ottawa": [
   45.307651,
@@ -11905,6 +14303,14 @@
   -75.648368
  ],
  "6770 b south village dr|ottawa": null,
+ "678 honeydew st|ottawa": [
+  45.26522,
+  -75.681809
+ ],
+ "679 hosta dr|ottawa": [
+  45.261167,
+  -75.688426
+ ],
  "68 anderson st|ottawa": [
   45.407479,
   -75.71219
@@ -11945,6 +14351,10 @@
   45.328014,
   -75.601926
  ],
+ "680 bronson ave|ottawa": [
+  45.402659,
+  -75.700883
+ ],
  "680 kenabeek terr|ottawa": [
   45.252272,
   -75.693607
@@ -11973,6 +14383,14 @@
   45.255679,
   -75.570816
  ],
+ "684 bronze copper cres|ottawa": [
+  45.177605,
+  -75.836568
+ ],
+ "684 honeydew st|ottawa": [
+  45.265115,
+  -75.682045
+ ],
  "684 kenabeek terr|ottawa": [
   45.252364,
   -75.693349
@@ -11980,6 +14398,10 @@
  "684 église st|ottawa": [
   45.434922,
   -75.648887
+ ],
+ "6840 still meadow way|ottawa": [
+  45.255915,
+  -75.570543
  ],
  "685 hosta dr|ottawa": [
   45.26099,
@@ -12013,17 +14435,33 @@
   45.214503,
   -75.684183
  ],
+ "69 poplar st|ottawa": [
+  45.407145,
+  -75.711986
+ ],
  "69 wheel barrow mews|ottawa": [
   45.292542,
   -75.909151
+ ],
+ "690 honeydew st|ottawa": [
+  45.265007,
+  -75.682278
  ],
  "691 somerset st west|ottawa": [
   45.411128,
   -75.706839
  ],
+ "694 crystal st|ottawa": [
+  45.443739,
+  -75.627087
+ ],
  "6964 south village dr|ottawa": [
   45.263476,
   -75.574082
+ ],
+ "697 carson's rd|ottawa": [
+  45.444993,
+  -75.63041
  ],
  "697 melbourne ave|ottawa": [
   45.385218,
@@ -12136,14 +14574,26 @@
   -75.941598
  ],
  "701 utopie priv|ottawa": null,
+ "702 piton, place du|ottawa": [
+  45.438661,
+  -75.500276
+ ],
  "7027 notre-dame st|ottawa": [
   45.470022,
   -75.523067
  ],
  "703 tobiano priv|ottawa": null,
+ "7035 bleeks rd|ottawa": [
+  45.176997,
+  -75.918818
+ ],
  "704 b levac dr|ottawa": [
   45.47767,
   -75.483623
+ ],
+ "704 carson's rd|ottawa": [
+  45.442361,
+  -75.631011
  ],
  "704 poetry cir|ottawa": [
   45.254855,
@@ -12152,6 +14602,10 @@
  "7055 gallagher rd|ottawa": [
   45.067932,
   -75.760513
+ ],
+ "706 newstead cres|ottawa": [
+  45.332689,
+  -75.92877
  ],
  "706 solarium ave|ottawa": [
   45.260302,
@@ -12197,6 +14651,10 @@
  "710 mikinak rd|ottawa": [
   45.450875,
   -75.632756
+ ],
+ "710 piton, place du|ottawa": [
+  45.438475,
+  -75.500161
  ],
  "710 tailslide priv|ottawa": null,
  "712 camargue priv|ottawa": null,
@@ -12297,9 +14755,17 @@
   45.473622,
   -75.481554
  ],
+ "720 montrichard, ch de|ottawa": [
+  45.466905,
+  -75.454424
+ ],
  "720 tadpole cres|ottawa": [
   45.256877,
   -75.745451
+ ],
+ "721 confluence walk|ottawa": [
+  45.454529,
+  -75.487298
  ],
  "721 lavender st|ottawa": [
   45.264106,
@@ -12314,6 +14780,11 @@
   -75.655921
  ],
  "722 camargue priv|ottawa": null,
+ "722 lillian freiman priv|ottawa": null,
+ "722 piton, place du|ottawa": [
+  45.438167,
+  -75.499979
+ ],
  "723 antonio farley st|ottawa": [
   45.502339,
   -75.462126
@@ -12321,6 +14792,10 @@
  "723 luc st|ottawa": [
   45.435451,
   -75.650566
+ ],
+ "723 maverick cres|ottawa": [
+  45.253349,
+  -75.893274
  ],
  "724 lavender st|ottawa": [
   45.263869,
@@ -12330,13 +14805,25 @@
   45.435406,
   -75.650193
  ],
+ "724 pipit lane|ottawa": [
+  45.242762,
+  -75.750709
+ ],
  "725 kenny gordon ave|ottawa": [
   45.253484,
   -75.691549
  ],
+ "725 piton, place du|ottawa": [
+  45.438072,
+  -75.499279
+ ],
  "725 tincture pl|ottawa": [
   45.365261,
   -75.942429
+ ],
+ "726 piton, place du|ottawa": [
+  45.438052,
+  -75.499905
  ],
  "727 hancock cres|ottawa": [
   45.480193,
@@ -12357,6 +14844,14 @@
  "728 haflinger row|ottawa": [
   45.188773,
   -75.852252
+ ],
+ "728 pipit lane|ottawa": [
+  45.24292,
+  -75.750543
+ ],
+ "7280 third line rd s|ottawa": [
+  45.105909,
+  -75.651087
  ],
  "7285 belmeade rd|ottawa": [
   45.134076,
@@ -12392,9 +14887,17 @@
  ],
  "730 bourgogne priv|ottawa": null,
  "730 tailslide priv|ottawa": null,
+ "731 chapel cres|ottawa": [
+  45.419946,
+  -75.671407
+ ],
  "731 kenny gordon ave|ottawa": [
   45.253648,
   -75.691132
+ ],
+ "731 maverick cres|ottawa": [
+  45.253118,
+  -75.892889
  ],
  "731 ploughman pl|ottawa": [
   45.256764,
@@ -12436,6 +14939,7 @@
   45.253756,
   -75.690883
  ],
+ "735 luminosity priv|ottawa": null,
  "735 ploughman pl|ottawa": [
   45.256847,
   -75.901275
@@ -12451,6 +14955,10 @@
  "736 haflinger row|ottawa": [
   45.188579,
   -75.852019
+ ],
+ "736 pipit lane|ottawa": [
+  45.243218,
+  -75.750618
  ],
  "737 kenny gordon ave|ottawa": [
   45.253797,
@@ -12481,7 +14989,27 @@
   45.400257,
   -75.722335
  ],
+ "74 strachan st|ottawa": [
+  45.190824,
+  -75.832202
+ ],
+ "740 caminar terr|ottawa": [
+  45.278064,
+  -75.873552
+ ],
+ "740 maverick cres|ottawa": [
+  45.252622,
+  -75.893023
+ ],
+ "740 pipit lane|ottawa": [
+  45.24335,
+  -75.750754
+ ],
  "740 tailslide priv|ottawa": null,
+ "741 fairline row|ottawa": [
+  45.277517,
+  -75.895735
+ ],
  "741 haflinger row|ottawa": [
   45.188559,
   -75.851605
@@ -12546,6 +15074,10 @@
   45.188364,
   -75.851745
  ],
+ "747 kenny gordon ave|ottawa": [
+  45.254077,
+  -75.690153
+ ],
  "747 silver seven rd|ottawa": [
   45.300782,
   -75.914177
@@ -12553,6 +15085,10 @@
  "748 caminar terr|ottawa": [
   45.27785,
   -75.873791
+ ],
+ "749 kenny gordon ave|ottawa": [
+  45.254154,
+  -75.690055
  ],
  "749 newstead cres|ottawa": [
   45.333743,
@@ -12628,6 +15164,10 @@
   45.188238,
   -75.851966
  ],
+ "754 poetry cir|ottawa": [
+  45.253498,
+  -75.903979
+ ],
  "754 tincture pl|ottawa": [
   45.364832,
   -75.943669
@@ -12639,6 +15179,10 @@
  "756 lavender st|ottawa": [
   45.264386,
   -75.676912
+ ],
+ "757 fairline row|ottawa": [
+  45.277354,
+  -75.896427
  ],
  "758 b smyth rd|ottawa": [
   45.39912,
@@ -12668,6 +15212,7 @@
   45.442034,
   -75.667766
  ],
+ "76 rawah priv|ottawa": null,
  "76 rumen way|ottawa": [
   45.253259,
   -75.689046
@@ -12688,9 +15233,21 @@
   45.282821,
   -75.866591
  ],
+ "760 poetry cir|ottawa": [
+  45.253771,
+  -75.904281
+ ],
+ "760 somerset st w|ottawa": [
+  45.410214,
+  -75.708323
+ ],
  "7610 village centre pl|ottawa": [
   45.262524,
   -75.55263
+ ],
+ "762 southmore dr w|ottawa": [
+  45.359651,
+  -75.67634
  ],
  "763 bank st|ottawa": [
   45.403956,
@@ -12720,13 +15277,25 @@
   45.168214,
   -75.933987
  ],
+ "765 antonio farley st|ottawa": [
+  45.503436,
+  -75.463115
+ ],
  "765 green creek dr|ottawa": [
   45.45966,
   -75.584489
  ],
+ "766 caminar terr|ottawa": [
+  45.277349,
+  -75.874192
+ ],
  "767 tincture pl|ottawa": [
   45.364716,
   -75.943229
+ ],
+ "768 antonio farley st|ottawa": [
+  45.503708,
+  -75.462693
  ],
  "768 poetry cir|ottawa": [
   45.254147,
@@ -12747,6 +15316,10 @@
  "77 auriga dr|ottawa": [
   45.3279,
   -75.710968
+ ],
+ "77 clarence st|ottawa": [
+  45.429265,
+  -75.693329
  ],
  "77 florence st|ottawa": [
   45.411839,
@@ -12776,6 +15349,14 @@
   45.302796,
   -75.913194
  ],
+ "770 somerset st w|ottawa": [
+  45.409943,
+  -75.708987
+ ],
+ "772 poetry cir|ottawa": [
+  45.254426,
+  -75.905042
+ ],
  "774 echo dr|ottawa": [
   45.395497,
   -75.682388
@@ -12783,6 +15364,10 @@
  "774 poetry cir|ottawa": [
   45.254572,
   -75.90507
+ ],
+ "775 antonio farley st|ottawa": [
+  45.50382,
+  -75.463448
  ],
  "775 b kingfisher cres|ottawa": [
   45.488184,
@@ -12804,9 +15389,21 @@
   45.277244,
   -75.897231
  ],
+ "777 maverick cres|ottawa": [
+  45.251903,
+  -75.892385
+ ],
  "778 bank st|ottawa": [
   45.403248,
   -75.688661
+ ],
+ "7785 merlyn wilson rd|ottawa": [
+  45.050691,
+  -75.682287
+ ],
+ "779 antonio farley st|ottawa": [
+  45.503938,
+  -75.463543
  ],
  "779 poetry cir|ottawa": [
   45.254625,
@@ -12852,6 +15449,10 @@
   45.277441,
   -75.897562
  ],
+ "782 kenny gordon ave|ottawa": [
+  45.253887,
+  -75.689551
+ ],
  "782 poetry cir|ottawa": [
   45.254968,
   -75.90452
@@ -12867,6 +15468,10 @@
  "784 kenny gordon ave|ottawa": [
   45.253928,
   -75.689431
+ ],
+ "784 maverick cres|ottawa": [
+  45.252061,
+  -75.893013
  ],
  "784 poetry cir|ottawa": [
   45.254971,
@@ -12888,6 +15493,10 @@
   45.193314,
   -75.476578
  ],
+ "787 antonio farley st|ottawa": [
+  45.50415,
+  -75.463746
+ ],
  "788 kenny gordon ave|ottawa": [
   45.254045,
   -75.689207
@@ -12895,6 +15504,10 @@
  "789 lakeridge dr|ottawa": [
   45.445693,
   -75.474349
+ ],
+ "79 lyndale ave|ottawa": [
+  45.407013,
+  -75.732195
  ],
  "79 maitland st south|ottawa": [
   45.184968,
@@ -12912,6 +15525,10 @@
   45.25376,
   -75.688962
  ],
+ "790 bayview dr|ottawa": [
+  45.509194,
+  -76.104122
+ ],
  "790 kanata ave|ottawa": [
   45.310522,
   -75.909444
@@ -12927,6 +15544,14 @@
  "791 kenny gordon ave|ottawa": [
   45.254428,
   -75.68932
+ ],
+ "792 kenny gordon ave|ottawa": [
+  45.254143,
+  -75.688957
+ ],
+ "792 maverick cres|ottawa": [
+  45.251894,
+  -75.893258
  ],
  "793 acai way|ottawa": [
   45.264097,
@@ -13083,9 +15708,17 @@
   45.25439,
   -75.688387
  ],
+ "802 ninaatik pl|ottawa": [
+  45.304508,
+  -75.601301
+ ],
  "803 anemone mews|ottawa": [
   45.258448,
   -75.76017
+ ],
+ "803 antonio farley st|ottawa": [
+  45.504611,
+  -75.464148
  ],
  "803 pearly everlasting cres|ottawa": [
   45.176889,
@@ -13095,6 +15728,14 @@
   45.258334,
   -75.760075
  ],
+ "805 antonio farley st|ottawa": [
+  45.5047,
+  -75.464223
+ ],
+ "805 companion cres|ottawa": [
+  45.21339,
+  -75.685042
+ ],
  "805 pearly everlasting cres|ottawa": [
   45.176804,
   -75.835108
@@ -13103,9 +15744,21 @@
   45.258525,
   -75.689354
  ],
+ "806 antonio farley st|ottawa": [
+  45.504874,
+  -75.463856
+ ],
  "806 great pond ave|ottawa": [
   45.446603,
   -75.461873
+ ],
+ "807 antonio farley st|ottawa": [
+  45.504793,
+  -75.464205
+ ],
+ "807 companion cres|ottawa": [
+  45.213332,
+  -75.685197
  ],
  "807 pearly everlasting cres|ottawa": [
   45.176721,
@@ -13131,6 +15784,14 @@
   45.25809,
   -75.759889
  ],
+ "809 antonio farley st|ottawa": [
+  45.504859,
+  -75.464357
+ ],
+ "809 companion cres|ottawa": [
+  45.213263,
+  -75.685346
+ ],
  "809 demulcent lane|ottawa": [
   45.366495,
   -75.942304
@@ -13147,6 +15808,10 @@
   45.27921,
   -75.506659
  ],
+ "81 -7 auriga dr|ottawa": [
+  45.332275,
+  -75.704176
+ ],
  "81 bliss cres|ottawa": [
   45.285765,
   -75.901507
@@ -13158,6 +15823,14 @@
  "81 rumen way|ottawa": [
   45.253817,
   -75.688832
+ ],
+ "81 san felice cir|ottawa": [
+  45.272087,
+  -75.860366
+ ],
+ "810 antonio farley st|ottawa": [
+  45.505069,
+  -75.464009
  ],
  "810 b maitland ave|ottawa": [
   45.370278,
@@ -13207,6 +15880,10 @@
   45.176497,
   -75.834699
  ],
+ "814 antonio farley st|ottawa": [
+  45.50527,
+  -75.464149
+ ],
  "814 high st|ottawa": [
   45.358205,
   -75.79633
@@ -13226,6 +15903,10 @@
  "815 st-laurent blvd|ottawa": [
   45.43463,
   -75.641771
+ ],
+ "816 antonio farley st|ottawa": [
+  45.505351,
+  -75.464207
  ],
  "816 grenon ave|ottawa": [
   45.356344,
@@ -13291,6 +15972,10 @@
   45.253402,
   -75.688713
  ],
+ "820 antonio farley st|ottawa": [
+  45.505549,
+  -75.464402
+ ],
  "820 back bush terr|ottawa": [
   45.260482,
   -75.891993
@@ -13323,6 +16008,11 @@
   45.27652,
   -75.897639
  ],
+ "822 gladstone ave|ottawa": [
+  45.405384,
+  -75.708958
+ ],
+ "822 lillian freiman priv|ottawa": null,
  "822 newstead cres|ottawa": [
   45.333261,
   -75.927268
@@ -13347,6 +16037,10 @@
  "824 brookfield rd|ottawa": [
   45.371667,
   -75.684625
+ ],
+ "824 meath st|ottawa": [
+  45.38353,
+  -75.737645
  ],
  "824 pearly everlasting cres|ottawa": [
   45.176569,
@@ -13385,9 +16079,17 @@
   -75.833674
  ],
  "828 utopie priv|ottawa": null,
+ "829 chorus dr|ottawa": [
+  45.257808,
+  -75.687507
+ ],
  "8293 flewellyn rd|ottawa": [
   45.177732,
   -76.000159
+ ],
+ "83 maize st|ottawa": [
+  45.290548,
+  -75.911799
  ],
  "83 ontario st|ottawa": [
   45.428097,
@@ -13441,6 +16143,11 @@
   45.178344,
   -75.472899
  ],
+ "835 moon shadow priv|ottawa": null,
+ "836 companion cres|ottawa": [
+  45.211673,
+  -75.68409
+ ],
  "836 pearly everlasting cres|ottawa": [
   45.17711,
   -75.833462
@@ -13457,10 +16164,15 @@
   45.276287,
   -75.896876
  ],
+ "8396 van rens st|ottawa": [
+  45.23354,
+  -75.459127
+ ],
  "84 fifth ave|ottawa": [
   45.401772,
   -75.686732
  ],
+ "84 rawah priv|ottawa": null,
  "84 rumen way|ottawa": [
   45.253454,
   -75.688598
@@ -13508,6 +16220,10 @@
  "845 back bush terr|ottawa": [
   45.261094,
   -75.891276
+ ],
+ "845 champlain st|ottawa": [
+  45.484505,
+  -75.520536
  ],
  "845 chorus dr|ottawa": [
   45.258284,
@@ -13565,6 +16281,10 @@
   45.422119,
   -75.695854
  ],
+ "85 maclaren st|ottawa": [
+  45.418613,
+  -75.687018
+ ],
  "85 rumen way|ottawa": [
   45.253878,
   -75.688576
@@ -13586,6 +16306,10 @@
   45.177752,
   -75.83437
  ],
+ "851 richmond rd|ottawa": [
+  45.379905,
+  -75.772931
+ ],
  "852 pearly everlasting cres|ottawa": [
   45.177891,
   -75.833949
@@ -13597,6 +16321,10 @@
  "8528 copeland rd|ottawa": [
   45.132233,
   -75.963888
+ ],
+ "853 anciano cres|ottawa": [
+  45.272511,
+  -75.860107
  ],
  "853 chorus dr|ottawa": [
   45.258705,
@@ -13629,6 +16357,10 @@
  "855 hummock way|ottawa": [
   45.332701,
   -75.928177
+ ],
+ "855 rozel cres|ottawa": [
+  45.371093,
+  -75.762998
  ],
  "8555 campeau dr|ottawa": [
   45.297019,
@@ -13783,6 +16515,18 @@
   45.275472,
   -75.895941
  ],
+ "875 sendero way|ottawa": [
+  45.251042,
+  -75.899087
+ ],
+ "877 decoeur, prom|ottawa": [
+  45.447676,
+  -75.482244
+ ],
+ "877 sendero way|ottawa": [
+  45.251113,
+  -75.898983
+ ],
  "878 balsam dr|ottawa": [
   45.482307,
   -75.517307
@@ -13823,6 +16567,10 @@
   45.424391,
   -75.660774
  ],
+ "88 ridgefield cres|ottawa": [
+  45.31548,
+  -75.819429
+ ],
  "88 rumen way|ottawa": [
   45.253559,
   -75.688366
@@ -13838,6 +16586,10 @@
  "882 c balsam dr|ottawa": [
   45.486086,
   -75.519783
+ ],
+ "882 sendero way|ottawa": [
+  45.250934,
+  -75.898395
  ],
  "882 smyth rd|ottawa": [
   45.400441,
@@ -13924,6 +16676,18 @@
   -75.938644
  ],
  "8910 lynwood park priv|ottawa": null,
+ "892 sendero way|ottawa": [
+  45.251282,
+  -75.89784
+ ],
+ "894 sendero way|ottawa": [
+  45.251339,
+  -75.897721
+ ],
+ "895 bebbs willow way|ottawa": [
+  45.297086,
+  -75.986133
+ ],
  "895 eileen vollick cres|ottawa": [
   45.363619,
   -75.932037
@@ -13931,6 +16695,10 @@
  "896 eileen vollick cres|ottawa": [
   45.363412,
   -75.931773
+ ],
+ "897 ethier, av|ottawa": [
+  45.480435,
+  -75.551033
  ],
  "9 b bowhill ave|ottawa": [
   45.350299,
@@ -14160,9 +16928,17 @@
   45.176696,
   -75.834333
  ],
+ "917 orvieto way|ottawa": [
+  45.252065,
+  -75.895568
+ ],
  "918 eileen vollick cres|ottawa": [
   45.364031,
   -75.93129
+ ],
+ "918 wingate dr|ottawa": [
+  45.398289,
+  -75.627656
  ],
  "919 eileen vollick cres|ottawa": [
   45.363835,
@@ -14196,6 +16972,7 @@
   45.262632,
   -75.560843
  ],
+ "922 lillian freiman priv|ottawa": null,
  "922 mountainview ave|ottawa": [
   45.364289,
   -75.77349
@@ -14232,9 +17009,17 @@
   45.254119,
   -75.688122
  ],
+ "930 carling ave|ottawa": [
+  45.391043,
+  -75.721879
+ ],
  "930 eileen vollick cres|ottawa": [
   45.364302,
   -75.931646
+ ],
+ "933 gladstone ave|ottawa": [
+  45.406305,
+  -75.716673
  ],
  "934 b smyth rd|ottawa": [
   45.39961,
@@ -14247,6 +17032,10 @@
  "937 mountmellick ave|ottawa": [
   45.26452,
   -75.888779
+ ],
+ "938 crested lark way|ottawa": [
+  45.245471,
+  -75.747909
  ],
  "94 rumen way|ottawa": [
   45.253701,
@@ -14268,6 +17057,10 @@
   45.357169,
   -75.785175
  ],
+ "942 crested lark way|ottawa": [
+  45.245582,
+  -75.747667
+ ],
  "942 eileen vollick cres|ottawa": [
   45.364568,
   -75.932008
@@ -14279,6 +17072,10 @@
  "942 locomotion lane|ottawa": [
   45.27655,
   -75.895895
+ ],
+ "944 crested lark way|ottawa": [
+  45.245638,
+  -75.747524
  ],
  "944 locomotion lane|ottawa": [
   45.276608,
@@ -14300,6 +17097,10 @@
   45.276761,
   -75.896128
  ],
+ "949 crested lark way|ottawa": [
+  45.246097,
+  -75.747504
+ ],
  "949 locomotion lane|ottawa": [
   45.276603,
   -75.896519
@@ -14312,9 +17113,21 @@
   45.370467,
   -75.800525
  ],
+ "95 henderson ave|ottawa": [
+  45.423792,
+  -75.680102
+ ],
+ "95 maize st|ottawa": [
+  45.290232,
+  -75.912235
+ ],
  "95 melrose ave|ottawa": [
   45.400097,
   -75.722891
+ ],
+ "95 rappel, cer du|ottawa": [
+  45.440724,
+  -75.497496
  ],
  "95 zingiber terr|ottawa": [
   45.369041,
@@ -14327,6 +17140,10 @@
  "950 smith rd|ottawa": [
   45.416421,
   -75.435867
+ ],
+ "953 crested lark way|ottawa": [
+  45.246189,
+  -75.747272
  ],
  "954 eileen vollick cres|ottawa": [
   45.364846,
@@ -14364,9 +17181,21 @@
   45.381546,
   -75.733442
  ],
+ "96 ed findlay st|ottawa": [
+  45.264311,
+  -75.680504
+ ],
  "96 empress ave|ottawa": [
   45.411254,
   -75.709907
+ ],
+ "96 gartersnake way|ottawa": [
+  45.30525,
+  -75.601965
+ ],
+ "96 jolliet, av|ottawa": [
+  45.44243,
+  -75.666599
  ],
  "96 rumen way|ottawa": [
   45.253757,
@@ -14412,6 +17241,10 @@
   45.445462,
   -75.524906
  ],
+ "970 smyth rd|ottawa": [
+  45.400516,
+  -75.624597
+ ],
  "972 dynes rd|ottawa": [
   45.368512,
   -75.707968
@@ -14432,6 +17265,10 @@
   45.356831,
   -75.784566
  ],
+ "98 bliss cres|ottawa": [
+  45.28517,
+  -75.901553
+ ],
  "98 canter blvd|ottawa": [
   45.347535,
   -75.748223
@@ -14440,6 +17277,10 @@
  "98 glentoran way|ottawa": [
   45.263016,
   -75.892744
+ ],
+ "98 ploughshare rd|ottawa": [
+  45.29304,
+  -75.910623
  ],
  "98 rumen way|ottawa": [
   45.253795,
@@ -14481,6 +17322,10 @@
   45.399661,
   -75.724606
  ],
+ "99 san felice cir|ottawa": [
+  45.27227,
+  -75.859639
+ ],
  "990 hunt club rd|ottawa": [
   45.348028,
   -75.658192
@@ -14488,6 +17333,10 @@
  "990 nelida cres|ottawa": [
   45.445462,
   -75.524906
+ ],
+ "998 colonel by dr|ottawa": [
+  45.372698,
+  -75.700413
  ],
  "998 frances st|ottawa": [
   45.427459,
@@ -14500,6 +17349,10 @@
  "999 heron rd|ottawa": [
   45.379292,
   -75.677137
+ ],
+ "9999 russell rd|ottawa": [
+  45.403448,
+  -75.272083
  ],
  "unit 1 - 24 glencoe st|ottawa": [
   45.420878,
