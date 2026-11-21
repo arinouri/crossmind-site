@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Capital Barbershop × Crossmind · Booking prototype</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0A2238">
+<meta name="description" content="A booking system prototype Crossmind built for Capital Barbershop. Demo only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+:root{--orange:#D08355;--orange-hi:#E39A6B;--navy:#0A2238;--navy-2:#0F2C47;--navy-3:#06141F;--cream:#FAF3EA;--cream-2:#F1E6D6;--ink-soft:rgba(10,34,56,.72);--cream-soft:rgba(250,243,234,.72);--line-n:rgba(10,34,56,.14);--line-c:rgba(250,243,234,.14);--good:#2E8B57;
+--f-d:"Space Grotesk",Inter,system-ui,sans-serif;--f-b:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--f-c:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
+--cap-bg:#F3EEE6;--cap-ink:#141414;--cap-red:#A8251C;--cap-red-2:#C4372C;--cap-mute:#6d665c;--cap-line:rgba(20,20,20,.1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--navy);font:400 17px/1.55 var(--f-b);-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--f-d);letter-spacing:-.03em;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,9vw,112px)}
+.navy{background:var(--navy);color:var(--cream)}
+.org{background:var(--orange);color:var(--navy)}
+.kick{font:600 12px/1 var(--f-b);letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-bottom:16px}
+.h2{font-size:clamp(32px,5vw,54px)}
+.lede{font-size:clamp(17px,2vw,20px);max-width:640px;margin-top:18px;opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:0;background:var(--navy);color:var(--cream);font:600 16px/1 var(--f-b);text-decoration:none;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.o{background:var(--orange);color:var(--navy)}
+.btn.ghost{background:none;border:1.5px solid currentColor;color:inherit}
+.top{position:sticky;top:0;z-index:40;background:var(--navy);color:var(--cream);border-bottom:1px solid var(--line-c)}
+.top .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.mark{font:700 17px/1 var(--f-d);letter-spacing:-.02em;color:var(--cream);text-decoration:none;display:flex;align-items:center;gap:9px}
+.mark i{width:22px;height:22px;border-radius:6px;background:var(--orange);position:relative;display:block}
+.mark i::before,.mark i::after{content:"";position:absolute;left:3px;right:3px;top:50%;height:2.5px;margin-top:-1px;background:var(--navy);transform:rotate(35deg)}
+.mark i::after{transform:rotate(-35deg)}
+.top .tag{font-size:13px;min-width:0;opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .btn{margin-left:auto;min-height:38px;padding:0 16px;font-size:14px;white-space:nowrap;flex:none}
+@media (max-width:520px){.top .tag{display:none}}
+.hero{padding-block:clamp(56px,9vw,110px) clamp(56px,8vw,96px)}
+.hero h1{font-size:clamp(42px,7.4vw,86px);max-width:900px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.note{font-size:13px;opacity:.7;margin-top:22px;max-width:640px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:40px}
+.fact{border:1px solid var(--line-c);border-radius:18px;padding:20px}
+.fact b{display:block;font:700 34px/1 var(--f-d);letter-spacing:-.03em;color:var(--orange-hi)}
+.fact span{display:block;font-size:14px;opacity:.8;margin-top:8px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;margin-top:44px;align-items:start}
+@media (max-width:880px){.two{grid-template-columns:1fr}}
+.card{background:#fff;color:var(--navy);border-radius:20px;padding:24px;box-shadow:0 1px 0 var(--line-n)}
+.navy .card.d{background:var(--navy-2);color:var(--cream);box-shadow:none;border:1px solid var(--line-c)}
+.card h3{font-size:21px;margin-bottom:6px}
+.card .sub{font-size:14px;opacity:.7;margin-bottom:18px}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.list li{padding-left:28px;position:relative;font-size:16px}
+.list li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:4px;background:var(--orange)}
+.list b{font-weight:600}
+.mx{overflow:auto;margin-top:36px;border-radius:18px;background:#fff;box-shadow:0 1px 0 var(--line-n)}
+.mx table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+.mx th,.mx td{padding:9px 10px;text-align:center;border-bottom:1px solid var(--line-n);white-space:nowrap}
+.mx th{font:600 12px/1.2 var(--f-b);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);background:var(--cream-2);position:sticky;top:0}
+.mx td:first-child,.mx th:first-child{text-align:left;position:sticky;left:0;background:#fff;z-index:1}
+.mx th:first-child{background:var(--cream-2);z-index:2}
+.mx td.p{font-weight:700}
+.mx td.no{color:rgba(10,34,56,.25)}
+.mx td.odd{background:rgba(208,131,85,.2);font-weight:600}
+.mx tr.cat td{background:var(--cream);font:600 11px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-align:left}
+.legend{font-size:13px;opacity:.75;margin-top:12px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;background:rgba(208,131,85,.35);vertical-align:-1px;margin-right:6px}
+.calc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;margin-top:40px}
+@media (max-width:880px){.calc{grid-template-columns:1fr}}
+.ctl{display:grid;gap:20px}
+.ctl label{display:grid;gap:8px;font-size:14px;font-weight:600;min-width:0}
+.ctl select,.ctl input{width:100%;min-width:0}
+.card.ctl{min-width:0}
+.ctl .v{font-weight:700}
+.ctl select,.ctl input[type=number]{height:46px;border-radius:12px;border:1.5px solid var(--line-n);background:#fff;padding:0 12px;font-size:16px}
+.ctl input[type=range]{width:100%;accent-color:var(--navy)}
+.ctl .r{display:flex;justify-content:space-between}
+.ctl .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.outs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+@media (max-width:560px){.outs{grid-template-columns:1fr}}
+.out{background:var(--cream);border-radius:14px;padding:14px}
+.out b{display:block;font:700 26px/1 var(--f-d);letter-spacing:-.02em}
+.out span{font-size:12.5px;color:var(--ink-soft)}
+.out.hi{background:var(--navy);color:var(--cream)}
+.out.hi span{color:var(--cream-soft)}
+.vs{width:100%;border-collapse:collapse;margin-top:36px;font-size:15px}
+.vs th,.vs td{padding:14px 12px;border-bottom:1px solid var(--line-c);vertical-align:top;text-align:left}
+.vs th{font:600 12px/1 var(--f-b);letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.vs td:first-child{font-weight:600;width:24%}
+.vs td:last-child{color:var(--orange-hi)}
+@media (max-width:700px){.vs,.vs tbody,.vs tr,.vs td{display:block;width:100%!important}.vs thead{display:none}.vs tr{padding:14px 0;border-bottom:1px solid var(--line-c)}.vs td{border:0;padding:3px 0}.vs td:nth-child(2)::before{content:"Squire today: ";opacity:.6}.vs td:nth-child(3)::before{content:"Crossmind: ";opacity:.6}}
+.wins{margin-top:28px;padding:20px 22px;border-radius:16px;background:rgba(250,243,234,.06);border:1px solid var(--line-c);font-size:15px}
+.wins b{color:var(--orange-hi)}
+
+/* simulation */
+.simwrap{max-width:1440px}
+.sim-head{display:flex;gap:16px;align-items:end;justify-content:space-between;flex-wrap:wrap}
+.sim-tabs{display:none;gap:6px;background:var(--cream-2);padding:5px;border-radius:999px;margin:26px auto 0;width:max-content;max-width:100%}
+.sim-tabs button{border:0;background:none;border-radius:999px;padding:10px 14px;font-weight:600;font-size:14px;color:var(--ink-soft)}
+.sim-tabs button.on{background:var(--navy);color:var(--cream)}
+.sim{display:flex;gap:28px;justify-content:center;align-items:flex-end;margin-top:40px;flex-wrap:wrap}
+.dev{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.dev figcaption{font:600 12px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.dev a{font-size:13px;font-weight:600;color:var(--navy)}
+.phone{width:292px;height:604px;border-radius:44px;background:#111;padding:11px;box-shadow:0 0 0 2px #2a2a2a,0 30px 60px rgba(6,20,31,.28);position:relative;flex:none}
+.phone::before{content:"";position:absolute;top:19px;left:50%;width:84px;height:22px;margin-left:-42px;border-radius:12px;background:#000;z-index:5}
+.pscr{width:100%;height:100%;border-radius:34px;overflow:hidden;position:relative;background:#fff}
+.laptop{width:min(700px,92vw);flex:none}
+.laptop .lid{background:#16202b;border-radius:16px 16px 0 0;padding:10px 10px 0;box-shadow:0 30px 60px rgba(6,20,31,.25)}
+.laptop .chrome{display:flex;align-items:center;gap:6px;height:28px;padding:0 10px;background:#222e3b;border-radius:10px 10px 0 0}
+.laptop .chrome i{width:9px;height:9px;border-radius:50%;background:rgba(250,243,234,.3)}
+.laptop .chrome i:first-child{background:#e0654f}
+.laptop .chrome span{margin-left:10px;flex:1;height:18px;border-radius:9px;background:rgba(250,243,234,.1);font-size:11px;line-height:18px;padding:0 10px;color:var(--cream-soft);overflow:hidden;white-space:nowrap}
+.laptop .lscr{height:452px;background:#fff;position:relative;overflow:hidden}
+.laptop .base{height:14px;background:#2b3846;border-radius:0 0 14px 14px;margin:0 -26px;position:relative}
+.laptop .base::after{content:"";position:absolute;left:50%;top:0;width:110px;height:6px;margin-left:-55px;background:#16202b;border-radius:0 0 8px 8px}
+.playrow{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:36px}
+.simnote{text-align:center;font-size:14px;color:var(--ink-soft);margin-top:14px}
+@media (max-width:1380px){.dev[data-dev=o]{order:3}}
+@media (max-width:900px){.sim-tabs{display:flex}.dev{display:none}.dev.show{display:flex}.sim{margin-top:24px}.laptop .lscr{height:520px}}
+@media (max-width:360px){.phone{transform:scale(.92);margin:-24px -12px}}
+
+/* full screen */
+.full{position:fixed;inset:0;z-index:100;background:#0d0d0d;display:flex;flex-direction:column}
+.full .fbar{height:calc(46px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) 12px 0;display:flex;align-items:center;gap:10px;background:var(--navy);color:var(--cream);font-size:13px;flex:none}
+.full .fbar b{font-weight:600;white-space:nowrap}
+.full .fbar span{opacity:.7;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.full .fbar button{margin-left:auto;border:0;background:rgba(250,243,234,.12);border-radius:999px;height:32px;padding:0 14px;font-size:13px;font-weight:600;color:var(--cream);flex:none}
+.full .fbody{flex:1;min-height:0;display:flex;justify-content:center}
+.full .holder{width:100%;max-width:480px;height:100%;position:relative;overflow:hidden;background:#fff}
+.full.wide .holder{max-width:none}
+.foot{padding:44px 0 60px;font-size:13px;color:var(--cream-soft)}
+.foot a{color:var(--cream)}
+.share{display:grid;gap:10px;margin-top:28px;max-width:640px}
+.share a{display:flex;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:14px;background:var(--navy-2);border:1px solid var(--line-c);color:var(--cream);text-decoration:none;font-weight:600}
+.share a span{opacity:.6;font-weight:400;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ===== shared app bits ===== */
+.app{position:absolute;inset:0;display:flex;flex-direction:column;font:400 14px/1.4 var(--f-b);-webkit-font-smoothing:antialiased;overflow:hidden}
+.app .scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;position:relative;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.app button{border:0;background:none;padding:0;text-align:left}
+.app .toast{position:absolute;left:12px;right:12px;bottom:14px;z-index:20;background:#141414;color:#fff;border-radius:14px;padding:12px 14px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:tIn .3s ease}
+@keyframes tIn{from{transform:translateY(20px);opacity:0}}
+.tap{animation:tap .55s ease}
+@keyframes tap{0%{box-shadow:0 0 0 0 rgba(208,131,85,.9)}60%{box-shadow:0 0 0 12px rgba(208,131,85,0)}100%{box-shadow:none}}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:400 19px/1 var(--f-c);letter-spacing:.04em;flex:none}
+
+/* ===== client app (Capital) ===== */
+.ca{background:var(--cap-bg);color:var(--cap-ink)}
+.ca .bar{flex:none;display:grid;grid-template-columns:40px 1fr 40px;align-items:center;padding:14px 10px 10px;background:var(--cap-ink);color:#f3eee6}
+.inph .ca .bar{padding-top:40px}
+.ca .bk{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:20px;color:#f3eee6}
+.ca .brand{text-align:center;font:400 24px/1 var(--f-c);letter-spacing:.42em;padding-left:.42em}
+.ca .brand small{display:block;font:600 8.5px/1 var(--f-b);letter-spacing:.38em;opacity:.65;margin-top:4px}
+.ca .pad{padding:16px}
+.ca h2{font:400 30px/1 var(--f-c);letter-spacing:.04em;margin:4px 0 2px;font-family:var(--f-c)}
+.ca .mut{color:var(--cap-mute);font-size:12.5px}
+.ca .open{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;margin-top:6px}
+.ca .open i{width:8px;height:8px;border-radius:50%;background:#2E8B57}
+.ca .open.c i{background:var(--cap-red)}
+.ca .sec{font:700 10.5px/1 var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:var(--cap-mute);margin:20px 0 10px}
+.ca .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:none}
+.ca .chips::-webkit-scrollbar{display:none}
+.ca .qc{flex:none;background:#fff;border:1.5px solid var(--cap-line);border-radius:14px;padding:10px 12px;min-width:118px}
+.ca .qc b{display:block;font-size:14px}
+.ca .qc span{font-size:12px;color:var(--cap-mute)}
+.ca .big{display:flex;align-items:center;gap:12px;width:100%;background:var(--cap-ink);color:#f3eee6;border-radius:16px;padding:16px;margin-top:10px}
+.ca .big.r{background:var(--cap-red)}
+.ca .big b{font:400 22px/1 var(--f-c);letter-spacing:.06em;display:block}
+.ca .big span{font-size:12px;opacity:.75}
+.ca .big em{margin-left:auto;font-style:normal;font-size:20px}
+.ca .tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.ca .tile{background:#fff;border-radius:14px;padding:12px 8px;text-align:center!important;font-size:11.5px;font-weight:600;border:1.5px solid var(--cap-line)}
+.ca .tile i{display:block;font-style:normal;font-size:19px;margin-bottom:4px}
+.ca .hrs{background:#fff;border-radius:14px;padding:6px 14px;border:1.5px solid var(--cap-line)}
+.ca .hrs div{display:flex;justify-content:space-between;padding:6px 0;font-size:12.5px;border-bottom:1px solid var(--cap-line)}
+.ca .hrs div:last-child{border:0}
+.ca .hrs .t{font-weight:700}
+.ca .row{display:flex;align-items:center;gap:12px;width:100%;background:#fff;border:1.5px solid var(--cap-line);border-radius:16px;padding:12px;margin-bottom:8px}
+.ca .row .tx{flex:1;min-width:0}
+.ca .row b{display:block;font-size:15px}
+.ca .row small{display:block;font-size:12px;color:var(--cap-mute);margin-top:2px}
+.ca .row .pr{font:700 15px/1 var(--f-b);text-align:right}
+.ca .row .pr small{font-weight:500}
+.ca .row.any{background:var(--cap-ink);color:#f3eee6;border-color:var(--cap-ink)}
+.ca .row.any small{color:rgba(243,238,230,.7)}
+.ca .row.dim{opacity:.45}
+.ca .soon{color:#2E8B57!important;font-weight:600}
+.ca .addon{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px dashed var(--cap-line);border-radius:14px;padding:10px 12px;width:100%;margin-bottom:6px;font-size:13px}
+.ca .addon.on{border-style:solid;border-color:var(--cap-red);background:#fff6f4}
+.ca .addon i{width:20px;height:20px;border-radius:6px;border:2px solid var(--cap-mute);display:grid;place-items:center;font-style:normal;font-size:12px;flex:none}
+.ca .addon.on i{background:var(--cap-red);border-color:var(--cap-red);color:#fff}
+.ca .days{display:flex;gap:6px;overflow-x:auto;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none}
+.ca .days::-webkit-scrollbar{display:none}
+.ca .day{flex:none;width:52px;border-radius:14px;background:#fff;border:1.5px solid var(--cap-line);padding:8px 0;text-align:center!important}
+.ca .day b{display:block;font:400 21px/1 var(--f-c)}
+.ca .day span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cap-mute)}
+.ca .day.on{background:var(--cap-ink);color:#f3eee6;border-color:var(--cap-ink)}
+.ca .day.on span{color:rgba(243,238,230,.7)}
+.ca .day:disabled{opacity:.35;cursor:default}
+.ca .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.ca .slot{background:#fff;border:1.5px solid var(--cap-line);border-radius:12px;padding:10px 0;text-align:center!important;font-weight:600;font-size:13px}
+.ca .slot small{display:block;font-size:10px;font-weight:500;color:var(--cap-mute)}
+.ca .sum{background:#fff;border-radius:16px;border:1.5px solid var(--cap-line);padding:14px}
+.ca .sum .l{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:13px}
+.ca .sum .l span{color:var(--cap-mute)}
+.ca .sum .l.t{border-top:1px solid var(--cap-line);margin-top:6px;padding-top:10px;font-weight:700;font-size:15px}
+.ca .free{color:#2E8B57;font-weight:700}
+.ca .fld{display:block;margin-top:10px}
+.ca .fld span{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cap-mute);margin-bottom:5px}
+.ca .fld input{width:100%;height:46px;border-radius:12px;border:1.5px solid var(--cap-line);background:#fff;padding:0 12px;font-size:16px}
+.ca .seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#e7e0d4;border-radius:12px;padding:4px;margin-top:10px}
+.ca .seg button{text-align:center;border-radius:9px;padding:9px 0;font-weight:600;font-size:12.5px;color:var(--cap-mute)}
+.ca .seg button.on{background:#fff;color:var(--cap-ink);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.ca .pol{font-size:11.5px;color:var(--cap-mute);margin-top:12px}
+.ca .foot{flex:none;padding:10px 14px calc(14px + env(safe-area-inset-bottom,0px));background:var(--cap-bg);border-top:1px solid var(--cap-line)}
+.ca .cta{width:100%;height:52px;border-radius:14px;background:var(--cap-red);color:#fff;font:400 22px/1 var(--f-c);letter-spacing:.08em;text-align:center!important}
+.ca .cta:disabled{opacity:.45}
+.ca .err{color:var(--cap-red);font-size:12.5px;font-weight:600;margin-top:8px}
+.ca .done{text-align:center;padding-top:22px}
+.ca .chk{width:74px;height:74px;border-radius:50%;background:var(--cap-red);color:#fff;display:grid;place-items:center;margin:0 auto 12px;font-size:36px;animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(.3);opacity:0}}
+.ca .code{display:inline-block;font:400 22px/1 var(--f-c);letter-spacing:.2em;background:#fff;border:1.5px dashed var(--cap-ink);border-radius:10px;padding:8px 14px;margin:10px 0}
+.ca .acts{display:grid;gap:8px;margin-top:14px}
+.ca .ab{width:100%;height:46px;border-radius:12px;background:#fff;border:1.5px solid var(--cap-line)!important;font-weight:600;text-align:center!important;font-size:14px}
+.ca .ab.k{background:var(--cap-ink);color:#f3eee6}
+.ca .stamp{display:flex;gap:5px;justify-content:center;margin-top:8px}
+.ca .stamp i{width:16px;height:16px;border-radius:50%;border:2px solid var(--cap-red)}
+.ca .stamp i.f{background:var(--cap-red)}
+.ca .mb{background:#fff;border:1.5px solid var(--cap-line);border-radius:16px;padding:12px;margin-bottom:8px}
+.ca .mb b{display:block}
+.ca .mb .bs{display:flex;gap:8px;margin-top:10px}
+.ca .mb .bs button{flex:1;height:38px;border-radius:10px;border:1.5px solid var(--cap-line);text-align:center;font-weight:600;font-size:13px}
+.ca .mb .bs button.x{color:var(--cap-red)}
+.ca .demo{font-size:10.5px;text-align:center;color:var(--cap-mute);padding:14px 16px 20px}
+
+/* ===== barber app ===== */
+.ba{background:#101012;color:#f1ede6}
+.ba .bh{flex:none;padding:14px 14px 12px;background:#18181b;border-bottom:1px solid rgba(255,255,255,.07)}
+.inph .ba .bh{padding-top:42px}
+.ba .who{display:flex;align-items:center;gap:10px}
+.ba .who .tx{flex:1;min-width:0}
+.ba .who b{display:block;font-size:15px}
+.ba .who small{font-size:11.5px;opacity:.6}
+.ba select{background:#26262b;border:0;border-radius:10px;height:34px;padding:0 8px;font-size:12.5px;color:#f1ede6;max-width:110px}
+.ba .dn{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.ba .dn button{width:32px;height:32px;border-radius:50%;background:#26262b;text-align:center;font-size:16px}
+.ba .dn b{font:400 18px/1.1 var(--f-c);letter-spacing:.05em;text-align:center}
+.ba .st{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
+.ba .st div{background:#222226;border-radius:12px;padding:9px}
+.ba .st b{display:block;font:700 17px/1 var(--f-b)}
+.ba .st span{font-size:10.5px;opacity:.6}
+.ba .new{margin:12px 12px 0;border-radius:14px;padding:12px;background:var(--cap-red);display:flex;gap:10px;align-items:flex-start;animation:tIn .4s ease}
+.ba .new .tx{flex:1;font-size:12.5px}
+.ba .new b{display:block;font-size:13.5px}
+.ba .new button{color:#fff;opacity:.85;font-size:12px;font-weight:600;padding:4px 0}
+.ba .nx{margin:12px;border-radius:16px;padding:14px;background:#f1ede6;color:#141414}
+.ba .nx small{font:700 10px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;color:var(--cap-red)}
+.ba .nx b{display:block;font:400 24px/1.05 var(--f-c);letter-spacing:.04em;margin-top:6px}
+.ba .nx span{font-size:12.5px;color:#555}
+.ba .tl{padding:4px 12px 16px}
+.ba .ap{display:grid;grid-template-columns:54px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.ba .ap .tm{font-weight:700;font-size:12.5px}
+.ba .ap .tm small{display:block;font-weight:400;opacity:.5;font-size:10.5px}
+.ba .ap .bx{border-left:3px solid var(--c,#a8251c);padding-left:10px}
+.ba .ap b{display:block;font-size:13.5px}
+.ba .ap span{font-size:12px;opacity:.65}
+.ba .ap .ac{display:flex;gap:6px;margin-top:7px}
+.ba .ap .ac button{height:28px;padding:0 10px;border-radius:8px;background:#26262b;font-size:11.5px;font-weight:600;text-align:center}
+.ba .ap .ac button.ok{background:#2E8B57}
+.ba .pill{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:6px;margin-left:6px;vertical-align:1px;background:#26262b}
+.ba .pill.done{background:rgba(46,139,87,.25);color:#7fd1a2}
+.ba .pill.noshow{background:rgba(168,37,28,.3);color:#ff9d93}
+.ba .pill.nw{background:var(--cap-red);color:#fff}
+.ba .ap.cx{opacity:.4}
+.ba .ap.cx b{text-decoration:line-through}
+.ba .ap.blk .bx{border-left-style:dashed;border-left-color:#666}
+.ba .off{text-align:center;padding:40px 20px;opacity:.6;font-size:13px}
+.ba .bf{flex:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(14px + env(safe-area-inset-bottom,0px));background:#18181b;border-top:1px solid rgba(255,255,255,.07)}
+.ba .bf button{height:46px;border-radius:12px;background:#f1ede6;color:#141414;font-weight:700;text-align:center;font-size:13.5px}
+.ba .bf button.s{background:#26262b;color:#f1ede6}
+
+/* ===== owner app ===== */
+.ow{background:#f6f4f0;color:#151a21;flex-direction:row;font-size:12.5px}
+.ow .side{width:136px;flex:none;background:#141414;color:#f3eee6;padding:14px 8px;display:flex;flex-direction:column;gap:2px}
+.ow .side .br{font:400 19px/1 var(--f-c);letter-spacing:.3em;padding:2px 8px 14px}
+.ow .side .br small{display:block;font:600 7.5px/1 var(--f-b);letter-spacing:.3em;opacity:.6;margin-top:3px}
+.ow .side button{color:#f3eee6;opacity:.7;padding:9px 10px;border-radius:9px;font-weight:600;font-size:12.5px;display:flex;gap:8px;align-items:center}
+.ow .side button.on{opacity:1;background:rgba(243,238,230,.12)}
+.ow .side .sp{margin-top:auto;font-size:10px;opacity:.5;padding:8px}
+.ow .main{flex:1;min-width:0;display:flex;flex-direction:column}
+.ow .mh{flex:none;display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.07);background:#fff}
+.ow .mh h4{margin:0;font:700 15px/1 var(--f-d);letter-spacing:-.01em}
+.ow .mh .sp{flex:1}
+.ow .mh button{height:28px;min-width:28px;padding:0 9px;border-radius:8px;background:#f0ece5;font-weight:600;text-align:center}
+.ow .kp{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 16px 0}
+.ow .kp div{background:#fff;border-radius:12px;padding:10px;border:1px solid rgba(0,0,0,.06)}
+.ow .kp b{display:block;font:700 18px/1 var(--f-d)}
+.ow .kp span{font-size:10.5px;color:#6b6f75}
+.ow .cal{padding:10px 16px 16px}
+.ow .cg{display:grid;position:relative;background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,.06);overflow:hidden}
+.ow .ch{position:sticky;top:0;z-index:3;background:#fff;border-bottom:1px solid rgba(0,0,0,.08);font-weight:700;font-size:11px;padding:7px 4px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ow .ch i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px}
+.ow .col{position:relative;border-left:1px solid rgba(0,0,0,.05)}
+.ow .col.off{background:repeating-linear-gradient(135deg,#faf8f5 0 6px,#f1eee9 6px 12px)}
+.ow .tc{position:relative}
+.ow .tc span{position:absolute;right:5px;font-size:9.5px;color:#8a8f95;transform:translateY(-50%)}
+.ow .hl{position:absolute;left:0;right:0;border-top:1px solid rgba(0,0,0,.045)}
+.ow .bk2{position:absolute;left:2px;right:2px;border-radius:6px;padding:3px 5px;font-size:10px;line-height:1.2;overflow:hidden;color:#fff;background:var(--c);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.ow .bk2 b{display:block;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ow .bk2 span{opacity:.85;white-space:nowrap}
+.ow .bk2.done{opacity:.55}
+.ow .bk2.noshow{background:repeating-linear-gradient(135deg,#888 0 5px,#999 5px 10px)}
+.ow .bk2.blk{background:#c9c4bb;color:#333}
+.ow .bk2.fresh{outline:3px solid var(--orange);animation:fl 1.2s ease 3}
+@keyframes fl{50%{outline-color:transparent}}
+.ow .now{position:absolute;left:0;right:0;height:2px;background:var(--cap-red);z-index:2}
+.ow .pn{padding:14px 16px}
+.ow .bx{background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,.06);padding:12px;margin-bottom:10px}
+.ow .bx h5{margin:0 0 10px;font:700 12px/1 var(--f-b);letter-spacing:.08em;text-transform:uppercase;color:#6b6f75}
+.ow .hb{display:grid;grid-template-columns:80px 1fr 56px;gap:8px;align-items:center;margin:6px 0}
+.ow .hb i{display:block;height:12px;border-radius:4px;background:var(--c)}
+.ow .hb em{font-style:normal;text-align:right;font-weight:700}
+.ow table{width:100%;border-collapse:collapse}
+.ow td,.ow th{padding:7px 6px;border-bottom:1px solid rgba(0,0,0,.06);text-align:left}
+.ow th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#6b6f75}
+.ow input.pi{width:66px;height:30px;border-radius:8px;border:1.5px solid rgba(0,0,0,.12);padding:0 6px;font-weight:700}
+.ow .tg{width:36px;height:20px;border-radius:10px;background:#cfc9bf;position:relative;flex:none}
+.ow .tg::after{content:"";position:absolute;left:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.ow .tg.on{background:#2E8B57}
+.ow .tg.on::after{left:18px}
+.ow .set{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.ow .set .tx{flex:1}
+.ow .set b{display:block}
+.ow .set small{color:#6b6f75}
+.ow select{height:30px;border-radius:8px;border:1.5px solid rgba(0,0,0,.12);background:#fff;padding:0 6px}
+.ow .rst{margin-top:14px;height:36px;padding:0 14px;border-radius:9px;background:#141414!important;color:#fff;font-weight:600;text-align:center}
+.ow.narrow{flex-direction:column}
+.ow.narrow .side{width:auto;flex-direction:row;overflow-x:auto;padding:8px;gap:4px;align-items:center}
+.inph .ow.narrow .side{padding-top:40px}
+.ow.narrow .side .br{padding:0 8px 0 4px;font-size:16px}
+.ow.narrow .side .br small,.ow.narrow .side .sp{display:none}
+.ow.narrow .side button{flex:none;padding:8px 10px}
+.ow.narrow .kp{grid-template-columns:1fr 1fr}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="mark" href="https://crossmind.ca/"><i></i>Crossmind</a>
+  <span class="tag">Prototype for Capital Barbershop</span>
+  <a class="btn o" href="#book">Try booking</a>
+</div></header>
+
+<section class="hero org"><div class="wrap">
+  <div class="kick">For Capital Barbershop · 590 Bank St, Ottawa</div>
+  <h1>Your chairs. Your booking app. No monthly rent on it.</h1>
+  <p class="lede">We looked at how Capital books today on Squire: every barber, every service, every price. Then we built a booking system that does the same job, fixes what's awkward, and lives on your own site.</p>
+  <div class="row">
+    <a class="btn" href="#book">Try the client booking</a>
+    <a class="btn ghost" href="#sim">Watch the phone, barber &amp; desk views</a>
+  </div>
+  <p class="note">Working prototype by Crossmind. Bookings made here are demo data saved in your own browser. Nothing goes to the shop. To book a real cut, call 613-236-8838.</p>
+</div></section>
+
+<section class="band navy" id="today"><div class="wrap">
+  <div class="kick">What Capital runs on today</div>
+  <h2 class="h2">Squire, set up for a busy 7-chair shop.</h2>
+  <p class="lede">Read straight from Capital's public Squire booking page and its settings.</p>
+  <div class="facts">
+    <div class="fact"><b>7</b><span>barbers taking online bookings: Scott, Jeffrey, Georges, James, Bao, David and Ankur</span></div>
+    <div class="fact"><b>19</b><span>bookable services, from a $20 neck lineup to a $350 wedding reservation</span></div>
+    <div class="fact"><b>$1.00</b><span>booking fee added to every online booking, paid by the client</span></div>
+    <div class="fact"><b>2 hrs</b><span>cancellation window, with no-show charging switched on</span></div>
+  </div>
+  <div class="two">
+    <div class="card d chart"><h3>Squire's monthly plans (CAD)</h3><p class="sub">Capital has rewards, gift cards and waitlist switched on. On Squire's current price list, rewards and gift cards come with Titan.</p><div id="planChart"></div></div>
+    <div>
+      <ul class="list" style="color:var(--cream)">
+        <li><b>Likely cost: about CA$340 a month, or $4,080 a year</b>, if Capital is on Titan. At minimum it's Executive at CA$205 a month. Shops on older plans can pay a different rate, so confirm it with the owner.</li>
+        <li><b>Plus about $1 from each client, every online booking.</b> At 500 online bookings a month, clients pay roughly $6,000 a year in booking fees on top of their cuts.</li>
+        <li><b>Add-ons cost extra:</b> a branded landing page is $25 a month, and the Operator AI is $99 a month.</li>
+        <li><b>Card processing is separate.</b> Any system that takes cards pays this, so it's left out of every comparison on this page.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="menu"><div class="wrap">
+  <div class="kick">The menu, barber by barber</div>
+  <h2 class="h2">Same prices everywhere. Very different chairs.</h2>
+  <p class="lede">Every barber charges the same price for the same service. What changes is how long they book it for, and which services they offer at all.</p>
+  <div class="mx"><table id="matrix"></table></div>
+  <p class="legend"><i></i>Booked longer than most barbers book the same service. Minutes shown per barber; a dash means they don't offer it.</p>
+  <div class="two">
+    <div class="card chart"><h3>What a regular haircut earns per chair-hour</h3><p class="sub">$45 haircut ÷ the time each barber books it for</p><div id="rateChart"></div></div>
+    <ul class="list">
+      <li><b>Scott and Bao book 45 minutes for a haircut, the other five book 30.</b> Same $45 price, so those two chairs earn $60 an hour on haircuts instead of $90. Worth asking whether that's on purpose.</li>
+      <li><b>Fades cost the same as a regular cut.</b> Skin Fade is $45 like a Haircut, and Student Skin Fade is $40 like a Student Cut. Most shops charge more for a fade.</li>
+      <li><b>Specialties are scattered.</b> Straight blade shaves: Jeffrey, Georges, James, Ankur. Designs: Jeffrey, Georges, Ankur. Long hair: only Georges. Weddings ($350): David and Ankur. Jeffrey and James don't do skin fades.</li>
+      <li><b>The menu needs a tidy-up.</b> "Hair Cut" and "Haircut" both appear, some names have stray spaces, the Design add-on is listed as its own appointment, and the Wedding is booked as 0 minutes.</li>
+      <li><b>Clients must pick a barber first.</b> "Any barber" is switched off, so someone who just wants the next free chair has to check all seven profiles.</li>
+      <li><b>The website doesn't match.</b> capitalbarbershop.ca lists a Hot Towel Shave and a Mustache Trim with no prices, and neither has that name on the booking page.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="band org" id="cost"><div class="wrap">
+  <div class="kick">The money</div>
+  <h2 class="h2">Renting software vs. owning it.</h2>
+  <p class="lede">Move the numbers to match what the owner tells you. The Crossmind figures are a starting point for your quote, not a fixed price.</p>
+  <div class="calc">
+    <div class="card ctl">
+      <label>Capital's Squire plan
+        <select id="cPlan"><option value="340" selected>Titan: CA$340/mo (best guess)</option><option value="205">Executive: CA$205/mo</option><option value="65">Pro: CA$65/mo</option></select></label>
+      <label><span class="r"><span>Add-ons</span></span>
+        <select id="cAdd"><option value="0" selected>None</option><option value="25">Branded landing page: +$25</option><option value="99">Operator AI: +$99</option><option value="124">Both: +$124</option></select></label>
+      <label><span class="r"><span>Online bookings a month</span><span class="v" id="cBkV">500</span></span>
+        <input type="range" id="cBk" min="100" max="1500" step="50" value="500"></label>
+      <div class="pair">
+        <label>Crossmind build (one time)<input type="number" id="cBuild" value="1500" min="0" step="100"></label>
+        <label>Crossmind monthly<input type="number" id="cMo" value="49" min="0" step="5"></label>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink-soft);font-weight:400">The Crossmind monthly figure should cover hosting, text reminders and support. Card processing isn't counted on either side.</p>
+    </div>
+    <div class="card">
+      <div class="outs">
+        <div class="out"><b id="oSq">$0</b><span>Squire, 3 years (shop pays)</span></div>
+        <div class="out hi"><b id="oCm">$0</b><span>Crossmind, 3 years</span></div>
+        <div class="out"><b id="oFee">$0</b><span>Booking fees clients skip a year</span></div>
+      </div>
+      <div class="chart" id="costChart"></div>
+      <p id="oBe" style="font-size:14px;margin-top:10px;font-weight:600"></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band navy" id="vs"><div class="wrap">
+  <div class="kick">What changes</div>
+  <h2 class="h2">Everything Capital uses, plus the fixes.</h2>
+  <table class="vs">
+    <thead><tr><th></th><th>Squire today</th><th>Crossmind build</th></tr></thead>
+    <tbody>
+      <tr><td>Software cost</td><td>CA$205 to $340 a month, every month</td><td>One build fee, then a small monthly fee for hosting and texts</td></tr>
+      <tr><td>Client booking fee</td><td>$1.00 on every online booking</td><td>None</td></tr>
+      <tr><td>Where it lives</td><td>getsquire.com, branded page costs $25 a month extra</td><td>capitalbarbershop.ca, in Capital's own look</td></tr>
+      <tr><td>Next free chair</td><td>Switched off; clients check barbers one by one</td><td>"First available" at the top, plus the soonest openings on the home screen</td></tr>
+      <tr><td>How clients start</td><td>Barber first</td><td>Pick a barber or pick a service, whichever they care about</td></tr>
+      <tr><td>Add-ons</td><td>Design is a separate appointment</td><td>Design is a tick box on the cut, with its time and price added</td></tr>
+      <tr><td>Changing prices</td><td>In Squire's admin</td><td>Owner edits a price on the desk view and the booking page updates straight away</td></tr>
+      <tr><td>After booking</td><td>Confirmation and reminders</td><td>Add to calendar, rebook in 4 weeks, manage or reschedule with just a phone number</td></tr>
+      <tr><td>Client list</td><td>Held inside Squire</td><td>In Capital's own database</td></tr>
+    </tbody>
+  </table>
+  <div class="wins"><b>Be upfront about where Squire is ahead:</b> card readers and point of sale, commission splits and payroll, an app in the App Store, years of reliability, and support staff. A real Crossmind build would take payments through Stripe (including Tap to Pay on a phone) and send texts through a service like Twilio. Payroll would stay where it is, or come as a second phase.</div>
+</div></section>
+
+<section class="band" id="sim"><div class="wrap simwrap">
+  <div class="sim-head"><div>
+    <div class="kick">Simulation</div>
+    <h2 class="h2">One booking, three screens.</h2>
+    <p class="lede">The client books on their phone. The barber's phone gets it right away, and the front desk calendar updates. Every screen works: tap through it yourself, or press play.</p>
+  </div></div>
+  <div class="sim-tabs" role="tablist">
+    <button class="on" data-dev="c">Client phone</button><button data-dev="b">Barber phone</button><button data-dev="o">Owner desk</button>
+  </div>
+  <div class="sim">
+    <figure class="dev show" data-dev="c"><figcaption>Client's phone</figcaption><div class="phone"><div class="pscr inph" id="simC"></div></div><a href="#book">Open full screen ↗</a></figure>
+    <figure class="dev" data-dev="o"><figcaption>Owner / front desk</figcaption><div class="laptop"><div class="lid"><div class="chrome"><i></i><i></i><i></i><span>capitalbarbershop.ca/desk</span></div><div class="lscr" id="simO"></div></div><div class="base"></div></div><a href="#owner">Open full screen ↗</a></figure>
+    <figure class="dev" data-dev="b"><figcaption>Barber's phone</figcaption><div class="phone"><div class="pscr inph" id="simB"></div></div><a href="#barber">Open full screen ↗</a></figure>
+  </div>
+  <div class="playrow"><button class="btn" id="play">▶ Play the booking walkthrough</button><button class="btn ghost" id="reset">Reset demo data</button></div>
+  <p class="simnote">Open the client view in one tab and the desk in another and they stay in sync.</p>
+</div></section>
+
+<section class="band navy"><div class="wrap">
+  <div class="kick">Send these to the owner</div>
+  <h2 class="h2">Every view has its own link.</h2>
+  <p class="lede">Each one opens full screen on a phone or computer. No login, no app to install.</p>
+  <div class="share">
+    <a href="#book">Client booking <span>crossmind.ca/capital#book</span></a>
+    <a href="#barber">Barber's phone <span>crossmind.ca/capital#barber</span></a>
+    <a href="#owner">Owner desk <span>crossmind.ca/capital#owner</span></a>
+  </div>
+  <div class="foot">Prototype built by <a href="https://crossmind.ca/">Crossmind Solutions</a>. Not affiliated with or endorsed by Capital Barbershop or SQUIRE. Barber names, services and prices come from Capital's public booking page as of November 2026. Schedules and appointments shown are sample data. Squire plan prices are from getsquire.com/pricing.</div>
+</div></section>
+
+<div class="full" id="full" hidden>
+  <div class="fbar"><b>Capital · demo</b><span id="fLabel"></span><button id="fClose">✕ Close</button></div>
+  <div class="fbody"><div class="holder" id="fHold"></div></div>
+</div>
+
+<script>
+(()=>{
+'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MIN=6e4;
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+
+/* ---------- shop data (from Capital's public Squire page) ---------- */
+const HOURS={0:[600,1020],2:[540,1080],3:[540,1080],4:[540,1140],5:[540,1140],6:[600,1080]}; // minutes from midnight; Mon closed
+const SV0={
+ haircut:['Haircut','Cuts',45,'Scissor or clipper cut, styled'],
+ skinfade:['Skin Fade','Cuts',45,'Bald fade, blended up'],
+ longhair:['Long Hair','Cuts',45,'Extra length and scissor work'],
+ student:['Student Cut','Cuts',40,'Bring your student ID'],
+ studentfade:['Student Skin Fade','Cuts',40,'Bring your student ID'],
+ senior:['Senior Cut','Cuts',40,''],
+ kid:['Kid Cut','Cuts',30,''],
+ buzz:['Buzz','Cuts',30,'Clippers all over'],
+ cutbeard:['Haircut + Beard Trim','Combos',60,''],
+ fadebeard:['Skin Fade + Beard Trim','Combos',60,''],
+ cutshave:['Haircut + Straight Blade Shave','Combos',80,'Hot towel and straight razor'],
+ studentbeard:['Student Cut + Beard','Combos',55,''],
+ studentfadebeard:['Student Skin Fade + Beard','Combos',55,''],
+ buzzbeard:['Buzz + Beard Trim','Combos',50,''],
+ beard:['Beard Trim','Beard & shave',25,'Shape and line-up'],
+ shave:['Straight Blade Shave','Beard & shave',45,'Hot towel and straight razor'],
+ neck:['Neck Lineup','Beard & shave',20,'Clean-up between cuts'],
+ design:['Design add-on','Extras',10,'Lines or a pattern'],
+ wedding:['Wedding Reservation','Events',350,'Groom and party, confirmed by phone'],
+};
+const ORDER=Object.keys(SV0);
+const CATS=['Cuts','Combos','Beard & shave','Events'];
+const B=[
+ {id:'scott',n:'Scott F.',c:'#A8251C',d:[4,5,6,0],s:'student:45,senior:45,kid:45,buzz:30,beard:30,neck:15,cutbeard:60,studentbeard:45,buzzbeard:45,skinfade:45,studentfade:45,fadebeard:60,studentfadebeard:60,haircut:45'},
+ {id:'jeffrey',n:'Jeffrey R.',c:'#2F5D8A',d:[2,3,4,5,6,0],s:'buzz:30,design:15,haircut:30,kid:30,senior:30,student:30,cutbeard:45,studentbeard:45,beard:30,cutshave:60,shave:45,buzzbeard:45,neck:15'},
+ {id:'georges',n:'Georges K.',c:'#B7791F',d:[2,3,5,6,0],s:'buzz:30,design:15,haircut:30,kid:30,senior:30,student:30,cutbeard:45,studentbeard:45,beard:30,cutshave:60,shave:45,buzzbeard:45,skinfade:45,fadebeard:60,neck:15,studentfade:45,studentfadebeard:60,longhair:30'},
+ {id:'james',n:'James H.',c:'#2E7D5B',d:[2,3,4,5,6,0],s:'buzz:30,haircut:30,kid:30,senior:30,student:30,cutbeard:45,studentbeard:45,beard:30,cutshave:60,shave:45,buzzbeard:45,neck:15'},
+ {id:'bao',n:'Bao D.',c:'#6B4FA0',d:[2,3,4,5,6],s:'buzz:30,haircut:45,kid:45,senior:45,student:45,cutbeard:60,studentbeard:60,beard:30,buzzbeard:45,skinfade:45,fadebeard:60,neck:15,studentfade:45,studentfadebeard:60'},
+ {id:'david',n:'David L.',c:'#1F6F78',d:[2,3,4,5,6],s:'buzz:30,haircut:30,kid:30,senior:30,student:30,wedding:0,cutbeard:45,studentbeard:45,beard:30,buzzbeard:45,skinfade:45,fadebeard:60,neck:15,studentfade:45,studentfadebeard:60'},
+ {id:'ankur',n:'Ankur V.',c:'#8A3B5C',d:[2,3,4,5,0],s:'buzz:30,design:15,haircut:30,kid:30,senior:30,student:30,wedding:0,cutbeard:45,studentbeard:45,beard:30,cutshave:60,shave:45,buzzbeard:45,skinfade:45,fadebeard:60,neck:15,studentfade:45,studentfadebeard:60'},
+].map(b=>({...b,svc:Object.fromEntries(b.s.split(',').map(x=>{const[k,v]=x.split(':');return[k,+v]}))}));
+const BB=Object.fromEntries(B.map(b=>[b.id,b]));
+const ini=n=>n.split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase();
+const svName=k=>k==='block'?'Blocked time':(SV0[k]?SV0[k][0]:k);
+const durOf=(bid,sid)=>sid==='wedding'?60:(BB[bid].svc[sid]??30);
+
+/* ---------- dates ---------- */
+const dk=t=>{const x=new Date(t);return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')};
+const day0=t=>{const x=new Date(t);x.setHours(0,0,0,0);return x.getTime()};
+const addD=(t,n)=>{const x=new Date(t);x.setDate(x.getDate()+n);x.setHours(0,0,0,0);return x.getTime()};
+const at=(d,m)=>{const x=new Date(d);x.setHours(0,m,0,0);return x.getTime()};
+const minOf=t=>{const x=new Date(t);return x.getHours()*60+x.getMinutes()};
+const fT=t=>new Date(t).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+const fTm=m=>{const h=Math.floor(m/60),mm=m%60;return (h%12||12)+(mm?':'+String(mm).padStart(2,'0'):'')+(h<12?' AM':' PM')};
+const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const fD=t=>{const x=new Date(t);return DOW[x.getDay()]+', '+x.toLocaleDateString('en-US',{month:'short',day:'numeric'})};
+const rel=t=>{const d=day0(t),n=day0(Date.now());if(d===n)return'Today';if(d===addD(n,1))return'Tomorrow';return fD(t)};
+const hoursOf=d=>HOURS[new Date(d).getDay()]||null;
+const works=(bid,d)=>!!hoursOf(d)&&BB[bid].d.includes(new Date(d).getDay());
+
+/* ---------- store ---------- */
+const KEY='capital-demo-v3';
+let S, idx=null;
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const NAMES=['Liam','Noah','Ethan','Omar','Lucas','Mason','Ali','Daniel','Jacob','Ryan','Marcus','Owen','Kevin','Sam','Adam','Theo','Hassan','Leo','Victor','Nathan','Eli','Jordan','Malik','Chris','Wei','Raj','Mathieu','Gabriel','Tyler','Dev','Karim','Sean','Hugo','Andre','Felix','Yusuf'];
+const WT={haircut:7,skinfade:5,cutbeard:4,fadebeard:3,student:3,studentfade:2,buzz:2,beard:2,kid:1,senior:1,neck:1,shave:1,cutshave:1,buzzbeard:1,studentbeard:1,studentfadebeard:1,longhair:1};
+function seed(){
+  const now=Date.now(),today=day0(now),r=rng(+dk(now).replace(/-/g,''));
+  const st={v:3,seedDay:dk(now),svc:Object.fromEntries(ORDER.map(k=>[k,{p:SV0[k][2],on:true}])),bookings:[],any:true,cancelH:2,nid:1};
+  const pick=b=>{const ks=Object.keys(b.svc).filter(k=>WT[k]);let tot=ks.reduce((a,k)=>a+WT[k],0),x=r()*tot;for(const k of ks){x-=WT[k];if(x<=0)return k}return ks[0]};
+  for(let d=-7;d<=14;d++){
+    const day=addD(today,d),h=hoursOf(day);if(!h)continue;
+    for(const b of B){
+      if(!works(b.id,day))continue;
+      const fill=d<0?.8:d===0?.74:d<3?.62:Math.max(.16,.56-d*.03);
+      let m=h[0];
+      while(m<h[1]){
+        if(r()<fill){
+          const sid=pick(b),du=durOf(b.id,sid);
+          if(m+du>h[1]){m+=15;continue}
+          const s=at(day,m),past=s+du*MIN<now,c=NAMES[r()*NAMES.length|0]+' '+String.fromCharCode(65+(r()*26|0))+'.';
+          st.bookings.push({id:st.nid++,barber:b.id,svc:sid,start:s,dur:du,price:st.svc[sid].p,client:c,phone:'613-555-'+String(1000+(r()*8999|0)),status:past?(r()<.05?'noshow':'done'):'booked',src:r()<.8?'online':'walkin'});
+          m+=du;
+        } else m+=r()<.5?15:30;
+      }
+    }
+  }
+  return st;
+}
+function load(){try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.v===3&&j.seedDay===dk(Date.now()))return j}catch(e){}return seed()}
+let bc=null;
+try{bc=new BroadcastChannel('capital-demo');bc.onmessage=()=>{S=load();idx=null;renderAll()}}catch(e){}
+function save(){idx=null;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}try{bc&&bc.postMessage(1)}catch(e){}renderAll()}
+S=load();
+
+function dayBk(bid,d){
+  if(!idx){idx=new Map();for(const b of S.bookings){const k=b.barber+'|'+dk(b.start);(idx.get(k)||idx.set(k,[]).get(k)).push(b)}for(const a of idx.values())a.sort((x,y)=>x.start-y.start)}
+  return idx.get(bid+'|'+dk(d))||[];
+}
+function free(bid,d,du){
+  const h=hoursOf(d);if(!h||!works(bid,d))return[];
+  const bs=dayBk(bid,d).filter(b=>b.status!=='cancelled'),now=Date.now()+10*MIN,out=[];
+  for(let m=h[0];m+du<=h[1];m+=15){const s=at(d,m),e=s+du*MIN;if(s<now)continue;if(bs.some(b=>s<b.start+b.dur*MIN&&e>b.start))continue;out.push(s)}
+  return out;
+}
+function nextFree(bid,sid){const du=sid?durOf(bid,sid):30,t=day0(Date.now());for(let i=0;i<45;i++){const f=free(bid,addD(t,i),du);if(f.length)return f[0]}return null}
+function offers(bid,sid){return BB[bid].svc[sid]!=null&&S.svc[sid].on}
+function anySlots(sid,d,addon){const map=new Map();for(const b of B){if(!offers(b.id,sid))continue;if(addon&&!offers(b.id,'design'))continue;for(const s of free(b.id,d,durOf(b.id,sid)+(addon?15:0))){if(!map.has(s))map.set(s,[]);map.get(s).push(b.id)}}return[...map.entries()].sort((a,b)=>a[0]-b[0])}
+function openText(){
+  const now=Date.now(),h=hoursOf(now),m=minOf(now);
+  if(h&&m>=h[0]&&m<h[1])return{o:true,t:'Open now · until '+fTm(h[1])};
+  for(let i=0;i<8;i++){const d=addD(now,i),hh=hoursOf(d);if(!hh)continue;if(i===0&&m>=hh[0])continue;return{o:false,t:'Closed · opens '+(i===0?'today':i===1?'tomorrow':DOW[new Date(d).getDay()])+' '+fTm(hh[0])}}
+  return{o:false,t:'Closed'};
+}
+
+/* ---------- instances ---------- */
+const insts=[];
+function mount(el,kind,ui){const inst={el,kind,ui:Object.assign(defUI(kind),ui||{})};insts.push(inst);bind(inst);render(inst);return inst}
+function defUI(k){if(k==='c')return{step:'home',mode:'barber',barber:null,svc:null,addon:false,day:null,time:null,slotB:null,name:'',phone:'',pay:'shop',err:'',last:null,toast:'',mPhone:'',mFound:null,resched:null};
+ if(k==='b')return{who:'james',day:day0(Date.now()),toast:''};return{tab:'cal',day:day0(Date.now()),toast:''}}
+function render(inst){
+  if(!inst.el.isConnected)return;
+  const sc=inst.el.querySelector('.scroll'),top=sc?sc.scrollTop:0,key=inst.ui.step||inst.ui.tab||'';
+  const html=inst.kind==='c'?clientHTML(inst.ui):inst.kind==='b'?barberHTML(inst.ui):ownerHTML(inst.ui,inst.el.clientWidth<600,inst.el.clientHeight);
+  inst.el.innerHTML=html;
+  const sc2=inst.el.querySelector('.scroll');if(sc2&&inst._k===key)sc2.scrollTop=top;
+  if(sc2&&inst._k!==key&&inst.kind==='o'&&inst.ui.tab==='cal'){const n=inst.el.querySelector('.fresh')||inst.el.querySelector('.now');if(n)sc2.scrollTop=Math.max(0,n.offsetTop-90)}
+  inst._k=key;
+}
+function renderAll(){insts.forEach(render)}
+function toast(inst,msg){inst.ui.toast=msg;render(inst);clearTimeout(inst._tt);inst._tt=setTimeout(()=>{inst.ui.toast='';render(inst)},2600)}
+const T=ui=>ui.toast?`<div class="toast">${esc(ui.toast)}</div>`:'';
+
+/* ---------- client app ---------- */
+function clientHTML(u){
+  const back=u.step!=='home'&&u.step!=='done'?`<button class="bk" data-act="back" aria-label="Back">‹</button>`:'<span></span>';
+  let body='',foot='';
+  if(u.step==='home'){
+    const o=openText();
+    const q=[];for(const b of B){if(!offers(b.id,'haircut'))continue;const t=nextFree(b.id,'haircut');if(t)q.push([t,b.id])}q.sort((a,b)=>a[0]-b[0]);
+    body=`<div class="pad">
+      <h2>Fresh cuts on Bank St.</h2><div class="mut">590 Bank St, Ottawa · 613-236-8838</div>
+      <div class="open ${o.o?'':'c'}"><i></i>${esc(o.t)}</div>
+      <div class="sec">Soonest haircut openings</div>
+      <div class="chips">${q.slice(0,5).map(([t,b])=>`<button class="qc" data-act="quick" data-b="${b}" data-v="${t}"><b>${rel(t)} ${fT(t)}</b><span>with ${esc(BB[b].n)} · $${S.svc.haircut.p}</span></button>`).join('')||'<span class="mut">No openings in the next few weeks</span>'}</div>
+      <button class="big" data-act="mode" data-v="barber"><div><b>Choose a barber</b><span>See who's free and when</span></div><em>›</em></button>
+      <button class="big r" data-act="mode" data-v="service"><div><b>Choose a service</b><span>We'll show every barber who does it</span></div><em>›</em></button>
+      <div class="tiles"><button class="tile" data-act="gift"><i>🎁</i>Gift cards</button><button class="tile" data-act="groom"><i>🤵</i>Groomsmen</button><button class="tile" data-act="manage"><i>📅</i>My booking</button></div>
+      <div class="sec">Hours</div>
+      <div class="hrs">${[2,3,4,5,6,0,1].map(d=>{const h=HOURS[d],t=new Date().getDay()===d;return`<div class="${t?'t':''}"><span>${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d]}</span><span>${h?fTm(h[0])+' – '+fTm(h[1]):'Closed'}</span></div>`}).join('')}</div>
+    </div><div class="demo">Crossmind prototype · demo bookings only</div>`;
+  }
+  else if(u.step==='barber'){
+    const list=B.filter(b=>!u.svc||offers(b.id,u.svc));
+    let anyT=null;if(S.any){for(const b of list){const t=nextFree(b.id,u.svc);if(t&&(!anyT||t<anyT))anyT=t}}
+    body=`<div class="pad"><h2>${u.svc?'Who do you want?':'Pick your barber'}</h2>${u.svc?`<div class="mut">${esc(svName(u.svc))} · $${S.svc[u.svc].p}</div>`:''}<div class="sec">${list.length} barbers</div>
+      ${S.any?`<button class="row any" data-act="pickb" data-id="any"><div class="av" style="background:var(--cap-red)">★</div><div class="tx"><b>First available</b><small>${anyT?'Next chair: '+rel(anyT)+' '+fT(anyT):'Fully booked'}</small></div><span>›</span></button>`:''}
+      ${list.map(b=>{const t=nextFree(b.id,u.svc),soon=t&&day0(t)===day0(Date.now());return`<button class="row${t?'':' dim'}" data-act="pickb" data-id="${b.id}"><div class="av" style="background:${b.c}">${ini(b.n)}</div><div class="tx"><b>${esc(b.n)}</b><small class="${soon?'soon':''}">${t?'Available '+rel(t).toLowerCase().replace(/^(mon|tue|wed|thu|fri|sat|sun)/,s=>s[0].toUpperCase()+s.slice(1))+' '+fT(t):'No openings soon'}</small></div><span>›</span></button>`}).join('')}
+    </div>`;
+  }
+  else if(u.step==='service'){
+    const bid=u.barber&&u.barber!=='any'?u.barber:null;
+    const canAdd=bid?offers(bid,'design'):B.some(b=>offers(b.id,'design'));
+    const by=CATS.map(c=>{const ks=ORDER.filter(k=>SV0[k][1]===c&&S.svc[k].on&&(bid?offers(bid,k):B.some(b=>offers(b.id,k))));if(!ks.length)return'';
+      return`<div class="sec">${c}</div>`+ks.map(k=>{let dur;if(bid)dur=durOf(bid,k)+' min';else{const ds=B.filter(b=>offers(b.id,k)).map(b=>durOf(b.id,k));const a=Math.min(...ds),z=Math.max(...ds);dur=a===z?a+' min':a+'–'+z+' min'}
+        if(k==='wedding')dur='On-site';
+        return`<button class="row" data-act="picks" data-id="${k}"><div class="tx"><b>${esc(SV0[k][0])}</b><small>${dur}${SV0[k][3]?' · '+esc(SV0[k][3]):''}</small></div><div class="pr">$${S.svc[k].p}</div></button>`}).join('')}).join('');
+    body=`<div class="pad"><h2>${bid?'What are we doing?':'Pick a service'}</h2>${bid?`<div class="mut">with ${esc(BB[bid].n)}</div>`:''}
+      ${canAdd&&S.svc.design.on?`<div class="sec">Add-on</div><button class="addon${u.addon?' on':''}" data-act="addon"><i>${u.addon?'✓':''}</i><span><b>Add a design</b> · +$${S.svc.design.p}, 15 min${bid?'':' (Jeffrey, Georges, Ankur)'}</span></button>`:''}
+      ${by}</div>`;
+  }
+  else if(u.step==='time'){
+    const sid=u.svc,isAny=u.barber==='any',today=day0(Date.now()),days=[];
+    const addon=u.addon&&sid!=='wedding';
+    for(let i=0;i<21;i++){const d=addD(today,i);let n=0;if(isAny)n=anySlots(sid,d,addon).length;else n=free(u.barber,d,durOf(u.barber,sid)+(addon?15:0)).length;days.push([d,n])}
+    if(u.day==null||!days.some(([d,n])=>d===u.day&&n)){const f=days.find(([,n])=>n);u.day=f?f[0]:today}
+    let slots=isAny?anySlots(sid,u.day,addon).map(([t,bs])=>[t,bs.sort((a,b)=>dayBk(a,u.day).length-dayBk(b,u.day).length)[0]]):free(u.barber,u.day,durOf(u.barber,sid)+(addon?15:0)).map(t=>[t,u.barber]);
+    const grp=[['Morning',0,720],['Afternoon',720,1020],['Evening',1020,1440]].map(([n,a,z])=>{const s=slots.filter(([t])=>{const m=minOf(t);return m>=a&&m<z});return s.length?`<div class="sec">${n}</div><div class="slots">${s.map(([t,b])=>`<button class="slot" data-act="slot" data-v="${t}" data-b="${b}">${fT(t)}${isAny?`<small>${esc(BB[b].n)}</small>`:''}</button>`).join('')}</div>`:''}).join('');
+    const who=isAny?'First available barber':BB[u.barber].n;
+    body=`<div class="pad"><h2>${u.resched?'Pick a new time':'When works?'}</h2><div class="mut">${esc(svName(sid))}${addon?' + design':''} · ${esc(who)}</div>
+      <div class="sec">${new Date(u.day).toLocaleDateString('en-US',{month:'long',year:'numeric'})}</div>
+      <div class="days">${days.map(([d,n])=>{const x=new Date(d);return`<button class="day${d===u.day?' on':''}" data-act="day" data-v="${d}" ${n?'':'disabled'}><span>${DOW[x.getDay()]}</span><b>${x.getDate()}</b></button>`}).join('')}</div>
+      ${grp||`<div class="sum" style="margin-top:16px;text-align:center"><b>No openings in the next 3 weeks</b><div class="mut" style="margin:6px 0 10px">Join the waitlist and we'll text you if a chair opens up.</div><button class="ab k" data-act="wait">Join the waitlist</button></div>`}
+      ${grp?`<div class="pol" style="text-align:center;margin-top:16px">Nothing fits? <button data-act="wait" style="text-decoration:underline;font-size:inherit;color:inherit">Join the waitlist</button></div>`:''}
+    </div>`;
+  }
+  else if(u.step==='details'){
+    const b=BB[u.slotB],sid=u.svc,addon=u.addon&&offers(u.slotB,'design')&&sid!=='wedding',du=durOf(u.slotB,sid)+(addon?15:0),tot=S.svc[sid].p+(addon?S.svc.design.p:0);
+    body=`<div class="pad"><h2>Almost done</h2><div class="mut">Check the details and add your name.</div>
+      <div class="sum" style="margin-top:14px">
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><div class="av" style="background:${b.c}">${ini(b.n)}</div><div><b>${esc(b.n)}</b><div class="mut">${rel(u.time)} · ${fT(u.time)} – ${fT(u.time+du*MIN)}</div></div></div>
+        <div class="l"><span>${esc(svName(sid))}</span><b>$${S.svc[sid].p}</b></div>
+        ${addon?`<div class="l"><span>Design add-on</span><b>$${S.svc.design.p}</b></div>`:''}
+        <div class="l"><span>Booking fee</span><b class="free">$0</b></div>
+        <div class="l t"><span style="color:inherit">Total</span><b>$${tot}</b></div>
+      </div>
+      <label class="fld"><span>Your name</span><input data-f="name" value="${esc(u.name)}" autocomplete="name" placeholder="First and last name"></label>
+      <label class="fld"><span>Mobile number</span><input data-f="phone" value="${esc(u.phone)}" type="tel" autocomplete="tel" placeholder="613-555-0123"></label>
+      <div class="seg"><button data-act="pay" data-v="shop" class="${u.pay==='shop'?'on':''}">Pay at the shop</button><button data-act="pay" data-v="now" class="${u.pay==='now'?'on':''}">Pay now (card)</button></div>
+      ${u.err?`<div class="err">${esc(u.err)}</div>`:''}
+      <p class="pol">Free to cancel or move up to ${S.cancelH} hours before. We'll text a reminder the day before.</p>
+    </div>`;
+    foot=`<div class="foot"><button class="cta" data-act="confirm">Confirm · $${tot}</button></div>`;
+  }
+  else if(u.step==='done'){
+    const bk=S.bookings.find(x=>x.id===u.last);
+    if(!bk){u.step='home';return clientHTML(u)}
+    const visits=S.bookings.filter(x=>x.phone===bk.phone&&x.status!=='cancelled').length;
+    body=`<div class="pad done"><div class="chk">✓</div><h2>${u.resched?'Moved':'You\'re booked'}, ${esc(bk.client.split(' ')[0])}</h2>
+      <div class="mut">${esc(svName(bk.svc))}${bk.addon?' + design':''} with ${esc(BB[bk.barber].n)}</div>
+      <div style="font-weight:700;font-size:16px;margin-top:6px">${rel(bk.start)} at ${fT(bk.start)}</div>
+      <div class="code">CAP-${String(bk.id).padStart(4,'0')}</div>
+      <div class="mut">Capital Rewards: visit ${Math.min(visits,10)} of 10</div>
+      <div class="stamp">${Array.from({length:10},(_,i)=>`<i class="${i<visits?'f':''}"></i>`).join('')}</div>
+      <div class="acts"><button class="ab k" data-act="ics">Add to my calendar</button><button class="ab" data-act="rebook">Book my next cut in 4 weeks</button><button class="ab" data-act="home">Done</button></div>
+    </div>`;
+  }
+  else if(u.step==='manage'){
+    const found=u.mFound?S.bookings.filter(x=>x.phone===u.mFound&&x.status==='booked'&&x.start>Date.now()).sort((a,b)=>a.start-b.start):null;
+    body=`<div class="pad"><h2>My booking</h2><div class="mut">Enter the number you booked with. No account or password.</div>
+      <label class="fld"><span>Mobile number</span><input data-f="mPhone" value="${esc(u.mPhone)}" type="tel" placeholder="613-555-0123"></label>
+      <button class="ab k" style="margin-top:10px" data-act="find">Find my bookings</button>
+      ${found?(found.length?`<div class="sec">Upcoming</div>`+found.map(x=>{const late=x.start-Date.now()<S.cancelH*36e5;return`<div class="mb"><b>${esc(svName(x.svc))} · $${x.price}</b><div class="mut">${rel(x.start)} ${fT(x.start)} with ${esc(BB[x.barber].n)}</div>${late?`<div class="mut" style="margin-top:8px">Within ${S.cancelH} hours: call the shop to change this one.</div>`:`<div class="bs"><button data-act="resched" data-id="${x.id}">Reschedule</button><button class="x" data-act="cancel" data-id="${x.id}">Cancel</button></div>`}</div>`}).join(''):`<div class="sum" style="margin-top:14px">No upcoming bookings for that number.</div>`):''}
+      <p class="pol">Tip: book something first, then look it up here with the same number.</p></div>`;
+  }
+  return`<div class="app ca">${'<div class="bar">'+back+'<div class="brand">CAPITAL<small>BARBERSHOP</small></div><span></span></div>'}<div class="scroll">${body}</div>${foot}${T(u)}</div>`;
+}
+function clientAct(inst,a,d){
+  const u=inst.ui;
+  switch(a){
+    case'home':Object.assign(u,defUI('c'));break;
+    case'back':{const m=u.mode==='service';u.err='';
+      u.step={barber:m?'service':'home',service:m?'home':'barber',time:u.resched?'manage':(m?'barber':'service'),details:'time',manage:'home'}[u.step]||'home';
+      if(u.step==='home')Object.assign(u,defUI('c'));if(u.step==='manage')u.resched=null;break}
+    case'mode':Object.assign(u,defUI('c'),{mode:d.v,step:d.v==='barber'?'barber':'service'});break;
+    case'pickb':u.barber=d.id;u.day=null;u.step=u.mode==='service'?'time':'service';break;
+    case'picks':if(d.id==='wedding'&&u.barber&&u.barber!=='any'&&!offers(u.barber,'wedding'))return;u.svc=d.id;u.day=null;if(u.mode==='service'){u.step='barber'}else u.step='time';break;
+    case'addon':u.addon=!u.addon;render(inst);return;
+    case'day':u.day=+d.v;break;
+    case'slot':u.time=+d.v;u.slotB=d.b;
+      if(u.resched){const bk=S.bookings.find(x=>x.id===u.resched);if(bk){bk.start=u.time;bk.barber=u.slotB;bk.fresh=true;bk.moved=true;u.last=bk.id;u.step='done';save();return}}
+      u.step='details';break;
+    case'quick':Object.assign(u,defUI('c'),{mode:'barber',barber:d.b,svc:'haircut',time:+d.v,slotB:d.b,step:'details'});break;
+    case'pay':u.pay=d.v;break;
+    case'confirm':{
+      const name=u.name.trim(),ph=u.phone.replace(/[^\d]/g,'');
+      if(name.length<2){u.err='Add your name so your barber knows who\'s coming.';break}
+      if(ph.length<10){u.err='Add a 10-digit mobile number for your reminder.';break}
+      const addon=u.addon&&offers(u.slotB,'design')&&u.svc!=='wedding',du=durOf(u.slotB,u.svc)+(addon?15:0);
+      if(!free(u.slotB,day0(u.time),du).includes(u.time)){u.err='Someone just took that time. Pick another one.';u.step='time';break}
+      const phone=ph.slice(-10).replace(/(\d{3})(\d{3})(\d{4})/,'$1-$2-$3');
+      const bk={id:S.nid++,barber:u.slotB,svc:u.svc,addon,start:u.time,dur:du,price:S.svc[u.svc].p+(addon?S.svc.design.p:0),client:name,phone,status:'booked',src:'online',pay:u.pay,fresh:true};
+      S.bookings.push(bk);u.last=bk.id;u.err='';u.step='done';u.resched=null;save();return}
+    case'ics':{const bk=S.bookings.find(x=>x.id===u.last);if(bk)ics(bk);toast(inst,'Calendar file downloaded');return}
+    case'rebook':{const bk=S.bookings.find(x=>x.id===u.last);if(!bk)break;Object.assign(u,defUI('c'),{mode:'barber',barber:bk.barber,svc:bk.svc,addon:!!bk.addon,name:bk.client,phone:bk.phone,step:'time',day:addD(bk.start,28)});break}
+    case'gift':toast(inst,'Gift cards: pick an amount, pay, and it\'s texted to them. (Demo)');return;
+    case'groom':Object.assign(u,defUI('c'),{mode:'service',svc:'wedding',step:'barber'});break;
+    case'manage':u.step='manage';u.mFound=null;if(!u.mPhone&&u.phone)u.mPhone=u.phone;break;
+    case'find':{const ph=u.mPhone.replace(/[^\d]/g,'').slice(-10);u.mFound=ph.replace(/(\d{3})(\d{3})(\d{4})/,'$1-$2-$3');break}
+    case'cancel':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.status='cancelled';bk.fresh=true;save();toast(inst,'Cancelled. Your barber has been told.')}return}
+    case'resched':{const bk=S.bookings.find(x=>x.id===+d.id);if(!bk)break;Object.assign(u,{resched:bk.id,barber:bk.barber,svc:bk.svc,addon:!!bk.addon,mode:'barber',day:null,step:'time'});break}
+    case'wait':toast(inst,'You\'re on the waitlist. We\'ll text you if a chair opens up.');return;
+  }
+  render(inst);
+}
+function ics(b){
+  const f=t=>new Date(t).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+  const txt=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Crossmind//Capital demo//EN','BEGIN:VEVENT','UID:cap-'+b.id+'-'+b.start+'@crossmind.ca','DTSTAMP:'+f(Date.now()),'DTSTART:'+f(b.start),'DTEND:'+f(b.start+b.dur*MIN),'SUMMARY:'+svName(b.svc)+' with '+BB[b.barber].n+' (Capital Barbershop)','LOCATION:590 Bank St\\, Ottawa\\, ON K1S 3T3','DESCRIPTION:Demo booking from the Crossmind prototype','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/calendar'}));a.download='capital-booking.ics';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+}
+
+/* ---------- barber app ---------- */
+function barberHTML(u){
+  const b=BB[u.who],d=u.day,list=dayBk(b.id,d),h=hoursOf(d),today=day0(Date.now());
+  const live=list.filter(x=>x.status!=='cancelled'&&x.svc!=='block');
+  const open=works(b.id,d)?free(b.id,d,30).length:0;
+  const fresh=S.bookings.filter(x=>x.barber===b.id&&x.fresh).sort((a,z)=>z.id-a.id)[0];
+  const nx=list.find(x=>x.status==='booked'&&x.svc!=='block'&&x.start+x.dur*MIN>Date.now());
+  const rows=list.map(x=>{const bl=x.svc==='block',cx=x.status==='cancelled';
+    return`<div class="ap${cx?' cx':''}${bl?' blk':''}"><div class="tm">${fT(x.start)}<small>${x.dur} min</small></div><div class="bx" style="--c:${b.c}"><b>${esc(bl?'Blocked':x.client)}${x.fresh?'<span class="pill nw">'+(cx?'Cancelled':x.moved?'Moved':'New')+'</span>':''}${x.status==='done'?'<span class="pill done">Done</span>':''}${x.status==='noshow'?'<span class="pill noshow">No-show</span>':''}</b><span>${bl?'Break':esc(svName(x.svc))+(x.addon?' + design':'')+' · $'+x.price+(x.src==='walkin'?' · walk-in':'')}</span>
+      ${x.status==='booked'&&!bl&&!cx?`<div class="ac"><button class="ok" data-act="bdone" data-id="${x.id}">✓ Done</button><button data-act="bns" data-id="${x.id}">No-show</button></div>`:''}${bl&&!cx?`<div class="ac"><button data-act="unblock" data-id="${x.id}">Remove</button></div>`:''}</div></div>`}).join('');
+  return`<div class="app ba"><div class="bh">
+    <div class="who"><div class="av" style="background:${b.c}">${ini(b.n)}</div><div class="tx"><b>${esc(b.n)}</b><small>Barber view</small></div>
+      <select data-ch="who" aria-label="Switch barber">${B.map(x=>`<option value="${x.id}" ${x.id===b.id?'selected':''}>${esc(x.n)}</option>`).join('')}</select></div>
+    <div class="dn"><button data-act="bday" data-v="-1" aria-label="Previous day">‹</button><b>${d===today?'Today · '+new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric'}):fD(d)}</b><button data-act="bday" data-v="1" aria-label="Next day">›</button></div>
+    <div class="st"><div><b>${live.length}</b><span>clients</span></div><div><b>$${live.filter(x=>x.status!=='noshow').reduce((a,x)=>a+x.price,0)}</b><span>booked</span></div><div><b>${open}</b><span>open slots</span></div></div>
+  </div><div class="scroll">
+    ${fresh?`<div class="new"><div class="tx"><b>${fresh.status==='cancelled'?'Cancelled':fresh.moved?'Booking moved':'New booking'} · ${esc(fresh.client)}</b>${esc(svName(fresh.svc))} · ${rel(fresh.start)} ${fT(fresh.start)}</div><button data-act="seen" data-id="${fresh.id}">${day0(fresh.start)===d?'OK':'View'}</button></div>`:''}
+    ${nx&&d===today?`<div class="nx"><small>Up next</small><b>${esc(nx.client)} · ${fT(nx.start)}</b><span>${esc(svName(nx.svc))} · ${nx.dur} min · $${nx.price} · ${esc(nx.phone)}</span></div>`:''}
+    <div class="tl">${!works(b.id,d)?`<div class="off">${h?'Day off':'Shop closed Mondays'}</div>`:rows||'<div class="off">Nothing booked yet</div>'}</div>
+  </div><div class="bf"><button data-act="walkin">+ Walk-in</button><button class="s" data-act="block">Block 30 min</button></div>${T(u)}</div>`;
+}
+function barberAct(inst,a,d){
+  const u=inst.ui;
+  switch(a){
+    case'bday':u.day=addD(u.day,+d.v);break;
+    case'seen':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.fresh=false;u.day=day0(bk.start);save()}return}
+    case'bdone':case'bns':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.status=a==='bdone'?'done':'noshow';bk.fresh=false;save()}return}
+    case'unblock':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.status='cancelled';save()}return}
+    case'walkin':case'block':{
+      const sid=a==='walkin'?(offers(u.who,'haircut')?'haircut':Object.keys(BB[u.who].svc)[0]):'block',du=a==='walkin'?durOf(u.who,sid):30;
+      let t=null;for(let i=0;i<14&&!t;i++){const dd=addD(u.day<day0(Date.now())?day0(Date.now()):u.day,i);const f=free(u.who,dd,du);if(f.length)t=f[0]}
+      if(!t){toast(inst,'No free time to fit that in');return}
+      S.bookings.push({id:S.nid++,barber:u.who,svc:sid,start:t,dur:du,price:a==='walkin'?S.svc[sid].p:0,client:a==='walkin'?'Walk-in':'Blocked',phone:'',status:'booked',src:a==='walkin'?'walkin':'block'});
+      u.day=day0(t);save();toast(inst,(a==='walkin'?'Walk-in added ':'Blocked ')+rel(t).toLowerCase()+' at '+fT(t));return}
+  }
+  render(inst);
+}
+
+/* ---------- owner desk ---------- */
+function ownerHTML(u,narrow,H){
+  const nav=[['cal','📅','Calendar'],['ins','📈','Insights'],['svc','✂️','Services'],['cli','👥','Clients'],['set','⚙️','Settings']];
+  let head='',body='';
+  const today=day0(Date.now());
+  if(u.tab==='cal'){
+    const d=u.day,h=hoursOf(d)||[540,1140],rows=(h[1]-h[0])/15,RH=Math.max(12,Math.min(22,Math.floor(((H||500)-(narrow?260:190))/rows)));
+    const all=B.map(b=>dayBk(b.id,d).filter(x=>x.status!=='cancelled')).flat(),live=all.filter(x=>x.svc!=='block');
+    const nowM=minOf(Date.now()),showNow=d===today&&nowM>h[0]&&nowM<h[1];
+    head=`<h4>${d===today?'Today':rel(d)} · ${new Date(d).toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}</h4><span class="sp"></span><button data-act="oday" data-v="-1" aria-label="Previous day">‹</button><button data-act="oday" data-v="0">Today</button><button data-act="oday" data-v="1" aria-label="Next day">›</button>`;
+    const lines=Array.from({length:rows/2},(_,i)=>`<div class="hl" style="top:${i*2*RH+26}px"></div>`).join('');
+    body=`<div class="kp"><div><b>${live.length}</b><span>appointments</span></div><div><b>$${live.filter(x=>x.status!=='noshow').reduce((a,x)=>a+x.price,0)}</b><span>booked revenue</span></div><div><b>${live.filter(x=>x.src==='online').length}</b><span>booked online</span></div><div><b>${B.filter(b=>works(b.id,d)).length}/7</b><span>barbers in</span></div></div>
+    <div class="cal">${!hoursOf(d)?'<div class="bx" style="text-align:center;padding:30px">Closed Mondays</div>':`<div class="cg" style="grid-template-columns:44px repeat(${B.length},minmax(${narrow?72:0}px,1fr));${narrow?'min-width:560px':''}">
+      <div class="tc" style="height:${rows*RH+26}px"><div class="ch" style="border:0">&nbsp;</div>${Array.from({length:rows/4+1},(_,i)=>`<span style="top:${i*4*RH+26}px">${fTm(h[0]+i*60).replace(':00','')}</span>`).join('')}</div>
+      ${B.map(b=>{const on=works(b.id,d);return`<div class="col${on?'':' off'}" style="height:${rows*RH+26}px"><div class="ch"><i style="background:${b.c}"></i>${esc(b.n.split(' ')[0])}</div>${lines}
+        ${dayBk(b.id,d).filter(x=>x.status!=='cancelled').map(x=>{const top=(minOf(x.start)-h[0])/15*RH+26,ht=Math.max(x.dur/15*RH-2,10);return`<div class="bk2 ${x.status} ${x.svc==='block'?'blk':''} ${x.fresh?'fresh':''}" style="--c:${b.c};top:${top}px;height:${ht}px" title="${esc(x.client)} · ${esc(svName(x.svc))}"><b>${esc(x.svc==='block'?'Blocked':x.client)}</b>${ht>22?`<span>${fT(x.start)} · ${esc(svName(x.svc))}</span>`:''}</div>`}).join('')}
+        ${showNow?`<div class="now" style="top:${(nowM-h[0])/15*RH+26}px"></div>`:''}</div>`}).join('')}
+    </div>`}</div>`;
+    if(narrow)body=body.replace('<div class="cal">','<div class="cal" style="overflow-x:auto">');
+  }
+  else if(u.tab==='ins'){
+    const from=addD(today,-7),wk=S.bookings.filter(x=>x.start>=from&&x.start<today&&x.svc!=='block'&&x.status!=='cancelled');
+    const done=wk.filter(x=>x.status==='done'),ns=wk.filter(x=>x.status==='noshow');
+    const rev=B.map(b=>[b,done.filter(x=>x.barber===b.id).reduce((a,x)=>a+x.price,0)]).sort((a,z)=>z[1]-a[1]),mx=Math.max(1,...rev.map(r=>r[1]));
+    const cnt={};done.forEach(x=>cnt[x.svc]=(cnt[x.svc]||0)+1);const top=Object.entries(cnt).sort((a,z)=>z[1]-a[1]).slice(0,6),tm=Math.max(1,...top.map(t=>t[1]));
+    const onl=wk.filter(x=>x.src==='online').length;
+    head=`<h4>Last 7 days</h4>`;
+    body=`<div class="kp"><div><b>$${done.reduce((a,x)=>a+x.price,0).toLocaleString()}</b><span>cut revenue</span></div><div><b>${done.length}</b><span>clients served</span></div><div><b>${wk.length?Math.round(ns.length/wk.length*100):0}%</b><span>no-shows</span></div><div><b>$${onl}</b><span>booking fees clients didn't pay</span></div></div>
+    <div class="pn"><div class="bx"><h5>Revenue by barber</h5>${rev.map(([b,v])=>`<div class="hb"><span>${esc(b.n)}</span><i style="--c:${b.c};width:${v/mx*100}%"></i><em>$${v}</em></div>`).join('')}</div>
+    <div class="bx"><h5>Most booked</h5>${top.map(([k,v])=>`<div class="hb"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(svName(k))}</span><i style="--c:#141414;width:${v/tm*100}%"></i><em>${v}</em></div>`).join('')}</div></div>`;
+  }
+  else if(u.tab==='svc'){
+    head=`<h4>Services &amp; prices</h4><span class="sp"></span><span style="font-size:11px;color:#6b6f75">Changes go live on the booking page instantly</span>`;
+    body=`<div class="pn"><div class="bx"><table><thead><tr><th>Service</th><th>Price</th><th>Barbers</th><th>Online</th></tr></thead><tbody>${ORDER.map(k=>`<tr><td><b>${esc(SV0[k][0])}</b></td><td>$<input class="pi" type="number" min="0" step="1" value="${S.svc[k].p}" data-ch="price" data-id="${k}" aria-label="Price for ${esc(SV0[k][0])}"></td><td>${B.filter(b=>b.svc[k]!=null).length}</td><td><button class="tg${S.svc[k].on?' on':''}" data-act="svon" data-id="${k}" aria-label="Show ${esc(SV0[k][0])} online"></button></td></tr>`).join('')}</tbody></table></div></div>`;
+  }
+  else if(u.tab==='cli'){
+    const m=new Map();for(const x of S.bookings){if(!x.phone||x.svc==='block')continue;const k=x.phone;const c=m.get(k)||{n:x.client,p:x.phone,v:0,s:0,last:0,next:0};if(x.status==='done'){c.v++;c.s+=x.price;c.last=Math.max(c.last,x.start)}if(x.status==='booked'&&x.start>Date.now())c.next=c.next?Math.min(c.next,x.start):x.start;c.n=x.client;m.set(k,c)}
+    const cl=[...m.values()].sort((a,z)=>z.next-a.next||z.v-a.v).slice(0,40);
+    head=`<h4>Clients</h4><span class="sp"></span><span style="font-size:11px;color:#6b6f75">${m.size} on file</span>`;
+    body=`<div class="pn"><div class="bx"><table><thead><tr><th>Name</th><th>Phone</th><th>Visits</th><th>Spent</th><th>Next</th></tr></thead><tbody>${cl.map(c=>`<tr><td><b>${esc(c.n)}</b></td><td>${esc(c.p)}</td><td>${c.v}</td><td>$${c.s}</td><td>${c.next?rel(c.next)+' '+fT(c.next):'—'}</td></tr>`).join('')}</tbody></table></div></div>`;
+  }
+  else{
+    head=`<h4>Booking settings</h4>`;
+    body=`<div class="pn"><div class="bx">
+      <div class="set"><div class="tx"><b>"First available" option</b><small>Let clients grab the next free chair with any barber</small></div><button class="tg${S.any?' on':''}" data-act="any" aria-label="Toggle first available"></button></div>
+      <div class="set"><div class="tx"><b>Free cancellation window</b><small>Clients can cancel or move online until this point</small></div><select data-ch="cancelH">${[1,2,12,24].map(n=>`<option value="${n}" ${S.cancelH===n?'selected':''}>${n} hr${n>1?'s':''} before</option>`).join('')}</select></div>
+      <div class="set"><div class="tx"><b>Client booking fee</b><small>Squire adds $1.00. Here it's off.</small></div><b>$0.00</b></div>
+      <div class="set" style="border:0"><div class="tx"><b>Shop hours</b><small>Tue–Wed 9–6 · Thu–Fri 9–7 · Sat 10–6 · Sun 10–5 · Mon closed</small></div></div>
+      <button class="rst" data-act="reset">Reset demo data</button></div></div>`;
+  }
+  return`<div class="app ow${narrow?' narrow':''}"><nav class="side"><div class="br">CAPITAL<small>FRONT DESK</small></div>${nav.map(([k,i,n])=>`<button class="${u.tab===k?'on':''}" data-act="tab" data-v="${k}"><span aria-hidden="true">${i}</span>${n}</button>`).join('')}<div class="sp">Crossmind prototype</div></nav>
+    <div class="main"><div class="mh">${head}</div><div class="scroll">${body}</div></div>${T(u)}</div>`;
+}
+function ownerAct(inst,a,d){
+  const u=inst.ui;
+  switch(a){
+    case'tab':u.tab=d.v;break;
+    case'oday':u.day=+d.v===0?day0(Date.now()):addD(u.day,+d.v);break;
+    case'svon':S.svc[d.id].on=!S.svc[d.id].on;save();return;
+    case'any':S.any=!S.any;save();return;
+    case'reset':resetAll();return;
+  }
+  render(inst);
+}
+
+/* ---------- events ---------- */
+function bind(inst){
+  inst.el.addEventListener('click',e=>{
+    const t=e.target.closest('[data-act]');if(!t||!inst.el.contains(t)||t.disabled)return;
+    if(e.isTrusted)stopPlay();
+    const a=t.dataset.act,d=t.dataset;
+    if(a==='back'||a==='home'){clientAct(inst,a,d);return}
+    (inst.kind==='c'?clientAct:inst.kind==='b'?barberAct:ownerAct)(inst,a,d);
+  });
+  inst.el.addEventListener('input',e=>{const f=e.target.dataset&&e.target.dataset.f;if(f){inst.ui[f]=e.target.value;if(inst.ui.err){inst.ui.err=''}}});
+  inst.el.addEventListener('change',e=>{
+    const c=e.target.dataset&&e.target.dataset.ch;if(!c)return;
+    if(c==='who'){inst.ui.who=e.target.value;render(inst)}
+    else if(c==='price'){const v=Math.max(0,Math.round(+e.target.value||0));S.svc[e.target.dataset.id].p=v;save();toast(inst,svName(e.target.dataset.id)+' is now $'+v+' on the booking page')}
+    else if(c==='cancelH'){S.cancelH=+e.target.value;save()}
+  });
+  inst.el.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset&&e.target.dataset.f){e.preventDefault();clientAct(inst,e.target.dataset.f==='mPhone'?'find':'confirm',{})}});
+}
+function resetAll(){try{localStorage.removeItem(KEY)}catch(e){}S=seed();insts.forEach(i=>{const keep=i.kind==='b'?{who:i.ui.who}:{};i.ui=Object.assign(defUI(i.kind),keep)});save()}
+
+/* ---------- simulation ---------- */
+const simC=mount($('#simC'),'c'),simB=mount($('#simB'),'b'),simO=mount($('#simO'),'o');
+let playing=false,stopFlag=false;
+function stopPlay(){if(playing)stopFlag=true}
+function showDev(k){$$('.sim-tabs button').forEach(b=>b.classList.toggle('on',b.dataset.dev===k));$$('.dev').forEach(f=>f.classList.toggle('show',f.dataset.dev===k));render(simO)}
+$$('.sim-tabs button').forEach(b=>b.addEventListener('click',()=>showDev(b.dataset.dev)));
+async function tap(inst,sel){
+  if(stopFlag)throw 0;
+  const el=inst.el.querySelector(sel);if(!el)throw 0;
+  const sc=inst.el.querySelector('.scroll');if(sc&&sc.contains(el)){const y=el.offsetTop-sc.clientHeight/2+el.offsetHeight/2;sc.scrollTo({top:Math.max(0,y),behavior:'smooth'});await wait(350)}
+  el.classList.add('tap');await wait(600);if(stopFlag)throw 0;return el;
+}
+async function play(){
+  if(playing)return;playing=true;stopFlag=false;const btn=$('#play');btn.textContent='Playing…';
+  const narrow=matchMedia('(max-width:900px)').matches;
+  try{
+    if(narrow)showDev('c');
+    $('#sim').scrollIntoView({behavior:'smooth',block:'start'});await wait(700);
+    simC.ui=defUI('c');render(simC);await wait(700);
+    await tap(simC,'[data-act=mode][data-v=barber]');clientAct(simC,'mode',{v:'barber'});await wait(700);
+    await tap(simC,'[data-act=pickb][data-id=james]');clientAct(simC,'pickb',{id:'james'});await wait(700);
+    await tap(simC,'[data-act=picks][data-id=cutbeard]');clientAct(simC,'picks',{id:'cutbeard'});await wait(800);
+    const sl=await tap(simC,'[data-act=slot]');clientAct(simC,'slot',{v:sl.dataset.v,b:sl.dataset.b});await wait(500);
+    for(const [f,txt] of [['name','Alex Martin'],['phone','613-555-0142']]){const inp=simC.el.querySelector(`[data-f=${f}]`);for(const ch of txt){if(stopFlag)throw 0;simC.ui[f]+=ch;inp.value=simC.ui[f];await wait(45)}await wait(200)}
+    await tap(simC,'[data-act=confirm]');clientAct(simC,'confirm',{});
+    const bk=S.bookings.find(x=>x.id===simC.ui.last);
+    if(bk){simB.ui.who=bk.barber;simB.ui.day=day0(bk.start);simO.ui.tab='cal';simO.ui.day=day0(bk.start);simO._k=null;renderAll()}
+    if(narrow){await wait(1800);showDev('b');await wait(2600);showDev('o')}
+  }catch(e){}
+  playing=false;stopFlag=false;btn.textContent='▶ Play it again';
+}
+$('#play').addEventListener('click',play);
+$('#reset').addEventListener('click',()=>{stopPlay();resetAll()});
+
+/* ---------- full screen routes ---------- */
+let fullInst=null;
+function route(){
+  const h=location.hash.slice(1),k={book:'c',barber:'b',owner:'o'}[h];
+  const full=$('#full');
+  if(fullInst){const i=insts.indexOf(fullInst);if(i>=0)insts.splice(i,1);fullInst=null}
+  if(!k){full.hidden=true;document.body.classList.remove('lock');return}
+  full.hidden=false;full.classList.toggle('wide',k==='o');document.body.classList.add('lock');
+  $('#fLabel').textContent={c:'Client booking',b:'Barber phone',o:'Owner desk'}[k]+' · demo data only';
+  const hold=$('#fHold');const fresh=hold.cloneNode(false);hold.replaceWith(fresh);
+  fullInst=mount(fresh,k);
+}
+$('#fClose').addEventListener('click',()=>{if(history.length>1&&document.referrer&&new URL(document.referrer).pathname===location.pathname)history.back();else{history.pushState('',document.title,location.pathname+location.search);route()}});
+addEventListener('hashchange',route);route();
+addEventListener('resize',()=>{clearTimeout(window._rz);window._rz=setTimeout(()=>{render(simO);fullInst&&fullInst.kind==='o'&&render(fullInst)},150)});
+setInterval(()=>{if(dk(Date.now())!==S.seedDay){S=seed();save()}else insts.forEach(i=>{if(i.kind!=='c'||i.ui.step==='home')render(i)})},60000);
+
+/* ---------- pitch charts ---------- */
+function svgBars(rows,{w=520,bh=34,gap=12,lw=110,fmt=v=>v,max,dark}){
+  max=max||Math.max(...rows.map(r=>r.v));const h=rows.length*(bh+gap);const ink=dark?'#FAF3EA':'#0A2238';
+  return`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Bar chart">${rows.map((r,i)=>{const y=i*(bh+gap),bw=Math.max(2,(w-lw-90)*r.v/max);return`<text x="0" y="${y+bh/2+5}" font-size="14" font-family="Inter" font-weight="600" fill="${ink}">${esc(r.l)}</text><rect x="${lw}" y="${y}" width="${bw}" height="${bh}" rx="6" fill="${r.c}"/><text x="${lw+bw+8}" y="${y+bh/2+5}" font-size="14" font-family="Inter" font-weight="700" fill="${ink}">${fmt(r.v)}</text>${r.t?`<text x="${lw+bw+8}" y="${y+bh/2+20}" font-size="11" font-family="Inter" fill="${ink}" opacity=".7">${esc(r.t)}</text>`:''}`}).join('')}</svg>`;
+}
+$('#planChart').innerHTML=svgBars([{l:'Independent',v:45,c:'rgba(250,243,234,.3)',t:'solo barbers'},{l:'Pro',v:65,c:'rgba(250,243,234,.3)'},{l:'Executive',v:205,c:'rgba(250,243,234,.5)',t:'per shop'},{l:'Titan',v:340,c:'#D08355',t:'← Capital, most likely'}],{fmt:v=>'$'+v,dark:true,bh:30,gap:20});
+$('#rateChart').innerHTML=svgBars(B.map(b=>({l:b.n,v:Math.round(45/b.svc.haircut*60),c:b.svc.haircut>30?'#D08355':'#0A2238'})),{fmt:v=>'$'+v+'/hr',bh:24,gap:10,lw:90});
+
+(function matrix(){
+  const cats=['Cuts','Combos','Beard & shave','Extras','Events'];let h=`<thead><tr><th>Service</th><th>Price</th>${B.map(b=>`<th>${esc(b.n)}</th>`).join('')}</tr></thead><tbody>`;
+  for(const c of cats){h+=`<tr class="cat"><td colspan="${B.length+2}">${c}</td></tr>`;
+    for(const k of ORDER.filter(k=>SV0[k][1]===c)){const ds=B.map(b=>b.svc[k]).filter(v=>v!=null),f={};ds.forEach(v=>f[v]=(f[v]||0)+1);const mode=+Object.entries(f).sort((a,z)=>z[1]-a[1])[0][0];
+      h+=`<tr><td>${esc(SV0[k][0])}</td><td class="p">$${SV0[k][2]}</td>${B.map(b=>{const v=b.svc[k];if(v==null)return'<td class="no">—</td>';if(k==='wedding')return'<td>0 min*</td>';return`<td class="${v>mode?'odd':''}">${v}</td>`}).join('')}</tr>`}}
+  $('#matrix').innerHTML=h+'</tbody>';
+})();
+
+function money(v){return'$'+Math.round(v).toLocaleString()}
+function calc(){
+  const plan=+$('#cPlan').value+ +$('#cAdd').value,bk=+$('#cBk').value,build=Math.max(0,+$('#cBuild').value||0),mo=Math.max(0,+$('#cMo').value||0);
+  $('#cBkV').textContent=bk.toLocaleString();
+  const sq=m=>plan*m,cm=m=>build+mo*m;
+  $('#oSq').textContent=money(sq(36));$('#oCm').textContent=money(cm(36));$('#oFee').textContent=money(bk*12);
+  let be=null;if(plan>mo)be=Math.ceil(build/(plan-mo));
+  $('#oBe').textContent=be!=null&&be<=36?`Crossmind pays for itself in month ${be}. After that the shop keeps about ${money(plan-mo)} a month.`:be!=null?`Breaks even in month ${be}.`:'At these numbers Crossmind costs more each month than Squire.';
+  const W=560,H=230,pl=56,pr=16,pt=12,pb=30,mx=Math.max(sq(36),cm(36))*1.08;
+  const X=m=>pl+(W-pl-pr)*m/36,Y=v=>pt+(H-pt-pb)*(1-v/mx);
+  const line=f=>Array.from({length:37},(_,m)=>`${X(m).toFixed(1)},${Y(f(m)).toFixed(1)}`).join(' ');
+  const ticks=4,g=Array.from({length:ticks+1},(_,i)=>{const v=mx/ticks*i;return`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="rgba(10,34,56,.1)"/><text x="${pl-8}" y="${Y(v)+4}" text-anchor="end" font-size="11" font-family="Inter" fill="#0A2238" opacity=".7">$${(v/1000).toFixed(v>=10000?0:1)}k</text>`}).join('');
+  const xt=[0,12,24,36].map(m=>`<text x="${X(m)}" y="${H-8}" text-anchor="middle" font-size="11" font-family="Inter" fill="#0A2238" opacity=".7">${m?'Year '+m/12:'Start'}</text>`).join('');
+  const bm=be&&be<=36?`<circle cx="${X(be)}" cy="${Y(cm(be))}" r="5" fill="#0A2238"/><text x="${X(be)}" y="${Y(cm(be))-12}" text-anchor="middle" font-size="11" font-weight="700" font-family="Inter" fill="#0A2238">month ${be}</text>`:'';
+  $('#costChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Three-year cumulative cost: Squire versus Crossmind">${g}${xt}
+    <polyline points="${line(sq)}" fill="none" stroke="#B0B6BD" stroke-width="3"/><polyline points="${line(cm)}" fill="none" stroke="#D08355" stroke-width="3.5"/>${bm}
+    <text x="${X(36)-4}" y="${Y(sq(36))-8}" text-anchor="end" font-size="12" font-weight="700" font-family="Inter" fill="#6b7480">Squire ${money(sq(36))}</text>
+    <text x="${X(36)-4}" y="${Y(cm(36))-8}" text-anchor="end" font-size="12" font-weight="700" font-family="Inter" fill="#D08355">Crossmind ${money(cm(36))}</text></svg>`;
+}
+['cPlan','cAdd','cBk','cBuild','cMo'].forEach(id=>$('#'+id).addEventListener('input',calc));calc();
+})();
+</script>
+</body>
+</html>
