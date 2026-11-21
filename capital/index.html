@@ -103,6 +103,25 @@ button{cursor:pointer}
 .wins{margin-top:28px;padding:20px 22px;border-radius:16px;background:rgba(250,243,234,.06);border:1px solid var(--line-c);font-size:15px}
 .wins b{color:var(--orange-hi)}
 
+.fx td:first-child{white-space:normal;min-width:220px;font-weight:600}
+.fx td,.fx th{white-space:normal!important;text-align:left!important;vertical-align:top}
+.fx td:nth-child(2){color:var(--ink-soft);font-size:13px;min-width:170px}
+.fx td:last-child{min-width:240px}
+.rc{width:100%;border-collapse:collapse;font-size:14px}
+.rc td{padding:9px 0;border-bottom:1px solid var(--line-c)}
+.rc td:last-child{text-align:right;font-weight:600;padding-left:12px;width:34%}
+.rc tr.t td{font-weight:700;color:var(--orange-hi);font-size:16px}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:36px 0 24px}
+@media (max-width:880px){.pk{grid-template-columns:1fr}}
+.pkc{border:1px solid var(--line-c);border-radius:18px;padding:20px}
+.pkc small{font:600 11px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.pkc h3{font-size:24px;margin:10px 0 8px}
+.pkc p{font-size:14.5px;opacity:.85}
+.pkc.hi{background:var(--orange);color:var(--navy);border-color:var(--orange)}
+.sc2{min-width:640px}
+.sc2 th{background:var(--navy-3)!important;color:var(--cream-soft)!important}
+.sc2 td{color:var(--cream);border-bottom-color:var(--line-c)!important;background:transparent!important}
+.sc2 td:first-child{position:static}
 /* simulation */
 .simwrap{max-width:1440px}
 .sim-head{display:flex;gap:16px;align-items:end;justify-content:space-between;flex-wrap:wrap}
@@ -156,94 +175,171 @@ button{cursor:pointer}
 @keyframes tap{0%{box-shadow:0 0 0 0 rgba(208,131,85,.9)}60%{box-shadow:0 0 0 12px rgba(208,131,85,0)}100%{box-shadow:none}}
 .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font:400 19px/1 var(--f-c);letter-spacing:.04em;flex:none}
 
-/* ===== client app (Capital) ===== */
-.ca{background:var(--cap-bg);color:var(--cap-ink)}
-.ca .bar{flex:none;display:grid;grid-template-columns:40px 1fr 40px;align-items:center;padding:14px 10px 10px;background:var(--cap-ink);color:#f3eee6}
-.inph .ca .bar{padding-top:40px}
-.ca .bk{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:20px;color:#f3eee6}
-.ca .brand{text-align:center;font:400 24px/1 var(--f-c);letter-spacing:.42em;padding-left:.42em}
-.ca .brand small{display:block;font:600 8.5px/1 var(--f-b);letter-spacing:.38em;opacity:.65;margin-top:4px}
-.ca .pad{padding:16px}
-.ca h2{font:400 30px/1 var(--f-c);letter-spacing:.04em;margin:4px 0 2px;font-family:var(--f-c)}
-.ca .mut{color:var(--cap-mute);font-size:12.5px}
-.ca .open{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;margin-top:6px}
-.ca .open i{width:8px;height:8px;border-radius:50%;background:#2E8B57}
-.ca .open.c i{background:var(--cap-red)}
-.ca .sec{font:700 10.5px/1 var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:var(--cap-mute);margin:20px 0 10px}
-.ca .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:none}
-.ca .chips::-webkit-scrollbar{display:none}
-.ca .qc{flex:none;background:#fff;border:1.5px solid var(--cap-line);border-radius:14px;padding:10px 12px;min-width:118px}
-.ca .qc b{display:block;font-size:14px}
-.ca .qc span{font-size:12px;color:var(--cap-mute)}
-.ca .big{display:flex;align-items:center;gap:12px;width:100%;background:var(--cap-ink);color:#f3eee6;border-radius:16px;padding:16px;margin-top:10px}
-.ca .big.r{background:var(--cap-red)}
-.ca .big b{font:400 22px/1 var(--f-c);letter-spacing:.06em;display:block}
-.ca .big span{font-size:12px;opacity:.75}
-.ca .big em{margin-left:auto;font-style:normal;font-size:20px}
-.ca .tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
-.ca .tile{background:#fff;border-radius:14px;padding:12px 8px;text-align:center!important;font-size:11.5px;font-weight:600;border:1.5px solid var(--cap-line)}
-.ca .tile i{display:block;font-style:normal;font-size:19px;margin-bottom:4px}
-.ca .hrs{background:#fff;border-radius:14px;padding:6px 14px;border:1.5px solid var(--cap-line)}
-.ca .hrs div{display:flex;justify-content:space-between;padding:6px 0;font-size:12.5px;border-bottom:1px solid var(--cap-line)}
-.ca .hrs div:last-child{border:0}
-.ca .hrs .t{font-weight:700}
-.ca .row{display:flex;align-items:center;gap:12px;width:100%;background:#fff;border:1.5px solid var(--cap-line);border-radius:16px;padding:12px;margin-bottom:8px}
-.ca .row .tx{flex:1;min-width:0}
-.ca .row b{display:block;font-size:15px}
-.ca .row small{display:block;font-size:12px;color:var(--cap-mute);margin-top:2px}
-.ca .row .pr{font:700 15px/1 var(--f-b);text-align:right}
-.ca .row .pr small{font-weight:500}
-.ca .row.any{background:var(--cap-ink);color:#f3eee6;border-color:var(--cap-ink)}
-.ca .row.any small{color:rgba(243,238,230,.7)}
-.ca .row.dim{opacity:.45}
-.ca .soon{color:#2E8B57!important;font-weight:600}
-.ca .addon{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px dashed var(--cap-line);border-radius:14px;padding:10px 12px;width:100%;margin-bottom:6px;font-size:13px}
-.ca .addon.on{border-style:solid;border-color:var(--cap-red);background:#fff6f4}
-.ca .addon i{width:20px;height:20px;border-radius:6px;border:2px solid var(--cap-mute);display:grid;place-items:center;font-style:normal;font-size:12px;flex:none}
-.ca .addon.on i{background:var(--cap-red);border-color:var(--cap-red);color:#fff}
-.ca .days{display:flex;gap:6px;overflow-x:auto;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none}
-.ca .days::-webkit-scrollbar{display:none}
-.ca .day{flex:none;width:52px;border-radius:14px;background:#fff;border:1.5px solid var(--cap-line);padding:8px 0;text-align:center!important}
-.ca .day b{display:block;font:400 21px/1 var(--f-c)}
-.ca .day span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cap-mute)}
-.ca .day.on{background:var(--cap-ink);color:#f3eee6;border-color:var(--cap-ink)}
-.ca .day.on span{color:rgba(243,238,230,.7)}
-.ca .day:disabled{opacity:.35;cursor:default}
-.ca .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.ca .slot{background:#fff;border:1.5px solid var(--cap-line);border-radius:12px;padding:10px 0;text-align:center!important;font-weight:600;font-size:13px}
-.ca .slot small{display:block;font-size:10px;font-weight:500;color:var(--cap-mute)}
-.ca .sum{background:#fff;border-radius:16px;border:1.5px solid var(--cap-line);padding:14px}
-.ca .sum .l{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:13px}
-.ca .sum .l span{color:var(--cap-mute)}
-.ca .sum .l.t{border-top:1px solid var(--cap-line);margin-top:6px;padding-top:10px;font-weight:700;font-size:15px}
-.ca .free{color:#2E8B57;font-weight:700}
-.ca .fld{display:block;margin-top:10px}
-.ca .fld span{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cap-mute);margin-bottom:5px}
-.ca .fld input{width:100%;height:46px;border-radius:12px;border:1.5px solid var(--cap-line);background:#fff;padding:0 12px;font-size:16px}
-.ca .seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#e7e0d4;border-radius:12px;padding:4px;margin-top:10px}
-.ca .seg button{text-align:center;border-radius:9px;padding:9px 0;font-weight:600;font-size:12.5px;color:var(--cap-mute)}
-.ca .seg button.on{background:#fff;color:var(--cap-ink);box-shadow:0 1px 3px rgba(0,0,0,.1)}
-.ca .pol{font-size:11.5px;color:var(--cap-mute);margin-top:12px}
-.ca .foot{flex:none;padding:10px 14px calc(14px + env(safe-area-inset-bottom,0px));background:var(--cap-bg);border-top:1px solid var(--cap-line)}
-.ca .cta{width:100%;height:52px;border-radius:14px;background:var(--cap-red);color:#fff;font:400 22px/1 var(--f-c);letter-spacing:.08em;text-align:center!important}
-.ca .cta:disabled{opacity:.45}
-.ca .err{color:var(--cap-red);font-size:12.5px;font-weight:600;margin-top:8px}
-.ca .done{text-align:center;padding-top:22px}
-.ca .chk{width:74px;height:74px;border-radius:50%;background:var(--cap-red);color:#fff;display:grid;place-items:center;margin:0 auto 12px;font-size:36px;animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+/* ===== client app (Squire-style layout, Capital data) ===== */
+.ca{background:#F2F2F7;color:#111;font-family:var(--f-b)}
+.ca .hd{flex:none;display:flex;align-items:center;gap:8px;padding:16px 14px 10px;background:#F2F2F7}
+.inph .ca .hd{padding-top:46px}
+.ca .hd .bk{width:30px;height:30px;display:grid;place-items:center;text-align:center;flex:none}
+.ca .hd .bk svg{width:20px;height:20px}
+.ca .hd h1{font:600 20px/1.15 var(--f-b);letter-spacing:-.02em;margin:0}
+.ca.w .hd{padding:26px 28px 14px}
+.ca.w .hd h1{font-size:26px}
+.ca .shop{display:flex;gap:10px;align-items:center;background:#fff;border-radius:16px;padding:10px;margin:0 14px 12px;border:1px solid #E3E3E8}
+.ca.w .shop{margin:0 28px 16px}
+.ca .logo{width:44px;height:44px;border-radius:11px;background:#232323;color:#fff;display:grid;place-items:center;align-content:center;font:400 12px/1 var(--f-c);letter-spacing:.06em;overflow:hidden;flex:none;text-align:center}
+.ca .logo small{display:block;font:600 4px/1 var(--f-b);letter-spacing:.12em;opacity:.7;margin-top:2px}
+.ca .shop b{display:block;font-size:14px}
+.ca .shop span{font-size:11.5px;color:#8E8E93}
+.ca .shop .op{color:#2E8B57;font-weight:600}
+.ca .shop .cl{color:#C4372C;font-weight:600}
+.ca .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px}
+.ca.w .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:0 28px}
+.ca .pc{background:#F7F7FA;border:1px solid #E3E3E8;border-radius:18px;padding:16px 8px 14px;text-align:center!important;min-height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .15s}
+.ca .pc:active{transform:scale(.97)}
+.ca .ph{width:50px;height:50px;border-radius:12px;margin-bottom:10px;display:grid;place-items:center;color:#fff;font:700 16px/1 var(--f-b);overflow:hidden;position:relative;flex:none}
+.ca .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.18) 0 22%,transparent 23%),radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.14) 0 45%,transparent 46%)}
+.ca .ph img{width:100%;height:100%;object-fit:cover}
+.ca .ph.star{background:#111}
+.ca .ph.star::after{display:none}
+.ca .pc b{font-size:13.5px;font-weight:600;line-height:1.2}
+.ca .pc small{display:block;font-size:11px;color:#8E8E93;margin-top:5px;line-height:1.25}
+.ca .pc small.g{color:#2E8B57;font-weight:600}
+.ca .pc.dim{opacity:.5}
+.ca .catsel{display:block;margin:0 14px 12px;width:calc(100% - 28px);height:40px;border-radius:20px;background:#E5E5EA;border:0;padding:0 14px;font-size:14px;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#8E8E93 50%),linear-gradient(135deg,#8E8E93 50%,transparent 50%);background-position:calc(100% - 20px) 17px,calc(100% - 15px) 17px;background-size:5px 5px;background-repeat:no-repeat}
+.ca.w .catsel{margin:0 28px 16px;width:calc(100% - 56px)}
+.ca .sc{position:relative;background:#F7F7FA;border:1px solid #E3E3E8;border-radius:18px;padding:12px 12px 40px;min-height:108px;text-align:left}
+.ca .sc b{display:block;font-size:13px;font-weight:600;line-height:1.25}
+.ca .sc small{display:block;font-size:11.5px;color:#8E8E93;margin-top:4px}
+.ca .sc .pr{position:absolute;right:-1px;bottom:12px;background:#E9E9EE;border-radius:8px 0 0 8px;padding:5px 10px;font-weight:600;font-size:12.5px}
+.ca .sc.on{background:#3478F6;border-color:#3478F6}
+.ca .sc.on small{color:rgba(0,0,0,.6)}
+.ca .sc.on .pr{background:rgba(0,0,0,.12)}
+.ca .sc .ck{position:absolute;top:-9px;right:-9px;width:26px;height:26px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-size:13px;border:2px solid #F2F2F7}
+.ca .sc .ad{position:absolute;left:12px;bottom:14px;font-size:10.5px;font-weight:700;color:#3478F6;letter-spacing:.04em}
+.ca .sc.on .ad{color:#111}
+.ca .h3{font:600 17px/1.2 var(--f-b);margin:20px 14px 10px;letter-spacing:-.01em}
+.ca.w .h3{margin:24px 28px 12px}
+.ca .h3 small{display:block;font-weight:400;font-size:12.5px;color:#8E8E93;margin-top:3px}
+.ca .lnk{display:block;margin:14px 14px 0;color:#3478F6;font-weight:600;font-size:13.5px}
+.ca.w .lnk{margin:16px 28px 0}
+.ca .bbar{position:absolute;left:10px;right:10px;bottom:12px;height:52px;border-radius:16px;background:#000;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-weight:600;font-size:15px;z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.ca.w .bbar{left:28px;right:28px;bottom:18px}
+.ca .bbar span:last-child{opacity:.6}
+.ca .bbar:disabled{opacity:.5}
+.ca .scroll.pb{padding-bottom:84px}
+.ca .dates{display:flex;gap:6px;padding:4px 14px 6px;overflow-x:auto;scrollbar-width:none}
+.ca .dates::-webkit-scrollbar{display:none}
+.ca.w .dates{padding:4px 28px 6px;gap:30px}
+.ca .dt{flex:none;display:flex;flex-direction:column;align-items:center;gap:6px;width:46px;text-align:center!important}
+.ca .dt i{width:42px;height:42px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font-style:normal;font-weight:600;font-size:15px;position:relative}
+.ca .dt span{font-size:11px;color:#8E8E93}
+.ca .dt.on i{box-shadow:0 0 0 2px #F2F2F7,0 0 0 4px #000}
+.ca .dt.on span{color:#000;font-weight:700}
+.ca .dt.td i::after{content:"";position:absolute;bottom:6px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:currentColor}
+.ca .dt:disabled i{background:#E0E0E5;color:#8E8E93}
+.ca .dt:disabled{cursor:default}
+.ca .dayh{margin:16px 14px 4px;font-weight:600;font-size:15px}
+.ca.w .dayh{margin:20px 28px 6px}
+.ca .dayh small{display:block;font-weight:400;color:#8E8E93;font-size:12.5px;margin-top:2px}
+.ca .tg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px 14px}
+.ca.w .tg{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:10px 28px}
+.ca .tm{height:46px;border-radius:12px;border:1px solid #DCDCE2;background:#F2F2F7;display:flex;align-items:center;gap:8px;padding:0 12px;font-weight:600;font-size:13.5px}
+.ca .tm svg{width:16px;height:16px;flex:none}
+.ca .tm small{font-weight:500;font-size:10.5px;color:#8E8E93;margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ca .tm.on{background:#3478F6;border-color:#3478F6}
+.ca .tm.on small{color:rgba(0,0,0,.6)}
+.ca .empty{margin:10px 14px;padding:16px;border-radius:16px;background:#fff;border:1px solid #E3E3E8;font-size:13px;text-align:center}
+.ca .empty b{display:block;font-size:14px;margin-bottom:4px}
+.ca .empty button{margin-top:10px;height:40px;padding:0 16px;border-radius:10px;background:#000;color:#fff;font-weight:600;text-align:center}
+.ca .empty button.o{background:#fff;color:#111;border:1px solid #DCDCE2;margin-left:6px}
+.ca .demo{font-size:10.5px;text-align:center;color:#8E8E93;padding:16px 16px 22px}
+.ca .sbg{position:absolute;inset:0;background:rgba(0,0,0,.38);z-index:10;display:flex;align-items:flex-end;animation:fd .2s}
+@keyframes fd{from{opacity:0}}
+.ca.w .sbg{align-items:center;justify-content:center}
+.ca .sheet{background:#000;color:#fff;width:100%;height:94%;border-radius:20px 20px 0 0;display:flex;flex-direction:column;animation:up .28s cubic-bezier(.2,.9,.3,1);overflow:hidden}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+.ca.w .sheet{max-width:720px;border-radius:16px;height:88%}
+.ca .sheet.wh{background:#fff;color:#111;height:90%}
+.ca .shh{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 18px 12px;flex:none}
+.ca .shh h2{font:600 22px/1.1 var(--f-b);margin:0;letter-spacing:-.02em}
+.ca .shh small{display:block;font-size:12.5px;opacity:.65;margin-top:4px}
+.ca .shh small a,.ca .shh small b{color:#3478F6;font-weight:600}
+.ca .x{width:32px;height:32px;border-radius:10px;border:1px solid #333;color:#fff;display:grid;place-items:center;flex:none;font-size:14px}
+.ca .wh .x{border-color:#E3E3E8;color:#111}
+.ca .sbody{flex:1;min-height:0;overflow-y:auto;padding:0 16px}
+.ca .oc{background:#262626;border-radius:12px;padding:12px}
+.ca .oc .r1{display:flex;gap:12px;align-items:center}
+.ca .oc .ph{width:46px;height:46px;margin:0;border-radius:10px}
+.ca .oc .r1 .tx{flex:1;min-width:0}
+.ca .oc .r1 b{display:block;font-size:15px}
+.ca .oc .r1 span{font-size:13px;opacity:.65}
+.ca .oc .r1 em{font-style:normal;text-align:right;font-weight:700;font-size:15px}
+.ca .oc .r1 em small{display:block;font-weight:400;opacity:.65;font-size:13px}
+.ca .oc .ln{display:flex;justify-content:space-between;font-size:13px;opacity:.7;padding:10px 0 0}
+.ca .guest{margin-top:12px;border:1px solid #333;border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px}
+.ca .guest b{display:block;font-size:14px}
+.ca .guest span{font-size:11.5px;opacity:.65}
+.ca .guest button{margin-left:auto;background:#3478F6;color:#fff;border-radius:10px;padding:9px 13px;font-weight:600;font-size:13px}
+.ca .tips{display:grid;grid-template-columns:repeat(6,1fr);background:#111;border-radius:10px;padding:4px;margin-top:10px}
+.ca .tips button{color:#fff;text-align:center;padding:9px 0;border-radius:8px;font-size:12.5px}
+.ca .tips button.on{background:#fff;color:#000;font-weight:600}
+.ca .tipn{font-size:11px;opacity:.6;margin-top:8px}
+.ca .sf{flex:none;padding:12px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.ca .sf .st{display:flex;justify-content:space-between;font:600 17px/1 var(--f-b);margin-bottom:12px}
+.ca .blue{width:100%;height:46px;border-radius:12px;background:#3478F6;color:#fff;font-weight:600;text-align:center!important;font-size:15px}
+.ca .blue:disabled{background:#A9C6FB}
+.ca .shoprow{display:flex;gap:12px;align-items:center;margin:4px 0 16px}
+.ca .shoprow .logo{width:60px;height:60px;border-radius:14px;font-size:16px}
+.ca .shoprow .logo small{font-size:5px}
+.ca .shoprow b{display:block;font-size:15px}
+.ca .shoprow span{font-size:13px;color:#6E6E73}
+.ca .lab{font-weight:600;font-size:15px;margin:16px 0 8px}
+.ca .pm{display:flex;gap:10px;align-items:center;border:1px solid #E0E0E5;border-radius:10px;padding:10px 12px;margin-bottom:8px;width:100%;font-weight:600;font-size:14px}
+.ca .pm i{width:30px;height:22px;border-radius:5px;background:#111;color:#fff;display:grid;place-items:center;font-style:normal;font-size:12px;flex:none}
+.ca .pm em{margin-left:auto;font-style:normal;font-size:10.5px;font-weight:700;color:#2E8B57}
+.ca .pm.on{background:#000;color:#fff;border-color:#000}
+.ca .pm.on i{background:#fff;color:#000}
+.ca .pm.on em{color:#7fd1a2}
+.ca .note{font-size:12px;color:#6E6E73;margin:-2px 0 6px}
+.ca .cardbox{border:1px dashed #C7C7CC;border-radius:10px;padding:12px;font-size:12px;color:#8E8E93;margin-bottom:6px}
+.ca .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.ca .ph2{display:grid;grid-template-columns:74px 1fr;gap:8px;margin-bottom:8px}
+.ca .in{height:42px;border-radius:10px;background:#F0F0F3;border:1.5px solid transparent;padding:0 12px;width:100%;font-size:15px;min-width:0}
+.ca .in:focus{border-color:#3478F6;outline:none;background:#fff}
+.ca .cc{height:42px;border-radius:10px;background:#F0F0F3;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.ca .chk{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#3A3A3C;margin:4px 0 2px;width:100%}
+.ca .chk i{width:20px;height:20px;border-radius:6px;border:2px solid #C7C7CC;flex:none;display:grid;place-items:center;font-style:normal;font-size:12px;color:#fff;margin-top:-1px}
+.ca .chk.on i{background:#3478F6;border-color:#3478F6}
+.ca .hr{height:1px;background:#E5E5EA;margin:14px 0}
+.ca .sumr{display:flex;justify-content:space-between;color:#6E6E73;font-size:13.5px;padding:3px 0}
+.ca .sumr .g{color:#2E8B57;font-weight:600}
+.ca .sumr.tot{color:#111;font-weight:700;font-size:14.5px;padding-top:12px}
+.ca .err{color:#C4372C;font-size:12.5px;font-weight:600;margin-top:8px}
+.ca .terms{font-size:10.5px;color:#8E8E93;text-align:center;margin-top:8px}
+.ca .done{padding:20px 16px;text-align:center}
+.ca .bigck{width:70px;height:70px;border-radius:50%;background:#3478F6;color:#fff;display:grid;place-items:center;margin:8px auto 14px;font-size:32px;animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
 @keyframes pop{from{transform:scale(.3);opacity:0}}
-.ca .code{display:inline-block;font:400 22px/1 var(--f-c);letter-spacing:.2em;background:#fff;border:1.5px dashed var(--cap-ink);border-radius:10px;padding:8px 14px;margin:10px 0}
+.ca .done h2{font:600 22px/1.15 var(--f-b);margin:0;letter-spacing:-.02em}
+.ca .dcard{background:#fff;border:1px solid #E3E3E8;border-radius:16px;padding:14px;text-align:left;margin-top:16px}
+.ca .dcard .r1{display:flex;gap:12px;align-items:center}
+.ca .dcard .ph{margin:0;width:46px;height:46px}
+.ca .dcard b{display:block}
+.ca .dcard span{font-size:12.5px;color:#6E6E73}
+.ca .code{display:inline-block;font:700 15px/1 var(--f-b);letter-spacing:.14em;background:#F2F2F7;border-radius:8px;padding:8px 12px;margin-top:12px}
 .ca .acts{display:grid;gap:8px;margin-top:14px}
-.ca .ab{width:100%;height:46px;border-radius:12px;background:#fff;border:1.5px solid var(--cap-line)!important;font-weight:600;text-align:center!important;font-size:14px}
-.ca .ab.k{background:var(--cap-ink);color:#f3eee6}
-.ca .stamp{display:flex;gap:5px;justify-content:center;margin-top:8px}
-.ca .stamp i{width:16px;height:16px;border-radius:50%;border:2px solid var(--cap-red)}
-.ca .stamp i.f{background:var(--cap-red)}
-.ca .mb{background:#fff;border:1.5px solid var(--cap-line);border-radius:16px;padding:12px;margin-bottom:8px}
+.ca .ab{width:100%;height:46px;border-radius:12px;background:#fff;border:1px solid #DCDCE2!important;font-weight:600;text-align:center!important;font-size:14px}
+.ca .ab.k{background:#000;color:#fff;border-color:#000!important}
+.ca .mb{background:#fff;border:1px solid #E3E3E8;border-radius:14px;padding:12px;margin:0 14px 8px}
 .ca .mb b{display:block}
+.ca .mb span{font-size:12.5px;color:#6E6E73}
 .ca .mb .bs{display:flex;gap:8px;margin-top:10px}
-.ca .mb .bs button{flex:1;height:38px;border-radius:10px;border:1.5px solid var(--cap-line);text-align:center;font-weight:600;font-size:13px}
-.ca .mb .bs button.x{color:var(--cap-red)}
-.ca .demo{font-size:10.5px;text-align:center;color:var(--cap-mute);padding:14px 16px 20px}
+.ca .mb .bs button{flex:1;height:38px;border-radius:10px;border:1px solid #DCDCE2;text-align:center;font-weight:600;font-size:13px}
+.ca .mb .bs button.x2{color:#C4372C}
+.ca .mf{padding:0 14px}
+.ca .mf .in{background:#fff;border-color:#E3E3E8;margin-bottom:8px}
+.ca .stamp{display:flex;gap:5px;justify-content:center;margin-top:8px}
+.ca .stamp i{width:14px;height:14px;border-radius:50%;border:2px solid #3478F6}
+.ca .stamp i.f{background:#3478F6}
 
 /* ===== barber app ===== */
 .ba{background:#101012;color:#f1ede6}
@@ -257,6 +353,9 @@ button{cursor:pointer}
 .ba .dn{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
 .ba .dn button{width:32px;height:32px;border-radius:50%;background:#26262b;text-align:center;font-size:16px}
 .ba .dn b{font:400 18px/1.1 var(--f-c);letter-spacing:.05em;text-align:center}
+.ba .vw{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#26262b;border-radius:10px;padding:3px;margin-top:10px}
+.ba .vw button{text-align:center;border-radius:8px;padding:6px 0;font-size:12px;font-weight:600;opacity:.7}
+.ba .vw button.on{background:#f1ede6;color:#141414;opacity:1}
 .ba .st{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
 .ba .st div{background:#222226;border-radius:12px;padding:9px}
 .ba .st b{display:block;font:700 17px/1 var(--f-b)}
@@ -381,15 +480,15 @@ button{cursor:pointer}
   <div class="facts">
     <div class="fact"><b>7</b><span>barbers taking online bookings: Scott, Jeffrey, Georges, James, Bao, David and Ankur</span></div>
     <div class="fact"><b>19</b><span>bookable services, from a $20 neck lineup to a $350 wedding reservation</span></div>
-    <div class="fact"><b>$1.00</b><span>booking fee added to every online booking, paid by the client</span></div>
-    <div class="fact"><b>2 hrs</b><span>cancellation window, with no-show charging switched on</span></div>
+    <div class="fact"><b>+$2.99</b><span>extra fees when a client pays by card online. We tested a $45 cut with an $8 tip: $8.84 in "taxes &amp; fees" vs $5.85 HST</span></div>
+    <div class="fact"><b>15%</b><span>tip already selected for the client at checkout, before they've had the cut</span></div>
   </div>
   <div class="two">
     <div class="card d chart"><h3>Squire's monthly plans (CAD)</h3><p class="sub">Capital has rewards, gift cards and waitlist switched on. On Squire's current price list, rewards and gift cards come with Titan.</p><div id="planChart"></div></div>
     <div>
       <ul class="list" style="color:var(--cream)">
         <li><b>Likely cost: about CA$340 a month, or $4,080 a year</b>, if Capital is on Titan. At minimum it's Executive at CA$205 a month. Shops on older plans can pay a different rate, so confirm it with the owner.</li>
-        <li><b>Plus about $1 from each client, every online booking.</b> At 500 online bookings a month, clients pay roughly $6,000 a year in booking fees on top of their cuts.</li>
+        <li><b>Plus about $3 from every client who pays by card online.</b> Squire charges clients a booking fee comparison sites put at $1 to $3, and it can't be switched off. At 300 card bookings a month, that's roughly $10,000 a year out of his clients' pockets.</li>
         <li><b>Add-ons cost extra:</b> a branded landing page is $25 a month, and the Operator AI is $99 a month.</li>
         <li><b>Card processing is separate.</b> Any system that takes cards pays this, so it's left out of every comparison on this page.</li>
       </ul>
@@ -416,6 +515,69 @@ button{cursor:pointer}
   </div>
 </div></section>
 
+<section class="band" id="fixes"><div class="wrap">
+  <div class="kick">What people complain about</div>
+  <h2 class="h2">Squire's flow, minus the stuff barbers and clients hate.</h2>
+  <p class="lede">The booking screens follow Squire's layout, so his regulars won't need to learn anything new. We pulled complaints from shop-owner reviews, App Store reviews, comparison sites and our own test checkout, then fixed each one.</p>
+  <div class="mx"><table class="fx">
+    <thead><tr><th>Complaint</th><th>Who said it</th><th>What this build does</th></tr></thead>
+    <tbody>
+      <tr><td>Clients pay extra fees to book and pay online</td><td>Shop owners on Capterra; App Store reviewers; our test checkout</td><td>$0 booking fee. The summary shows services, tip and HST, nothing else</td></tr>
+      <tr><td>Tip buttons are set too high and pushed before the cut</td><td>Shop owner on Capterra; our test (15% pre-picked)</td><td>Tip starts at "None", and clients can tip in the chair instead</td></tr>
+      <tr><td>Add-ons clutter the service list, and the add-on step lists every service again</td><td>A barber on the App Store; our test</td><td>After a cut, you only see Beard Trim and Design. Adding a beard trim books the shop's combo price automatically</td></tr>
+      <tr><td>The 6-digit sign-in code often fails, so people call instead</td><td>App Store reviewers</td><td>No account and no code. Name and phone to book; phone number to manage the booking</td></tr>
+      <tr><td>Cash shops can't stop clients being pushed to pay online</td><td>Shop owner on Capterra</td><td>"Pay in person" is the default choice</td></tr>
+      <tr><td>Cards aren't secured at booking, so no-shows slip through</td><td>Shop owners on Capterra</td><td>An owner switch to hold a card at booking, charged only after the cut or on a no-show</td></tr>
+      <tr><td>Clients are charged to join the waitlist</td><td>Shop owner on Capterra</td><td>The waitlist is free</td></tr>
+      <tr><td>Reminder texts used for ads; people who unsubscribed got re-added</td><td>App Store reviewer; shop owner on Capterra</td><td>Reminders only, with a clear opt-in tick box. No marketing texts</td></tr>
+      <tr><td>Barbers can't see the whole shop's schedule on mobile</td><td>Shop owner on Capterra</td><td>The barber's phone has a "Whole shop" tab</td></tr>
+      <tr><td>No Google review prompt</td><td>Shop owners on Capterra</td><td>When a barber taps Done, the client gets a thank-you text with the review link (can be switched off)</td></tr>
+      <tr><td>No "next free chair" option</td><td>Capital's own setup</td><td>"Any professional" is the first card, showing the next opening</td></tr>
+    </tbody></table></div>
+  <p class="legend" style="margin-top:14px">Barber photos are placeholders until Capital sends the ones it wants to use. Drop the image links into the PHOTOS list in the code and they'll show up everywhere.</p>
+</div></section>
+
+<section class="band navy" id="price"><div class="wrap">
+  <div class="kick">Pricing the build</div>
+  <h2 class="h2">What Capital pays now, and what we'd charge.</h2>
+  <div class="two" style="margin-top:36px">
+    <div>
+      <h3 style="font-size:24px;margin-bottom:14px">Which Squire plan is he on?</h3>
+      <ul class="list" style="color:var(--cream)">
+        <li><b>Almost certainly not the $65 Pro plan.</b> His booking page sells gift cards and his shop has rewards switched on. On Squire's current price list, both of those only come with <b>Titan, CA$340 a month</b>.</li>
+        <li><b>He might be on an older deal.</b> Squire's older plans ran $100 to $250 USD, and the old Pro was capped at 4 barbers. With 7 barbers he wasn't on that either.</li>
+        <li><b>Just ask him.</b> "What does Squire charge you a month, and do you use its card reader and payroll?" That answer decides the whole pitch.</li>
+      </ul>
+    </div>
+    <div class="card d">
+      <h3>What it costs to run (CAD, about)</h3>
+      <p class="sub">Every month, for a shop doing ~500 bookings</p>
+      <table class="rc">
+        <tr><td>Website hosting (Cloudflare or GitHub Pages)</td><td>$0</td></tr>
+        <tr><td>Database &amp; logins (Supabase Pro, US$25)</td><td>~$35</td></tr>
+        <tr><td>Shop text number (Twilio local, US$1.15)</td><td>~$2</td></tr>
+        <tr><td>~1,000 texts: confirmations + reminders (US$0.0079 each + carrier fees)</td><td>~$15</td></tr>
+        <tr><td>Email confirmations (free tier)</td><td>$0</td></tr>
+        <tr><td>Domain (he already owns capitalbarbershop.ca)</td><td>$0</td></tr>
+        <tr class="t"><td>Running costs</td><td>~$50/mo</td></tr>
+        <tr><td>Card payments, only if he takes cards (Stripe)</td><td>2.9% + 30¢ online · 2.7% + 5¢ in person</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="pk">
+    <div class="pkc hi"><small>Recommended</small><h3>$800 build + $79/mo</h3><p>Online booking, barber phones, owner desk, text confirmations and reminders, waitlist, pay in person. $400 to start, $400 at launch. The $79 covers the ~$50 running costs plus fixes, menu or price changes and support.</p></div>
+    <div class="pkc"><small>Cheaper monthly</small><h3>$800 build + $29/mo</h3><p>Same build, but Supabase and Twilio are set up in his name and billed to his card (~$50). You charge $29 for support. Same total for him, but he owns every account, which is a good trust signal.</p></div>
+    <div class="pkc"><small>Later phases</small><h3>+$300 each</h3><p>Card payments and no-show holds (Stripe, with Tap to Pay on a phone). Gift cards and rewards. Guest booking. Price each one once he's happy with phase 1.</p></div>
+  </div>
+  <div class="mx" style="background:var(--navy-2);box-shadow:none;border:1px solid var(--line-c)"><table class="sc2">
+    <thead><tr><th>If he's on…</th><th>Squire per month</th><th>Crossmind per month</th><th>First year</th><th>Every year after</th></tr></thead>
+    <tbody>
+      <tr><td>Titan (most likely)</td><td>$340</td><td>$79</td><td>Saves $2,332</td><td>Saves $3,132</td></tr>
+      <tr><td>Executive</td><td>$205</td><td>$79</td><td>Saves $712</td><td>Saves $1,512</td></tr>
+      <tr><td>Pro</td><td>$65</td><td>$79</td><td>Costs $968 more</td><td>Costs $168 more</td></tr>
+    </tbody></table></div>
+  <div class="wins"><b>Straight talk:</b> if he's on Pro, don't sell this as cheaper, because it isn't. The reasons to switch then are no fees for his clients, his own look on his own website, and the fixes above. $800 is a friend price for phase 1. A custom booking system like this would normally cost a lot more, so be clear about what is and isn't included. If he relies on Squire's card reader, payroll or commission splits, keep Squire for those until a later phase covers them. In the real build, get clients to opt in to texts (Canada's anti-spam law requires it) and store their data in Canada if you can.</div>
+</div></section>
 <section class="band org" id="cost"><div class="wrap">
   <div class="kick">The money</div>
   <h2 class="h2">Renting software vs. owning it.</h2>
@@ -423,14 +585,14 @@ button{cursor:pointer}
   <div class="calc">
     <div class="card ctl">
       <label>Capital's Squire plan
-        <select id="cPlan"><option value="340" selected>Titan: CA$340/mo (best guess)</option><option value="205">Executive: CA$205/mo</option><option value="65">Pro: CA$65/mo</option></select></label>
+        <select id="cPlan"><option value="340" selected>Titan: CA$340/mo (most likely)</option><option value="205">Executive: CA$205/mo</option><option value="65">Pro: CA$65/mo</option></select></label>
       <label><span class="r"><span>Add-ons</span></span>
         <select id="cAdd"><option value="0" selected>None</option><option value="25">Branded landing page: +$25</option><option value="99">Operator AI: +$99</option><option value="124">Both: +$124</option></select></label>
-      <label><span class="r"><span>Online bookings a month</span><span class="v" id="cBkV">500</span></span>
-        <input type="range" id="cBk" min="100" max="1500" step="50" value="500"></label>
+      <label><span class="r"><span>Card bookings a month (clients pay ~$3 each on Squire)</span><span class="v" id="cBkV">300</span></span>
+        <input type="range" id="cBk" min="0" max="1200" step="50" value="300"></label>
       <div class="pair">
-        <label>Crossmind build (one time)<input type="number" id="cBuild" value="1500" min="0" step="100"></label>
-        <label>Crossmind monthly<input type="number" id="cMo" value="49" min="0" step="5"></label>
+        <label>Crossmind build (one time)<input type="number" id="cBuild" value="800" min="0" step="50"></label>
+        <label>Crossmind monthly<input type="number" id="cMo" value="79" min="0" step="5"></label>
       </div>
       <p style="font-size:12.5px;color:var(--ink-soft);font-weight:400">The Crossmind monthly figure should cover hosting, text reminders and support. Card processing isn't counted on either side.</p>
     </div>
@@ -453,7 +615,8 @@ button{cursor:pointer}
     <thead><tr><th></th><th>Squire today</th><th>Crossmind build</th></tr></thead>
     <tbody>
       <tr><td>Software cost</td><td>CA$205 to $340 a month, every month</td><td>One build fee, then a small monthly fee for hosting and texts</td></tr>
-      <tr><td>Client booking fee</td><td>$1.00 on every online booking</td><td>None</td></tr>
+      <tr><td>Client fees</td><td>About $3 extra when paying by card online (tested), can't be turned off</td><td>None. Clients see the price plus HST, that's it</td></tr>
+      <tr><td>Tips</td><td>15% picked for the client before the cut</td><td>"None" is picked first; tip online or in the chair</td></tr>
       <tr><td>Where it lives</td><td>getsquire.com, branded page costs $25 a month extra</td><td>capitalbarbershop.ca, in Capital's own look</td></tr>
       <tr><td>Next free chair</td><td>Switched off; clients check barbers one by one</td><td>"First available" at the top, plus the soonest openings on the home screen</td></tr>
       <tr><td>How clients start</td><td>Barber first</td><td>Pick a barber or pick a service, whichever they care about</td></tr>
@@ -563,14 +726,14 @@ const hoursOf=d=>HOURS[new Date(d).getDay()]||null;
 const works=(bid,d)=>!!hoursOf(d)&&BB[bid].d.includes(new Date(d).getDay());
 
 /* ---------- store ---------- */
-const KEY='capital-demo-v3';
+const KEY='capital-demo-v4';
 let S, idx=null;
 function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const NAMES=['Liam','Noah','Ethan','Omar','Lucas','Mason','Ali','Daniel','Jacob','Ryan','Marcus','Owen','Kevin','Sam','Adam','Theo','Hassan','Leo','Victor','Nathan','Eli','Jordan','Malik','Chris','Wei','Raj','Mathieu','Gabriel','Tyler','Dev','Karim','Sean','Hugo','Andre','Felix','Yusuf'];
 const WT={haircut:7,skinfade:5,cutbeard:4,fadebeard:3,student:3,studentfade:2,buzz:2,beard:2,kid:1,senior:1,neck:1,shave:1,cutshave:1,buzzbeard:1,studentbeard:1,studentfadebeard:1,longhair:1};
 function seed(){
   const now=Date.now(),today=day0(now),r=rng(+dk(now).replace(/-/g,''));
-  const st={v:3,seedDay:dk(now),svc:Object.fromEntries(ORDER.map(k=>[k,{p:SV0[k][2],on:true}])),bookings:[],any:true,cancelH:2,nid:1};
+  const st={v:4,hold:false,rev:true,seedDay:dk(now),svc:Object.fromEntries(ORDER.map(k=>[k,{p:SV0[k][2],on:true}])),bookings:[],any:true,cancelH:2,nid:1};
   const pick=b=>{const ks=Object.keys(b.svc).filter(k=>WT[k]);let tot=ks.reduce((a,k)=>a+WT[k],0),x=r()*tot;for(const k of ks){x-=WT[k];if(x<=0)return k}return ks[0]};
   for(let d=-7;d<=14;d++){
     const day=addD(today,d),h=hoursOf(day);if(!h)continue;
@@ -591,7 +754,7 @@ function seed(){
   }
   return st;
 }
-function load(){try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.v===3&&j.seedDay===dk(Date.now()))return j}catch(e){}return seed()}
+function load(){try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.v===4&&j.seedDay===dk(Date.now()))return j}catch(e){}return seed()}
 let bc=null;
 try{bc=new BroadcastChannel('capital-demo');bc.onmessage=()=>{S=load();idx=null;renderAll()}}catch(e){}
 function save(){idx=null;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}try{bc&&bc.postMessage(1)}catch(e){}renderAll()}
@@ -620,12 +783,12 @@ function openText(){
 /* ---------- instances ---------- */
 const insts=[];
 function mount(el,kind,ui){const inst={el,kind,ui:Object.assign(defUI(kind),ui||{})};insts.push(inst);bind(inst);render(inst);return inst}
-function defUI(k){if(k==='c')return{step:'home',mode:'barber',barber:null,svc:null,addon:false,day:null,time:null,slotB:null,name:'',phone:'',pay:'shop',err:'',last:null,toast:'',mPhone:'',mFound:null,resched:null};
- if(k==='b')return{who:'james',day:day0(Date.now()),toast:''};return{tab:'cal',day:day0(Date.now()),toast:''}}
+function defUI(k){if(k==='c')return{step:'pros',barber:null,svc:null,beard:false,design:false,cat:'',sheet:null,day:null,time:null,slotB:null,tip:0,pay:'person',first:'',last:'',phone:'',email:'',sms:true,err:'',lastId:null,toast:'',mPhone:'',mFound:null,resched:null};
+ if(k==='b')return{who:'james',view:'me',day:day0(Date.now()),toast:''};return{tab:'cal',day:day0(Date.now()),toast:''}}
 function render(inst){
   if(!inst.el.isConnected)return;
-  const sc=inst.el.querySelector('.scroll'),top=sc?sc.scrollTop:0,key=inst.ui.step||inst.ui.tab||'';
-  const html=inst.kind==='c'?clientHTML(inst.ui):inst.kind==='b'?barberHTML(inst.ui):ownerHTML(inst.ui,inst.el.clientWidth<600,inst.el.clientHeight);
+  const sc=inst.el.querySelector('.scroll'),top=sc?sc.scrollTop:0,key=(inst.ui.step||inst.ui.tab||'')+(inst.ui.view||'');
+  const html=inst.kind==='c'?clientHTML(inst.ui,inst.el.clientWidth>=640):inst.kind==='b'?barberHTML(inst.ui):ownerHTML(inst.ui,inst.el.clientWidth<600,inst.el.clientHeight);
   inst.el.innerHTML=html;
   const sc2=inst.el.querySelector('.scroll');if(sc2&&inst._k===key)sc2.scrollTop=top;
   if(sc2&&inst._k!==key&&inst.kind==='o'&&inst.ui.tab==='cal'){const n=inst.el.querySelector('.fresh')||inst.el.querySelector('.now');if(n)sc2.scrollTop=Math.max(0,n.offsetTop-90)}
@@ -635,135 +798,197 @@ function renderAll(){insts.forEach(render)}
 function toast(inst,msg){inst.ui.toast=msg;render(inst);clearTimeout(inst._tt);inst._tt=setTimeout(()=>{inst.ui.toast='';render(inst)},2600)}
 const T=ui=>ui.toast?`<div class="toast">${esc(ui.toast)}</div>`:'';
 
-/* ---------- client app ---------- */
-function clientHTML(u){
-  const back=u.step!=='home'&&u.step!=='done'?`<button class="bk" data-act="back" aria-label="Back">‹</button>`:'<span></span>';
-  let body='',foot='';
-  if(u.step==='home'){
+/* ---------- client app (Squire-style flow, fixes from barber & client complaints) ---------- */
+const HST=.13;
+const PHOTOS={}; // barber photo URLs go here once the shop OKs using them
+const COMBO={haircut:'cutbeard',skinfade:'fadebeard',student:'studentbeard',studentfade:'studentfadebeard',buzz:'buzzbeard'};
+const SUN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+const BACK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>';
+const ph=(bid)=>{if(bid==='any'||!bid)return`<div class="ph star">★</div>`;const b=BB[bid];return`<div class="ph" style="background:linear-gradient(160deg,${b.c},#1a1a1a)">${PHOTOS[bid]?`<img src="${esc(PHOTOS[bid])}" alt="">`:ini(b.n)}</div>`};
+const logo=`<div class="logo">CAPITAL<small>BARBERSHOP</small></div>`;
+const offersAny=(bid,k)=>bid==='any'?B.some(b=>offers(b.id,k)):offers(bid,k);
+const money2=v=>'$'+v.toFixed(2);
+const durTxt=m=>m>=60?(m%60?Math.floor(m/60)+'h '+m%60+'min':m/60+'h'):m+' min';
+function eff(u){return u.beard&&COMBO[u.svc]?COMBO[u.svc]:u.svc}
+function bookDur(bid,u){return durOf(bid,eff(u))+(u.design?15:0)}
+function basePrice(u){return S.svc[eff(u)].p+(u.design?S.svc.design.p:0)}
+function availTxt(t){if(!t)return'No openings soon';const d=day0(t),n=day0(Date.now());if(d===n)return'Available Today';if(d===addD(n,1))return'Available Tomorrow';return'Available '+new Date(t).toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}
+function nextAny(sid){let best=null;for(const b of B){if(sid&&!offers(b.id,sid))continue;const t=nextFree(b.id,sid);if(t&&(!best||t<best))best=t}return best}
+function slotsFor(u,d){
+  const rb=u.resched&&S.bookings.find(x=>x.id===u.resched);
+  if(rb&&rb.status!=='cancelled'){const st=rb.status;rb.status='cancelled';idx=null;try{return slotsFor(Object.assign({},u,{resched:null}),d)}finally{rb.status=st;idx=null}}
+  const sid=eff(u);
+  if(u.barber==='any')return anySlots(sid,d,u.design).map(([t,bs])=>[t,bs.sort((a,b)=>dayBk(a,d).length-dayBk(b,d).length)[0]]);
+  return free(u.barber,d,bookDur(u.barber,u)).map(t=>[t,u.barber]);
+}
+function clientHTML(u,wide){
+  const hd=(t,back)=>`<div class="hd">${back?`<button class="bk" data-act="back" aria-label="Back">${BACK}</button>`:''}<h1>${t}</h1></div>`;
+  let head='',body='',bar='',sheet='',pb=false;
+  if(u.step==='pros'){
     const o=openText();
-    const q=[];for(const b of B){if(!offers(b.id,'haircut'))continue;const t=nextFree(b.id,'haircut');if(t)q.push([t,b.id])}q.sort((a,b)=>a[0]-b[0]);
-    body=`<div class="pad">
-      <h2>Fresh cuts on Bank St.</h2><div class="mut">590 Bank St, Ottawa · 613-236-8838</div>
-      <div class="open ${o.o?'':'c'}"><i></i>${esc(o.t)}</div>
-      <div class="sec">Soonest haircut openings</div>
-      <div class="chips">${q.slice(0,5).map(([t,b])=>`<button class="qc" data-act="quick" data-b="${b}" data-v="${t}"><b>${rel(t)} ${fT(t)}</b><span>with ${esc(BB[b].n)} · $${S.svc.haircut.p}</span></button>`).join('')||'<span class="mut">No openings in the next few weeks</span>'}</div>
-      <button class="big" data-act="mode" data-v="barber"><div><b>Choose a barber</b><span>See who's free and when</span></div><em>›</em></button>
-      <button class="big r" data-act="mode" data-v="service"><div><b>Choose a service</b><span>We'll show every barber who does it</span></div><em>›</em></button>
-      <div class="tiles"><button class="tile" data-act="gift"><i>🎁</i>Gift cards</button><button class="tile" data-act="groom"><i>🤵</i>Groomsmen</button><button class="tile" data-act="manage"><i>📅</i>My booking</button></div>
-      <div class="sec">Hours</div>
-      <div class="hrs">${[2,3,4,5,6,0,1].map(d=>{const h=HOURS[d],t=new Date().getDay()===d;return`<div class="${t?'t':''}"><span>${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d]}</span><span>${h?fTm(h[0])+' – '+fTm(h[1]):'Closed'}</span></div>`}).join('')}</div>
-    </div><div class="demo">Crossmind prototype · demo bookings only</div>`;
+    head=hd('Choose a professional');
+    const anyT=S.any?nextAny(null):null;
+    body=`<div class="shop">${logo}<div><b>Capital Barbershop</b><span>590 Bank St · <span class="${o.o?'op':'cl'}">${esc(o.t)}</span></span></div></div>
+      <div class="grid">
+      ${S.any?`<button class="pc" data-act="pickb" data-id="any">${ph('any')}<b>Any professional</b><small class="g">${anyT?availTxt(anyT).replace('Available','Next:'):'Fully booked'}</small></button>`:''}
+      ${B.map(b=>{const t=nextFree(b.id,null);return`<button class="pc${t?'':' dim'}" data-act="pickb" data-id="${b.id}">${ph(b.id)}<b>${esc(b.n)}</b><small>${availTxt(t)}</small></button>`}).join('')}
+      <button class="pc" data-act="gift"><div class="ph star" style="background:#fff;color:#111;border:1px solid #E3E3E8">🎁</div><b>Buy a gift card</b><small>Give the gift of grooming</small></button>
+      </div>
+      <button class="lnk" data-act="manage">Already booked? Manage your appointment →</button>
+      <div class="demo">Crossmind prototype · demo bookings only · not affiliated with SQUIRE</div>`;
   }
-  else if(u.step==='barber'){
-    const list=B.filter(b=>!u.svc||offers(b.id,u.svc));
-    let anyT=null;if(S.any){for(const b of list){const t=nextFree(b.id,u.svc);if(t&&(!anyT||t<anyT))anyT=t}}
-    body=`<div class="pad"><h2>${u.svc?'Who do you want?':'Pick your barber'}</h2>${u.svc?`<div class="mut">${esc(svName(u.svc))} · $${S.svc[u.svc].p}</div>`:''}<div class="sec">${list.length} barbers</div>
-      ${S.any?`<button class="row any" data-act="pickb" data-id="any"><div class="av" style="background:var(--cap-red)">★</div><div class="tx"><b>First available</b><small>${anyT?'Next chair: '+rel(anyT)+' '+fT(anyT):'Fully booked'}</small></div><span>›</span></button>`:''}
-      ${list.map(b=>{const t=nextFree(b.id,u.svc),soon=t&&day0(t)===day0(Date.now());return`<button class="row${t?'':' dim'}" data-act="pickb" data-id="${b.id}"><div class="av" style="background:${b.c}">${ini(b.n)}</div><div class="tx"><b>${esc(b.n)}</b><small class="${soon?'soon':''}">${t?'Available '+rel(t).toLowerCase().replace(/^(mon|tue|wed|thu|fri|sat|sun)/,s=>s[0].toUpperCase()+s.slice(1))+' '+fT(t):'No openings soon'}</small></div><span>›</span></button>`}).join('')}
-    </div>`;
-  }
-  else if(u.step==='service'){
-    const bid=u.barber&&u.barber!=='any'?u.barber:null;
-    const canAdd=bid?offers(bid,'design'):B.some(b=>offers(b.id,'design'));
-    const by=CATS.map(c=>{const ks=ORDER.filter(k=>SV0[k][1]===c&&S.svc[k].on&&(bid?offers(bid,k):B.some(b=>offers(b.id,k))));if(!ks.length)return'';
-      return`<div class="sec">${c}</div>`+ks.map(k=>{let dur;if(bid)dur=durOf(bid,k)+' min';else{const ds=B.filter(b=>offers(b.id,k)).map(b=>durOf(b.id,k));const a=Math.min(...ds),z=Math.max(...ds);dur=a===z?a+' min':a+'–'+z+' min'}
-        if(k==='wedding')dur='On-site';
-        return`<button class="row" data-act="picks" data-id="${k}"><div class="tx"><b>${esc(SV0[k][0])}</b><small>${dur}${SV0[k][3]?' · '+esc(SV0[k][3]):''}</small></div><div class="pr">$${S.svc[k].p}</div></button>`}).join('')}).join('');
-    body=`<div class="pad"><h2>${bid?'What are we doing?':'Pick a service'}</h2>${bid?`<div class="mut">with ${esc(BB[bid].n)}</div>`:''}
-      ${canAdd&&S.svc.design.on?`<div class="sec">Add-on</div><button class="addon${u.addon?' on':''}" data-act="addon"><i>${u.addon?'✓':''}</i><span><b>Add a design</b> · +$${S.svc.design.p}, 15 min${bid?'':' (Jeffrey, Georges, Ankur)'}</span></button>`:''}
-      ${by}</div>`;
+  else if(u.step==='svc'){
+    head=hd('Choose a service',true);
+    const bid=u.barber;
+    if(u.svc){
+      const sid=u.svc,du=bid==='any'?null:durOf(bid,sid);
+      const adds=[];
+      if(COMBO[sid]&&offersAny(bid,COMBO[sid])&&S.svc[COMBO[sid]].on)adds.push(['beard','Beard Trim',S.svc[COMBO[sid]].p-S.svc[sid].p,bid==='any'?15:durOf(bid,COMBO[sid])-durOf(bid,sid)]);
+      if(sid!=='wedding'&&offersAny(bid,'design')&&S.svc.design.on)adds.push(['design','Design',S.svc.design.p,15]);
+      body=`<div class="grid" style="padding-top:10px"><button class="sc on" data-act="unpick"><div class="ck">✓</div><b>${esc(SV0[sid][0])}</b><small>${du?durTxt(du):'30–45 min'}</small><span class="pr">$${S.svc[sid].p}</span></button></div>
+        ${adds.length?`<div class="h3">Anything you wish to add?<small>Only add-ons that go with a ${esc(SV0[sid][0].toLowerCase())}</small></div><div class="grid">${adds.map(([k,n,p,d])=>`<button class="sc${u[k]?' on':''}" data-act="addon" data-id="${k}">${u[k]?'<div class="ck">✓</div>':''}<b>${n}</b><small>+${d} min</small><span class="ad">${u[k]?'ADDED':'+ ADD'}</span><span class="pr">+$${p}</span></button>`).join('')}</div>`:''}
+        <button class="lnk" data-act="unpick">← Pick a different service</button>`;
+      bar=`<button class="bbar" data-act="order"><span>View Order</span><span>$${basePrice(u)}</span></button>`;pb=true;
+    } else {
+      const ks=ORDER.filter(k=>k!=='design'&&S.svc[k].on&&offersAny(bid,k)&&(!u.cat||SV0[k][1]===u.cat));
+      const cats=CATS.filter(c=>ORDER.some(k=>SV0[k][1]===c&&k!=='design'&&S.svc[k].on&&offersAny(bid,k)));
+      body=`<select class="catsel" data-ch="cat" aria-label="Category"><option value="">All categories</option>${cats.map(c=>`<option ${u.cat===c?'selected':''}>${c}</option>`).join('')}</select>
+        <div class="grid">${ks.map(k=>{let d;if(k==='wedding')d='On-site';else if(bid!=='any')d=durTxt(durOf(bid,k));else{const ds=B.filter(b=>offers(b.id,k)).map(b=>durOf(b.id,k)),a=Math.min(...ds),z=Math.max(...ds);d=a===z?durTxt(a):a+'–'+durTxt(z)}
+          return`<button class="sc" data-act="picks" data-id="${k}"><b>${esc(SV0[k][0])}</b><small>${d}</small><span class="pr">$${S.svc[k].p}</span></button>`}).join('')}</div>`;
+    }
   }
   else if(u.step==='time'){
-    const sid=u.svc,isAny=u.barber==='any',today=day0(Date.now()),days=[];
-    const addon=u.addon&&sid!=='wedding';
-    for(let i=0;i<21;i++){const d=addD(today,i);let n=0;if(isAny)n=anySlots(sid,d,addon).length;else n=free(u.barber,d,durOf(u.barber,sid)+(addon?15:0)).length;days.push([d,n])}
-    if(u.day==null||!days.some(([d,n])=>d===u.day&&n)){const f=days.find(([,n])=>n);u.day=f?f[0]:today}
-    let slots=isAny?anySlots(sid,u.day,addon).map(([t,bs])=>[t,bs.sort((a,b)=>dayBk(a,u.day).length-dayBk(b,u.day).length)[0]]):free(u.barber,u.day,durOf(u.barber,sid)+(addon?15:0)).map(t=>[t,u.barber]);
-    const grp=[['Morning',0,720],['Afternoon',720,1020],['Evening',1020,1440]].map(([n,a,z])=>{const s=slots.filter(([t])=>{const m=minOf(t);return m>=a&&m<z});return s.length?`<div class="sec">${n}</div><div class="slots">${s.map(([t,b])=>`<button class="slot" data-act="slot" data-v="${t}" data-b="${b}">${fT(t)}${isAny?`<small>${esc(BB[b].n)}</small>`:''}</button>`).join('')}</div>`:''}).join('');
-    const who=isAny?'First available barber':BB[u.barber].n;
-    body=`<div class="pad"><h2>${u.resched?'Pick a new time':'When works?'}</h2><div class="mut">${esc(svName(sid))}${addon?' + design':''} · ${esc(who)}</div>
-      <div class="sec">${new Date(u.day).toLocaleDateString('en-US',{month:'long',year:'numeric'})}</div>
-      <div class="days">${days.map(([d,n])=>{const x=new Date(d);return`<button class="day${d===u.day?' on':''}" data-act="day" data-v="${d}" ${n?'':'disabled'}><span>${DOW[x.getDay()]}</span><b>${x.getDate()}</b></button>`}).join('')}</div>
-      ${grp||`<div class="sum" style="margin-top:16px;text-align:center"><b>No openings in the next 3 weeks</b><div class="mut" style="margin:6px 0 10px">Join the waitlist and we'll text you if a chair opens up.</div><button class="ab k" data-act="wait">Join the waitlist</button></div>`}
-      ${grp?`<div class="pol" style="text-align:center;margin-top:16px">Nothing fits? <button data-act="wait" style="text-decoration:underline;font-size:inherit;color:inherit">Join the waitlist</button></div>`:''}
-    </div>`;
-  }
-  else if(u.step==='details'){
-    const b=BB[u.slotB],sid=u.svc,addon=u.addon&&offers(u.slotB,'design')&&sid!=='wedding',du=durOf(u.slotB,sid)+(addon?15:0),tot=S.svc[sid].p+(addon?S.svc.design.p:0);
-    body=`<div class="pad"><h2>Almost done</h2><div class="mut">Check the details and add your name.</div>
-      <div class="sum" style="margin-top:14px">
-        <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><div class="av" style="background:${b.c}">${ini(b.n)}</div><div><b>${esc(b.n)}</b><div class="mut">${rel(u.time)} · ${fT(u.time)} – ${fT(u.time+du*MIN)}</div></div></div>
-        <div class="l"><span>${esc(svName(sid))}</span><b>$${S.svc[sid].p}</b></div>
-        ${addon?`<div class="l"><span>Design add-on</span><b>$${S.svc.design.p}</b></div>`:''}
-        <div class="l"><span>Booking fee</span><b class="free">$0</b></div>
-        <div class="l t"><span style="color:inherit">Total</span><b>$${tot}</b></div>
-      </div>
-      <label class="fld"><span>Your name</span><input data-f="name" value="${esc(u.name)}" autocomplete="name" placeholder="First and last name"></label>
-      <label class="fld"><span>Mobile number</span><input data-f="phone" value="${esc(u.phone)}" type="tel" autocomplete="tel" placeholder="613-555-0123"></label>
-      <div class="seg"><button data-act="pay" data-v="shop" class="${u.pay==='shop'?'on':''}">Pay at the shop</button><button data-act="pay" data-v="now" class="${u.pay==='now'?'on':''}">Pay now (card)</button></div>
-      ${u.err?`<div class="err">${esc(u.err)}</div>`:''}
-      <p class="pol">Free to cancel or move up to ${S.cancelH} hours before. We'll text a reminder the day before.</p>
-    </div>`;
-    foot=`<div class="foot"><button class="cta" data-act="confirm">Confirm · $${tot}</button></div>`;
+    head=hd(u.resched?'Pick a new time':'Choose a time',true);
+    const today=day0(Date.now()),days=[];
+    for(let i=0;i<14;i++){const d=addD(today,i);days.push([d,hoursOf(d)?slotsFor(u,d).length:0])}
+    if(u.day==null){const f=days.find(([,n])=>n);u.day=f?f[0]:today}
+    const sl=slotsFor(u,u.day),wb=u.barber==='any';
+    const nx=days.find(([d,n])=>n&&d>u.day);
+    body=`<div class="dates">${days.map(([d,n])=>{const x=new Date(d);return`<button class="dt${d===u.day?' on':''}${d===today?' td':''}" data-act="day" data-v="${d}" ${hoursOf(d)?'':'disabled'}><i>${x.getDate()}</i><span>${DOW[x.getDay()]}</span></button>`}).join('')}</div>
+      <div class="dayh">${new Date(u.day).toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}<small>${sl.length?sl.length+' time'+(sl.length>1?'s':'')+' available':(hoursOf(u.day)?'Fully booked':'Closed Mondays')}</small></div>
+      ${sl.length?`<div class="tg">${sl.map(([t,b])=>`<button class="tm${u.time===t&&u.slotB===b?' on':''}" data-act="slot" data-v="${t}" data-b="${b}">${minOf(t)>=1020?MOON:SUN}${fT(t).replace(' ','').toLowerCase()}${wb?`<small>${esc(BB[b].n.split(' ')[0])}</small>`:''}</button>`).join('')}</div>`
+        :`<div class="empty"><b>No times this day</b>${nx?'Next opening is '+fD(nx[0])+'.':'Nothing open in the next two weeks.'}<div>${nx?`<button data-act="day" data-v="${nx[0]}">Next time</button>`:''}<button class="o" data-act="wait">Join waitlist (free)</button></div></div>`}`;
+    bar=`<button class="bbar" data-act="checkout" ${u.time?'':'disabled'}><span>${u.resched?'Move my booking':'Go to checkout'}</span><span>$${basePrice(u)}</span></button>`;pb=true;
   }
   else if(u.step==='done'){
-    const bk=S.bookings.find(x=>x.id===u.last);
-    if(!bk){u.step='home';return clientHTML(u)}
+    const bk=S.bookings.find(x=>x.id===u.lastId);
+    if(!bk){u.step='pros';return clientHTML(u,wide)}
     const visits=S.bookings.filter(x=>x.phone===bk.phone&&x.status!=='cancelled').length;
-    body=`<div class="pad done"><div class="chk">✓</div><h2>${u.resched?'Moved':'You\'re booked'}, ${esc(bk.client.split(' ')[0])}</h2>
-      <div class="mut">${esc(svName(bk.svc))}${bk.addon?' + design':''} with ${esc(BB[bk.barber].n)}</div>
-      <div style="font-weight:700;font-size:16px;margin-top:6px">${rel(bk.start)} at ${fT(bk.start)}</div>
-      <div class="code">CAP-${String(bk.id).padStart(4,'0')}</div>
-      <div class="mut">Capital Rewards: visit ${Math.min(visits,10)} of 10</div>
+    head=hd(u.resched?'Booking moved':'Booking confirmed');
+    body=`<div class="done"><div class="bigck">✓</div><h2>${u.resched?'All set':'You\'re booked'}, ${esc(bk.client.split(' ')[0])}</h2>
+      <div class="dcard"><div class="r1">${ph(bk.barber)}<div><b>${esc(BB[bk.barber].n)}</b><span>${esc(svName(bk.svc))}${bk.addon?' + design':''}</span></div></div>
+        <div class="hr"></div><div class="sumr"><span>When</span><b style="color:#111">${fD(bk.start)} · ${fT(bk.start)}</b></div><div class="sumr"><span>Where</span><span>590 Bank St, Ottawa</span></div><div class="sumr"><span>Paying</span><span>${bk.pay==='card'?'Card':'In person'}</span></div>
+        <div style="text-align:center"><span class="code">CAP-${String(bk.id).padStart(4,'0')}</span></div></div>
+      <div style="font-size:12px;color:#6E6E73;margin-top:12px">${bk.sms===false?'No texts, as you asked.':'Confirmation text sent. Reminder the day before.'} Capital Rewards: visit ${Math.min(visits,10)} of 10</div>
       <div class="stamp">${Array.from({length:10},(_,i)=>`<i class="${i<visits?'f':''}"></i>`).join('')}</div>
-      <div class="acts"><button class="ab k" data-act="ics">Add to my calendar</button><button class="ab" data-act="rebook">Book my next cut in 4 weeks</button><button class="ab" data-act="home">Done</button></div>
-    </div>`;
+      <div class="acts"><button class="ab k" data-act="ics">Add to calendar</button><button class="ab" data-act="rebook">Book my next cut in 4 weeks</button><button class="ab" data-act="home">Done</button></div></div>`;
   }
   else if(u.step==='manage'){
+    head=hd('Manage appointment',true);
     const found=u.mFound?S.bookings.filter(x=>x.phone===u.mFound&&x.status==='booked'&&x.start>Date.now()).sort((a,b)=>a.start-b.start):null;
-    body=`<div class="pad"><h2>My booking</h2><div class="mut">Enter the number you booked with. No account or password.</div>
-      <label class="fld"><span>Mobile number</span><input data-f="mPhone" value="${esc(u.mPhone)}" type="tel" placeholder="613-555-0123"></label>
-      <button class="ab k" style="margin-top:10px" data-act="find">Find my bookings</button>
-      ${found?(found.length?`<div class="sec">Upcoming</div>`+found.map(x=>{const late=x.start-Date.now()<S.cancelH*36e5;return`<div class="mb"><b>${esc(svName(x.svc))} · $${x.price}</b><div class="mut">${rel(x.start)} ${fT(x.start)} with ${esc(BB[x.barber].n)}</div>${late?`<div class="mut" style="margin-top:8px">Within ${S.cancelH} hours: call the shop to change this one.</div>`:`<div class="bs"><button data-act="resched" data-id="${x.id}">Reschedule</button><button class="x" data-act="cancel" data-id="${x.id}">Cancel</button></div>`}</div>`}).join(''):`<div class="sum" style="margin-top:14px">No upcoming bookings for that number.</div>`):''}
-      <p class="pol">Tip: book something first, then look it up here with the same number.</p></div>`;
+    body=`<div class="mf"><p style="font-size:13px;color:#6E6E73;margin:0 0 10px">Enter the mobile number you booked with. No account, no 6-digit code.</p>
+      <input class="in" data-f="mPhone" value="${esc(u.mPhone)}" type="tel" placeholder="613-555-0123"><button class="blue" data-act="find">Find my appointments</button></div>
+      ${found?(found.length?`<div class="h3">Upcoming</div>`+found.map(x=>{const late=x.start-Date.now()<S.cancelH*36e5;return`<div class="mb"><b>${esc(svName(x.svc))} · $${x.price}</b><span>${fD(x.start)} ${fT(x.start)} with ${esc(BB[x.barber].n)}</span>${late?`<div style="font-size:12px;color:#6E6E73;margin-top:8px">Less than ${S.cancelH} hours away. Call 613-236-8838 to change it.</div>`:`<div class="bs"><button data-act="resched" data-id="${x.id}">Reschedule</button><button class="x2" data-act="cancel" data-id="${x.id}">Cancel</button></div>`}</div>`}).join(''):`<div class="empty">No upcoming appointments for that number.</div>`):''}
+      <div class="demo">Tip: book something first, then look it up here with the same number.</div>`;
   }
-  return`<div class="app ca">${'<div class="bar">'+back+'<div class="brand">CAPITAL<small>BARBERSHOP</small></div><span></span></div>'}<div class="scroll">${body}</div>${foot}${T(u)}</div>`;
+  /* sheets */
+  if(u.sheet==='order'||u.sheet==='tip'){
+    const bid=u.sheet==='tip'?u.slotB:u.barber,b=bid&&bid!=='any'?BB[bid]:null,tipOn=u.sheet==='tip';
+    const base=basePrice(u),tipAmt=tipOn&&u.tip?Math.round(base*u.tip/100):0;
+    const du=b?bookDur(bid,u):null;
+    sheet=`<div class="sbg" data-act="closesheet"><div class="sheet" data-stop="1">
+      <div class="shh"><div><h2>Your Order</h2><small>Capital Barbershop</small></div><button class="x" data-act="closesheet" aria-label="Close">✕</button></div>
+      <div class="sbody"><div class="oc">
+        <div class="r1">${ph(bid)}<div class="tx"><b>${b?esc(b.n):'Any professional'}</b><span>${esc(SV0[eff(u)][0])}${u.design?' + Design':''}</span></div><em>$${base+tipAmt}<small>$${base}</small></em></div>
+        ${tipOn?`<div class="ln"><span>${new Date(u.time).toLocaleDateString('en-US',{month:'short',day:'numeric'})} at ${fT(u.time)}</span><span>${durTxt(du)}</span></div>
+          <div class="ln"><span>Tip (optional)</span><span>$${tipAmt}</span></div>
+          <div class="tips">${[0,10,15,18,20,25].map(p=>`<button class="${u.tip===p?'on':''}" data-act="tip" data-v="${p}">${p?p+'%':'None'}</button>`).join('')}</div>
+          <div class="tipn">No tip is picked for you. You can also tip your barber in the chair.</div>`:''}
+      </div>
+      ${tipOn?'':`<div class="guest"><span style="font-size:20px">👥</span><div><b>Add guest to order</b><span>Book a friend or your son at the same time</span></div><button data-act="guest">Add</button></div>`}
+      </div>
+      <div class="sf"><div class="st"><span>Subtotal</span><span>$${base+tipAmt}</span></div><button class="blue" data-act="${tipOn?'toconfirm':'totime'}">${tipOn?'Continue':'Choose a time'}</button></div>
+    </div></div>`;
+  }
+  if(u.sheet==='confirm'){
+    const base=basePrice(u),card=u.pay==='card',tipAmt=card&&u.tip?Math.round(base*u.tip/100):0,tax=Math.round(base*HST*100)/100,tot=base+tipAmt+tax;
+    const freeUntil=u.time-S.cancelH*36e5;
+    sheet=`<div class="sbg" data-act="closesheet"><div class="sheet wh" data-stop="1">
+      <div class="shh"><div><h2>Confirm Booking</h2><small>No account or sign-in code needed</small></div><button class="x" data-act="closesheet" aria-label="Close">✕</button></div>
+      <div class="sbody">
+        <div class="shoprow">${logo}<div><b>Capital Barbershop</b><span>590 Bank St., Ottawa, ON K1S 3T3</span></div></div>
+        <div class="lab">Payment method</div>
+        <button class="pm${!card?' on':''}" data-act="pay" data-v="person"><i>🏪</i>Pay in person<em>NO FEES</em></button>
+        <button class="pm${card?' on':''}" data-act="pay" data-v="card"><i>▭</i>Card${S.hold?' (holds your spot)':''}<em>NO BOOKING FEE</em></button>
+        ${card?`<div class="cardbox">Secure card entry goes here (Stripe) in the real build. Demo: nothing is charged.</div><div class="note">${S.hold?'Your card is only charged after your cut, or if you no-show.':'Charged after your appointment, not today.'}</div>`:(S.hold?`<div class="note">Capital holds a card for no-shows. You'll add it at the shop's link we text you. (Demo)</div>`:'')}
+        <div class="lab">Your information</div>
+        <div class="row2"><input class="in" data-f="first" value="${esc(u.first)}" placeholder="First name *" autocomplete="given-name"><input class="in" data-f="last" value="${esc(u.last)}" placeholder="Last name *" autocomplete="family-name"></div>
+        <div class="ph2"><div class="cc">🇨🇦 +1</div><input class="in" data-f="phone" value="${esc(u.phone)}" type="tel" placeholder="Phone *" autocomplete="tel"></div>
+        <input class="in" data-f="email" value="${esc(u.email)}" type="email" placeholder="Email (optional)" autocomplete="email" style="margin-bottom:10px">
+        <button class="chk${u.sms?' on':''}" data-act="sms"><i>${u.sms?'✓':''}</i><span>Text me a confirmation and a reminder the day before. Never marketing texts.</span></button>
+        <div class="hr"></div>
+        <div class="lab" style="margin-top:0">Cancellation policy</div>
+        <div style="font-size:13.5px">Free cancellation until ${fT(freeUntil)} on ${new Date(freeUntil).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</div>
+        <div class="hr"></div>
+        <div class="lab" style="margin-top:0">Summary</div>
+        <div class="sumr"><span>Services</span><span>$${base}</span></div>
+        ${tipAmt?`<div class="sumr"><span>Tip</span><span>$${tipAmt}</span></div>`:''}
+        <div class="sumr"><span>HST (13%)</span><span>${money2(tax)}</span></div>
+        <div class="sumr"><span>Booking fee</span><span class="g">$0.00</span></div>
+        <div class="sumr tot"><span>Total</span><span>${money2(tot)}</span></div>
+        ${u.err?`<div class="err">${esc(u.err)}</div>`:''}
+        <div style="height:10px"></div>
+      </div>
+      <div class="sf"><button class="blue" data-act="book">Book</button><div class="terms">Demo booking. Nothing is sent to the shop.</div></div>
+    </div></div>`;
+  }
+  return`<div class="app ca${wide?' w':''}">${head}<div class="scroll${pb?' pb':''}">${body}</div>${bar}${sheet}${T(u)}</div>`;
 }
-function clientAct(inst,a,d){
+function clientAct(inst,a,d,e){
   const u=inst.ui;
   switch(a){
     case'home':Object.assign(u,defUI('c'));break;
-    case'back':{const m=u.mode==='service';u.err='';
-      u.step={barber:m?'service':'home',service:m?'home':'barber',time:u.resched?'manage':(m?'barber':'service'),details:'time',manage:'home'}[u.step]||'home';
-      if(u.step==='home')Object.assign(u,defUI('c'));if(u.step==='manage')u.resched=null;break}
-    case'mode':Object.assign(u,defUI('c'),{mode:d.v,step:d.v==='barber'?'barber':'service'});break;
-    case'pickb':u.barber=d.id;u.day=null;u.step=u.mode==='service'?'time':'service';break;
-    case'picks':if(d.id==='wedding'&&u.barber&&u.barber!=='any'&&!offers(u.barber,'wedding'))return;u.svc=d.id;u.day=null;if(u.mode==='service'){u.step='barber'}else u.step='time';break;
-    case'addon':u.addon=!u.addon;render(inst);return;
-    case'day':u.day=+d.v;break;
-    case'slot':u.time=+d.v;u.slotB=d.b;
-      if(u.resched){const bk=S.bookings.find(x=>x.id===u.resched);if(bk){bk.start=u.time;bk.barber=u.slotB;bk.fresh=true;bk.moved=true;u.last=bk.id;u.step='done';save();return}}
-      u.step='details';break;
-    case'quick':Object.assign(u,defUI('c'),{mode:'barber',barber:d.b,svc:'haircut',time:+d.v,slotB:d.b,step:'details'});break;
-    case'pay':u.pay=d.v;break;
-    case'confirm':{
-      const name=u.name.trim(),ph=u.phone.replace(/[^\d]/g,'');
-      if(name.length<2){u.err='Add your name so your barber knows who\'s coming.';break}
-      if(ph.length<10){u.err='Add a 10-digit mobile number for your reminder.';break}
-      const addon=u.addon&&offers(u.slotB,'design')&&u.svc!=='wedding',du=durOf(u.slotB,u.svc)+(addon?15:0);
-      if(!free(u.slotB,day0(u.time),du).includes(u.time)){u.err='Someone just took that time. Pick another one.';u.step='time';break}
-      const phone=ph.slice(-10).replace(/(\d{3})(\d{3})(\d{4})/,'$1-$2-$3');
-      const bk={id:S.nid++,barber:u.slotB,svc:u.svc,addon,start:u.time,dur:du,price:S.svc[u.svc].p+(addon?S.svc.design.p:0),client:name,phone,status:'booked',src:'online',pay:u.pay,fresh:true};
-      S.bookings.push(bk);u.last=bk.id;u.err='';u.step='done';u.resched=null;save();return}
-    case'ics':{const bk=S.bookings.find(x=>x.id===u.last);if(bk)ics(bk);toast(inst,'Calendar file downloaded');return}
-    case'rebook':{const bk=S.bookings.find(x=>x.id===u.last);if(!bk)break;Object.assign(u,defUI('c'),{mode:'barber',barber:bk.barber,svc:bk.svc,addon:!!bk.addon,name:bk.client,phone:bk.phone,step:'time',day:addD(bk.start,28)});break}
-    case'gift':toast(inst,'Gift cards: pick an amount, pay, and it\'s texted to them. (Demo)');return;
-    case'groom':Object.assign(u,defUI('c'),{mode:'service',svc:'wedding',step:'barber'});break;
+    case'back':u.err='';
+      if(u.step==='svc'&&u.svc){u.svc=null;u.beard=false;u.design=false;break}
+      if(u.step==='time'&&u.resched){u.step='manage';u.resched=null;break}
+      u.step={svc:'pros',time:'svc',manage:'pros'}[u.step]||'pros';if(u.step==='pros')Object.assign(u,defUI('c'));break;
+    case'pickb':u.barber=d.id;u.svc=null;u.cat='';u.step='svc';break;
+    case'picks':u.svc=d.id;u.beard=false;u.design=false;break;
+    case'unpick':u.svc=null;u.beard=false;u.design=false;break;
+    case'addon':u[d.id]=!u[d.id];break;
+    case'order':u.sheet='order';break;
+    case'closesheet':if(e&&e.target.closest('[data-stop]')&&e.target.closest('[data-act]').dataset.act==='closesheet'&&!e.target.closest('.x'))return;u.sheet=null;u.err='';break;
+    case'guest':toast(inst,'Guest booking: pick a second barber and service, then check out together. (Next phase)');return;
+    case'totime':u.sheet=null;u.step='time';u.day=null;u.time=null;break;
+    case'day':u.day=+d.v;u.time=null;break;
+    case'slot':u.time=+d.v;u.slotB=d.b;break;
+    case'checkout':if(!u.time)return;
+      if(u.resched){const bk=S.bookings.find(x=>x.id===u.resched);if(bk){bk.start=u.time;bk.barber=u.slotB;bk.fresh=true;bk.moved=true;u.lastId=bk.id;u.step='done';u.sheet=null;save();return}}
+      u.sheet='tip';break;
+    case'tip':u.tip=+d.v;break;
+    case'toconfirm':u.sheet='confirm';if(u.tip)u.pay='card';break;
+    case'pay':u.pay=d.v==='card'?'card':'person';break;
+    case'sms':u.sms=!u.sms;break;
+    case'book':{
+      const first=u.first.trim(),last=u.last.trim(),ph=u.phone.replace(/[^\d]/g,'');
+      if(!first||!last){u.err='Add your first and last name.';break}
+      if(ph.length<10){u.err='Add a 10-digit phone number.';break}
+      const du=bookDur(u.slotB,u),sid=eff(u);
+      if(!free(u.slotB,day0(u.time),du).includes(u.time)){u.err='';u.sheet=null;u.time=null;render(inst);toast(inst,'Someone just took that time. Pick another one.');return}
+      const phone=ph.slice(-10).replace(/(\d{3})(\d{3})(\d{4})/,'$1-$2-$3'),base=basePrice(u);
+      const bk={id:S.nid++,barber:u.slotB,svc:sid,addon:!!u.design,start:u.time,dur:du,price:base,tip:u.pay==='card'&&u.tip?Math.round(base*u.tip/100):0,client:first+' '+last[0].toUpperCase()+'.',phone,email:u.email.trim(),sms:u.sms,status:'booked',src:'online',pay:u.pay,fresh:true};
+      S.bookings.push(bk);u.lastId=bk.id;u.err='';u.sheet=null;u.step='done';save();return}
+    case'ics':{const bk=S.bookings.find(x=>x.id===u.lastId);if(bk)ics(bk);toast(inst,'Calendar file downloaded');return}
+    case'rebook':{const bk=S.bookings.find(x=>x.id===u.lastId);if(!bk)break;const keep={first:u.first,last:u.last,phone:u.phone,email:u.email};
+      const base=Object.entries(COMBO).find(([,v])=>v===bk.svc);Object.assign(u,defUI('c'),keep,{barber:bk.barber,svc:base?base[0]:bk.svc,beard:!!base,design:!!bk.addon,step:'time',day:addD(bk.start,28)});break}
+    case'gift':toast(inst,'Gift cards: pick an amount, pay, and it\'s texted to them. (Next phase)');return;
     case'manage':u.step='manage';u.mFound=null;if(!u.mPhone&&u.phone)u.mPhone=u.phone;break;
     case'find':{const ph=u.mPhone.replace(/[^\d]/g,'').slice(-10);u.mFound=ph.replace(/(\d{3})(\d{3})(\d{4})/,'$1-$2-$3');break}
     case'cancel':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.status='cancelled';bk.fresh=true;save();toast(inst,'Cancelled. Your barber has been told.')}return}
-    case'resched':{const bk=S.bookings.find(x=>x.id===+d.id);if(!bk)break;Object.assign(u,{resched:bk.id,barber:bk.barber,svc:bk.svc,addon:!!bk.addon,mode:'barber',day:null,step:'time'});break}
-    case'wait':toast(inst,'You\'re on the waitlist. We\'ll text you if a chair opens up.');return;
+    case'resched':{const bk=S.bookings.find(x=>x.id===+d.id);if(!bk)break;const base=Object.entries(COMBO).find(([,v])=>v===bk.svc);
+      Object.assign(u,{resched:bk.id,barber:bk.barber,svc:base?base[0]:bk.svc,beard:!!base,design:!!bk.addon,day:null,time:null,step:'time'});break}
+    case'wait':toast(inst,'You\'re on the waitlist, free. We\'ll text you if a chair opens up.');return;
   }
   render(inst);
 }
@@ -787,19 +1012,20 @@ function barberHTML(u){
     <div class="who"><div class="av" style="background:${b.c}">${ini(b.n)}</div><div class="tx"><b>${esc(b.n)}</b><small>Barber view</small></div>
       <select data-ch="who" aria-label="Switch barber">${B.map(x=>`<option value="${x.id}" ${x.id===b.id?'selected':''}>${esc(x.n)}</option>`).join('')}</select></div>
     <div class="dn"><button data-act="bday" data-v="-1" aria-label="Previous day">‹</button><b>${d===today?'Today · '+new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric'}):fD(d)}</b><button data-act="bday" data-v="1" aria-label="Next day">›</button></div>
-    <div class="st"><div><b>${live.length}</b><span>clients</span></div><div><b>$${live.filter(x=>x.status!=='noshow').reduce((a,x)=>a+x.price,0)}</b><span>booked</span></div><div><b>${open}</b><span>open slots</span></div></div>
+    <div class="vw"><button class="${u.view!=='shop'?'on':''}" data-act="view" data-v="me">My chair</button><button class="${u.view==='shop'?'on':''}" data-act="view" data-v="shop">Whole shop</button></div><div class="st"><div><b>${live.length}</b><span>clients</span></div><div><b>$${live.filter(x=>x.status!=='noshow').reduce((a,x)=>a+x.price,0)}</b><span>booked</span></div><div><b>${open}</b><span>open slots</span></div></div>
   </div><div class="scroll">
     ${fresh?`<div class="new"><div class="tx"><b>${fresh.status==='cancelled'?'Cancelled':fresh.moved?'Booking moved':'New booking'} · ${esc(fresh.client)}</b>${esc(svName(fresh.svc))} · ${rel(fresh.start)} ${fT(fresh.start)}</div><button data-act="seen" data-id="${fresh.id}">${day0(fresh.start)===d?'OK':'View'}</button></div>`:''}
     ${nx&&d===today?`<div class="nx"><small>Up next</small><b>${esc(nx.client)} · ${fT(nx.start)}</b><span>${esc(svName(nx.svc))} · ${nx.dur} min · $${nx.price} · ${esc(nx.phone)}</span></div>`:''}
-    <div class="tl">${!works(b.id,d)?`<div class="off">${h?'Day off':'Shop closed Mondays'}</div>`:rows||'<div class="off">Nothing booked yet</div>'}</div>
+    ${u.view==='shop'?`<div class="tl">${B.map(x=>{const l=dayBk(x.id,d).filter(y=>y.status!=='cancelled'&&y.svc!=='block'),nx2=l.find(y=>y.status==='booked'&&y.start+y.dur*MIN>Date.now());return`<div class="ap"><div class="tm">${l.length}<small>clients</small></div><div class="bx" style="--c:${x.c}"><b>${esc(x.n)}</b><span>${!works(x.id,d)?'Off today':nx2?'Next: '+fT(nx2.start)+' · '+esc(nx2.client):'No more today'} · ${free(x.id,d,30).length} open</span></div></div>`}).join('')}</div>`:`<div class="tl">${!works(b.id,d)?`<div class="off">${h?'Day off':'Shop closed Mondays'}</div>`:rows||'<div class="off">Nothing booked yet</div>'}</div>`}
   </div><div class="bf"><button data-act="walkin">+ Walk-in</button><button class="s" data-act="block">Block 30 min</button></div>${T(u)}</div>`;
 }
 function barberAct(inst,a,d){
   const u=inst.ui;
   switch(a){
     case'bday':u.day=addD(u.day,+d.v);break;
+    case'view':u.view=d.v;break;
     case'seen':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.fresh=false;u.day=day0(bk.start);save()}return}
-    case'bdone':case'bns':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.status=a==='bdone'?'done':'noshow';bk.fresh=false;save()}return}
+    case'bdone':case'bns':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.status=a==='bdone'?'done':'noshow';bk.fresh=false;save();if(a==='bdone'&&S.rev&&bk.phone)toast(inst,'Thanks text with a Google review link sent to '+bk.client)}return}
     case'unblock':{const bk=S.bookings.find(x=>x.id===+d.id);if(bk){bk.status='cancelled';save()}return}
     case'walkin':case'block':{
       const sid=a==='walkin'?(offers(u.who,'haircut')?'haircut':Object.keys(BB[u.who].svc)[0]):'block',du=a==='walkin'?durOf(u.who,sid):30;
@@ -857,7 +1083,10 @@ function ownerHTML(u,narrow,H){
     body=`<div class="pn"><div class="bx">
       <div class="set"><div class="tx"><b>"First available" option</b><small>Let clients grab the next free chair with any barber</small></div><button class="tg${S.any?' on':''}" data-act="any" aria-label="Toggle first available"></button></div>
       <div class="set"><div class="tx"><b>Free cancellation window</b><small>Clients can cancel or move online until this point</small></div><select data-ch="cancelH">${[1,2,12,24].map(n=>`<option value="${n}" ${S.cancelH===n?'selected':''}>${n} hr${n>1?'s':''} before</option>`).join('')}</select></div>
-      <div class="set"><div class="tx"><b>Client booking fee</b><small>Squire adds $1.00. Here it's off.</small></div><b>$0.00</b></div>
+      <div class="set"><div class="tx"><b>Hold a card for no-shows</b><small>Card saved at booking, charged only after the cut or on a no-show</small></div><button class="tg${S.hold?' on':''}" data-act="hold" aria-label="Toggle card hold"></button></div>
+      <div class="set"><div class="tx"><b>Google review text</b><small>When a barber marks a cut done, the client gets a thank-you with your review link</small></div><button class="tg${S.rev?' on':''}" data-act="rev" aria-label="Toggle review texts"></button></div>
+      <div class="set"><div class="tx"><b>Tip options</b><small>None is always selected first. Clients can tip in the chair instead.</small></div><b>0 · 15 · 18 · 20 · 25%</b></div>
+      <div class="set"><div class="tx"><b>Client booking fee</b><small>Clients paying by card on Squire pay about $3 extra. Here it's zero.</small></div><b>$0.00</b></div>
       <div class="set" style="border:0"><div class="tx"><b>Shop hours</b><small>Tue–Wed 9–6 · Thu–Fri 9–7 · Sat 10–6 · Sun 10–5 · Mon closed</small></div></div>
       <button class="rst" data-act="reset">Reset demo data</button></div></div>`;
   }
@@ -871,6 +1100,8 @@ function ownerAct(inst,a,d){
     case'oday':u.day=+d.v===0?day0(Date.now()):addD(u.day,+d.v);break;
     case'svon':S.svc[d.id].on=!S.svc[d.id].on;save();return;
     case'any':S.any=!S.any;save();return;
+    case'hold':S.hold=!S.hold;save();return;
+    case'rev':S.rev=!S.rev;save();return;
     case'reset':resetAll();return;
   }
   render(inst);
@@ -882,17 +1113,17 @@ function bind(inst){
     const t=e.target.closest('[data-act]');if(!t||!inst.el.contains(t)||t.disabled)return;
     if(e.isTrusted)stopPlay();
     const a=t.dataset.act,d=t.dataset;
-    if(a==='back'||a==='home'){clientAct(inst,a,d);return}
-    (inst.kind==='c'?clientAct:inst.kind==='b'?barberAct:ownerAct)(inst,a,d);
+    (inst.kind==='c'?clientAct:inst.kind==='b'?barberAct:ownerAct)(inst,a,d,e);
   });
   inst.el.addEventListener('input',e=>{const f=e.target.dataset&&e.target.dataset.f;if(f){inst.ui[f]=e.target.value;if(inst.ui.err){inst.ui.err=''}}});
   inst.el.addEventListener('change',e=>{
     const c=e.target.dataset&&e.target.dataset.ch;if(!c)return;
     if(c==='who'){inst.ui.who=e.target.value;render(inst)}
+    else if(c==='cat'){inst.ui.cat=e.target.value;render(inst)}
     else if(c==='price'){const v=Math.max(0,Math.round(+e.target.value||0));S.svc[e.target.dataset.id].p=v;save();toast(inst,svName(e.target.dataset.id)+' is now $'+v+' on the booking page')}
     else if(c==='cancelH'){S.cancelH=+e.target.value;save()}
   });
-  inst.el.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset&&e.target.dataset.f){e.preventDefault();clientAct(inst,e.target.dataset.f==='mPhone'?'find':'confirm',{})}});
+  inst.el.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset&&e.target.dataset.f){e.preventDefault();clientAct(inst,e.target.dataset.f==='mPhone'?'find':'book',{})}});
 }
 function resetAll(){try{localStorage.removeItem(KEY)}catch(e){}S=seed();insts.forEach(i=>{const keep=i.kind==='b'?{who:i.ui.who}:{};i.ui=Object.assign(defUI(i.kind),keep)});save()}
 
@@ -915,13 +1146,17 @@ async function play(){
     if(narrow)showDev('c');
     $('#sim').scrollIntoView({behavior:'smooth',block:'start'});await wait(700);
     simC.ui=defUI('c');render(simC);await wait(700);
-    await tap(simC,'[data-act=mode][data-v=barber]');clientAct(simC,'mode',{v:'barber'});await wait(700);
     await tap(simC,'[data-act=pickb][data-id=james]');clientAct(simC,'pickb',{id:'james'});await wait(700);
-    await tap(simC,'[data-act=picks][data-id=cutbeard]');clientAct(simC,'picks',{id:'cutbeard'});await wait(800);
+    await tap(simC,'[data-act=picks][data-id=haircut]');clientAct(simC,'picks',{id:'haircut'});await wait(700);
+    await tap(simC,'[data-act=addon][data-id=beard]');clientAct(simC,'addon',{id:'beard'});await wait(600);
+    await tap(simC,'[data-act=order]');clientAct(simC,'order',{});await wait(900);
+    await tap(simC,'[data-act=totime]');clientAct(simC,'totime',{});await wait(800);
     const sl=await tap(simC,'[data-act=slot]');clientAct(simC,'slot',{v:sl.dataset.v,b:sl.dataset.b});await wait(500);
-    for(const [f,txt] of [['name','Alex Martin'],['phone','613-555-0142']]){const inp=simC.el.querySelector(`[data-f=${f}]`);for(const ch of txt){if(stopFlag)throw 0;simC.ui[f]+=ch;inp.value=simC.ui[f];await wait(45)}await wait(200)}
-    await tap(simC,'[data-act=confirm]');clientAct(simC,'confirm',{});
-    const bk=S.bookings.find(x=>x.id===simC.ui.last);
+    await tap(simC,'[data-act=checkout]');clientAct(simC,'checkout',{});await wait(1000);
+    await tap(simC,'[data-act=toconfirm]');clientAct(simC,'toconfirm',{});await wait(700);
+    for(const [f,txt] of [['first','Alex'],['last','Martin'],['phone','613-555-0142']]){const inp=simC.el.querySelector(`[data-f=${f}]`);for(const ch of txt){if(stopFlag)throw 0;simC.ui[f]+=ch;inp.value=simC.ui[f];await wait(45)}await wait(150)}
+    await tap(simC,'[data-act=book]');clientAct(simC,'book',{});
+    const bk=S.bookings.find(x=>x.id===simC.ui.lastId);
     if(bk){simB.ui.who=bk.barber;simB.ui.day=day0(bk.start);simO.ui.tab='cal';simO.ui.day=day0(bk.start);simO._k=null;renderAll()}
     if(narrow){await wait(1800);showDev('b');await wait(2600);showDev('o')}
   }catch(e){}
@@ -968,7 +1203,7 @@ function calc(){
   const plan=+$('#cPlan').value+ +$('#cAdd').value,bk=+$('#cBk').value,build=Math.max(0,+$('#cBuild').value||0),mo=Math.max(0,+$('#cMo').value||0);
   $('#cBkV').textContent=bk.toLocaleString();
   const sq=m=>plan*m,cm=m=>build+mo*m;
-  $('#oSq').textContent=money(sq(36));$('#oCm').textContent=money(cm(36));$('#oFee').textContent=money(bk*12);
+  $('#oSq').textContent=money(sq(36));$('#oCm').textContent=money(cm(36));$('#oFee').textContent=money(bk*2.99*12);
   let be=null;if(plan>mo)be=Math.ceil(build/(plan-mo));
   $('#oBe').textContent=be!=null&&be<=36?`Crossmind pays for itself in month ${be}. After that the shop keeps about ${money(plan-mo)} a month.`:be!=null?`Breaks even in month ${be}.`:'At these numbers Crossmind costs more each month than Squire.';
   const W=560,H=230,pl=56,pr=16,pt=12,pb=30,mx=Math.max(sq(36),cm(36))*1.08;
