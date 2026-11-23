@@ -703,7 +703,7 @@
   "homes": 1832,
   "last": "2023-12",
   "name": "Cardel Homes Inc.",
-  "sites": 50,
+  "sites": 49,
   "source": "website",
   "website": "https://www.cardelhomes.com"
  },
@@ -1254,13 +1254,6 @@
   "name": "G. Lemay Construction Inc.",
   "sites": 0
  },
- "ga-contracting": {
-  "checked": "2026-11-20",
-  "name": "Ga Contracting",
-  "sites": 1,
-  "source": "website",
-  "website": "https://gadevelopments.ca"
- },
  "gary-nyentap": {
   "checked": "2026-11-20",
   "homes": 0,
@@ -1319,7 +1312,7 @@
    "613-226-5550",
    "613-226-3458"
   ],
-  "sites": 5,
+  "sites": 4,
   "source": "website",
   "website": "https://cgci.ca"
  },
@@ -1547,7 +1540,7 @@
    "613-260-8818",
    "613-425-0880"
   ],
-  "sites": 35,
+  "sites": 34,
   "source": "website",
   "website": "https://hnhomes.com"
  },
@@ -2053,7 +2046,7 @@
   "phones": [
    "613-748-7051"
   ],
-  "sites": 9,
+  "sites": 8,
   "source": "website",
   "website": "https://www.massicotteconstruction.com"
  },
@@ -2203,7 +2196,7 @@
   "homes": 17844,
   "last": "2023-12",
   "name": "Minto Communities Inc.",
-  "sites": 99,
+  "sites": 96,
   "website": null
  },
  "minto-multi-residential-income-partners-i-gp": {
@@ -2516,7 +2509,7 @@
   "homes": 330,
   "last": "2023-12",
   "name": "Pathways Regional Inc.",
-  "sites": 5
+  "sites": 4
  },
  "pathways-south-regional": {
   "checked": "2026-11-20",
@@ -2743,7 +2736,7 @@
    "613-739-4233",
    "613-739-5777"
   ],
-  "sites": 109,
+  "sites": 107,
   "source": "website",
   "website": "https://www.richcraft.com"
  },
