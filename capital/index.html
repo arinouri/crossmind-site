@@ -122,6 +122,30 @@ button{cursor:pointer}
 .sc2 th{background:var(--navy-3)!important;color:var(--cream-soft)!important}
 .sc2 td{color:var(--cream);border-bottom-color:var(--line-c)!important;background:transparent!important}
 .sc2 td:first-child{position:static}
+.fx5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px}
+@media (max-width:1000px){.fx5{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.fx5{grid-template-columns:1fr}}
+.fx5 div{background:#fff;border-radius:18px;padding:20px;box-shadow:0 1px 0 var(--line-n)}
+.fx5 b{display:block;font:700 18px/1.2 var(--f-d);letter-spacing:-.02em;margin-bottom:8px}
+.fx5 p{font-size:14.5px;color:var(--ink-soft)}
+.later{margin-top:22px;font-size:15px;color:var(--ink-soft)}
+.later b{color:var(--navy)}
+.ph3{font-size:22px;margin-bottom:16px}
+.offer{background:var(--orange);color:var(--navy);border-radius:20px;padding:24px}
+.offer small{font:600 11px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.offer h3{font-size:28px;margin:10px 0 14px}
+.offer ul{margin:0 0 14px;padding-left:20px;font-size:15.5px}
+.offer li{margin:4px 0}
+.offer p{font-size:14px;opacity:.85}
+.offer details{margin-top:14px;font-size:14px}
+.offer summary{cursor:pointer;font-weight:600}
+.offer .rc td{border-bottom-color:rgba(10,34,56,.15)}
+.offer .rc tr.t td{color:var(--navy)}
+.mx.dk{background:var(--navy-2);box-shadow:none;border:1px solid var(--line-c);margin-top:36px}
+.dm summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;font:700 24px/1.2 var(--f-d);letter-spacing:-.02em}
+.dm summary::-webkit-details-marker{display:none}
+.dm summary::after{content:"+";margin-left:auto;font-size:28px;font-weight:400}
+.dm[open] summary::after{content:"–"}
 /* simulation */
 .simwrap{max-width:1440px}
 .sim-head{display:flex;gap:16px;align-items:end;justify-content:space-between;flex-wrap:wrap}
@@ -464,169 +488,10 @@ button{cursor:pointer}
 
 <section class="hero org"><div class="wrap">
   <div class="kick">For Capital Barbershop · 590 Bank St, Ottawa</div>
-  <h1>Your chairs. Your booking app. No monthly rent on it.</h1>
-  <p class="lede">We looked at how Capital books today on Squire: every barber, every service, every price. Then we built a booking system that does the same job, fixes what's awkward, and lives on your own site.</p>
-  <div class="row">
-    <a class="btn" href="#book">Try the client booking</a>
-    <a class="btn ghost" href="#sim">Watch the phone, barber &amp; desk views</a>
-  </div>
-  <p class="note">Working prototype by Crossmind. Bookings made here are demo data saved in your own browser. Nothing goes to the shop. To book a real cut, call 613-236-8838.</p>
-</div></section>
-
-<section class="band navy" id="today"><div class="wrap">
-  <div class="kick">What Capital runs on today</div>
-  <h2 class="h2">Squire, set up for a busy 7-chair shop.</h2>
-  <p class="lede">Read straight from Capital's public Squire booking page and its settings.</p>
-  <div class="facts">
-    <div class="fact"><b>7</b><span>barbers taking online bookings: Scott, Jeffrey, Georges, James, Bao, David and Ankur</span></div>
-    <div class="fact"><b>19</b><span>bookable services, from a $20 neck lineup to a $350 wedding reservation</span></div>
-    <div class="fact"><b>+$2.99</b><span>extra fees when a client pays by card online. We tested a $45 cut with an $8 tip: $8.84 in "taxes &amp; fees" vs $5.85 HST</span></div>
-    <div class="fact"><b>15%</b><span>tip already selected for the client at checkout, before they've had the cut</span></div>
-  </div>
-  <div class="two">
-    <div class="card d chart"><h3>Squire's monthly plans (CAD)</h3><p class="sub">Capital has rewards, gift cards and waitlist switched on. On Squire's current price list, rewards and gift cards come with Titan.</p><div id="planChart"></div></div>
-    <div>
-      <ul class="list" style="color:var(--cream)">
-        <li><b>Likely cost: about CA$340 a month, or $4,080 a year</b>, if Capital is on Titan. At minimum it's Executive at CA$205 a month. Shops on older plans can pay a different rate, so confirm it with the owner.</li>
-        <li><b>Plus about $3 from every client who pays by card online.</b> Squire charges clients a booking fee comparison sites put at $1 to $3, and it can't be switched off. At 300 card bookings a month, that's roughly $10,000 a year out of his clients' pockets.</li>
-        <li><b>Add-ons cost extra:</b> a branded landing page is $25 a month, and the Operator AI is $99 a month.</li>
-        <li><b>Card processing is separate.</b> Any system that takes cards pays this, so it's left out of every comparison on this page.</li>
-      </ul>
-    </div>
-  </div>
-</div></section>
-
-<section class="band" id="menu"><div class="wrap">
-  <div class="kick">The menu, barber by barber</div>
-  <h2 class="h2">Same prices everywhere. Very different chairs.</h2>
-  <p class="lede">Every barber charges the same price for the same service. What changes is how long they book it for, and which services they offer at all.</p>
-  <div class="mx"><table id="matrix"></table></div>
-  <p class="legend"><i></i>Booked longer than most barbers book the same service. Minutes shown per barber; a dash means they don't offer it.</p>
-  <div class="two">
-    <div class="card chart"><h3>What a regular haircut earns per chair-hour</h3><p class="sub">$45 haircut ÷ the time each barber books it for</p><div id="rateChart"></div></div>
-    <ul class="list">
-      <li><b>Scott and Bao book 45 minutes for a haircut, the other five book 30.</b> Same $45 price, so those two chairs earn $60 an hour on haircuts instead of $90. Worth asking whether that's on purpose.</li>
-      <li><b>Fades cost the same as a regular cut.</b> Skin Fade is $45 like a Haircut, and Student Skin Fade is $40 like a Student Cut. Most shops charge more for a fade.</li>
-      <li><b>Specialties are scattered.</b> Straight blade shaves: Jeffrey, Georges, James, Ankur. Designs: Jeffrey, Georges, Ankur. Long hair: only Georges. Weddings ($350): David and Ankur. Jeffrey and James don't do skin fades.</li>
-      <li><b>The menu needs a tidy-up.</b> "Hair Cut" and "Haircut" both appear, some names have stray spaces, the Design add-on is listed as its own appointment, and the Wedding is booked as 0 minutes.</li>
-      <li><b>Clients must pick a barber first.</b> "Any barber" is switched off, so someone who just wants the next free chair has to check all seven profiles.</li>
-      <li><b>The website doesn't match.</b> capitalbarbershop.ca lists a Hot Towel Shave and a Mustache Trim with no prices, and neither has that name on the booking page.</li>
-    </ul>
-  </div>
-</div></section>
-
-<section class="band" id="fixes"><div class="wrap">
-  <div class="kick">What people complain about</div>
-  <h2 class="h2">Squire's flow, minus the stuff barbers and clients hate.</h2>
-  <p class="lede">The booking screens follow Squire's layout, so his regulars won't need to learn anything new. We pulled complaints from shop-owner reviews, App Store reviews, comparison sites and our own test checkout, then fixed each one.</p>
-  <div class="mx"><table class="fx">
-    <thead><tr><th>Complaint</th><th>Who said it</th><th>What this build does</th></tr></thead>
-    <tbody>
-      <tr><td>Clients pay extra fees to book and pay online</td><td>Shop owners on Capterra; App Store reviewers; our test checkout</td><td>$0 booking fee. The summary shows services, tip and HST, nothing else</td></tr>
-      <tr><td>Tip buttons are set too high and pushed before the cut</td><td>Shop owner on Capterra; our test (15% pre-picked)</td><td>Tip starts at "None", and clients can tip in the chair instead</td></tr>
-      <tr><td>Add-ons clutter the service list, and the add-on step lists every service again</td><td>A barber on the App Store; our test</td><td>After a cut, you only see Beard Trim and Design. Adding a beard trim books the shop's combo price automatically</td></tr>
-      <tr><td>The 6-digit sign-in code often fails, so people call instead</td><td>App Store reviewers</td><td>No account and no code. Name and phone to book; phone number to manage the booking</td></tr>
-      <tr><td>Cash shops can't stop clients being pushed to pay online</td><td>Shop owner on Capterra</td><td>"Pay in person" is the default choice</td></tr>
-      <tr><td>Cards aren't secured at booking, so no-shows slip through</td><td>Shop owners on Capterra</td><td>An owner switch to hold a card at booking, charged only after the cut or on a no-show</td></tr>
-      <tr><td>Clients are charged to join the waitlist</td><td>Shop owner on Capterra</td><td>The waitlist is free</td></tr>
-      <tr><td>Reminder texts used for ads; people who unsubscribed got re-added</td><td>App Store reviewer; shop owner on Capterra</td><td>Reminders only, with a clear opt-in tick box. No marketing texts</td></tr>
-      <tr><td>Barbers can't see the whole shop's schedule on mobile</td><td>Shop owner on Capterra</td><td>The barber's phone has a "Whole shop" tab</td></tr>
-      <tr><td>No Google review prompt</td><td>Shop owners on Capterra</td><td>When a barber taps Done, the client gets a thank-you text with the review link (can be switched off)</td></tr>
-      <tr><td>No "next free chair" option</td><td>Capital's own setup</td><td>"Any professional" is the first card, showing the next opening</td></tr>
-    </tbody></table></div>
-  <p class="legend" style="margin-top:14px">Barber photos are placeholders until Capital sends the ones it wants to use. Drop the image links into the PHOTOS list in the code and they'll show up everywhere.</p>
-</div></section>
-
-<section class="band navy" id="price"><div class="wrap">
-  <div class="kick">Pricing the build</div>
-  <h2 class="h2">What Capital pays now, and what we'd charge.</h2>
-  <div class="two" style="margin-top:36px">
-    <div>
-      <h3 style="font-size:24px;margin-bottom:14px">Which Squire plan is he on?</h3>
-      <ul class="list" style="color:var(--cream)">
-        <li><b>Almost certainly not the $65 Pro plan.</b> His booking page sells gift cards and his shop has rewards switched on. On Squire's current price list, both of those only come with <b>Titan, CA$340 a month</b>.</li>
-        <li><b>He might be on an older deal.</b> Squire's older plans ran $100 to $250 USD, and the old Pro was capped at 4 barbers. With 7 barbers he wasn't on that either.</li>
-        <li><b>Just ask him.</b> "What does Squire charge you a month, and do you use its card reader and payroll?" That answer decides the whole pitch.</li>
-      </ul>
-    </div>
-    <div class="card d">
-      <h3>What it costs to run (CAD, about)</h3>
-      <p class="sub">Every month, for a shop doing ~500 bookings</p>
-      <table class="rc">
-        <tr><td>Website hosting (Cloudflare or GitHub Pages)</td><td>$0</td></tr>
-        <tr><td>Database &amp; logins (Supabase Pro, US$25)</td><td>~$35</td></tr>
-        <tr><td>Shop text number (Twilio local, US$1.15)</td><td>~$2</td></tr>
-        <tr><td>~1,000 texts: confirmations + reminders (US$0.0079 each + carrier fees)</td><td>~$15</td></tr>
-        <tr><td>Email confirmations (free tier)</td><td>$0</td></tr>
-        <tr><td>Domain (he already owns capitalbarbershop.ca)</td><td>$0</td></tr>
-        <tr class="t"><td>Running costs</td><td>~$50/mo</td></tr>
-        <tr><td>Card payments, only if he takes cards (Stripe)</td><td>2.9% + 30¢ online · 2.7% + 5¢ in person</td></tr>
-      </table>
-    </div>
-  </div>
-  <div class="pk">
-    <div class="pkc hi"><small>Recommended</small><h3>$800 build + $79/mo</h3><p>Online booking, barber phones, owner desk, text confirmations and reminders, waitlist, pay in person. $400 to start, $400 at launch. The $79 covers the ~$50 running costs plus fixes, menu or price changes and support.</p></div>
-    <div class="pkc"><small>Cheaper monthly</small><h3>$800 build + $29/mo</h3><p>Same build, but Supabase and Twilio are set up in his name and billed to his card (~$50). You charge $29 for support. Same total for him, but he owns every account, which is a good trust signal.</p></div>
-    <div class="pkc"><small>Later phases</small><h3>+$300 each</h3><p>Card payments and no-show holds (Stripe, with Tap to Pay on a phone). Gift cards and rewards. Guest booking. Price each one once he's happy with phase 1.</p></div>
-  </div>
-  <div class="mx" style="background:var(--navy-2);box-shadow:none;border:1px solid var(--line-c)"><table class="sc2">
-    <thead><tr><th>If he's on…</th><th>Squire per month</th><th>Crossmind per month</th><th>First year</th><th>Every year after</th></tr></thead>
-    <tbody>
-      <tr><td>Titan (most likely)</td><td>$340</td><td>$79</td><td>Saves $2,332</td><td>Saves $3,132</td></tr>
-      <tr><td>Executive</td><td>$205</td><td>$79</td><td>Saves $712</td><td>Saves $1,512</td></tr>
-      <tr><td>Pro</td><td>$65</td><td>$79</td><td>Costs $968 more</td><td>Costs $168 more</td></tr>
-    </tbody></table></div>
-  <div class="wins"><b>Straight talk:</b> if he's on Pro, don't sell this as cheaper, because it isn't. The reasons to switch then are no fees for his clients, his own look on his own website, and the fixes above. $800 is a friend price for phase 1. A custom booking system like this would normally cost a lot more, so be clear about what is and isn't included. If he relies on Squire's card reader, payroll or commission splits, keep Squire for those until a later phase covers them. In the real build, get clients to opt in to texts (Canada's anti-spam law requires it) and store their data in Canada if you can.</div>
-</div></section>
-<section class="band org" id="cost"><div class="wrap">
-  <div class="kick">The money</div>
-  <h2 class="h2">Renting software vs. owning it.</h2>
-  <p class="lede">Move the numbers to match what the owner tells you. The Crossmind figures are a starting point for your quote, not a fixed price.</p>
-  <div class="calc">
-    <div class="card ctl">
-      <label>Capital's Squire plan
-        <select id="cPlan"><option value="340" selected>Titan: CA$340/mo (most likely)</option><option value="205">Executive: CA$205/mo</option><option value="65">Pro: CA$65/mo</option></select></label>
-      <label><span class="r"><span>Add-ons</span></span>
-        <select id="cAdd"><option value="0" selected>None</option><option value="25">Branded landing page: +$25</option><option value="99">Operator AI: +$99</option><option value="124">Both: +$124</option></select></label>
-      <label><span class="r"><span>Card bookings a month (clients pay ~$3 each on Squire)</span><span class="v" id="cBkV">300</span></span>
-        <input type="range" id="cBk" min="0" max="1200" step="50" value="300"></label>
-      <div class="pair">
-        <label>Crossmind build (one time)<input type="number" id="cBuild" value="800" min="0" step="50"></label>
-        <label>Crossmind monthly<input type="number" id="cMo" value="79" min="0" step="5"></label>
-      </div>
-      <p style="font-size:12.5px;color:var(--ink-soft);font-weight:400">The Crossmind monthly figure should cover hosting, text reminders and support. Card processing isn't counted on either side.</p>
-    </div>
-    <div class="card">
-      <div class="outs">
-        <div class="out"><b id="oSq">$0</b><span>Squire, 3 years (shop pays)</span></div>
-        <div class="out hi"><b id="oCm">$0</b><span>Crossmind, 3 years</span></div>
-        <div class="out"><b id="oFee">$0</b><span>Booking fees clients skip a year</span></div>
-      </div>
-      <div class="chart" id="costChart"></div>
-      <p id="oBe" style="font-size:14px;margin-top:10px;font-weight:600"></p>
-    </div>
-  </div>
-</div></section>
-
-<section class="band navy" id="vs"><div class="wrap">
-  <div class="kick">What changes</div>
-  <h2 class="h2">Everything Capital uses, plus the fixes.</h2>
-  <table class="vs">
-    <thead><tr><th></th><th>Squire today</th><th>Crossmind build</th></tr></thead>
-    <tbody>
-      <tr><td>Software cost</td><td>CA$205 to $340 a month, every month</td><td>One build fee, then a small monthly fee for hosting and texts</td></tr>
-      <tr><td>Client fees</td><td>About $3 extra when paying by card online (tested), can't be turned off</td><td>None. Clients see the price plus HST, that's it</td></tr>
-      <tr><td>Tips</td><td>15% picked for the client before the cut</td><td>"None" is picked first; tip online or in the chair</td></tr>
-      <tr><td>Where it lives</td><td>getsquire.com, branded page costs $25 a month extra</td><td>capitalbarbershop.ca, in Capital's own look</td></tr>
-      <tr><td>Next free chair</td><td>Switched off; clients check barbers one by one</td><td>"First available" at the top, plus the soonest openings on the home screen</td></tr>
-      <tr><td>How clients start</td><td>Barber first</td><td>Pick a barber or pick a service, whichever they care about</td></tr>
-      <tr><td>Add-ons</td><td>Design is a separate appointment</td><td>Design is a tick box on the cut, with its time and price added</td></tr>
-      <tr><td>Changing prices</td><td>In Squire's admin</td><td>Owner edits a price on the desk view and the booking page updates straight away</td></tr>
-      <tr><td>After booking</td><td>Confirmation and reminders</td><td>Add to calendar, rebook in 4 weeks, manage or reschedule with just a phone number</td></tr>
-      <tr><td>Client list</td><td>Held inside Squire</td><td>In Capital's own database</td></tr>
-    </tbody>
-  </table>
-  <div class="wins"><b>Be upfront about where Squire is ahead:</b> card readers and point of sale, commission splits and payroll, an app in the App Store, years of reliability, and support staff. A real Crossmind build would take payments through Stripe (including Tap to Pay on a phone) and send texts through a service like Twilio. Payroll would stay where it is, or come as a second phase.</div>
+  <h1>Your booking page, on your website, without the extra fees.</h1>
+  <p class="lede">Same screens your clients already know from Squire, fixed where barbers and clients complain. Try it below: book a cut on the phone and watch it land on the barber's phone and the front desk.</p>
+  <div class="row"><a class="btn" href="#sim">See it work</a><a class="btn ghost" href="#price">What it costs</a></div>
+  <p class="note">Working prototype by Crossmind. Bookings here are pretend and stay in your browser. To book a real cut, call 613-236-8838.</p>
 </div></section>
 
 <section class="band" id="sim"><div class="wrap simwrap">
@@ -645,6 +510,72 @@ button{cursor:pointer}
   </div>
   <div class="playrow"><button class="btn" id="play">▶ Play the booking walkthrough</button><button class="btn ghost" id="reset">Reset demo data</button></div>
   <p class="simnote">Open the client view in one tab and the desk in another and they stay in sync.</p>
+</div></section>
+
+<section class="band" id="fixes" style="background:var(--cream-2)"><div class="wrap">
+  <div class="kick">What's different</div>
+  <h2 class="h2">Same flow. Five fixes.</h2>
+  <div class="fx5">
+    <div><b>No extra fees for clients</b><p>On Squire, paying by card online adds $2.99 on top of HST. We tested it twice. Here it's just the price plus HST.</p></div>
+    <div><b>Tip starts at "None"</b><p>Squire picks 15% for the client before the cut. Here they choose, or tip in the chair.</p></div>
+    <div><b>Add-ons that make sense</b><p>After a haircut you only see Beard Trim and Design, not the whole menu again.</p></div>
+    <div><b>No sign-in code</b><p>Name and phone to book. Phone number to move or cancel.</p></div>
+    <div><b>"Any professional"</b><p>First option on the page, showing the next free chair.</p></div>
+  </div>
+  <p class="later"><b>Not in the first version:</b> card payments, gift cards, rewards, booking for a guest, payroll. Those stay on Squire, or get added later if he wants them.</p>
+</div></section>
+
+<section class="band navy" id="price"><div class="wrap">
+  <div class="kick">The money</div>
+  <h2 class="h2">What he pays now vs. what we'd charge.</h2>
+  <div class="two" style="margin-top:36px">
+    <div>
+      <h3 class="ph3">On Squire today</h3>
+      <ul class="list" style="color:var(--cream)">
+        <li><b>About $340 a month, most likely.</b> He sells gift cards and has rewards on, and Squire only includes those in its Titan plan. Ask him to be sure.</li>
+        <li><b>Card fees on every card payment:</b> 2.5% + 20¢ in the shop, 2.9% + 30¢ online. That's normal; every card processor charges something like it.</li>
+        <li><b>His clients pay $2.99 more</b> when they pay by card online.</li>
+      </ul>
+    </div>
+    <div class="offer">
+      <small>Our offer</small>
+      <h3>$800 once, then $79 a month</h3>
+      <ul>
+        <li>Booking page on capitalbarbershop.ca</li>
+        <li>Barber phone view and front desk calendar</li>
+        <li>Text confirmations and reminders</li>
+        <li>Price and menu changes, fixes, support</li>
+      </ul>
+      <p>$400 to start, $400 at launch. The $79 covers about $50 of hosting and texting costs.</p>
+      <details><summary>Running costs, line by line</summary>
+        <table class="rc">
+          <tr><td>Website hosting</td><td>$0</td></tr>
+          <tr><td>Database (Supabase Pro, US$25)</td><td>~$35</td></tr>
+          <tr><td>Text number (Twilio)</td><td>~$2</td></tr>
+          <tr><td>~1,000 texts a month</td><td>~$15</td></tr>
+          <tr class="t"><td>Total</td><td>~$50</td></tr>
+        </table></details>
+    </div>
+  </div>
+  <div class="mx dk"><table class="sc2">
+    <thead><tr><th>If he's on</th><th>Squire / month</th><th>Us / month</th><th>Year one</th><th>After that, yearly</th></tr></thead>
+    <tbody>
+      <tr><td>Titan</td><td>$340</td><td>$79</td><td>Saves $2,332</td><td>Saves $3,132</td></tr>
+      <tr><td>Executive</td><td>$205</td><td>$79</td><td>Saves $712</td><td>Saves $1,512</td></tr>
+      <tr><td>Pro</td><td>$65</td><td>$79</td><td>Costs $968 more</td><td>Costs $168 more</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section class="band" id="menu" style="padding-block:48px"><div class="wrap">
+  <details class="dm"><summary><span class="kick" style="margin:0">Extra</span><b>Notes on his current menu</b></summary>
+  <ul class="list" style="margin-top:24px">
+    <li><b>Scott and Bao book 45 minutes for a $45 haircut; the other five book 30.</b> Same price, so those chairs earn $60 an hour on haircuts instead of $90.</li>
+    <li><b>Fades cost the same as regular cuts</b> ($45 and $40 for students).</li>
+    <li><b>Small clean-ups:</b> "Hair Cut" and "Haircut" both appear, and the wedding is booked as 0 minutes.</li>
+  </ul>
+  <div class="mx"><table id="matrix"></table></div>
+  <p class="legend"><i></i>Booked longer than most barbers book the same service.</p>
+  </details>
 </div></section>
 
 <section class="band navy"><div class="wrap">
@@ -784,7 +715,7 @@ function openText(){
 const insts=[];
 function mount(el,kind,ui){const inst={el,kind,ui:Object.assign(defUI(kind),ui||{})};insts.push(inst);bind(inst);render(inst);return inst}
 function defUI(k){if(k==='c')return{step:'pros',barber:null,svc:null,beard:false,design:false,cat:'',sheet:null,day:null,time:null,slotB:null,tip:0,pay:'person',first:'',last:'',phone:'',email:'',sms:true,err:'',lastId:null,toast:'',mPhone:'',mFound:null,resched:null};
- if(k==='b')return{who:'james',view:'me',day:day0(Date.now()),toast:''};return{tab:'cal',day:day0(Date.now()),toast:''}}
+ const fo=(()=>{let d=day0(Date.now());for(let i=0;i<7&&!hoursOf(d);i++)d=addD(d,1);return d})();if(k==='b')return{who:'james',view:'me',day:fo,toast:''};return{tab:'cal',day:fo,toast:''}}
 function render(inst){
   if(!inst.el.isConnected)return;
   const sc=inst.el.querySelector('.scroll'),top=sc?sc.scrollTop:0,key=(inst.ui.step||inst.ui.tab||'')+(inst.ui.view||'');
@@ -880,8 +811,7 @@ function clientHTML(u,wide){
       <div class="dcard"><div class="r1">${ph(bk.barber)}<div><b>${esc(BB[bk.barber].n)}</b><span>${esc(svName(bk.svc))}${bk.addon?' + design':''}</span></div></div>
         <div class="hr"></div><div class="sumr"><span>When</span><b style="color:#111">${fD(bk.start)} · ${fT(bk.start)}</b></div><div class="sumr"><span>Where</span><span>590 Bank St, Ottawa</span></div><div class="sumr"><span>Paying</span><span>${bk.pay==='card'?'Card':'In person'}</span></div>
         <div style="text-align:center"><span class="code">CAP-${String(bk.id).padStart(4,'0')}</span></div></div>
-      <div style="font-size:12px;color:#6E6E73;margin-top:12px">${bk.sms===false?'No texts, as you asked.':'Confirmation text sent. Reminder the day before.'} Capital Rewards: visit ${Math.min(visits,10)} of 10</div>
-      <div class="stamp">${Array.from({length:10},(_,i)=>`<i class="${i<visits?'f':''}"></i>`).join('')}</div>
+      <div style="font-size:12px;color:#6E6E73;margin-top:12px">${bk.sms===false?'No texts, as you asked.':'Confirmation text sent. Reminder the day before.'}</div>
       <div class="acts"><button class="ab k" data-act="ics">Add to calendar</button><button class="ab" data-act="rebook">Book my next cut in 4 weeks</button><button class="ab" data-act="home">Done</button></div></div>`;
   }
   else if(u.step==='manage'){
@@ -920,8 +850,8 @@ function clientHTML(u,wide){
         <div class="shoprow">${logo}<div><b>Capital Barbershop</b><span>590 Bank St., Ottawa, ON K1S 3T3</span></div></div>
         <div class="lab">Payment method</div>
         <button class="pm${!card?' on':''}" data-act="pay" data-v="person"><i>🏪</i>Pay in person<em>NO FEES</em></button>
-        <button class="pm${card?' on':''}" data-act="pay" data-v="card"><i>▭</i>Card${S.hold?' (holds your spot)':''}<em>NO BOOKING FEE</em></button>
-        ${card?`<div class="cardbox">Secure card entry goes here (Stripe) in the real build. Demo: nothing is charged.</div><div class="note">${S.hold?'Your card is only charged after your cut, or if you no-show.':'Charged after your appointment, not today.'}</div>`:(S.hold?`<div class="note">Capital holds a card for no-shows. You'll add it at the shop's link we text you. (Demo)</div>`:'')}
+        <button class="pm${card?' on':''}" data-act="pay" data-v="card"><i>▭</i>Card<em>LATER PHASE</em></button>
+        ${card?`<div class="cardbox">Paying by card online comes in a later phase. For now clients pay at the shop as usual. Demo: nothing is charged.</div>`:''}
         <div class="lab">Your information</div>
         <div class="row2"><input class="in" data-f="first" value="${esc(u.first)}" placeholder="First name *" autocomplete="given-name"><input class="in" data-f="last" value="${esc(u.last)}" placeholder="Last name *" autocomplete="family-name"></div>
         <div class="ph2"><div class="cc">🇨🇦 +1</div><input class="in" data-f="phone" value="${esc(u.phone)}" type="tel" placeholder="Phone *" autocomplete="tel"></div>
@@ -1083,10 +1013,10 @@ function ownerHTML(u,narrow,H){
     body=`<div class="pn"><div class="bx">
       <div class="set"><div class="tx"><b>"First available" option</b><small>Let clients grab the next free chair with any barber</small></div><button class="tg${S.any?' on':''}" data-act="any" aria-label="Toggle first available"></button></div>
       <div class="set"><div class="tx"><b>Free cancellation window</b><small>Clients can cancel or move online until this point</small></div><select data-ch="cancelH">${[1,2,12,24].map(n=>`<option value="${n}" ${S.cancelH===n?'selected':''}>${n} hr${n>1?'s':''} before</option>`).join('')}</select></div>
-      <div class="set"><div class="tx"><b>Hold a card for no-shows</b><small>Card saved at booking, charged only after the cut or on a no-show</small></div><button class="tg${S.hold?' on':''}" data-act="hold" aria-label="Toggle card hold"></button></div>
-      <div class="set"><div class="tx"><b>Google review text</b><small>When a barber marks a cut done, the client gets a thank-you with your review link</small></div><button class="tg${S.rev?' on':''}" data-act="rev" aria-label="Toggle review texts"></button></div>
+      <div class="set"><div class="tx"><b>Hold a card for no-shows <span style="font-size:10px;background:#f0ece5;border-radius:5px;padding:2px 5px">LATER</span></b><small>Card saved at booking, charged only after the cut or on a no-show</small></div><button class="tg${S.hold?' on':''}" data-act="hold" aria-label="Toggle card hold"></button></div>
+      <div class="set"><div class="tx"><b>Google review text <span style="font-size:10px;background:#f0ece5;border-radius:5px;padding:2px 5px">LATER</span></b><small>When a barber marks a cut done, the client gets a thank-you with your review link</small></div><button class="tg${S.rev?' on':''}" data-act="rev" aria-label="Toggle review texts"></button></div>
       <div class="set"><div class="tx"><b>Tip options</b><small>None is always selected first. Clients can tip in the chair instead.</small></div><b>0 · 15 · 18 · 20 · 25%</b></div>
-      <div class="set"><div class="tx"><b>Client booking fee</b><small>Clients paying by card on Squire pay about $3 extra. Here it's zero.</small></div><b>$0.00</b></div>
+      <div class="set"><div class="tx"><b>Client booking fee</b><small>Clients paying by card online on Squire pay $2.99 extra. Here it's zero.</small></div><b>$0.00</b></div>
       <div class="set" style="border:0"><div class="tx"><b>Shop hours</b><small>Tue–Wed 9–6 · Thu–Fri 9–7 · Sat 10–6 · Sun 10–5 · Mon closed</small></div></div>
       <button class="rst" data-act="reset">Reset demo data</button></div></div>`;
   }
@@ -1187,9 +1117,6 @@ function svgBars(rows,{w=520,bh=34,gap=12,lw=110,fmt=v=>v,max,dark}){
   max=max||Math.max(...rows.map(r=>r.v));const h=rows.length*(bh+gap);const ink=dark?'#FAF3EA':'#0A2238';
   return`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Bar chart">${rows.map((r,i)=>{const y=i*(bh+gap),bw=Math.max(2,(w-lw-90)*r.v/max);return`<text x="0" y="${y+bh/2+5}" font-size="14" font-family="Inter" font-weight="600" fill="${ink}">${esc(r.l)}</text><rect x="${lw}" y="${y}" width="${bw}" height="${bh}" rx="6" fill="${r.c}"/><text x="${lw+bw+8}" y="${y+bh/2+5}" font-size="14" font-family="Inter" font-weight="700" fill="${ink}">${fmt(r.v)}</text>${r.t?`<text x="${lw+bw+8}" y="${y+bh/2+20}" font-size="11" font-family="Inter" fill="${ink}" opacity=".7">${esc(r.t)}</text>`:''}`}).join('')}</svg>`;
 }
-$('#planChart').innerHTML=svgBars([{l:'Independent',v:45,c:'rgba(250,243,234,.3)',t:'solo barbers'},{l:'Pro',v:65,c:'rgba(250,243,234,.3)'},{l:'Executive',v:205,c:'rgba(250,243,234,.5)',t:'per shop'},{l:'Titan',v:340,c:'#D08355',t:'← Capital, most likely'}],{fmt:v=>'$'+v,dark:true,bh:30,gap:20});
-$('#rateChart').innerHTML=svgBars(B.map(b=>({l:b.n,v:Math.round(45/b.svc.haircut*60),c:b.svc.haircut>30?'#D08355':'#0A2238'})),{fmt:v=>'$'+v+'/hr',bh:24,gap:10,lw:90});
-
 (function matrix(){
   const cats=['Cuts','Combos','Beard & shave','Extras','Events'];let h=`<thead><tr><th>Service</th><th>Price</th>${B.map(b=>`<th>${esc(b.n)}</th>`).join('')}</tr></thead><tbody>`;
   for(const c of cats){h+=`<tr class="cat"><td colspan="${B.length+2}">${c}</td></tr>`;
@@ -1198,26 +1125,7 @@ $('#rateChart').innerHTML=svgBars(B.map(b=>({l:b.n,v:Math.round(45/b.svc.haircut
   $('#matrix').innerHTML=h+'</tbody>';
 })();
 
-function money(v){return'$'+Math.round(v).toLocaleString()}
-function calc(){
-  const plan=+$('#cPlan').value+ +$('#cAdd').value,bk=+$('#cBk').value,build=Math.max(0,+$('#cBuild').value||0),mo=Math.max(0,+$('#cMo').value||0);
-  $('#cBkV').textContent=bk.toLocaleString();
-  const sq=m=>plan*m,cm=m=>build+mo*m;
-  $('#oSq').textContent=money(sq(36));$('#oCm').textContent=money(cm(36));$('#oFee').textContent=money(bk*2.99*12);
-  let be=null;if(plan>mo)be=Math.ceil(build/(plan-mo));
-  $('#oBe').textContent=be!=null&&be<=36?`Crossmind pays for itself in month ${be}. After that the shop keeps about ${money(plan-mo)} a month.`:be!=null?`Breaks even in month ${be}.`:'At these numbers Crossmind costs more each month than Squire.';
-  const W=560,H=230,pl=56,pr=16,pt=12,pb=30,mx=Math.max(sq(36),cm(36))*1.08;
-  const X=m=>pl+(W-pl-pr)*m/36,Y=v=>pt+(H-pt-pb)*(1-v/mx);
-  const line=f=>Array.from({length:37},(_,m)=>`${X(m).toFixed(1)},${Y(f(m)).toFixed(1)}`).join(' ');
-  const ticks=4,g=Array.from({length:ticks+1},(_,i)=>{const v=mx/ticks*i;return`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="rgba(10,34,56,.1)"/><text x="${pl-8}" y="${Y(v)+4}" text-anchor="end" font-size="11" font-family="Inter" fill="#0A2238" opacity=".7">$${(v/1000).toFixed(v>=10000?0:1)}k</text>`}).join('');
-  const xt=[0,12,24,36].map(m=>`<text x="${X(m)}" y="${H-8}" text-anchor="middle" font-size="11" font-family="Inter" fill="#0A2238" opacity=".7">${m?'Year '+m/12:'Start'}</text>`).join('');
-  const bm=be&&be<=36?`<circle cx="${X(be)}" cy="${Y(cm(be))}" r="5" fill="#0A2238"/><text x="${X(be)}" y="${Y(cm(be))-12}" text-anchor="middle" font-size="11" font-weight="700" font-family="Inter" fill="#0A2238">month ${be}</text>`:'';
-  $('#costChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Three-year cumulative cost: Squire versus Crossmind">${g}${xt}
-    <polyline points="${line(sq)}" fill="none" stroke="#B0B6BD" stroke-width="3"/><polyline points="${line(cm)}" fill="none" stroke="#D08355" stroke-width="3.5"/>${bm}
-    <text x="${X(36)-4}" y="${Y(sq(36))-8}" text-anchor="end" font-size="12" font-weight="700" font-family="Inter" fill="#6b7480">Squire ${money(sq(36))}</text>
-    <text x="${X(36)-4}" y="${Y(cm(36))-8}" text-anchor="end" font-size="12" font-weight="700" font-family="Inter" fill="#D08355">Crossmind ${money(cm(36))}</text></svg>`;
-}
-['cPlan','cAdd','cBk','cBuild','cMo'].forEach(id=>$('#'+id).addEventListener('input',calc));calc();
+
 })();
 </script>
 </body>
