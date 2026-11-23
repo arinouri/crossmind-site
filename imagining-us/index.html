@@ -49,7 +49,8 @@ nav .buy{opacity:1;background:var(--lake);color:var(--bg);padding:9px 16px;borde
 h1{font-family:var(--display);font-weight:500;font-size:clamp(52px,8vw,92px);line-height:.98;letter-spacing:-.01em;margin:0;text-wrap:balance}
 .sub{font-family:var(--display);font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.2;margin:10px 0 18px;color:#eef2fa}
 .by{font-family:var(--ui);font-size:16px;font-weight:600;margin:0 0 22px;color:#fff}
-.lede{max-width:52ch;margin:0 0 30px;color:#f4f6fb;font-size:18px}
+.lede{max-width:56ch;margin:0 0 14px;color:#fff;font-size:17px;text-shadow:0 1px 3px rgba(20,32,60,.45)}
+.lede+.btns{margin-top:28px}
 .btns{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:clamp(40px,6vw,80px)}
 .btn{font:600 16px var(--ui);min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
 .btn.solid{background:#fff;color:#1b3354}
@@ -105,6 +106,7 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);l
 .layers b{color:var(--ink)}
 .layers span{color:var(--mute)}
 .figwrap{background:#fff;border-radius:14px;padding:clamp(14px,2vw,24px);box-shadow:0 1px 0 var(--line),0 20px 50px rgba(20,35,60,.10)}
+.bigfig{margin:0 auto;max-width:640px}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
 .facts div{border-top:2px solid var(--sun);padding-top:12px;font:15px/1.5 var(--ui);color:var(--mute)}
 .facts b{display:block;font:500 34px/1.1 var(--display);color:var(--lake)}
@@ -133,8 +135,13 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);l
 .how{font-family:var(--ui);font-size:15px;color:var(--mute);display:grid;gap:18px}
 .how b{display:block;font:600 17px var(--ui);color:var(--ink);margin-bottom:2px}
 /* readers */
-.who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.who blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;font:italic 500 23px/1.35 var(--display);color:var(--ink)}
+.quotes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.quotes blockquote{grid-column:span 2}
+.quotes blockquote:nth-child(n+4){grid-column:span 3}
+.quotes blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;font:italic 500 23px/1.35 var(--display);color:var(--ink)}
+.dedic{padding:clamp(48px,7vw,88px) 0;text-align:center;background:var(--bg)}
+.dedic p{font:italic 500 clamp(26px,3.4vw,38px)/1.3 var(--display);color:var(--lake);margin:0 auto 12px;max-width:40ch}
+.dedic span{font:14px var(--ui);color:var(--mute)}
 .cta{background:#1b3354;color:#fff;text-align:left}
 .cta .in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
 .cta h2{color:#fff;margin:0}
@@ -143,7 +150,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 36px;font:14px var(--ui);
 footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--mute)}
 @media(max-width:980px){.fmt{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) auto;}.fmt .act{grid-column:1/-1;justify-self:start}.samplegrid{grid-template-columns:minmax(0,1fr)}.how{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:780px){.hero .in,.two{grid-template-columns:minmax(0,1fr)}.stage{min-height:380px;order:-1}.hero .in{padding-top:28px}.who,.facts{grid-template-columns:minmax(0,1fr)}.cta .in{grid-template-columns:minmax(0,1fr)}.how{grid-template-columns:minmax(0,1fr)}nav a:not(.buy){display:none}}
+@media(max-width:780px){.hero .in,.two{grid-template-columns:minmax(0,1fr)}.stage{min-height:380px;order:-1}.hero .in{padding-top:28px}.quotes,.facts{grid-template-columns:minmax(0,1fr)}.quotes blockquote,.quotes blockquote:nth-child(n+4){grid-column:auto}.cta .in{grid-template-columns:minmax(0,1fr)}.how{grid-template-columns:minmax(0,1fr)}nav a:not(.buy){display:none}}
 @media(max-width:640px){.fmt{grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;padding:22px 0}.fmt p{grid-column:1/-1;grid-row:2}.fmt .pr{grid-row:1;grid-column:2;text-align:right}.fmt .act{grid-row:3}}
 @media(max-width:560px){.layers li{grid-template-columns:14px 110px minmax(0,1fr)}.page{font-size:17px}.direct{grid-template-columns:minmax(0,1fr)}}
 </style>
@@ -164,7 +171,8 @@ footer a{color:var(--mute)}
     <h1>Imagining Us</h1>
     <p class="sub">An Examination of Almost-Relationships</p>
     <p class="by">By Jalen Vale</p>
-    <p class="lede">For the relationship that never had a name. A clear, compassionate guide to why almost-love can hurt as much as a real breakup, and how to separate what happened from what you hoped would happen.</p>
+    <p class="lede">The book is an exploration of an under-examined form of intimacy, known as an almost-relationship, that helps readers to understand their experience, heal, and move on.</p>
+    <p class="lede">It is a clear, compassionate guide that recognizes how a love that never quite began can still end, and explains why almost-love hurts as much as a real breakup. Most importantly, it helps to separate what really happened from what you hoped would happen to promote healing.</p>
     <div class="btns">
       <a class="btn solid" href="https://www.amazon.com/dp/B0HM5NNB43">Get the Kindle edition, $4.99</a>
       <a class="btn line" href="#sample">Read &amp; listen to a sample</a>
@@ -190,19 +198,19 @@ footer a{color:var(--mute)}
   <div class="formats">
     <div class="fmt">
       <div><h3>Kindle eBook</h3><span class="st on">Available now</span></div>
-      <p>The complete book on any Kindle device or the free Kindle app, with all 14 diagrams.</p>
+      <p>Available now on any Kindle device or the free Kindle app, with all 14 diagrams.</p>
       <span class="pr">$4.99<small>USD</small></span>
       <a class="act buy" href="https://www.amazon.com/dp/B0HM5NNB43">Buy on Amazon</a>
     </div>
     <div class="fmt">
       <div><h3>Paperback</h3><span class="st">Coming soon</span></div>
-      <p>84 pages, 6 × 9 in, on cream paper with a matte cover. Every diagram in print.</p>
+      <p>84 pages, 6 × 9 inches, on cream paper with a matte cover.</p>
       <span class="pr">Amazon<small>and direct from us</small></span>
       <span class="act wait">Available soon</span>
     </div>
     <div class="fmt">
       <div><h3>Audiobook</h3><span class="st">Coming soon</span></div>
-      <p>The full book, chapter by chapter, narrated in a natural digital voice.</p>
+      <p>The full book, narrated in just one hour, in a pleasing and engaging voice. Perfect for a car ride, a wait in a queue, or a mundane chore around the home.</p>
       <span class="pr">Spotify<small>audiobooks</small></span>
       <span class="act wait">Available soon</span>
     </div>
@@ -217,26 +225,11 @@ footer a{color:var(--mute)}
 </div></section>
 
 <section class="band about" id="book"><div class="in">
-  <div class="two">
-    <div>
-      <h2>A love that never quite began can still end.</h2>
-      <p>An almost-relationship emerges when one close friend or colleague develops romantic feelings for another. Both recognize a meaningful connection, but one builds an emotional attachment before mutual romantic desire is confirmed. That imbalance is what gives the relationship its name: <em>almost</em>.</p>
-      <p>Rather than offering simplistic dating advice, <em>Imagining Us</em> gives you a framework for telling apart what is real, what you interpreted, what you hoped and what you imagined.</p>
-      <ul class="layers" aria-label="The six layers of the framework">
-        <li style="--c:#3a5f95"><i></i><b>Reality</b><span>What exists</span></li>
-        <li style="--c:#34507a"><i></i><b>Interpretation</b><span>What I believe it means</span></li>
-        <li style="--c:#5b6f99"><i></i><b>Hope</b><span>What I believe could happen</span></li>
-        <li style="--c:#9a8aa9"><i></i><b>Fantasy</b><span>What I imagine happening</span></li>
-        <li style="--c:#d98f6b"><i></i><b>Attachment</b><span>What I begin emotionally investing in</span></li>
-        <li style="--c:#e0784f"><i></i><b>Mutuality</b><span>What we actually establish together</span></li>
-      </ul>
-    </div>
-    <figure class="figwrap" style="margin:0"><img src="framework.png" alt="The Imagining Us Almost-Relationship Framework diagram, one of 14 diagrams in the book"></figure>
-  </div>
+  <figure class="figwrap bigfig"><img src="framework.png" alt="The Imagining Us Almost-Relationship Framework diagram, one of 14 diagrams in the book"></figure>
   <div class="facts">
     <div><b>5 parts, 15 chapters</b>From naming the relationship to letting go and loving again.</div>
-    <div><b>14 diagrams</b>Visual tools that make the framework easy to work through.</div>
-    <div><b>Grounded in research</b>Attachment, ambiguous loss and interpersonal perception, with full sources.</div>
+    <div><b>14 diagrams</b>That make the almost-relationship framework easy to understand.</div>
+    <div><b>Grounded in research</b>Such as interpretive asymmetry, attachment theory, ambiguous loss and intermittent reinforcement, with references to scholarly sources.</div>
   </div>
 </div></section>
 
@@ -273,13 +266,17 @@ footer a{color:var(--mute)}
 
 <section class="band about"><div class="in">
   <h2>Written for anyone who has said “we weren’t really together, but…”</h2>
-  <p class="intro">If any of these sound familiar, this book was written for you.</p>
-  <div class="who">
-    <blockquote>You’re grieving someone you never officially dated, and the people around you don’t understand why it hurts this much.</blockquote>
-    <blockquote>You keep replaying messages, moments and signals, trying to work out what it all meant.</blockquote>
-    <blockquote>You want to love again without getting caught in a story only one of you was living.</blockquote>
+  <p class="intro">If any of these quotes sound familiar, this book was written for you.</p>
+  <div class="quotes">
+    <blockquote>“We had the intimacy of lovers and the uncertainty of strangers.”</blockquote>
+    <blockquote>“The most complicated relationships are not always the ones that end, but the ones that never quite begin.”</blockquote>
+    <blockquote>“We were never together, but somehow I still had to lose you.”</blockquote>
+    <blockquote>“There is no official ending to something that was never officially begun. And yet, the heartbreak can be very real.”</blockquote>
+    <blockquote>“I wasn’t mourning what we were. I was mourning everything I believed we might become.”</blockquote>
   </div>
 </div></section>
+
+<section class="dedic"><div class="in"><p>For those who lived a thousand futures<br>with someone who was never truly theirs.</p><span>From the dedication</span></div></section>
 
 <section class="band cta"><div class="in">
   <div><h2>Start reading tonight.</h2><p>The Kindle edition is available now on Amazon.</p></div>
