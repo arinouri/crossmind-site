@@ -43,6 +43,34 @@
    "where": "National Capital Region (NCR)"
   },
   {
+   "buyer": "Department of the Environment (ECCC )",
+   "closing": "2027-01-05T17:10",
+   "contact": "Angelina Garcia",
+   "email": "Angelina.Garcia@ec.gc.ca",
+   "local": false,
+   "phone": "(778) 726-1680",
+   "published": "2026-11-23",
+   "ref": "cb-231-38982712",
+   "source": "Federal (CanadaBuys)",
+   "title": "Janitorial services for the Pacific Environmental Science Centre, North Vancouver, BC",
+   "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=cb-231-38982712",
+   "where": "Canada · British Columbia"
+  },
+  {
+   "buyer": "Department of the Environment (ECCC )",
+   "closing": "2027-01-06T17:00",
+   "contact": "Angelina Garcia",
+   "email": "Angelina.Garcia@ec.gc.ca",
+   "local": false,
+   "phone": "(778) 726-1680",
+   "published": "2026-11-23",
+   "ref": "cb-716-11252793",
+   "source": "Federal (CanadaBuys)",
+   "title": "Janitorial services for the Pacific Wildlife Research Centre, Delta, BC",
+   "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=cb-716-11252793",
+   "where": "Canada · British Columbia"
+  },
+  {
    "buyer": "Parks Canada",
    "closing": "2100-03-31T16:00",
    "contact": "Taylor, Ryan",
@@ -57,5 +85,5 @@
    "where": "British Columbia · Alberta"
   }
  ],
- "updated": "2026-11-24T01:06Z"
+ "updated": "2026-11-24T20:10Z"
 }
