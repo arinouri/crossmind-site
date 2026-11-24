@@ -1,57 +1,51 @@
-"""Diagnostics: Gatineau permit PDFs, SEAO tenders, other Ottawa datasets."""
+"""Diagnostics round 2."""
 import io, json, re, sys
 sys.path.insert(0, __file__.rsplit("/", 1)[0])
 import collect as c
 
-# --- Gatineau listing page: where are the PDF links?
-for u in ["https://www.gatineau.ca/portail/default.aspx?p=publications_cartes_statistiques_donnees_ouvertes/statistiques_permis_construction",
-          "https://www.gatineau.ca/portail/default.aspx?p=publications_cartes_statistiques_donnees_ouvertes%2Fstatistiques_permis_construction&c=fr-CA"]:
-    r = c.S.get(u, timeout=60)
-    t = r.text
-    print("GAT PAGE", r.status_code, len(t), "upload hits:", len(re.findall(r"upload", t, re.I)))
-    for m in re.finditer(r"[^\"'<>\s]*(upload/documents|\.pdf|\.xlsx)[^\"'<>\s]*", t, re.I):
-        print("   LINK", m.group(0)[:160])
-    i = t.lower().find("relev")
-    print("   CONTEXT", re.sub(r"\s+", " ", t[i-300:i+1500]) if i > 0 else "no 'relev'")
-    for m in re.finditer(r"<iframe[^>]+>|<script[^>]+src=[^>]+>", t):
-        print("   TAG", m.group(0)[:200])
+u = "https://www.gatineau.ca/portail/default.aspx?p=publications_cartes_statistiques_donnees_ouvertes/statistiques_permis_construction"
+t = c.S.get(u, timeout=60).text
+i = t.find("contenu-principal-centre-contenu-index")
+print("GATHTML", re.sub(r"\s+", " ", t[i:i+6000]))
+for q in ["https://www.gatineau.ca/sitemap.xml", "https://www.gatineau.ca/robots.txt"]:
+    r = c.S.get(q, timeout=30); print("GATX", q, r.status_code, r.text[:300].replace("\n", " "))
 
-# --- parse the known April 2025 PDF
 import pdfplumber
 blob = c.S.get("https://www.gatineau.ca/upload/documents/ba25c870-60e2-492b-9cb2-b890c86540d1.pdf", timeout=120).content
-print("PDF bytes", len(blob), blob[:5])
 with pdfplumber.open(io.BytesIO(blob)) as pdf:
-    print("PAGES", len(pdf.pages))
-    for n in (0, 3, 8):
-        if n < len(pdf.pages):
-            pg = pdf.pages[n]
-            print(f"--- page {n} text ---"); print((pg.extract_text() or "")[:1800])
-            tb = pg.extract_tables()
-            print(f"--- page {n} tables: {len(tb)}"); [print("  ROW", r) for r in (tb[0][:12] if tb else [])]
+    for n in (12, 30, 50):
+        print(f"--- page {n} ---"); print((pdf.pages[n].extract_text() or "")[:1600])
 
-# --- SEAO
+j = None
 r = c.S.get("https://www.donneesquebec.ca/recherche/api/3/action/package_show", params={"id": "systeme-electronique-dappel-doffres-seao"}, timeout=60)
-print("SEAO pkg", r.status_code)
-try:
-    res = r.json()["result"]["resources"]
-    res = sorted(res, key=lambda x: x.get("created") or "")
-    for x in res[-8:]:
-        print("  RES", x.get("name"), x.get("format"), x.get("url"), x.get("created"))
-    hebdo = [x for x in res if "hebdo" in (x.get("name") or "")][-1]
-    j = c.S.get(hebdo["url"], timeout=180).json()
-    rel = j.get("releases", [])
-    print("RELEASES", len(rel), list(j.keys())[:6])
-    hits = [x for x in rel if re.search(r"(?i)nettoyage|entretien m[ée]nager|conciergerie|janitor|cleaning", json.dumps(x.get("tender", {}), ensure_ascii=False))]
-    print("CLEANING", len(hits))
-    for x in hits[:3]:
-        print(json.dumps({k: x.get(k) for k in ("tag", "date", "tender", "buyer", "parties")}, ensure_ascii=False)[:2500])
-except Exception as e:
-    print("SEAO err", e, r.text[:300])
+res = sorted(r.json()["result"]["resources"], key=lambda x: x.get("created") or "")
+hebdo = [x for x in res if "hebdo" in (x.get("name") or "")][-1]
+j = c.S.get(hebdo["url"], timeout=180).json()
+rel = j["releases"]
+import collections
+print("TAGS", collections.Counter(tuple(x.get("tag", [])) for x in rel))
+ten = [x for x in rel if "tender" in x.get("tag", []) and re.search(r"(?i)nettoyage|entretien m[ée]nager|conciergerie|janitor|cleaning", x.get("tender", {}).get("title", ""))]
+print("OPEN CLEANING", len(ten))
+for x in ten[:3]:
+    print(json.dumps(x, ensure_ascii=False)[:3000])
+regions = collections.Counter()
+for x in rel:
+    for p in x.get("parties", []):
+        a = p.get("address", {}) or {}
+        regions[a.get("region") or a.get("locality") or "?"] += 1
+print("REGIONS", regions.most_common(40))
 
-# --- Ottawa datasets that could hint at new businesses / buildings
-for q in ["business licence", "food premises", "inspection", "development applications", "site plan"]:
-    r = c.S.get("https://open.ottawa.ca/api/search/v1/collections/all/items", params={"q": q, "limit": 8}, timeout=60)
-    try:
-        print("OTTAWA", q, [((f.get("properties") or {}).get("title"), f.get("id")) for f in r.json().get("features", [])])
-    except Exception as e:
-        print("OTTAWA", q, "err", e)
+for iid in ["7e5a6428ed674d66a500f87c3ab0b2a1", "5117e01b9ba14415b4a7cbb12e7e0dda", "2cd5d87093564e41a7f381a425601150"]:
+    r = c.S.get(f"https://open.ottawa.ca/api/search/v1/collections/all/items/{iid}", timeout=60)
+    p = r.json().get("properties", {})
+    print("OTT ITEM", p.get("title"), p.get("type"), p.get("url"), str(p.get("modified")))
+    url = p.get("url") or ""
+    if "FeatureServer" in url or "MapServer" in url:
+        base = url.rstrip("/")
+        if not re.search(r"/\d+$", base): base += "/0"
+        q = c.S.get(base + "/query", params={"where": "1=1", "outFields": "*", "resultRecordCount": 3, "f": "json", "orderByFields": "OBJECTID DESC"}, timeout=60).json()
+        print("   FIELDS", [f["name"] for f in q.get("fields", [])])
+        for f in q.get("features", [])[:3]:
+            print("   ROW", json.dumps(f.get("attributes"), ensure_ascii=False)[:900])
+        cnt = c.S.get(base + "/query", params={"where": "1=1", "returnCountOnly": "true", "f": "json"}, timeout=60).json()
+        print("   COUNT", cnt)
