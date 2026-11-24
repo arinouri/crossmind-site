@@ -626,7 +626,7 @@ def collect_tenders():
     for row in csv.DictReader(io.StringIO(r.content.decode("utf-8-sig", "ignore"))):
         title = col(row, "title-titre-eng") or col(row, "title-titre-fra")
         what = f'{title} {col(row, "title-titre-fra")} {col(row, "gsinDescription-nibsDescription-eng")} {col(row, "unspscDescription-eng")}'
-        if not CLEANING.search(what) or NOT_CLEANING.search(title):
+        if not CLEANING.search(f'{title} {col(row, "title-titre-fra")}') or NOT_CLEANING.search(title):
             continue
         where = " ".join([col(row, "regionsOfDelivery-regionsLivraison-eng"), col(row, "regionsOfOpportunity-regionAppelOffres-eng"), title])
         local = bool(LOCAL.search(where))
