@@ -683,6 +683,7 @@ def gat_records(text):
             continue
         before = rec[:dm.start()]
         nature = re.sub(r"\s+", " ", re.sub(r"(?m)^(Permis|Certificat)\s*", "", before)).strip()
+        nature = re.sub(r"^(?:\d+/\d+\s+)+", "", nature).strip()
         usage_line = next((l for l in rec.split("\n") if pm.group(1) in l), "")
         usage = re.sub(r"\s+", " ", usage_line.replace(pm.group(1), "").replace(addr, "")).strip()
         addr = re.sub(r"\s*'\s*", "'", addr).strip()
@@ -733,6 +734,7 @@ def gatineau_sites():
     out = []
     for recs in cache.values():
         for r in recs:
+            r["nature"] = re.sub(r"^(?:\d+/\d+\s+)+", "", r["nature"]).strip()
             t = r["nature"] + " " + r["usage"]
             if GAT_SKIP.search(r["nature"]) or not GAT_KEEP.search(r["nature"]):
                 continue
@@ -774,7 +776,7 @@ def seao_tenders():
             buyer = next((p for p in x.get("parties", []) if "buyer" in (p.get("roles") or [])), {}) or {}
             a = buyer.get("address") or {}
             where = f'{a.get("locality", "")} {a.get("postalCode", "")} {buyer.get("name", "")}'
-            if not (OUTAOUAIS.search(where) or re.match(r"J(8|9|0X)", (a.get("postalCode") or "").upper())):
+            if not (OUTAOUAIS.search(where) or re.match(r"J(8[LMNPRTVXYZ]|9[ABHJ]|0X)", (a.get("postalCode") or "").upper().replace(" ", ""))):
                 continue
             end = (t.get("tenderPeriod") or {}).get("endDate") or ""
             if t.get("status") not in (None, "active") or (end and end < now):
@@ -830,7 +832,7 @@ def new_businesses():
                 lat, lng = float(b.get("latitude") or 0), float(b.get("longitude") or 0)
             except ValueError:
                 lat = lng = 0
-            out.append({"id": "BIZ-" + b.get("business_id", ""), "name": (b.get("name") or "").strip().title(), "kind": kind,
+            out.append({"id": "BIZ-" + b.get("business_id", ""), "name": re.sub(r"(\w)'S\b", r"\1's", (b.get("name") or "").strip().title()), "kind": kind,
                         "addr": title_case(b.get("address") or ""), "city": (b.get("city") or "Ottawa").title(), "pc": (b.get("postal_code") or "").upper(),
                         "phone": b.get("phone_number") or b.get("phone") or "", "first": f[0], "last": f[1],
                         **({"lat": round(lat, 6), "lng": round(lng, 6)} if lat and lng else {})})
