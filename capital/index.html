@@ -18,7 +18,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--cream);color:var(--navy);font:400 17px/1.55 var(--f-b);-webkit-font-smoothing:antialiased}
-body.lock{overflow:hidden}
+body.fsopen{overflow:hidden}
 [hidden]{display:none!important}
 h1,h2,h3{font-family:var(--f-d);letter-spacing:-.03em;line-height:1.05;margin:0;text-wrap:balance}
 p{margin:0}
@@ -211,6 +211,12 @@ button{cursor:pointer}
 .ideas span{background:var(--cream);color:var(--navy);border-radius:999px;padding:12px 18px;font-weight:600;font-size:15px}
 .ideas span.you{background:var(--navy);color:var(--cream)}
 /* simulation */
+.cap{margin-top:20px;background:var(--navy);color:var(--cream);border-radius:18px;padding:16px 18px}
+.caph{display:flex;justify-content:space-between;font:600 11px/1 var(--f-b);letter-spacing:.12em;text-transform:uppercase;color:var(--orange-hi)}
+#capTxt{font:600 18px/1.35 var(--f-d);letter-spacing:-.01em;margin-top:10px;min-height:48px;transition:opacity .15s}
+.capbar{height:4px;border-radius:2px;background:rgba(250,243,234,.15);margin-top:12px;overflow:hidden}
+.capbar i{display:block;height:100%;width:0;background:var(--orange);transition:width .3s linear}
+
 .simgrid{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:56px;align-items:center;margin-top:44px}
 .vtabs{display:grid;gap:10px}
 .vtabs button{display:block;text-align:left;border:1.5px solid var(--line-n);background:#fff;border-radius:18px;padding:16px 18px;transition:border-color .2s,background .2s,transform .2s}
@@ -247,7 +253,8 @@ button{cursor:pointer}
  .vtabs button span{display:none}
  .vtabs button:not(.on):hover{transform:none}
  .simside{display:contents}
- .vtabs{order:1}.simstage{order:2;min-height:0}.simbtns{order:3;justify-content:center;margin-top:0}.simnote{order:4;text-align:center;margin-top:0}
+ .vtabs{order:1}.cap{order:2;margin-top:0}.simstage{order:3;min-height:0}.simbtns{order:4;justify-content:center;margin-top:0}.simnote{order:5;text-align:center;margin-top:0}
+ #capTxt{font-size:16px;min-height:44px}
  .laptop{width:320px}
  .laptop .lid{border-radius:48px;padding:12px;background:#111;box-shadow:0 0 0 2px #2a2a2a,0 40px 80px rgba(6,20,31,.25)}
  .laptop .chrome,.laptop .base{display:none}
@@ -291,7 +298,7 @@ button{cursor:pointer}
 .ca.w .hd h1{font-size:26px}
 .ca .shop{display:flex;gap:10px;align-items:center;background:#fff;border-radius:16px;padding:10px;margin:0 14px 12px;border:1px solid #E3E3E8}
 .ca.w .shop{margin:0 28px 16px}
-.ca .logo{width:44px;height:44px;border-radius:11px;background:#232323;color:#fff;display:grid;place-items:center;align-content:center;font:400 12px/1 var(--f-c);letter-spacing:.06em;overflow:hidden;flex:none;text-align:center}
+.ca .logo{width:44px;height:44px;border-radius:11px;background:#232323;color:#fff;display:grid;place-items:center;align-content:center;font:400 10.5px/1 var(--f-c);letter-spacing:.04em;overflow:hidden;flex:none;text-align:center}
 .ca .logo small{display:block;font:600 4px/1 var(--f-b);letter-spacing:.12em;opacity:.7;margin-top:2px}
 .ca .shop b{display:block;font-size:14px}
 .ca .shop span{font-size:11.5px;color:#8E8E93}
@@ -446,6 +453,46 @@ button{cursor:pointer}
 .ca .stamp i{width:14px;height:14px;border-radius:50%;border:2px solid #3478F6}
 .ca .stamp i.f{background:#3478F6}
 
+.ca .welcome{padding:18px 16px 4px}
+.inph .ca .welcome{padding-top:52px}
+.ca.w .welcome{padding:32px 28px 8px}
+.ca .wtop{display:flex;align-items:center;gap:10px}
+.ca .wtop b{display:block;font-size:14px}
+.ca .wtop span{font-size:12px;color:#8E8E93}
+.ca .wtop .ost{margin-left:auto;font-size:10.5px;font-weight:700;padding:5px 9px;border-radius:999px;color:#fff;white-space:nowrap}
+.ca .wtop .ost.op{background:#2E8B57}.ca .wtop .ost.cl{background:#8E8E93}
+.ca .welcome h1{font:700 26px/1.1 var(--f-b);letter-spacing:-.03em;margin:20px 0 6px}
+.ca .welcome p{font-size:14px;color:#6E6E73;margin:0 0 14px}
+.ca .rows{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:0 14px}
+.ca.w .rows{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:0 28px;gap:10px}
+.ca .br,.ca .sr{display:flex;align-items:center;gap:12px;width:100%;background:#fff;border:1px solid #E5E5EA;border-radius:16px;padding:10px 14px 10px 10px;text-align:left;transition:transform .12s,background .15s}
+.ca .sr{padding:13px 14px;min-height:60px}
+.ca .br:active,.ca .sr:active{transform:scale(.98)}
+.ca .br .ph{margin:0;width:46px;height:46px}
+.ca .br .tx,.ca .sr .tx{flex:1;min-width:0}
+.ca .br b,.ca .sr b{display:block;font-size:15px;font-weight:600;line-height:1.25}
+.ca .br small,.ca .sr small{display:block;font-size:12px;color:#8E8E93;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ca .br small.g{color:#2E8B57;font-weight:600}
+.ca .br.any{background:#111;border-color:#111;color:#fff}
+.ca .br.any small{color:rgba(255,255,255,.65)}
+.ca .br.any .ph{background:#3478F6}
+.ca .chev{font-size:22px;color:#C7C7CC;flex:none;line-height:1}
+.ca .br.any .chev{color:rgba(255,255,255,.5)}
+.ca .br.dim{opacity:.5}
+.ca .br.sm .ic{width:42px;height:42px;border-radius:12px;background:#F2F2F7;display:grid;place-items:center;font-size:18px;flex:none;margin-left:2px}
+.ca .sec2{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8E8E93;margin:22px 16px 8px}
+.ca.w .sec2{margin:26px 28px 10px}
+.ca .lead2{font-size:13.5px;color:#6E6E73;margin:-4px 16px 12px}
+.ca.w .lead2{margin:-6px 28px 14px}
+.ca .sr .p{font-weight:700;font-size:15px;flex:none}
+.ca .sr .ck{width:22px;height:22px;border-radius:50%;border:2px solid #D1D1D6;display:grid;place-items:center;flex:none;font-size:12px;color:#fff;font-weight:700}
+.ca .sr.on{border-color:#3478F6;background:#EEF4FF}
+.ca .sr.on .ck{background:#3478F6;border-color:#3478F6}
+.ca .chips2{display:flex;gap:8px;overflow-x:auto;padding:0 16px 2px;scrollbar-width:none}
+.ca.w .chips2{padding:0 28px 2px}
+.ca .chips2::-webkit-scrollbar{display:none}
+.ca .chip{flex:none;height:34px;padding:0 15px;border-radius:17px;background:#E5E5EA;font-weight:600;font-size:13px;text-align:center!important}
+.ca .chip.on{background:#111;color:#fff}
 /* ===== barber app ===== */
 .ba{background:#101012;color:#f1ede6}
 .ba .bh{flex:none;padding:14px 14px 12px;background:#18181b;border-bottom:1px solid rgba(255,255,255,.07)}
@@ -513,12 +560,29 @@ button{cursor:pointer}
 .ow .kp b{display:block;font:700 18px/1 var(--f-d)}
 .ow .kp span{font-size:10.5px;color:#6b6f75}
 .ow .cal{padding:10px 16px 16px}
-.ow .cg{display:grid;position:relative;background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,.06);overflow:hidden}
+.ow .cg{display:grid;position:relative;background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,.06);width:max-content;min-width:100%}
+.ow .cal{scroll-snap-type:x proximity;scroll-padding-left:46px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.ow .col{scroll-snap-align:start}
+.ow .tc{position:sticky;left:0;z-index:4;background:#fff;border-radius:12px 0 0 12px}
+.ow .bk2{cursor:pointer}
+.ow .cg>.tc{background:#fff!important;z-index:6;box-shadow:4px 0 8px -6px rgba(0,0,0,.25)}
+.ow .odbg{position:absolute;inset:0;background:rgba(0,0,0,.3);z-index:30;display:flex;align-items:center;justify-content:center;padding:16px;animation:fd .2s}
+.ow.narrow .odbg{align-items:flex-end;padding:0}
+.ow .od{background:#fff;border-radius:16px;width:100%;max-width:380px;padding:16px;box-shadow:0 20px 50px rgba(0,0,0,.25);animation:up .25s;font-size:13px}
+.ow.narrow .od{max-width:none;border-radius:18px 18px 0 0;padding-bottom:26px}
+.ow .odh{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.ow .odh .tx{flex:1;min-width:0}.ow .odh b{display:block;font-size:16px}.ow .odh span{color:#6b6f75;font-size:12.5px}
+.ow .x2{width:30px;height:30px;border-radius:8px;background:#f0ece5;text-align:center!important}
+.ow .odr{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(0,0,0,.06)}
+.ow .odr span{color:#6b6f75;flex:none}.ow .odr b{text-align:right}.ow .odr i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.ow .oda{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px}
+.ow .oda button{height:38px;border-radius:9px;background:#f0ece5;font-weight:600;text-align:center!important;font-size:12.5px}
+.ow .oda .ok{background:#2E8B57;color:#fff}.ow .oda .cx{color:#C4372C}
 .ow .ch{position:sticky;top:0;z-index:3;background:#fff;border-bottom:1px solid rgba(0,0,0,.08);font-weight:700;font-size:11px;padding:7px 4px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ow .ch i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px}
 .ow .col{position:relative;border-left:1px solid rgba(0,0,0,.05)}
 .ow .col.off{background:repeating-linear-gradient(135deg,#faf8f5 0 6px,#f1eee9 6px 12px)}
-.ow .tc{position:relative}
+.ow .tc{position:sticky;left:0;z-index:4;background:#fff}
 .ow .tc span{position:absolute;right:5px;font-size:9.5px;color:#8a8f95;transform:translateY(-50%)}
 .ow .hl{position:absolute;left:0;right:0;border-top:1px solid rgba(0,0,0,.045)}
 .ow .bk2{position:absolute;left:2px;right:2px;border-radius:6px;padding:3px 5px;font-size:10px;line-height:1.2;overflow:hidden;color:#fff;background:var(--c);box-shadow:0 1px 2px rgba(0,0,0,.12)}
@@ -557,6 +621,9 @@ button{cursor:pointer}
 .ow.narrow .side .br small,.ow.narrow .side .sp{display:none}
 .ow.narrow .side button{flex:none;padding:8px 10px}
 .ow.narrow .kp{grid-template-columns:1fr 1fr}
+.ow.narrow .cal{padding-left:0;padding-right:0}
+.ow.narrow .cg{border-radius:0;border-left:0;border-right:0}
+.ow.narrow .cg>.tc{border-radius:0}
 </style>
 </head>
 <body>
@@ -602,6 +669,7 @@ button{cursor:pointer}
         <button data-dev="o"><b>You</b><span>The whole shop's calendar, prices and settings</span></button>
       </div>
       <div class="simbtns"><button class="btn" id="play">▶ Watch a booking</button><button class="txtbtn" id="reset">Start over</button></div>
+      <div class="cap" id="cap" hidden><div class="caph"><span id="capStep"></span><span id="capT"></span></div><p id="capTxt"></p><div class="capbar"><i id="capBar"></i></div></div>
       <p class="simnote">Just a demo. Nothing here is a real booking.</p>
     </div>
     <div class="simstage">
@@ -751,14 +819,14 @@ const hoursOf=d=>HOURS[new Date(d).getDay()]||null;
 const works=(bid,d)=>!!hoursOf(d)&&BB[bid].d.includes(new Date(d).getDay());
 
 /* ---------- store ---------- */
-const KEY='capital-demo-v4';
+const KEY='capital-demo-v5';
 let S, idx=null;
 function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const NAMES=['Liam','Noah','Ethan','Omar','Lucas','Mason','Ali','Daniel','Jacob','Ryan','Marcus','Owen','Kevin','Sam','Adam','Theo','Hassan','Leo','Victor','Nathan','Eli','Jordan','Malik','Chris','Wei','Raj','Mathieu','Gabriel','Tyler','Dev','Karim','Sean','Hugo','Andre','Felix','Yusuf'];
 const WT={haircut:7,skinfade:5,cutbeard:4,fadebeard:3,student:3,studentfade:2,buzz:2,beard:2,kid:1,senior:1,neck:1,shave:1,cutshave:1,buzzbeard:1,studentbeard:1,studentfadebeard:1,longhair:1};
 function seed(){
   const now=Date.now(),today=day0(now),r=rng(+dk(now).replace(/-/g,''));
-  const st={v:4,hold:false,rev:true,seedDay:dk(now),svc:Object.fromEntries(ORDER.map(k=>[k,{p:SV0[k][2],on:true}])),bookings:[],any:true,cancelH:2,nid:1};
+  const st={v:5,hold:false,rev:true,seedDay:dk(now),svc:Object.fromEntries(ORDER.map(k=>[k,{p:SV0[k][2],on:true}])),bookings:[],any:true,cancelH:2,nid:1};
   const pick=b=>{const ks=Object.keys(b.svc).filter(k=>WT[k]);let tot=ks.reduce((a,k)=>a+WT[k],0),x=r()*tot;for(const k of ks){x-=WT[k];if(x<=0)return k}return ks[0]};
   for(let d=-7;d<=14;d++){
     const day=addD(today,d),h=hoursOf(day);if(!h)continue;
@@ -771,7 +839,7 @@ function seed(){
           const sid=pick(b),du=durOf(b.id,sid);
           if(m+du>h[1]){m+=15;continue}
           const s=at(day,m),past=s+du*MIN<now,c=NAMES[r()*NAMES.length|0]+' '+String.fromCharCode(65+(r()*26|0))+'.';
-          st.bookings.push({id:st.nid++,barber:b.id,svc:sid,start:s,dur:du,price:st.svc[sid].p,client:c,phone:'613-555-'+String(1000+(r()*8999|0)),status:past?(r()<.05?'noshow':'done'):'booked',src:r()<.8?'online':'walkin'});
+          st.bookings.push({id:st.nid++,created:Math.min(now-36e5,s-Math.floor((1+r()*12)*864e5+r()*216e5)),barber:b.id,svc:sid,start:s,dur:du,price:st.svc[sid].p,client:c,phone:'613-555-'+String(1000+(r()*8999|0)),status:past?(r()<.05?'noshow':'done'):'booked',src:r()<.8?'online':'walkin'});
           m+=du;
         } else m+=r()<.5?15:30;
       }
@@ -779,7 +847,7 @@ function seed(){
   }
   return st;
 }
-function load(){try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.v===4&&j.seedDay===dk(Date.now()))return j}catch(e){}return seed()}
+function load(){try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&j.v===5&&j.seedDay===dk(Date.now()))return j}catch(e){}return seed()}
 let bc=null;
 try{bc=new BroadcastChannel('capital-demo');bc.onmessage=()=>{S=load();idx=null;renderAll()}}catch(e){}
 function save(){idx=null;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}try{bc&&bc.postMessage(1)}catch(e){}renderAll()}
@@ -852,35 +920,42 @@ function clientHTML(u,wide){
   let head='',body='',bar='',sheet='',pb=false;
   if(u.step==='pros'){
     const o=openText();
-    head=hd('Choose a professional');
-    const anyT=S.any?nextAny(null):null;
-    body=`<div class="shop">${logo}<div><b>Capital Barbershop</b><span>590 Bank St · <span class="${o.o?'op':'cl'}">${esc(o.t)}</span></span></div></div>
-      <div class="grid">
-      ${S.any?`<button class="pc" data-act="pickb" data-id="any">${ph('any')}<b>Any professional</b><small class="g">${anyT?availTxt(anyT).replace('Available','Next:'):'Fully booked'}</small></button>`:''}
-      ${B.map(b=>{const t=nextFree(b.id,null);return`<button class="pc${t?'':' dim'}" data-act="pickb" data-id="${b.id}">${ph(b.id)}<b>${esc(b.n)}</b><small>${availTxt(t)}</small></button>`}).join('')}
-      <button class="pc" data-act="gift"><div class="ph star" style="background:#fff;color:#111;border:1px solid #E3E3E8">🎁</div><b>Buy a gift card</b><small>Give the gift of grooming</small></button>
-      </div>
-      <button class="lnk" data-act="manage">Already booked? Manage your appointment →</button>
-      <div class="demo">Crossmind prototype · demo bookings only · not affiliated with SQUIRE</div>`;
+    const anyT=S.any?nextAny(null):null,tmr=addD(day0(Date.now()),1);
+    const av=t=>`<small class="${t&&day0(t)<=tmr?'g':''}">${availTxt(t)}</small>`;
+    body=`<div class="welcome">
+       <div class="wtop">${logo}<div><b>Capital Barbershop</b><span>590 Bank St, Ottawa</span></div><span class="ost ${o.o?'op':'cl'}">${o.o?'Open now':'Closed now'}</span></div>
+       <h1>Let's get you looking fresh.</h1>
+       <p>Pick one of our barbers to get started.</p>
+     </div>
+     <div class="rows">
+      ${S.any?`<button class="br any" data-act="pickb" data-id="any">${ph('any')}<div class="tx"><b>First available</b><small>Whoever's free soonest${anyT?' · '+rel(anyT)+' '+fT(anyT):''}</small></div><span class="chev">›</span></button>`:''}
+      ${B.map(b=>{const t=nextFree(b.id,null);return`<button class="br${t?'':' dim'}" data-act="pickb" data-id="${b.id}">${ph(b.id)}<div class="tx"><b>${esc(b.n)}</b>${av(t)}</div><span class="chev">›</span></button>`}).join('')}
+     </div>
+     <div class="sec2">More</div>
+     <div class="rows">
+      <button class="br sm" data-act="gift"><div class="ic">🎁</div><div class="tx"><b>Buy a gift card</b><small>Sent by text in a minute</small></div><span class="chev">›</span></button>
+      <button class="br sm" data-act="manage"><div class="ic">📅</div><div class="tx"><b>Manage my appointment</b><small>Move or cancel with your phone number</small></div><span class="chev">›</span></button>
+     </div>
+     <div class="demo">Demo by Crossmind · no real bookings</div>`;
   }
   else if(u.step==='svc'){
+    const bid=u.barber,who=bid==='any'?'the first available barber':BB[bid].n;
     head=hd('Choose a service',true);
-    const bid=u.barber;
+    const dtx=k=>{if(k==='wedding')return'On-site';if(bid!=='any')return durTxt(durOf(bid,k));const ds=B.filter(b=>offers(b.id,k)).map(b=>durOf(b.id,k)),a=Math.min(...ds),z=Math.max(...ds);return a===z?durTxt(a):a+'–'+durTxt(z)};
     if(u.svc){
-      const sid=u.svc,du=bid==='any'?null:durOf(bid,sid);
+      const sid=u.svc;
       const adds=[];
       if(COMBO[sid]&&offersAny(bid,COMBO[sid])&&S.svc[COMBO[sid]].on)adds.push(['beard','Beard Trim',S.svc[COMBO[sid]].p-S.svc[sid].p,bid==='any'?15:durOf(bid,COMBO[sid])-durOf(bid,sid)]);
       if(sid!=='wedding'&&offersAny(bid,'design')&&S.svc.design.on)adds.push(['design','Design',S.svc.design.p,15]);
-      body=`<div class="grid" style="padding-top:10px"><button class="sc on" data-act="unpick"><div class="ck">✓</div><b>${esc(SV0[sid][0])}</b><small>${du?durTxt(du):'30–45 min'}</small><span class="pr">$${S.svc[sid].p}</span></button></div>
-        ${adds.length?`<div class="h3">Anything you wish to add?<small>Only add-ons that go with a ${esc(SV0[sid][0].toLowerCase())}</small></div><div class="grid">${adds.map(([k,n,p,d])=>`<button class="sc${u[k]?' on':''}" data-act="addon" data-id="${k}">${u[k]?'<div class="ck">✓</div>':''}<b>${n}</b><small>+${d} min</small><span class="ad">${u[k]?'ADDED':'+ ADD'}</span><span class="pr">+$${p}</span></button>`).join('')}</div>`:''}
-        <button class="lnk" data-act="unpick">← Pick a different service</button>`;
-      bar=`<button class="bbar" data-act="order"><span>View Order</span><span>$${basePrice(u)}</span></button>`;pb=true;
+      body=`<p class="lead2">With ${esc(who)}</p><div class="rows"><button class="sr on" data-act="unpick"><div class="tx"><b>${esc(SV0[sid][0])}</b><small>${dtx(sid)}</small></div><span class="p">$${S.svc[sid].p}</span><span class="ck">✓</span></button></div>
+        ${adds.length?`<div class="sec2">Add anything?</div><div class="rows">${adds.map(([k,n,p,d])=>`<button class="sr${u[k]?' on':''}" data-act="addon" data-id="${k}"><div class="tx"><b>${n}</b><small>+${d} min</small></div><span class="p">+$${p}</span><span class="ck">${u[k]?'✓':''}</span></button>`).join('')}</div>`:''}
+        <button class="lnk" data-act="unpick">Change service</button>`;
+      bar=`<button class="bbar" data-act="order"><span>Continue</span><span>$${basePrice(u)}</span></button>`;pb=true;
     } else {
-      const ks=ORDER.filter(k=>k!=='design'&&S.svc[k].on&&offersAny(bid,k)&&(!u.cat||SV0[k][1]===u.cat));
       const cats=CATS.filter(c=>ORDER.some(k=>SV0[k][1]===c&&k!=='design'&&S.svc[k].on&&offersAny(bid,k)));
-      body=`<select class="catsel" data-ch="cat" aria-label="Category"><option value="">All categories</option>${cats.map(c=>`<option ${u.cat===c?'selected':''}>${c}</option>`).join('')}</select>
-        <div class="grid">${ks.map(k=>{let d;if(k==='wedding')d='On-site';else if(bid!=='any')d=durTxt(durOf(bid,k));else{const ds=B.filter(b=>offers(b.id,k)).map(b=>durOf(b.id,k)),a=Math.min(...ds),z=Math.max(...ds);d=a===z?durTxt(a):a+'–'+durTxt(z)}
-          return`<button class="sc" data-act="picks" data-id="${k}"><b>${esc(SV0[k][0])}</b><small>${d}</small><span class="pr">$${S.svc[k].p}</span></button>`}).join('')}</div>`;
+      body=`<p class="lead2">With ${esc(who)}</p><div class="chips2">${['',...cats].map(c=>`<button class="chip${(u.cat||'')===c?' on':''}" data-act="cat" data-v="${c}">${c||'All'}</button>`).join('')}</div>
+        ${cats.filter(c=>!u.cat||u.cat===c).map(c=>{const ks=ORDER.filter(k=>k!=='design'&&SV0[k][1]===c&&S.svc[k].on&&offersAny(bid,k));return`<div class="sec2">${c}</div><div class="rows">${ks.map(k=>`<button class="sr" data-act="picks" data-id="${k}"><div class="tx"><b>${esc(SV0[k][0])}</b><small>${dtx(k)}${SV0[k][3]?' · '+esc(SV0[k][3]):''}</small></div><span class="p">$${S.svc[k].p}</span></button>`).join('')}</div>`}).join('')}
+        <div style="height:16px"></div>`;
     }
   }
   else if(u.step==='time'){
@@ -981,6 +1056,7 @@ function clientAct(inst,a,d,e){
     case'picks':u.svc=d.id;u.beard=false;u.design=false;break;
     case'unpick':u.svc=null;u.beard=false;u.design=false;break;
     case'addon':u[d.id]=!u[d.id];break;
+    case'cat':u.cat=d.v;break;
     case'order':u.sheet='order';break;
     case'closesheet':if(e&&e.target.closest('[data-stop]')&&e.target.closest('[data-act]').dataset.act==='closesheet'&&!e.target.closest('.x'))return;u.sheet=null;u.err='';break;
     case'guest':toast(inst,'Guest booking: pick a second barber and service, then check out together. (Demo)');return;
@@ -1001,7 +1077,7 @@ function clientAct(inst,a,d,e){
       const du=bookDur(u.slotB,u),sid=eff(u);
       if(!free(u.slotB,day0(u.time),du).includes(u.time)){u.err='';u.sheet=null;u.time=null;render(inst);toast(inst,'Someone just took that time. Pick another one.');return}
       const phone=ph.slice(-10).replace(/(\d{3})(\d{3})(\d{4})/,'$1-$2-$3'),base=basePrice(u);
-      const bk={id:S.nid++,barber:u.slotB,svc:sid,addon:!!u.design,start:u.time,dur:du,price:base,tip:u.pay==='card'&&u.tip?Math.round(base*u.tip/100):0,client:first+' '+last[0].toUpperCase()+'.',phone,email:u.email.trim(),sms:u.sms,status:'booked',src:'online',pay:u.pay,fresh:true};
+      const bk={id:S.nid++,created:Date.now(),barber:u.slotB,svc:sid,addon:!!u.design,start:u.time,dur:du,price:base,tip:u.pay==='card'&&u.tip?Math.round(base*u.tip/100):0,client:first+' '+last[0].toUpperCase()+'.',phone,email:u.email.trim(),sms:u.sms,status:'booked',src:'online',pay:u.pay,fresh:true};
       S.bookings.push(bk);u.lastId=bk.id;u.err='';u.sheet=null;u.step='done';save();return}
     case'ics':{const bk=S.bookings.find(x=>x.id===u.lastId);if(bk)ics(bk);toast(inst,'Calendar file downloaded');return}
     case'rebook':{const bk=S.bookings.find(x=>x.id===u.lastId);if(!bk)break;const keep={first:u.first,last:u.last,phone:u.phone,email:u.email};
@@ -1055,7 +1131,7 @@ function barberAct(inst,a,d){
       const sid=a==='walkin'?(offers(u.who,'haircut')?'haircut':Object.keys(BB[u.who].svc)[0]):'block',du=a==='walkin'?durOf(u.who,sid):30;
       let t=null;for(let i=0;i<14&&!t;i++){const dd=addD(u.day<day0(Date.now())?day0(Date.now()):u.day,i);const f=free(u.who,dd,du);if(f.length)t=f[0]}
       if(!t){toast(inst,'No free time to fit that in');return}
-      S.bookings.push({id:S.nid++,barber:u.who,svc:sid,start:t,dur:du,price:a==='walkin'?S.svc[sid].p:0,client:a==='walkin'?'Walk-in':'Blocked',phone:'',status:'booked',src:a==='walkin'?'walkin':'block'});
+      S.bookings.push({id:S.nid++,created:Date.now(),barber:u.who,svc:sid,start:t,dur:du,price:a==='walkin'?S.svc[sid].p:0,client:a==='walkin'?'Walk-in':'Blocked',phone:'',status:'booked',src:a==='walkin'?'walkin':'block'});
       u.day=day0(t);save();toast(inst,(a==='walkin'?'Walk-in added ':'Blocked ')+rel(t).toLowerCase()+' at '+fT(t));return}
   }
   render(inst);
@@ -1070,13 +1146,13 @@ function ownerHTML(u,narrow,H){
     const d=u.day,h=hoursOf(d)||[540,1140],rows=(h[1]-h[0])/15,RH=Math.max(18,Math.min(24,Math.floor(((H||500)-(narrow?260:190))/rows)));
     const all=B.map(b=>dayBk(b.id,d).filter(x=>x.status!=='cancelled')).flat(),live=all.filter(x=>x.svc!=='block');
     const nowM=minOf(Date.now()),showNow=d===today&&nowM>h[0]&&nowM<h[1];
-    head=`<h4>${d===today?'Today':rel(d)} · ${new Date(d).toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}</h4><span class="sp"></span><button data-act="oday" data-v="-1" aria-label="Previous day">‹</button><button data-act="oday" data-v="0">Today</button><button data-act="oday" data-v="1" aria-label="Next day">›</button>`;
+    head=`<h4>${narrow?(d===today?'Today':fD(d)):(d===today?'Today':rel(d))+' · '+new Date(d).toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}</h4><span class="sp"></span><button data-act="oday" data-v="-1" aria-label="Previous day">‹</button><button data-act="oday" data-v="0">Today</button><button data-act="oday" data-v="1" aria-label="Next day">›</button>`;
     const lines=Array.from({length:rows/2},(_,i)=>`<div class="hl" style="top:${i*2*RH+26}px"></div>`).join('');
     body=`<div class="kp"><div><b>${live.length}</b><span>appointments</span></div><div><b>$${live.filter(x=>x.status!=='noshow').reduce((a,x)=>a+x.price,0)}</b><span>booked revenue</span></div><div><b>${live.filter(x=>x.src==='online').length}</b><span>booked online</span></div><div><b>${B.filter(b=>works(b.id,d)).length}/7</b><span>barbers in</span></div></div>
-    <div class="cal">${!hoursOf(d)?'<div class="bx" style="text-align:center;padding:30px">Closed Mondays</div>':`<div class="cg" style="grid-template-columns:46px repeat(${B.length},minmax(${narrow?96:88}px,1fr))">
+    <div class="cal">${!hoursOf(d)?'<div class="bx" style="text-align:center;padding:30px">Closed Mondays</div>':`<div class="cg" style="grid-template-columns:46px repeat(${B.length},minmax(${narrow?112:92}px,1fr))">
       <div class="tc" style="height:${rows*RH+26}px"><div class="ch" style="border:0">&nbsp;</div>${Array.from({length:rows/4+1},(_,i)=>`<span style="top:${i*4*RH+26}px">${fTm(h[0]+i*60).replace(':00','')}</span>`).join('')}</div>
       ${B.map(b=>{const on=works(b.id,d);return`<div class="col${on?'':' off'}" style="height:${rows*RH+26}px"><div class="ch"><i style="background:${b.c}"></i>${esc(b.n.split(' ')[0])}</div>${lines}
-        ${dayBk(b.id,d).filter(x=>x.status!=='cancelled').map(x=>{const top=(minOf(x.start)-h[0])/15*RH+26,ht=Math.max(x.dur/15*RH-2,10);return`<div class="bk2 ${x.status} ${x.svc==='block'?'blk':''} ${x.fresh?'fresh':''}" style="--c:${b.c};top:${top}px;height:${ht}px" title="${esc(x.client)} · ${esc(svName(x.svc))}"><b>${esc(x.svc==='block'?'Blocked':x.client)}</b>${ht>22?`<span>${fT(x.start)} · ${esc(svName(x.svc))}</span>`:''}</div>`}).join('')}
+        ${dayBk(b.id,d).filter(x=>x.status!=='cancelled').map(x=>{const top=(minOf(x.start)-h[0])/15*RH+26,ht=Math.max(x.dur/15*RH-2,10);return`<div class="bk2 ${x.status} ${x.svc==='block'?'blk':''} ${x.fresh?'fresh':''}" data-act="obk" data-id="${x.id}" style="--c:${b.c};top:${top}px;height:${ht}px" title="${esc(x.client)} · ${esc(svName(x.svc))}"><b>${esc(x.svc==='block'?'Blocked':x.client)}</b>${ht>22?`<span>${fT(x.start)} · ${esc(svName(x.svc))}</span>`:''}</div>`}).join('')}
         ${showNow?`<div class="now" style="top:${(nowM-h[0])/15*RH+26}px"></div>`:''}</div>`}).join('')}
     </div>`}</div>`;
     body=body.replace('<div class="cal">','<div class="cal" style="overflow-x:auto">');
@@ -1115,12 +1191,30 @@ function ownerHTML(u,narrow,H){
       <button class="rst" data-act="reset">Reset demo data</button></div></div>`;
   }
   return`<div class="app ow${narrow?' narrow':''}"><nav class="side"><div class="br">CAPITAL<small>FRONT DESK</small></div>${nav.map(([k,i,n])=>`<button class="${u.tab===k?'on':''}" data-act="tab" data-v="${k}"><span aria-hidden="true">${i}</span>${n}</button>`).join('')}<div class="sp">Crossmind prototype</div></nav>
-    <div class="main"><div class="mh">${head}</div><div class="scroll">${body}</div></div>${T(u)}</div>`;
+    <div class="main"><div class="mh">${head}</div><div class="scroll">${body}</div></div>${u.detail?detailHTML(u.detail):''}${T(u)}</div>`;
 }
-function ownerAct(inst,a,d){
+function detailHTML(id){
+  const x=S.bookings.find(b=>b.id===id);if(!x)return'';const b=BB[x.barber],bl=x.svc==='block';
+  return`<div class="odbg" data-act="oclose"><div class="od" data-stop="1">
+   <div class="odh"><div class="av" style="background:${b.c}">${bl?'—':ini(x.client)}</div><div class="tx"><b>${esc(bl?'Blocked time':x.client)}</b><span>${esc(x.phone||'')}</span></div><button class="x2" data-act="oclose" aria-label="Close">✕</button></div>
+   ${bl?'':`<div class="odr"><span>Service</span><b>${esc(svName(x.svc))}${x.addon?' + design':''}</b></div>`}
+   <div class="odr"><span>Barber</span><b><i style="background:${b.c}"></i>${esc(b.n)}</b></div>
+   <div class="odr"><span>When</span><b>${fD(x.start)} · ${fT(x.start)} – ${fT(x.start+x.dur*MIN)}</b></div>
+   ${bl?'':`<div class="odr"><span>Price</span><b>$${x.price}${x.tip?' + $'+x.tip+' tip':''}</b></div>
+   <div class="odr"><span>Paying</span><b>${x.pay==='card'?'Card':'In the shop'}</b></div>
+   <div class="odr"><span>Booked</span><b>${x.src==='walkin'?'Walk-in':'Online'}${x.created?' · '+fD(x.created)+', '+fT(x.created):''}</b></div>
+   <div class="odr"><span>Past visits</span><b>${S.bookings.filter(y=>y.phone&&y.phone===x.phone&&y.status==='done'&&y.id!==x.id).length}</b></div>`}
+   <div class="odr"><span>Status</span><b>${{booked:'Upcoming',done:'Done',noshow:'No-show',cancelled:'Cancelled'}[x.status]}</b></div>
+   ${x.status==='booked'&&!bl?`<div class="oda"><button class="ok" data-act="odone">Mark done</button><button data-act="ons">No-show</button><button class="cx" data-act="ocan">Cancel</button></div>`:''}
+  </div></div>`;
+}
+function ownerAct(inst,a,d,e){
   const u=inst.ui;
   switch(a){
-    case'tab':u.tab=d.v;break;
+    case'obk':u.detail=+d.id;{const bk=S.bookings.find(x=>x.id===u.detail);if(bk&&bk.fresh){bk.fresh=false;save();return}}break;
+    case'oclose':if(e&&e.target.closest('[data-stop]')&&!e.target.closest('.x2'))return;u.detail=null;break;
+    case'odone':case'ons':case'ocan':{const bk=S.bookings.find(x=>x.id===u.detail);if(bk){bk.status={odone:'done',ons:'noshow',ocan:'cancelled'}[a];save()}if(a==='ocan')u.detail=null;render(inst);return}
+    case'tab':u.tab=d.v;u.detail=null;break;
     case'oday':u.day=+d.v===0?day0(Date.now()):addD(u.day,+d.v);break;
     case'svon':S.svc[d.id].on=!S.svc[d.id].on;save();return;
     case'any':S.any=!S.any;save();return;
@@ -1157,36 +1251,66 @@ let playing=false,stopFlag=false;
 function stopPlay(){if(playing)stopFlag=true}
 function showDev(k){$$('.vtabs button').forEach(b=>b.classList.toggle('on',b.dataset.dev===k));$$('.dev').forEach(f=>f.classList.toggle('show',f.dataset.dev===k));render(simO)}
 $$('.vtabs button').forEach(b=>b.addEventListener('click',()=>{stopPlay();showDev(b.dataset.dev)}));
+async function W(ms){const end=Date.now()+ms;while(Date.now()<end){if(stopFlag)throw 0;await wait(80)}}
 async function tap(inst,sel){
   if(stopFlag)throw 0;
   const el=inst.el.querySelector(sel);if(!el)throw 0;
-  const sc=inst.el.querySelector('.scroll');if(sc&&sc.contains(el)){const y=el.offsetTop-sc.clientHeight/2+el.offsetHeight/2;sc.scrollTo({top:Math.max(0,y),behavior:'smooth'});await wait(350)}
-  el.classList.add('tap');await wait(600);if(stopFlag)throw 0;return el;
+  const cal=el.closest('.cal');if(cal){cal.scrollTo({left:Math.max(0,el.closest('.col').offsetLeft-50),behavior:'smooth'})}
+  const sc=inst.el.querySelector('.scroll');if(sc&&sc.contains(el)){let y=0,n=el;while(n&&n!==sc){y+=n.offsetTop;n=n.offsetParent}if(n===sc){sc.scrollTo({top:Math.max(0,y-sc.clientHeight/2+el.offsetHeight/2),behavior:'smooth'})}await W(450)}
+  el.classList.add('tap');await W(650);return el;
 }
+const TOTAL=57000;let t0=0,capTimer=null;
+function cap(step,txt){$('#cap').hidden=false;$('#capStep').textContent=step;const p=$('#capTxt');p.style.opacity=0;setTimeout(()=>{p.textContent=txt;p.style.opacity=1},160)}
 async function play(){
-  if(playing)return;playing=true;stopFlag=false;const btn=$('#play');btn.textContent='Playing…';
-  const narrow=true;
+  if(playing)return;playing=true;stopFlag=false;const btn=$('#play');btn.textContent='■ Stop';t0=Date.now();
+  capTimer=setInterval(()=>{const el=Date.now()-t0;$('#capBar').style.width=Math.min(100,el/TOTAL*100)+'%';const sx=Math.max(0,Math.round((TOTAL-el)/1000));$('#capT').textContent='0:'+String(sx).padStart(2,'0')},250);
   try{
-    if(narrow)showDev('c');
-    $('#sim').scrollIntoView({behavior:'smooth',block:'start'});await wait(700);
-    simC.ui=defUI('c');render(simC);await wait(700);
-    await tap(simC,'[data-act=pickb][data-id=james]');clientAct(simC,'pickb',{id:'james'});await wait(700);
-    await tap(simC,'[data-act=picks][data-id=haircut]');clientAct(simC,'picks',{id:'haircut'});await wait(700);
-    await tap(simC,'[data-act=addon][data-id=beard]');clientAct(simC,'addon',{id:'beard'});await wait(600);
-    await tap(simC,'[data-act=order]');clientAct(simC,'order',{});await wait(900);
-    await tap(simC,'[data-act=totime]');clientAct(simC,'totime',{});await wait(800);
-    const sl=await tap(simC,'[data-act=slot]');clientAct(simC,'slot',{v:sl.dataset.v,b:sl.dataset.b});await wait(500);
-    await tap(simC,'[data-act=checkout]');clientAct(simC,'checkout',{});await wait(1000);
-    await tap(simC,'[data-act=toconfirm]');clientAct(simC,'toconfirm',{});await wait(700);
-    for(const [f,txt] of [['first','Alex'],['last','Martin'],['phone','613-555-0142']]){const inp=simC.el.querySelector(`[data-f=${f}]`);for(const ch of txt){if(stopFlag)throw 0;simC.ui[f]+=ch;inp.value=simC.ui[f];await wait(45)}await wait(150)}
+    showDev('c');$('#sim').scrollIntoView({behavior:'smooth',block:'start'});
+    simC.ui=defUI('c');simC._k=null;render(simC);
+    const C='1 of 3 · Your clients';
+    cap(C,'A client opens your booking page and picks a barber.');await W(2600);
+    await tap(simC,'[data-act=pickb][data-id=james]');clientAct(simC,'pickb',{id:'james'});
+    cap(C,'They pick a service. Only add-ons that make sense show up.');await W(1800);
+    await tap(simC,'[data-act=picks][data-id=haircut]');clientAct(simC,'picks',{id:'haircut'});await W(1100);
+    await tap(simC,'[data-act=addon][data-id=beard]');clientAct(simC,'addon',{id:'beard'});await W(1300);
+    cap(C,'Their order shows the barber, the service and the price. No surprise fees.');
+    await tap(simC,'[data-act=order]');clientAct(simC,'order',{});await W(2600);
+    cap(C,'They pick a day and a time that\'s actually free.');
+    await tap(simC,'[data-act=totime]');clientAct(simC,'totime',{});await W(1700);
+    const sl=await tap(simC,'[data-act=slot]');clientAct(simC,'slot',{v:sl.dataset.v,b:sl.dataset.b});await W(900);
+    cap(C,'Tipping is optional, and it starts at "None".');
+    await tap(simC,'[data-act=checkout]');clientAct(simC,'checkout',{});await W(2400);
+    cap(C,'Name and number, and that\'s it. No account, no sign-in code.');
+    await tap(simC,'[data-act=toconfirm]');clientAct(simC,'toconfirm',{});await W(600);
+    for(const [f,txt] of [['first','Alex'],['last','Martin'],['phone','613-555-0142']]){const inp=simC.el.querySelector(`[data-f=${f}]`);for(const ch of txt){if(stopFlag)throw 0;simC.ui[f]+=ch;if(inp)inp.value=simC.ui[f];await wait(50)}await W(150)}
     await tap(simC,'[data-act=book]');clientAct(simC,'book',{});
-    const bk=S.bookings.find(x=>x.id===simC.ui.lastId);
-    if(bk){simB.ui.who=bk.barber;simB.ui.day=day0(bk.start);simO.ui.tab='cal';simO.ui.day=day0(bk.start);simO._k=null;renderAll()}
-    if(narrow){await wait(1800);showDev('b');await wait(2600);showDev('o')}
+    cap(C,'Booked. They get a text and can add it to their calendar.');await W(2400);
+    const bk=S.bookings.find(x=>x.id===simC.ui.lastId);if(!bk)throw 0;
+    const Bs='2 of 3 · Your barbers';
+    simB.ui=Object.assign(defUI('b'),{who:bk.barber,day:day0(bk.start)});simB._k=null;showDev('b');render(simB);
+    cap(Bs,'James gets the new booking on his phone right away.');await W(3200);
+    cap(Bs,'He can mark cuts done, add walk-ins, or block off a break.');
+    {const sc=simB.el.querySelector('.scroll');if(sc)sc.scrollTo({top:240,behavior:'smooth'})}await W(2800);
+    cap(Bs,'"Whole shop" shows every barber\'s day at a glance.');
+    await tap(simB,'[data-act=view][data-v=shop]');barberAct(simB,'view',{v:'shop'});await W(3200);
+    const Y='3 of 3 · You';
+    simO.ui=Object.assign(defUI('o'),{tab:'cal',day:day0(bk.start)});simO._k=null;showDev('o');render(simO);
+    cap(Y,'You see the whole shop\'s calendar, every barber side by side.');await W(1400);
+    {const cal=simO.el.querySelector('.cal');if(cal&&cal.scrollWidth>cal.clientWidth+10){cal.scrollTo({left:cal.scrollWidth,behavior:'smooth'});await W(1900);cal.scrollTo({left:0,behavior:'smooth'});await W(1100)}else await W(1500)}
+    cap(Y,'Tap any booking to see who it is, what they\'re getting, and when they booked.');
+    await tap(simO,`[data-act=obk][data-id="${bk.id}"]`);ownerAct(simO,'obk',{id:bk.id});if(!simO.ui.detail){simO.ui.detail=bk.id;render(simO)}await W(3800);
+    ownerAct(simO,'oclose',{});
+    cap(Y,'Insights show your money, no-shows and busiest services.');
+    await tap(simO,'[data-act=tab][data-v=ins]');ownerAct(simO,'tab',{v:'ins'});await W(1800);
+    {const sc=simO.el.querySelector('.scroll');if(sc)sc.scrollTo({top:400,behavior:'smooth'})}await W(2200);
+    cap(Y,'Prices, services and settings are yours to change anytime.');
+    await tap(simO,'[data-act=tab][data-v=svc]');ownerAct(simO,'tab',{v:'svc'});await W(2600);
+    cap('Done','That\'s the whole thing. Want this for Capital? Let\'s talk.');
+    clearInterval(capTimer);$('#capBar').style.width='100%';$('#capT').textContent='';
   }catch(e){}
-  playing=false;stopFlag=false;btn.textContent='▶ Watch again';
+  clearInterval(capTimer);playing=false;stopFlag=false;btn.textContent='▶ Watch again';
 }
-$('#play').addEventListener('click',play);
+$('#play').addEventListener('click',()=>{if(playing)stopPlay();else play()});
 $('#reset').addEventListener('click',()=>{stopPlay();resetAll()});
 
 /* ---------- full screen routes ---------- */
@@ -1195,8 +1319,8 @@ function route(){
   const h=location.hash.slice(1),k={book:'c',barber:'b',owner:'o'}[h];
   const full=$('#full');
   if(fullInst){const i=insts.indexOf(fullInst);if(i>=0)insts.splice(i,1);fullInst=null}
-  if(!k){full.hidden=true;document.body.classList.remove('lock');return}
-  full.hidden=false;full.classList.toggle('wide',k==='o');document.body.classList.add('lock');
+  if(!k){full.hidden=true;document.body.classList.remove('fsopen');return}
+  full.hidden=false;full.classList.toggle('wide',k==='o');document.body.classList.add('fsopen');
   $('#fLabel').textContent={c:'Client booking',b:'Barber phone',o:'Owner desk'}[k]+' · demo data only';
   const hold=$('#fHold');const fresh=hold.cloneNode(false);hold.replaceWith(fresh);
   fullInst=mount(fresh,k);
