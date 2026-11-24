@@ -27,58 +27,6 @@
    "where": "National Capital Region (NCR)"
   },
   {
-   "buyer": "Public Works and Government Services Canada",
-   "closing": "2040-01-02T14:00",
-   "contact": "Khan, Shazia",
-   "email": "shazia.khan@tpsgc-pwgsc.gc.ca",
-   "local": true,
-   "phone": "(613) 614-2383 (    )",
-   "published": "2018-08-15",
-   "ref": "PW-_ERD-005-26943",
-   "title": "EREP: Industry Day - Information and Engagement Session",
-   "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=PW-_ERD-005-26943",
-   "where": "Yukon · New Brunswick · Alberta · Newfoundland and Labrador · Northwest Territories · British Columbia · Prince Edward Island · National Capital Region (NCR) · Saskatchewan · Nova Scotia · Ontario (except NCR) · Quebec (except NCR) · Manitoba · Foreign · Nunavut Territory"
-  },
-  {
-   "buyer": "Royal Canadian Mounted Police (RCMP)",
-   "closing": "2026-11-30T14:00",
-   "contact": "Connie Wright",
-   "email": "connie.wright@rcmp-grc.gc.ca",
-   "local": false,
-   "phone": "",
-   "published": "2026-10-20",
-   "ref": "cb-345-15447495",
-   "title": "National Standing Offer – Chemical, Biological, Radiological, and Nuclear (CBRN) Suits",
-   "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=cb-345-15447495",
-   "where": "Canada"
-  },
-  {
-   "buyer": "Department of Public Works and Government Services (PSPC)",
-   "closing": "2026-12-18T14:00",
-   "contact": "Cole, Heather (SPAC/PSPC)",
-   "email": "heather.cole@tpsgc-pwgsc.gc.ca",
-   "local": false,
-   "phone": "",
-   "published": "2026-11-09",
-   "ref": "WS5454444981-Doc5790200970",
-   "title": "Digital Marketplace RFI 2.0",
-   "url": "https://portal.us.bn.cloud.ariba.com/dashboard/public/appext/comsapsbncdiscoveryui#/RfxEvent/preview/1110030995?anId=ANONYMOUS",
-   "where": "Canada"
-  },
-  {
-   "buyer": "Department of Public Works and Government Services (PSPC)",
-   "closing": "2031-03-31T14:00",
-   "contact": "Ratanshi, Shaheed (SPAC/PSPC) (il-lui / he-him)",
-   "email": "shaheed.ratanshi@tpsgc-pwgsc.gc.ca",
-   "local": false,
-   "phone": "",
-   "published": "2026-04-02",
-   "ref": "WS5625256622-Doc5627541070",
-   "title": "Containment Booms RFSA - B",
-   "url": "https://portal.us.bn.cloud.ariba.com/dashboard/public/appext/comsapsbncdiscoveryui#/RfxEvent/preview/1110009362?anId=ANONYMOUS",
-   "where": "Canada"
-  },
-  {
    "buyer": "Parks Canada",
    "closing": "2100-03-31T16:00",
    "contact": "Taylor, Ryan",
@@ -92,5 +40,5 @@
    "where": "British Columbia · Alberta"
   }
  ],
- "updated": "2026-11-24T00:30Z"
+ "updated": "2026-11-24T00:32Z"
 }
