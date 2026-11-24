@@ -1,1 +1,83 @@
-{}
+{
+ "Minto Communities Inc.": {
+  "name": "Minto Communities",
+  "website": "https://www.minto.com/ottawa",
+  "emails": [
+   "newhomesottawa@minto.com"
+  ],
+  "phones": [
+   "613-230-7051"
+  ]
+ },
+ "Cardel Homes Inc.": {
+  "name": "Cardel Homes",
+  "website": "https://www.cardelhomes.com/ottawa",
+  "emails": [
+   "ottawainfo@cardelhomes.com"
+  ],
+  "phones": [
+   "613-820-1959",
+   "613-777-2835"
+  ]
+ },
+ "Caivan Ltd.": {
+  "name": "Caivan",
+  "website": "https://caivan.com",
+  "emails": [
+   "info@caivan.com",
+   "sales@caivan.com"
+  ],
+  "phones": [
+   "613-518-1864"
+  ],
+  "note": "info@ is the address Caivan lists for new trade partners"
+ },
+ "Caivan Barrhaven Conservancy Inc.": {
+  "name": "Caivan (Barrhaven Conservancy)",
+  "website": "https://caivan.com",
+  "emails": [
+   "info@caivan.com",
+   "bcsales@caivan.com"
+  ],
+  "phones": [
+   "613-518-1864"
+  ]
+ },
+ "Claridge Homes Inc.": {
+  "name": "Claridge Homes",
+  "website": "https://www.claridgehomes.com",
+  "emails": [],
+  "phones": [
+   "613-233-6030"
+  ]
+ },
+ "Richcraft Homes Limited": {
+  "name": "Richcraft Homes",
+  "website": "https://www.richcraft.com",
+  "emails": [],
+  "phones": [
+   "613-739-7111"
+  ]
+ },
+ "Ron Eastern Construction Ltd.": {
+  "name": "Ron Eastern Construction",
+  "website": "https://recl.ca",
+  "emails": [],
+  "phones": [
+   "613-225-3640"
+  ]
+ },
+ "C & L Construction Ottawa Limited": {
+  "name": "C & L Construction Ottawa",
+  "website": "",
+  "emails": [],
+  "phones": []
+ },
+ "Main And Main Asset Management": {
+  "name": "Main and Main",
+  "website": "https://mainandmain.ca",
+  "emails": [],
+  "phones": [],
+  "note": "auto-found contact was for an unrelated person"
+ }
+}

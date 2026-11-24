@@ -601,8 +601,59 @@ def name_builders(sites, hist):
     log(f"named builders: {n_addr} by address, {n_street} by street")
 
 
+# ---------------------------------------------------------------- 6. government cleaning tenders (CanadaBuys)
+TENDERS = "https://canadabuys.canada.ca/opendata/pub/openTenderNotice-ouvertAvisAppelOffres.csv"
+CLEANING = re.compile(r"(?i)clean|janitor|custodial|nettoyage|entretien m[ée]nager|housekeeping|window wash|lavage de vitres")
+NOT_CLEANING = re.compile(r"(?i)waste|d[ée]chet|sewer|tank|duct clean|vehicle|aircraft|dry.?clean|ship|vessel|pipe|software")
+LOCAL = re.compile(r"(?i)national capital|ottawa|gatineau|outaouais|kanata|orl[ée]ans|nepean|petawawa|kingston|cornwall|pembroke|rockland")
+
+
+def col(row, prefix):
+    for k, v in row.items():
+        if k and k.startswith(prefix):
+            return (v or "").strip()
+    return ""
+
+
+def collect_tenders():
+    try:
+        r = S.get(TENDERS, timeout=180)
+        r.raise_for_status()
+    except Exception as e:
+        log("tenders: download failed", e)
+        return None
+    out = []
+    for row in csv.DictReader(io.StringIO(r.content.decode("utf-8-sig", "ignore"))):
+        title = col(row, "title-titre-eng") or col(row, "title-titre-fra")
+        what = f'{title} {col(row, "title-titre-fra")} {col(row, "gsinDescription-nibsDescription-eng")} {col(row, "unspscDescription-eng")}'
+        if not CLEANING.search(what) or NOT_CLEANING.search(title):
+            continue
+        where = " ".join([col(row, "regionsOfDelivery-regionsLivraison-eng"), col(row, "regionsOfOpportunity-regionAppelOffres-eng"), title])
+        local = bool(LOCAL.search(where))
+        if not local and not re.search(r"(?i)ontario|quebec|qu[ée]bec|\*canada", where):
+            continue
+        out.append({
+            "title": title, "ref": col(row, "referenceNumber-numeroReference"),
+            "closing": col(row, "tenderClosingDate-appelOffresDateCloture")[:16],
+            "published": col(row, "publicationDate-datePublication")[:10],
+            "buyer": col(row, "contractingEntityName-nomEntitContractante-eng"),
+            "contact": col(row, "contactInfoName-informationsContactNom"),
+            "email": col(row, "contactInfoEmail-informationsContactCourriel"),
+            "phone": col(row, "contactInfoPhone-contactInfoTelephone"),
+            "where": re.sub(r"\s*\*", " · ", col(row, "regionsOfDelivery-regionsLivraison-eng")).strip(" ·"),
+            "url": col(row, "noticeURL-URLavis-eng") or f'https://canadabuys.canada.ca/en/tender-opportunities?search_filter={col(row, "referenceNumber-numeroReference")}',
+            "local": local,
+        })
+    out.sort(key=lambda t: (not t["local"], t["closing"]))
+    log(f"tenders: {len(out)} open cleaning tenders ({sum(t['local'] for t in out)} in the Ottawa area)")
+    return out
+
+
 # ---------------------------------------------------------------- main
 def main():
+    tenders = collect_tenders()
+    if tenders is not None:
+        save("tenders.json", {"updated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ"), "tenders": tenders})
     old = load("leads.json", {"sites": []})
     by_id = {s["id"]: s for s in old.get("sites", [])}
     sources = []

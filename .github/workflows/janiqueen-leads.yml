@@ -2,7 +2,7 @@ name: Jani Queen leads
 
 on:
   schedule:
-    - cron: "17 9 * * 1"   # every Monday ~4am Ottawa time
+    - cron: "17 9 * * *"   # every day ~4am Ottawa time
   workflow_dispatch:
   push:
     branches: [main]
