@@ -649,11 +649,212 @@ def collect_tenders():
     return out
 
 
+# ---------------------------------------------------------------- 7. Gatineau permits (monthly PDF reports)
+GAT_SECTORS = r"(Gatineau|Hull|Aylmer|Buckingham|Masson-Angers|Non d[ée]fini)"
+GAT_END = re.compile(r"^\d{6,8}(?:,\d{6,8})*\s+" + GAT_SECTORS + r"\b")
+GAT_STREET = re.compile(r"(?i)\b(\d+[A-Z]?(?:[\s-]\d+[A-Z]?)*\s+(?:RUE|BOULEVARD|BOUL\.?|CHEMIN|AVENUE|MONT[ÉE]E|PLACE|IMPASSE|CROISSANT|PROMENADE|ROUTE|COURS|RANG|ALL[ÉE]E|TERRASSE|PRIV[ÉE]|C[ÔO]TE|CARR[ÉE]|PASSAGE|SENTIER|PARC|VOIE|ESPLANADE)\b.*)$")
+GAT_KEEP = re.compile(r"(?i)construction d'un b[âa]timent principal|construction neuve|agrandissement|modif.{0,25}am[ée]nag.{0,20}int[ée]rieur|modif.{0,10}r[ée]para.{0,10}b[âa]ti principal|r[ée]novation|transformation")
+GAT_SKIP = re.compile(r"(?i)piscine|spa\b|abattage|enseigne|d[ée]molition|septique|accessoire|cl[ôo]ture|stationnement|usage temporaire|ponceau|puits")
+
+
+def gat_records(text):
+    out, buf = [], []
+    for line in text.split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        buf.append(line)
+        m = GAT_END.match(line)
+        if not m:
+            continue
+        rec = "\n".join(buf)
+        buf = []
+        pm = re.search(r"\b(\d{4}-\d{5})\b", rec)
+        dm = re.search(r"(?:\b(\d{1,4})\s+)?(\d{2})/(\d{2})/(\d{4})\s+([\d\s]+,\d{2})", rec)
+        if not pm or not dm:
+            continue
+        addr = ""
+        for l in rec.split("\n"):
+            am = GAT_STREET.search(l)
+            if am:
+                addr = am.group(1)
+                break
+        if not addr:
+            continue
+        before = rec[:dm.start()]
+        nature = re.sub(r"\s+", " ", re.sub(r"(?m)^(Permis|Certificat)\s*", "", before)).strip()
+        usage_line = next((l for l in rec.split("\n") if pm.group(1) in l), "")
+        usage = re.sub(r"\s+", " ", usage_line.replace(pm.group(1), "").replace(addr, "")).strip()
+        addr = re.sub(r"\s*'\s*", "'", addr).strip()
+        out.append({"permit": pm.group(1), "units": int(dm.group(1) or 0), "issued": f"{dm.group(4)}-{dm.group(3)}-{dm.group(2)}",
+                    "value": num(dm.group(5).replace(" ", "").replace(",", ".")), "addr": addr, "nature": nature[:140],
+                    "usage": usage[:120], "sector": m.group(1)})
+    return out
+
+
+def gat_category(r):
+    t = (r["nature"] + " " + r["usage"]).lower()
+    if re.search(r"commerc|industri|institution|bureau|services", t):
+        return "Interior fit-up" if re.search(r"modif|r[ée]nov|am[ée]nag", t) else "Commercial / ICI"
+    if re.search(r"multifamiliale|collective|12 logements|logements\)", t) or r["units"] >= 4:
+        return "Multi-unit"
+    if re.search(r"agrandissement", t) and r["units"] < 2:
+        return "Addition"
+    if re.search(r"modif|r[ée]nov|am[ée]nag", t):
+        return "Interior fit-up"
+    return "Low-rise residential"
+
+
+def gatineau_sites():
+    path = os.path.join(DATA, "gatineau-reports.txt")
+    if not os.path.exists(path):
+        return []
+    cache = load("gatineau-cache.json", {})
+    import pdfplumber
+    for line in open(path, encoding="utf-8"):
+        parts = line.split()
+        if len(parts) < 2 or line.startswith("#") or parts[1] in cache:
+            continue
+        if minutes() > 40:
+            break
+        try:
+            blob = S.get(parts[1], timeout=180).content
+            time.sleep(10)                       # gatineau.ca asks for a 10 s crawl delay
+            text = []
+            with pdfplumber.open(io.BytesIO(blob)) as pdf:
+                for pg in pdf.pages:
+                    text.append(pg.extract_text() or "")
+            recs = gat_records("\n".join(text))
+            cache[parts[1]] = recs
+            log(f"gatineau {parts[0]}: {len(recs)} permits")
+        except Exception as e:
+            log("gatineau failed", parts[0], e)
+    save("gatineau-cache.json", cache, compact=True)
+    out = []
+    for recs in cache.values():
+        for r in recs:
+            t = r["nature"] + " " + r["usage"]
+            if GAT_SKIP.search(r["nature"]) or not GAT_KEEP.search(r["nature"]):
+                continue
+            if not (r["units"] >= 1 or r["value"] >= 150000):
+                continue
+            out.append({"addr": title_case(r["addr"]).replace("D'", "d'").replace("De L'", "de l'"), "pc": "", "ward": "", "muni": r["sector"],
+                        "city": "Gatineau", "builder": "", "type": r["usage"].title(), "desc": r["nature"],
+                        "units": r["units"], "value": round(r["value"]), "area": 0, "id": "GAT-" + r["permit"],
+                        "issued": r["issued"], "kind": "Construction", "cat": gat_category(r)})
+    log(f"gatineau: {len(out)} construction sites kept")
+    return out
+
+
+# ---------------------------------------------------------------- 8. Quebec public tenders (SEAO), Outaouais only
+OUTAOUAIS = re.compile(r"(?i)gatineau|chelsea|cantley|la p[êe]che|val-des-monts|ange-gardien|pontiac|maniwaki|shawville|papineau|thurso|buckingham|aylmer|\bhull\b|outaouais|wakefield|fort-coulonge|gracefield|bristol|montebello|avellin|ripon|plaisance|lochaber|portage-du-fort|mansfield")
+CLEANING_FR = re.compile(r"(?i)nettoyage|entretien m[ée]nager|conciergerie|janitor|cleaning|lavage de vitres|entretien sanitaire")
+
+
+def seao_tenders():
+    try:
+        r = S.get("https://www.donneesquebec.ca/recherche/api/3/action/package_show", params={"id": "systeme-electronique-dappel-doffres-seao"}, timeout=60)
+        res = sorted(r.json()["result"]["resources"], key=lambda x: x.get("created") or "")
+        weekly = [x for x in res if "hebdo" in (x.get("name") or "")][-5:]
+    except Exception as e:
+        log("seao: listing failed", e)
+        return []
+    found = {}
+    now = dt.datetime.now(dt.timezone.utc).isoformat()
+    for w in weekly:
+        try:
+            rel = S.get(w["url"], timeout=240).json().get("releases", [])
+        except Exception as e:
+            log("seao: file failed", w.get("name"), e)
+            continue
+        for x in rel:
+            t = x.get("tender") or {}
+            if not CLEANING_FR.search(t.get("title", "")) or NOT_CLEANING.search(t.get("title", "")):
+                continue
+            buyer = next((p for p in x.get("parties", []) if "buyer" in (p.get("roles") or [])), {}) or {}
+            a = buyer.get("address") or {}
+            where = f'{a.get("locality", "")} {a.get("postalCode", "")} {buyer.get("name", "")}'
+            if not (OUTAOUAIS.search(where) or re.match(r"J(8|9|0X)", (a.get("postalCode") or "").upper())):
+                continue
+            end = (t.get("tenderPeriod") or {}).get("endDate") or ""
+            if t.get("status") not in (None, "active") or (end and end < now):
+                found.pop(x.get("ocid"), None)
+                continue
+            cp = buyer.get("contactPoint") or {}
+            found[x.get("ocid")] = {
+                "title": t.get("title", ""), "ref": t.get("id", ""), "closing": end[:16], "published": (x.get("date") or "")[:10],
+                "buyer": buyer.get("name", ""), "contact": cp.get("name", ""), "email": cp.get("email", ""), "phone": cp.get("telephone", ""),
+                "where": a.get("locality", ""), "url": ((t.get("documents") or [{}])[0]).get("url") or "https://seao.gouv.qc.ca",
+                "local": True, "source": "Québec (SEAO)"}
+    log(f"seao: {len(found)} open cleaning tenders in the Outaouais")
+    return list(found.values())
+
+
+# ---------------------------------------------------------------- 9. new businesses (Ottawa Public Health inspection data)
+HEALTH = {"Restaurant / food": "https://opendata.ottawa.ca/inspections/yelp_ottawa_healthscores_FoodSafety.zip",
+          "Salon / spa / personal service": "https://opendata.ottawa.ca/inspections/yelp_ottawa_healthscores_PersonalServices.zip"}
+NEW_DAYS = int(os.environ.get("NEW_BUSINESS_DAYS", "120"))
+
+
+def new_businesses():
+    import zipfile
+    out = []
+    cutoff = (TODAY - dt.timedelta(days=NEW_DAYS)).isoformat()
+    for kind, url in HEALTH.items():
+        try:
+            z = zipfile.ZipFile(io.BytesIO(S.get(url, timeout=180).content))
+        except Exception as e:
+            log("health data failed", kind, e)
+            continue
+        tables = {}
+        for n in z.namelist():
+            if n.lower().endswith(".csv"):
+                tables[n.lower()] = list(csv.DictReader(io.StringIO(z.read(n).decode("utf-8-sig", "ignore"))))
+        biz = next((v for k, v in tables.items() if "business" in k), [])
+        insp = next((v for k, v in tables.items() if "inspection" in k), [])
+        first = {}
+        for r in insp:
+            bid, d = r.get("business_id"), to_date(r.get("date", "")) or (r.get("date") or "")[:8]
+            if re.fullmatch(r"\d{8}", d or ""):
+                d = f"{d[:4]}-{d[4:6]}-{d[6:]}"
+            if bid and d and (bid not in first or d < first[bid][0]):
+                first[bid] = (d, first.get(bid, (d, d))[1])
+            if bid and d and d > first[bid][1]:
+                first[bid] = (first[bid][0], d)
+        n_new = 0
+        for b in biz:
+            f = first.get(b.get("business_id"))
+            if not f or f[0] < cutoff:
+                continue
+            try:
+                lat, lng = float(b.get("latitude") or 0), float(b.get("longitude") or 0)
+            except ValueError:
+                lat = lng = 0
+            out.append({"id": "BIZ-" + b.get("business_id", ""), "name": (b.get("name") or "").strip().title(), "kind": kind,
+                        "addr": title_case(b.get("address") or ""), "city": (b.get("city") or "Ottawa").title(), "pc": (b.get("postal_code") or "").upper(),
+                        "phone": b.get("phone_number") or b.get("phone") or "", "first": f[0], "last": f[1],
+                        **({"lat": round(lat, 6), "lng": round(lng, 6)} if lat and lng else {})})
+            n_new += 1
+        log(f"health {kind}: {len(biz)} businesses, {n_new} first inspected in the last {NEW_DAYS} days")
+    out.sort(key=lambda b: b["first"], reverse=True)
+    return out
+
+
 # ---------------------------------------------------------------- main
 def main():
     tenders = collect_tenders()
     if tenders is not None:
+        for t in tenders:
+            t.setdefault("source", "Federal (CanadaBuys)")
+        tenders += seao_tenders()
+        tenders.sort(key=lambda t: (not t["local"], t["closing"] or "9999"))
         save("tenders.json", {"updated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ"), "tenders": tenders})
+    try:
+        biz = new_businesses()
+        if biz:
+            save("businesses.json", {"updated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ"), "days": NEW_DAYS, "businesses": biz}, compact=True)
+    except Exception as e:
+        log("new businesses failed", e)
     old = load("leads.json", {"sites": []})
     by_id = {s["id"]: s for s in old.get("sites", [])}
     sources = []
@@ -688,6 +889,15 @@ def main():
                 by_id[p["id"]] = p
         sources.append({"name": "Manually added sites", "url": ""})
 
+    try:
+        for p in gatineau_sites():
+            prev = by_id.get(p["id"])
+            if prev and "lat" in prev:
+                p["lat"], p["lng"] = prev["lat"], prev["lng"]
+            by_id[p["id"]] = p
+        sources.append({"name": "Ville de Gatineau monthly permit reports", "url": "https://www.gatineau.ca/portail/default.aspx?p=publications_cartes_statistiques_donnees_ouvertes/statistiques_permis_construction"})
+    except Exception as e:
+        log("gatineau failed", e)
     cutoff = (TODAY - dt.timedelta(days=KEEP_MONTHS * 30)).isoformat()
     sites = [s for s in by_id.values() if s["issued"] >= cutoff]
     if not sites:

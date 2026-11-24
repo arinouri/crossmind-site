@@ -104,6 +104,17 @@ textarea#body{min-height:320px;line-height:1.5;resize:vertical;font-size:15.5px}
 .tpls{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:10px;z-index:1200;font-weight:600;display:none;max-width:90vw}
 .hide{display:none!important}
+.btn.icon{width:44px;justify-content:center;padding:0;font-size:19px}
+.sumbar{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;padding:10px max(3vw,16px);border-bottom:1px solid var(--line)}
+.sumbar button{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 13px;min-height:38px;font-size:14px;color:var(--mute)}
+.sumbar button b{color:var(--ink);font-size:15px}
+.sumbar button[data-quick=now] b{background:var(--vis);color:#121212;padding:0 5px;border-radius:4px}
+.sumbar .status{border:0;padding:0 0 0 6px;flex:1 1 280px;font-size:13px;color:var(--mute)}
+.filters details.more summary{list-style:none;cursor:pointer;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 14px;min-height:42px;font-weight:600;font-size:15px}
+.filters details.more[open]{flex-basis:100%}
+.morein{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.brow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;border-bottom:1px solid var(--line);padding:12px 2px}
+.brow h3{margin:0;font-size:16px}.brow p{margin:0;font-size:13.5px;color:var(--mute)}
 .box.wide{width:min(980px,100%)}
 .step{display:flex;align-items:center;gap:10px;margin:22px 0 10px;font-size:19px}
 .step span{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:14px}
@@ -136,35 +147,37 @@ table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-bl
 <header>
   <div class="brand">
     <div class="crown" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 18 L4.5 7 L9 11.5 L12 5 L15 11.5 L19.5 7 L21 18 Z" fill="#ffe600"/><rect x="3" y="19" width="18" height="2.2" rx="1" fill="#ffe600"/></svg></div>
-    <div><b>Jani Queen</b><span>Construction site leads · Ottawa &amp; area</span></div>
+    <div><b>Jani Queen</b><span>Cleaning leads · Ottawa–Gatineau</span></div>
   </div>
   <div class="tabs" role="tablist">
-    <button role="tab" data-tab="sites" aria-selected="true">Sites</button>
+    <button role="tab" data-tab="sites" aria-selected="true">Construction</button>
     <button role="tab" data-tab="builders" aria-selected="false">Builders</button>
-    <button role="tab" data-tab="follow" aria-selected="false">Follow-ups<em id="dueN" class="hide">0</em></button>
+    <button role="tab" data-tab="biz" aria-selected="false">New businesses<em id="bizN" class="hide">0</em></button>
     <button role="tab" data-tab="tenders" aria-selected="false">Tenders<em id="tenN" class="hide">0</em></button>
+    <button role="tab" data-tab="follow" aria-selected="false">Follow-ups<em id="dueN" class="hide">0</em></button>
   </div>
-  <button class="btn" id="openAdd">+ Site</button>
-  <button class="btn" id="openSettings" aria-label="Settings">⚙</button>
-  <button class="btn" id="openScan">↻ Rescan</button>
   <button class="btn vis" id="openOutreach">✉ Outreach</button>
+  <button class="btn icon" id="openScan" aria-label="Rescan" title="Rescan">↻</button>
+  <button class="btn icon" id="openSettings" aria-label="Settings" title="Settings">⚙</button>
 </header>
-<div class="status" id="status">Loading sites…</div>
+<div class="sumbar">
+  <button data-quick="now"><b id="kNow">–</b> sites to contact now</button>
+  <button data-quick="mail"><b id="kMail">–</b> builders with email</button>
+  <button data-quick="biz"><b id="kBiz">–</b> new businesses</button>
+  <button data-quick="follow"><b id="kDue">–</b> follow-ups due</button>
+  <span class="status" id="status"></span>
+</div>
 
-<section class="figs" aria-label="Summary">
-  <button class="fig1 hot" data-quick="now"><b id="kNow">–</b><span>sites to contact now</span></button>
-  <button class="fig1" data-quick="win"><b id="kWin">–</b><span>cleaning likely underway</span></button>
-  <button class="fig1" data-quick="mail"><b id="kMail">–</b><span>builders with an email</span></button>
-  <button class="fig1" data-quick="follow"><b id="kDue">–</b><span>follow-ups due</span></button>
-</section>
-
-<section class="filters" aria-label="Filters">
+<section class="filters" id="filters" aria-label="Filters">
   <input type="search" id="q" placeholder="Search address, builder, street…" aria-label="Search">
-  <div class="chips" id="stChips"></div>
-  <select id="fType" aria-label="Project type"><option value="">All project types</option></select>
-  <select id="fSize" aria-label="Project size"><option value="0">Any size</option><option value="1" selected>Skip single small homes</option><option value="6">6+ units</option><option value="20">20+ units</option><option value="big">$5M+ value</option></select>
+  <select id="fShow" aria-label="Show"><option value="now">Contact now</option><option value="nowwin" selected>Contact now + in progress</option><option value="live">All active sites</option><option value="all">Everything</option></select>
   <select id="fArea" aria-label="Area"><option value="">All areas</option></select>
   <label class="chip"><input type="checkbox" id="fMail"> Has email</label>
+  <details class="more"><summary>More</summary><div class="morein">
+    <select id="fType" aria-label="Project type"><option value="">All project types</option></select>
+    <select id="fSize" aria-label="Project size"><option value="0">Any size</option><option value="1" selected>Skip single small homes</option><option value="6">6+ units</option><option value="20">20+ units</option><option value="big">$5M+ value</option></select>
+    <button class="btn sm" id="openAdd">+ Add a site by hand</button>
+  </div></details>
 </section>
 
 <div id="view-sites">
@@ -194,9 +207,16 @@ table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-bl
   <p class="note">Your pipeline (stages, notes, contacts you add) is saved in this browser. Download a backup now and then, or to move it to another computer.</p>
 </section>
 
+<section id="view-biz" class="page hide">
+  <h2>New businesses</h2>
+  <p class="note" style="margin:0 0 14px">Restaurants, cafés, salons and spas that Ottawa Public Health inspected for the first time recently, which usually means they just opened and are picking suppliers. Great for regular commercial cleaning. Refreshed every morning.</p>
+  <div class="acts" style="margin-bottom:12px"><input type="search" id="bq" class="sel" placeholder="Search name, street, area…" style="flex:1 1 240px"><select id="bKind" class="sel"><option value="">All types</option></select></div>
+  <div id="bizRows"></div>
+</section>
+
 <section id="view-tenders" class="page hide">
   <h2>Government cleaning tenders</h2>
-  <p class="note" style="margin:0 0 14px">Open federal contracts for cleaning, janitorial and custodial work from CanadaBuys, refreshed every day. Ottawa–Gatineau ones come first. Bidding happens on CanadaBuys; the buyer contact is listed for questions.</p>
+  <p class="note" style="margin:0 0 14px">Open public contracts for cleaning and janitorial work: federal ones from CanadaBuys and Outaouais ones (Gatineau, school boards, health) from Quebec's SEAO. Refreshed every morning. You bid on the government site; the buyer contact is listed for questions.</p>
   <div id="tRows"></div>
 </section>
 
@@ -256,43 +276,30 @@ table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-bl
     <button class="btn dark" id="scanNow">Check for new data now</button>
     <a class="btn" id="scanGh" href="https://github.com/arinouri/crossmind-site/actions/workflows/janiqueen-leads.yml" target="_blank" rel="noopener">Run a full scan (admin) ↗</a>
   </div>
-  <p class="note">A full scan runs automatically every morning around 4 a.m. It downloads the City's newest permits, matches builders, looks up up to 200 more builder emails and phones, and refreshes the government cleaning tenders. “Run a full scan” starts one right away, but only from the GitHub account that manages this site; it takes about 30–60 minutes.</p>
+  <p class="note">A full scan runs automatically every morning around 4 a.m.: newest Ottawa permits, Gatineau permit reports, builder emails and phones (up to 200 more each day), new businesses from Ottawa Public Health, and government cleaning tenders. Gatineau posts its report once a month; its link gets added to the scanner list (janiqueen/data/gatineau-reports.txt). “Run a full scan” starts one right away, but only from the GitHub account that manages this site; it takes about 30–60 minutes.</p>
 </div></div>
 
 <div class="modal" id="mOut" role="dialog" aria-modal="true" aria-labelledby="oT"><div class="box wide">
   <button class="x" data-close>×</button>
   <h2 id="oT">Outreach</h2>
-  <p class="note" style="margin-top:-6px">Pick who to contact, write the message once, then send it personalized one by one, as a BCC batch, through a mail merge, or by phone.</p>
 
-  <h3 class="step"><span>1</span> Who</h3>
-  <div class="chips" id="oSt"></div>
-  <div class="acts" style="margin:8px 0">
-    <select id="oArea" aria-label="Area" class="sel"><option value="">All areas</option></select>
-    <select id="oStage" aria-label="Pipeline stage" class="sel"><option value="new">Not contacted yet</option><option value="all">Everyone</option><option value="follow">Contacted — follow-up due</option></select>
-    <label class="chip"><input type="checkbox" id="oNeedEmail" checked> Has an email</label>
-  </div>
-  <p id="oCount" style="margin:6px 0"></p>
-  <details class="crm"><summary>See / untick builders</summary><div id="oList" class="olist"></div></details>
+  <h3 class="step"><span>1</span> Who do you want to reach?</h3>
+  <select id="oWho" class="sel" style="width:100%"></select>
 
-  <h3 class="step"><span>2</span> Message</h3>
-  <div class="grid2">
-    <label>Your name<input data-s="name"></label><label>Your phone<input data-s="phone"></label>
-    <label>Your email<input data-s="email" type="email"></label><label>Starting rate ($ / sq ft)<input data-s="rate" type="number" step="0.01" min="0"></label>
-  </div>
-  <div class="tpls" id="oTpls" style="margin-top:12px"></div>
+  <div id="oMsgWrap">
+  <h3 class="step"><span>2</span> Your message</h3>
+  <div class="tpls" id="oTpls"></div>
+  <details class="crm" id="oMe"><summary>Your name, phone &amp; price (used in the message)</summary>
+    <div class="grid2"><label>Your name<input data-s="name"></label><label>Your phone<input data-s="phone"></label>
+    <label>Your email<input data-s="email" type="email"></label><label>Starting rate ($ / sq ft)<input data-s="rate" type="number" step="0.01" min="0"></label></div></details>
   <label>Subject<input id="oSub"></label>
-  <label style="margin-top:10px">Message<textarea id="oBody" rows="14"></textarea></label>
-  <p class="note">Fill-ins: <span id="oFields"></span> — click one to add it. Each builder gets their own site, dates and name filled in.</p>
+  <label style="margin-top:10px">Message <span class="note">— words in {curly brackets} are filled in for each builder</span><textarea id="oBody" rows="12"></textarea></label>
   <div class="preview" id="oPrev"></div>
-
-  <h3 class="step"><span>3</span> Send</h3>
-  <div class="tabs" role="tablist" id="oModes" style="width:fit-content">
-    <button role="tab" data-om="queue" aria-selected="true">One by one (best)</button>
-    <button role="tab" data-om="bcc" aria-selected="false">BCC batch</button>
-    <button role="tab" data-om="merge" aria-selected="false">Mail merge file</button>
-    <button role="tab" data-om="calls" aria-selected="false">Call list</button>
   </div>
-  <div id="oOut" style="margin-top:12px"></div>
+
+  <h3 class="step"><span id="oStepN">3</span> Send</h3>
+  <div id="oOut"></div>
+  <div class="acts" id="oExtra" style="margin-top:14px;border-top:1px solid var(--line);padding-top:12px"></div>
 </div></div>
 <div class="toast" id="toast"></div>
 
@@ -315,8 +322,8 @@ let settings=Object.assign({name:'',title:'Business Development',phone:'',email:
 let crm=LS.get('jq.crm',{});          // per builder: {stage,follow,notes,contact,email,phone}
 let mine=LS.get('jq.mysites',[]);      // sites added by hand
 let siteB=LS.get('jq.sitebuilder',{}); // site id -> builder name you found
-let sites=[],builders={},meta={},tenders={tenders:[]},selId=null,selB=null;
-const F={q:'',st:new Set(['now','win','early']),type:'',size:'1',area:'',mail:false,sort:'soon'};
+let sites=[],builders={},meta={},tenders={tenders:[]},bizData={businesses:[]},selId=null,selB=null;
+const F={q:'',st:new Set(['now','win']),type:'',size:'1',area:'',mail:false,sort:'soon'};
 const STL={now:'Contact now',win:'In window',early:'Early',done:'Likely done'},STO={now:0,win:1,early:2,done:3};
 
 /* ---------- timing model ---------- */
@@ -357,8 +364,10 @@ async function boot(){
   sites=[...data.sites,...mine].map(p=>enrich({...p}));
   for(const p of sites){if(p.bkey&&!builders[p.bkey])builders[p.bkey]={name:p.builder,emails:[]}}
   const withMail=Object.values(builders).filter(b=>b.emails&&b.emails.length).length;
-  $('#status').innerHTML=data.updated?`Updated ${new Date(data.updated).toLocaleDateString('en-CA',{month:'long',day:'numeric'})} · ${data.sites.length.toLocaleString()} construction sites from City of Ottawa permits · ${withMail} builder emails found automatically · refreshes every morning`
-    :'<b>First collection is running.</b> The City of Ottawa permits and builder emails will appear here within about an hour. Sites you add by hand show now.';
+  const nG=data.sites.filter(p=>p.city==='Gatineau').length;
+  $('#status').textContent=data.updated?`Updated ${ago(data.updated)} · ${(data.sites.length-nG).toLocaleString()} Ottawa + ${nG.toLocaleString()} Gatineau sites`:'First scan is running — data appears within about an hour.';
+  try{const r=await fetch('data/businesses.json',{cache:'no-cache'});if(r.ok)bizData=await r.json()}catch(e){}
+  $('#kBiz').textContent=(bizData.businesses||[]).length;$('#bizN').textContent=(bizData.businesses||[]).length;$('#bizN').classList.toggle('hide',!(bizData.businesses||[]).length);
   const types=[...new Set(sites.map(p=>p.cat))].sort();$('#fType').innerHTML='<option value="">All project types</option>'+types.map(t=>`<option>${esc(t)}</option>`).join('');
   const areas=[...new Set(sites.map(p=>p.area_).filter(Boolean))].sort();$('#fArea').innerHTML='<option value="">All areas</option>'+areas.map(t=>`<option>${esc(t)}</option>`).join('');
   render();
@@ -372,7 +381,7 @@ function filtered(){
   else if(F.size==='big')r=r.filter(p=>p.value>=5e6);else if(+F.size>1)r=r.filter(p=>p.units>=+F.size);
   if(F.mail)r=r.filter(p=>contactOf(p.bkey).emails.length);
   if(q)r=r.filter(p=>(p.addr+' '+p.builder+' '+p.desc+' '+p.pc+' '+p.area_).toLowerCase().includes(q));
-  return r.sort({soon:(a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa,value:(a,b)=>b.est-a.est,new:(a,b)=>b.issued.localeCompare(a.issued)}[F.sort]);
+  return r.sort({soon:(a,b)=>STO[a.st]-STO[b.st]||(!a.bkey)-(!b.bkey)||(!contactOf(a.bkey).emails.length)-(!contactOf(b.bkey).emails.length)||a.qa-b.qa,value:(a,b)=>b.est-a.est,new:(a,b)=>b.issued.localeCompare(a.issued)}[F.sort]);
 }
 const due=()=>Object.entries(crm).filter(([k,c])=>c.follow&&c.follow<=ISO(TODAY)&&!['Won','Not now'].includes(c.stage));
 
@@ -381,9 +390,8 @@ function render(){
   const r=filtered();
   $('#count').textContent=r.length.toLocaleString()+(r.length===1?' site':' sites');
   $('#kNow').textContent=sites.filter(p=>p.st==='now'&&!p.owner).length;
-  $('#kWin').textContent=sites.filter(p=>p.st==='win'&&!p.owner).length;
   const live=new Set(sites.filter(p=>p.bkey&&p.st!=='done').map(p=>p.bkey));
-  $('#kMail').textContent=[...live].filter(k=>contactOf(k).emails.length).length+' / '+live.size;
+  $('#kMail').textContent=[...live].filter(k=>contactOf(k).emails.length).length;
   const d=due().length;$('#kDue').textContent=d;$('#dueN').textContent=d;$('#dueN').classList.toggle('hide',!d);
   $('#rows').innerHTML=r.length?r.slice(0,300).map(p=>{const ct=contactOf(p.bkey);return `<button class="row${p.id===selId?' sel':''}" data-id="${esc(p.id)}">
     <i class="dot d-${p.st}"></i>
@@ -394,7 +402,9 @@ function render(){
   if(!$('#view-builders').classList.contains('hide'))renderBuilders();
   if(!$('#view-follow').classList.contains('hide'))renderFollow();
 }
-function chips(){$('#stChips').innerHTML=Object.keys(STL).map(k=>`<button class="chip" data-st="${k}" aria-pressed="${F.st.has(k)}"><i class="dot d-${k}"></i>${STL[k]}</button>`).join('')}
+const SHOW={now:['now'],nowwin:['now','win'],live:['now','win','early'],all:['now','win','early','done']};
+function chips(){const k=Object.keys(SHOW).find(k=>SHOW[k].length===F.st.size&&SHOW[k].every(x=>F.st.has(x)));if(k)$('#fShow').value=k}
+$('#fShow').onchange=e=>{F.st=new Set(SHOW[e.target.value]);render()};
 
 /* ---------- map (MapLibre + OpenFreeMap, no key needed) ---------- */
 let map=null,mapReady=false,pending=null;
@@ -500,7 +510,7 @@ function renderBuilders(){
 }
 function renderFollow(){
   const list=Object.entries(crm).filter(([k,c])=>c.stage&&c.stage!=='New').sort((a,b)=>(a[1].follow||'9').localeCompare(b[1].follow||'9'));
-  $('#fRows').innerHTML=list.length?list.map(([k,c])=>{const ct=contactOf(k),late=c.follow&&c.follow<=ISO(TODAY)&&!['Won','Not now'].includes(c.stage);return `<tr class="click" data-builder="${esc(k)}"><td><b>${esc(ct.name||k)}</b></td><td>${c.follow?`<span class="tag ${late?'now':''}">${fmtD(c.follow)}</span>`:'—'}</td><td><span class="stage st-${c.stage.replace(' ','-')}">${esc(c.stage)}</span></td><td>${esc(c.contact||ct.emails[0]||ct.phones[0]||'')}</td><td>${esc((c.notes||'').slice(0,90))}</td></tr>`}).join(''):'<tr><td colspan="5" class="empty">Nothing yet. When you email a builder, press “I sent it ✓” and it lands here with a follow-up date.</td></tr>';
+  $('#fRows').innerHTML=list.length?list.map(([k,c])=>{const bz=k.startsWith('biz:')?(bizData.businesses||[]).find(b=>'biz:'+b.id===k):null;const ct=bz?{name:bz.name,emails:[],phones:[bz.phone]}:contactOf(k),late=c.follow&&c.follow<=ISO(TODAY)&&!['Won','Not now'].includes(c.stage);return `<tr class="click" data-builder="${esc(k)}"><td><b>${esc(ct.name||k)}</b></td><td>${c.follow?`<span class="tag ${late?'now':''}">${fmtD(c.follow)}</span>`:'—'}</td><td><span class="stage st-${c.stage.replace(' ','-')}">${esc(c.stage)}</span></td><td>${esc(c.contact||ct.emails[0]||ct.phones[0]||'')}</td><td>${esc((c.notes||'').slice(0,90))}</td></tr>`}).join(''):'<tr><td colspan="5" class="empty">Nothing yet. When you email a builder, press “I sent it ✓” and it lands here with a follow-up date.</td></tr>';
 }
 function setCrm(k,field,val){crm[k]={...(crm[k]||{}),[field]:val,updated:Date.now()};LS.set('jq.crm',crm)}
 
@@ -622,131 +632,111 @@ function scanInfo(){const nb=Object.values(builders),em=nb.filter(b=>b.emails&&b
 $('#openScan').onclick=()=>{scanInfo();$('#mScan').classList.add('open')};
 $('#scanNow').onclick=async()=>{const before=meta.updated;await boot();scanInfo();toast(meta.updated!==before?'New data loaded':'You already have the latest scan')};
 
-/* ---------- outreach ---------- */
-const O={st:new Set(['now','win']),area:'',stage:'new',needEmail:true,skip:new Set(LS.get('jq.oskip',[])),mode:'queue',t:'site',sent:new Set()};
+/* ---------- new businesses ---------- */
+function bizList(){const q=($('#bq').value||'').toLowerCase(),k=$('#bKind').value;return (bizData.businesses||[]).filter(b=>(!k||b.kind===k)&&(!q||(b.name+' '+b.addr+' '+b.city).toLowerCase().includes(q)))}
+function renderBiz(){
+  const kinds=[...new Set((bizData.businesses||[]).map(b=>b.kind))];if($('#bKind').options.length<=1)$('#bKind').innerHTML='<option value="">All types</option>'+kinds.map(k=>`<option>${esc(k)}</option>`).join('');
+  const L=bizList();
+  $('#bizRows').innerHTML=L.length?L.slice(0,400).map(b=>{const c=crm['biz:'+b.id]||{};return `<div class="brow"><div><h3>${esc(b.name)}</h3><p>${esc(b.kind)} · ${esc(b.addr)}, ${esc(b.city)} · first inspected ${fmtD(b.first)}${c.stage?' · <b>'+esc(c.stage)+'</b>':''}</p></div>
+    <div class="acts">${b.phone?`<a class="btn sm" href="tel:${esc(b.phone.replace(/\D/g,''))}">☎ ${esc(b.phone)}</a>`:''}<a class="btn sm" target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(b.name+' '+b.addr+' '+b.city)}">Look up ↗</a><button class="btn sm ${c.stage?'':'vis'}" data-bizdone="${esc(b.id)}">${c.stage?'Contacted ✓':'Mark contacted'}</button></div></div>`}).join('')
+    :'<p class="empty">No new businesses yet — this list fills in after the next morning scan.</p>';
+}
+$('#bq').addEventListener('input',renderBiz);$('#bKind').addEventListener('change',renderBiz);
+document.addEventListener('click',e=>{const b=e.target.closest('[data-bizdone]');if(!b)return;const k='biz:'+b.dataset.bizdone,d=new Date();d.setDate(d.getDate()+7);crm[k]={...(crm[k]||{}),stage:'Contacted',follow:ISO(d),updated:Date.now()};LS.set('jq.crm',crm);renderBiz();if(!$('#mOut').classList.contains('open'))return;renderOut()});
+
+/* ---------- outreach (simple) ---------- */
+const O={who:'soon',t:'site',sent:new Set()};
 const OTPL={
  site:{label:'About their site',sub:'Post-construction cleaning for {site}',body:`Hi {first_name},
 
-I'm {my_name} with Jani Queen, a post-construction cleaning company here in Ottawa. I noticed {company}'s project at {site} and wanted to reach out before turnover — by our estimate you'll be into QA and PDI cleans around {window}.
+I'm {my_name} with Jani Queen, a post-construction cleaning company in Ottawa. I noticed {company}'s project at {site} and wanted to reach out before turnover — by our estimate you'll be into QA and PDI cleans around {window}.
 
-We take care of all three end-of-project cleans:
-• QA clean – detailed clean before your quality walkthrough
-• PDI clean – units ready for the pre-delivery inspection
-• Final clean – spotless and move-in ready for closing
+We handle all three end-of-project cleans (QA, PDI and final), and our crew is big enough to work around your trades and tight handovers. Pricing typically starts at {rate} per sq ft.
 
-Our crew is large enough to work around your trades and tight handovers, and pricing typically starts at {rate} per sq ft (exterior windows quoted separately).
-
-Could I send a quick quote for {site}? If someone on your site team books cleaning, I'm happy to reach out to them directly.
+Could I send you a quick quote for {site}?
 
 Thanks,
 {my_name}
-Jani Queen · {my_phone} · {my_email}
+Jani Queen · {my_phone}
 
-If you'd rather not hear from us, just reply "no thanks" and we won't email again.`},
- short:{label:'Short & direct',sub:'Cleaning crew for {site}?',body:`Hi {first_name},
+Reply "no thanks" and we won't email again.`},
+ short:{label:'Short',sub:'Cleaning crew for {site}?',body:`Hi {first_name},
 
-Quick one — do you have a cleaning company lined up for {site}? We're Jani Queen, an Ottawa post-construction cleaning crew (QA, PDI and final cleans, from {rate}/sq ft).
+Do you have a cleaning company lined up for {site}? We're Jani Queen, an Ottawa post-construction cleaning crew (QA, PDI and final cleans, from {rate}/sq ft).
 
-Happy to send a quote this week. {my_phone}
+Happy to send a quote this week — {my_phone}.
 
 {my_name}, Jani Queen
 
 Reply "no thanks" and we won't follow up.`},
- multi:{label:'All their projects',sub:'Post-construction cleaning for your Ottawa projects',body:`Hi {first_name},
-
-I'm {my_name} with Jani Queen. We specialize in post-construction cleaning across Ottawa, and I see {company} has {site_count} projects on the go, including:
-{sites}
-
-We handle QA, PDI and final cleans, and we're big enough to cover several sites at once without slowing your turnovers. Pricing generally starts at {rate} per sq ft.
-
-Would it help if I sent pricing for your next handover?
-
-Thanks,
-{my_name}
-Jani Queen · {my_phone} · {my_email}
-
-Reply "no thanks" and we won't email again.`},
  follow:{label:'Follow-up',sub:'Re: cleaning for {site}',body:`Hi {first_name},
 
-Following up on my note about {site}. With QA/PDI coming up around {window}, now's a good time to lock in a cleaning crew — I can walk the site and have a firm quote to you within 48 hours.
+Just following up on my note about {site}. With QA and PDI coming up around {window}, now's a good time to lock in a cleaning crew — I can walk the site and have a firm quote to you within 48 hours.
 
 Is there a good time this week?
 
 {my_name} · Jani Queen · {my_phone}`}
 };
 let oTpl={sub:LS.get('jq.osub',null),body:LS.get('jq.obody',null)};
-function audience(){
-  const g={};
-  sites.filter(p=>p.bkey&&O.st.has(p.st)&&(!O.area||p.area_===O.area)).forEach(p=>(g[p.bkey]??=[]).push(p));
+function builderGroup(filter){
+  const g={};sites.filter(p=>p.bkey&&p.st!=='done').forEach(p=>(g[p.bkey]??=[]).push(p));
   const out=[];
-  for(const [k,ps] of Object.entries(g)){
-    const ct=contactOf(k),c=ct.c,stg=c.stage||'New';
-    if(O.stage==='new'&&stg!=='New')continue;
-    if(O.stage==='follow'&&!(c.follow&&c.follow<=ISO(TODAY)&&['Contacted','Replied','Quote sent'].includes(stg)))continue;
-    if(O.needEmail&&!ct.emails.length)continue;
-    ps.sort((a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa);
-    out.push({k,ps,ct,name:ct.name||ps[0].builder,val:ps.reduce((s,p)=>s+p.est,0)});
-  }
+  for(const [k,ps] of Object.entries(g)){const ct=contactOf(k);ps.sort((a,b)=>STO[a.st]-STO[b.st]||a.qa-b.qa);const b={k,ps,ct,name:ct.name||ps[0].builder,val:ps.reduce((s,p)=>s+p.est,0)};if(filter(b))out.push(b)}
   return out.sort((a,b)=>b.val-a.val);
 }
-function fill1(str,b){const p=b?b.ps[0]:{addr:'your current projects',qa:addM(TODAY,3)};const f=first(b?.ct.c.contact)||'there';
-  const v={first_name:f,company:b?b.name:'your team',site:p.addr,site_count:b?b.ps.length:'several',window:fmtM(p.qa),
-    sites:b?b.ps.slice(0,4).map(x=>`• ${x.addr} (${x.cat.toLowerCase()}${x.units>1?', '+x.units+' units':''})`).join('\n'):'',
-    my_name:settings.name||'[your name]',my_phone:settings.phone||'[your phone]',my_email:settings.email||'[your email]',rate:'$'+(+settings.rate).toFixed(2)};
-  return str.replace(/\{(\w+)\}/g,(m,k)=>k in v?v[k]:m).replace(/ · \[your email\]/,'')}
-function curSub(){return $('#oSub').value}function curBody(){return $('#oBody').value}
+const WHO={
+ soon:{label:n=>`Builders with sites to clean soon, not contacted yet (${n})`,list:()=>builderGroup(b=>b.ct.emails.length&&!(b.ct.c.stage&&b.ct.c.stage!=='New')&&b.ps.some(p=>p.st==='now'||p.st==='win')),tpl:'site'},
+ follow:{label:n=>`Builders to follow up with today (${n})`,list:()=>builderGroup(b=>b.ct.emails.length&&b.ct.c.follow&&b.ct.c.follow<=ISO(TODAY)&&['Contacted','Replied','Quote sent'].includes(b.ct.c.stage)),tpl:'follow'},
+ all:{label:n=>`Every builder with an email (${n})`,list:()=>builderGroup(b=>b.ct.emails.length),tpl:'site'},
+ phone:{label:n=>`Builders to call — phone but no email (${n})`,list:()=>builderGroup(b=>!b.ct.emails.length&&b.ct.phones.length),calls:true},
+ biz:{label:n=>`New businesses to call (${n})`,list:()=>(bizData.businesses||[]).filter(b=>b.phone&&!(crm['biz:'+b.id]||{}).stage),calls:true,biz:true}
+};
+function fill1(str,b){const p=b?b.ps[0]:{addr:'your current projects',qa:addM(TODAY,3)};
+  const v={first_name:first(b?.ct.c.contact)||'there',company:b?b.name:'your team',site:p.addr,window:fmtM(p.qa),
+    my_name:settings.name||'[your name]',my_phone:settings.phone||'[your phone]',my_email:settings.email||'',rate:'$'+(+settings.rate).toFixed(2)};
+  return str.replace(/\{(\w+)\}/g,(m,k)=>k in v?v[k]:m)}
 function renderOut(){
-  const A=audience(),list=A.filter(b=>!O.skip.has(b.k)),ems=[...new Set(list.flatMap(b=>b.ct.emails.slice(0,1)))],ph=list.filter(b=>b.ct.phones.length).length;
-  $('#oCount').innerHTML=`<b>${list.length} builders</b> · ${ems.length} emails · ${ph} with a phone · ${list.reduce((s,b)=>s+b.ps.length,0)} sites · est. ${money(list.reduce((s,b)=>s+b.val,0))} of cleaning`;
-  $('#oList').innerHTML=A.map(b=>`<label><input type="checkbox" data-ok="${esc(b.k)}"${O.skip.has(b.k)?'':' checked'}><span><b>${esc(b.name)}</b> · ${b.ps.length} site${b.ps.length>1?'s':''} · ${esc(b.ct.emails[0]||b.ct.phones[0]||'no contact')}</span></label>`).join('')||'<p class="note">Nobody matches — try more statuses or untick “Has an email”.</p>';
-  const ex=list[0];$('#oPrev').innerHTML=`<b>Preview${ex?' — '+esc(ex.name):''}</b>${esc('Subject: '+fill1(curSub(),ex)+'\n\n'+fill1(curBody(),ex))}`;
-  const out=$('#oOut');
-  if(O.mode==='queue'){
-    out.innerHTML=`<p class="note">Opens each email ready to send from your own Gmail or Outlook. Personal emails get far more replies than a blast and won't land in spam. Press “Sent ✓” after each — it moves the builder to Contacted with a follow-up in 7 days.</p>`+
-    list.filter(b=>b.ct.emails.length).map(b=>{const su=fill1(curSub(),b),bo=fill1(curBody(),b),to=b.ct.emails[0],e=encodeURIComponent,done=O.sent.has(b.k);
-      return `<div class="qrow${done?' done':''}"><div><b>${esc(b.name)}</b> — ${esc(to)}<p>${esc(b.ps[0].addr)} · ${STL[b.ps[0].st]} · clean ~${fmtM(b.ps[0].qa)}</p></div>
-      <div class="acts"><a class="btn sm dark" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=${e(to)}&su=${e(su)}&body=${e(bo)}">Gmail</a><a class="btn sm" target="_blank" rel="noopener" href="https://outlook.office.com/mail/deeplink/compose?to=${e(to)}&subject=${e(su)}&body=${e(bo)}">Outlook</a><button class="btn sm vis" data-sent="${esc(b.k)}">${done?'Sent ✓':'Sent?'}</button></div></div>`}).join('')||'<p class="empty">No one with an email in this group.</p>';
-  }else if(O.mode==='bcc'){
-    const batches=[];for(let i=0;i<ems.length;i+=40)batches.push(ems.slice(i,i+40));
-    const su=fill1(curSub(),null),bo=fill1(curBody(),null),e=encodeURIComponent;
-    out.innerHTML=`<p class="note">One generic email to many builders, each hidden in BCC. Fast, but less personal and more likely to hit spam, so it goes out in batches of 40. Site-specific fill-ins become generic (“your current projects”).</p>`+
-    batches.map((bt,i)=>`<div class="qrow"><div><b>Batch ${i+1}</b> — ${bt.length} emails<p>${esc(bt.slice(0,3).join(', '))}${bt.length>3?'…':''}</p></div><div class="acts"><button class="btn sm" data-copy="${esc(bt.join(', '))}">Copy BCC list</button><a class="btn sm dark" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=${e(settings.email||'')}&bcc=${e(bt.join(','))}&su=${e(su)}&body=${e(bo)}">Open in Gmail</a></div></div>`).join('')+
-    `<button class="btn sm" data-copy="${esc(bo)}" style="margin-top:10px">Copy message</button>`;
-  }else if(O.mode==='merge'){
-    out.innerHTML=`<p class="note">A spreadsheet with one row per builder and their personalized subject and message. Use it with a mail-merge add-on (e.g. “Mail Merge for Gmail” / YAMM in Google Sheets, or Mail Merge in Outlook/Word) to send all of them from your own account.</p>
-    <div class="acts"><button class="btn dark" id="dlMerge">Download mail-merge CSV (${list.filter(b=>b.ct.emails.length).length} rows)</button></div>`;
-  }else{
-    const cl=list.filter(b=>b.ct.phones.length);
-    out.innerHTML=`<p class="note">Builders with a phone number, biggest job first. Call script:</p><div class="preview">“Hi, this is ${esc(settings.name||'[your name]')} from Jani Queen — we do post-construction cleaning in Ottawa. I'm calling about your project at <i>[site]</i>. Who looks after your QA, PDI and final cleans? … Could I send you a quick quote? What's the best email?”</div>
-    <div class="acts" style="margin-bottom:8px"><button class="btn dark" id="dlCalls">Download call list CSV (${cl.length})</button></div>`+
-    cl.map(b=>`<div class="qrow"><div><b>${esc(b.name)}</b><p>${esc(b.ps[0].addr)} · clean ~${fmtM(b.ps[0].qa)} · ${b.ps.length} site${b.ps.length>1?'s':''}</p></div><div class="acts">${b.ct.phones.slice(0,2).map(t=>`<a class="btn sm" href="tel:${esc(t.replace(/\D/g,''))}">☎ ${esc(t)}</a>`).join('')}<button class="btn sm" data-builder="${esc(b.k)}">Notes</button></div></div>`).join('');
+  const W=WHO[O.who],L=W.list();
+  $('#oWho').innerHTML=Object.entries(WHO).map(([k,w])=>`<option value="${k}"${k===O.who?' selected':''}>${w.label(w.list().length)}</option>`).join('');
+  $('#oMsgWrap').classList.toggle('hide',!!W.calls);$('#oStepN').textContent=W.calls?'2':'3';
+  const ex=L[0];if(!W.calls)$('#oPrev').innerHTML=`<b>How it reads for ${ex?esc(ex.name):'a builder'}</b>${esc('Subject: '+fill1($('#oSub').value,ex)+'\n\n'+fill1($('#oBody').value,ex))}`;
+  const out=$('#oOut'),e=encodeURIComponent;
+  if(W.calls){
+    out.innerHTML=`<div class="preview"><b>Call script</b>“Hi, this is ${esc(settings.name||'[your name]')} from Jani Queen — we're a cleaning company here in Ottawa. ${W.biz?"Congrats on the new location! Who looks after your cleaning? We do regular commercial cleaning and could do a free walkthrough and quote this week.":"I'm calling about your project at [site]. Who looks after your QA, PDI and final cleans? Could I send you a quick quote?"} What's the best email for that?”</div>`+
+      (L.length?L.slice(0,150).map(b=>W.biz?`<div class="qrow"><div><b>${esc(b.name)}</b><p>${esc(b.kind)} · ${esc(b.addr)} · opened ~${fmtD(b.first)}</p></div><div class="acts"><a class="btn sm dark" href="tel:${esc(b.phone.replace(/\D/g,''))}">☎ ${esc(b.phone)}</a><button class="btn sm" data-bizdone="${esc(b.id)}">Called ✓</button></div></div>`
+        :`<div class="qrow"><div><b>${esc(b.name)}</b><p>${esc(b.ps[0].addr)} · clean ~${fmtM(b.ps[0].qa)} · ${b.ps.length} site${b.ps.length>1?'s':''}</p></div><div class="acts">${b.ct.phones.slice(0,2).map(t=>`<a class="btn sm dark" href="tel:${esc(t.replace(/\D/g,''))}">☎ ${esc(t)}</a>`).join('')}<button class="btn sm" data-builder="${esc(b.k)}">Notes</button></div></div>`).join(''):'<p class="empty">Nobody to call in this list right now.</p>');
+    $('#oExtra').innerHTML=L.length?`<button class="btn sm" id="dlCalls">Download this call list</button>`:'';
+    return;
   }
+  const done=L.filter(b=>O.sent.has(b.k)).length;
+  out.innerHTML=(L.length?`<p class="note">Click <b>Gmail</b> or <b>Outlook</b> — the email opens filled in and ready. Hit send there, then press <b>Sent</b> here so the follow-up is tracked. <b>${done} of ${L.length} sent.</b></p>`:'<p class="empty">Nobody in this list right now.</p>')+
+    L.map(b=>{const su=fill1($('#oSub').value,b),bo=fill1($('#oBody').value,b),to=b.ct.emails[0],sent=O.sent.has(b.k);
+      return `<div class="qrow${sent?' done':''}"><div><b>${esc(b.name)}</b> — ${esc(to)}<p>${esc(b.ps[0].addr)} · clean ~${fmtM(b.ps[0].qa)}</p></div>
+      <div class="acts"><a class="btn sm dark" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=${e(to)}&su=${e(su)}&body=${e(bo)}">Gmail</a><a class="btn sm" target="_blank" rel="noopener" href="https://outlook.office.com/mail/deeplink/compose?to=${e(to)}&subject=${e(su)}&body=${e(bo)}">Outlook</a><button class="btn sm ${sent?'':'vis'}" data-sent="${esc(b.k)}">${sent?'Sent ✓':'Sent'}</button></div></div>`}).join('');
+  const ems=[...new Set(L.map(b=>b.ct.emails[0]))];
+  $('#oExtra').innerHTML=L.length?`<span class="note" style="flex-basis:100%">Other ways:</span><button class="btn sm" data-copy="${esc(ems.join(', '))}">Copy all ${ems.length} emails (for BCC)</button><button class="btn sm" id="dlMerge">Download for mail merge</button>`:'';
 }
 function csvDl(name,rows){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const blob=new Blob(['﻿'+rows.map(r=>r.map(q).join(',')).join('\r\n')],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)}
-function openOutreach(){
-  $('#oSt').innerHTML=Object.keys(STL).map(k=>`<button class="chip" data-ost="${k}" aria-pressed="${O.st.has(k)}"><i class="dot d-${k}"></i>${STL[k]}</button>`).join('');
-  const areas=[...new Set(sites.filter(p=>p.bkey).map(p=>p.area_))].sort();$('#oArea').innerHTML='<option value="">All areas</option>'+areas.map(a=>`<option${a===O.area?' selected':''}>${esc(a)}</option>`).join('');
+function setTpl(k){O.t=k;$$('#oTpls .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.otpl===k));$('#oSub').value=OTPL[k].sub;$('#oBody').value=OTPL[k].body}
+function openOutreach(who){
+  if(who)O.who=who;
   $$('#mOut [data-s]').forEach(i=>i.value=settings[i.dataset.s]??'');
+  $('#oMe').open=!settings.name||!settings.phone;
   $('#oTpls').innerHTML=Object.entries(OTPL).map(([k,v])=>`<button class="chip" data-otpl="${k}" aria-pressed="${k===O.t}">${v.label}</button>`).join('');
-  $('#oFields').innerHTML=['first_name','company','site','window','site_count','sites','rate','my_name','my_phone','my_email'].map(f=>`<button class="fldbtn" data-fld="${f}">{${f}}</button>`).join('');
-  $('#oSub').value=oTpl.sub??OTPL[O.t].sub;$('#oBody').value=oTpl.body??OTPL[O.t].body;
+  if(oTpl.sub!=null){$('#oSub').value=oTpl.sub;$('#oBody').value=oTpl.body}else setTpl(WHO[O.who].tpl||'site');
   renderOut();$('#mOut').classList.add('open');
 }
-$('#openOutreach').onclick=openOutreach;
+$('#openOutreach').onclick=()=>openOutreach();
 $('#mOut').addEventListener('click',e=>{const t=e.target;
-  const st=t.closest('[data-ost]');if(st){const k=st.dataset.ost;O.st.has(k)?O.st.delete(k):O.st.add(k);st.setAttribute('aria-pressed',O.st.has(k));renderOut();return}
-  const tp=t.closest('[data-otpl]');if(tp){O.t=tp.dataset.otpl;$$('#oTpls .chip').forEach(c=>c.setAttribute('aria-pressed',c===tp));$('#oSub').value=OTPL[O.t].sub;$('#oBody').value=OTPL[O.t].body;oTpl={sub:null,body:null};LS.set('jq.osub',null);LS.set('jq.obody',null);renderOut();return}
-  const fl=t.closest('[data-fld]');if(fl){const ta=$('#oBody'),i=ta.selectionStart??ta.value.length,ins='{'+fl.dataset.fld+'}';ta.value=ta.value.slice(0,i)+ins+ta.value.slice(i);ta.focus();oTpl.body=ta.value;LS.set('jq.obody',ta.value);renderOut();return}
-  const md=t.closest('[data-om]');if(md){O.mode=md.dataset.om;$$('#oModes [data-om]').forEach(b=>b.setAttribute('aria-selected',b===md));renderOut();return}
+  const tp=t.closest('[data-otpl]');if(tp){setTpl(tp.dataset.otpl);oTpl={sub:null,body:null};LS.set('jq.osub',null);LS.set('jq.obody',null);renderOut();return}
   const sn=t.closest('[data-sent]');if(sn){const k=sn.dataset.sent,d=new Date();d.setDate(d.getDate()+7);const c=crm[k]||{};
     crm[k]={...c,stage:['Replied','Quote sent','Won'].includes(c.stage)?c.stage:'Contacted',follow:ISO(d),updated:Date.now(),notes:((c.notes||'')+`\n${ISO(TODAY)}: outreach email (${OTPL[O.t].label})`).trim()};LS.set('jq.crm',crm);O.sent.add(k);renderOut();render();return}
-  const cp=t.closest('[data-copy]');if(cp){navigator.clipboard.writeText(cp.dataset.copy).then(()=>toast('Copied'),()=>toast('Could not copy — select and copy by hand'));return}
-  if(t.id==='dlMerge'){const L=audience().filter(b=>!O.skip.has(b.k)&&b.ct.emails.length);csvDl(`jani-queen-mail-merge-${ISO(TODAY)}.csv`,[['email','first_name','company','site','cleaning_window','sites','phone','subject','body'],...L.map(b=>[b.ct.emails[0],first(b.ct.c.contact),b.name,b.ps[0].addr,fmtM(b.ps[0].qa),b.ps.map(p=>p.addr).join('; '),b.ct.phones[0]||'',fill1(curSub(),b),fill1(curBody(),b)])]);return}
-  if(t.id==='dlCalls'){const L=audience().filter(b=>!O.skip.has(b.k)&&b.ct.phones.length);csvDl(`jani-queen-call-list-${ISO(TODAY)}.csv`,[['company','phone','other_phone','email','contact','main_site','status','cleaning_window','all_sites','est_value'],...L.map(b=>[b.name,b.ct.phones[0],b.ct.phones[1]||'',b.ct.emails[0]||'',b.ct.c.contact||'',b.ps[0].addr,STL[b.ps[0].st],fmtM(b.ps[0].qa),b.ps.map(p=>p.addr).join('; '),Math.round(b.val)])]);return}
+  const cp=t.closest('[data-copy]');if(cp){navigator.clipboard.writeText(cp.dataset.copy).then(()=>toast('Copied — paste into BCC'),()=>toast('Could not copy'));return}
+  if(t.id==='dlMerge'){const L=WHO[O.who].list();csvDl(`jani-queen-mail-merge-${ISO(TODAY)}.csv`,[['email','first_name','company','site','cleaning_window','phone','subject','body'],...L.map(b=>[b.ct.emails[0],first(b.ct.c.contact),b.name,b.ps[0].addr,fmtM(b.ps[0].qa),b.ct.phones[0]||'',fill1($('#oSub').value,b),fill1($('#oBody').value,b)])]);return}
+  if(t.id==='dlCalls'){const W=WHO[O.who],L=W.list();csvDl(`jani-queen-call-list-${ISO(TODAY)}.csv`,W.biz?[['business','type','phone','address','city','first_inspected'],...L.map(b=>[b.name,b.kind,b.phone,b.addr,b.city,b.first])]:[['company','phone','other_phone','main_site','cleaning_window','sites'],...L.map(b=>[b.name,b.ct.phones[0],b.ct.phones[1]||'',b.ps[0].addr,fmtM(b.ps[0].qa),b.ps.map(p=>p.addr).join('; ')])]);return}
 });
 $('#mOut').addEventListener('change',e=>{const t=e.target;
-  if(t.dataset.ok){t.checked?O.skip.delete(t.dataset.ok):O.skip.add(t.dataset.ok);LS.set('jq.oskip',[...O.skip]);renderOut()}
-  if(t.id==='oArea'){O.area=t.value;renderOut()}if(t.id==='oStage'){O.stage=t.value;renderOut()}if(t.id==='oNeedEmail'){O.needEmail=t.checked;renderOut()}
+  if(t.id==='oWho'){O.who=t.value;if(oTpl.sub==null&&WHO[O.who].tpl)setTpl(WHO[O.who].tpl);renderOut()}
   if(t.dataset.s){settings[t.dataset.s]=t.dataset.s==='rate'?Math.max(0,parseFloat(t.value)||0.45):t.value.trim();LS.set('jq.settings',settings);if(t.dataset.s==='rate'){sites.forEach(p=>p.est=p.sqft*settings.rate);render()}renderOut()}
 });
 let oT;$('#mOut').addEventListener('input',e=>{if(e.target.id==='oSub'||e.target.id==='oBody'){oTpl={sub:$('#oSub').value,body:$('#oBody').value};LS.set('jq.osub',oTpl.sub);LS.set('jq.obody',oTpl.body);clearTimeout(oT);oT=setTimeout(renderOut,250)}});
@@ -763,7 +753,7 @@ document.addEventListener('click',e=>{
   const sb=t.closest('[data-setb]');if(sb){const n=$('#setB').value.trim();if(!n)return;siteB[sb.dataset.setb]=n;LS.set('jq.sitebuilder',siteB);boot().then(()=>openLead(sb.dataset.setb));return}
   const s=t.closest('[data-st]');if(s){const k=s.dataset.st;F.st.has(k)?F.st.delete(k):F.st.add(k);chips();render();return}
   const tb=t.closest('[data-tab]');if(tb)return tab(tb.dataset.tab);
-  const qk=t.closest('[data-quick]');if(qk){const k=qk.dataset.quick;if(k==='follow')return tab('follow');if(k==='mail'){F.mail=true;$('#fMail').checked=true;tab('builders');return}F.st=new Set([k]);chips();tab('sites');}
+  const qk=t.closest('[data-quick]');if(qk){const k=qk.dataset.quick;if(k==='follow')return tab('follow');if(k==='biz')return tab('biz');if(k==='mail'){F.mail=true;$('#fMail').checked=true;tab('builders');return}F.st=new Set([k]);chips();tab('sites');}
 });
 $('#scrim').onclick=closeSheet;
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=document.querySelector('.modal.open');m?m.classList.remove('open'):$('#sheet').classList.contains('open')&&closeSheet()}});
@@ -772,13 +762,13 @@ $('#sheet').addEventListener('input',e=>{const f=e.target.dataset.c;if(f==='note
 $('#q').addEventListener('input',e=>{F.q=e.target.value;render()});
 $('#fType').onchange=e=>{F.type=e.target.value;render()};$('#fSize').onchange=e=>{F.size=e.target.value;render()};
 $('#fArea').onchange=e=>{F.area=e.target.value;render()};$('#fMail').onchange=e=>{F.mail=e.target.checked;render()};$('#sort').onchange=e=>{F.sort=e.target.value;render()};
-function tab(n){$$('[data-tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===n));['sites','builders','follow','tenders'].forEach(v=>$('#view-'+v).classList.toggle('hide',v!==n));if(n==='tenders')renderTenders();
+function tab(n){$$('[data-tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===n));['sites','builders','follow','tenders','biz'].forEach(v=>$('#view-'+v).classList.toggle('hide',v!==n));$('#filters').classList.toggle('hide',!['sites','builders'].includes(n));if(n==='tenders')renderTenders();if(n==='biz')renderBiz();
   if(n==='builders')renderBuilders();if(n==='follow')renderFollow();if(n==='sites'){render();map&&setTimeout(()=>map.resize(),50)}
   try{history.replaceState(null,'','#'+n)}catch(e){}}
 $('#openSettings').onclick=()=>{const s=settings;$('#sName').value=s.name;$('#sTitle').value=s.title;$('#sPhone').value=s.phone;$('#sEmail').value=s.email;$('#sWeb').value=s.web;$('#sRate').value=s.rate;$('#mSettings').classList.add('open')};
 $('#sSave').onclick=()=>{settings={name:$('#sName').value.trim(),title:$('#sTitle').value.trim(),phone:$('#sPhone').value.trim(),email:$('#sEmail').value.trim(),web:$('#sWeb').value.trim(),rate:Math.max(0,parseFloat($('#sRate').value)||0.45)};LS.set('jq.settings',settings);sites.forEach(p=>p.est=p.sqft*settings.rate);render();$('#mSettings').classList.remove('open');toast('Saved')};
 
-chips();boot().then(()=>{const h=location.hash.slice(1);if(['builders','follow','tenders'].includes(h))tab(h)});
+chips();boot().then(()=>{const h=location.hash.slice(1);if(['builders','follow','tenders','biz'].includes(h))tab(h)});
 }
 </script>
 </body>

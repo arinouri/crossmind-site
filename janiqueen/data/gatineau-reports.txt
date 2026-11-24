@@ -1,0 +1,24 @@
+# Gatineau monthly permit reports (Ville de Gatineau > Statistiques sur les permis de construction).
+# One per line: YYYY-MM URL. Add each new month's PDF link here.
+2025-01 https://www.gatineau.ca/upload/documents/46f0e01b-0a74-4fb6-91cf-9eb37b65b9f7.pdf
+2025-02 https://www.gatineau.ca/upload/documents/3b492aef-0ec2-4e10-8210-f7cf30d22c3e.pdf
+2025-03 https://www.gatineau.ca/upload/documents/ba486e7a-7a42-457b-b338-8149b864535f.pdf
+2025-04 https://www.gatineau.ca/upload/documents/ba25c870-60e2-492b-9cb2-b890c86540d1.pdf
+2025-05 https://www.gatineau.ca/upload/documents/393c84f9-64f8-41b0-9dba-7cc81a1021f8.pdf
+2025-06 https://www.gatineau.ca/upload/documents/0a8a7a58-e9fb-4d87-80ab-1be361904eca.pdf
+2025-07 https://www.gatineau.ca/upload/documents/ce99c776-f1e1-45b3-8d0b-fe6b32596a4b.pdf
+2025-08 https://www.gatineau.ca/upload/documents/d7a9eee2-2739-447f-806c-49779b898987.pdf
+2025-09 https://www.gatineau.ca/upload/documents/10658ae0-4edf-4b5e-8dd3-250d4d243508.pdf
+2025-10 https://www.gatineau.ca/upload/documents/321f1333-bc09-4a03-8afa-786078f166a2.pdf
+2025-11 https://www.gatineau.ca/upload/documents/879a2a2f-e2c1-4b44-92d1-ec14be0e574b.pdf
+2025-12 https://www.gatineau.ca/upload/documents/94c9ba4e-51e3-4012-b448-464f1a6bb122.pdf
+2026-01 https://www.gatineau.ca/upload/documents/7b1fe0fb-e4ed-4e05-99a2-bfead6539498.pdf
+2026-02 https://www.gatineau.ca/upload/documents/a5cb7654-ade6-487c-bcab-a09afb9b6cd0.pdf
+2026-03 https://www.gatineau.ca/upload/documents/ccb1dbd0-a8cf-476e-8abf-f6d85a9e5e5d.pdf
+2026-04 https://www.gatineau.ca/upload/documents/f8aecf9d-2319-4906-8685-00ec69010526.pdf
+2026-05 https://www.gatineau.ca/upload/documents/2d1055c7-fd05-4779-8d1b-6aa26dda1101.pdf
+2026-06 https://www.gatineau.ca/upload/documents/18d53b48-0611-497f-9073-ffbb935a1adc.pdf
+2026-07 https://www.gatineau.ca/upload/documents/61d9d78f-5def-48b8-b9ea-b5c1bdb714df.pdf
+2026-08 https://www.gatineau.ca/upload/documents/8018a6d1-6d60-4a29-801d-6e3038cd1385.pdf
+2026-09 https://www.gatineau.ca/upload/documents/47e03bcb-a560-4e70-a14a-443ffa86654b.pdf
+2026-10 https://www.gatineau.ca/upload/documents/56a2d96c-a88b-41cf-848b-70f3a4d7b728.pdf
