@@ -1,6 +1,20 @@
 {
  "tenders": [
   {
+   "buyer": "Ville de Sainte-Agathe-des-Monts.",
+   "closing": "2026-12-03T09:00",
+   "contact": "",
+   "email": "",
+   "local": true,
+   "phone": "",
+   "published": "2026-11-16",
+   "ref": "LC-2027-001",
+   "source": "Québec (SEAO)",
+   "title": "SERVICES D'ENTRETIEN MÉNAGER DES BÂTIMENTS MUNICIPAUX",
+   "url": "https://seao.gouv.qc.ca/avis-resultat-recherche/consulter?ItemId=7797d1b1-f0f3-4545-b45e-4912265e6f54",
+   "where": "Sainte-Agathe-des-Monts"
+  },
+  {
    "buyer": "Department of Canadian Heritage (PCH)",
    "closing": "2026-12-07T10:00",
    "contact": "Marc-André Valin",
@@ -9,9 +23,24 @@
    "phone": "",
    "published": "2026-11-10",
    "ref": "cb-214-99145608",
+   "source": "Federal (CanadaBuys)",
    "title": "Janitorial Services for the Canadian Conservation Institute (CCI).",
    "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=cb-214-99145608",
    "where": "National Capital Region (NCR)"
+  },
+  {
+   "buyer": "Ville de Gatineau.",
+   "closing": "2026-12-08T14:00",
+   "contact": "",
+   "email": "",
+   "local": true,
+   "phone": "",
+   "published": "2026-11-05",
+   "ref": "2026SP467",
+   "source": "Québec (SEAO)",
+   "title": "Service de nettoyage de sites liés à l’itinérance",
+   "url": "https://seao.gouv.qc.ca/avis-resultat-recherche/consulter?ItemId=da5911d5-3e41-460f-b1d0-3b057b250b3b",
+   "where": ""
   },
   {
    "buyer": "Department of Public Works and Government Services (PSPC)",
@@ -22,9 +51,24 @@
    "phone": "",
    "published": "2026-11-10",
    "ref": "WS5616302123-Doc5670963856",
+   "source": "Federal (CanadaBuys)",
    "title": "EJ196-260987_Janitorial Services Walkley Rd Admiral Building_NCR",
    "url": "https://portal.us.bn.cloud.ariba.com/dashboard/public/appext/comsapsbncdiscoveryui#/RfxEvent/preview/1110031154?anId=ANONYMOUS",
    "where": "National Capital Region (NCR)"
+  },
+  {
+   "buyer": "Ministère des Transports et de la Mobilité durable (Direction générale de la gestion contractuelle)",
+   "closing": "2027-01-07T14:00",
+   "contact": "",
+   "email": "",
+   "local": true,
+   "phone": "",
+   "published": "2026-11-13",
+   "ref": "8108-27-PC03",
+   "source": "Québec (SEAO)",
+   "title": "8108-27-PC03  - Travaux d'entretien ménager de l'aérogare et dans certains locaux de l'aérodrome, dans la municipalité de Saint-Bruno-de-Guigues",
+   "url": "https://seao.gouv.qc.ca/avis-resultat-recherche/consulter?ItemId=df1d5aaa-7b96-44b4-b79d-fe9014f1da50",
+   "where": "Rouyn-Noranda"
   },
   {
    "buyer": "Parks Canada",
@@ -35,10 +79,11 @@
    "phone": "587-436-5987",
    "published": "2023-02-22",
    "ref": "PW-23-01027079",
+   "source": "Federal (CanadaBuys)",
    "title": "Parks Canada Agency Supply Arrangement - Extraction, Air Separation, Stratification and Propagation of Whitebark and Limber Pine Seeds, Mountain Parks Region",
    "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=PW-23-01027079",
    "where": "British Columbia · Alberta"
   }
  ],
- "updated": "2026-11-24T00:36Z"
+ "updated": "2026-11-24T00:42Z"
 }

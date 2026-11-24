@@ -1,4 +1,8 @@
 {
+ "1 5 boulevard du casino|gatineau": [
+  45.448689,
+  -75.731562
+ ],
  "1 antares dr|ottawa": [
   45.3352,
   -75.705268
@@ -47,6 +51,14 @@
  "1 rideaucrest dr|ottawa": [
   45.284516,
   -75.722709
+ ],
+ "1 rue olivier-page|gatineau": [
+  45.54522,
+  -75.409345
+ ],
+ "1 rue sainte-rose|gatineau": [
+  45.493572,
+  -75.605136
  ],
  "1 sandridge rd|ottawa": [
   45.456887,
@@ -106,6 +118,7 @@
   45.315664,
   -75.883976
  ],
+ "10 impasse de l'ancre|gatineau": null,
  "10 marie-curie priv|ottawa": null,
  "10 marie-curie, prive|ottawa": [
   45.420926,
@@ -126,6 +139,22 @@
  "10 robert kemp st|ottawa": [
   45.336194,
   -75.605464
+ ],
+ "10 rue de la fabrique|gatineau": [
+  45.410344,
+  -75.857649
+ ],
+ "10 rue du lynx|gatineau": [
+  45.413528,
+  -75.85236
+ ],
+ "10 rue scott|gatineau": [
+  45.423952,
+  -75.734514
+ ],
+ "10 rue wellington|gatineau": [
+  45.42569,
+  -75.721882
  ],
  "100 argyle ave|ottawa": [
   45.412421,
@@ -150,6 +179,10 @@
  "100 bliss cres|ottawa": [
   45.285104,
   -75.90145
+ ],
+ "100 boulevard greber|gatineau": [
+  45.465222,
+  -75.701004
  ],
  "100 boulonnais grove|ottawa": [
   45.274852,
@@ -208,6 +241,22 @@
   -75.697515
  ],
  "100 ringley priv|ottawa": null,
+ "100 rue du chateau|gatineau": [
+  45.420099,
+  -75.759888
+ ],
+ "100 rue joseph-latour|gatineau": [
+  45.577268,
+  -75.396653
+ ],
+ "100 rue laurier|gatineau": [
+  45.428356,
+  -75.710129
+ ],
+ "100 rue maurice-beaudoin|gatineau": [
+  45.499485,
+  -75.611061
+ ],
  "100 shelleright st|ottawa": [
   45.277738,
   -75.872004
@@ -228,6 +277,10 @@
  "1000 adley rd|ottawa": [
   45.434451,
   -75.624652
+ ],
+ "1000 boulevard maloney est|gatineau": [
+  45.490944,
+  -75.592134
  ],
  "1000 delphinium cres|ottawa": [
   45.326221,
@@ -279,6 +332,10 @@
   45.322392,
   -75.94893
  ],
+ "1006 boulevard maloney est|gatineau": [
+  45.490984,
+  -75.591992
+ ],
  "1007 lunar glow cres|ottawa": [
   45.2589,
   -75.697754
@@ -295,6 +352,10 @@
  "101 bearbrook rd|ottawa": [
   45.433235,
   -75.564244
+ ],
+ "101 boulevard sacre-coeur|gatineau": [
+  45.438005,
+  -75.716011
  ],
  "101 centrepointe dr|ottawa": [
   45.344591,
@@ -338,6 +399,14 @@
   45.276623,
   -75.893614
  ],
+ "101 rue de la baie|gatineau": [
+  45.461286,
+  -75.695562
+ ],
+ "101 rue saint-jean-bosco|gatineau": [
+  45.427788,
+  -75.738275
+ ],
  "101 stratas crt|ottawa": [
   45.307596,
   -75.882053
@@ -358,6 +427,10 @@
  "1011 calendula pl|ottawa": [
   45.368806,
   -75.938108
+ ],
+ "1011 chemin klock|gatineau": [
+  45.443969,
+  -75.855087
  ],
  "1014 blanding st|ottawa": [
   45.322556,
@@ -429,6 +502,14 @@
   45.363139,
   -75.799607
  ],
+ "102 rue alfred-belisle|gatineau": [
+  45.543913,
+  -75.436368
+ ],
+ "102 rue de la fabrique|gatineau": [
+  45.410223,
+  -75.861123
+ ],
  "102 waterfern way|ottawa": [
   45.450729,
   -75.467035
@@ -452,6 +533,10 @@
  "1025 acoustic way|ottawa": [
   45.25456,
   -75.690071
+ ],
+ "1025 boulevard de la carriere|gatineau": [
+  45.456851,
+  -75.733433
  ],
  "1025 quigley hill rd|ottawa": [
   45.511811,
@@ -593,6 +678,10 @@
   45.276881,
   -75.894235
  ],
+ "104 rue joseph-latour|gatineau": [
+  45.577319,
+  -75.396648
+ ],
  "104 schneider rd|ottawa": [
   45.339945,
   -75.903802
@@ -648,6 +737,14 @@
  "105 quillside row|ottawa": [
   45.27656,
   -75.893883
+ ],
+ "105 rue du mont-luc|gatineau": [
+  45.493914,
+  -75.727671
+ ],
+ "105 rue saint-jacques|gatineau": [
+  45.429195,
+  -75.719561
  ],
  "105 zingiber terr|ottawa": [
   45.369262,
@@ -773,6 +870,10 @@
   45.274962,
   -75.879403
  ],
+ "107 chemin de montreal est|gatineau": [
+  45.546241,
+  -75.408449
+ ],
  "107 clematis way|ottawa": [
   45.260687,
   -75.688467
@@ -792,6 +893,14 @@
  "107 quillside row|ottawa": [
   45.276526,
   -75.894033
+ ],
+ "107 rue du geai-bleu|gatineau": [
+  45.424203,
+  -75.764998
+ ],
+ "107 rue marcotte|gatineau": [
+  45.479403,
+  -75.728947
  ],
  "107 tonic cres|ottawa": [
   45.366855,
@@ -813,6 +922,10 @@
   45.275673,
   -75.748463
  ],
+ "1076 1100 boulevard maloney ouest app.rc 019|gatineau": null,
+ "1076 1100 boulevard maloney ouest app.rc 037|gatineau": null,
+ "1076 1100 boulevard maloney ouest app.rc 156|gatineau": null,
+ "1076 1100 boulevard maloney ouest|gatineau": null,
  "1078 bakervale dr|ottawa": [
   45.37956,
   -75.722711
@@ -849,6 +962,10 @@
  "108 ploughshare rd|ottawa": [
   45.293256,
   -75.910293
+ ],
+ "108 rue joseph-latour|gatineau": [
+  45.577372,
+  -75.396635
  ],
  "108 shelleright st|ottawa": [
   45.278039,
@@ -898,6 +1015,14 @@
   45.276491,
   -75.894192
  ],
+ "109 rue marcotte|gatineau": [
+  45.47941,
+  -75.728788
+ ],
+ "109 rue wright|gatineau": [
+  45.427184,
+  -75.718723
+ ],
  "109 russell ave|ottawa": [
   45.42451,
   -75.67677
@@ -913,6 +1038,10 @@
  "1091 st-laurent, boul|ottawa": [
   45.42631,
   -75.637993
+ ],
+ "1093 chemin de montreal ouest|gatineau": [
+  45.523873,
+  -75.486538
  ],
  "1093 cope dr|ottawa": [
   45.258251,
@@ -946,6 +1075,10 @@
   45.249986,
   -75.615628
  ],
+ "11 chemin grimes|gatineau": [
+  45.399796,
+  -75.818186
+ ],
  "11 ed findlay st|ottawa": [
   45.266684,
   -75.681151
@@ -958,9 +1091,25 @@
   45.395306,
   -75.721288
  ],
+ "11 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
+ ],
  "11 pumice pl|ottawa": [
   45.241954,
   -75.747522
+ ],
+ "11 rue de granby|gatineau": [
+  45.506475,
+  -75.549381
+ ],
+ "11 rue john-gibeault|gatineau": [
+  45.38531,
+  -75.801089
+ ],
+ "11 rue laurier|gatineau": [
+  45.425969,
+  -75.7148
  ],
  "11 thatcher st|ottawa": [
   45.345118,
@@ -1002,6 +1151,26 @@
   45.276773,
   -75.894716
  ],
+ "110 rue alfred-belisle|gatineau": [
+  45.543933,
+  -75.436161
+ ],
+ "110 rue de la fabrique|gatineau": [
+  45.409713,
+  -75.861526
+ ],
+ "110 rue georges|gatineau": [
+  45.554242,
+  -75.434869
+ ],
+ "110 rue lefebvre|gatineau": [
+  45.59018,
+  -75.416676
+ ],
+ "110 rue maurice-beaudoin|gatineau": [
+  45.499485,
+  -75.611061
+ ],
  "110 shelleright st|ottawa": [
   45.278121,
   -75.872472
@@ -1013,6 +1182,10 @@
  "1100 algoma rd|ottawa": [
   45.417316,
   -75.62438
+ ],
+ "1100 chemin de montreal ouest|gatineau": [
+  45.522259,
+  -75.492224
  ],
  "1100 last mile dr|ottawa": [
   45.380346,
@@ -1081,9 +1254,21 @@
   45.402723,
   -75.725981
  ],
+ "111 113 rue champlain|gatineau": [
+  45.430438,
+  -75.71202
+ ],
  "111 albert st|ottawa": [
   45.421449,
   -75.697547
+ ],
+ "111 boulevard montclair|gatineau": [
+  45.439897,
+  -75.738926
+ ],
+ "111 chemin blanchette|gatineau": [
+  45.526035,
+  -75.619455
  ],
  "111 echo dr|ottawa": [
   45.415984,
@@ -1100,6 +1285,10 @@
  "111 rappel, cer du|ottawa": [
   45.440959,
   -75.497637
+ ],
+ "111 rue marcotte|gatineau": [
+  45.479417,
+  -75.728602
  ],
  "111 wellington st|ottawa": [
   45.425064,
@@ -1168,6 +1357,10 @@
  "112 quillside row|ottawa": [
   45.276739,
   -75.89487
+ ],
+ "112 rue joseph-latour|gatineau": [
+  45.577434,
+  -75.39663
  ],
  "112 tobiano priv|ottawa": null,
  "1120 meadow lane rd|ottawa": [
@@ -1258,6 +1451,10 @@
   45.307786,
   -75.60059
  ],
+ "1130 1160 boulevard saint-joseph|gatineau": [
+  45.431754,
+  -75.733283
+ ],
  "1130 deer park rd|ottawa": [
   45.365376,
   -75.715787
@@ -1311,6 +1508,14 @@
   45.276698,
   -75.895031
  ],
+ "114 rue alfred-belisle|gatineau": [
+  45.543964,
+  -75.436103
+ ],
+ "114 rue de la fabrique|gatineau": [
+  45.409564,
+  -75.862022
+ ],
  "114 shelleright st|ottawa": [
   45.278283,
   -75.872664
@@ -1355,6 +1560,10 @@
   45.382358,
   -75.7252
  ],
+ "115 121 rue de carillon|gatineau": [
+  45.430321,
+  -75.723502
+ ],
  "115 apex cres|ottawa": [
   45.257504,
   -75.698669
@@ -1362,6 +1571,10 @@
  "115 arleux, place d'|ottawa": [
   45.217289,
   -75.684387
+ ],
+ "115 boulevard du plateau|gatineau": [
+  45.433779,
+  -75.775221
  ],
  "115 champagne ave south|ottawa": [
   45.400786,
@@ -1437,6 +1650,10 @@
   -75.682689
  ],
  "1158 cerceau priv|ottawa": null,
+ "1159 chemin perry|gatineau": [
+  45.456528,
+  -75.883188
+ ],
  "1159 cope dr|ottawa": [
   45.256581,
   -75.903564
@@ -1452,6 +1669,10 @@
  "116 bayswater ave|ottawa": [
   45.403628,
   -75.719154
+ ],
+ "116 boulevard moussette|gatineau": [
+  45.442844,
+  -75.743564
  ],
  "116 boulonnais grove|ottawa": [
   45.27546,
@@ -1485,6 +1706,7 @@
   45.222566,
   -75.683068
  ],
+ "1160 boulevard greber app.bloc 1|gatineau": null,
  "1161 bélanger ave|ottawa": [
   45.38385,
   -75.673452
@@ -1505,6 +1727,7 @@
   45.473815,
   -75.521291
  ],
+ "1164 boulevard greber app.bloc 2|gatineau": null,
  "1164 cope dr|ottawa": [
   45.256748,
   -75.902895
@@ -1512,6 +1735,10 @@
  "1164 highcroft dr|ottawa": [
   45.226381,
   -75.687831
+ ],
+ "1165 boulevard labrosse|gatineau": [
+  45.520961,
+  -75.645859
  ],
  "1167 cope dr|ottawa": [
   45.256413,
@@ -1541,10 +1768,15 @@
   45.465906,
   -75.453663
  ],
+ "117 rue du musee|gatineau": [
+  45.502338,
+  -75.692636
+ ],
  "117 winding way|ottawa": [
   45.285946,
   -75.698578
  ],
+ "1170 boulevard greber app.bloc 3|gatineau": null,
  "1171 a emperor ave|ottawa": [
   45.380451,
   -75.725604
@@ -1553,6 +1785,7 @@
   45.423868,
   -75.630686
  ],
+ "1174 boulevard greber app.bloc 4|gatineau": null,
  "1175 soderlind st|ottawa": [
   45.350305,
   -75.77975
@@ -1581,6 +1814,14 @@
   45.276624,
   -75.895354
  ],
+ "118 rue alfred-belisle|gatineau": [
+  45.543983,
+  -75.436014
+ ],
+ "118 rue de la fabrique|gatineau": [
+  45.409502,
+  -75.862551
+ ],
  "118 russell ave|ottawa": [
   45.423958,
   -75.676874
@@ -1597,10 +1838,12 @@
   45.45162,
   -75.63738
  ],
+ "1180 boulevard greber app.bloc 5|gatineau": null,
  "1183 cecil ave|ottawa": [
   45.379902,
   -75.669584
  ],
+ "1184 boulevard greber app.bloc 6|gatineau": null,
  "1186 cope dr|ottawa": [
   45.256248,
   -75.902278
@@ -1612,6 +1855,10 @@
  "1186 wellington st west|ottawa": [
   45.406898,
   -75.721662
+ ],
+ "1187 boulevard saint-joseph|gatineau": [
+  45.473985,
+  -75.741537
  ],
  "1188 cummings ave|ottawa": [
   45.426853,
@@ -1633,6 +1880,14 @@
   45.424558,
   -75.680459
  ],
+ "119 rue de cap-aux-meules|gatineau": [
+  45.498219,
+  -75.639039
+ ],
+ "119 rue du debusquage|gatineau": [
+  45.52232,
+  -75.483838
+ ],
  "119 russell ave|ottawa": [
   45.424235,
   -75.676497
@@ -1641,6 +1896,7 @@
   45.272428,
   -75.9541
  ],
+ "1190 boulevard greber app.bloc 7|gatineau": null,
  "1190 spoor st|ottawa": [
   45.361265,
   -75.947485
@@ -1649,6 +1905,7 @@
   45.32893,
   -75.748919
  ],
+ "1194 boulevard greber app.bloc 8|gatineau": null,
  "1195 richmond rd|ottawa": [
   45.370574,
   -75.782617
@@ -1673,6 +1930,10 @@
   45.19008,
   -75.843321
  ],
+ "12 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
+ ],
  "12 leaver ave|ottawa": [
   45.360799,
   -75.731624
@@ -1680,6 +1941,18 @@
  "12 marlowe cres|ottawa": [
   45.406382,
   -75.675624
+ ],
+ "12 rue corbeil|gatineau": [
+  45.447463,
+  -75.748012
+ ],
+ "12 rue metcalfe|gatineau": [
+  45.397714,
+  -75.857324
+ ],
+ "12 rue pierre-de ronsard|gatineau": [
+  45.407755,
+  -75.800282
  ],
  "12 wendover ave|ottawa": [
   45.390342,
@@ -1697,6 +1970,10 @@
   45.28022,
   -75.669257
  ],
+ "120 boulevard de l'hopital|gatineau": [
+  45.481032,
+  -75.686734
+ ],
  "120 boulonnais grove|ottawa": [
   45.275585,
   -75.878927
@@ -1712,6 +1989,14 @@
  "120 quillside row|ottawa": [
   45.276594,
   -75.89552
+ ],
+ "120 rue de pradet|gatineau": [
+  45.48759,
+  -75.720583
+ ],
+ "120 rue maurice-beaudoin|gatineau": [
+  45.499485,
+  -75.611061
  ],
  "120 terence matthews cres|ottawa": [
   45.288334,
@@ -1767,6 +2052,10 @@
   45.35436,
   -75.844217
  ],
+ "121 rue du musee|gatineau": [
+  45.502338,
+  -75.692636
+ ],
  "121 wabikon cres|ottawa": [
   45.307856,
   -75.600892
@@ -1778,6 +2067,10 @@
  "1219 cope dr|ottawa": [
   45.255099,
   -75.901638
+ ],
+ "1219 rue notre-dame|gatineau": [
+  45.492701,
+  -75.581392
  ],
  "122 a conservancy dr|ottawa": [
   45.257191,
@@ -1804,6 +2097,10 @@
   -75.902597
  ],
  "122 lillian freiman priv|ottawa": null,
+ "122 rue alfred-belisle|gatineau": [
+  45.54401,
+  -75.435906
+ ],
  "1220 old innes rd|ottawa": [
   45.409781,
   -75.617446
@@ -1811,6 +2108,10 @@
  "1221 greenbank rd|ottawa": [
   45.274907,
   -75.747338
+ ],
+ "1221 rue notre-dame|gatineau": [
+  45.492298,
+  -75.582549
  ],
  "1223 cope dr|ottawa": [
   45.255002,
@@ -1820,9 +2121,17 @@
   45.421422,
   -75.631257
  ],
+ "1223 rue notre-dame|gatineau": [
+  45.492815,
+  -75.581146
+ ],
  "1224 place-d'orléans dr|ottawa": [
   45.476719,
   -75.521324
+ ],
+ "1225 rue notre-dame|gatineau": [
+  45.492876,
+  -75.581025
  ],
  "1226 place-d'orléans dr|ottawa": [
   45.476262,
@@ -1852,6 +2161,10 @@
   45.216,
   -75.685661
  ],
+ "123 avenue gatineau|gatineau": [
+  45.484167,
+  -75.718752
+ ],
  "123 clematis way|ottawa": [
   45.260678,
   -75.688108
@@ -1863,6 +2176,14 @@
  "123 paloma cir|ottawa": [
   45.260433,
   -75.761507
+ ],
+ "123 rue de cap-aux-meules|gatineau": [
+  45.498307,
+  -75.638889
+ ],
+ "123 rue du debusquage|gatineau": [
+  45.522361,
+  -75.483733
  ],
  "123 shelleright st|ottawa": [
   45.278431,
@@ -1884,6 +2205,10 @@
   45.268115,
   -75.735018
  ],
+ "1236 boulevard saint-rene est|gatineau": [
+  45.499958,
+  -75.602001
+ ],
  "1236 wellington st west|ottawa": [
   45.399468,
   -75.73207
@@ -1891,6 +2216,10 @@
  "1237 donald st|ottawa": [
   45.430344,
   -75.638321
+ ],
+ "1237 rue notre-dame|gatineau": [
+  45.493067,
+  -75.58107
  ],
  "1238 anoka st|ottawa": [
   45.378079,
@@ -1925,6 +2254,14 @@
   45.440887,
   -75.496453
  ],
+ "124 rue de saint-vallier|gatineau": [
+  45.493447,
+  -75.729403
+ ],
+ "124 rue papineau|gatineau": [
+  45.430549,
+  -75.719267
+ ],
  "124 snelgrove dr|ottawa": [
   45.351278,
   -76.041768
@@ -1936,6 +2273,10 @@
  "1241 collins ave|ottawa": [
   45.377519,
   -75.664699
+ ],
+ "1242 boulevard saint-rene est|gatineau": [
+  45.507102,
+  -75.572095
  ],
  "1244 donald st|ottawa": [
   45.427656,
@@ -1976,6 +2317,10 @@
  "125 oshedinaa st|ottawa": [
   45.454161,
   -75.637568
+ ],
+ "125 rue du musee|gatineau": [
+  45.502338,
+  -75.692636
  ],
  "125 shelleright st|ottawa": [
   45.278508,
@@ -2041,6 +2386,10 @@
   45.276572,
   -75.904675
  ],
+ "126 rue alfred-belisle|gatineau": [
+  45.54403,
+  -75.435823
+ ],
  "126 smirle ave|ottawa": [
   45.400738,
   -75.736317
@@ -2052,6 +2401,10 @@
  "1260 trenton ave|ottawa": [
   45.376885,
   -75.726995
+ ],
+ "1261 boulevard saint-joseph|gatineau": [
+  45.476852,
+  -75.744138
  ],
  "1261 stittsville main st|ottawa": [
   45.267235,
@@ -2098,6 +2451,10 @@
   45.27695,
   -76.008088
  ],
+ "127 rue du debusquage|gatineau": [
+  45.522405,
+  -75.48363
+ ],
  "127 shelleright st|ottawa": [
   45.278637,
   -75.873726
@@ -2119,6 +2476,10 @@
   45.281112,
   -76.071064
  ],
+ "1278 boulevard labrosse|gatineau": [
+  45.524822,
+  -75.645849
+ ],
  "1279 colonial rd|ottawa": [
   45.421539,
   -75.422279
@@ -2128,6 +2489,10 @@
   -75.686
  ],
  "128 chandelle priv|ottawa": null,
+ "128 chemin foley|gatineau": [
+  45.385841,
+  -75.820733
+ ],
  "128 chesterton dr|ottawa": [
   45.351143,
   -75.722486
@@ -2139,6 +2504,10 @@
  "128 osgoode st|ottawa": [
   45.423974,
   -75.680376
+ ],
+ "128 rue des montagnais|gatineau": [
+  45.418943,
+  -75.797854
  ],
  "128 unison st|ottawa": [
   45.261729,
@@ -2159,6 +2528,10 @@
  "129 blackberry way|ottawa": [
   45.434915,
   -76.019798
+ ],
+ "129 rue du musee|gatineau": [
+  45.502338,
+  -75.692636
  ],
  "1295 b byrnes terr|ottawa": [
   45.512013,
@@ -2208,6 +2581,18 @@
   45.283145,
   -75.767624
  ],
+ "13 rue du debusquage|gatineau": [
+  45.523227,
+  -75.482568
+ ],
+ "13 rue du lynx|gatineau": [
+  45.413568,
+  -75.851839
+ ],
+ "13 rue symmes|gatineau": [
+  45.395465,
+  -75.848612
+ ],
  "13 suffolk st|ottawa": [
   45.348407,
   -75.750558
@@ -2223,6 +2608,10 @@
  "130 arleux pl|ottawa": [
   45.216796,
   -75.685928
+ ],
+ "130 avenue frank-robinson|gatineau": [
+  45.393463,
+  -75.839805
  ],
  "130 b burke st|ottawa": [
   45.183274,
@@ -2253,6 +2642,14 @@
   -75.611906
  ],
  "130 mishi priv|ottawa": null,
+ "130 rue alfred-belisle|gatineau": [
+  45.544056,
+  -75.43575
+ ],
+ "130 rue du drakkar|gatineau": [
+  45.499493,
+  -75.585114
+ ],
  "130 slater st|ottawa": [
   45.420468,
   -75.696255
@@ -2334,6 +2731,10 @@
   45.421774,
   -75.698866
  ],
+ "131 rue du debusquage|gatineau": [
+  45.522449,
+  -75.483527
+ ],
  "131 shelleright st|ottawa": [
   45.27874,
   -75.873972
@@ -2379,6 +2780,10 @@
   45.257043,
   -75.901902
  ],
+ "132 rue pierre-laporte|gatineau": [
+  45.574095,
+  -75.425231
+ ],
  "1325 st-laurent blvd|ottawa": [
   45.418546,
   -75.63344
@@ -2415,6 +2820,10 @@
   45.383742,
   -75.735641
  ],
+ "1335 boulevard la verendrye ouest|gatineau": [
+  45.488793,
+  -75.709794
+ ],
  "1335 carling ave|ottawa": [
   45.385782,
   -75.736061
@@ -2438,6 +2847,10 @@
  "134 craig duncan terr|ottawa": [
   45.257105,
   -75.901797
+ ],
+ "134 rue alfred-belisle|gatineau": [
+  45.544086,
+  -75.435662
  ],
  "134 salisbury st|ottawa": [
   45.344542,
@@ -2475,6 +2888,10 @@
   45.383868,
   -75.664526
  ],
+ "135 boulevard saint-raymond|gatineau": [
+  45.445511,
+  -75.746042
+ ],
  "135 cardevco rd|ottawa": [
   45.292746,
   -75.978598
@@ -2506,6 +2923,10 @@
  "135 oshedinaa st|ottawa": [
   45.454799,
   -75.638072
+ ],
+ "135 rue du debusquage|gatineau": [
+  45.522493,
+  -75.483423
  ],
  "135 shelleright st|ottawa": [
   45.278917,
@@ -2577,9 +2998,17 @@
   45.279319,
   -75.873908
  ],
+ "1360 boulevard maloney est|gatineau": [
+  45.495227,
+  -75.575909
+ ],
  "1360 carling ave|ottawa": [
   45.38451,
   -75.736916
+ ],
+ "1364 boulevard maloney est|gatineau": [
+  45.484611,
+  -75.641559
  ],
  "1366 carling ave|ottawa": [
   45.384046,
@@ -2637,6 +3066,10 @@
   45.418116,
   -75.627656
  ],
+ "1377 rue de jonquiere|gatineau": [
+  45.528934,
+  -75.638643
+ ],
  "1377 woodroffe ave|ottawa": [
   45.349621,
   -75.760995
@@ -2652,6 +3085,10 @@
  "138 ploughshare rd|ottawa": [
   45.29353,
   -75.90954
+ ],
+ "138 rue jolicoeur|gatineau": [
+  45.463658,
+  -75.759879
  ],
  "1380 blackhorse crt|ottawa": [
   45.238156,
@@ -2673,6 +3110,14 @@
   45.258902,
   -75.571573
  ],
+ "1388 rue rolland|gatineau": [
+  45.529972,
+  -75.642557
+ ],
+ "139 chemin dufresne|gatineau": [
+  45.526829,
+  -75.604182
+ ],
  "139 craig duncan terr|ottawa": [
   45.257522,
   -75.901862
@@ -2681,6 +3126,10 @@
  "139 kerala pl|ottawa": [
   45.32245,
   -75.612552
+ ],
+ "139 rue du debusquage|gatineau": [
+  45.522537,
+  -75.48332
  ],
  "139 spruce st west|ottawa": [
   45.408721,
@@ -2693,6 +3142,10 @@
  "1391 mcmahon ave|ottawa": [
   45.344386,
   -75.638935
+ ],
+ "1393 rue d'alma|gatineau": [
+  45.53126,
+  -75.640295
  ],
  "1398 fisher ave|ottawa": [
   45.371457,
@@ -2718,6 +3171,18 @@
   45.427243,
   -75.657739
  ],
+ "14 rue cote|gatineau": [
+  45.383525,
+  -75.808896
+ ],
+ "14 rue de lanaudiere|gatineau": [
+  45.421141,
+  -75.744871
+ ],
+ "14 rue du lynx|gatineau": [
+  45.413588,
+  -75.852366
+ ],
  "14 stevens ave|ottawa": [
   45.428705,
   -75.666843
@@ -2725,6 +3190,10 @@
  "140 blanca st|ottawa": [
   45.280831,
   -75.669592
+ ],
+ "140 boulevard greber|gatineau": [
+  45.468529,
+  -75.701552
  ],
  "140 harry mackay rd|ottawa": [
   45.515574,
@@ -2746,6 +3215,10 @@
   45.423966,
   -75.658117
  ],
+ "140 promenade du portage|gatineau": [
+  45.425528,
+  -75.71579
+ ],
  "140 reis rd|ottawa": [
   45.305613,
   -75.980855
@@ -2753,6 +3226,10 @@
  "140 rideau st|ottawa": [
   45.426632,
   -75.690211
+ ],
+ "140 rue montcalm|gatineau": [
+  45.429287,
+  -75.725378
  ],
  "1400 dwyer hill rd|ottawa": [
   45.026531,
@@ -2815,9 +3292,21 @@
   45.246486,
   -75.912498
  ],
+ "1413 rue d'alma|gatineau": [
+  45.52763,
+  -75.639679
+ ],
+ "1415 rue d'alma|gatineau": [
+  45.53126,
+  -75.640295
+ ],
  "1417 bethamy lane|ottawa": [
   45.443992,
   -75.596677
+ ],
+ "1417 rue d'alma|gatineau": [
+  45.53126,
+  -75.640295
  ],
  "142 a conservancy dr|ottawa": [
   45.257191,
@@ -2859,6 +3348,10 @@
   45.434595,
   -75.605626
  ],
+ "1422 rue de dolbeau|gatineau": [
+  45.530871,
+  -75.637193
+ ],
  "1426 st-joseph blvd|ottawa": [
   45.446171,
   -75.55773
@@ -2878,6 +3371,14 @@
  "143 craig duncan terr|ottawa": [
   45.257512,
   -75.901415
+ ],
+ "143 rue des sables|gatineau": [
+  45.496297,
+  -75.593154
+ ],
+ "143 rue du debusquage|gatineau": [
+  45.522605,
+  -75.483204
  ],
  "143 séraphin-marion priv|ottawa": null,
  "143 walgreen rd|ottawa": [
@@ -2974,6 +3475,14 @@
   45.424328,
   -75.65769
  ],
+ "145 rue de l'atmosphere|gatineau": [
+  45.43958,
+  -75.781499
+ ],
+ "145 rue saint-redempteur|gatineau": [
+  45.430048,
+  -75.721973
+ ],
  "145 spruce st west|ottawa": [
   45.4087,
   -75.716495
@@ -3042,6 +3551,7 @@
   45.429475,
   -75.695628
  ],
+ "1460 1540 boulevard greber|gatineau": null,
  "1465 merivale rd|ottawa": [
   45.360436,
   -75.732947
@@ -3057,6 +3567,10 @@
  "147 kerala pl|ottawa": [
   45.322321,
   -75.612842
+ ],
+ "147 rue du debusquage|gatineau": [
+  45.522638,
+  -75.483106
  ],
  "147 séraphin-marion priv|ottawa": null,
  "1472 youville dr|ottawa": [
@@ -3167,6 +3681,10 @@
   45.155241,
   -75.64263
  ],
+ "15 25 rue eddy|gatineau": [
+  45.429197,
+  -75.720168
+ ],
  "15 b king st n|ottawa": [
   45.19614,
   -75.833496
@@ -3179,6 +3697,10 @@
   45.398003,
   -75.736397
  ],
+ "15 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
+ ],
  "15 larch st|ottawa": [
   45.405511,
   -75.713234
@@ -3186,6 +3708,18 @@
  "15 oblats ave|ottawa": [
   45.410652,
   -75.67657
+ ],
+ "15 rue alfred-belisle|gatineau": [
+  45.54484,
+  -75.435758
+ ],
+ "15 rue des servantes|gatineau": [
+  45.5458,
+  -75.419584
+ ],
+ "15 rue eddy|gatineau": [
+  45.425764,
+  -75.720421
  ],
  "15 tradesman rd|ottawa": [
   45.339356,
@@ -3210,6 +3744,10 @@
  "150 blanca st|ottawa": [
   45.281155,
   -75.668805
+ ],
+ "150 chemin rivermead|gatineau": [
+  45.395061,
+  -75.792656
  ],
  "150 dun skipper dr|ottawa": [
   45.30856,
@@ -3260,6 +3798,10 @@
   45.408312,
   -75.711858
  ],
+ "150 rue nicolet|gatineau": [
+  45.438845,
+  -75.740441
+ ],
  "150 shelleright st|ottawa": [
   45.279379,
   -75.874984
@@ -3304,6 +3846,10 @@
  "151 mountbatten ave|ottawa": [
   45.391835,
   -75.667393
+ ],
+ "151 rue du debusquage|gatineau": [
+  45.522634,
+  -75.483
  ],
  "151 slater st|ottawa": [
   45.420564,
@@ -3402,6 +3948,10 @@
   45.372896,
   -75.739785
  ],
+ "154 158 rue maclaren est|gatineau": [
+  45.587843,
+  -75.413392
+ ],
  "154 bliss cres|ottawa": [
   45.285953,
   -75.898836
@@ -3470,6 +4020,18 @@
   45.421364,
   -75.69923
  ],
+ "155 rue de saint-vallier|gatineau": [
+  45.493394,
+  -75.730284
+ ],
+ "155 rue du debusquage|gatineau": [
+  45.522671,
+  -75.482899
+ ],
+ "155 rue maclaren est|gatineau": [
+  45.588535,
+  -75.41197
+ ],
  "155 unison st|ottawa": [
   45.260605,
   -75.685592
@@ -3494,6 +4056,10 @@
   45.357926,
   -75.931839
  ],
+ "156 rue main|gatineau": [
+  45.482516,
+  -75.65059
+ ],
  "156 san felice cir|ottawa": [
   45.271266,
   -75.860561
@@ -3501,6 +4067,11 @@
  "156 sanford ave|ottawa": [
   45.372032,
   -75.711254
+ ],
+ "1560 1 4 boulevard maloney est|gatineau": null,
+ "1560 25 boulevard maloney est|gatineau": [
+  45.493096,
+  -75.58453
  ],
  "1565 lords manor lane|ottawa": [
   45.238431,
@@ -3525,6 +4096,10 @@
  "157 holland ave|ottawa": [
   45.39859,
   -75.730973
+ ],
+ "157 rue dorchester|gatineau": [
+  45.587204,
+  -75.411329
  ],
  "157 séraphin-marion priv|ottawa": null,
  "157 timber lane|ottawa": [
@@ -3591,6 +4166,10 @@
   45.200083,
   -76.067651
  ],
+ "159 rue du debusquage|gatineau": [
+  45.522691,
+  -75.482788
+ ],
  "1594 prince of wales dr|ottawa": [
   45.295085,
   -75.701223
@@ -3631,9 +4210,29 @@
   45.241646,
   -75.747815
  ],
+ "16 rue cote|gatineau": [
+  45.384611,
+  -75.808854
+ ],
+ "16 rue de mars|gatineau": [
+  45.487737,
+  -75.69021
+ ],
+ "16 rue saratoga|gatineau": [
+  45.382834,
+  -75.838986
+ ],
  "16 selwyn cres|ottawa": [
   45.328882,
   -75.894683
+ ],
+ "160 162 rue maclaren est|gatineau": [
+  45.576722,
+  -75.401059
+ ],
+ "160 avenue gatineau|gatineau": [
+  45.47857,
+  -75.725978
  ],
  "160 b leopolds dr|ottawa": [
   45.352506,
@@ -3732,6 +4331,14 @@
   45.286316,
   -75.898365
  ],
+ "162 chemin foley|gatineau": [
+  45.385841,
+  -75.820733
+ ],
+ "162 rue isabelle|gatineau": [
+  45.45987,
+  -75.744027
+ ],
  "162 wagon dr|ottawa": [
   45.478887,
   -76.038451
@@ -3768,10 +4375,26 @@
   45.254154,
   -75.916391
  ],
+ "163 171 avenue lepine app.163-rc 001|gatineau": null,
+ "163 171 avenue lepine app.163-rc 002|gatineau": null,
+ "163 171 avenue lepine app.163-rc 006|gatineau": null,
+ "163 171 avenue lepine app.163-rc 007|gatineau": null,
+ "163 171 avenue lepine|gatineau": [
+  45.575125,
+  -75.406942
+ ],
+ "163 avenue lepine|gatineau": [
+  45.577641,
+  -75.376581
+ ],
  "163 david lewis priv|ottawa": null,
  "163 geoffrey st|ottawa": [
   45.392203,
   -75.74412
+ ],
+ "163 rue du debusquage|gatineau": [
+  45.522697,
+  -75.482655
  ],
  "1635 lycée pl|ottawa": [
   45.405856,
@@ -3784,6 +4407,10 @@
  "1639 b century rd east|ottawa": [
   45.210055,
   -75.683807
+ ],
+ "164 chemin foley|gatineau": [
+  45.385841,
+  -75.820733
  ],
  "164 colonnade rd south|ottawa": [
   45.343512,
@@ -3813,6 +4440,10 @@
   45.446935,
   -75.614631
  ],
+ "165 167 rue champlain|gatineau": [
+  45.439478,
+  -75.710222
+ ],
  "165 b gosling cres|ottawa": [
   45.364458,
   -75.930409
@@ -3836,6 +4467,10 @@
  "165 onassa cir|ottawa": [
   45.292126,
   -75.795043
+ ],
+ "165 rue wellington|gatineau": [
+  45.426377,
+  -75.717232
  ],
  "165 sparks st|ottawa": [
   45.421531,
@@ -3865,6 +4500,10 @@
   45.4531,
   -75.575078
  ],
+ "166 chemin foley|gatineau": [
+  45.385841,
+  -75.820981
+ ],
  "166 clemow ave|ottawa": [
   45.405138,
   -75.69103
@@ -3880,6 +4519,10 @@
  "166 mcgillivray st|ottawa": [
   45.406078,
   -75.679801
+ ],
+ "166 rue principale|gatineau": [
+  45.39468,
+  -75.83869
  ],
  "1660 carling ave|ottawa": [
   45.378796,
@@ -3897,9 +4540,17 @@
   45.360586,
   -75.631391
  ],
+ "1666 rue de la fleur-de-lys|gatineau": [
+  45.4998,
+  -75.566216
+ ],
  "1668 manotick station rd|ottawa": [
   45.226157,
   -75.61337
+ ],
+ "167 avenue lepine|gatineau": [
+  45.577641,
+  -75.376581
  ],
  "167 kerala pl|ottawa": [
   45.321728,
@@ -3921,6 +4572,10 @@
   45.470074,
   -75.491171
  ],
+ "168 chemin foley|gatineau": [
+  45.385841,
+  -75.820733
+ ],
  "168 rappel cir|ottawa": [
   45.440297,
   -75.496115
@@ -3937,6 +4592,10 @@
   45.490211,
   -75.484026
  ],
+ "1681 rue parisien|gatineau": [
+  45.501225,
+  -75.562912
+ ],
  "1683 woodward dr|ottawa": [
   45.374036,
   -75.749582
@@ -3944,6 +4603,14 @@
  "1686 woodward dr|ottawa": [
   45.373562,
   -75.748862
+ ],
+ "1689 rue jean-louis-malette|gatineau": [
+  45.504538,
+  -75.565364
+ ],
+ "169 boulevard lorrain|gatineau": [
+  45.500606,
+  -75.608631
  ],
  "169 clemow ave|ottawa": [
   45.405597,
@@ -3985,6 +4652,10 @@
   45.287005,
   -75.901636
  ],
+ "17 chemin vanier|gatineau": [
+  45.381247,
+  -75.804329
+ ],
  "17 hopewell ave|ottawa": [
   45.393218,
   -75.684153
@@ -3998,6 +4669,30 @@
   45.246294,
   -75.703615
  ],
+ "17 rue de la bourrasque|gatineau": [
+  45.445676,
+  -75.793434
+ ],
+ "17 rue du debusquage|gatineau": [
+  45.523194,
+  -75.482676
+ ],
+ "17 rue du lynx|gatineau": [
+  45.413624,
+  -75.851846
+ ],
+ "17 rue houle|gatineau": [
+  45.383733,
+  -75.802179
+ ],
+ "17 rue laurier|gatineau": [
+  45.426892,
+  -75.711429
+ ],
+ "17 rue saint-antoine|gatineau": [
+  45.457172,
+  -75.697846
+ ],
  "170 parkrose priv|ottawa": null,
  "170 pretoria ave|ottawa": [
   45.408592,
@@ -4007,6 +4702,11 @@
   45.410716,
   -75.713678
  ],
+ "170 rue alfred-belisle|gatineau": [
+  45.544333,
+  -75.434895
+ ],
+ "170 rue bombardier app.4|gatineau": null,
  "170 shelleright st|ottawa": [
   45.278274,
   -75.875858
@@ -4079,7 +4779,15 @@
   45.402884,
   -75.726771
  ],
+ "172 chemin foley|gatineau": [
+  45.385326,
+  -75.82096
+ ],
  "172 parkrose priv|ottawa": null,
+ "172 rue ross|gatineau": [
+  45.591827,
+  -75.412331
+ ],
  "172 shelleright st|ottawa": [
   45.278165,
   -75.875958
@@ -4096,6 +4804,10 @@
   45.361047,
   -75.950669
  ],
+ "1721 rue saint-louis|gatineau": [
+  45.4604,
+  -75.719163
+ ],
  "1722 st. bernard st|ottawa": [
   45.35147,
   -75.624716
@@ -4103,6 +4815,10 @@
  "1723 rotterdam cir|ottawa": [
   45.360984,
   -75.950775
+ ],
+ "1723 rue saint-louis|gatineau": [
+  45.459673,
+  -75.717983
  ],
  "1725 frobisher lane|ottawa": [
   45.403313,
@@ -4164,6 +4880,10 @@
   45.405883,
   -75.62786
  ],
+ "1731 rue parisien|gatineau": [
+  45.502267,
+  -75.560884
+ ],
  "1731 russell rd|ottawa": [
   45.404953,
   -75.632097
@@ -4176,9 +4896,17 @@
   45.237245,
   -75.482356
  ],
+ "1735 rue parisien|gatineau": [
+  45.502279,
+  -75.56078
+ ],
  "1738 metcalfe farm dr|ottawa": [
   45.237908,
   -75.482916
+ ],
+ "1739 rue parisien|gatineau": [
+  45.502307,
+  -75.56062
  ],
  "174 parkrose priv|ottawa": null,
  "174 shelleright st|ottawa": [
@@ -4201,6 +4929,10 @@
   45.445566,
   -75.609625
  ],
+ "1743 rue parisien|gatineau": [
+  45.502317,
+  -75.560523
+ ],
  "175 a main st|ottawa": [
   45.408884,
   -75.677836
@@ -4216,6 +4948,14 @@
  "175 main st|ottawa": [
   45.409602,
   -75.67735
+ ],
+ "175 rue front|gatineau": [
+  45.405459,
+  -75.855725
+ ],
+ "175 rue jean-rene-monette|gatineau": [
+  45.482874,
+  -75.648574
  ],
  "175 sanford ave|ottawa": [
   45.372514,
@@ -4256,6 +4996,10 @@
  "1756 scott st|ottawa": [
   45.40048,
   -75.741512
+ ],
+ "1759 rue saint-louis|gatineau": [
+  45.466675,
+  -75.724493
  ],
  "176 cameron ave|ottawa": [
   45.38817,
@@ -4305,6 +5049,10 @@
   45.393551,
   -75.735289
  ],
+ "1770 chemin pink|gatineau": [
+  45.444723,
+  -75.808197
+ ],
  "1770 rotterdam cir|ottawa": [
   45.359706,
   -75.950672
@@ -4336,6 +5084,18 @@
  "178 carruthers ave|ottawa": [
   45.405393,
   -75.728884
+ ],
+ "178 rue alfred-belisle|gatineau": [
+  45.544386,
+  -75.43474
+ ],
+ "178 rue principale|gatineau": [
+  45.394782,
+  -75.836183
+ ],
+ "178 rue saint-antoine|gatineau": [
+  45.467259,
+  -75.699708
  ],
  "1780 rotterdam cir|ottawa": [
   45.359566,
@@ -4384,6 +5144,10 @@
  "179 gerry lalonde dr|ottawa": [
   45.453757,
   -75.486403
+ ],
+ "179 rue deveault|gatineau": [
+  45.462727,
+  -75.738553
  ],
  "179 succession crt|ottawa": [
   45.279037,
@@ -4458,9 +5222,25 @@
   45.410819,
   -75.675225
  ],
+ "18 rue du lynx|gatineau": [
+  45.413647,
+  -75.852372
+ ],
+ "18 rue goulet|gatineau": [
+  45.399817,
+  -75.853609
+ ],
+ "18 rue martel|gatineau": [
+  45.380854,
+  -75.80297
+ ],
  "18 viewmount dr|ottawa": [
   45.343277,
   -75.746556
+ ],
+ "180 186 rue jean-proulx|gatineau": [
+  45.46045,
+  -75.73476
  ],
  "180 a main st|ottawa": [
   45.409061,
@@ -4497,6 +5277,14 @@
  "180 maclaren st|ottawa": [
   45.41704,
   -75.689303
+ ],
+ "180 rue maclaren est|gatineau": [
+  45.587843,
+  -75.413392
+ ],
+ "180 rue pierre-menard|gatineau": [
+  45.508861,
+  -75.5557
  ],
  "180 succession crt|ottawa": [
   45.279182,
@@ -4598,6 +5386,10 @@
   45.368781,
   -75.751333
  ],
+ "182 rue alfred-belisle|gatineau": [
+  45.544414,
+  -75.434672
+ ],
  "1820 appleford st|ottawa": [
   45.440263,
   -75.604248
@@ -4617,6 +5409,10 @@
  "183 forward ave|ottawa": [
   45.406639,
   -75.731275
+ ],
+ "183 rue samuel-edey|gatineau": [
+  45.39891,
+  -75.827586
  ],
  "183 shelleright st|ottawa": [
   45.277652,
@@ -4670,6 +5466,10 @@
   45.355165,
   -75.665848
  ],
+ "185 rue samuel-edey|gatineau": [
+  45.399058,
+  -75.8276
+ ],
  "185 shelleright st|ottawa": [
   45.277571,
   -75.875812
@@ -4686,6 +5486,14 @@
   45.243372,
   -75.750155
  ],
+ "186 190 rue eddy|gatineau": [
+  45.424375,
+  -75.719758
+ ],
+ "186 238 chemin freeman|gatineau": [
+  45.472145,
+  -75.750004
+ ],
  "186 bank st|ottawa": [
   45.417946,
   -75.69892
@@ -4697,6 +5505,10 @@
  "186 kiwi st|ottawa": [
   45.265946,
   -75.681839
+ ],
+ "186 rue alfred-belisle|gatineau": [
+  45.544445,
+  -75.434593
  ],
  "1864 elevation rd|ottawa": [
   45.243118,
@@ -4715,6 +5527,10 @@
   45.264677,
   -75.681075
  ],
+ "187 rue samuel-edey|gatineau": [
+  45.399202,
+  -75.827611
+ ],
  "187 shelleright st|ottawa": [
   45.277474,
   -75.875891
@@ -4722,6 +5538,14 @@
  "1870 elevation rd|ottawa": [
   45.242948,
   -75.749893
+ ],
+ "1874 chemin cook|gatineau": [
+  45.458132,
+  -75.80502
+ ],
+ "188 rue de la galene|gatineau": [
+  45.479042,
+  -75.791289
  ],
  "1880 carling ave|ottawa": [
   45.37508,
@@ -4747,6 +5571,14 @@
   45.427558,
   -75.689035
  ],
+ "189 rue hupe|gatineau": [
+  45.48771,
+  -75.653432
+ ],
+ "189 rue samuel-edey|gatineau": [
+  45.399346,
+  -75.827622
+ ],
  "189 sparks st|ottawa": [
   45.421639,
   -75.7005
@@ -4754,6 +5586,10 @@
  "19 a aylmer ave|ottawa": [
   45.394512,
   -75.686771
+ ],
+ "19 avenue du parc|gatineau": [
+  45.456696,
+  -75.748233
  ],
  "19 bliss cres|ottawa": [
   45.286955,
@@ -4774,6 +5610,14 @@
  "19 oakland ave|ottawa": [
   45.397925,
   -75.687481
+ ],
+ "19 rue riverview|gatineau": [
+  45.387546,
+  -75.84866
+ ],
+ "19 rue valois|gatineau": [
+  45.544651,
+  -75.711029
  ],
  "19 sawgrass cir|ottawa": [
   45.205807,
@@ -4831,6 +5675,10 @@
   45.439937,
   -75.495992
  ],
+ "192 rue richer|gatineau": [
+  45.449245,
+  -75.738765
+ ],
  "1923 hawker priv|ottawa": null,
  "1928 hawker priv|ottawa": null,
  "1929 russell rd #120|ottawa": [
@@ -4857,6 +5705,10 @@
   45.466339,
   -75.453346
  ],
+ "193 rue samuel-edey|gatineau": [
+  45.399634,
+  -75.827645
+ ],
  "1930 rideau garden dr|ottawa": [
   45.400437,
   -75.671563
@@ -4878,6 +5730,18 @@
   45.265949,
   -75.681493
  ],
+ "194 rue brodeur|gatineau": [
+  45.436732,
+  -75.745914
+ ],
+ "194 rue de la galene|gatineau": [
+  45.479193,
+  -75.791918
+ ],
+ "194 rue eddy|gatineau": [
+  45.431647,
+  -75.720182
+ ],
  "1941 robertson rd #3|ottawa": [
   45.329102,
   -75.824823
@@ -4885,6 +5749,10 @@
  "1941 robertson rd #5|ottawa": [
   45.329102,
   -75.824823
+ ],
+ "1943 boulevard maloney est|gatineau": [
+  45.511391,
+  -75.539996
  ],
  "1943 fairbanks ave|ottawa": [
   45.396013,
@@ -4895,6 +5763,10 @@
  "1944 lenester ave|ottawa": [
   45.37102,
   -75.758985
+ ],
+ "195 boulevard alexandre-tache|gatineau": [
+  45.41747,
+  -75.760496
  ],
  "195 clearview ave|ottawa": [
   45.40074,
@@ -5003,6 +5875,15 @@
   45.394384,
   -75.734519
  ],
+ "2 rue cote|gatineau": [
+  45.385331,
+  -75.808926
+ ],
+ "2 rue de verdun|gatineau": [
+  45.435003,
+  -75.713685
+ ],
+ "2 rue martel app.101|gatineau": null,
  "2 via modugno pl|ottawa": [
   45.28465,
   -75.745436
@@ -5010,6 +5891,10 @@
  "2 weatherwood cres|ottawa": [
   45.318779,
   -75.713162
+ ],
+ "20 26 rue larabie|gatineau": [
+  45.492643,
+  -75.6089
  ],
  "20 b adstock hts|ottawa": [
   45.284805,
@@ -5051,6 +5936,22 @@
   45.439735,
   -75.496387
  ],
+ "20 rue de levens|gatineau": [
+  45.491866,
+  -75.7286
+ ],
+ "20 rue goulet|gatineau": [
+  45.399754,
+  -75.852361
+ ],
+ "20 rue laurier|gatineau": [
+  45.427106,
+  -75.708953
+ ],
+ "20 rue montmorency|gatineau": [
+  45.433115,
+  -75.740215
+ ],
  "20 tercet terr|ottawa": [
   45.257102,
   -75.90488
@@ -5062,6 +5963,14 @@
  "200 beechwood ave|ottawa": [
   45.442431,
   -75.67086
+ ],
+ "200 boulevard greber|gatineau": [
+  45.473249,
+  -75.702498
+ ],
+ "200 boulevard maloney est|gatineau": [
+  45.483293,
+  -75.647726
  ],
  "200 catherine st|ottawa": [
   45.409779,
@@ -5103,6 +6012,15 @@
   45.283278,
   -75.886474
  ],
+ "200 rue bellehumeur|gatineau": [
+  45.479741,
+  -75.693399
+ ],
+ "200 rue du marigot|gatineau": [
+  45.426618,
+  -75.806525
+ ],
+ "200 rue principale app.rc 015|gatineau": null,
  "200 vanguard dr|ottawa": [
   45.457735,
   -75.487651
@@ -5219,6 +6137,10 @@
   45.30487,
   -75.596951
  ],
+ "202 rue papineau|gatineau": [
+  45.429907,
+  -75.714772
+ ],
  "202 templemore mews|ottawa": [
   45.261376,
   -75.893209
@@ -5267,9 +6189,17 @@
   45.212921,
   -75.683014
  ],
+ "204 boulevard saint-joseph|gatineau": [
+  45.434268,
+  -75.732954
+ ],
  "204 burrard cres|ottawa": [
   45.333571,
   -75.923059
+ ],
+ "204 rue de la papetiere|gatineau": [
+  45.521338,
+  -75.485113
  ],
  "204 ste-monique st|ottawa": [
   45.442142,
@@ -5461,6 +6391,10 @@
   45.439658,
   -75.495883
  ],
+ "208 rue de la papetiere|gatineau": [
+  45.521248,
+  -75.485072
+ ],
  "2080 walkley rd|ottawa": [
   45.384814,
   -75.626515
@@ -5481,6 +6415,10 @@
  "209 ludis way|ottawa": [
   45.445734,
   -75.519875
+ ],
+ "209 rue des fleurs|gatineau": [
+  45.506113,
+  -75.60424
  ],
  "209 templemore mews|ottawa": [
   45.261764,
@@ -5531,6 +6469,38 @@
   45.241692,
   -75.747316
  ],
+ "21 rue de courbevoie|gatineau": [
+  45.52251,
+  -75.50158
+ ],
+ "21 rue de senneville|gatineau": [
+  45.519877,
+  -75.620076
+ ],
+ "21 rue du debusquage|gatineau": [
+  45.523153,
+  -75.482783
+ ],
+ "21 rue du lynx|gatineau": [
+  45.41368,
+  -75.851852
+ ],
+ "21 rue dumouchel|gatineau": [
+  45.509793,
+  -75.546734
+ ],
+ "21 rue florian-thibault|gatineau": [
+  45.470881,
+  -75.685214
+ ],
+ "21 rue gagnon|gatineau": [
+  45.428575,
+  -75.725138
+ ],
+ "21 rue saint-etienne|gatineau": [
+  45.433702,
+  -75.720747
+ ],
  "21 sintaluta walk|ottawa": [
   45.188973,
   -75.853028
@@ -5562,6 +6532,10 @@
  "210 prosperity walk|ottawa": [
   45.277425,
   -75.894802
+ ],
+ "210 rue papineau|gatineau": [
+  45.430166,
+  -75.71626
  ],
  "2100 scott st|ottawa": [
   45.394129,
@@ -5633,6 +6607,10 @@
  "212 prosperity walk|ottawa": [
   45.277414,
   -75.894944
+ ],
+ "212 rue jean-baptiste-routhier|gatineau": [
+  45.545338,
+  -75.436347
  ],
  "212 tobiano priv|ottawa": null,
  "2120 b niagara dr|ottawa": [
@@ -5756,6 +6734,10 @@
   45.459748,
   -75.460676
  ],
+ "216 chemin filion|gatineau": [
+  45.553752,
+  -75.438191
+ ],
  "216 ginebik way|ottawa": [
   45.30541,
   -75.597399
@@ -5804,6 +6786,10 @@
   45.461222,
   -75.499478
  ],
+ "218 boulevard maisonneuve|gatineau": [
+  45.433502,
+  -75.712288
+ ],
  "218 burrard cres|ottawa": [
   45.333208,
   -75.922148
@@ -5843,6 +6829,10 @@
  "219 argyle ave|ottawa": [
   45.411427,
   -75.690935
+ ],
+ "219 avenue du bois-franc|gatineau": [
+  45.415549,
+  -75.846081
  ],
  "219 grandview rd|ottawa": [
   45.362719,
@@ -5908,9 +6898,33 @@
   45.327306,
   -75.706891
  ],
+ "22 promenade lakeview|gatineau": [
+  45.397635,
+  -75.808407
+ ],
  "22 robert kemp st|ottawa": [
   45.335576,
   -75.607168
+ ],
+ "22 rue de varennes|gatineau": [
+  45.493586,
+  -75.706311
+ ],
+ "22 rue du lynx|gatineau": [
+  45.413733,
+  -75.852383
+ ],
+ "22 rue eddy|gatineau": [
+  45.425874,
+  -75.719693
+ ],
+ "22 rue montmorency|gatineau": [
+  45.433238,
+  -75.740279
+ ],
+ "22 rue pierre-radisson|gatineau": [
+  45.468705,
+  -75.712873
  ],
  "22 sycamore dr|ottawa": [
   45.317003,
@@ -6027,6 +7041,14 @@
   45.369013,
   -75.772191
  ],
+ "223 rue guillemette|gatineau": [
+  45.488879,
+  -75.647888
+ ],
+ "223 rue kent|gatineau": [
+  45.436637,
+  -75.714211
+ ],
  "2236 copperhead st|ottawa": [
   45.440207,
   -75.500137
@@ -6066,6 +7088,10 @@
  "2248 copperhead st|ottawa": [
   45.44028,
   -75.499725
+ ],
+ "225 245 chemin de la savane|gatineau": [
+  45.474069,
+  -75.708196
  ],
  "225 bankside way|ottawa": [
   45.257473,
@@ -6115,6 +7141,10 @@
   45.386713,
   -75.675516
  ],
+ "227 boulevard saint-joseph|gatineau": [
+  45.435375,
+  -75.733428
+ ],
  "227 cope dr|ottawa": [
   45.277559,
   -75.872474
@@ -6123,6 +7153,14 @@
   45.324579,
   -75.588063
  ],
+ "227 rue guillemette|gatineau": [
+  45.489077,
+  -75.645627
+ ],
+ "227 rue montcalm|gatineau": [
+  45.431105,
+  -75.732648
+ ],
  "2270 st-laurent blvd|ottawa": [
   45.386347,
   -75.616805
@@ -6130,6 +7168,10 @@
  "2270 wilhaven dr|ottawa": [
   45.499077,
   -75.413008
+ ],
+ "228 234 boulevard saint-joseph|gatineau": [
+  45.431754,
+  -75.733283
  ],
  "228 bank st|ottawa": [
   45.389264,
@@ -6147,6 +7189,10 @@
   45.29256,
   -75.90992
  ],
+ "228 rue laurel|gatineau": [
+  45.485005,
+  -75.654915
+ ],
  "2280 lawn ave|ottawa": [
   45.370309,
   -75.777074
@@ -6154,6 +7200,10 @@
  "2283 st-laurent blvd|ottawa": [
   45.386162,
   -75.615442
+ ],
+ "2287 rue saint-louis|gatineau": [
+  45.486871,
+  -75.743347
  ],
  "2288 fox cres|ottawa": [
   45.366723,
@@ -6170,6 +7220,10 @@
  "23 bolt terr|ottawa": [
   45.282899,
   -75.885351
+ ],
+ "23 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
  ],
  "23 kilmory cres|ottawa": [
   45.356277,
@@ -6202,6 +7256,14 @@
  "23 sutcliffe terr|ottawa": [
   45.291756,
   -75.739743
+ ],
+ "230 chemin antoine-boucher|gatineau": [
+  45.423193,
+  -75.876808
+ ],
+ "230 chemin vanier|gatineau": [
+  45.42019,
+  -75.809554
  ],
  "230 ginebik way|ottawa": [
   45.30568,
@@ -6251,6 +7313,10 @@
   45.333765,
   -75.922001
  ],
+ "231 rue laurel|gatineau": [
+  45.48501,
+  -75.655492
+ ],
  "2310 virginia dr|ottawa": [
   45.386294,
   -75.645271
@@ -6270,6 +7336,10 @@
  "232 bankside way|ottawa": [
   45.257286,
   -75.74574
+ ],
+ "232 chemin filion|gatineau": [
+  45.553844,
+  -75.436246
  ],
  "232 metric cir|ottawa": [
   45.282843,
@@ -6295,6 +7365,10 @@
  "233 amarnath cir|ottawa": [
   45.246187,
   -75.746611
+ ],
+ "233 boulevard saint-rene ouest|gatineau": [
+  45.492091,
+  -75.65611
  ],
  "233 gilmour st|ottawa": [
   45.416104,
@@ -6348,6 +7422,8 @@
   45.381284,
   -75.659778
  ],
+ "235 245 rue de cannes app.235-rc 001|gatineau": null,
+ "235 245 rue de cannes app.245-rc 007|gatineau": null,
  "235 beausoleil dr|ottawa": [
   45.432538,
   -75.681544
@@ -6387,6 +7463,10 @@
  "236 ginebik way|ottawa": [
   45.30542,
   -75.59868
+ ],
+ "236 montee dalton|gatineau": [
+  45.507281,
+  -75.588403
  ],
  "236 richmond rd|ottawa": [
   45.393707,
@@ -6469,6 +7549,10 @@
   45.186347,
   -75.846221
  ],
+ "24 rue smith|gatineau": [
+  45.471146,
+  -75.686719
+ ],
  "24 surf scoter lane|ottawa": [
   45.260234,
   -75.688174
@@ -6486,6 +7570,10 @@
   45.409095,
   -75.692583
  ],
+ "240 chemin vanier|gatineau": [
+  45.42019,
+  -75.809554
+ ],
  "240 hampshire pl|ottawa": [
   45.292831,
   -75.909402
@@ -6493,6 +7581,10 @@
  "240 michael cowpland dr|ottawa": [
   45.284373,
   -75.872135
+ ],
+ "240 rue magnus est|gatineau": [
+  45.493752,
+  -75.647678
  ],
  "240 sparks st|ottawa": [
   45.420425,
@@ -6615,6 +7707,10 @@
  "2447 wyndale cres|ottawa": [
   45.381568,
   -75.645841
+ ],
+ "245 249 boulevard de la cite-des-jeunes|gatineau": [
+  45.462668,
+  -75.769975
  ],
  "245 bradford st|ottawa": [
   45.365707,
@@ -6801,6 +7897,14 @@
   45.3751,
   -75.676161
  ],
+ "25 139 boulevard du plateau|gatineau": [
+  45.435755,
+  -75.778527
+ ],
+ "25 allee riley|gatineau": [
+  45.407474,
+  -75.863124
+ ],
  "25 billingham cres|ottawa": [
   45.353645,
   -75.926271
@@ -6812,6 +7916,10 @@
  "25 bongard ave|ottawa": [
   45.330925,
   -75.718474
+ ],
+ "25 chemin de la savane|gatineau": [
+  45.475324,
+  -75.703749
  ],
  "25 eugenia walk|ottawa": [
   45.322096,
@@ -6830,6 +7938,15 @@
   45.322364,
   -75.73906
  ],
+ "25 rue du debusquage|gatineau": [
+  45.523119,
+  -75.482888
+ ],
+ "25 rue du gîte|gatineau": null,
+ "25 rue du lynx|gatineau": [
+  45.413735,
+  -75.851859
+ ],
  "25 templeton st|ottawa": [
   45.421392,
   -75.679219
@@ -6841,6 +7958,10 @@
  "250 apricot st|ottawa": [
   45.26484,
   -75.683763
+ ],
+ "250 chemin vanier|gatineau": [
+  45.42019,
+  -75.809554
  ],
  "250 city centre ave|ottawa": [
   45.408352,
@@ -7038,6 +8159,10 @@
   45.26514,
   -75.683902
  ],
+ "255 avenue gatineau|gatineau": [
+  45.488734,
+  -75.719103
+ ],
  "255 daniel ave|ottawa": [
   45.400247,
   -75.745592
@@ -7049,6 +8174,10 @@
  "255 kanata ave|ottawa": [
   45.310949,
   -75.905587
+ ],
+ "255 rue saint-redempteur|gatineau": [
+  45.436097,
+  -75.724064
  ],
  "255 sussex dr|ottawa": [
   45.433331,
@@ -7119,6 +8248,10 @@
   45.500482,
   -76.081656
  ],
+ "258 chemin des erables|gatineau": [
+  45.513223,
+  -75.739199
+ ],
  "258 montfort st|ottawa": [
   45.438603,
   -75.662426
@@ -7135,9 +8268,15 @@
   45.362726,
   -75.786806
  ],
+ "259 boulevard saint-joseph app.rc 003 (109)|gatineau": null,
  "259 clemow ave|ottawa": [
   45.403683,
   -75.695977
+ ],
+ "259 rue champlain app.1|gatineau": null,
+ "259 rue champlain|gatineau": [
+  45.43424,
+  -75.711624
  ],
  "2599 innes rd|ottawa": [
   45.432582,
@@ -7147,9 +8286,17 @@
   45.284698,
   -75.889565
  ],
+ "26 chemin fraser|gatineau": [
+  45.381114,
+  -75.829543
+ ],
  "26 horner dr|ottawa": [
   45.34604,
   -75.819598
+ ],
+ "26 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
  ],
  "26 maryborough way|ottawa": [
   45.261524,
@@ -7163,9 +8310,33 @@
   45.241394,
   -75.747616
  ],
+ "26 rue de l'anse-aux-bateaux|gatineau": [
+  45.473716,
+  -75.737067
+ ],
+ "26 rue du loiret|gatineau": [
+  45.46651,
+  -75.721635
+ ],
+ "26 rue du lynx|gatineau": [
+  45.413793,
+  -75.852389
+ ],
+ "26 rue louis|gatineau": [
+  45.386122,
+  -75.826085
+ ],
  "26 sandwell cres|ottawa": [
   45.325143,
   -75.900781
+ ],
+ "260 chemin industriel|gatineau": [
+  45.513946,
+  -75.575661
+ ],
+ "260 chemin vanier|gatineau": [
+  45.42019,
+  -75.809554
  ],
  "260 cloverdale rd|ottawa": [
   45.449841,
@@ -7206,6 +8377,10 @@
  "261 lamarche ave|ottawa": [
   45.44514,
   -75.522528
+ ],
+ "261 rue essiambre|gatineau": [
+  45.503218,
+  -75.654065
  ],
  "2610 del zotto ave|ottawa": [
   45.313176,
@@ -7314,6 +8489,10 @@
  "265 parkdale ave|ottawa": [
   45.40444,
   -75.731063
+ ],
+ "265 rue josaphat-laframboise|gatineau": [
+  45.544353,
+  -75.433915
  ],
  "2651 regina st|ottawa": [
   45.365542,
@@ -7431,9 +8610,17 @@
   45.419123,
   -75.698506
  ],
+ "269 rue josaphat-laframboise|gatineau": [
+  45.544445,
+  -75.434055
+ ],
  "27 adstock hts|ottawa": [
   45.284359,
   -75.889813
+ ],
+ "27 avenue du parc|gatineau": [
+  45.457124,
+  -75.748942
  ],
  "27 bruyère st|ottawa": [
   45.431663,
@@ -7442,6 +8629,22 @@
  "27 hobin st|ottawa": [
   45.262681,
   -75.933309
+ ],
+ "27 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
+ ],
+ "27 impasse leonard-page|gatineau": [
+  45.577585,
+  -75.395632
+ ],
+ "27 rue joffre|gatineau": [
+  45.445509,
+  -75.737535
+ ],
+ "27 rue mitchell|gatineau": [
+  45.490086,
+  -75.601261
  ],
  "270 albert st|ottawa": [
   45.419373,
@@ -7511,6 +8714,10 @@
   45.431764,
   -75.657387
  ],
+ "273 rue laurier|gatineau": [
+  45.43934,
+  -75.708799
+ ],
  "2733 sarsfield rd|ottawa": [
   45.470003,
   -75.354886
@@ -7540,6 +8747,10 @@
   45.393207,
   -75.717812
  ],
+ "275 chemin industriel|gatineau": [
+  45.514821,
+  -75.572035
+ ],
  "275 hillcrest rd|ottawa": [
   45.45246,
   -75.680394
@@ -7551,6 +8762,14 @@
  "275 maclaren st|ottawa": [
   45.416145,
   -75.692912
+ ],
+ "275 rue de bruxelles|gatineau": [
+  45.435264,
+  -75.800029
+ ],
+ "275 rue de saint-vallier|gatineau": [
+  45.491782,
+  -75.724921
  ],
  "275 sparks st|ottawa": [
   45.420228,
@@ -7596,6 +8815,10 @@
   45.321603,
   -75.61431
  ],
+ "277 rue josaphat-laframboise|gatineau": [
+  45.544664,
+  -75.434234
+ ],
  "2770 sheffield rd|ottawa": [
   45.398254,
   -75.605679
@@ -7625,6 +8848,10 @@
   45.439045,
   -75.661112
  ],
+ "279 rue des louveteaux|gatineau": [
+  45.424261,
+  -75.801306
+ ],
  "2790 avoncourt way|ottawa": [
   45.366731,
   -75.673101
@@ -7649,6 +8876,11 @@
   45.284805,
   -75.890225
  ],
+ "28 boulevard du mont-bleu app.02 002|gatineau": null,
+ "28 boulevard du mont-bleu|gatineau": [
+  45.462798,
+  -75.744713
+ ],
  "28 florence st|ottawa": [
   45.412212,
   -75.694966
@@ -7661,10 +8893,19 @@
   45.397413,
   -75.693771
  ],
+ "28 rue montmartre|gatineau": [
+  45.433283,
+  -75.742168
+ ],
+ "28 rue sainte-rose|gatineau": [
+  45.494317,
+  -75.60295
+ ],
  "28 sintaluta walk|ottawa": [
   45.188566,
   -75.853053
  ],
+ "280 boulevard de l'europe app.10|gatineau": null,
  "280 cornice st|ottawa": [
   45.43988,
   -75.500023
@@ -7684,6 +8925,10 @@
  "280 queen mary st|ottawa": [
   45.42496,
   -75.653108
+ ],
+ "280 rue nancy-elliott|gatineau": [
+  45.402416,
+  -75.794542
  ],
  "280 slater st|ottawa": [
   45.418679,
@@ -7709,6 +8954,10 @@
  "281 richmond rd|ottawa": [
   45.393287,
   -75.751536
+ ],
+ "281 rue laramee|gatineau": [
+  45.431771,
+  -75.737095
  ],
  "2811 sheffield rd|ottawa": [
   45.397698,
@@ -7786,6 +9035,10 @@
   45.399507,
   -75.713396
  ],
+ "284 rue lavictoire|gatineau": [
+  45.487671,
+  -75.648189
+ ],
  "284 wellington st|ottawa": [
   45.419973,
   -75.704993
@@ -7793,6 +9046,10 @@
  "2841 richmond rd|ottawa": [
   45.356904,
   -75.796385
+ ],
+ "285 boulevard de l'amerique-francaise|gatineau": [
+  45.43346,
+  -75.805658
  ],
  "285 cabrelle pl|ottawa": [
   45.218064,
@@ -7805,6 +9062,14 @@
  "285 ganaraska grove|ottawa": [
   45.321357,
   -75.614242
+ ],
+ "285 rue du piree|gatineau": [
+  45.435702,
+  -75.817162
+ ],
+ "285 rue laurier|gatineau": [
+  45.440155,
+  -75.708456
  ],
  "2850 st. hughes crt|ottawa": [
   45.442249,
@@ -7910,6 +9175,10 @@
   45.258036,
   -75.761589
  ],
+ "289 rue josaphat-laframboise|gatineau": [
+  45.545045,
+  -75.434565
+ ],
  "2894 turquoise cres|ottawa": [
   45.427957,
   -75.479206
@@ -7942,6 +9211,10 @@
   45.347853,
   -75.724666
  ],
+ "29 rue du lynx|gatineau": [
+  45.413791,
+  -75.851865
+ ],
  "29 tercet terr|ottawa": [
   45.256715,
   -75.904947
@@ -7950,6 +9223,7 @@
   45.400962,
   -75.693423
  ],
+ "290 boulevard d'europe app.9|gatineau": null,
  "290 ganaraska grove|ottawa": [
   45.321252,
   -75.613783
@@ -7981,6 +9255,10 @@
  "292 bankside way|ottawa": [
   45.257591,
   -75.743961
+ ],
+ "292 rue de saint-vallier|gatineau": [
+  45.492024,
+  -75.724106
  ],
  "2928 bank st|ottawa": [
   45.347658,
@@ -8025,6 +9303,10 @@
  "295 cyr ave|ottawa": [
   45.433886,
   -75.662788
+ ],
+ "295 rue du piree|gatineau": [
+  45.435678,
+  -75.817604
  ],
  "2950 bank st|ottawa": [
   45.346597,
@@ -8090,11 +9372,25 @@
   45.313235,
   -75.997425
  ],
+ "3 chemin d'amour|gatineau": [
+  45.408233,
+  -75.789062
+ ],
  "3 conductor ave|ottawa": [
   45.261378,
   -75.929629
  ],
  "3 kanata rockeries priv|ottawa": null,
+ "3 rue de clericy|gatineau": [
+  45.487912,
+  -75.706727
+ ],
+ "3 rue du centre app.1-4|gatineau": null,
+ "3 rue du centre app.5-8|gatineau": null,
+ "3 rue eddy|gatineau": [
+  45.423894,
+  -75.719965
+ ],
  "30 adstock hts|ottawa": [
   45.284546,
   -75.88924
@@ -8103,10 +9399,18 @@
   45.404837,
   -75.673284
  ],
+ "30 chemin eardley|gatineau": [
+  45.39824,
+  -75.848478
+ ],
  "30 concourse gt|ottawa": null,
  "30 costello ave|ottawa": [
   45.333508,
   -75.793809
+ ],
+ "30 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
  ],
  "30 maryborough way|ottawa": [
   45.261449,
@@ -8116,9 +9420,37 @@
   45.364115,
   -75.936152
  ],
+ "30 rue bancroft|gatineau": [
+  45.393678,
+  -75.846175
+ ],
+ "30 rue du lynx|gatineau": [
+  45.413852,
+  -75.852395
+ ],
+ "30 rue saratoga|gatineau": [
+  45.383918,
+  -75.839173
+ ],
+ "30 rue seto|gatineau": [
+  45.419347,
+  -75.807153
+ ],
  "30 thorncliff pl|ottawa": [
   45.328374,
   -75.816025
+ ],
+ "300 boulevard d'europe|gatineau": [
+  45.437421,
+  -75.798806
+ ],
+ "300 boulevard saint-raymond|gatineau": [
+  45.425513,
+  -75.762007
+ ],
+ "300 chemin industriel|gatineau": [
+  45.513712,
+  -75.56929
  ],
  "300 cyd st|ottawa": [
   45.301345,
@@ -8231,6 +9563,10 @@
   45.368696,
   -75.93691
  ],
+ "304 310 boulevard saint-joseph|gatineau": [
+  45.439114,
+  -75.732904
+ ],
  "304 amistad priv|ottawa": null,
  "304 athabasca hts|ottawa": [
   45.333221,
@@ -8252,13 +9588,25 @@
   45.335144,
   -75.807895
  ],
+ "305 boulevard de l'amerique-francaise|gatineau": [
+  45.432983,
+  -75.803963
+ ],
  "305 rideau st|ottawa": [
   45.429262,
   -75.685406
  ],
+ "305 rue du piree|gatineau": [
+  45.435666,
+  -75.818108
+ ],
  "306 athabasca hts|ottawa": [
   45.333082,
   -75.925146
+ ],
+ "306 rue jacques-buteux|gatineau": [
+  45.488458,
+  -75.663595
  ],
  "306 savona terr|ottawa": [
   45.256727,
@@ -8285,6 +9633,10 @@
   -75.901247
  ],
  "308 hilversum lane|ottawa": null,
+ "308 rue alfred-leon|gatineau": [
+  45.419109,
+  -75.841352
+ ],
  "3087 riverside dr|ottawa": [
   45.362927,
   -75.687729
@@ -8323,6 +9675,10 @@
   45.266063,
   -75.681164
  ],
+ "31 impasse leonard-page|gatineau": [
+  45.577573,
+  -75.39574
+ ],
  "31 julian ave|ottawa": [
   45.397803,
   -75.733904
@@ -8339,6 +9695,14 @@
   45.329471,
   -75.815931
  ],
+ "31 rue de l'abbe-ginguet|gatineau": [
+  45.470825,
+  -75.708415
+ ],
+ "31 rue gagnon|gatineau": [
+  45.429088,
+  -75.723521
+ ],
  "31 winding way|ottawa": [
   45.289662,
   -75.700086
@@ -8347,6 +9711,7 @@
   45.337763,
   -75.733335
  ],
+ "310 boulevard d'europe app.9|gatineau": null,
  "310 dandelion mews|ottawa": [
   45.364438,
   -75.950739
@@ -8470,6 +9835,10 @@
   45.297869,
   -75.914487
  ],
+ "315 boulevard de l'amerique-francaise|gatineau": [
+  45.432921,
+  -75.803243
+ ],
  "315 chapel st|ottawa": [
   45.429247,
   -75.679603
@@ -8483,6 +9852,10 @@
   -75.65287
  ],
  "315 miwate priv|ottawa": null,
+ "315 rue du piree|gatineau": [
+  45.435205,
+  -75.81805
+ ],
  "315 savard ave|ottawa": [
   45.433443,
   -75.663286
@@ -8530,6 +9903,10 @@
  "316 jollity cres|ottawa": [
   45.259349,
   -75.753515
+ ],
+ "316 rue de lausanne|gatineau": [
+  45.479146,
+  -75.678265
  ],
  "316 solidago mews|ottawa": [
   45.327956,
@@ -8650,6 +10027,10 @@
  "32 peony lane|ottawa": [
   45.252779,
   -75.694298
+ ],
+ "32 rue paul-sabatier|gatineau": [
+  45.495047,
+  -75.698958
  ],
  "320 lees ave|ottawa": [
   45.416495,
@@ -8800,13 +10181,25 @@
   45.245194,
   -75.629157
  ],
+ "325 boulevard de la cite-des-jeunes|gatineau": [
+  45.455857,
+  -75.765326
+ ],
  "325 cantering dr|ottawa": [
   45.19114,
   -75.852253
  ],
+ "325 chemin d'aylmer|gatineau": [
+  45.397024,
+  -75.825219
+ ],
  "325 montréal rd|ottawa": [
   45.437794,
   -75.657449
+ ],
+ "325 rue du piree|gatineau": [
+  45.435239,
+  -75.817567
  ],
  "3255 conroy rd|ottawa": [
   45.372261,
@@ -8902,6 +10295,10 @@
   45.25879,
   -75.759651
  ],
+ "329 rue marquette|gatineau": [
+  45.494946,
+  -75.642312
+ ],
  "329 shoveler grove|ottawa": [
   45.261576,
   -75.687151
@@ -8913,6 +10310,10 @@
  "3298 sarsfield rd|ottawa": [
   45.449233,
   -75.348308
+ ],
+ "33 35 rue desrosiers|gatineau": [
+  45.493498,
+  -75.608002
  ],
  "33 eugenia walk|ottawa": [
   45.321948,
@@ -8930,6 +10331,14 @@
   45.184641,
   -75.844014
  ],
+ "33 rue chiasson|gatineau": [
+  45.493279,
+  -75.598506
+ ],
+ "33 rue du debusquage|gatineau": [
+  45.523044,
+  -75.483091
+ ],
  "33 starwood rd|ottawa": [
   45.355687,
   -75.747179
@@ -8946,6 +10355,10 @@
   45.256863,
   -75.760625
  ],
+ "330 rue chagnon|gatineau": [
+  45.421376,
+  -75.837987
+ ],
  "330 sparks st|ottawa": [
   45.419253,
   -75.704766
@@ -8958,6 +10371,10 @@
  "3304 lévrier walk|ottawa": [
   45.502551,
   -75.461128
+ ],
+ "331 333 boulevard de la cite-des-jeunes|gatineau": [
+  45.462668,
+  -75.769975
  ],
  "331 antigonish ave|ottawa": [
   45.48816,
@@ -9056,6 +10473,10 @@
   45.503059,
   -75.45994
  ],
+ "334 336 rue saint-andre|gatineau": [
+  45.479892,
+  -75.644361
+ ],
  "334 cloyne cres|ottawa": [
   45.238342,
   -75.730053
@@ -9091,6 +10512,10 @@
  "335 les emmerson dr|ottawa": [
   45.258933,
   -75.759255
+ ],
+ "335 rue du piree|gatineau": [
+  45.435279,
+  -75.817105
  ],
  "336 peninsula rd|ottawa": [
   45.257064,
@@ -9168,6 +10593,18 @@
   45.364287,
   -75.935884
  ],
+ "34 rue alfred-belisle|gatineau": [
+  45.544933,
+  -75.436532
+ ],
+ "34 rue binet|gatineau": [
+  45.43561,
+  -75.736062
+ ],
+ "34 rue du lynx|gatineau": [
+  45.413912,
+  -75.852401
+ ],
  "34 st. francis st|ottawa": [
   45.401444,
   -75.723019
@@ -9195,6 +10632,10 @@
  "340 richmond rd|ottawa": [
   45.391944,
   -75.753871
+ ],
+ "340 rue nancy-elliott|gatineau": [
+  45.402128,
+  -75.793484
  ],
  "340 terry fox dr|ottawa": [
   45.353101,
@@ -9236,6 +10677,10 @@
  "342 symphony way|ottawa": [
   45.25488,
   -75.748372
+ ],
+ "343 boulevard greber|gatineau": [
+  45.478814,
+  -75.700593
  ],
  "343 deschâtelets ave|ottawa": [
   45.409726,
@@ -9367,6 +10812,10 @@
   45.321651,
   -75.837872
  ],
+ "35 impasse leonard-page|gatineau": [
+  45.577567,
+  -75.395814
+ ],
  "35 irving ave|ottawa": [
   45.404562,
   -75.722051
@@ -9382,6 +10831,14 @@
  "35 primrose ave east|ottawa": [
   45.412833,
   -75.708375
+ ],
+ "35 rue davies|gatineau": [
+  45.431641,
+  -75.739244
+ ],
+ "35 rue seto|gatineau": [
+  45.418856,
+  -75.807106
  ],
  "35 surf scoter lane|ottawa": [
   45.259977,
@@ -9568,6 +11025,10 @@
   45.448699,
   -75.523024
  ],
+ "36 38 rue papineau|gatineau": [
+  45.429992,
+  -75.714088
+ ],
  "36 antares dr|ottawa": [
   45.333692,
   -75.709699
@@ -9593,6 +11054,7 @@
   45.241137,
   -75.747415
  ],
+ "36 rue desrosiers app.1-2-3|gatineau": null,
  "36 steacie dr|ottawa": [
   45.333796,
   -75.9059
@@ -9604,6 +11066,10 @@
  "360 bell st south|ottawa": [
   45.401382,
   -75.703002
+ ],
+ "360 boulevard la verendrye est|gatineau": [
+  45.506519,
+  -75.611815
  ],
  "360 laurier ave w|ottawa": [
   45.417715,
@@ -9632,6 +11098,10 @@
  "361 symphony way|ottawa": [
   45.255443,
   -75.748116
+ ],
+ "362 chemin d'aylmer|gatineau": [
+  45.395986,
+  -75.823654
  ],
  "362 flare grove|ottawa": [
   45.211031,
@@ -9710,6 +11180,10 @@
   45.465312,
   -75.496811
  ],
+ "367 rue de la seve|gatineau": [
+  45.502035,
+  -75.758372
+ ],
  "3671 strandherd dr|ottawa": [
   45.271385,
   -75.743319
@@ -9734,6 +11208,10 @@
   45.481417,
   -76.021438
  ],
+ "37 39 rue desrosiers|gatineau": [
+  45.493498,
+  -75.608002
+ ],
  "37 ella st|ottawa": [
   45.398434,
   -75.694096
@@ -9749,6 +11227,14 @@
  "37 osler st|ottawa": [
   45.364117,
   -75.935391
+ ],
+ "37 rue bombardier|gatineau": [
+  45.515712,
+  -75.57217
+ ],
+ "37 rue du debusquage|gatineau": [
+  45.523007,
+  -75.483193
  ],
  "37 wolff st|ottawa": [
   45.428852,
@@ -9847,6 +11333,10 @@
   45.217322,
   -75.38159
  ],
+ "375 chemin d'aylmer|gatineau": [
+  45.397946,
+  -75.823102
+ ],
  "375 codd's rd|ottawa": [
   45.454156,
   -75.633591
@@ -9928,6 +11418,10 @@
   45.361273,
   -75.935132
  ],
+ "38 boulevard du mont-bleu|gatineau": [
+  45.46228,
+  -75.747537
+ ],
  "38 clarey ave|ottawa": [
   45.400783,
   -75.685376
@@ -9948,9 +11442,25 @@
   45.364427,
   -75.935685
  ],
+ "38 promenade oval|gatineau": [
+  45.392603,
+  -75.801452
+ ],
  "38 reynard cres|ottawa": [
   45.184756,
   -75.844711
+ ],
+ "38 rue alfred-belisle|gatineau": [
+  45.544898,
+  -75.436635
+ ],
+ "38 rue edgewood|gatineau": [
+  45.462798,
+  -75.809192
+ ],
+ "38 rue saint-florent|gatineau": [
+  45.434235,
+  -75.718876
  ],
  "380 hunt club rd|ottawa": [
   45.338867,
@@ -9967,6 +11477,18 @@
  "380 segun raji st|ottawa": [
   45.322998,
   -75.612201
+ ],
+ "381 boulevard labrosse|gatineau": [
+  45.492143,
+  -75.641468
+ ],
+ "381 boulevard maloney est|gatineau": [
+  45.485079,
+  -75.640579
+ ],
+ "381 chemin industriel|gatineau": [
+  45.515407,
+  -75.561807
  ],
  "381 vibert douglas dr|ottawa": [
   45.361204,
@@ -10098,9 +11620,18 @@
   -75.82005
  ],
  "389 wiggins priv|ottawa": null,
+ "39 91 boulevard de la gappe app.73-rc 002 e2|gatineau": null,
+ "39 91 boulevard de la gappe|gatineau": [
+  45.477514,
+  -75.702563
+ ],
  "39 goulburn ave|ottawa": [
   45.426935,
   -75.674937
+ ],
+ "39 impasse leonard-page|gatineau": [
+  45.577563,
+  -75.395888
  ],
  "39 madawaska dr|ottawa": [
   45.398077,
@@ -10113,6 +11644,18 @@
  "39 riverdale ave|ottawa": [
   45.40204,
   -75.675051
+ ],
+ "39 rue du chevalier-de rouville|gatineau": [
+  45.430323,
+  -75.738591
+ ],
+ "39 rue saint-florent|gatineau": [
+  45.434533,
+  -75.719426
+ ],
+ "39 rue tetreau|gatineau": [
+  45.418658,
+  -75.7435
  ],
  "39 surf scoter lane|ottawa": [
   45.259772,
@@ -10223,6 +11766,10 @@
   45.455705,
   -75.615985
  ],
+ "4 rue de verdun|gatineau": [
+  45.43495,
+  -75.714601
+ ],
  "4 thorncliff pl|ottawa": [
   45.328646,
   -75.815555
@@ -10230,6 +11777,10 @@
  "40 boteler st|ottawa": [
   45.433548,
   -75.697986
+ ],
+ "40 boulevard de la technologie|gatineau": [
+  45.476024,
+  -75.774945
  ],
  "40 concourse gt|ottawa": null,
  "40 elgin st|ottawa": [
@@ -10248,6 +11799,14 @@
   45.364493,
   -75.935592
  ],
+ "40 rue de cavaillon|gatineau": [
+  45.492365,
+  -75.722286
+ ],
+ "40 rue du dome|gatineau": [
+  45.472915,
+  -75.750359
+ ],
  "40 ruskin st|ottawa": [
   45.394189,
   -75.720592
@@ -10259,6 +11818,10 @@
  "400 cache bay cres|ottawa": [
   45.321923,
   -75.596235
+ ],
+ "400 chemin fraser|gatineau": [
+  45.398147,
+  -75.826036
  ],
  "400 cooper st|ottawa": [
   45.415662,
@@ -10284,6 +11847,10 @@
  "400 maple grove rd|ottawa": [
   45.297997,
   -75.907396
+ ],
+ "400 rue raymond|gatineau": [
+  45.491938,
+  -75.649959
  ],
  "400 zulu priv|ottawa": null,
  "4000 labelle st|ottawa": [
@@ -10393,6 +11960,10 @@
   45.500438,
   -76.190597
  ],
+ "41 43 rue desrosiers|gatineau": [
+  45.493498,
+  -75.608002
+ ],
  "41 a william st|ottawa": [
   45.427705,
   -75.692143
@@ -10429,9 +12000,25 @@
   45.389595,
   -75.679672
  ],
+ "41 rue du debusquage|gatineau": [
+  45.522966,
+  -75.483299
+ ],
+ "41 rue moliere|gatineau": [
+  45.411547,
+  -75.797419
+ ],
+ "41 rue riverview|gatineau": [
+  45.389389,
+  -75.848797
+ ],
  "41 third ave|ottawa": [
   45.404663,
   -75.684797
+ ],
+ "410 boulevard greber|gatineau": [
+  45.483764,
+  -75.702262
  ],
  "4100 strandherd dr|ottawa": [
   45.260627,
@@ -10486,6 +12073,14 @@
   45.317642,
   -75.603408
  ],
+ "415 421 rue charles|gatineau": [
+  45.587685,
+  -75.415535
+ ],
+ "415 chemin industriel|gatineau": [
+  45.515618,
+  -75.559428
+ ],
  "415 gilmour st|ottawa": [
   45.41416,
   -75.695733
@@ -10517,6 +12112,10 @@
  "416 mcarthur ave|ottawa": [
   45.431942,
   -75.647647
+ ],
+ "416 rue brebeuf|gatineau": [
+  45.492154,
+  -75.658426
  ],
  "416 velocity mews|ottawa": [
   45.363943,
@@ -10551,6 +12150,10 @@
   45.322674,
   -75.613849
  ],
+ "42 50 rue latour|gatineau": [
+  45.584934,
+  -75.399999
+ ],
  "42 amberly pl|ottawa": [
   45.447605,
   -75.614161
@@ -10571,6 +12174,10 @@
   45.252905,
   -75.693884
  ],
+ "420 430 rue du progres|gatineau": [
+  45.522949,
+  -75.494758
+ ],
  "420 ashbee crt|ottawa": [
   45.216222,
   -75.707761
@@ -10580,6 +12187,11 @@
   -75.603927
  ],
  "420 bivouac mews|ottawa": null,
+ "420 boulevard maloney est app.02 203|gatineau": null,
+ "420 chemin queen's park|gatineau": [
+  45.407922,
+  -75.884136
+ ],
  "420 hazeldean rd|ottawa": [
   45.301767,
   -75.87981
@@ -10621,6 +12233,10 @@
   45.379367,
   -75.746415
  ],
+ "424 rue de pointe-gatineau|gatineau": [
+  45.466782,
+  -75.697391
+ ],
  "424 velocity mews|ottawa": [
   45.363757,
   -75.933126
@@ -10628,6 +12244,12 @@
  "425 blake blvd|ottawa": [
   45.434492,
   -75.650726
+ ],
+ "425 boulevard saint-joseph app.rc 032-033|gatineau": null,
+ "425 boulevard saint-joseph app.rc20/bur.100|gatineau": null,
+ "425 boulevard saint-joseph|gatineau": [
+  45.446601,
+  -75.734275
  ],
  "425 culdaff rd|ottawa": [
   45.287333,
@@ -10681,6 +12303,10 @@
   45.24021,
   -75.481715
  ],
+ "428 rue jeannine-gregoire-ross|gatineau": [
+  45.496161,
+  -75.569868
+ ],
  "4280 innes rd|ottawa": [
   45.472808,
   -75.445881
@@ -10704,6 +12330,34 @@
  "43 bruyère st|ottawa": [
   45.432784,
   -75.695745
+ ],
+ "43 impasse leonard-page|gatineau": [
+  45.577571,
+  -75.396
+ ],
+ "43 rue alfred-belisle|gatineau": [
+  45.544519,
+  -75.43655
+ ],
+ "43 rue de lacaune|gatineau": [
+  45.490071,
+  -75.718988
+ ],
+ "43 rue des spiritains|gatineau": [
+  45.496482,
+  -75.754849
+ ],
+ "43 rue millar|gatineau": [
+  45.421961,
+  -75.731286
+ ],
+ "430 boulevard de l'hopital|gatineau": [
+  45.49046,
+  -75.688369
+ ],
+ "431 rue des becs-scie|gatineau": [
+  45.522356,
+  -75.481997
  ],
  "432 gathering priv|ottawa": null,
  "432 john aselford drwy|ottawa": [
@@ -10738,6 +12392,10 @@
   45.365763,
   -75.9429
  ],
+ "435 rue des becs-scie|gatineau": [
+  45.522461,
+  -75.481972
+ ],
  "436 athlone ave|ottawa": [
   45.391633,
   -75.750102
@@ -10749,6 +12407,10 @@
  "437 donald st|ottawa": [
   45.429624,
   -75.64868
+ ],
+ "437 rue saint-louis|gatineau": [
+  45.475821,
+  -75.666644
  ],
  "437 segun raji st|ottawa": [
   45.32237,
@@ -10775,6 +12437,10 @@
   45.258097,
   -75.7606
  ],
+ "439 rue des becs-scie|gatineau": [
+  45.522566,
+  -75.481946
+ ],
  "44 chippewa ave|ottawa": [
   45.357953,
   -75.743142
@@ -10795,6 +12461,22 @@
  "44 rothwell dr|ottawa": [
   45.452575,
   -75.609677
+ ],
+ "44 rue de juan-les-pins|gatineau": [
+  45.485114,
+  -75.732968
+ ],
+ "44 rue garneau|gatineau": [
+  45.431022,
+  -75.723409
+ ],
+ "44 rue saint-alexandre|gatineau": [
+  45.497121,
+  -75.757048
+ ],
+ "440 chemin queen's park|gatineau": [
+  45.408029,
+  -75.884709
  ],
  "440 laurier ave west|ottawa": [
   45.416683,
@@ -10836,9 +12518,21 @@
   45.432653,
   -75.644793
  ],
+ "443 rue des becs-scie|gatineau": [
+  45.522709,
+  -75.481836
+ ],
+ "444 boulevard de l'hopital|gatineau": [
+  45.4911,
+  -75.687464
+ ],
  "445 barrett farm dr|ottawa": [
   45.32732,
   -75.602506
+ ],
+ "446 rue des becs-scie|gatineau": [
+  45.522779,
+  -75.482348
  ],
  "447 daly ave|ottawa": [
   45.432344,
@@ -10856,6 +12550,10 @@
   45.397805,
   -75.650243
  ],
+ "447 rue des becs-scie|gatineau": [
+  45.522762,
+  -75.481832
+ ],
  "4479 pioneer line rd|ottawa": [
   45.139553,
   -75.470455
@@ -10868,9 +12566,17 @@
   45.40813,
   -75.704248
  ],
+ "448 rue de pointe-gatineau|gatineau": [
+  45.466526,
+  -75.69895
+ ],
  "449 sussex dr|ottawa": [
   45.428419,
   -75.695579
+ ],
+ "45 83 boulevard sacre-coeur|gatineau": [
+  45.437289,
+  -75.710179
  ],
  "45 a david dr #2|ottawa": [
   45.348873,
@@ -10905,6 +12611,22 @@
   45.425855,
   -75.693371
  ],
+ "45 rue de la fabrique|gatineau": [
+  45.411124,
+  -75.858626
+ ],
+ "45 rue du debusquage|gatineau": [
+  45.522928,
+  -75.483405
+ ],
+ "45 rue pierre-menard|gatineau": [
+  45.508538,
+  -75.55963
+ ],
+ "450 avenue des entreprises|gatineau": [
+  45.509743,
+  -75.665398
+ ],
  "450 laurier ave west|ottawa": [
   45.416444,
   -75.703538
@@ -10916,6 +12638,14 @@
  "450 march rd|ottawa": [
   45.341884,
   -75.914844
+ ],
+ "450 rue des becs-scie|gatineau": [
+  45.522875,
+  -75.482338
+ ],
+ "450 rue john-egan|gatineau": [
+  45.400244,
+  -75.836397
  ],
  "450 terminal ave|ottawa": [
   45.414243,
@@ -10950,9 +12680,22 @@
   45.422157,
   -75.678099
  ],
+ "454 rue des becs-scie|gatineau": [
+  45.523003,
+  -75.482327
+ ],
  "4540 b kelly farm dr|ottawa": [
   45.318924,
   -75.608355
+ ],
+ "455 boulevard de la carriere|gatineau": [
+  45.444001,
+  -75.72867
+ ],
+ "455 boulevard de la gappe app.02 003 (203)|gatineau": null,
+ "455 boulevard de la gappe|gatineau": [
+  45.478948,
+  -75.699705
  ],
  "455 brierwood ave|ottawa": [
   45.388317,
@@ -10965,6 +12708,10 @@
  "455 meynell rd|ottawa": [
   45.17766,
   -75.837173
+ ],
+ "455 montee paiement|gatineau": [
+  45.493414,
+  -75.676767
  ],
  "456 dowsley dr|ottawa": [
   45.277203,
@@ -11010,6 +12757,14 @@
   45.240876,
   -75.747201
  ],
+ "46 rue du debusquage|gatineau": [
+  45.523202,
+  -75.483647
+ ],
+ "46 rue labelle|gatineau": [
+  45.433684,
+  -75.741186
+ ],
  "460 brigatine ave|ottawa": [
   45.288157,
   -75.914654
@@ -11049,6 +12804,10 @@
  "464 clarence st east|ottawa": [
   45.434672,
   -75.67915
+ ],
+ "465 boulevard de l'hopital|gatineau": [
+  45.49134,
+  -75.690428
  ],
  "465 meynell rd|ottawa": [
   45.177334,
@@ -11114,6 +12873,14 @@
   45.428995,
   -75.69422
  ],
+ "47 impasse de la costa|gatineau": [
+  45.498511,
+  -75.666242
+ ],
+ "47 impasse leonard-page|gatineau": [
+  45.577595,
+  -75.39614
+ ],
  "47 merritt ave|ottawa": [
   45.404552,
   -75.677363
@@ -11167,6 +12934,10 @@
   45.288483,
   -75.914113
  ],
+ "472 chemin cook|gatineau": [
+  45.452191,
+  -75.887765
+ ],
  "472 meynell rd|ottawa": [
   45.177282,
   -75.836132
@@ -11206,6 +12977,10 @@
  "475 brigatine ave|ottawa": [
   45.288151,
   -75.913843
+ ],
+ "475 chemin fraser|gatineau": [
+  45.40172,
+  -75.825678
  ],
  "475 hazeldean rd|ottawa": [
   45.298016,
@@ -11279,9 +13054,17 @@
   45.404842,
   -75.677551
  ],
+ "48 rue de la cortland|gatineau": [
+  45.40865,
+  -75.87472
+ ],
  "480 brigatine ave|ottawa": [
   45.288717,
   -75.913738
+ ],
+ "480 chemin industriel|gatineau": [
+  45.519203,
+  -75.537986
  ],
  "480 cloverdale rd|ottawa": [
   45.452607,
@@ -11407,6 +13190,10 @@
   45.215044,
   -75.684289
  ],
+ "49 rue du debusquage|gatineau": [
+  45.522886,
+  -75.483509
+ ],
  "49 warren ave|ottawa": [
   45.397184,
   -75.734796
@@ -11414,6 +13201,11 @@
  "49 william st|ottawa": [
   45.427703,
   -75.692033
+ ],
+ "490 boulevard saint-joseph app.301, 401|gatineau": null,
+ "490 boulevard saint-joseph|gatineau": [
+  45.447297,
+  -75.732275
  ],
  "491 brigatine ave|ottawa": [
   45.288497,
@@ -11423,6 +13215,10 @@
   45.389291,
   -75.750572
  ],
+ "495 chemin fraser|gatineau": [
+  45.402377,
+  -75.825739
+ ],
  "495 march rd|ottawa": [
   45.342813,
   -75.918214
@@ -11430,6 +13226,10 @@
  "4960 canon smith dr|ottawa": [
   45.476053,
   -76.187701
+ ],
+ "497 chemin du fer-a-cheval|gatineau": [
+  45.533679,
+  -75.372191
  ],
  "497 roosevelt ave|ottawa": [
   45.387856,
@@ -11459,6 +13259,10 @@
   45.330276,
   -75.78882
  ],
+ "5 boulevard moussette|gatineau": [
+  45.434181,
+  -75.744374
+ ],
  "5 norice st|ottawa": [
   45.339278,
   -75.754397
@@ -11467,11 +13271,35 @@
   45.35589,
   -75.712453
  ],
+ "5 rue conrad-valera|gatineau": [
+  45.410637,
+  -75.820519
+ ],
+ "5 rue court|gatineau": [
+  45.398392,
+  -75.845904
+ ],
+ "5 rue de clericy|gatineau": [
+  45.487897,
+  -75.706928
+ ],
+ "5 rue du debusquage|gatineau": [
+  45.523296,
+  -75.482345
+ ],
+ "50 54 rue montcalm|gatineau": [
+  45.429766,
+  -75.727656
+ ],
  "50 beech st|ottawa": [
   45.400777,
   -75.708164
  ],
  "50 by ward market sq|ottawa": null,
+ "50 chemin de la savane|gatineau": [
+  45.473109,
+  -75.698626
+ ],
  "50 frank nighbor pl|ottawa": [
   45.29925,
   -75.916552
@@ -11504,6 +13332,18 @@
   45.425353,
   -75.691768
  ],
+ "50 rue du debusquage|gatineau": [
+  45.52317,
+  -75.483744
+ ],
+ "50 rue elizabeth|gatineau": [
+  45.391853,
+  -75.83104
+ ],
+ "50 rue victoria|gatineau": [
+  45.428335,
+  -75.712911
+ ],
  "50 université priv|ottawa": null,
  "50 varley dr|ottawa": [
   45.332533,
@@ -11516,6 +13356,10 @@
  "50 wolf moon crt|ottawa": [
   45.438765,
   -75.498467
+ ],
+ "500 chemin mcconnell|gatineau": [
+  45.41177,
+  -75.809759
  ],
  "500 lacolle way|ottawa": [
   45.491085,
@@ -11532,6 +13376,10 @@
  "500 preston st|ottawa": [
   45.398207,
   -75.708265
+ ],
+ "500 rue de cannes|gatineau": [
+  45.493378,
+  -75.738769
  ],
  "500 silhouette priv|ottawa": null,
  "500 stardust priv|ottawa": null,
@@ -11592,6 +13440,10 @@
  "502 ominik cres|ottawa": [
   45.331925,
   -75.929074
+ ],
+ "502 rue nadon|gatineau": [
+  45.590488,
+  -75.403576
  ],
  "502 turtle island cres|ottawa": [
   45.445907,
@@ -11676,6 +13528,10 @@
  "509 turtle island cres|ottawa": [
   45.445429,
   -75.466848
+ ],
+ "51 impasse leonard-page|gatineau": [
+  45.577626,
+  -75.39623
  ],
  "51 narrows pl|ottawa": [
   45.215415,
@@ -11768,6 +13624,10 @@
   45.445636,
   -75.467622
  ],
+ "515 chemin fraser|gatineau": [
+  45.403056,
+  -75.825857
+ ],
  "515 legget dr|ottawa": [
   45.34708,
   -75.916902
@@ -11775,6 +13635,10 @@
  "515 reflection st|ottawa": [
   45.443457,
   -75.517951
+ ],
+ "515 rue de vernon|gatineau": [
+  45.445153,
+  -75.800832
  ],
  "515 turtle island cres|ottawa": [
   45.445313,
@@ -11840,6 +13704,10 @@
   45.445247,
   -75.467488
  ],
+ "52 60 rue latour|gatineau": [
+  45.584934,
+  -75.399999
+ ],
  "52 argue dr|ottawa": [
   45.35378,
   -75.715006
@@ -11855,6 +13723,14 @@
  "52 narrows pl|ottawa": [
   45.215486,
   -75.684307
+ ],
+ "52 rue de la cortland|gatineau": [
+  45.408643,
+  -75.874799
+ ],
+ "52 rue louis-bisson|gatineau": [
+  45.517541,
+  -75.553298
  ],
  "520 jewelweed dr|ottawa": [
   45.292902,
@@ -11935,6 +13811,10 @@
  "524 turtle island cres|ottawa": [
   45.445398,
   -75.468387
+ ],
+ "525 boulevard maloney est|gatineau": [
+  45.48514,
+  -75.633064
  ],
  "525 branch st|ottawa": [
   45.262663,
@@ -12029,6 +13909,22 @@
   45.215305,
   -75.684792
  ],
+ "53 rue de juan-les-pins|gatineau": [
+  45.485032,
+  -75.736288
+ ],
+ "53 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "53 rue du debusquage|gatineau": [
+  45.522819,
+  -75.483574
+ ],
+ "53 rue louis-riel|gatineau": [
+  45.469253,
+  -75.705212
+ ],
  "53 sweetland ave|ottawa": [
   45.425426,
   -75.678872
@@ -12037,6 +13933,7 @@
   45.407268,
   -75.708549
  ],
+ "530 boulevard de la gappe app.rc 002|gatineau": null,
  "530 ingenuity row|ottawa": [
   45.363805,
   -75.932432
@@ -12081,6 +13978,10 @@
  "533 cobra cres|ottawa": [
   45.285929,
   -75.900934
+ ],
+ "533 rue des rossignols|gatineau": [
+  45.502255,
+  -75.580662
  ],
  "5335 bank st|ottawa": [
   45.286976,
@@ -12154,6 +14055,10 @@
   45.322167,
   -75.946558
  ],
+ "539 rue du caveau|gatineau": [
+  45.405898,
+  -75.834267
+ ],
  "5391 madawaska blvd|ottawa": [
   45.42515,
   -76.321772
@@ -12181,6 +14086,10 @@
  "54 narrows pl|ottawa": [
   45.215379,
   -75.684226
+ ],
+ "54 rue prud'homme|gatineau": [
+  45.438002,
+  -75.747578
  ],
  "540 lisgar st|ottawa": [
   45.413803,
@@ -12287,6 +14196,10 @@
   45.227355,
   -75.687269
  ],
+ "55 chemin fraser|gatineau": [
+  45.380737,
+  -75.826659
+ ],
  "55 cockburn st|ottawa": [
   45.192031,
   -75.8314
@@ -12306,6 +14219,10 @@
  "55 hilda st #405|ottawa": [
   45.406467,
   -75.722475
+ ],
+ "55 impasse leonard-page|gatineau": [
+  45.577647,
+  -75.396299
  ],
  "55 laurier ave e|ottawa": [
   45.423896,
@@ -12335,9 +14252,25 @@
   45.396501,
   -75.699711
  ],
+ "55 rue de carillon|gatineau": [
+  45.42931,
+  -75.723613
+ ],
+ "55 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "55 rue marengere|gatineau": [
+  45.462114,
+  -75.702566
+ ],
  "55 tercet terr|ottawa": [
   45.256056,
   -75.904126
+ ],
+ "550 boulevard wilfrid-lavigne|gatineau": [
+  45.404653,
+  -75.837339
  ],
  "550 cumberland st|ottawa": [
   45.424515,
@@ -12451,6 +14384,10 @@
   45.383229,
   -75.762625
  ],
+ "556 rue brunet|gatineau": [
+  45.484932,
+  -75.673169
+ ],
  "556 tweedsmuir ave|ottawa": [
   45.38451,
   -75.744629
@@ -12500,6 +14437,14 @@
   45.240621,
   -75.746996
  ],
+ "56 rue charlevoix|gatineau": [
+  45.431595,
+  -75.722802
+ ],
+ "56 rue hemlock|gatineau": [
+  45.385824,
+  -75.833166
+ ],
  "56 rumen way|ottawa": [
   45.25357,
   -75.690007
@@ -12523,6 +14468,10 @@
  "560 villanelle rd|ottawa": [
   45.254001,
   -75.903737
+ ],
+ "561 boulevard maloney est|gatineau": [
+  45.484888,
+  -75.631031
  ],
  "561 cobra cres|ottawa": [
   45.286539,
@@ -12630,6 +14579,26 @@
   45.414082,
   -75.705155
  ],
+ "57 rue chamberland|gatineau": [
+  45.482165,
+  -75.612331
+ ],
+ "57 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "57 rue de la sapiniere|gatineau": [
+  45.444276,
+  -75.773389
+ ],
+ "57 rue du debusquage|gatineau": [
+  45.522787,
+  -75.483671
+ ],
+ "57 rue principale|gatineau": [
+  45.394937,
+  -75.848877
+ ],
  "57 wolf moon crt|ottawa": [
   45.438259,
   -75.498443
@@ -12695,6 +14664,10 @@
   45.304423,
   -75.596843
  ],
+ "575 rue belanger|gatineau": [
+  45.58559,
+  -75.412672
+ ],
  "5754 hazeldean rd|ottawa": [
   45.281405,
   -75.913514
@@ -12752,6 +14725,10 @@
   45.215153,
   -75.684063
  ],
+ "58 promenade oval|gatineau": [
+  45.395226,
+  -75.8016
+ ],
  "58 rossland ave|ottawa": [
   45.350336,
   -75.746257
@@ -12759,6 +14736,10 @@
  "58 rumen way|ottawa": [
   45.253499,
   -75.689943
+ ],
+ "580 590 rue maclaren est|gatineau": [
+  45.5831,
+  -75.400567
  ],
  "580 booth st|ottawa": [
   45.399904,
@@ -12816,16 +14797,28 @@
   45.382318,
   -75.762119
  ],
+ "584 rue monseigneur-brunet|gatineau": [
+  45.585703,
+  -75.406797
+ ],
  "5845 lancer ave|ottawa": [
   45.245688,
   -75.634912
  ],
  "585 celestine priv|ottawa": null,
+ "585 chemin d'aylmer|gatineau": [
+  45.417018,
+  -75.761055
+ ],
  "585 montréal rd|ottawa": [
   45.443089,
   -75.644729
  ],
  "586 escala priv|ottawa": null,
+ "587 rue williams|gatineau": [
+  45.482497,
+  -75.629362
+ ],
  "5870 abbott st east|ottawa": [
   45.263582,
   -75.910213
@@ -12842,6 +14835,10 @@
   45.148109,
   -75.588329
  ],
+ "589 chemin d'aylmer|gatineau": [
+  45.417273,
+  -75.760854
+ ],
  "5892 perth st|ottawa": [
   45.201257,
   -75.827534
@@ -12851,9 +14848,21 @@
   45.34968,
   -75.804803
  ],
+ "59 impasse leonard-page|gatineau": [
+  45.577665,
+  -75.396377
+ ],
  "59 narrows pl|ottawa": [
   45.214996,
   -75.684541
+ ],
+ "59 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "59 rue de provence|gatineau": [
+  45.473778,
+  -75.723283
  ],
  "59 tercet terr|ottawa": [
   45.25595,
@@ -12862,6 +14871,10 @@
  "590 roundhouse cres|ottawa": [
   45.26248,
   -75.890779
+ ],
+ "591 rue watt|gatineau": [
+  45.479985,
+  -75.633838
  ],
  "5910 first line rd|ottawa": [
   45.194987,
@@ -12883,6 +14896,10 @@
   45.464259,
   -75.541083
  ],
+ "593 chemin d'aylmer|gatineau": [
+  45.417018,
+  -75.761055
+ ],
  "594 bobolink ridge|ottawa": [
   45.269885,
   -75.892788
@@ -12903,6 +14920,10 @@
   45.270493,
   -75.859537
  ],
+ "595 chemin vanier|gatineau": [
+  45.421001,
+  -75.809289
+ ],
  "595 industrial ave|ottawa": [
   45.41134,
   -75.641939
@@ -12918,6 +14939,10 @@
  "596 via campanale ave|ottawa": [
   45.28606,
   -75.745304
+ ],
+ "597 chemin d'aylmer|gatineau": [
+  45.417273,
+  -75.760854
  ],
  "5975 b knights dr|ottawa": [
   45.240476,
@@ -12951,6 +14976,10 @@
   45.411916,
   -75.712023
  ],
+ "6 boulevard de lucerne|gatineau": [
+  45.415384,
+  -75.761105
+ ],
  "6 gurdwara rd|ottawa": [
   45.335252,
   -75.703139
@@ -12978,6 +15007,10 @@
  "6 rochon way|ottawa": [
   45.382323,
   -75.964437
+ ],
+ "6 rue du lynx|gatineau": [
+  45.413469,
+  -75.852354
  ],
  "6 swilken burn|ottawa": [
   45.285452,
@@ -13024,6 +15057,19 @@
   45.422578,
   -75.695649
  ],
+ "60 rue de nantel|gatineau": [
+  45.482824,
+  -75.73827
+ ],
+ "60 rue isidore-ostiguy|gatineau": [
+  45.433526,
+  -75.718452
+ ],
+ "60 rue jean-proulx|gatineau": [
+  45.468945,
+  -75.7454
+ ],
+ "60 rue laval app.06 600|gatineau": null,
  "600 bouvardia cres|ottawa": [
   45.326938,
   -75.603372
@@ -13052,6 +15098,10 @@
   45.366426,
   -75.942988
  ],
+ "601 chemin d'aylmer|gatineau": [
+  45.417018,
+  -75.761055
+ ],
  "601 cityscape st|ottawa": [
   45.446008,
   -75.46267
@@ -13063,6 +15113,10 @@
  ],
  "601 mountaineer priv|ottawa": null,
  "601 rhizome priv|ottawa": null,
+ "601 rue boisvert|gatineau": [
+  45.449636,
+  -75.876379
+ ],
  "6014 david wiens st|ottawa": [
   45.263284,
   -75.893036
@@ -13099,6 +15153,10 @@
  "6048 david wiens st|ottawa": [
   45.264154,
   -75.89168
+ ],
+ "605 chemin d'aylmer|gatineau": [
+  45.417273,
+  -75.760854
  ],
  "605 hatch cove lane|ottawa": [
   45.444714,
@@ -13161,6 +15219,10 @@
   45.366224,
   -75.942745
  ],
+ "609 chemin d'aylmer|gatineau": [
+  45.417018,
+  -75.761055
+ ],
  "609 cityscape st|ottawa": [
   45.445764,
   -75.462535
@@ -13180,6 +15242,22 @@
  "61 narrows pl|ottawa": [
   45.214875,
   -75.68446
+ ],
+ "61 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "61 rue du debusquage|gatineau": [
+  45.522765,
+  -75.48382
+ ],
+ "61 rue nancy-elliott|gatineau": [
+  45.402416,
+  -75.794542
+ ],
+ "61 rue principale|gatineau": [
+  45.395202,
+  -75.848226
  ],
  "61 wolf moon crt|ottawa": [
   45.438195,
@@ -13234,6 +15312,10 @@
   45.331342,
   -75.931007
  ],
+ "613 chemin d'aylmer|gatineau": [
+  45.417018,
+  -75.761055
+ ],
  "613 glade grove|ottawa": [
   45.276267,
   -75.894969
@@ -13274,6 +15356,10 @@
  "6147 hazeldean rd|ottawa": [
   45.30335,
   -75.878218
+ ],
+ "615 chemin du fer-a-cheval|gatineau": [
+  45.536332,
+  -75.361068
  ],
  "615 courtenay ave|ottawa": [
   45.380192,
@@ -13345,9 +15431,21 @@
   45.063544,
   -75.896697
  ],
+ "62 chemin morley-walters|gatineau": [
+  45.400845,
+  -75.802869
+ ],
  "62 narrows pl|ottawa": [
   45.214946,
   -75.683896
+ ],
+ "62 rue chimo|gatineau": [
+  45.407191,
+  -75.806157
+ ],
+ "62 rue scott|gatineau": [
+  45.426502,
+  -75.735198
  ],
  "620 alopex row|ottawa": [
   45.190213,
@@ -13368,6 +15466,10 @@
  "620 moonglade cres|ottawa": [
   45.256182,
   -75.74657
+ ],
+ "620 rue de vernon|gatineau": [
+  45.449677,
+  -75.800682
  ],
  "620 triangle st|ottawa": [
   45.283529,
@@ -13458,6 +15560,10 @@
   45.223875,
   -75.598199
  ],
+ "625 chemin d'aylmer|gatineau": [
+  45.400133,
+  -75.807588
+ ],
  "625 cityscape st|ottawa": [
   45.445284,
   -75.462263
@@ -13543,9 +15649,21 @@
   45.28491,
   -75.861676
  ],
+ "63 impasse leonard-page|gatineau": [
+  45.577671,
+  -75.39645
+ ],
  "63 narrows pl|ottawa": [
   45.214768,
   -75.684375
+ ],
+ "63 rue felix-leclerc|gatineau": [
+  45.392618,
+  -75.7961
+ ],
+ "630 boulevard maloney est|gatineau": [
+  45.483497,
+  -75.627419
  ],
  "630 bridgeport ave|ottawa": [
   45.214126,
@@ -13743,6 +15861,10 @@
   45.268602,
   -75.879653
  ],
+ "64 chemin garden|gatineau": [
+  45.39432,
+  -75.810052
+ ],
  "64 genest st|ottawa": [
   45.43848,
   -75.673068
@@ -13758,6 +15880,14 @@
  "64 rappel cir|ottawa": [
   45.440393,
   -75.496729
+ ],
+ "64 rue de levens|gatineau": [
+  45.491373,
+  -75.726614
+ ],
+ "64 rue du lynx|gatineau": [
+  45.414146,
+  -75.851616
  ],
  "640 paakanaak ave|ottawa": [
   45.303963,
@@ -13893,6 +16023,14 @@
   45.214677,
   -75.684301
  ],
+ "65 rue du debusquage|gatineau": [
+  45.522712,
+  -75.48391
+ ],
+ "65 rue du lynx|gatineau": [
+  45.413772,
+  -75.851577
+ ],
  "65 tower rd|ottawa": [
   45.353888,
   -75.744238
@@ -13901,6 +16039,10 @@
  "650 akamina cir|ottawa": [
   45.330817,
   -75.929884
+ ],
+ "650 boulevard saint-joseph|gatineau": [
+  45.452226,
+  -75.738171
  ],
  "6503 waterdown st|ottawa": [
   45.244741,
@@ -14133,6 +16275,7 @@
   45.177874,
   -75.835567
  ],
+ "664 boulevard de la gappe app.201|gatineau": null,
  "665 albert st|ottawa": [
   45.410289,
   -75.718935
@@ -14160,6 +16303,10 @@
  "667 paakanaak ave|ottawa": [
   45.303111,
   -75.603319
+ ],
+ "668 montee saint-amour|gatineau": [
+  45.545322,
+  -75.709211
  ],
  "6682 fallowfield rd|ottawa": [
   45.214362,
@@ -14197,6 +16344,10 @@
   45.438939,
   -75.605717
  ],
+ "67 impasse leonard-page|gatineau": [
+  45.57769,
+  -75.396546
+ ],
  "67 kenilworth st|ottawa": [
   45.395594,
   -75.722966
@@ -14204,6 +16355,22 @@
  "67 narrows pl|ottawa": [
   45.214589,
   -75.684232
+ ],
+ "67 rue de la papetiere|gatineau": [
+  45.523858,
+  -75.482813
+ ],
+ "67 rue des dunes|gatineau": [
+  45.49697,
+  -75.686427
+ ],
+ "67 rue f.-x.-bouvier|gatineau": [
+  45.464913,
+  -75.704055
+ ],
+ "67 rue saint-jacques|gatineau": [
+  45.427818,
+  -75.719404
  ],
  "670 b morin st|ottawa": [
   45.438652,
@@ -14335,6 +16502,18 @@
   45.440501,
   -75.496718
  ],
+ "68 rue charlevoix|gatineau": [
+  45.431661,
+  -75.721477
+ ],
+ "68 rue du lynx|gatineau": [
+  45.414152,
+  -75.85154
+ ],
+ "68 rue papineau|gatineau": [
+  45.430335,
+  -75.722688
+ ],
  "68 rumen way|ottawa": [
   45.253189,
   -75.689642
@@ -14411,6 +16590,10 @@
   45.384238,
   -75.767942
  ],
+ "686 boulevard maloney est|gatineau": [
+  45.48315,
+  -75.623931
+ ],
  "687 hosta dr|ottawa": [
   45.260949,
   -75.688916
@@ -14427,6 +16610,8 @@
   45.43839,
   -75.643813
  ],
+ "69 chemin cochrane app.1-2-3|gatineau": null,
+ "69 chemin cochrane app.4-5-6|gatineau": null,
  "69 glamorgan dr|ottawa": [
   45.286666,
   -75.877533
@@ -14438,6 +16623,14 @@
  "69 poplar st|ottawa": [
   45.407145,
   -75.711986
+ ],
+ "69 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "69 rue du lynx|gatineau": [
+  45.413776,
+  -75.851497
  ],
  "69 wheel barrow mews|ottawa": [
   45.292542,
@@ -14487,6 +16680,10 @@
   45.330041,
   -75.722788
  ],
+ "7 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
+ ],
  "7 langholm cres|ottawa": [
   45.281778,
   -75.769302
@@ -14494,6 +16691,26 @@
  "7 oakview ave|ottawa": [
   45.343152,
   -75.741474
+ ],
+ "7 rue alfred-belisle|gatineau": [
+  45.544193,
+  -75.436511
+ ],
+ "7 rue belisle|gatineau": [
+  45.423582,
+  -75.742204
+ ],
+ "7 rue boucher|gatineau": [
+  45.454737,
+  -75.754479
+ ],
+ "7 rue de clericy|gatineau": [
+  45.48787,
+  -75.707217
+ ],
+ "7 rue de massicotte|gatineau": [
+  45.52243,
+  -75.735726
  ],
  "70 bentley ave|ottawa": [
   45.33352,
@@ -14511,10 +16728,19 @@
   45.396819,
   -75.74232
  ],
+ "70 rue charlevoix|gatineau": [
+  45.431742,
+  -75.721316
+ ],
+ "70 rue de nevers|gatineau": [
+  45.475331,
+  -75.719569
+ ],
  "70 san felice cir|ottawa": [
   45.2716,
   -75.860738
  ],
+ "700 720 boulevard du carrefour app.rc 111|gatineau": null,
  "700 camargue priv|ottawa": null,
  "700 cope dr|ottawa": [
   45.27407,
@@ -14574,6 +16800,7 @@
   -75.941598
  ],
  "701 utopie priv|ottawa": null,
+ "702 706 chemin d'aylmer app.1-2-3-4|gatineau": null,
  "702 piton, place du|ottawa": [
   45.438661,
   -75.500276
@@ -14628,9 +16855,26 @@
   45.276988,
   -75.569938
  ],
+ "71 79 rue wellington app.79-rc 003|gatineau": null,
  "71 marketplace ave|ottawa": [
   45.269655,
   -75.742487
+ ],
+ "71 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "71 rue de la papetiere|gatineau": [
+  45.523826,
+  -75.48294
+ ],
+ "71 rue saint-jean-bosco|gatineau": [
+  45.428513,
+  -75.736664
+ ],
+ "71 rue wellington|gatineau": [
+  45.426202,
+  -75.721226
  ],
  "71 rumen way|ottawa": [
   45.253559,
@@ -14639,6 +16883,11 @@
  "71 tercet terr|ottawa": [
   45.25563,
   -75.903614
+ ],
+ "710 714 chemin d'aylmer app.1-2-3-4|gatineau": null,
+ "710 720 montee paiement|gatineau": [
+  45.506602,
+  -75.677432
  ],
  "710 broadview ave|ottawa": [
   45.378228,
@@ -14678,6 +16927,10 @@
   45.444205,
   -75.638263
  ],
+ "714 716 boulevard saint-joseph|gatineau": [
+  45.439114,
+  -75.732904
+ ],
  "714 leone farrell st|ottawa": [
   45.36745,
   -75.937575
@@ -14698,6 +16951,7 @@
   45.365433,
   -75.942143
  ],
+ "718 722 chemin d'aylmer app.1-2-3-4|gatineau": null,
  "718 expansion rd|ottawa": [
   45.241031,
   -75.751187
@@ -14714,6 +16968,10 @@
   45.27773,
   -75.894881
  ],
+ "72 76 rue laval|gatineau": [
+  45.426023,
+  -75.716423
+ ],
  "72 armstrong st|ottawa": [
   45.405395,
   -75.724
@@ -14729,6 +16987,18 @@
  "72 laval st|ottawa": [
   45.439141,
   -75.67362
+ ],
+ "72 rue atholl-doune|gatineau": [
+  45.4256,
+  -75.788613
+ ],
+ "72 rue du lynx|gatineau": [
+  45.414157,
+  -75.851464
+ ],
+ "72 rue jobin|gatineau": [
+  45.498626,
+  -75.730501
  ],
  "72 rumen way|ottawa": [
   45.253162,
@@ -14770,6 +17040,10 @@
  "721 lavender st|ottawa": [
   45.264106,
   -75.678448
+ ],
+ "721 rue davidson ouest|gatineau": [
+  45.505423,
+  -75.674576
  ],
  "7210 evening shadow ave|ottawa": [
   45.256636,
@@ -14821,6 +17095,7 @@
   45.365261,
   -75.942429
  ],
+ "726 chemin d'aylmer app.1-2-3|gatineau": null,
  "726 piton, place du|ottawa": [
   45.438052,
   -75.499905
@@ -14861,10 +17136,16 @@
   45.253585,
   -75.691288
  ],
+ "73 75 rue jumonville|gatineau": [
+  45.465173,
+  -75.749959
+ ],
  "73 bliss cres|ottawa": [
   45.28596,
   -75.901747
  ],
+ "73 chemin cochrane app.1-2-3|gatineau": null,
+ "73 chemin cochrane app.4-5-6|gatineau": null,
  "73 drouin ave|ottawa": [
   45.423284,
   -75.663474
@@ -14876,6 +17157,14 @@
  "73 leikin dr|ottawa": [
   45.29573,
   -75.704137
+ ],
+ "73 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "73 rue du lynx|gatineau": [
+  45.41378,
+  -75.851418
  ],
  "73 rumen way|ottawa": [
   45.253576,
@@ -14979,6 +17268,14 @@
  "739 kenny gordon ave|ottawa": [
   45.253857,
   -75.690652
+ ],
+ "74 chemin morley-walters|gatineau": [
+  45.400845,
+  -75.802869
+ ],
+ "74 rue main|gatineau": [
+  45.478872,
+  -75.649945
  ],
  "74 rumen way|ottawa": [
   45.253211,
@@ -15102,6 +17399,7 @@
   45.328266,
   -75.710434
  ],
+ "75 boulevard du plateau boulevard du plateau app.rc 009 (109)|gatineau": null,
  "75 corn husk lane|ottawa": [
   45.291923,
   -75.910117
@@ -15117,6 +17415,26 @@
  "75 pond st|ottawa": [
   45.452571,
   -75.665773
+ ],
+ "75 promenade du portage|gatineau": [
+  45.425293,
+  -75.718332
+ ],
+ "75 rue daniel-johnson|gatineau": [
+  45.466979,
+  -75.748605
+ ],
+ "75 rue de la croisee|gatineau": [
+  45.401058,
+  -75.810067
+ ],
+ "75 rue de la papetiere|gatineau": [
+  45.52378,
+  -75.483052
+ ],
+ "75 rue saint-francois|gatineau": [
+  45.42799,
+  -75.749443
  ],
  "75 rumen way|ottawa": [
   45.253655,
@@ -15213,6 +17531,10 @@
   -75.667766
  ],
  "76 rawah priv|ottawa": null,
+ "76 rue joseph-latour|gatineau": [
+  45.576894,
+  -75.396706
+ ],
  "76 rumen way|ottawa": [
   45.253259,
   -75.689046
@@ -15325,6 +17647,10 @@
   45.411839,
   -75.696962
  ],
+ "77 rue jolicoeur|gatineau": [
+  45.460123,
+  -75.755385
+ ],
  "77 rumen way|ottawa": [
   45.253673,
   -75.689075
@@ -15364,6 +17690,10 @@
  "774 poetry cir|ottawa": [
   45.254572,
   -75.90507
+ ],
+ "775 777 boulevard de la carriere|gatineau": [
+  45.459542,
+  -75.734177
  ],
  "775 antonio farley st|ottawa": [
   45.50382,
@@ -15417,6 +17747,10 @@
   45.267515,
   -75.771121
  ],
+ "78 rue alfred-belisle|gatineau": [
+  45.544182,
+  -75.436777
+ ],
  "78 vachon ave #1|ottawa": [
   45.440068,
   -75.668734
@@ -15444,6 +17778,10 @@
  "781 poetry cir|ottawa": [
   45.254654,
   -75.904145
+ ],
+ "781 rue notre-dame|gatineau": [
+  45.480912,
+  -75.616309
  ],
  "782 fairline row|ottawa": [
   45.277441,
@@ -15521,6 +17859,14 @@
   45.442287,
   -75.667374
  ],
+ "79 rue de la papetiere|gatineau": [
+  45.523733,
+  -75.483178
+ ],
+ "79 rue frontenac|gatineau": [
+  45.429536,
+  -75.716939
+ ],
  "79 rumen way|ottawa": [
   45.25376,
   -75.688962
@@ -15593,6 +17939,15 @@
   45.258547,
   -75.689026
  ],
+ "798 boulevard hurtubise|gatineau": [
+  45.475998,
+  -75.617322
+ ],
+ "799 chemin perry|gatineau": [
+  45.428888,
+  -75.878761
+ ],
+ "8 12 rue marjorie-d.-shackelton|gatineau": null,
  "8 a arthur st|ottawa": [
   45.408919,
   -75.706473
@@ -15600,6 +17955,14 @@
  "8 assiniboine dr|ottawa": [
   45.350692,
   -75.721178
+ ],
+ "8 chemin lattion|gatineau": [
+  45.407995,
+  -75.868658
+ ],
+ "8 impasse d'amos|gatineau": [
+  45.529652,
+  -75.629004
  ],
  "8 mcleod st|ottawa": [
   45.410877,
@@ -15612,6 +17975,10 @@
  "8 pineglen cres|ottawa": [
   45.324984,
   -75.710744
+ ],
+ "8 rue laniel|gatineau": [
+  45.497281,
+  -75.608718
  ],
  "80 aberdeen st|ottawa": [
   45.400763,
@@ -15632,6 +17999,14 @@
  "80 marketplace ave|ottawa": [
   45.270367,
   -75.742273
+ ],
+ "80 rue daniel-johnson|gatineau": [
+  45.466508,
+  -75.747742
+ ],
+ "80 rue joseph-latour|gatineau": [
+  45.576955,
+  -75.396723
  ],
  "80 second ave|ottawa": [
   45.404648,
@@ -15732,6 +18107,10 @@
   45.5047,
   -75.464223
  ],
+ "805 chemin pink|gatineau": [
+  45.438055,
+  -75.865508
+ ],
  "805 companion cres|ottawa": [
   45.21339,
   -75.685042
@@ -15771,6 +18150,10 @@
  "808 back bush terr|ottawa": [
   45.260712,
   -75.89228
+ ],
+ "808 boulevard de la cite|gatineau": [
+  45.493508,
+  -75.681122
  ],
  "808 skysail pl|ottawa": [
   45.21655,
@@ -15819,6 +18202,10 @@
  "81 corn husk lane|ottawa": [
   45.291596,
   -75.909986
+ ],
+ "81 rue du couvent|gatineau": [
+  45.397375,
+  -75.844242
  ],
  "81 rumen way|ottawa": [
   45.253817,
@@ -15968,6 +18355,10 @@
   45.404201,
   -75.726247
  ],
+ "82 rue alfred-belisle|gatineau": [
+  45.544145,
+  -75.436715
+ ],
  "82 rumen way|ottawa": [
   45.253402,
   -75.688713
@@ -15999,6 +18390,10 @@
  "8216 rodney farm dr|ottawa": [
   45.28953,
   -75.500381
+ ],
+ "822 boulevard saint-rene est|gatineau": [
+  45.498159,
+  -75.613236
  ],
  "822 eileen vollick cres|ottawa": [
   45.363152,
@@ -16045,6 +18440,10 @@
  "824 pearly everlasting cres|ottawa": [
   45.176569,
   -75.833917
+ ],
+ "825 chemin queen's park|gatineau": [
+  45.410077,
+  -75.886776
  ],
  "825 exhibition way|ottawa": [
   45.399938,
@@ -16152,6 +18551,10 @@
   45.17711,
   -75.833462
  ],
+ "836 rue notre-dame|gatineau": [
+  45.480803,
+  -75.610512
+ ],
  "837 andesite terr|ottawa": [
   45.242309,
   -75.746931
@@ -16172,7 +18575,27 @@
   45.401772,
   -75.686732
  ],
+ "84 impasse leonard-page|gatineau": [
+  45.577499,
+  -75.396992
+ ],
  "84 rawah priv|ottawa": null,
+ "84 rue dumas|gatineau": [
+  45.437569,
+  -75.73693
+ ],
+ "84 rue jean-proulx|gatineau": [
+  45.468242,
+  -75.74025
+ ],
+ "84 rue joseph-latour|gatineau": [
+  45.57701,
+  -75.396725
+ ],
+ "84 rue saint-hyacinthe|gatineau": [
+  45.436358,
+  -75.720972
+ ],
  "84 rumen way|ottawa": [
   45.253454,
   -75.688598
@@ -16233,6 +18656,10 @@
   45.177481,
   -75.834059
  ],
+ "845 rue de vernon|gatineau": [
+  45.452196,
+  -75.809992
+ ],
  "846 companion cres|ottawa": [
   45.211472,
   -75.683703
@@ -16285,11 +18712,35 @@
   45.418613,
   -75.687018
  ],
+ "85 rue audet|gatineau": [
+  45.474621,
+  -75.745058
+ ],
+ "85 rue bellehumeur|gatineau": [
+  45.475863,
+  -75.6912
+ ],
+ "85 rue chauveau|gatineau": [
+  45.431127,
+  -75.741208
+ ],
+ "85 rue jean-proulx|gatineau": [
+  45.467427,
+  -75.741351
+ ],
+ "85 rue marcotte|gatineau": [
+  45.479278,
+  -75.730578
+ ],
  "85 rumen way|ottawa": [
   45.253878,
   -75.688576
  ],
  "85 université priv|ottawa": null,
+ "850 boulevard de la gappe|gatineau": [
+  45.483086,
+  -75.682043
+ ],
  "850 canterbury ave|ottawa": [
   45.388652,
   -75.629856
@@ -16309,6 +18760,10 @@
  "851 richmond rd|ottawa": [
   45.379905,
   -75.772931
+ ],
+ "852 boulevard saint-rene est|gatineau": [
+  45.497954,
+  -75.609416
  ],
  "852 pearly everlasting cres|ottawa": [
   45.177891,
@@ -16350,6 +18805,12 @@
   45.241776,
   -75.746812
  ],
+ "855 boulevard de la gappe|gatineau": [
+  45.48489,
+  -75.68193
+ ],
+ "855 boulevard maloney est app.1 à 4|gatineau": null,
+ "855 boulevard maloney est app.5 à 8|gatineau": null,
  "855 fairline row|ottawa": [
   45.275957,
   -75.896502
@@ -16374,6 +18835,10 @@
   45.376288,
   -75.750012
  ],
+ "858 rue notre-dame|gatineau": [
+  45.479669,
+  -75.603618
+ ],
  "86 bliss cres|ottawa": [
   45.28547,
   -75.901939
@@ -16383,6 +18848,14 @@
   45.321854,
   -75.948876
  ],
+ "86 promenade crescent|gatineau": [
+  45.397267,
+  -75.80399
+ ],
+ "86 rue alfred-belisle|gatineau": [
+  45.5441,
+  -75.436656
+ ],
  "86 rumen way|ottawa": [
   45.253493,
   -75.688497
@@ -16390,6 +18863,10 @@
  "860 andesite terr|ottawa": [
   45.241559,
   -75.746859
+ ],
+ "860 boulevard saint-rene ouest|gatineau": [
+  45.489125,
+  -75.688083
  ],
  "860 fieldown st|ottawa": [
   45.513874,
@@ -16435,9 +18912,17 @@
   45.465178,
   -75.461007
  ],
+ "867 boulevard saint-rene ouest|gatineau": [
+  45.489928,
+  -75.688024
+ ],
  "867 fairline row|ottawa": [
   45.275662,
   -75.896163
+ ],
+ "867 rue arthur-gratton|gatineau": [
+  45.570745,
+  -75.427305
  ],
  "868 riddell ave north|ottawa": [
   45.373216,
@@ -16499,9 +18984,17 @@
   45.433622,
   -75.518165
  ],
+ "874 boulevard maloney est|gatineau": [
+  45.486384,
+  -75.603928
+ ],
  "874 fairline row|ottawa": [
   45.27538,
   -75.896244
+ ],
+ "875 boulevard wilfrid-lavigne|gatineau": [
+  45.416944,
+  -75.844242
  ],
  "875 carling ave|ottawa": [
   45.396561,
@@ -16563,6 +19056,10 @@
   45.364033,
   -75.721053
  ],
+ "88 impasse leonard-page|gatineau": [
+  45.577511,
+  -75.397127
+ ],
  "88 queen mary st|ottawa": [
   45.424391,
   -75.660774
@@ -16571,6 +19068,22 @@
   45.31548,
   -75.819429
  ],
+ "88 rue de cannes|gatineau": [
+  45.496698,
+  -75.724811
+ ],
+ "88 rue de la cote-des-neiges|gatineau": [
+  45.49953,
+  -75.694072
+ ],
+ "88 rue garneau|gatineau": [
+  45.431043,
+  -75.720973
+ ],
+ "88 rue joseph-latour|gatineau": [
+  45.577072,
+  -75.396719
+ ],
  "88 rumen way|ottawa": [
   45.253559,
   -75.688366
@@ -16578,6 +19091,10 @@
  "880 byron ave|ottawa": [
   45.378137,
   -75.773914
+ ],
+ "880 rue saint-louis|gatineau": [
+  45.467365,
+  -75.686855
  ],
  "881 melwood ave|ottawa": [
   45.37229,
@@ -16647,6 +19164,10 @@
   45.493486,
   -76.094656
  ],
+ "89 95 rue eddy|gatineau": [
+  45.429197,
+  -75.720168
+ ],
  "89 bliss cres|ottawa": [
   45.285575,
   -75.901279
@@ -16662,6 +19183,10 @@
  "89 nepean st|ottawa": [
   45.418841,
   -75.694927
+ ],
+ "89 rue garneau|gatineau": [
+  45.431355,
+  -75.720855
  ],
  "89 rumen way|ottawa": [
   45.253983,
@@ -16680,6 +19205,10 @@
   45.251282,
   -75.89784
  ],
+ "893 rue des saisons|gatineau": [
+  45.464554,
+  -75.886574
+ ],
  "894 sendero way|ottawa": [
   45.251339,
   -75.897721
@@ -16691,6 +19220,10 @@
  "895 eileen vollick cres|ottawa": [
   45.363619,
   -75.932037
+ ],
+ "895 rue jacques-cartier|gatineau": [
+  45.455889,
+  -75.695047
  ],
  "896 eileen vollick cres|ottawa": [
   45.363412,
@@ -16740,16 +19273,49 @@
   45.325387,
   -75.892484
  ],
+ "9 rue de clericy|gatineau": [
+  45.487858,
+  -75.70742
+ ],
+ "9 rue derwin|gatineau": [
+  45.397571,
+  -75.857361
+ ],
+ "9 rue desy|gatineau": [
+  45.490291,
+  -75.601879
+ ],
+ "9 rue du barry|gatineau": [
+  45.481436,
+  -75.701817
+ ],
+ "9 rue du debusquage|gatineau": [
+  45.523264,
+  -75.482467
+ ],
+ "9 rue du lynx|gatineau": [
+  45.413512,
+  -75.851833
+ ],
  "90 beechcliffe st|ottawa": [
   45.333851,
   -75.753943
  ],
+ "90 boulevard lorrain app.1-2-3-4|gatineau": null,
  "90 chandelle priv|ottawa": null,
  "90 elgin st|ottawa": [
   45.422009,
   -75.694578
  ],
  "90 fernleigh priv|ottawa": null,
+ "90 rue alfred-belisle|gatineau": [
+  45.544051,
+  -75.436562
+ ],
+ "90 rue saint-jean-bosco|gatineau": [
+  45.429141,
+  -75.737562
+ ],
  "90 rumen way|ottawa": [
   45.253611,
   -75.688235
@@ -16860,6 +19426,10 @@
   45.17704,
   -75.834733
  ],
+ "909 boulevard la verendrye ouest|gatineau": [
+  45.493249,
+  -75.690999
+ ],
  "909 locomotion lane|ottawa": [
   45.275612,
   -75.895381
@@ -16952,13 +19522,25 @@
   45.365293,
   -75.769591
  ],
+ "92 102 rue eddy|gatineau": [
+  45.429197,
+  -75.720168
+ ],
  "92 ed findlay st|ottawa": [
   45.264429,
   -75.680614
  ],
+ "92 impasse leonard-page|gatineau": [
+  45.577452,
+  -75.397298
+ ],
  "92 onslow cres|ottawa": [
   45.404714,
   -75.671365
+ ],
+ "92 rue joseph-latour|gatineau": [
+  45.577148,
+  -75.396682
  ],
  "92 stonehurst ave|ottawa": [
   45.406889,
@@ -17036,6 +19618,10 @@
  "938 crested lark way|ottawa": [
   45.245471,
   -75.747909
+ ],
+ "94 rue alfred-belisle|gatineau": [
+  45.544007,
+  -75.436489
  ],
  "94 rumen way|ottawa": [
   45.253701,
@@ -17129,6 +19715,14 @@
   45.440724,
   -75.497496
  ],
+ "95 rue nancy-elliott|gatineau": [
+  45.400783,
+  -75.802475
+ ],
+ "95 rue sanscartier|gatineau": [
+  45.480134,
+  -75.639931
+ ],
  "95 zingiber terr|ottawa": [
   45.369041,
   -75.938603
@@ -17197,6 +19791,10 @@
   45.44243,
   -75.666599
  ],
+ "96 rue joseph-latour|gatineau": [
+  45.577215,
+  -75.396667
+ ],
  "96 rumen way|ottawa": [
   45.253757,
   -75.687907
@@ -17204,6 +19802,10 @@
  "96 wheel barrow mews|ottawa": [
   45.29271,
   -75.908129
+ ],
+ "960 boulevard saint-joseph|gatineau": [
+  45.467539,
+  -75.737316
  ],
  "960 locomotion lane|ottawa": [
   45.277027,
@@ -17217,6 +19819,10 @@
   45.323589,
   -75.893082
  ],
+ "961 boulevard saint-joseph|gatineau": [
+  45.468051,
+  -75.73873
+ ],
  "961 locomotion lane|ottawa": [
   45.276888,
   -75.896829
@@ -17228,6 +19834,10 @@
  "964 hunt club rd|ottawa": [
   45.347924,
   -75.659424
+ ],
+ "968 chemin pink|gatineau": [
+  45.438332,
+  -75.86685
  ],
  "97 maize st|ottawa": [
   45.290168,
@@ -17249,6 +19859,14 @@
   45.368512,
   -75.707968
  ],
+ "972 rue notre-dame|gatineau": [
+  45.487076,
+  -75.597799
+ ],
+ "974 rue notre-dame|gatineau": [
+  45.487363,
+  -75.596458
+ ],
  "975 gladstone ave|ottawa": [
   45.403917,
   -75.71674
@@ -17261,9 +19879,17 @@
   45.448857,
   -75.587881
  ],
+ "977 rue georges|gatineau": [
+  45.566591,
+  -75.424376
+ ],
  "979 arkell st|ottawa": [
   45.356831,
   -75.784566
+ ],
+ "98 100 rue de la baie|gatineau": [
+  45.460329,
+  -75.696012
  ],
  "98 bliss cres|ottawa": [
   45.28517,
@@ -17282,6 +19908,18 @@
   45.29304,
   -75.910623
  ],
+ "98 rue alfred-belisle|gatineau": [
+  45.543976,
+  -75.436427
+ ],
+ "98 rue de la fabrique|gatineau": [
+  45.40958,
+  -75.860995
+ ],
+ "98 rue lois|gatineau": [
+  45.43488,
+  -75.731693
+ ],
  "98 rumen way|ottawa": [
   45.253795,
   -75.687807
@@ -17289,6 +19927,14 @@
  "980 nelida cres|ottawa": [
   45.445462,
   -75.524906
+ ],
+ "981 rue georges|gatineau": [
+  45.566645,
+  -75.424401
+ ],
+ "988 boulevard maloney est|gatineau": [
+  45.490869,
+  -75.592423
  ],
  "989 river rd|ottawa": [
   45.234561,
@@ -17333,6 +19979,10 @@
  "990 nelida cres|ottawa": [
   45.445462,
   -75.524906
+ ],
+ "994 boulevard maloney est|gatineau": [
+  45.490902,
+  -75.592302
  ],
  "998 colonel by dr|ottawa": [
   45.372698,
