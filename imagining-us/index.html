@@ -51,6 +51,7 @@ h1{font-family:var(--display);font-weight:500;font-size:clamp(52px,8vw,92px);lin
 .by{font-family:var(--ui);font-size:16px;font-weight:600;margin:0 0 22px;color:#fff}
 .lede{max-width:56ch;margin:0 0 14px;color:#fff;font-size:17px;text-shadow:0 1px 3px rgba(20,32,60,.45)}
 .lede+.btns{margin-top:28px}
+.hdedic{font:italic 500 clamp(20px,2.2vw,24px)/1.35 var(--display);color:#fff;margin:0 0 20px;padding-left:14px;border-left:2px solid rgba(255,255,255,.6);text-shadow:0 1px 3px rgba(20,32,60,.35)}
 .btns{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:clamp(40px,6vw,80px)}
 .btn{font:600 16px var(--ui);min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
 .btn.solid{background:#fff;color:#1b3354}
@@ -106,8 +107,8 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);l
 .layers b{color:var(--ink)}
 .layers span{color:var(--mute)}
 .figwrap{background:#fff;border-radius:14px;padding:clamp(14px,2vw,24px);box-shadow:0 1px 0 var(--line),0 20px 50px rgba(20,35,60,.10)}
-.bigfig{margin:0 auto;max-width:640px}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+#book{padding-block:clamp(28px,3.5vw,48px)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:0}
 .facts div{border-top:2px solid var(--sun);padding-top:12px;font:15px/1.5 var(--ui);color:var(--mute)}
 .facts b{display:block;font:500 34px/1.1 var(--display);color:var(--lake)}
 /* reader */
@@ -167,12 +168,11 @@ footer a{color:var(--mute)}
 <main id="top">
 <section class="hero"><div class="in">
   <div>
-    <p class="kicker">Relationship psychology</p>
-    <h1>Imagining Us</h1>
+        <h1>Imagining Us</h1>
     <p class="sub">An Examination of Almost-Relationships</p>
     <p class="by">By Jalen Vale</p>
-    <p class="lede">The book is an exploration of an under-examined form of intimacy, known as an almost-relationship, that helps readers to understand their experience, heal, and move on.</p>
-    <p class="lede">It is a clear, compassionate guide that recognizes how a love that never quite began can still end, and explains why almost-love hurts as much as a real breakup. Most importantly, it helps to separate what really happened from what you hoped would happen to promote healing.</p>
+    <p class="hdedic">For those who lived a thousand futures<br>with someone who was never truly theirs.</p>
+    <p class="lede">This book explores an under-examined form of intimacy, known as an almost-relationship. It is a compassionate guide that recognizes how a love that never quite began can still have an ending, and provides the means to promote healing by helping to separate what really happened from what you hoped would happen.</p>
     <div class="btns">
       <a class="btn solid" href="https://www.amazon.ca/dp/B0HM5NNB43">Get the Kindle edition, $7.16</a>
       <a class="btn line" href="#sample">Read &amp; listen to a sample</a>
@@ -210,7 +210,7 @@ footer a{color:var(--mute)}
     </div>
     <div class="fmt">
       <div><h3>Audiobook</h3><span class="st">Coming soon</span></div>
-      <p>The full book, narrated in just one hour, in a pleasing and engaging voice. Perfect for a car ride, a wait in a queue, or a mundane chore around the home.</p>
+      <p>The full book, narrated in just one hour, making it possible to learn about almost-relationships during a car ride, a wait in a queue, or a mundane chore around the home.</p>
       <span class="pr">Spotify<small>audiobooks</small></span>
       <span class="act wait">Available soon</span>
     </div>
@@ -225,7 +225,6 @@ footer a{color:var(--mute)}
 </div></section>
 
 <section class="band about" id="book"><div class="in">
-  <figure class="figwrap bigfig"><img src="framework.png" alt="The Imagining Us Almost-Relationship Framework diagram, one of 14 diagrams in the book"></figure>
   <div class="facts">
     <div><b>5 parts, 15 chapters</b>From naming the relationship to letting go and loving again.</div>
     <div><b>14 diagrams</b>That make the almost-relationship framework easy to understand.</div>
@@ -275,8 +274,6 @@ footer a{color:var(--mute)}
     <blockquote>“I wasn’t mourning what we were. I was mourning everything I believed we might become.”</blockquote>
   </div>
 </div></section>
-
-<section class="dedic"><div class="in"><p>For those who lived a thousand futures<br>with someone who was never truly theirs.</p><span>From the dedication</span></div></section>
 
 <section class="band cta"><div class="in">
   <div><h2>Start reading tonight.</h2><p>The Kindle edition is available now on Amazon.ca.</p></div>
