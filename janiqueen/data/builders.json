@@ -150,11 +150,6 @@
   "name": "Absolute Restoration & Construction Inc.",
   "sites": 1
  },
- "acc-par-systems": {
-  "checked": "2026-11-20",
-  "name": "Acc Par Systems Ltd.",
-  "sites": 1
- },
  "aecom-architects": {
   "checked": "2026-11-20",
   "homes": 0,
@@ -180,7 +175,7 @@
   "phones": [
    "613-822-3040"
   ],
-  "sites": 2,
+  "sites": 1,
   "source": "website",
   "website": "https://allianceengineering.ca"
  },
@@ -719,7 +714,7 @@
    "613-820-1959",
    "613-777-2835"
   ],
-  "sites": 49,
+  "sites": 48,
   "source": "manual",
   "website": "https://www.cardelhomes.com/ottawa"
  },
@@ -794,7 +789,7 @@
   "homes": 0,
   "last": "2022-10",
   "name": "Children'S Hospital Eastern Ontario",
-  "sites": 7
+  "sites": 6
  },
  "chmiel-architects": {
   "checked": "2026-11-20",
@@ -1060,7 +1055,7 @@
    "613-526-2400",
    "613-526-2880"
   ],
-  "sites": 1,
+  "sites": 0,
   "source": "website",
   "website": "https://doran.ca"
  },
@@ -2214,7 +2209,7 @@
   "phones": [
    "613-230-7051"
   ],
-  "sites": 96,
+  "sites": 88,
   "source": "manual",
   "website": "https://www.minto.com/ottawa"
  },
@@ -2298,7 +2293,7 @@
   "phones": [
    "613-591-7505"
   ],
-  "sites": 3,
+  "sites": 2,
   "source": "website",
   "website": "https://modernniagara.com"
  },
@@ -3085,7 +3080,7 @@
    "613-229-2942",
    "613-238-2040"
   ],
-  "sites": 18,
+  "sites": 15,
   "source": "website",
   "website": "https://tartanhomes.com"
  },
