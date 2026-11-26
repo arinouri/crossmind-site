@@ -43,6 +43,20 @@
    "where": "National Capital Region (NCR)"
   },
   {
+   "buyer": "National Research Council of Canada (NRC)",
+   "closing": "2026-12-21T14:00",
+   "contact": "Roxanne Azzi Abboud",
+   "email": "Roxanne.AzziAbboud@nrc-cnrc.gc.ca",
+   "local": false,
+   "phone": "613299-9650",
+   "published": "2026-11-25",
+   "ref": "cb-26-23007556",
+   "source": "Federal (CanadaBuys)",
+   "title": "Janitorial Services for Saskatoon",
+   "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=cb-26-23007556",
+   "where": "Saskatoon"
+  },
+  {
    "buyer": "Department of the Environment (ECCC )",
    "closing": "2027-01-05T17:10",
    "contact": "Angelina Garcia",
@@ -54,7 +68,7 @@
    "source": "Federal (CanadaBuys)",
    "title": "Janitorial services for the Pacific Environmental Science Centre, North Vancouver, BC",
    "url": "https://canadabuys.canada.ca/en/tender-opportunities?search_filter=cb-231-38982712",
-   "where": "Canada · British Columbia"
+   "where": "British Columbia · Canada"
   },
   {
    "buyer": "Department of the Environment (ECCC )",
@@ -85,5 +99,5 @@
    "where": "British Columbia · Alberta"
   }
  ],
- "updated": "2026-11-25T19:15Z"
+ "updated": "2026-11-26T19:00Z"
 }
