@@ -128,7 +128,7 @@
     }
     for (var i = 0; i < density; i++) parts.push(make(true));
     // snow that settles on top of the book (front and spine), and shakes off when the book is hovered
-    var bookEl = kind === 'snow' ? host.querySelector('.book') : null, caps = [], NB = 48, prof = [], HMAX = 34;
+    var bookEl = null /* snow on the book: turned off */, caps = [], NB = 48, prof = [], HMAX = 34;
     var nzb = noise1(NB, 5.3); for (var c0 = 0; c0 < NB; c0++) prof.push(6 + nzb[c0] * 6);
     if (bookEl) {
       var mk = function (parent, cls) { var cv = document.createElement('canvas'); cv.className = 'iu-cap ' + cls; cv.setAttribute('aria-hidden', 'true'); parent.appendChild(cv); return cv; };
@@ -185,7 +185,7 @@
     }
     if (bookEl) bookEl.addEventListener('pointerenter', shakeOff);
     // start the ground drift as a soft, uneven dusting, then let it build up
-    if (kind === 'snow') { var nz = noise1(pile.length, 3.7), nz2 = noise1(pile.length, 9.1); for (var q0 = 0; q0 < pile.length; q0++) pile[q0] = 5 + nz[q0] * 7 + nz2[q0] * 3; }
+    if (kind === 'snow') { var nz = noise1(pile.length, 3.7), nz2 = noise1(pile.length, 9.1); for (var q0 = 0; q0 < pile.length; q0++) pile[q0] = 8 + nz[q0] * 4 + nz2[q0] * 2; }
 
     function heart(c, r) { c.beginPath(); c.moveTo(0, r * .35); c.bezierCurveTo(-r, -r * .45, -r * .45, -r * 1.1, 0, -r * .45); c.bezierCurveTo(r * .45, -r * 1.1, r, -r * .45, 0, r * .35); c.fill(); }
     function leaf(c, r) { c.beginPath(); c.moveTo(-r, 0); c.quadraticCurveTo(0, -r * .62, r, 0); c.quadraticCurveTo(0, r * .62, -r, 0); c.fill();
@@ -199,7 +199,7 @@
 
     function groundAt(x) { var i = Math.max(0, Math.min(pile.length - 1, Math.round(x / COL))); return pile[i]; }
     function deposit(x, amt, spread) {
-      var i0 = Math.round(x / COL), cap = kind === 'snow' ? 46 : 26;
+      var i0 = Math.round(x / COL), cap = kind === 'snow' ? 20 : 22;
       for (var k = -spread; k <= spread; k++) { var j = i0 + k; if (j < 0 || j >= pile.length) continue;
         var w = 1 - Math.abs(k) / (spread + 1); pile[j] = Math.min(cap, pile[j] + amt * w); }
     }
@@ -285,7 +285,7 @@
         var ground = H - (piles ? groundAt(p.x) : 0);
         if (piles && !up && !p.bat && p.vy > 0 && p.y >= ground - p.r * .5 && p.x > 0 && p.x < W) {
           // settle: snow adds to the drift, leaves come to rest on top of the pile
-          if (kind === 'snow') deposit(p.x, p.clump ? .5 + p.r * .3 : 1.4 + p.r * .9, 4);
+          if (kind === 'snow') deposit(p.x, p.clump ? .06 : .1 + p.r * .04, 6);
           else { deposit(p.x, p.clump ? .4 : 1.1, 2); if (landed.length < 260) landed.push({ x: p.x, y: ground - 2, r: p.r * .9, rot: Math.random() * 6.28, c: p.c }); }
           if (p.clump) { parts.splice(i, 1); i--; } else parts[i] = make(false); continue;
         }
@@ -296,19 +296,21 @@
       if (piles && mouse.on) {
         var i0 = Math.round(mouse.x / COL), surfY = H - groundAt(mouse.x), sp = Math.min(1.5, Math.hypot(mouse.vx, mouse.vy) / 10);
         if (mouse.y > surfY - 22 && sp > .05) {
-          var R = 9, moved = 0, dir = mouse.vx >= 0 ? 1 : -1;
-          for (var k = -R; k <= R; k++) { var j = i0 + k; if (j < 0 || j >= pile.length) continue; var f = 1 - Math.abs(k) / (R + 1), take = pile[j] * .05 * f * f * sp; pile[j] -= take; moved += take; }
-          for (var k2 = R + 1; k2 <= R + 7; k2++) { var wgt = (1 - (k2 - R - 1) / 7) / 4; [dir, -dir].forEach(function (sd, si) { var j2 = i0 + sd * k2; if (j2 >= 0 && j2 < pile.length) pile[j2] += moved * wgt * (si ? .35 : .65); }); }
-          if (kind === 'snow' && moved > .4 && parts.length < density * 1.5) for (var kk = 0; kk < Math.min(6, moved * 2); kk++)
-            parts.push({ x: mouse.x + (Math.random() - .5) * 20, y: surfY + 2, z: .85, r: 1 + Math.random() * 2, vy: -1.2 - Math.random() * 2.2 * sp, g: .14, vx: 0,
-              px: mouse.vx * .25 + (Math.random() - .5) * 2, py: 0, rot: 0, vr: 0, flip: 0, sway: 0, swaySp: 0, c: '#ffffff', a: .9, clump: true });
+          // dust through it: thin the snow gently under the cursor and spread it thinly around, no ridges
+          var R = 10, moved = 0;
+          for (var k = -R; k <= R; k++) { var j = i0 + k; if (j < 0 || j >= pile.length) continue; var f = 1 - Math.abs(k) / (R + 1), take = pile[j] * .025 * f * sp; pile[j] -= take; moved += take; }
+          var spread = 34, kept = moved * .7;
+          for (var k2 = -spread; k2 <= spread; k2++) { if (Math.abs(k2) <= R) continue; var j2 = i0 + k2; if (j2 >= 0 && j2 < pile.length) pile[j2] += kept / (2 * (spread - R)); }
+          if (kind === 'snow' && parts.length < density * 1.4) for (var kk = 0; kk < Math.min(3, moved * 3); kk++)
+            parts.push({ x: mouse.x + (Math.random() - .5) * 24, y: surfY + 1, z: .85, r: .8 + Math.random() * 1.4, vy: -.6 - Math.random() * 1.4 * sp, g: .06, vx: 0,
+              px: mouse.vx * .15 + (Math.random() - .5) * 1.5, py: 0, rot: 0, vr: 0, flip: 0, sway: Math.random() * 6, swaySp: .02, c: '#ffffff', a: .85, clump: true });
         }
         if (kind !== 'snow' && mouse.y > H - 60) landed = landed.filter(function (l) { var dx = l.x - mouse.x, dy = l.y - mouse.y;
           if (dx * dx + dy * dy < 900) { parts.push({ x: l.x, y: l.y - 4, z: .9, r: l.r, vy: -2 - Math.random() * 2, g: .08, vx: 0, px: (dx > 0 ? 1 : -1) * 2 + mouse.vx * .2, py: 0,
             rot: l.rot, vr: .1, flip: 0, sway: 0, swaySp: .02, c: l.c, a: .95, clump: true }); return false; } return true; });
       }
       // let drifts settle a little so they stay smooth
-      for (var s = 1; s < pile.length - 1; s++) { var avg = (pile[s - 1] + pile[s + 1]) / 2; pile[s] += (avg - pile[s]) * .025; }
+      for (var s = 1; s < pile.length - 1; s++) { var avg = (pile[s - 1] + pile[s + 1]) / 2; pile[s] += (avg - pile[s]) * .05; }
       drawPile(fx);
       if (!reduce) anim.raf = requestAnimationFrame(step);
     }
