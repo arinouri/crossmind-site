@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imagining Us · Site editor</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16212f;--mute:#566275;--lake:#1b3354;--sun:#c95f37;--line:#e3e8ef;--soft:#f3f6fa;--ok:#1d6a43;--bad:#a3261b;
+--display:"Cormorant Garamond",Georgia,serif;--ui:"Figtree",system-ui,sans-serif}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.5 var(--ui)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--lake);margin:0;line-height:1.1}
+.gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(180deg,#22416b 0%,#4d6c98 45%,#a99bb3 75%,#f1b48f 100%)}
+.card{background:#fff;border-radius:20px;padding:30px 28px;width:min(440px,100%);box-shadow:0 20px 50px rgba(20,32,60,.25);display:flex;flex-direction:column;gap:14px}
+.card h1{font-size:34px}
+.card p{margin:0;color:var(--mute);font-size:15px}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+input[type=text],input[type=password],input[type=url],select,textarea{width:100%;min-height:46px;border:1.5px solid var(--line);border-radius:12px;padding:10px 14px;background:#fff}
+textarea{min-height:90px;resize:vertical;line-height:1.5}
+.hint{font-size:13px;color:var(--mute);margin-top:5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;border:1.5px solid var(--lake);background:var(--lake);color:#fff;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn.ghost{background:#fff;color:var(--lake)}
+.btn.sun{background:var(--sun);border-color:var(--sun)}
+.btn:disabled{opacity:.55;cursor:wait}
+.msg{font-size:14px;min-height:1.2em;margin:0}
+.msg.err{color:var(--bad)}.msg.ok{color:var(--ok)}
+.hide{display:none!important}
+/* editor */
+header.top{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+header.top .in{max-width:1280px;margin:0 auto;padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+header.top h1{font-size:26px;margin-right:auto}
+.layout{max-width:1280px;margin:0 auto;padding:20px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:20px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:18px}
+.panel h2{font-size:26px;margin-bottom:4px}
+.panel>p{margin:0 0 16px;color:var(--mute);font-size:14px}
+.row{margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.theme{border:2px solid var(--line);border-radius:14px;padding:10px 12px;cursor:pointer;background:#fff;text-align:left;min-height:64px}
+.theme b{display:block;font-size:14px}
+.theme small{display:block;font-size:12px;color:var(--mute)}
+.theme .sw{display:block;height:8px;border-radius:99px;margin-bottom:8px;background:#ccd}
+.theme[aria-pressed=true]{border-color:var(--sun);box-shadow:0 0 0 3px rgba(201,95,55,.18)}
+.check{display:flex;gap:10px;align-items:center;font-weight:500;font-size:15px;min-height:40px}
+.check input{width:20px;height:20px}
+details.ed{border:1px solid var(--line);border-radius:14px;padding:0 16px;margin-bottom:10px}
+details.ed summary{cursor:pointer;padding:14px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.ed summary::after{content:"Edit";color:var(--sun);font-weight:600;font-size:14px}
+details.ed[open] summary::after{content:"Close"}
+details.ed .body{padding-bottom:14px}
+.preview{position:sticky;top:84px}
+.preview .frame{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;height:calc(100vh - 120px)}
+.preview iframe{width:100%;height:100%;border:0}
+.preview .bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;font-size:14px;color:var(--mute)}
+.saved{font-size:14px;color:var(--mute)}
+@media(max-width:980px){.layout{grid-template-columns:minmax(0,1fr)}.preview{position:static}.preview .frame{height:70vh}}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- first-time setup -->
+<section class="gate hide" id="setup">
+  <form class="card" id="setupForm" autocomplete="off" novalidate>
+    <h1>Set up the site editor</h1>
+    <p>One-time setup. Paste the GitHub access key, then choose the password Kevin will use. The key is locked with this password before it is saved, so only someone who knows the password can make changes.</p>
+    <div><label for="sToken">GitHub access key</label><input id="sToken" type="password" spellcheck="false" placeholder="github_pat_…">
+      <div class="hint">A fine-grained key with access only to the crossmind-site repository (Contents: read and write).</div></div>
+    <div><label for="sPw">New password</label><input id="sPw" type="password" autocomplete="new-password"><div class="hint">At least 12 characters. A short phrase is easiest to remember.</div></div>
+    <div><label for="sPw2">Type it again</label><input id="sPw2" type="password" autocomplete="new-password"></div>
+    <p class="msg" id="setupMsg" role="alert"></p>
+    <button class="btn" id="setupBtn" type="submit">Lock and save</button>
+  </form>
+</section>
+
+<!-- sign in -->
+<section class="gate hide" id="login">
+  <form class="card" id="loginForm" novalidate>
+    <h1>Imagining Us</h1>
+    <p>Sign in to edit the website.</p>
+    <div><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password"></div>
+    <p class="msg" id="loginMsg" role="alert"></p>
+    <button class="btn" id="loginBtn" type="submit">Sign in</button>
+  </form>
+</section>
+
+<!-- editor -->
+<div id="editor" class="hide">
+  <header class="top"><div class="in">
+    <h1>Site editor</h1>
+    <span class="saved" id="savedMsg" role="status"></span>
+    <a class="btn ghost" href="./" target="_blank" rel="noopener">View live site</a>
+    <button class="btn ghost" id="pwBtn" type="button">Change password</button>
+    <button class="btn ghost" id="outBtn" type="button">Sign out</button>
+    <button class="btn sun" id="saveBtn" type="button">Publish changes</button>
+  </div></header>
+
+  <div class="layout">
+    <div>
+      <section class="panel">
+        <h2>Seasonal look</h2>
+        <p>Pick a theme. “Automatic” switches by date (Christmas from mid-November, Valentine’s in early February, and so on).</p>
+        <div class="themes" id="themeList"></div>
+        <label class="check"><input type="checkbox" id="fDeco"> Show falling decorations (snow, hearts, leaves)</label>
+        <div class="row" style="margin-top:12px"><label for="fBanner">Banner message for <span id="bannerFor">this theme</span></label>
+          <input type="text" id="fBanner"><div class="hint">Shown in the coloured strip at the top. Leave empty to hide it for this theme.</div></div>
+      </section>
+
+      <section class="panel">
+        <h2>Top of the page</h2>
+        <p>The dedication, introduction and main button.</p>
+        <div class="row"><label for="fDedic">Dedication</label><textarea id="fDedic" rows="2"></textarea><div class="hint">Press Enter to start the second line.</div></div>
+        <div class="row"><label for="fLede">Introduction</label><textarea id="fLede" rows="5"></textarea></div>
+        <div class="grid2">
+          <div class="row"><label for="fBtn">Button text</label><input type="text" id="fBtn"></div>
+          <div class="row"><label for="fBtnLink">Button link</label><input type="url" id="fBtnLink" placeholder="https://…"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Editions and prices</h2>
+        <p>Turn on “Available to buy” and add the link when an edition goes live.</p>
+        <div class="row"><label for="fEdIntro">Intro text</label><textarea id="fEdIntro" rows="3"></textarea></div>
+        <div id="edList"></div>
+      </section>
+    </div>
+
+    <aside class="preview">
+      <div class="bar"><span>Preview (not live until you publish)</span><button class="btn ghost" id="refreshBtn" type="button" style="min-height:36px;padding:0 14px">Refresh</button></div>
+      <div class="frame"><iframe id="pv" title="Website preview" src="index.html?preview=1"></iframe></div>
+    </aside>
+  </div>
+</div>
+
+<script src="themes.js"></script>
+<script>
+(function () {
+  'use strict';
+  var OWNER = 'arinouri', REPO = 'crossmind-site', BRANCH = 'main', DIR = 'imagining-us';
+  var API = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + DIR + '/';
+  var ITER = 600000;
+  var token = '', cfg = null, cfgSha = '', keySha = '', dirty = false;
+  var $ = function (id) { return document.getElementById(id); };
+  function show(id) { ['setup', 'login', 'editor'].forEach(function (x) { $(x).classList.toggle('hide', x !== id); }); }
+  function msg(el, text, kind) { el.textContent = text || ''; el.className = 'msg' + (kind ? ' ' + kind : ''); }
+
+  /* ---------- crypto: password -> key (PBKDF2) -> AES-GCM ---------- */
+  var enc = new TextEncoder(), dec = new TextDecoder();
+  function b64(buf) { var s = '', b = new Uint8Array(buf); for (var i = 0; i < b.length; i++) s += String.fromCharCode(b[i]); return btoa(s); }
+  function unb64(s) { var bin = atob(s), b = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) b[i] = bin.charCodeAt(i); return b; }
+  function deriveKey(pw, salt, iter) {
+    return crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveKey']).then(function (base) {
+      return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: iter, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+    });
+  }
+  function lock(secret, pw) {
+    var salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+    return deriveKey(pw, salt, ITER).then(function (k) { return crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, k, enc.encode(secret)); })
+      .then(function (ct) { return { v: 1, kdf: 'PBKDF2-SHA256', iter: ITER, salt: b64(salt), iv: b64(iv), ct: b64(ct) }; });
+  }
+  function unlock(blob, pw) {
+    return deriveKey(pw, unb64(blob.salt), blob.iter).then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(blob.iv) }, k, unb64(blob.ct)); })
+      .then(function (pt) { return dec.decode(pt); });
+  }
+
+  /* ---------- GitHub contents API ---------- */
+  function gh(path, opts) {
+    opts = opts || {};
+    return fetch(API + path + (opts.method ? '' : '?ref=' + BRANCH + '&t=' + Date.now()), {
+      method: opts.method || 'GET', cache: 'no-store',
+      headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + (opts.tok || token), 'X-GitHub-Api-Version': '2022-11-28' },
+      body: opts.body ? JSON.stringify(opts.body) : undefined
+    }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) { var e = new Error(j.message || ('GitHub error ' + r.status)); e.status = r.status; throw e; } return j; }); });
+  }
+  function utf8b64(str) { return b64(enc.encode(str)); }
+  function fromb64(s) { return dec.decode(unb64(s.replace(/\n/g, ''))); }
+  function putFile(name, text, sha, message, tok) {
+    var body = { message: message, content: utf8b64(text), branch: BRANCH }; if (sha) body.sha = sha;
+    return gh(name, { method: 'PUT', body: body, tok: tok }).then(function (j) { return j.content && j.content.sha; });
+  }
+
+  /* ---------- start: setup or sign in ---------- */
+  var keyBlob = null;
+  fetch('admin-key.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('none'); return r.json(); })
+    .then(function (j) { keyBlob = j; show('login'); $('pw').focus(); })
+    .catch(function () { show('setup'); $('sToken').focus(); });
+
+  $('setupForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var tok = $('sToken').value.trim(), p1 = $('sPw').value, p2 = $('sPw2').value, m = $('setupMsg');
+    if (!/^(github_pat_|ghp_)/.test(tok)) return msg(m, 'That doesn’t look like a GitHub access key.', 'err');
+    if (p1.length < 12) return msg(m, 'Please use at least 12 characters for the password.', 'err');
+    if (p1 !== p2) return msg(m, 'The two passwords don’t match.', 'err');
+    $('setupBtn').disabled = true; msg(m, 'Checking the key…');
+    fetch('https://api.github.com/repos/' + OWNER + '/' + REPO, { headers: { 'Authorization': 'Bearer ' + tok, 'Accept': 'application/vnd.github+json' } })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error('GitHub did not accept this key.'); if (!j.permissions || !j.permissions.push) throw new Error('This key can’t make changes to the site. Give it Contents: read and write.'); }); })
+      .then(function () { msg(m, 'Locking the key with your password…'); return lock(tok, p1); })
+      .then(function (blob) {
+        return gh('admin-key.json', { tok: tok }).then(function (j) { return j.sha; }).catch(function () { return ''; })
+          .then(function (sha) { return putFile('admin-key.json', JSON.stringify(blob, null, 2) + '\n', sha, 'Set up Imagining Us site editor', tok); })
+          .then(function (sha) { keySha = sha; keyBlob = blob; });
+      })
+      .then(function () { token = tok; $('sToken').value = $('sPw').value = $('sPw2').value = ''; return openEditor(); })
+      .catch(function (err) { msg(m, err.message, 'err'); })
+      .then(function () { $('setupBtn').disabled = false; });
+  });
+
+  $('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var pw = $('pw').value, m = $('loginMsg'); if (!pw) return;
+    $('loginBtn').disabled = true; msg(m, 'Signing in…');
+    unlock(keyBlob, pw).then(function (tok) { token = tok; $('pw').value = ''; return openEditor(); })
+      .catch(function (err) { msg(m, err && err.status ? err.message : 'Wrong password.', 'err'); })
+      .then(function () { $('loginBtn').disabled = false; });
+  });
+
+  /* ---------- editor ---------- */
+  function openEditor() {
+    return gh('site-config.json').then(function (j) { cfgSha = j.sha; return JSON.parse(fromb64(j.content)); })
+      .catch(function (err) { if (err.status === 404) return {}; throw err; })
+      .then(function (c) { cfg = IU.merge(IU.DEFAULTS, c); fill(); show('editor'); sendPreview(); });
+  }
+
+  var selTheme = 'auto';
+  function themeKeyForBanner() { return selTheme === 'auto' ? IU.autoTheme() : selTheme; }
+  function renderThemes() {
+    var list = ['auto'].concat(IU.ORDER);
+    $('themeList').innerHTML = list.map(function (k) {
+      var t = k === 'auto' ? { name: 'Automatic', ribbonBg: 'linear-gradient(90deg,#b3263a,#c8406b,#9bb88a,#d52b1e,#b5602a,#3a2347)' } : IU.THEMES[k];
+      var sub = k === 'auto' ? 'Now: ' + IU.THEMES[IU.autoTheme()].name.replace(/ \(.*\)/, '') : (k === 'classic' ? 'Plain, all year' : 'Seasonal');
+      return '<button type="button" class="theme" data-k="' + k + '" aria-pressed="' + (k === selTheme) + '"><span class="sw" style="background:' + (t.ribbonBg || '#d9dee7') + '"></span><b>' + t.name + '</b><small>' + sub + '</small></button>';
+    }).join('');
+    var bk = themeKeyForBanner();
+    $('bannerFor').textContent = IU.THEMES[bk].name;
+    $('fBanner').value = (cfg.banners && cfg.banners[bk] != null) ? cfg.banners[bk] : IU.THEMES[bk].banner;
+    $('fBanner').disabled = bk === 'classic';
+  }
+  $('themeList').addEventListener('click', function (e) {
+    var b = e.target.closest('.theme'); if (!b) return;
+    selTheme = b.getAttribute('data-k'); cfg.theme = selTheme; renderThemes(); changed();
+  });
+  $('fBanner').addEventListener('input', function () { cfg.banners = cfg.banners || {}; cfg.banners[themeKeyForBanner()] = this.value; changed(); });
+
+  function field(label, key, i, type) {
+    var id = 'e' + i + key, v = cfg.editions[i][key];
+    if (type === 'check') return '<label class="check"><input type="checkbox" data-i="' + i + '" data-k="' + key + '" id="' + id + '"' + (v ? ' checked' : '') + '> ' + label + '</label>';
+    var tag = type === 'area' ? '<textarea rows="3"' : '<input type="' + (type || 'text') + '"';
+    var val = String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+    return '<div class="row"><label for="' + id + '">' + label + '</label>' + tag + ' id="' + id + '" data-i="' + i + '" data-k="' + key + '"' + (type === 'area' ? '>' + val + '</textarea>' : ' value="' + val + '">') + '</div>';
+  }
+  function renderEditions() {
+    $('edList').innerHTML = cfg.editions.map(function (e, i) {
+      return '<details class="ed"><summary>' + e.title.replace(/</g, '&lt;') + '</summary><div class="body">' +
+        '<div class="grid2">' + field('Name', 'title', i) + field('Status label', 'status', i) + '</div>' +
+        field('Description', 'desc', i, 'area') +
+        '<div class="grid2">' + field('Price', 'price', i) + field('Under the price', 'priceNote', i) + '</div>' +
+        '<div class="grid2">' + field('Button text', 'button', i) + field('Link (https://…)', 'link', i, 'url') + '</div>' +
+        field('Available to buy (shows the button)', 'available', i, 'check') +
+        field('Show the seasonal gift tag', 'gift', i, 'check') +
+        '</div></details>';
+    }).join('');
+  }
+  $('edList').addEventListener('input', function (e) {
+    var t = e.target, i = t.getAttribute('data-i'), k = t.getAttribute('data-k'); if (i == null) return;
+    cfg.editions[i][k] = t.type === 'checkbox' ? t.checked : t.value;
+    if (k === 'title') t.closest('details').querySelector('summary').textContent = t.value;
+    changed();
+  });
+  function fill() {
+    selTheme = cfg.theme || 'auto';
+    renderThemes(); renderEditions();
+    $('fDeco').checked = cfg.decorations !== false;
+    $('fDedic').value = cfg.hero.dedication; $('fLede').value = cfg.hero.lede;
+    $('fBtn').value = cfg.hero.button; $('fBtnLink').value = cfg.hero.buttonLink;
+    $('fEdIntro').value = cfg.editionsIntro;
+    dirty = false; $('savedMsg').textContent = 'Up to date';
+  }
+  [['fDedic', 'dedication'], ['fLede', 'lede'], ['fBtn', 'button'], ['fBtnLink', 'buttonLink']].forEach(function (p) {
+    $(p[0]).addEventListener('input', function () { cfg.hero[p[1]] = this.value; changed(); });
+  });
+  $('fEdIntro').addEventListener('input', function () { cfg.editionsIntro = this.value; changed(); });
+  $('fDeco').addEventListener('change', function () { cfg.decorations = this.checked; changed(); });
+
+  var pvTimer = 0;
+  function changed() { dirty = true; $('savedMsg').textContent = 'Unpublished changes'; clearTimeout(pvTimer); pvTimer = setTimeout(sendPreview, 250); }
+  function sendPreview() { try { $('pv').contentWindow.postMessage({ iuPreview: cfg }, location.origin); } catch (e) {} }
+  $('pv').addEventListener('load', function () { setTimeout(sendPreview, 300); });
+  $('refreshBtn').addEventListener('click', function () { $('pv').src = 'index.html?preview=1&t=' + Date.now(); });
+
+  function badLinks() {
+    var links = [cfg.hero.buttonLink].concat(cfg.editions.map(function (e) { return e.link; }));
+    return links.filter(function (u) { return u && !/^(https:\/\/|#)/i.test(u.trim()); });
+  }
+  $('saveBtn').addEventListener('click', function () {
+    var bl = badLinks(); if (bl.length) { $('savedMsg').textContent = 'Links must start with https:// (' + bl[0] + ')'; return; }
+    var b = this; b.disabled = true; $('savedMsg').textContent = 'Publishing…';
+    var out = JSON.parse(JSON.stringify(cfg)); out.theme = selTheme;
+    putFile('site-config.json', JSON.stringify(out, null, 2) + '\n', cfgSha, 'Website update from the site editor')
+      .then(function (sha) { cfgSha = sha; dirty = false; $('savedMsg').textContent = 'Published. The live site updates in about a minute.'; })
+      .catch(function (err) {
+        if (err.status === 409 || err.status === 422) $('savedMsg').textContent = 'Someone else changed the site. Refresh this page and try again.';
+        else if (err.status === 401) $('savedMsg').textContent = 'The GitHub access key has expired. Ask Arian for a new one.';
+        else $('savedMsg').textContent = 'Couldn’t publish: ' + err.message;
+      })
+      .then(function () { b.disabled = false; });
+  });
+
+  $('outBtn').addEventListener('click', function () {
+    if (dirty && !confirm('You have unpublished changes. Sign out anyway?')) return;
+    token = ''; cfg = null; show('login');
+  });
+  $('pwBtn').addEventListener('click', function () {
+    var p1 = prompt('New password (at least 12 characters):'); if (p1 == null) return;
+    if (p1.length < 12) { $('savedMsg').textContent = 'Password not changed: use at least 12 characters.'; return; }
+    var p2 = prompt('Type the new password again:'); if (p2 !== p1) { $('savedMsg').textContent = 'Password not changed: they didn’t match.'; return; }
+    $('savedMsg').textContent = 'Changing password…';
+    lock(token, p1).then(function (blob) {
+      return gh('admin-key.json').then(function (j) { return j.sha; })
+        .then(function (sha) { return putFile('admin-key.json', JSON.stringify(blob, null, 2) + '\n', sha, 'Change site editor password'); })
+        .then(function () { keyBlob = blob; $('savedMsg').textContent = 'Password changed. Use the new one next time.'; });
+    }).catch(function (err) { $('savedMsg').textContent = 'Couldn’t change password: ' + err.message; });
+  });
+  window.addEventListener('beforeunload', function (e) { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+})();
+</script>
+</body>
+</html>

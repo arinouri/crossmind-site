@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "theme": "auto",
+  "decorations": true,
+  "banners": {},
+  "hero": {
+    "dedication": "For those who lived a thousand futures\nwith someone who was never truly theirs.",
+    "lede": "This book explores an under-examined form of intimacy, known as an almost-relationship. It is a compassionate guide that recognizes how a love that never quite began can still have an ending, and provides the means to promote healing by helping to separate what really happened from what you hoped would happen.",
+    "button": "Get the Kindle edition, $7.16",
+    "buttonLink": "https://www.amazon.ca/dp/B0HM5NNB43"
+  },
+  "editionsIntro": "Read it on Kindle today. The paperback and audiobook are on the way, and the Read-Along Edition, with narration on every page, arrives in January.",
+  "editions": [
+    {
+      "id": "kindle",
+      "title": "Kindle eBook",
+      "status": "Available now",
+      "available": true,
+      "desc": "Available now on any Kindle device or the free Kindle app, with all 14 diagrams.",
+      "price": "$7.16",
+      "priceNote": "CAD",
+      "button": "Buy on Amazon",
+      "link": "https://www.amazon.ca/dp/B0HM5NNB43",
+      "gift": false
+    },
+    {
+      "id": "paperback",
+      "title": "Paperback",
+      "status": "Coming soon",
+      "available": false,
+      "desc": "86 pages, 6 × 9 inches, on cream paper with a glossy cover.",
+      "price": "$13.99",
+      "priceNote": "CAD on Amazon",
+      "button": "Buy on Amazon",
+      "link": "",
+      "gift": true
+    },
+    {
+      "id": "audiobook",
+      "title": "Audiobook",
+      "status": "Coming soon",
+      "available": false,
+      "desc": "The full book, narrated in just one hour, making it possible to learn about almost-relationships during a car ride, your daily walk or exercise routine, or a mundane chore at home.",
+      "price": "$11.99",
+      "priceNote": "CAD on Spotify",
+      "button": "Listen on Spotify",
+      "link": "",
+      "gift": true
+    },
+    {
+      "id": "readalong",
+      "title": "Read-Along Edition",
+      "status": "January 2027",
+      "available": true,
+      "desc": "The complete book with narration on every page. Read, listen, or do both at once.",
+      "price": "This site",
+      "priceNote": "only here",
+      "button": "Try the sample",
+      "link": "#sample",
+      "gift": false,
+      "ghost": true,
+      "statusOn": false
+    }
+  ]
+}

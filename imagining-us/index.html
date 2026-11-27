@@ -70,6 +70,14 @@ h1{font-family:var(--display);font-weight:500;font-size:clamp(52px,8vw,92px);lin
 /* sections */
 h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);line-height:1.05;margin:0 0 14px;color:var(--lake);text-wrap:balance}
 .intro{max-width:62ch;color:var(--mute);margin:0 0 34px}
+/* seasonal themes (themes.js + site-config.json) */
+.ribbon{font:600 15px/1.4 var(--ui);text-align:center;padding:10px 16px;letter-spacing:.01em}
+.ribbon span{display:inline-block;max-width:80ch}
+.garland .ribbon{position:relative;padding-bottom:16px}
+.garland .ribbon::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:22px;z-index:3;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='22' viewBox='0 0 120 22'%3E%3Cpath d='M0 4 Q30 18 60 4 T120 4' fill='none' stroke='%231f5a3a' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M0 4 Q30 18 60 4 T120 4' fill='none' stroke='%232f7d52' stroke-width='2' stroke-dasharray='2 4'/%3E%3Ccircle cx='30' cy='15' r='4.5' fill='%23d4af37'/%3E%3Ccircle cx='90' cy='15' r='4.5' fill='%23c8283c'/%3E%3C/svg%3E") repeat-x;background-size:120px 22px}
+.hero{position:relative}.hero .in{position:relative;z-index:1}
+.iu-fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.gifttag{display:inline-block;margin-top:8px;font:600 12.5px var(--ui);letter-spacing:.02em;color:#fff;background:var(--season,#b3263a);padding:4px 10px;border-radius:999px}
 /* one-minute audio ad */
 .minute{background:var(--soft);border-bottom:1px solid var(--line)}
 .minute .in{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding-block:26px}
@@ -164,6 +172,7 @@ footer a{color:var(--mute)}
     <a class="buy" href="https://www.amazon.ca/dp/B0HM5NNB43">Buy the eBook</a>
   </nav>
 </div></header>
+<div class="ribbon" id="ribbon" hidden><span></span></div>
 
 <main id="top">
 <section class="hero"><div class="in">
@@ -171,10 +180,10 @@ footer a{color:var(--mute)}
         <h1>Imagining Us</h1>
     <p class="sub">An Examination of Almost-Relationships</p>
     <p class="by">By Jalen Vale</p>
-    <p class="hdedic"><span>For those who lived a thousand futures <br>with someone who was never truly theirs.</span></p>
-    <p class="lede">This book explores an under-examined form of intimacy, known as an almost-relationship. It is a compassionate guide that recognizes how a love that never quite began can still have an ending, and provides the means to promote healing by helping to separate what really happened from what you hoped would happen.</p>
+    <p class="hdedic"><span id="dedic">For those who lived a thousand futures <br>with someone who was never truly theirs.</span></p>
+    <p class="lede" id="lede">This book explores an under-examined form of intimacy, known as an almost-relationship. It is a compassionate guide that recognizes how a love that never quite began can still have an ending, and provides the means to promote healing by helping to separate what really happened from what you hoped would happen.</p>
     <div class="btns">
-      <a class="btn solid" href="https://www.amazon.ca/dp/B0HM5NNB43">Get the Kindle edition, $7.16</a>
+      <a class="btn solid" id="heroBuy" href="https://www.amazon.ca/dp/B0HM5NNB43">Get the Kindle edition, $7.16</a>
       <a class="btn line" href="#sample">Read &amp; listen to a sample</a>
     </div>
   </div>
@@ -194,8 +203,8 @@ footer a{color:var(--mute)}
 
 <section class="band" id="editions"><div class="in">
   <h2>Choose your edition</h2>
-  <p class="intro">Read it on Kindle today. The paperback and audiobook are on the way, and the Read-Along Edition, with narration on every page, arrives in January.</p>
-  <div class="formats">
+  <p class="intro" id="edIntro">Read it on Kindle today. The paperback and audiobook are on the way, and the Read-Along Edition, with narration on every page, arrives in January.</p>
+  <div class="formats" id="formats">
     <div class="fmt">
       <div><h3>Kindle eBook</h3><span class="st on">Available now</span></div>
       <p>Available now on any Kindle device or the free Kindle app, with all 14 diagrams.</p>
@@ -221,7 +230,6 @@ footer a{color:var(--mute)}
       <a class="act ghost" href="#sample">Try the sample</a>
     </div>
   </div>
-  <p class="direct"><b>Ordering a paperback from us?</b> Each copy is printed on demand and shipped to you within a week.</p>
 </div></section>
 
 <section class="band about" id="book"><div class="in">
@@ -277,7 +285,7 @@ footer a{color:var(--mute)}
 
 <section class="band cta"><div class="in">
   <div><h2>Start reading tonight.</h2><p>The Kindle edition is available now on Amazon.ca.</p></div>
-  <a class="btn solid" href="https://www.amazon.ca/dp/B0HM5NNB43">Get the Kindle edition, $7.16</a>
+  <a class="btn solid" id="endBuy" href="https://www.amazon.ca/dp/B0HM5NNB43">Get the Kindle edition, $7.16</a>
 </div></section>
 </main>
 
@@ -285,6 +293,9 @@ footer a{color:var(--mute)}
   <span>© 2026 Jalen Vale. All rights reserved.</span>
   <span><a href="#editions">Editions</a> · <a href="#book">The book</a> · <a href="#sample">Sample</a></span>
 </div></footer>
+<script src="themes.js"></script>
+<script>IU.load();
+window.addEventListener('message',function(e){if(e.origin===location.origin&&e.data&&e.data.iuPreview){IU.apply(e.data.iuPreview);}});</script>
 <script>
 {
 const DATA = [{"h": "Author’s Note"}, {"p": "There are relationships we know how to describe. We can say when they began. We can say when they ended. We can explain who was involved and what happened. And then there are relationships that live in the spaces between categories, somewhere between friendship, attraction, intimacy, hope, and possibility. These relationships are called almost-relationships and can be very confusing.", "t": 0.0}, {"p": "Imagining Us explores the almost-relationship, the emotionally complicated space between friendship, intimacy and romantic commitment. It examines why people become attached to relationships that remain undefined, how imagination shapes romantic perception, and what happens when two people experience the same connection but assign it different meanings.", "t": 27.84}, {"p": "The book’s central question is: What happens when one person in a relationship falls in love with the possibility of love?", "t": 50.54}, {"p": "Rather than offering simplistic dating advice, Imagining Us provides a framework for distinguishing between relationship reality, relationship hope and relationship fantasy. Its distinctive contribution to relationship psychology is an examination of interpretive asymmetry: the way two people can share the same behaviours, intimacy and history while constructing different psychological realities. The book explores how ambiguity creates an interpretive environment in which attention, memory, hope and imagined futures can intensify attachment before mutual romantic desire exists.", "t": 58.64}, {"p": "It draws on relationship psychology, research on uncertainty and interpersonal perception, cultural observation, relatable scenarios, and reflective analysis to explore ambiguity, vulnerability, communication, boundaries and the grief associated with the end of an almost-relationship.", "t": 90.71}, {"p": "The experience can feel confusing and isolating because the outside world may not recognize it as a loss. There was no marriage. No shared home. No official breakup. Sometimes there wasn’t even a first date. And yet something still ended, painfully. You still feel grief. You still experience longing. You still wonder what your relationship might have become.", "t": 106.02}, {"p": "The distinctive focus of Imagining Us is not simply on whether a relationship is defined, but how ambiguity changes perception. When commitment is absent, ordinary interactions can become evidence, possibility can feel like probability, and an imagined future can begin to function emotionally like a real one.", "t": 131.82}, {"p": "This is the beginning of understanding your experience in an almost-relationship, the point at which clarity becomes possible.", "t": 152.38}, {"h": "Introduction"}, {"p": "There is a kind of heartbreak that can leave you wondering if you have a right to grieve. A void between you and someone you love, who is a close friend but not your partner. You weren't married. You weren't engaged. You weren't even dating and there was no breakup. And still, something special that had a powerful hold on you suddenly and traumatically ended.", "t": 162.96}, {"p": "It’s difficult to explain this relationship to someone who wasn't there. The usual progress markers don’t exist. There was no anniversary to remember, no apartment you once shared, no “together” photos that need to be put away, no relationship status to change. There may be nothing obvious for the outside world to recognize as loss, and yet you feel lost. You remember how easily conversations flowed and how deeply you felt the undeniable intimacy.", "t": 195.47}, {"p": "There are unanswered questions that have nowhere to land.", "t": 225.44}, {"q": ["What if we'd met at another time?", "What if they had been ready?", "What if I had said what I felt sooner?", "What if I had said less?", "What if I had said more?", "What if circumstances had been different?", "What if that one conversation or trip together had gone another way?"], "t": 229.41}, {"p": "You might tell yourself you're being ridiculous, dramatic, naïve. You might minimize the entire experience when someone asks what happened. \"It wasn't really anything.\" \"We weren't together.\" \"It was complicated.\" \"I don't even know what to call it.\"", "t": 251.21}, {"p": "That may be true, but you can begin making room for someone inside yourself long before they have agreed to occupy that space. You can become entranced by their voice, their humor, their attention, their aura, their sharing, and, most importantly, the way you feel when you’re with them and know that you are being seen, respected, appreciated, understood and loved for who you are.", "t": 267.06}, {"p": "This book is about the romantic relationship you wanted but never had. It’s about the painful loss of something that may never have become fully realized outside your inner world, but which became undeniably real and powerful inside it. It’s about the relationship that seemed to be taking shape and then didn't. It’s about the person who cared about you but could not meet you where you were. It’s about the future that shimmered, then vanished.", "t": 292.25}, {"p": "Clinicians call it ambiguous loss, but elegy knows it as the grief of almost-love. Attachment research tells us this is human: we bond to imagined continuities, to the soft outline of a life that never quite formed. Attachment dynamics explain the rupture and the longing; mourning explains the silence that follows.", "t": 319.26}, {"p": "To understand why this kind of loss can be so powerful, you must understand what you were attached to that was suddenly removed from the inner world you constructed. The person. The possibility. The feeling. The meaning. The future. The unanswered question.", "t": 341.97}];
