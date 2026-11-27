@@ -74,6 +74,11 @@ h2{font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,52px);l
 .ribbon{font:600 15px/1.4 var(--ui);text-align:center;padding:10px 16px;letter-spacing:.01em}
 .ribbon span{display:inline-block;max-width:80ch}
 .hero{position:relative}.hero .in{position:relative;z-index:1}
+.iu-cap{position:absolute;left:-3%;right:-3%;top:0;transform:translateY(-100%) translateZ(2px);z-index:3;pointer-events:none;transition:height .25s ease-out;
+background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40 L0 26 Q8 14 18 20 Q28 8 40 16 Q52 6 64 14 Q78 4 90 13 Q102 6 114 15 Q128 5 140 14 Q152 8 164 16 Q176 6 188 17 Q195 14 200 22 L200 40 Z' fill='%23ffffff'/%3E%3C/svg%3E") bottom/100% 100% no-repeat;filter:drop-shadow(0 -1px 2px rgba(30,50,90,.25)) drop-shadow(0 2px 2px rgba(30,50,90,.18))}
+.book.iu-shake{animation:iushake .65s cubic-bezier(.36,.07,.19,.97)}
+@keyframes iushake{0%,100%{transform:perspective(1100px) rotateY(18deg)}15%{transform:perspective(1100px) rotateY(18deg) rotateZ(-3deg) translateX(-4px)}30%{transform:perspective(1100px) rotateY(18deg) rotateZ(3deg) translateX(4px)}45%{transform:perspective(1100px) rotateY(18deg) rotateZ(-2deg) translateX(-3px)}60%{transform:perspective(1100px) rotateY(18deg) rotateZ(2deg) translateX(2px)}80%{transform:perspective(1100px) rotateY(18deg) rotateZ(-1deg)}}
+@media(prefers-reduced-motion:reduce){.book.iu-shake{animation:none}}
 .iu-fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}.iu-front{z-index:2}
 .gifttag{display:inline-block;margin-top:8px;font:600 12.5px var(--ui);letter-spacing:.02em;color:#fff;background:var(--season,#b3263a);padding:4px 10px;border-radius:999px}
 /* one-minute audio ad */
@@ -291,7 +296,7 @@ footer a{color:var(--mute)}
   <span>© 2026 Jalen Vale. All rights reserved.</span>
   <span><a href="#editions">Editions</a> · <a href="#book">The book</a> · <a href="#sample">Sample</a></span>
 </div></footer>
-<script src="themes.js"></script>
+<script src="themes.js?v=3"></script>
 <script>IU.load();
 window.addEventListener('message',function(e){if(e.origin===location.origin&&e.data&&e.data.iuPreview){IU.apply(e.data.iuPreview);}});</script>
 <script>

@@ -127,6 +127,25 @@
         a: kind === 'snow' ? .35 + z * .6 : .6 + z * .35, bat: kind === 'spooky' && Math.random() < .18 };
     }
     for (var i = 0; i < density; i++) parts.push(make(true));
+    // snow that settles on top of the book, and shakes off when the book is hovered
+    var bookEl = kind === 'snow' ? host.querySelector('.book') : null, cap = null, capH = 3, capMax = 22;
+    if (bookEl) {
+      cap = document.createElement('div'); cap.className = 'iu-cap'; cap.setAttribute('aria-hidden', 'true');
+      bookEl.appendChild(cap); cap.style.height = capH + 'px';
+    }
+    function bookTop() { // top edge of the book's front, in hero coordinates
+      if (!bookEl) return null; var hr = host.getBoundingClientRect(), r = (bookEl.querySelector('.front') || bookEl).getBoundingClientRect();
+      return { l: r.left - hr.left, r: r.right - hr.left, t: r.top - hr.top };
+    }
+    function shakeOff() {
+      if (!bookEl || bookEl.classList.contains('iu-shake')) return;
+      var bt = bookTop(); bookEl.classList.add('iu-shake'); setTimeout(function () { bookEl.classList.remove('iu-shake'); }, 700);
+      if (bt) { var n = Math.round(10 + capH * 5);
+        for (var k = 0; k < n; k++) parts.push({ x: bt.l + Math.random() * (bt.r - bt.l), y: bt.t - Math.random() * capH, z: .5 + Math.random() * .5, r: 1.2 + Math.random() * 2.6,
+          vy: .9 + Math.random() * .8, vx: 0, px: (Math.random() - .5) * 5, py: -1.5 - Math.random() * 3, rot: 0, vr: 0, flip: 0, sway: Math.random() * 6, swaySp: .02, c: '#ffffff', a: .95 }); }
+      capH = 0; if (cap) cap.style.height = '0px';
+    }
+    if (bookEl) bookEl.addEventListener('pointerenter', shakeOff);
     // start with a light dusting so the drift is visible straight away, then let it build up
     if (kind === 'snow') for (var q0 = 0; q0 < pile.length; q0++) pile[q0] = 7 + 4 * Math.sin(q0 / 11) + 3 * Math.sin(q0 / 4.3);
 
@@ -205,6 +224,7 @@
     function step(now) {
       var elapsed = (now - t0) / 1000;
       bx.clearRect(0, 0, W, H); fx.clearRect(0, 0, W, H);
+      if (cap && (!anim.btAt || now - anim.btAt > 500)) { anim.bt = bookTop(); anim.btAt = now; }
       drawLights(now);
       // cursor velocity decays
       mouse.vx *= .9; mouse.vy *= .9;
@@ -221,6 +241,9 @@
         if (p.bat) { p.x += (p.vx > 0 ? 1 : -1) * (.8 + p.z) + p.px; p.y += Math.sin(p.sway * 3) * .6 + p.py; }
         else { p.x += p.vx + Math.sin(p.sway) * (kind === 'snow' ? .35 : .8) + p.px; p.y += p.vy + p.py; }
         p.rot += p.vr; p.flip += .03 + p.z * .03;
+        if (cap && p.vy > 0 && i % 2 === 0) { var bt2 = anim.bt; if (bt2 && p.x > bt2.l + 6 && p.x < bt2.r - 6 && p.y > bt2.t - capH - 2 && p.y < bt2.t - capH + 6) {
+          if (capH < capMax) { capH = Math.min(capMax, capH + .12 + p.r * .06); cap.style.height = capH.toFixed(1) + 'px'; }
+          parts[i] = make(false); continue; } }
         var ground = H - (piles ? groundAt(p.x) : 0);
         if (piles && !up && !p.bat && p.y >= ground - p.r * .5 && p.x > 0 && p.x < W) {
           // settle: snow adds to the drift, leaves come to rest on top of the pile
@@ -256,7 +279,8 @@
     host.addEventListener('pointermove', onMove); host.addEventListener('pointerleave', onLeave);
     window.addEventListener('resize', onResize);
     anim = { raf: 0, stop: function () { cancelAnimationFrame(anim.raf); host.removeEventListener('pointermove', onMove); host.removeEventListener('pointerleave', onLeave);
-      window.removeEventListener('resize', onResize); [back, front].forEach(function (c) { if (c.parentNode) c.parentNode.removeChild(c); }); } };
+      window.removeEventListener('resize', onResize); [back, front].forEach(function (c) { if (c.parentNode) c.parentNode.removeChild(c); });
+      if (cap && cap.parentNode) cap.parentNode.removeChild(cap); if (bookEl) bookEl.removeEventListener('pointerenter', shakeOff); } };
     if (reduce) {
       // still picture: some flakes, a settled drift, and the lights
       for (var q = 0; q < pile.length; q++) pile[q] = kind === 'snow' ? 18 + 8 * Math.sin(q / 9) : 0;
