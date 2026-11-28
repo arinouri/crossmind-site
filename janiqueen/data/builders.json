@@ -359,7 +359,7 @@
    "613-822-6767",
    "613-822-6777"
   ],
-  "sites": 12,
+  "sites": 11,
   "source": "website",
   "website": "https://bassi.ca"
  },
@@ -1422,7 +1422,7 @@
   "homes": 10,
   "last": "2020-07",
   "name": "Greenmark Builders Inc.",
-  "sites": 1,
+  "sites": 0,
   "source": "website",
   "website": "https://www.greenmarkbuilders.com"
  },
@@ -1550,7 +1550,7 @@
    "613-260-8818",
    "613-425-0880"
   ],
-  "sites": 34,
+  "sites": 32,
   "source": "website",
   "website": "https://hnhomes.com"
  },
@@ -1955,11 +1955,6 @@
   "name": "M&M Interior Contracting",
   "sites": 5
  },
- "macdonald-tim": {
-  "checked": "2026-11-20",
-  "name": "Macdonald, Tim",
-  "sites": 1
- },
  "mackie": {
   "checked": "2026-11-20",
   "emails": [
@@ -1972,7 +1967,7 @@
   "phones": [
    "613-806-1304"
   ],
-  "sites": 5,
+  "sites": 4,
   "source": "website",
   "website": "https://www.mackiehomes.ca"
  },
@@ -2068,7 +2063,7 @@
   "homes": 29735,
   "last": "2023-11",
   "name": "Mattamy Limited",
-  "sites": 74,
+  "sites": 71,
   "source": "website",
   "website": "https://mattamyhomes.com"
  },
@@ -2749,7 +2744,7 @@
   "phones": [
    "613-739-7111"
   ],
-  "sites": 106,
+  "sites": 105,
   "source": "manual",
   "website": "https://www.richcraft.com"
  },
@@ -3080,7 +3075,7 @@
    "613-229-2942",
    "613-238-2040"
   ],
-  "sites": 15,
+  "sites": 7,
   "source": "website",
   "website": "https://tartanhomes.com"
  },
@@ -3334,7 +3329,7 @@
   "homes": 1638,
   "last": "2023-09",
   "name": "Valecraft Homes Ltd.",
-  "sites": 1,
+  "sites": 0,
   "website": null
  },
  "vanderwestern-and-rutherford-associates": {
